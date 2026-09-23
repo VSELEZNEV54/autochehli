@@ -1,0 +1,10 @@
+<!-- {"title": "Заказ принят", "description": "Спасибо за заказ в Автостиль.", "page": "thanks"} -->
+<div class="container">
+  <div class="thanks">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+    <h1>Заказ принят</h1>
+    <p>Номер заказа <b>AS-<span id="order-no"></span></b>. В рабочее время менеджер перезвонит в течение 15 минут, уточнит комплектацию салона и подтвердит срок. Фото готового комплекта пришлём перед отправкой.</p>
+    <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap"><a class="btn btn--primary" href="index.html">На главную</a><a class="btn btn--ghost" href="info-install.html">Инструкция по установке</a></div>
+  </div>
+  <script>document.getElementById("order-no").textContent = String(Date.now()).slice(-6);</script>
+</div>

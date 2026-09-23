@@ -1,0 +1,17 @@
+<!-- {"title": "Блог Автостиль: статьи об авточехлах, материалах, установке и уходе", "description": "Полезные статьи от производителя авточехлов: сравнение материалов, уход зимой, ошибки установки, обзоры моделей, новости производства.", "page": "blog", "scripts": "<script>(function(){const A=window.AS,posts=window.AS_POSTS||[];const tag=new URLSearchParams(location.search).get('tag')||'';const tags=['Все',...new Set(posts.map(p=>p.tag))];const f=document.getElementById('post-filter');f.innerHTML=tags.map(t=>`<a class=\"chip${(t==='Все'&&!tag)||t===tag?' is-selected':''}\" href=\"blog.html${t==='Все'?'':'?tag='+encodeURIComponent(t)}\">${t}</a>`).join('');const list=tag?posts.filter(p=>p.tag===tag):posts;document.getElementById('posts').innerHTML=list.map((p,i)=>window.AS_postCard(p,i===0&&!tag)).join('')||'<div class=\"empty\">Статей в рубрике пока нет</div>';})();</script>"} -->
+<div class="container">
+  <ol class="crumbs"><li><a href="index.html">Главная</a></li><li>Блог</li></ol>
+  <div class="page-intro">
+    <h1 style="font-size:var(--t-h1); font-weight:800; letter-spacing:-0.02em">Блог</h1>
+    <p class="lead">Пишем о том, что знаем лучше всего: материалы, посадка, установка, уход и жизнь производства. Без рекламы ради рекламы — только то, что пригодится владельцу.</p>
+  </div>
+  <div class="post-filter" id="post-filter" style="margin-top:18px"></div>
+  <div class="posts" id="posts"></div>
+
+  <section class="section section--last">
+    <form class="tile" data-form data-form-message="Подписка оформлена. Пишем не чаще двух раз в месяц" style="display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center">
+      <div><h3 style="margin-bottom:4px">Новые статьи на почту</h3><p class="small muted">Раз в две недели: новые лекала, акции и полезные материалы. Без спама.</p></div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap"><input class="input" type="email" required placeholder="Ваш e-mail" style="width:260px"><button class="btn btn--primary" type="submit" data-label="Подписаться">Подписаться</button></div>
+    </form>
+  </section>
+</div>
