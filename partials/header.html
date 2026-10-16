@@ -2,55 +2,62 @@
   <div class="container">
     <div class="topbar__left">
       <button type="button" class="city" data-city-open aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-city-name>Москва</span></button>
-      <span class="topbar__promo">Доставка в <b>6 000+</b> городов России и СНГ</span>
-      <span class="topbar__promo">Экспресс-пошив <b>за 3 дня</b></span>
+      <span class="topbar__promo">Готовые чехлы <b>сошьём за 1 день</b>, индивидуальные — за 3 дня</span>
+      <span class="topbar__promo">Доставка в <b>6 000+</b> городов</span>
     </div>
-    <div class="topbar__right"><a href="delivery.html#payment">Оплата</a><a href="delivery.html">Доставка</a><a href="reviews.html">Отзывы</a><a href="dealers.html">Дилерам</a><a href="contacts.html">Контакты</a></div>
+    <div class="topbar__right"><a href="delivery.html" class="keep">Доставка и оплата</a><a href="returns.html">Гарантия и возврат</a><a href="reviews.html">Отзывы</a><a href="about.html">О компании</a><a href="dealers.html">Дилерам</a><a href="fabrics.html">Экокожа оптом</a></div>
   </div>
 </div>
 <header class="header" id="header">
   <div class="container">
-    <button class="iconbtn burger" aria-label="Открыть меню" data-drawer-open="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    <a class="logo" href="index.html" aria-label="Автостиль — на главную"><svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 4 8v12c0 9.5 6.8 16.5 16 18 9.2-1.5 16-8.5 16-18V8L20 2z" fill="#fff450"/><path fill-rule="evenodd" d="M20 11 12 30h4l1.6-4.5h4.8L24 30h4L20 11zm0 6.5-1.4 4.7h2.8L20 17.5z" fill="#1b1c1f"/></svg><span class="logo__text">АВТОСТИЛЬ<small>Автоателье · с 2009 года</small></span></a>
-    <button class="btn btn--primary header__catalog" type="button" data-mega-toggle aria-expanded="false" aria-controls="mega"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Каталог</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-    <div class="header__search">
-      <div class="search" data-search>
-        <div class="search__field">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input type="search" placeholder="Поиск по марке и модели: Camry, Солярис, Дастер…" aria-label="Поиск чехлов по автомобилю" autocomplete="off">
-          <button class="btn btn--dark btn--sm" type="button"><span>Найти</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <div class="header__row">
+      <button class="burger" aria-label="Открыть меню" data-drawer-open="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <a class="logo" href="index.html" aria-label="Автостиль — на главную"><svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 4 8v12c0 9.5 6.8 16.5 16 18 9.2-1.5 16-8.5 16-18V8L20 2z" fill="#fff450"/><path fill-rule="evenodd" d="M20 11 12 30h4l1.6-4.5h4.8L24 30h4L20 11zm0 6.5-1.4 4.7h2.8L20 17.5z" fill="#131416"/></svg><span class="logo__text">АВТОСТИЛЬ<small>Автоателье · с 2009 года</small></span></a>
+      <button class="btn btn--primary header__catalog" type="button" data-mega-toggle aria-expanded="false" aria-controls="mega"><svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Каталог</span></button>
+      <div class="header__search">
+        <div class="search" data-search>
+          <div class="search__field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input type="search" placeholder="Марка и модель: Camry, Солярис, Веста, Тигуан…" aria-label="Поиск чехлов по автомобилю" autocomplete="off">
+            <button class="btn btn--dark btn--sm" type="button"><span>Найти</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+          <div class="search__drop" role="listbox" aria-label="Результаты поиска"></div>
         </div>
-        <div class="search__drop" role="listbox" aria-label="Результаты поиска"></div>
+      </div>
+      <a class="header__contacts" href="tel:88007753260"><b>8 (800) 775-32-60</b><span>Ежедневно 9:00–21:00 · бесплатно</span></a>
+      <div class="header__actions">
+        <a class="hact hact--fav" href="favorites.html" aria-label="Избранное"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg><span>Избранное</span><i class="badge" data-fav-count hidden>0</i></a>
+        <a class="hact" href="cart.html" aria-label="Корзина"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 8H6.5"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg><span>Корзина</span><i class="badge" data-cart-count hidden>0</i></a>
       </div>
     </div>
-    <a class="header__phone" href="tel:88007753260"><b>8 (800) 775-32-60</b><span>Бесплатно по России · 9:00–21:00</span></a>
-    <div class="header__actions">
-      <a class="iconbtn iconbtn--fav" href="favorites.html" aria-label="Избранное"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg><span class="badge" data-fav-count hidden>0</span></a>
-      <a class="iconbtn" href="cart.html" aria-label="Корзина"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 8H6.5"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg><span class="badge" data-cart-count hidden>0</span></a>
-    </div>
   </div>
+  <nav class="nav" aria-label="Разделы каталога">
+    <div class="container">
+      <a href="catalog.html" data-nav="catalog">Авточехлы на модель</a><a href="custom.html" class="is-custom" data-nav="custom">Индивидуальный пошив <i>конструктор</i></a><a href="capes.html" data-nav="capes">Накидки</a><a href="mats.html" data-nav="mats">Коврики EVA</a><a href="wheel.html" data-nav="wheel">Оплётки на руль</a><a href="sales.html" class="is-sale" data-nav="sales">Акции</a><a href="info.html" data-nav="info">Информация для клиентов</a><a href="blog.html" data-nav="blog">Блог</a><a href="contacts.html" data-nav="contacts">Контакты</a>
+    </div>
+  </nav>
   <div class="mega" id="mega" data-mega aria-label="Каталог по маркам">
     <div class="container">
       <div class="mega__inner">
-        <div class="mega__brands" data-mega-brands></div>
+        <div class="mega__brands"><div class="mega__brands-title">Марки автомобилей</div><div data-mega-brands></div></div>
         <div class="mega__models" data-mega-models></div>
+        <div class="mega__promo">
+          <a class="mega__card" href="custom.html" data-mega-custom><img src="assets/photos/avtochehol1.jpg" alt="" loading="lazy"><span class="tag tag--yellow">Конструктор</span><b>Индивидуальный пошив</b><span>Свой материал, цвета, строчка и вышивка. Пошив за 3 дня</span></a>
+          <a class="mega__card mega__card--yellow" href="contacts.html"><b>Нет вашей модели?</b><span>Снимем лекало с вашего автомобиля в Москве за 2 недели</span></a>
+          <a class="mega__card mega__card--yellow" href="catalog.html" style="background:var(--band)"><b>Все 41 марка</b><span>Каталог с поиском по модели и поколению</span></a>
+        </div>
       </div>
     </div>
   </div>
 </header>
 <div class="mega__bg" data-mega-bg></div>
-<nav class="nav" aria-label="Разделы">
-  <div class="container">
-    <a href="#" data-mega-open>Модельные авточехлы</a><a href="universal.html">Универсальные чехлы</a><a href="capes.html">Накидки</a><a href="mats.html">Коврики EVA</a><a href="wheel.html">Оплётки на руль</a><a href="fabrics.html">Ткани и экокожа оптом</a><a href="sales.html" class="is-sale">Акции</a><a href="info.html">Информация для клиентов</a><a href="blog.html">Блог</a><a href="delivery.html">Доставка и оплата</a><a href="contacts.html">Контакты</a>
-  </div>
-</nav>
 
 <div class="modal" data-city-modal role="dialog" aria-modal="true" aria-label="Выбор города">
   <div class="modal__bg" data-city-close></div>
   <div class="modal__panel">
     <div class="modal__head"><h3>Ваш город</h3><button type="button" class="iconbtn" aria-label="Закрыть" data-city-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
-    <p class="small muted">От города зависят сроки и стоимость доставки. Пункты самовывоза есть в Москве, Хабаровске и Уфе.</p>
-    <div class="search" style="margin:14px 0"><div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Начните вводить город" data-city-filter autocomplete="off"></div></div>
+    <p class="small muted">От города зависят сроки и стоимость доставки. В Москве — самовывоз с производства на Полярной и установка.</p>
+    <div class="search search--light" style="margin:14px 0"><div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Начните вводить город" data-city-filter autocomplete="off"></div></div>
     <div class="city-list" data-city-list></div>
   </div>
 </div>

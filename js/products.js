@@ -1,11 +1,5 @@
 /* Товары для разделов «Универсальные чехлы», «Накидки», «Коврики EVA», «Оплётки», «Ткани оптом». Цены демонстрационные. */
 window.AS_PRODUCTS = [
-  { id: "u1", cat: "universal", title: "Универсальные чехлы «Комфорт», экокожа, чёрные", sub: "На весь салон · 11 предметов", price: 3990, old: 4690, img: "assets/photos/seat8.jpg", tag: "Хит", rating: 214 },
-  { id: "u2", cat: "universal", title: "Универсальные чехлы «Комфорт», экокожа, чёрно-бежевые", sub: "На весь салон · 11 предметов", price: 3990, old: 4690, img: "assets/photos/avtochehol4.jpg", rating: 96 },
-  { id: "u3", cat: "universal", title: "Универсальные чехлы «Спорт», экокожа с перфорацией, чёрно-красные", sub: "На весь салон · 11 предметов", price: 4490, old: 5290, img: "assets/photos/avtochehol3.jpg", tag: "Акция", rating: 58 },
-  { id: "u4", cat: "universal", title: "Универсальные чехлы «Классика», жаккард, серые", sub: "На весь салон · 9 предметов", price: 2990, img: "assets/photos/seat9.jpg", rating: 131 },
-  { id: "u5", cat: "universal", title: "Универсальные чехлы «Премиум», экокожа + алькантара, серые", sub: "На весь салон · 11 предметов", price: 5490, old: 6290, img: "assets/photos/avtochehol1.jpg", tag: "Новинка", rating: 24 },
-  { id: "u6", cat: "universal", title: "Чехлы на передние сиденья «Комфорт», экокожа, 2 шт.", sub: "Только передний ряд", price: 2490, img: "assets/photos/seat10.jpg", rating: 77 },
 
   { id: "c1", cat: "capes", title: "Накидка из алькантары на переднее сиденье, серая", sub: "1 шт. · противоскользящая основа", price: 1890, old: 2190, img: "assets/photos/avtochehol2.jpg", tag: "Хит", rating: 162 },
   { id: "c2", cat: "capes", title: "Накидки из алькантары, чёрные, комплект на передние сиденья", sub: "2 шт. · стёжка ромб", price: 3490, old: 3990, img: "assets/photos/seat2.jpg", rating: 88 },

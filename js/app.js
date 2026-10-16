@@ -1,77 +1,202 @@
 /* =====================================================================
-   АВТОСТИЛЬ — прототип фронта. Мега-меню, поиск, баннер, калькулятор.
-   Бэкенда нет: данные из data.js, цены демонстрационные.
+   АВТОСТИЛЬ — ядро прототипа (v4)
+   Каталог: марка → модель → поколение (лекало) → готовые чехлы.
+   Индивидуальный пошив: пошаговый конструктор. Корзина и избранное в localStorage.
    ===================================================================== */
 (function () {
   "use strict";
-
   document.documentElement.classList.add("js");
-  const BRANDS = window.AS_BRANDS || [];
-  const MODELS = window.AS_MODELS || [];
-  const BRAND_BY_ID = Object.fromEntries(BRANDS.map(b => [b.id, b]));
-  const ASSETS = (document.body.dataset.assets || "assets") + "/";
-  const POPULAR = ["toyota", "hyundai", "kia", "lada", "renault", "nissan", "volkswagen", "skoda", "mitsubishi", "mazda", "ford", "chevrolet", "honda", "suzuki", "subaru", "opel", "peugeot", "uaz", "gaz"];
 
-  /* ---------- ценообразование (демо) ---------- */
-  const BASE = { b: 5490, c: 5990, d: 6490, suv: 6990, mpv: 8490, pickup: 6990 };
-  const CLASS_NAME = { b: "B-класс", c: "C-класс", d: "D-класс", suv: "Кроссовер / внедорожник", mpv: "Минивэн / 7 мест", pickup: "Пикап" };
-  const MATERIALS = {
-    jacquard:  { name: "Жаккард",              add: 0,    photo: "seat9.jpg" },
-    eco:       { name: "Экокожа",              add: 1500, photo: "seat1.jpg" },
-    ecoperf:   { name: "Экокожа + перфорация", add: 2000, photo: "seat12.jpg" },
-    alcantara: { name: "Экокожа + алькантара", add: 3000, photo: "avtochehol1.jpg" },
-    flock:     { name: "Флок",                 add: 1000, photo: "seat3.jpg" }
-  };
-  const OPTIONS = {
-    rhomb:   { name: "Стёжка «ромб»",               add: 1200 },
-    armrest: { name: "Чехол на задний подлокотник", add: 600 },
-    airbag:  { name: "Молнии под Airbag в спинках", add: 0 },
-    seats7:  { name: "Третий ряд (7 мест)",         add: 2500 },
-    mats:    { name: "Коврики EVA в цвет чехлов",   add: 3900 },
-    install: { name: "Установка в мастерской",      add: 2500 },
-    wheel:   { name: "Оплётка на руль",             add: 0, gift: 500 }
-  };
-  const COLORS = {
-    black: { name: "Чёрный", sw: "eco-black.jpg" }, grey: { name: "Серый", sw: "eco-grey.jpg" },
-    beige: { name: "Бежевый", sw: "eco-beige.jpg" }, cream: { name: "Кремовый", sw: "eco-cream.jpg" },
-    red: { name: "Красный", sw: "eco-red.jpg" }, orange: { name: "Оранжевый", sw: "eco-orange.jpg" },
-    blue: { name: "Синий", sw: "eco-blue.jpg" }, navy: { name: "Тёмно-синий", sw: "eco-navy.jpg" },
-    choco: { name: "Шоколад", sw: "eco-choco.jpg" }, chestnut: { name: "Каштан", sw: "eco-chestnut.jpg" },
-    cherry: { name: "Вишня", sw: "eco-cherry.jpg" }, pink: { name: "Розовый", sw: "eco-pink.jpg" }
-  };
-  window.AS_PRICING = { BASE, MATERIALS, OPTIONS, COLORS, CLASS_NAME };
-
-  const fmt = n => Math.round(n).toLocaleString("ru-RU") + " ₽";
-  const priceFrom = m => BASE[m.c] || BASE.c;
-  window.AS_priceFrom = priceFrom;
-
-  /* ---------- утилиты ---------- */
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
-  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const brandName = id => (BRAND_BY_ID[id] || {}).n || id;
-  const brandLogo = id => ASSETS + "brands/" + ((BRAND_BY_ID[id] || {}).logo || "toyota.jpg");
-  const modelUrl = m => "car.html?m=" + encodeURIComponent(m.slug);
-  const brandUrl = id => "brand.html?b=" + encodeURIComponent(id);
-  const modelPhoto = m => ASSETS + "photos/" + (m.p || "seat1") + ".jpg";
-  const yearsText = y => window.AS_years(y);
-  const sortedBrands = () => BRANDS.filter(b => b.cnt).slice().sort((a, b) => {
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmt = n => Math.round(n).toLocaleString("ru-RU") + " ₽";
+  const qs = k => new URLSearchParams(location.search).get(k);
+  const hash = s => { let h = 0; for (const c of String(s)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; };
+  const ICON = {
+    cart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 8H6.5"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg>',
+    heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg>',
+    arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'
+  };
+
+  /* ---------- данные каталога ---------- */
+  const ASSETS = "assets/";
+  const BRANDS = window.AS_BRANDS || [];
+  const MODELS = window.AS_MODELS || [];
+  const BRAND = Object.fromEntries(BRANDS.map(b => [b.id, b]));
+  const BY_SLUG = Object.fromEntries(MODELS.map(m => [m.s, m]));
+  const POPULAR = ["toyota", "lada", "kia", "hyundai", "renault", "nissan", "volkswagen", "skoda", "honda", "mitsubishi", "chevrolet", "ford", "mazda", "haval", "chery", "uaz", "gaz", "suzuki", "subaru", "opel"];
+  const PHOTOS = ["seat1", "seat10", "seat11", "seat12", "seat2", "seat3", "seat4", "seat5", "seat6", "seat7", "seat8", "seat9", "avtochehol1", "avtochehol2", "avtochehol3", "avtochehol4", "1p", "4p", "5p"];
+  const FAMILIES = {};
+  MODELS.forEach(m => {
+    const f = FAMILIES[m.f] || (FAMILIES[m.f] = { id: m.f, b: m.b, n: m.m, items: [] });
+    f.items.push(m);
+  });
+  Object.values(FAMILIES).forEach(f => {
+    f.items.sort((a, b) => (b.yr || 0) - (a.yr || 0) || a.s.localeCompare(b.s));
+    f.min = Math.min(...f.items.map(m => m.p[0]));
+    const yrs = f.items.map(m => m.yr).filter(Boolean);
+    f.from = yrs.length ? Math.min(...yrs) : 0;
+    f.fresh = f.items.some(m => (m.yr || 0) >= 2015);
+  });
+  BRANDS.forEach(b => { b.fams = Object.values(FAMILIES).filter(f => f.b === b.id).sort((x, y) => x.n.localeCompare(y.n)); b.cnt = MODELS.filter(m => m.b === b.id).length; });
+  const sortedBrands = () => BRANDS.slice().sort((a, b) => {
     const ia = POPULAR.indexOf(a.id), ib = POPULAR.indexOf(b.id);
     if (ia !== -1 || ib !== -1) return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
-    return a.n.localeCompare(b.n, "ru");
+    return a.n.localeCompare(b.n);
   });
-  window.AS = { fmt, brandName, brandLogo, modelUrl, brandUrl, modelPhoto, yearsText, MODELS, BRANDS, BRAND_BY_ID, ASSETS, POPULAR, sortedBrands };
+
+  /* ---------- готовые (стандартные) чехлы на любую модель ---------- */
+  const SW = n => ASSETS + "swatches/" + n + ".jpg";
+  const MAT_NAME = ["Жаккард", "Экокожа", "Экокожа + алькантара"];
+  const VARIANTS = [
+    { id: "eco-black", mat: 1, name: "Экокожа, чёрный", photo: "4p", sw: ["eco-black", "eco-black"], tag: "Хит" },
+    { id: "eco-grey", mat: 1, name: "Экокожа, чёрный + серые вставки", photo: "seat10", sw: ["eco-black", "eco-grey"] },
+    { id: "eco-beige", mat: 1, name: "Экокожа, чёрный + бежевые вставки", photo: "5p", sw: ["eco-black", "eco-beige"] },
+    { id: "eco-blue", mat: 1, name: "Экокожа, чёрный + синие вставки", photo: "seat1", sw: ["eco-black", "eco-blue"] },
+    { id: "eco-red", mat: 1, name: "Экокожа, чёрный + красные вставки", photo: "avtochehol3", sw: ["eco-black", "eco-red"] },
+    { id: "eco-orange", mat: 1, name: "Экокожа, чёрный + оранжевые вставки", photo: "seat11", sw: ["eco-black", "eco-orange"] },
+    { id: "alc-grey", mat: 2, name: "Алькантара, чёрный + серый, ромб", photo: "avtochehol1", sw: ["eco-black", "alca-grey"], tag: "Премиум" },
+    { id: "alc-black", mat: 2, name: "Алькантара, чёрный, ромб", photo: "3p", sw: ["eco-black", "alca-black"] },
+    { id: "alc-brown", mat: 2, name: "Алькантара, чёрный + коричневый, ромб", photo: "seat7", sw: ["eco-black", "eco-chestnut"] },
+    { id: "jac-black", mat: 0, name: "Жаккард, чёрный + серый", photo: "seat9", sw: ["eco-black", "jac-bw"], tag: "Выгодно" },
+    { id: "jac-grey", mat: 0, name: "Жаккард, серый", photo: "seat8", sw: ["eco-grey", "jac-bw"] }
+  ];
+  const VAR = Object.fromEntries(VARIANTS.map(v => [v.id, v]));
+
+  const brandName = id => (BRAND[id] || {}).n || id;
+  const brandLogo = id => ASSETS + "brands/" + ((BRAND[id] || {}).logo || "toyota.jpg");
+  const genName = m => [m.m, m.g].filter(Boolean).join(" ");
+  const carName = m => brandName(m.b) + " " + genName(m);
+  const yearsText = m => m.y || "все годы";
+  const famPhoto = f => ASSETS + "photos/" + PHOTOS[hash(f.id) % PHOTOS.length] + ".jpg";
+  const posPhoto = m => ASSETS + "photos/" + PHOTOS[hash(m.s) % PHOTOS.length] + ".jpg";
+  const varPhoto = v => ASSETS + "photos/" + v.photo + ".jpg";
+  const priceOf = (m, v) => (m ? m.p : [7975, 9375, 9975])[v.mat];
+  const URL_ = {
+    brand: id => "brand.html?b=" + encodeURIComponent(id),
+    fam: f => (f.items.length === 1 ? "car.html?m=" + encodeURIComponent(f.items[0].s) : "car.html?f=" + encodeURIComponent(f.id)),
+    pos: m => "car.html?m=" + encodeURIComponent(m.s),
+    product: (m, v) => "product.html?m=" + encodeURIComponent(m.s) + "&v=" + v.id,
+    custom: m => "custom.html" + (m ? "?m=" + encodeURIComponent(m.s) : ""),
+    acc: p => "product.html?p=" + encodeURIComponent(p.id)
+  };
 
   /* ---------- toast ---------- */
   let toastEl;
-  function toast(msg) {
+  function toast(msg, link) {
     if (!toastEl) { toastEl = document.createElement("div"); toastEl.className = "toast"; document.body.appendChild(toastEl); }
-    toastEl.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>${esc(msg)}`;
+    toastEl.innerHTML = ICON.check + esc(msg) + (link ? `<a href="${link[1]}">${esc(link[0])}</a>` : "");
     toastEl.classList.add("is-on");
-    clearTimeout(toastEl._t); toastEl._t = setTimeout(() => toastEl.classList.remove("is-on"), 3200);
+    clearTimeout(toastEl._t); toastEl._t = setTimeout(() => toastEl.classList.remove("is-on"), 3600);
   }
-  window.AS_toast = toast;
-  document.addEventListener("click", e => { const b = e.target.closest("[data-toast]"); if (b) { e.preventDefault(); e.stopPropagation(); toast(b.dataset.toast); } });
+  document.addEventListener("click", e => { const b = e.target.closest("[data-toast]"); if (b) { e.preventDefault(); toast(b.dataset.toast); } });
+
+  /* ---------- корзина и избранное ---------- */
+  const store = { get(k) { try { return JSON.parse(localStorage.getItem(k) || "[]"); } catch (e) { return []; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+  const Cart = {
+    items: store.get("as_cart4"),
+    save() { store.set("as_cart4", this.items); badges(); document.dispatchEvent(new CustomEvent("cart:change")); },
+    add(item) { const ex = this.items.find(i => i.id === item.id); if (ex) ex.qty += item.qty || 1; else this.items.push(Object.assign({ qty: 1 }, item)); this.save(); },
+    remove(id) { this.items = this.items.filter(i => i.id !== id); this.save(); },
+    setQty(id, q) { const it = this.items.find(i => i.id === id); if (it) { it.qty = Math.max(1, q); this.save(); } },
+    clear() { this.items = []; this.save(); },
+    count() { return this.items.reduce((n, i) => n + i.qty, 0); },
+    total() { return this.items.reduce((n, i) => n + i.price * i.qty, 0); }
+  };
+  const Fav = {
+    items: store.get("as_fav4"),
+    save() { store.set("as_fav4", this.items); badges(); document.dispatchEvent(new CustomEvent("fav:change")); },
+    has(id) { return this.items.some(i => i.id === id); },
+    toggle(item) { if (this.has(item.id)) this.items = this.items.filter(i => i.id !== item.id); else this.items.push(item); this.save(); return this.has(item.id); }
+  };
+  function badges() {
+    $$("[data-cart-count]").forEach(el => { el.textContent = Cart.count(); el.hidden = !Cart.count(); });
+    $$("[data-fav-count]").forEach(el => { el.textContent = Fav.items.length; el.hidden = !Fav.items.length; });
+    $$("[data-fav]").forEach(el => el.classList.toggle("is-on", Fav.has(el.dataset.fav)));
+  }
+  function resolveItem(id) {
+    const [kind, a, b] = id.split(":");
+    if (kind === "cover") {
+      const m = BY_SLUG[a], v = VAR[b]; if (!m || !v) return null;
+      return { id, title: `Чехлы на ${carName(m)}`, sub: `${v.name} · ${yearsText(m)} · пошив 1 день`, price: priceOf(m, v), img: varPhoto(v), url: URL_.product(m, v) };
+    }
+    if (kind === "product") {
+      const p = (window.AS_PRODUCTS || []).find(x => x.id === a); if (!p) return null;
+      return { id, title: p.title, sub: p.sub || "", price: p.price, old: p.old, img: p.img, url: URL_.acc(p) };
+    }
+    return null;
+  }
+  document.addEventListener("click", e => {
+    const f = e.target.closest("[data-fav]");
+    if (f) { e.preventDefault(); e.stopPropagation(); const it = resolveItem(f.dataset.fav); if (!it) return; toast(Fav.toggle(it) ? "Добавлено в избранное" : "Убрано из избранного"); return; }
+    const a = e.target.closest("[data-add]");
+    if (a) {
+      e.preventDefault(); const it = resolveItem(a.dataset.add); if (!it) return;
+      Cart.add(it); a.classList.add("is-added");
+      if (a.dataset.addGo !== undefined) location.href = "cart.html"; else toast("Добавлено в корзину", ["Перейти", "cart.html"]);
+    }
+  });
+
+  /* ---------- карточки ---------- */
+  const swatchDots = sw => `<div class="card__swatches">${sw.map(n => `<i style="background-image:url('${SW(n)}')"></i>`).join("")}</div>`;
+  const coverCard = (m, v, opts = {}) => {
+    const url = URL_.product(m, v), id = `cover:${m.s}:${v.id}`;
+    const tag = opts.tag ?? v.tag;
+    return `<article class="card">
+      <a class="card__media" href="${url}"><img src="${varPhoto(v)}" alt="Чехлы на ${esc(carName(m))}, ${esc(v.name)}" loading="lazy" width="400" height="400">${tag ? `<div class="card__tags"><span class="card__tag${tag === "Премиум" ? " card__tag--dark" : tag === "Выгодно" ? " card__tag--white" : ""}">${tag}</span></div>` : ""}${opts.logo ? `<span class="card__logo"><img src="${brandLogo(m.b)}" alt=""></span>` : ""}${swatchDots(v.sw)}</a>
+      <button type="button" class="card__fav" aria-label="В избранное" data-fav="${id}">${ICON.heart}</button>
+      <div class="card__body">
+        <a class="card__title" href="${url}">Чехлы на ${esc(carName(m))}, ${esc(v.name.toLowerCase())}</a>
+        <div class="card__meta"><span>${esc(yearsText(m))}</span><span class="card__ready">Сошьём за 1 день</span></div>
+        <div class="card__foot"><div class="price">${fmt(priceOf(m, v))}</div><button type="button" class="cart-btn" data-add="${id}" aria-label="В корзину">${ICON.cart}</button></div>
+      </div>
+    </article>`;
+  };
+  const customCard = (m, wide) => `<a class="custom-card${wide ? " custom-card--wide" : ""}" href="${URL_.custom(m)}">
+      <div class="custom-card__body">
+        <span class="tag tag--yellow">Индивидуальный пошив</span>
+        <h3>${m ? "Соберите свои чехлы на " + esc(carName(m)) : "Соберите чехлы под свой вкус"}</h3>
+        <p>Не нашли подходящий вариант среди готовых? Выберите материал, цвета боковин и вставок, рисунок строчки и цвет нити — сошьём по лекалам вашего авто.</p>
+        <ul><li>12 цветов экокожи, алькантара, жаккард</li><li>Строчка «ромб», «соты» или прямая</li><li>Контрастная нить и вышивка на подголовниках</li></ul>
+        <div class="custom-card__price"><div><small>от</small><b>${fmt(m ? m.p[1] : 9375)}</b><small>пошив за 3 дня</small></div><span class="btn btn--primary">Открыть конструктор ${ICON.arrow}</span></div>
+      </div>
+      <div class="custom-card__visual"><img src="${ASSETS}photos/avtochehol1.jpg" alt="" loading="lazy"><div class="pal">${["eco-black", "eco-grey", "eco-beige", "eco-red", "eco-blue", "eco-orange", "alca-grey", "eco-choco"].map(n => `<i style="background-image:url('${SW(n)}')"></i>`).join("")}</div></div>
+    </a>`;
+  const famStats = f => {
+    if (f._st) return f._st;
+    let to = 0, now = false;
+    f.items.forEach(m => {
+      const y = m.y || "", r = y.match(/(\d{4})\s*[–-]\s*(\d{4})/), d = y.match(/до\s*(\d{4})/);
+      if (r) to = Math.max(to, +r[2]); else if (/^с\s*\d{4}/.test(y)) now = true; else if (d) to = Math.max(to, +d[1]);
+    });
+    const gens = new Set(f.items.map(m => (m.g || "").split(/[ ,]/)[0] || m.m)).size;
+    const max = Math.max(...f.items.map(m => Math.max(...m.p)));
+    const years = f.from ? (now ? `${f.from} — н. в.` : to ? `${f.from}–${to}` : `с ${f.from}`) : "все годы";
+    return (f._st = { gens, max, years });
+  };
+  const priceRange = (a, b) => a === b ? fmt(a) : `${fmt(a).replace(/\s?₽$/, "")} – ${fmt(b)}`;
+  const famCard = f => {
+    const st = famStats(f), n = f.items.length;
+    return `<a class="fam" href="${URL_.fam(f)}">
+      <div class="fam__media"><img src="${famPhoto(f)}" alt="Чехлы на ${esc(brandName(f.b) + " " + f.n)}" loading="lazy">${f.fresh ? '<span class="tag tag--yellow">Есть свежие поколения</span>' : ""}</div>
+      <div class="fam__body">
+        <div class="fam__title">${esc(brandName(f.b))} ${esc(f.n)}</div>
+        <div class="fam__years">${esc(st.years)}</div>
+        <div class="fam__stats"><span><b>${st.gens}</b> ${plural(st.gens, "поколение", "поколения", "поколений")}</span><span><b>${n}</b> ${plural(n, "лекало", "лекала", "лекал")}</span></div>
+        <div class="fam__foot"><div class="price"><small>готовые чехлы</small>${priceRange(f.min, st.max)}</div><span class="btn btn--ghost btn--sm">Выбрать</span></div>
+      </div>
+    </a>`;
+  };
+  const productCard = p => `<article class="card">
+      <a class="card__media" href="${URL_.acc(p)}"><img src="${p.img}" alt="${esc(p.title)}" loading="lazy" width="400" height="400">${p.tag ? `<div class="card__tags"><span class="card__tag${p.tag === "Акция" ? " card__tag--sale" : p.tag === "Хит" ? "" : " card__tag--dark"}">${p.tag}</span></div>` : ""}</a>
+      <button type="button" class="card__fav" aria-label="В избранное" data-fav="product:${p.id}">${ICON.heart}</button>
+      <div class="card__body"><a class="card__title" href="${URL_.acc(p)}">${esc(p.title)}</a><div class="card__meta"><span>${esc(p.sub || "")}</span>${p.rating ? `<span class="stars">★★★★★</span><span>${p.rating}</span>` : ""}</div>
+      <div class="card__foot"><div class="price">${fmt(p.price)}${p.old ? `<s>${fmt(p.old)}</s>` : ""}${p.note ? `<small>${esc(p.note)}</small>` : ""}</div><button type="button" class="cart-btn" data-add="product:${p.id}" aria-label="В корзину">${ICON.cart}</button></div></div>
+    </article>`;
+  const postCard = (p, wide) => `<a class="post${wide ? " post--wide" : ""}" href="${p.slug}.html"><div class="post__img"><img src="${p.img}" alt="" loading="lazy"></div><div class="post__body"><div class="post__meta"><span class="tag">${esc(p.tag)}</span><span>${esc(p.date)}</span></div><div class="post__title">${esc(p.title)}</div><div class="post__lead">${esc(p.lead)}</div></div></a>`;
+  function plural(n, a, b, c) { const n10 = n % 10, n100 = n % 100; return n10 === 1 && n100 !== 11 ? a : n10 >= 2 && n10 <= 4 && (n100 < 10 || n100 >= 20) ? b : c; }
 
   /* ---------- мобильное меню ---------- */
   const drawer = $("[data-drawer]");
@@ -80,73 +205,62 @@
     drawer.classList.add("is-open"); document.body.style.overflow = "hidden";
     if (tab) $$("[data-drawer-tab]", drawer).forEach(b => { if (b.dataset.drawerTab === tab) b.click(); });
   }
-  const closeDrawer = () => { drawer?.classList.remove("is-open"); document.body.style.overflow = ""; };
-  $$("[data-drawer-open]").forEach(b => b.addEventListener("click", () => openDrawer(b.dataset.drawerOpen)));
-  $$("[data-drawer-close]").forEach(b => b.addEventListener("click", closeDrawer));
+  $$("[data-drawer-open]").forEach(b => b.addEventListener("click", e => { e.preventDefault(); openDrawer(b.dataset.drawerOpen); }));
+  $$("[data-drawer-close]").forEach(b => b.addEventListener("click", () => { drawer.classList.remove("is-open"); document.body.style.overflow = ""; }));
   if (drawer) {
     const tabs = $$("[data-drawer-tab]", drawer), panes = $$("[data-drawer-pane]", drawer);
     tabs.forEach(t => t.addEventListener("click", () => { tabs.forEach(x => x.classList.toggle("is-active", x === t)); panes.forEach(p => p.classList.toggle("is-active", p.dataset.drawerPane === t.dataset.drawerTab)); }));
     const acc = $("[data-drawer-catalog]", drawer);
-    if (acc) acc.innerHTML = sortedBrands().map(b => {
-      const models = MODELS.filter(m => m.b === b.id).slice().sort((a, c) => a.n.localeCompare(c.n));
-      return `<details><summary><img src="${brandLogo(b.id)}" alt="" loading="lazy"><span>${esc(b.n)}</span><small>${b.cnt}</small></summary><div class="acc__models">${models.slice(0, 12).map(m => `<a href="${modelUrl(m)}"><b>${esc(m.n)}</b> · ${esc(yearsText(m.y))}</a>`).join("")}<a class="more" href="${brandUrl(b.id)}">Все ${models.length} моделей ${esc(b.n)} →</a></div></details>`;
-    }).join("");
+    if (acc) acc.innerHTML = sortedBrands().map(b => `<details><summary><img src="${brandLogo(b.id)}" alt="" loading="lazy"><span>${esc(b.n)}</span><small>${b.fams.length}</small></summary><div class="acc__models">${b.fams.map(f => `<a href="${URL_.fam(f)}"><b>${esc(f.n)}</b> · ${f.items.length} ${plural(f.items.length, "лекало", "лекала", "лекал")}</a>`).join("")}<a class="more" href="${URL_.brand(b.id)}">Все модели ${esc(b.n)} →</a></div></details>`).join("");
   }
 
-  /* ---------- мега-меню каталога ---------- */
+  /* ---------- мега-меню ---------- */
   const mega = $("[data-mega]"), megaBg = $("[data-mega-bg]"), megaBtn = $("[data-mega-toggle]");
   if (mega && megaBtn) {
-    const list = $("[data-mega-brands]", mega), pane = $("[data-mega-models]", mega);
+    const list = $("[data-mega-brands]", mega), pane = $("[data-mega-models]", mega), customLink = $("[data-mega-custom]", mega);
     let current = null, hoverT;
-    list.innerHTML = sortedBrands().map(b => `<a class="mega__brand" href="${brandUrl(b.id)}" data-brand="${b.id}"><img src="${brandLogo(b.id)}" alt="" loading="lazy"><span>${esc(b.n)}</span><small>${b.cnt}</small></a>`).join("");
-    const showBrand = id => {
+    list.innerHTML = sortedBrands().map(b => `<a class="mega__brand" href="${URL_.brand(b.id)}" data-brand="${b.id}"><img src="${brandLogo(b.id)}" alt="" loading="lazy"><span>${esc(b.n)}</span><small>${b.fams.length}</small></a>`).join("");
+    const show = id => {
       if (current === id) return; current = id;
       $$(".mega__brand", list).forEach(el => el.classList.toggle("is-active", el.dataset.brand === id));
-      const b = BRAND_BY_ID[id], models = MODELS.filter(m => m.b === id).slice().sort((a, c) => a.n.localeCompare(c.n));
-      let html = `<div class="mega__title"><img src="${brandLogo(id)}" alt=""><div><h3>Авточехлы на ${esc(b.n)}</h3><span>${models.length} моделей · пошив 3 дня · от ${fmt(Math.min(...models.map(priceFrom)))}</span></div><a class="link" href="${brandUrl(id)}">Все модели марки →</a></div>`;
-      if (!models.length) html += `<div class="mega__empty">Лекала снимаем под заказ — <a href="#" data-toast="Заявка на новое лекало (демо)">оставьте заявку</a>.</div>`;
-      else {
-        html += '<div class="mega__cols">'; let letter = "";
-        models.forEach(m => {
-          const L = m.n[0].toUpperCase();
-          if (L !== letter) { letter = L; html += `<div class="mega__letter">${L}</div>`; }
-          html += `<a href="${modelUrl(m)}">${esc(m.n)}<span>${esc(yearsText(m.y))}</span></a>`;
-        });
-        html += "</div>";
-      }
-      pane.innerHTML = html;
+      const b = BRAND[id];
+      pane.innerHTML = `<div class="mega__title"><img src="${brandLogo(id)}" alt=""><div><h3>Чехлы на ${esc(b.n)}</h3><span>${b.fams.length} ${plural(b.fams.length, "модель", "модели", "моделей")} · ${b.cnt} ${plural(b.cnt, "лекало", "лекала", "лекал")} · готовые от ${fmt(Math.min(...b.fams.map(f => f.min)))}</span></div><a class="link" href="${URL_.brand(id)}">Все модели ${esc(b.n)} ${ICON.arrow}</a></div>
+        <div class="mega__cols">${b.fams.map(f => `<div class="mega__fam"><a href="${URL_.fam(f)}">${esc(f.n)}</a>${f.items.length > 1 ? `<ul>${f.items.map(m => `<li><a href="${URL_.pos(m)}">${esc([m.g, m.v].filter(Boolean).join(", ") || "Все годы")}${m.y ? " · " + esc(m.y) : ""}</a></li>`).join("")}</ul>` : `<ul><li><a href="${URL_.pos(f.items[0])}">${esc(f.items[0].y || "все годы")}</a></li></ul>`}</div>`).join("")}</div>`;
+      if (customLink) customLink.href = "custom.html";
     };
-    list.addEventListener("mouseover", e => { const el = e.target.closest(".mega__brand"); if (!el) return; clearTimeout(hoverT); hoverT = setTimeout(() => showBrand(el.dataset.brand), 60); });
-    list.addEventListener("focusin", e => { const el = e.target.closest(".mega__brand"); if (el) showBrand(el.dataset.brand); });
-    const open = () => { showBrand(current || "toyota"); mega.classList.add("is-open"); megaBg.classList.add("is-open"); megaBtn.classList.add("is-open"); megaBtn.setAttribute("aria-expanded", "true"); };
+    list.addEventListener("mouseover", e => { const el = e.target.closest(".mega__brand"); if (!el) return; clearTimeout(hoverT); hoverT = setTimeout(() => show(el.dataset.brand), 70); });
+    list.addEventListener("focusin", e => { const el = e.target.closest(".mega__brand"); if (el) show(el.dataset.brand); });
+    const open = () => { show(current || "toyota"); mega.classList.add("is-open"); megaBg.classList.add("is-open"); megaBtn.classList.add("is-open"); megaBtn.setAttribute("aria-expanded", "true"); };
     const close = () => { mega.classList.remove("is-open"); megaBg.classList.remove("is-open"); megaBtn.classList.remove("is-open"); megaBtn.setAttribute("aria-expanded", "false"); };
-    megaBtn.addEventListener("click", e => { e.preventDefault(); if (window.innerWidth <= 1024) { openDrawer("catalog"); return; } mega.classList.contains("is-open") ? close() : open(); });
-    $$("[data-mega-open]").forEach(el => el.addEventListener("click", e => { e.preventDefault(); if (window.innerWidth <= 1024) openDrawer("catalog"); else { window.scrollTo({ top: 0, behavior: "smooth" }); open(); } }));
+    megaBtn.addEventListener("click", e => { e.preventDefault(); if (window.innerWidth <= 1100) { openDrawer("catalog"); return; } mega.classList.contains("is-open") ? close() : open(); });
+    document.addEventListener("click", e => { const t = e.target.closest("[data-mega-open]"); if (t) { e.preventDefault(); if (window.innerWidth <= 1100) openDrawer("catalog"); else { window.scrollTo({ top: 0, behavior: "smooth" }); open(); } } });
     megaBg.addEventListener("click", close);
     document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
     document.addEventListener("click", e => { if (mega.classList.contains("is-open") && !mega.contains(e.target) && !megaBtn.contains(e.target) && !e.target.closest("[data-mega-open]")) close(); });
   }
+  const page = document.body.dataset.page;
+  $$(`[data-nav="${page}"]`).forEach(a => a.classList.add("is-active"));
 
-  /* ---------- баннер-слайдер ---------- */
-  $$("[data-banner]").forEach(b => {
-    const track = $(".banner__track", b), slides = $$(".slide", b), dots = $(".banner__dots", b);
+  /* ---------- слайдер ---------- */
+  $$("[data-slider]").forEach(sl => {
+    const track = $(".slider__track", sl), slides = $$(".slide", sl), dots = $(".slider__dots", sl);
     let i = 0, timer;
     dots.innerHTML = slides.map((_, k) => `<button type="button" aria-label="Слайд ${k + 1}"></button>`).join("");
     const go = n => {
       i = (n + slides.length) % slides.length;
       track.style.transform = `translateX(-${i * 100}%)`;
-      $$("button", dots).forEach((d, k) => d.classList.toggle("is-active", k === i));
-      b.classList.toggle("is-dark", slides[i].classList.contains("slide--graphite"));
+      $$("button", dots).forEach((d, k) => { d.classList.remove("is-active"); if (k === i) { void d.offsetWidth; d.classList.add("is-active"); } });
+      sl.classList.toggle("is-light", slides[i].classList.contains("slide--yellow"));
     };
-    const play = () => { clearInterval(timer); timer = setInterval(() => go(i + 1), 6000); };
+    const play = () => { clearInterval(timer); timer = setInterval(() => go(i + 1), 6000); sl.classList.remove("is-paused"); };
     $$("button", dots).forEach((d, k) => d.addEventListener("click", () => { go(k); play(); }));
-    $(".banner__arrow--prev", b)?.addEventListener("click", () => { go(i - 1); play(); });
-    $(".banner__arrow--next", b)?.addEventListener("click", () => { go(i + 1); play(); });
-    b.addEventListener("mouseenter", () => clearInterval(timer));
-    b.addEventListener("mouseleave", play);
+    $("[data-prev]", sl)?.addEventListener("click", () => { go(i - 1); play(); });
+    $("[data-next]", sl)?.addEventListener("click", () => { go(i + 1); play(); });
+    sl.addEventListener("mouseenter", () => { clearInterval(timer); sl.classList.add("is-paused"); });
+    sl.addEventListener("mouseleave", play);
     let x0 = null;
-    b.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive: true });
-    b.addEventListener("touchend", e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(dx < 0 ? i + 1 : i - 1); x0 = null; play(); });
+    sl.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive: true });
+    sl.addEventListener("touchend", e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(dx < 0 ? i + 1 : i - 1); x0 = null; play(); });
     go(0); play();
   });
 
@@ -157,67 +271,53 @@
   function lev(a, b) {
     if (a === b) return 0; if (!a.length) return b.length; if (!b.length) return a.length;
     let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
-    for (let i = 1; i <= a.length; i++) {
-      const cur = [i];
-      for (let j = 1; j <= b.length; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
-      prev = cur;
-    }
+    for (let i = 1; i <= a.length; i++) { const cur = [i]; for (let j = 1; j <= b.length; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); prev = cur; }
     return prev[b.length];
   }
   const INDEX = MODELS.map(m => {
-    const b = BRAND_BY_ID[m.b] || { n: m.b, s: "" };
-    const lat = norm(b.n + " " + m.n + " " + m.slug.replace(/[_-]/g, " "));
-    const cyrTokens = norm(b.s + " " + (m.s || "")).split(" ").filter(Boolean);
-    return { m, latTokens: lat.split(" "), cyrTokens, cyrTokensTr: cyrTokens.map(translit) };
+    const b = BRAND[m.b] || { n: m.b, s: "" };
+    const lat = norm([b.n, m.m, m.g, m.v, m.s.replace(/[_-]/g, " ")].join(" "));
+    const cyr = norm(b.s + " " + (m.ru || "")).split(" ").filter(Boolean);
+    return { m, lat: lat.split(" "), cyr, cyrTr: cyr.map(translit) };
   });
-  function tokenScore(q, entry) {
-    const qt = translit(q);
-    let best = 0;
-    const check = (tok, tokTr, weightExact, weightPrefix) => {
+  function tokenScore(q, e) {
+    const qt = translit(q); let best = 0;
+    const check = (tok, tokTr) => {
       if (!tok) return;
-      if (tok === q || tokTr === qt) best = Math.max(best, weightExact);
-      else if (tok.startsWith(q) || tokTr.startsWith(qt)) best = Math.max(best, weightPrefix);
-      else if (tok.length >= 3 && q.length >= 3 && (q.startsWith(tok) || qt.startsWith(tokTr))) best = Math.max(best, weightPrefix - 0.5);
+      if (tok === q || tokTr === qt) best = Math.max(best, 3);
+      else if (tok.startsWith(q) || tokTr.startsWith(qt)) best = Math.max(best, 2);
+      else if (tok.length >= 3 && q.length >= 3 && (q.startsWith(tok) || qt.startsWith(tokTr))) best = Math.max(best, 1.5);
       else if (/^\d{2,}$/.test(q) && tok.includes(q)) best = Math.max(best, 1.5);
       else if (q.length >= 4 && tokTr.length >= 4 && lev(qt, tokTr) <= (q.length >= 6 ? 2 : 1)) best = Math.max(best, 1.2);
     };
-    entry.latTokens.forEach(t => check(t, t, 3, 2));
-    entry.cyrTokens.forEach((t, i) => check(t, entry.cyrTokensTr[i], 3, 2));
+    e.lat.forEach(t => check(t, t)); e.cyr.forEach((t, i) => check(t, e.cyrTr[i]));
     return best;
   }
   function search(query, limit = 8) {
-    const q = norm(query);
-    if (q.length < 2) return { models: [], brands: [] };
-    const tokens = q.split(" ").filter(Boolean);
-    const scored = [];
+    const q = norm(query); if (q.length < 2) return { models: [], brands: [] };
+    const tokens = q.split(" ").filter(Boolean), scored = [];
     for (const e of INDEX) {
-      let total = 0, matched = 0;
-      for (const t of tokens) { const s = tokenScore(t, e); if (s > 0) { total += s; matched++; } }
-      if (matched === tokens.length && total > 0) { if (/^с /.test(e.m.y || "")) total += 0.15; scored.push({ m: e.m, score: total }); }
+      let total = 0, ok = 0;
+      for (const t of tokens) { const s = tokenScore(t, e); if (s > 0) { total += s; ok++; } }
+      if (ok === tokens.length) scored.push({ m: e.m, score: total + (e.m.yr || 0) / 100000 });
     }
-    scored.sort((a, b) => b.score - a.score || a.m.n.localeCompare(b.m.n));
+    scored.sort((a, b) => b.score - a.score);
     const brands = BRANDS.filter(b => { const n = norm(b.n), s = norm(b.s); return tokens.some(t => n.startsWith(t) || s.split(" ").some(x => x.startsWith(t)) || (t.length >= 4 && lev(translit(t), n) <= 1)); }).slice(0, 3);
     return { models: scored.slice(0, limit).map(x => x.m), brands };
   }
-  window.AS_search = search;
-  function highlight(text, query) {
-    const tokens = norm(query).split(" ").filter(t => t.length >= 2);
-    let out = esc(text);
-    tokens.forEach(t => { out = out.replace(new RegExp("(" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "i"), "<mark>$1</mark>"); });
-    return out;
-  }
+  const hl = (text, query) => { let out = esc(text); norm(query).split(" ").filter(t => t.length >= 2).forEach(t => { out = out.replace(new RegExp("(" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "i"), "<mark>$1</mark>"); }); return out; };
   function initSearch(root) {
     const input = $("input", root), drop = $(".search__drop", root), btn = $("button", root);
     if (!input || !drop) return;
     let active = -1;
     const close = () => { drop.classList.remove("is-open"); active = -1; };
     const render = () => {
-      const q = input.value; const { models, brands } = search(q);
+      const q = input.value, { models, brands } = search(q);
       if (norm(q).length < 2) { close(); return; }
       let html = "";
-      if (brands.length) { html += '<div class="search__group">Марки</div>' + brands.map(b => `<a class="search__item" href="${brandUrl(b.id)}"><img src="${brandLogo(b.id)}" alt=""><div><div class="t">${highlight(b.n, q)}</div><div class="s">${b.cnt} моделей в каталоге</div></div><div class="p">Все чехлы →</div></a>`).join(""); }
-      if (models.length) { html += '<div class="search__group">Модели</div>' + models.map(m => `<a class="search__item" href="${modelUrl(m)}"><img src="${brandLogo(m.b)}" alt=""><div><div class="t">${highlight(brandName(m.b) + " " + m.n, q)}</div><div class="s">${esc(yearsText(m.y))} · ${CLASS_NAME[m.c]}</div></div><div class="p">от ${fmt(priceFrom(m))}</div></a>`).join(""); }
-      if (!html) html = `<div class="search__empty">По запросу <b>${esc(q)}</b> ничего не нашли. Попробуйте латиницей или укажите только модель — «Camry», «Солярис».</div>`;
+      if (brands.length) html += '<div class="search__group">Марки</div>' + brands.map(b => `<a class="search__item" href="${URL_.brand(b.id)}"><img src="${brandLogo(b.id)}" alt=""><div><div class="t">${hl(b.n, q)}</div><div class="s">${b.fams.length} моделей в каталоге</div></div><div class="p">Все модели →</div></a>`).join("");
+      if (models.length) html += '<div class="search__group">Модели и поколения</div>' + models.map(m => `<a class="search__item" href="${URL_.pos(m)}"><img src="${brandLogo(m.b)}" alt=""><div><div class="t">${hl(carName(m), q)}</div><div class="s">${esc([m.v, yearsText(m)].filter(Boolean).join(" · "))}</div></div><div class="p">от ${fmt(m.p[0])}</div></a>`).join("");
+      if (!html) html = `<div class="search__empty">По запросу <b>${esc(q)}</b> ничего не нашли. Попробуйте латиницей или только модель — «Camry», «Солярис». Нет вашей модели — <a href="custom.html"><b>закажите индивидуальный пошив</b></a>.</div>`;
       drop.innerHTML = html; drop.classList.add("is-open"); active = -1;
     };
     input.addEventListener("input", render);
@@ -233,180 +333,53 @@
   }
   $$("[data-search]").forEach(initSearch);
 
-  /* ---------- калькулятор (мастер на главной и карточка товара) ---------- */
-  class Calculator {
-    constructor(root) {
-      this.root = root;
-      this.state = { model: null, material: root.dataset.material || "eco", side: "black", insert: "grey", opts: new Set(["airbag", "wheel"]), step: 1 };
-      this.steps = $$("[data-wizard-pane]", root).length;
-      this.maxStep = 1;
-      this.bind(); this.update(); if (this.steps) this.goStep(1);
-    }
-    bind() {
-      const r = this.root, s = this.state;
-      const bSel = $("[data-calc-brand]", r), mSel = $("[data-calc-model]", r);
-      if (bSel && mSel) {
-        bSel.innerHTML = '<option value="">Выберите марку</option>' + sortedBrands().map(b => `<option value="${b.id}">${esc(b.n)}</option>`).join("");
-        const fillModels = id => {
-          const list = MODELS.filter(m => m.b === id).slice().sort((a, c) => a.n.localeCompare(c.n));
-          mSel.disabled = !list.length;
-          mSel.innerHTML = '<option value="">' + (list.length ? "Выберите модель" : "Сначала марку") + "</option>" + list.map(m => `<option value="${esc(m.slug)}">${esc(m.n)} · ${esc(yearsText(m.y))}</option>`).join("");
-        };
-        bSel.addEventListener("change", () => { fillModels(bSel.value); s.model = null; $$("[data-calc-pick]", r).forEach(c => c.classList.remove("is-selected")); this.update(); });
-        mSel.addEventListener("change", () => { s.model = MODELS.find(m => m.slug === mSel.value) || null; $$("[data-calc-pick]", r).forEach(c => c.classList.toggle("is-selected", s.model && c.dataset.calcPick === s.model.slug)); this.update(); });
-        const preset = r.dataset.model && MODELS.find(m => m.slug === r.dataset.model);
-        if (preset) { bSel.value = preset.b; fillModels(preset.b); mSel.value = preset.slug; s.model = preset; } else fillModels("");
-        this.bSel = bSel; this.mSel = mSel; this.fillModels = fillModels;
-      } else if (r.dataset.model) s.model = MODELS.find(m => m.slug === r.dataset.model) || null;
-      $$("[data-calc-pick]", r).forEach(ch => ch.addEventListener("click", () => {
-        const m = MODELS.find(x => x.slug === ch.dataset.calcPick); if (!m) return;
-        s.model = m; if (this.bSel) { this.bSel.value = m.b; this.fillModels(m.b); this.mSel.value = m.slug; }
-        $$("[data-calc-pick]", r).forEach(c => c.classList.toggle("is-selected", c === ch));
-        this.update();
-      }));
-      $$("[data-calc-material]", r).forEach(b => b.addEventListener("click", () => { s.material = b.dataset.calcMaterial; this.update(); }));
-      const renderSw = (box, key) => {
-        if (!box) return;
-        box.innerHTML = Object.entries(COLORS).map(([id, c]) => `<button type="button" class="swatch${s[key] === id ? " is-selected" : ""}" title="${c.name}" data-color="${id}" style="background-image:url('${ASSETS}swatches/${c.sw}')" aria-label="${c.name}"></button>`).join("");
-        $$(".swatch", box).forEach(b => b.addEventListener("click", () => { s[key] = b.dataset.color; renderSw(box, key); this.update(); }));
-      };
-      renderSw($("[data-calc-sides]", r), "side"); renderSw($("[data-calc-inserts]", r), "insert");
-      $$("[data-calc-opt]", r).forEach(inp => { inp.checked = s.opts.has(inp.dataset.calcOpt); inp.addEventListener("change", () => { inp.checked ? s.opts.add(inp.dataset.calcOpt) : s.opts.delete(inp.dataset.calcOpt); this.update(); }); });
-      $$("[data-calc-order]", r).forEach(b => b.addEventListener("click", () => {
-        const c = this.compute(), m = s.model;
-        window.AS_cart.add({ id: "cfg:" + (m ? m.slug : "any") + ":" + s.material + ":" + s.side + ":" + s.insert + ":" + [...s.opts].sort().join("+"), title: m ? `Авточехлы ${brandName(m.b)} ${m.n}` : "Авточехлы (модель уточним)", sub: `${c.mat.name} · ${COLORS[s.side].name} / ${COLORS[s.insert].name}` + ([...s.opts].filter(id => OPTIONS[id] && OPTIONS[id].add > 0).map(id => " · " + OPTIONS[id].name).join("")), price: c.total, old: c.old, img: ASSETS + "photos/" + c.mat.photo, url: m ? modelUrl(m) : "index.html#calc" });
-        if (b.dataset.calcOrder === "go") location.href = "cart.html"; else toast("Добавлено в корзину");
-      }));
-      $$("[data-wizard-next]", r).forEach(b => b.addEventListener("click", () => this.goStep(s.step + 1)));
-      $$("[data-wizard-prev]", r).forEach(b => b.addEventListener("click", () => this.goStep(s.step - 1)));
-      $$("[data-wizard-goto]", r).forEach(b => b.addEventListener("click", () => this.goStep(+b.dataset.wizardGoto)));
-      $$("[data-wizard-step]", r).forEach(b => b.addEventListener("click", () => { const n = +b.dataset.wizardStep; if (n <= this.maxStep) this.goStep(n); }));
-    }
-    goStep(n) {
-      const s = this.state, r = this.root;
-      if (!this.steps) return;
-      n = Math.max(1, Math.min(this.steps, n)); s.step = n; this.maxStep = Math.max(this.maxStep, n);
-      $$("[data-wizard-pane]", r).forEach(p => p.classList.toggle("is-active", +p.dataset.wizardPane === n));
-      $$("[data-wizard-step]", r).forEach(b => { const k = +b.dataset.wizardStep; b.classList.toggle("is-active", k === n); b.classList.toggle("is-done", k < n); });
-      $$("[data-wizard-prev]", r).forEach(b => b.disabled = n === 1);
-      $$("[data-wizard-next]", r).forEach(b => { b.style.display = n === this.steps ? "none" : ""; b.textContent = n === this.steps - 1 ? "Показать итог" : "Далее"; });
-      $$("[data-wizard-hint]", r).forEach(h => h.textContent = `Шаг ${n} из ${this.steps}`);
-      $$("[data-calc-summary]", r).forEach(el => el.classList.toggle("is-final", n === this.steps));
-      if (r.getBoundingClientRect().top < 0) r.scrollIntoView({ behavior: "smooth", block: "start" });
-      this.update();
-    }
-    compute() {
-      const s = this.state, m = s.model;
-      const cls = m ? m.c : (this.root.dataset.class || "c");
-      const base = BASE[cls], mat = MATERIALS[s.material];
-      const lines = [{ n: `Комплект чехлов, ${CLASS_NAME[cls].toLowerCase()}`, v: base }, { n: mat.name, v: mat.add, free: mat.add === 0 }];
-      let total = base + mat.add;
-      s.opts.forEach(id => { const o = OPTIONS[id]; if (!o) return; lines.push({ n: o.name, v: o.add, free: o.add === 0, gift: o.gift }); total += o.add; });
-      const old = Math.round(total * 1.18 / 10) * 10;
-      return { total, old, lines, cls, mat };
-    }
-    update() {
-      const s = this.state, r = this.root, c = this.compute();
-      $$("[data-calc-material]", r).forEach(b => b.classList.toggle("is-selected", b.dataset.calcMaterial === s.material));
-      const set = (sel, html) => $$(sel, r).forEach(el => el.innerHTML = html);
-      set("[data-calc-total]", fmt(c.total)); set("[data-calc-old]", fmt(c.old)); set("[data-calc-save]", "−" + fmt(c.old - c.total));
-      const carName = s.model ? `${brandName(s.model.b)} ${s.model.n}` : "";
-      set("[data-calc-car]", s.model ? `${esc(carName)}<small>${esc(yearsText(s.model.y))} · ${CLASS_NAME[s.model.c]} · лекала в базе</small>` : `Автомобиль не выбран<small>Цена для ${CLASS_NAME[c.cls].toLowerCase()}а. Выберите модель на шаге 1</small>`);
-      set("[data-calc-car-short]", s.model ? esc(carName) : "не выбран");
-      set("[data-calc-lines]", c.lines.map(l => `<div><span class="${l.v ? "" : "muted"}">${esc(l.n)}</span><b class="${l.free ? "free" : ""}">${l.gift ? `<s class="muted">${fmt(l.gift)}</s> подарок` : (l.free ? "включено" : "+ " + fmt(l.v))}</b></div>`).join(""));
-      const pv = $("[data-calc-preview]", r);
-      if (pv) {
-        const img = $("img", pv), next = ASSETS + "photos/" + c.mat.photo;
-        if (img && !img.src.endsWith(c.mat.photo)) { img.style.opacity = 0; setTimeout(() => { img.src = next; img.onload = () => img.style.opacity = 1; }, 120); }
-        const dots = $(".pv", pv); if (dots) dots.innerHTML = `<i style="background-image:url('${ASSETS}swatches/${COLORS[s.side].sw}')" title="Боковины: ${COLORS[s.side].name}"></i><i style="background-image:url('${ASSETS}swatches/${COLORS[s.insert].sw}')" title="Вставки: ${COLORS[s.insert].name}"></i>`;
-      }
-      set("[data-calc-colors]", `${COLORS[s.side].name} / ${COLORS[s.insert].name}`);
-      set("[data-calc-material-name]", c.mat.name);
-      set("[data-calc-opts]", [...s.opts].filter(id => OPTIONS[id] && OPTIONS[id].add > 0).map(id => OPTIONS[id].name).join(", ") || "без доплат");
-      document.dispatchEvent(new CustomEvent("calc:update", { detail: c }));
-    }
+  /* ---------- подбор марка → модель → поколение (селекты) ---------- */
+  function initPicker(root, onChange) {
+    const bSel = $("[data-pick-brand]", root), fSel = $("[data-pick-fam]", root), gSel = $("[data-pick-gen]", root), go = $("[data-pick-go]", root);
+    if (!bSel) return null;
+    const st = { b: "", f: "", m: "" };
+    bSel.innerHTML = '<option value="">Марка</option>' + sortedBrands().map(b => `<option value="${b.id}">${esc(b.n)}</option>`).join("");
+    const fillFams = () => {
+      const b = BRAND[st.b]; fSel.disabled = !b;
+      fSel.innerHTML = '<option value="">Модель</option>' + (b ? b.fams.map(f => `<option value="${f.id}">${esc(f.n)}</option>`).join("") : "");
+      fillGens();
+    };
+    const fillGens = () => {
+      const f = FAMILIES[st.f]; if (!gSel) return; gSel.disabled = !f;
+      gSel.innerHTML = '<option value="">Поколение, кузов</option>' + (f ? f.items.map(m => `<option value="${m.s}">${esc([m.g, m.v].filter(Boolean).join(", ") || "Все версии")}${m.y ? " · " + esc(m.y) : ""}</option>`).join("") : "");
+      if (f && f.items.length === 1) { gSel.value = f.items[0].s; st.m = f.items[0].s; }
+    };
+    const target = () => st.m ? URL_.pos(BY_SLUG[st.m]) : st.f ? URL_.fam(FAMILIES[st.f]) : st.b ? URL_.brand(st.b) : "catalog.html";
+    bSel.addEventListener("change", () => { st.b = bSel.value; st.f = ""; st.m = ""; fillFams(); onChange && onChange(st); });
+    fSel.addEventListener("change", () => { st.f = fSel.value; st.m = ""; fillGens(); onChange && onChange(st); });
+    gSel?.addEventListener("change", () => { st.m = gSel.value; onChange && onChange(st); });
+    go?.addEventListener("click", e => { e.preventDefault(); location.href = target(); });
+    const set = slug => { const m = BY_SLUG[slug]; if (!m) return; st.b = m.b; bSel.value = m.b; fillFams(); st.f = m.f; fSel.value = m.f; fillGens(); st.m = m.s; if (gSel) gSel.value = m.s; onChange && onChange(st); };
+    fillFams();
+    return { st, set };
   }
-  $$("[data-calc]").forEach(el => new Calculator(el));
+  $$("[data-picker]").forEach(p => initPicker(p));
 
-  /* ---------- прочие механики ---------- */
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { threshold: 0.01 });
-    $$(".reveal").forEach(el => io.observe(el));
-  } else $$(".reveal").forEach(el => el.classList.add("is-in"));
-
-  $$("[data-tabs]").forEach(box => {
-    const btns = $$("[data-tab]", box), panes = $$("[data-pane]", box);
-    btns.forEach(b => b.addEventListener("click", () => { btns.forEach(x => x.classList.toggle("is-active", x === b)); panes.forEach(p => p.classList.toggle("is-active", p.dataset.pane === b.dataset.tab)); }));
-  });
-  $$("[data-gallery]").forEach(g => {
-    const main = $("[data-gallery-main]", g), thumbs = $$("[data-gallery-thumb]", g);
-    thumbs.forEach(t => t.addEventListener("click", () => { thumbs.forEach(x => x.classList.toggle("is-active", x === t)); main.style.opacity = 0; setTimeout(() => { main.src = $("img", t).src; main.onload = () => main.style.opacity = 1; }, 120); }));
-  });
-
-  /* ---------- карточка товара (общий рендер) ---------- */
-  window.AS_card = (m, tag) => {
-    const p = priceFrom(m), old = Math.round(p * 1.18 / 10) * 10;
-    return `<a class="card" href="${modelUrl(m)}">
-      <div class="card__media"><img src="${modelPhoto(m)}" alt="Авточехлы ${esc(brandName(m.b))} ${esc(m.n)}" loading="lazy" width="400" height="340"><div class="card__logo"><img src="${brandLogo(m.b)}" alt=""></div>
-        <div class="card__tags"><span class="card__tag card__tag--sale">−15 %</span>${tag ? `<span class="card__tag${tag === "Хит" ? "" : " card__tag--dark"}">${tag}</span>` : ""}</div>
-        <button type="button" class="card__fav" aria-label="В избранное" data-fav="model:${m.slug}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button></div>
-      <div class="card__body"><div class="card__title">Авточехлы ${esc(brandName(m.b))} ${esc(m.n)}</div>
-        <div class="card__meta"><span>${esc(yearsText(m.y))}</span><span class="stars">★★★★★</span><span>${12 + (m.slug.length * 7) % 40} отзывов</span></div>
-        <div class="card__foot"><div class="price">от ${fmt(p)}<s>${fmt(old)}</s><small>экокожа от ${fmt(p + 1500)}</small></div><span class="btn btn--primary btn--sm">Выбрать</span></div></div>
-    </a>`;
-  };
-  /* ---------- корзина и избранное (localStorage) ---------- */
-  const store = { get(k) { try { return JSON.parse(localStorage.getItem(k) || "[]"); } catch (e) { return []; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
-  const Cart = {
-    items: store.get("as_cart"),
-    save() { store.set("as_cart", this.items); updateBadges(); document.dispatchEvent(new CustomEvent("cart:change")); },
-    add(item) { const ex = this.items.find(i => i.id === item.id); if (ex) ex.qty += item.qty || 1; else this.items.push(Object.assign({ qty: 1 }, item)); this.save(); },
-    remove(id) { this.items = this.items.filter(i => i.id !== id); this.save(); },
-    setQty(id, q) { const it = this.items.find(i => i.id === id); if (!it) return; it.qty = Math.max(1, q); this.save(); },
-    clear() { this.items = []; this.save(); },
-    count() { return this.items.reduce((n, i) => n + i.qty, 0); },
-    total() { return this.items.reduce((n, i) => n + i.price * i.qty, 0); }
-  };
-  const Fav = {
-    items: store.get("as_fav"),
-    save() { store.set("as_fav", this.items); updateBadges(); document.dispatchEvent(new CustomEvent("fav:change")); },
-    has(id) { return this.items.some(i => i.id === id); },
-    toggle(item) { if (this.has(item.id)) this.items = this.items.filter(i => i.id !== item.id); else this.items.push(item); this.save(); return this.has(item.id); }
-  };
-  window.AS_cart = Cart; window.AS_fav = Fav;
-  function updateBadges() {
-    $$("[data-cart-count]").forEach(el => { el.textContent = Cart.count(); el.hidden = !Cart.count(); });
-    $$("[data-fav-count]").forEach(el => { el.textContent = Fav.items.length; el.hidden = !Fav.items.length; });
-    $$("[data-fav]").forEach(el => el.classList.toggle("is-on", Fav.has(el.dataset.fav)));
-  }
-  // разрешить объект по id: model:<slug> или product:<id>
-  function resolveItem(id) {
-    if (id.startsWith("model:")) { const m = MODELS.find(x => x.slug === id.slice(6)); if (!m) return null; return { id, title: `Авточехлы ${brandName(m.b)} ${m.n}`, sub: yearsText(m.y) + " · от " + fmt(priceFrom(m)), price: priceFrom(m), img: modelPhoto(m), url: modelUrl(m) }; }
-    if (id.startsWith("product:")) { const p = (window.AS_PRODUCTS || []).find(x => x.id === id.slice(8)); if (!p) return null; return { id, title: p.title, sub: p.sub || "", price: p.price, old: p.old, img: p.img, url: p.url || (p.cat + ".html#" + p.id) }; }
-    return null;
-  }
-  document.addEventListener("click", e => {
-    const f = e.target.closest("[data-fav]");
-    if (f) { e.preventDefault(); e.stopPropagation(); const it = resolveItem(f.dataset.fav); if (!it) return; const on = Fav.toggle(it); toast(on ? "Добавлено в избранное" : "Убрано из избранного"); return; }
-    const a = e.target.closest("[data-add]");
-    if (a) { e.preventDefault(); const it = resolveItem(a.dataset.add); if (!it) return; Cart.add(it); toast("Добавлено в корзину: " + it.title); if (a.dataset.addGo !== undefined) location.href = "cart.html"; }
-  });
-  updateBadges();
+  /* ---------- высота шапки для липких блоков ---------- */
+  const hdr = $(".header");
+  const setHeaderH = () => hdr && document.documentElement.style.setProperty("--header-h", hdr.offsetHeight + "px");
+  setHeaderH(); addEventListener("resize", setHeaderH); addEventListener("load", setHeaderH);
 
   /* ---------- выбор города ---------- */
-  const CITIES = ["Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Казань", "Нижний Новгород", "Красноярск", "Челябинск", "Самара", "Уфа", "Ростов-на-Дону", "Краснодар", "Омск", "Воронеж", "Пермь", "Волгоград", "Тюмень", "Хабаровск", "Владивосток", "Иркутск", "Саратов", "Тольятти", "Барнаул", "Ижевск", "Ульяновск", "Ярославль", "Махачкала", "Томск", "Оренбург", "Кемерово", "Минск", "Алматы", "Астана"];
-  const cityModal = $("[data-city-modal]");
+  const CITIES = ["Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Казань", "Нижний Новгород", "Красноярск", "Челябинск", "Самара", "Уфа", "Ростов-на-Дону", "Краснодар", "Омск", "Воронеж", "Пермь", "Волгоград", "Тюмень", "Хабаровск", "Владивосток", "Иркутск", "Саратов", "Тольятти", "Барнаул", "Ижевск", "Ярославль", "Томск", "Оренбург", "Кемерово", "Минск", "Алматы", "Астана"];
   const cityName = () => { try { return localStorage.getItem("as_city") || "Москва"; } catch (e) { return "Москва"; } };
+  window.AS_city = cityName;
   $$("[data-city-name]").forEach(el => el.textContent = cityName());
+  const cityModal = $("[data-city-modal]");
   if (cityModal) {
     const list = $("[data-city-list]", cityModal), filter = $("[data-city-filter]", cityModal);
-    const render = q => { const t = (q || "").toLowerCase(); list.innerHTML = CITIES.filter(c => c.toLowerCase().includes(t)).map(c => `<button type="button" class="city-list__item${c === cityName() ? " is-active" : ""}" data-city="${c}">${c}</button>`).join("") || `<div class="muted small" style="padding:10px">Города нет в списке — доставим в любой населённый пункт, уточните у менеджера.</div>`; };
+    const render = q => { const t = (q || "").toLowerCase(); list.innerHTML = CITIES.filter(c => c.toLowerCase().includes(t)).map(c => `<button type="button" class="city-list__item${c === cityName() ? " is-active" : ""}" data-city="${c}">${c}</button>`).join("") || `<div class="muted small" style="padding:10px">Доставим в любой населённый пункт — уточните у менеджера.</div>`; };
     const open = () => { cityModal.classList.add("is-open"); document.body.style.overflow = "hidden"; render(""); setTimeout(() => filter.focus(), 50); };
     const close = () => { cityModal.classList.remove("is-open"); document.body.style.overflow = ""; };
     $$("[data-city-open]").forEach(b => b.addEventListener("click", open));
     $$("[data-city-close]", cityModal).forEach(b => b.addEventListener("click", close));
     filter.addEventListener("input", () => render(filter.value));
-    list.addEventListener("click", e => { const b = e.target.closest("[data-city]"); if (!b) return; try { localStorage.setItem("as_city", b.dataset.city); } catch (err) {} $$("[data-city-name]").forEach(el => el.textContent = b.dataset.city); close(); toast("Город: " + b.dataset.city + ". Сроки доставки обновлены"); });
+    list.addEventListener("click", e => { const b = e.target.closest("[data-city]"); if (!b) return; try { localStorage.setItem("as_city", b.dataset.city); } catch (err) {} $$("[data-city-name]").forEach(el => el.textContent = b.dataset.city); close(); toast("Город: " + b.dataset.city); document.dispatchEvent(new CustomEvent("city:change")); });
     document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
   }
 
@@ -414,29 +387,15 @@
   $$("form[data-form]").forEach(form => form.addEventListener("submit", e => {
     e.preventDefault();
     const btn = form.querySelector("[type=submit]"); if (btn) { btn.disabled = true; btn.textContent = "Отправляем…"; }
-    setTimeout(() => {
-      if (form.dataset.form === "order") { Cart.clear(); location.href = "thanks.html"; return; }
-      form.reset(); if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Отправить"; }
-      toast(form.dataset.formMessage || "Заявка отправлена. Перезвоним в течение 15 минут");
-    }, 600);
+    setTimeout(() => { form.reset(); if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Отправить"; } toast(form.dataset.formMessage || "Заявка отправлена. Перезвоним в течение 15 минут"); }, 600);
   }));
 
-  /* ---------- сетка товаров (универсальные, накидки, коврики…) ---------- */
-  window.AS_productCard = p => `<article class="card" id="${p.id}">
-      <a class="card__media" href="${p.url || "#" + p.id}"><img src="${p.img}" alt="${esc(p.title)}" loading="lazy" width="400" height="340">${p.tag ? `<div class="card__tags"><span class="card__tag${p.tag === "Акция" ? " card__tag--sale" : p.tag === "Хит" ? "" : " card__tag--dark"}">${p.tag}</span></div>` : ""}</a>
-      <button type="button" class="card__fav" aria-label="В избранное" data-fav="product:${p.id}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
-      <div class="card__body"><div class="card__title">${esc(p.title)}</div><div class="card__meta"><span>${esc(p.sub || "")}</span>${p.rating ? `<span class="stars">★★★★★</span><span>${p.rating}</span>` : ""}</div>
-      <div class="card__foot"><div class="price">${fmt(p.price)}${p.old ? `<s>${fmt(p.old)}</s>` : ""}${p.note ? `<small>${esc(p.note)}</small>` : ""}</div><button type="button" class="btn btn--primary btn--sm" data-add="product:${p.id}">В корзину</button></div></div>
-    </article>`;
-  $$("[data-products]").forEach(box => {
-    const cat = box.dataset.products, list = (window.AS_PRODUCTS || []).filter(p => p.cat === cat);
-    box.innerHTML = list.map(window.AS_productCard).join("") || `<div class="empty">Товары появятся позже</div>`;
-    updateBadges();
-  });
-  /* ---------- блог: карточки статей ---------- */
-  window.AS_postCard = (p, wide) => `<a class="post${wide ? " post--wide" : ""}" href="${p.slug}.html"><div class="post__img"><img src="${p.img}" alt="" loading="lazy"></div><div class="post__body"><div class="post__meta"><span class="tag">${esc(p.tag)}</span><span>${esc(p.date)}</span></div><div class="post__title">${esc(p.title)}</div><div class="post__lead">${esc(p.lead)}</div></div></a>`;
-  $$("[data-posts]").forEach(box => {
-    const n = +box.dataset.posts || 3, ex = box.dataset.postsExclude || "";
-    box.innerHTML = (window.AS_POSTS || []).filter(p => p.slug !== ex).slice(0, n).map(p => window.AS_postCard(p)).join("");
-  });
+  /* ---------- вкладки, галерея, блоки по data-атрибутам ---------- */
+  $$("[data-tabs]").forEach(box => { const btns = $$("[data-tab]", box), panes = $$("[data-pane]", box); btns.forEach(b => b.addEventListener("click", () => { btns.forEach(x => x.classList.toggle("is-active", x === b)); panes.forEach(p => p.classList.toggle("is-active", p.dataset.pane === b.dataset.tab)); })); });
+  $$("[data-products]").forEach(box => { const list = (window.AS_PRODUCTS || []).filter(p => p.cat === box.dataset.products); box.innerHTML = list.map(productCard).join("") || '<div class="empty">Товары появятся позже</div>'; });
+  $$("[data-posts]").forEach(box => { const n = +box.dataset.posts || 3, ex = box.dataset.postsExclude || ""; box.innerHTML = (window.AS_POSTS || []).filter(p => p.slug !== ex).slice(0, n).map(p => postCard(p)).join(""); });
+
+  window.AS = { $, $$, esc, fmt, qs, plural, ICON, BRANDS, MODELS, BRAND, BY_SLUG, FAMILIES, VARIANTS, VAR, MAT_NAME, sortedBrands, brandName, brandLogo, genName, carName, yearsText, famPhoto, posPhoto, varPhoto, priceOf, URL: URL_, coverCard, customCard, famCard, productCard, postCard, toast, Cart, Fav, badges, initPicker, search };
+  window.AS_cart = Cart; window.AS_fav = Fav; window.AS_postCard = postCard; window.AS_productCard = productCard;
+  badges();
 })();

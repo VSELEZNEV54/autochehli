@@ -1,0 +1,106 @@
+<!-- {"title": "Конструктор чехлов: индивидуальный пошив по лекалам вашего авто", "description": "Соберите чехлы на сиденья в онлайн-конструкторе: экокожа, перфорация, алькантара или жаккард, цвета боковин и вставок, рисунок ромб или соты, нить и кант. Превью меняется сразу, заявка на пошив за 3 дня.", "page": "custom", "canonical": "https://1avtochehol.ru/poshiv-na-zakaz/", "js": ["pages/custom.js"]} -->
+<div class="container">
+  <ol class="crumbs"><li><a href="index.html">Главная</a></li><li>Индивидуальный пошив</li></ol>
+  <div class="builder-head">
+    <div><h1>Конструктор чехлов</h1><p class="lead">Соберите дизайн сами — превью меняется сразу. Отправьте заявку: менеджер уточнит детали и пришлёт эскиз, пошив по лекалам вашего авто за 3 дня.</p></div>
+    <ul class="builder-head__perks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Эскиз до пошива</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Оплата после согласования</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Пошив за 3 дня</li></ul>
+  </div>
+
+  <div class="builder" data-builder>
+    <div class="bstage">
+      <div class="bstage__box">
+        <div class="bstage__top"><div><b data-b-car>Автомобиль не выбран</b><span data-b-car-sub>Выберите авто — цена зависит от лекала</span></div><span class="bstage__hint">Наведите курсор — сиденье повернётся</span></div>
+        <div class="bstage__seat" data-b-canvas></div>
+        <div class="bstage__legend" data-b-legend></div>
+        <div class="bstage__tools"><button type="button" class="btn btn--ghost btn--sm" data-b-download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Скачать эскиз</button><button type="button" class="btn btn--ghost btn--sm" data-b-reset>Сбросить</button></div>
+      </div>
+    </div>
+
+    <div class="bpanel bpanel--left">
+      <section class="bsec">
+        <div class="bsec__head"><h3><i>1</i>Автомобиль</h3><span data-b-val="car">не выбран</span></div>
+        <div class="bsec__fields" data-cpicker>
+          <select class="select" data-pick-brand aria-label="Марка"></select>
+          <select class="select" data-pick-fam disabled aria-label="Модель"></select>
+          <select class="select" data-pick-gen disabled aria-label="Поколение, кузов"></select>
+        </div>
+        <div class="bsec__chips"><button type="button" data-pick-chip="toyota_camry-xv70">Camry XV70</button><button type="button" data-pick-chip="lada_vesta">Lada Vesta</button><button type="button" data-pick-chip="hyundai_solaris-2">Solaris 2</button><button type="button" data-pick-chip="kia_rio-iv">Kia Rio IV</button><button type="button" data-pick-chip="toyota_rav4-new">RAV4</button><button type="button" data-pick-chip="volkswagen_polo">VW Polo</button></div>
+      </section>
+      <section class="bsec">
+        <div class="bsec__head"><h3><i>2</i>Рисунок вставок</h3><span data-b-val="design"></span></div>
+        <div class="bdesign" data-b-designs></div>
+      </section>
+      <section class="bsec">
+        <div class="bsec__head"><h3><i>3</i>Боковины <small>экокожа</small></h3><span data-b-val="side"></span></div>
+        <div class="bsw" data-b-sides></div>
+      </section>
+    </div>
+
+    <div class="bpanel bpanel--right">
+      <section class="bsec">
+        <div class="bsec__head"><h3><i>4</i>Центральные вставки</h3><span data-b-val="ins"></span></div>
+        <div class="bmat" data-b-mats></div>
+        <div class="bsw" data-b-inserts></div>
+      </section>
+      <section class="bsec">
+        <div class="bsec__head"><h3><i>5</i>Строчка и кант</h3><span data-b-val="thread"></span></div>
+        <div class="seg seg--2" data-b-stitch><button type="button" data-stitch="single">Одинарная<small>без доплаты</small></button><button type="button" data-stitch="double">Двойная<small>+ 800 ₽</small></button></div>
+        <div class="bsw bsw--sm" data-b-thread></div>
+        <label class="toggle"><div><b>Кант по швам</b><span>Контрастный шнур по контуру вставок</span></div><span class="tp">+ 1 000 ₽</span><input type="checkbox" data-piping><i class="sw"></i></label>
+        <div class="bsec__sub" data-b-pipe-row hidden><span>Цвет канта</span><div class="bsw bsw--sm" data-b-pipe></div></div>
+      </section>
+      <section class="bsec">
+        <div class="bsec__head"><h3><i>6</i>Опции</h3></div>
+        <div class="bsec__fields">
+          <label class="toggle"><div><b>Вышивка на подголовниках</b><span>Марка авто нитью в цвет строчки</span></div><span class="tp">+ 1 500 ₽</span><input type="checkbox" data-opt="embroidery"><i class="sw"></i></label>
+          <label class="toggle"><div><b>Задний подлокотник</b><span>Чехол из того же материала</span></div><span class="tp">+ 600 ₽</span><input type="checkbox" data-opt="armrest"><i class="sw"></i></label>
+          <label class="toggle"><div><b>Коврики EVA в цвет</b><span>Кант под цвет боковин, −15 %</span></div><span class="tp">+ 3 900 ₽</span><input type="checkbox" data-opt="mats"><i class="sw"></i></label>
+          <label class="toggle"><div><b>Установка в Москве</b><span>Мастерская на Полярной, 1,5 часа</span></div><span class="tp">+ 2 500 ₽</span><input type="checkbox" data-opt="install"><i class="sw"></i></label>
+        </div>
+        <div class="bsec__incl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Молнии под Airbag и оплётка руля уже включены</div>
+      </section>
+      <div class="btotal">
+        <div class="btotal__row"><div><small>Стоимость комплекта</small><div class="price" data-b-total></div></div><span class="tag tag--green">пошив 3 дня</span></div>
+        <details class="btotal__lines"><summary>Из чего складывается цена</summary><div class="calc__lines" data-b-lines></div></details>
+        <button type="button" class="btn btn--primary btn--lg btn--block" data-b-open>Отправить заявку</button>
+        <p class="btotal__note">Оплата после согласования эскиза. Перезвоним в течение 15 минут, 9:00–21:00.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section__head"><div><h2>Как работает индивидуальный пошив</h2></div></div>
+    <div class="benefits">
+      <div class="benefit"><div class="benefit__icon"><b>1</b></div><div><b>Собираете дизайн</b><span>В конструкторе или по телефону с менеджером</span></div></div>
+      <div class="benefit"><div class="benefit__icon"><b>2</b></div><div><b>Получаете эскиз</b><span>Присылаем визуализацию в мессенджер в течение часа</span></div></div>
+      <div class="benefit"><div class="benefit__icon"><b>3</b></div><div><b>Шьём за 3 дня</b><span>По лекалу вашего автомобиля, фото перед отправкой</span></div></div>
+      <div class="benefit"><div class="benefit__icon"><b>4</b></div><div><b>Доставка или установка</b><span>По России или в мастерской на Полярной</span></div></div>
+    </div>
+  </section>
+  <section class="section section--last">
+    <div class="section__head"><div><h2>Примеры индивидуальных комплектов</h2></div><a class="link" href="reviews.html">Отзывы с фото →</a></div>
+    <div class="gallery-grid"><img src="assets/photos/avtochehol1.jpg" alt="" loading="lazy"><img src="assets/photos/seat7.jpg" alt="" loading="lazy"><img src="assets/photos/avtochehol3.jpg" alt="" loading="lazy"><img src="assets/photos/seat4.jpg" alt="" loading="lazy"></div>
+  </section>
+</div>
+
+<div class="bbar"><div class="container bbar__in"><div><small>Стоимость</small><div class="price" data-b-total></div></div><button type="button" class="btn btn--primary" data-b-open>Отправить заявку</button></div></div>
+
+<div class="modal" data-b-modal role="dialog" aria-modal="true" aria-label="Заявка на индивидуальный пошив">
+  <div class="modal__bg" data-b-close></div>
+  <div class="modal__panel breq">
+    <div class="modal__head"><h3>Заявка на пошив</h3><button type="button" class="iconbtn" aria-label="Закрыть" data-b-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="breq__body">
+      <div class="breq__mini" data-b-mini></div>
+      <dl class="breq__list" data-b-summary></dl>
+    </div>
+    <form class="form-grid breq__form" data-b-form>
+      <div class="field"><label>Имя</label><input class="input" type="text" autocomplete="name" placeholder="Как к вам обращаться"></div>
+      <div class="field"><label>Телефон</label><input class="input" type="tel" required autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>
+      <div class="field full"><label>Куда прислать эскиз</label><select class="select"><option>WhatsApp</option><option>Telegram</option><option>Позвонить</option></select></div>
+      <div class="field full"><label>Комментарий</label><input class="input" type="text" placeholder="Например, вышивка «Camry» на подголовниках"></div>
+      <div class="field full"><label class="check"><input type="checkbox" required> <span>Согласен с <a href="privacy.html">политикой обработки персональных данных</a></span></label></div>
+      <div class="field full"><button class="btn btn--primary btn--lg btn--block" type="submit">Отправить заявку</button></div>
+    </form>
+    <div class="breq__done" data-b-done hidden><div class="breq__ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><h4>Заявка отправлена</h4><p>Менеджер перезвонит в течение 15 минут, уточнит комплектацию салона и пришлёт эскиз в мессенджер. Это демо-версия: данные никуда не отправляются.</p><button type="button" class="btn btn--dark" data-b-close>Готово</button></div>
+  </div>
+</div>

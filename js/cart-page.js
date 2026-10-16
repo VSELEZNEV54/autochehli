@@ -11,7 +11,7 @@
   function render() {
     if (!Cart.items.length) {
       box.style.display = "block";
-      box.innerHTML = `<div class="cart-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 8H6.5"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg><h2 style="font-size:1.25rem; margin-bottom:6px">В корзине пока пусто</h2><p class="muted small" style="margin-bottom:18px">Выберите марку в каталоге или рассчитайте комплект в калькуляторе — цена появится здесь.</p><div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap"><a class="btn btn--primary" href="#" data-mega-open>Выбрать марку</a><a class="btn btn--ghost" href="index.html#calc">Калькулятор</a></div></div>`;
+      box.innerHTML = `<div class="cart-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 8H6.5"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg><h2 style="font-size:1.25rem; margin-bottom:6px">В корзине пока пусто</h2><p class="muted small" style="margin-bottom:18px">Выберите марку в каталоге или рассчитайте комплект в калькуляторе — цена появится здесь.</p><div class="actions" style="gap:8px; justify-content:center"><a class="btn btn--primary" href="#" data-mega-open>Выбрать марку</a><a class="btn btn--ghost" href="index.html#calc">Калькулятор</a></div></div>`;
       bindMega(); return;
     }
     box.style.display = "";
@@ -37,7 +37,7 @@
             <div class="field"><label>Город</label><input class="input" type="text" required value="${(() => { try { return localStorage.getItem("as_city") || "Москва"; } catch (e) { return "Москва"; } })()}"></div>
             <div class="field"><label>E-mail для чека и трек-номера</label><input class="input" type="email" placeholder="необязательно"></div>
             <div class="field full"><label>Комментарий: год выпуска, комплектация, пожелания</label><textarea class="input" placeholder="Например: 2019 год, задний подлокотник есть, спинка 60/40"></textarea></div>
-            <div class="field full"><label class="check"><input type="checkbox" required> Согласен с <a href="offer.html">условиями оферты</a> и <a href="privacy.html">обработкой персональных данных</a></label></div>
+            <div class="field full"><label class="check"><input type="checkbox" required> <span>Согласен с <a href="offer.html">условиями оферты</a> и <a href="privacy.html">обработкой персональных данных</a></span></label></div>
           </div>
         </form>
       </div>
