@@ -1,40 +1,48 @@
-/* Конструктор индивидуального пошива: живое превью сиденья, расчёт цены, заявка на пошив */
+/* Конструктор индивидуального пошива: живое превью сиденья и заявка на пошив.
+   Материалы, номера цветов и цены — со страниц моделей 1avtochehol.ru, комплектация салона — из формы заказа старого сайта. */
 (function () {
   const A = window.AS, e = A.esc, root = document.querySelector("[data-builder]");
   if (!root) return;
   const $ = (s, r = root) => r.querySelector(s), $$ = (s, r = root) => [...r.querySelectorAll(s)];
   const SW = n => "assets/swatches/" + n + ".jpg";
 
-  /* ---------- палитры и цены ---------- */
+  /* ---------- палитры и цены (реальный каталог) ---------- */
   const ECO = {
-    black: ["Чёрный", "#202224", "eco-black"], graphite: ["Графит", "#3d4646", "eco-grey"], light: ["Светло-серый", "#aaa49e", "eco-light"],
-    cream: ["Кремовый", "#cbc2b5", "eco-cream"], beige: ["Бежевый", "#d4c597", "eco-beige"], choco: ["Шоколад", "#4b3d2c", "eco-choco"],
-    chestnut: ["Каштан", "#a0562c", "eco-chestnut"], red: ["Красный", "#c4351f", "eco-red"], cherry: ["Вишня", "#871c3f", "eco-cherry"],
-    orange: ["Оранжевый", "#dd651b", "eco-orange"], blue: ["Синий", "#4a5989", "eco-blue"], navy: ["Тёмно-синий", "#2d3a66", "eco-navy"]
+    black: ["№ 100 чёрный", "#202224", "eco-black"], grey: ["№ 102 серый", "#5b6161", "eco-grey"],
+    beige: ["№ 113 бежевый", "#d4c597", "eco-beige"], choco: ["№ 125 шоколадный", "#4b3d2c", "eco-choco"]
   };
-  const PERF_SW = { black: "perf-black", graphite: "perf-grey" };
   const MATS = {
-    eco: { name: "Экокожа", note: "Практичная, моется", idx: 1, add: 0, colors: ECO },
-    perf: { name: "Перфорация", full: "Экокожа с перфорацией", note: "Дышит, не потеет", idx: 1, add: 500, colors: ECO },
-    alc: { name: "Алькантара", note: "Бархатистая, тёплая", idx: 2, add: 0, colors: { black: ["Чёрная", "#2a2d2b", "alca-black"], grey: ["Серая", "#8f8a80", "alca-grey"] } },
-    jac: { name: "Жаккард", note: "Плотная ткань", idx: 0, add: 0, colors: { bw: ["Чёрно-серый", "#4b4c49", "jac-bw", "#c9c9c4"], blue: ["Синий", "#2b5d99", "jac-blue", "#79a8de"], red: ["Красный", "#ad3338", "jac-red", "#ea9494"] } }
+    eco: { name: "Экокожа", idx: 1, colors: ECO },
+    perf: { name: "Перфорация", full: "Экокожа с перфорацией", idx: 1, colors: {
+      black: ["№ 101 чёрный", "#1f2123", "perf-black"], grey: ["№ 103 серый", "#55605a", "perf-grey"], red: ["№ 108 красный", "#c4351f", "eco-red"], blue: ["№ 107 синий", "#2f55b5", "eco-blue"],
+      yellow: ["№ 115 жёлтый", "#e2c21f", "eco-yellow-perf"], orange: ["№ 109 оранжевый", "#dd651b", "eco-orange"], paprika: ["№ 118 паприка", "#a3441f", "eco-chestnut"], pink: ["№ 120 розовый", "#cf6f9f", "eco-pink"] } },
+    alc: { name: "Алькантара", idx: 2, colors: {
+      dark: ["№ 215 тёмная", "#3a3d3b", "alca-black"], cherry: ["№ 217 вишня", "#7d2335", "eco-cherry"], blue: ["№ 218 синяя", "#2f3d6b", "eco-navy"],
+      light: ["№ 314 светлая", "#9e998e", "alca-grey"], beige: ["№ 216 бежевая", "#b7a98a", "eco-cream"] } },
+    jac: { name: "Жаккард", idx: 0, colors: {
+      grey: ["№ 355 рогожка серая", "#5f605c", "jac-bw", "#b9b9b4"], splash: ["№ 407 брызги", "#4a4a48", "flock-grey", "#d0d0cb"],
+      red: ["№ 356 рогожка красная", "#ad3338", "jac-red", "#ea9494"], blue: ["№ 357 рогожка синяя", "#2b5d99", "jac-blue", "#79a8de"] } }
   };
-  const THREAD = { black: ["Чёрная", "#17181a"], grey: ["Серая", "#a3a5ab"], white: ["Белая", "#f4f3ee"], beige: ["Бежевая", "#dcc89a"], red: ["Красная", "#d8322a"], orange: ["Оранжевая", "#f07a1a"], yellow: ["Жёлтая", "#f2d21b"], blue: ["Синяя", "#2d63da"] };
+  const THREAD = { grey: ["Серая", "#a3a5ab"] };
+  /* Рисунок: классика и ромб — оба есть на фото работ ателье; доступность для модели уточняет менеджер */
   const DESIGNS = {
-    classic: { name: "Классика", note: "Поперечные полосы", add: 0, ico: '<path d="M2 9h36M2 17h36"/>' },
-    rhomb: { name: "Ромб", note: "Самый популярный", add: 1200, ico: '<path d="M2 13 9 4l7 9 7-9 7 9 7-9M2 13l7 9 7-9 7 9 7-9 7 9"/>' },
-    honey: { name: "Соты", note: "Объёмная стёжка", add: 1500, ico: '<path d="M8 5l5 3v5l-5 3-5-3V8zM20 5l5 3v5l-5 3-5-3V8zM32 5l5 3v5l-5 3-5-3V8zM14 15l5 3v5l-5 3-5-3v-5zM26 15l5 3v5l-5 3-5-3v-5z"/>' },
-    vert: { name: "Полосы", note: "Вертикальные каналы", add: 900, ico: '<path d="M9 2v22M17 2v22M25 2v22M33 2v22"/>' }
+    classic: { name: "Классика", note: "Поперечные полосы", ico: '<path d="M2 9h36M2 17h36"/>' },
+    rhomb: { name: "Ромб", note: "Стёжка ромбом", ico: '<path d="M2 13 9 4l7 9 7-9 7 9 7-9M2 13l7 9 7-9 7 9 7-9 7 9"/>' }
   };
-  const OPTS = {
-    embroidery: { name: "Вышивка на подголовниках", note: "Марка авто нитью в цвет строчки", add: 1500 },
-    armrest: { name: "Задний подлокотник", note: "Чехол из того же материала", add: 600 },
-    mats: { name: "Коврики EVA в цвет", note: "Кант под цвет боковин, −15 %", add: 3900 },
-    install: { name: "Установка в Москве", note: "Мастерская на Полярной, 1,5 часа", add: 2500 }
-  };
-  const DOUBLE = 800, PIPING = 1000, DEF_P = [7975, 9375, 9975];
-  const DEF = { design: "rhomb", side: "black", mat: "alc", ins: "grey", thread: "grey", stitch: "single", piping: false, pipe: "red" };
-  const st = Object.assign({ model: null, opts: new Set() }, DEF);
+  /* Комплектация салона — вопросы из формы заказа старого сайта */
+  const CONFIG = [
+    { id: "body", name: "Тип кузова", opts: ["Седан", "Хэтчбек", "Универсал", "Пикап", "Купе"] },
+    { id: "wheel", name: "Руль", opts: ["Левый", "Правый"] },
+    { id: "back", name: "Задняя спинка", opts: ["Раздельная 50/50", "Раздельная 40/60", "Делённая на 3 части", "Цельная"] },
+    { id: "seat", name: "Заднее сиденье", opts: ["Раздельное 50/50", "Раздельное 40/60", "Делённое на 3 части", "Цельное"] },
+    { id: "armrest", name: "Задний подлокотник", opts: ["Есть", "Нет"] },
+    { id: "airbag", name: "Подушки безопасности в сиденьях", opts: ["Есть", "Нет"] },
+    { id: "heads", name: "Подголовники", opts: ["2+0", "2+2", "2+3", "2+3+2"] }
+  ];
+  const OPTS = { mats: { name: "Автоковрики EVA в цвет чехлов", note: "Стоимость уточнит менеджер" } };
+  const DEF_P = [7975, 9375, 9975];
+  const DEF = { design: "classic", side: "black", mat: "alc", ins: "light", thread: "grey", stitch: "single", piping: false, pipe: "grey" };
+  const st = Object.assign({ model: null, opts: new Set(), cfg: {} }, DEF);
 
   /* ---------- геометрия сиденья ---------- */
   const fx = n => Math.round(n * 10) / 10;
@@ -87,7 +95,7 @@
   function seatSVG() {
     const side = ECO[st.side][1], mat = MATS[st.mat], ic = mat.colors[st.ins] || Object.values(mat.colors)[0], ins = ic[1];
     const thread = THREAD[st.thread][1], pipe = THREAD[st.pipe][1], dbl = st.stitch === "double";
-    const emb = st.opts.has("embroidery"), brand = st.model ? A.brandName(st.model.b).toUpperCase() : "АВТОСТИЛЬ";
+    const emb = false, brand = st.model ? A.brandName(st.model.b).toUpperCase() : "АВТОСТИЛЬ";
     const P = k => rpath(G[k], { head: 40, back: 24, cush: 24, headIn: 26, backIn: 14, cushIn: 12 }[k]);
     const texture = id => {
       if (st.mat === "perf") return `<rect x="0" y="0" width="420" height="600" fill="url(#perf)" clip-path="url(#${id})"/>`;
@@ -142,45 +150,38 @@ ${seam("M50 520 Q210 528 370 520", "cCushF")}
 </svg>`;
   }
 
-  /* ---------- расчёт ---------- */
+  /* ---------- расчёт: базовая цена комплекта по материалу вставок, остальное — менеджер ---------- */
   function compute() {
-    const m = st.model, mat = MATS[st.mat], des = DESIGNS[st.design];
+    const m = st.model, mat = MATS[st.mat];
     const base = (m ? m.p : DEF_P)[mat.idx];
-    const lines = [{ n: "Комплект по лекалам" + (m ? ", " + A.genName(m) : ""), v: base, base: true }];
-    if (mat.add) lines.push({ n: mat.full || mat.name, v: mat.add });
-    lines.push({ n: "Рисунок «" + des.name + "»", v: des.add });
-    if (st.stitch === "double") lines.push({ n: "Двойная строчка", v: DOUBLE });
-    if (st.piping) lines.push({ n: "Кант по швам", v: PIPING });
-    st.opts.forEach(id => lines.push({ n: OPTS[id].name, v: OPTS[id].add }));
-    lines.push({ n: "Молнии под Airbag", v: 0 }, { n: "Оплётка на руль", v: 0, gift: 500 });
-    return { total: lines.reduce((s, l) => s + l.v, 0), lines };
+    const lines = [{ n: "Комплект по лекалам" + (m ? ", " + A.genName(m) : "") + " — " + (mat.full || mat.name).toLowerCase(), v: base, base: true },
+      { n: "Разрывные швы под Airbag", v: 0 }, { n: "Оплётка на руль", v: 0, gift: true }];
+    st.opts.forEach(id => lines.push({ n: OPTS[id].name, v: 0, ask: true }));
+    return { total: base, lines };
   }
   const insColor = () => { const c = MATS[st.mat].colors; return c[st.ins] || Object.values(c)[0]; };
-  const insSwatch = id => st.mat === "perf" && PERF_SW[id] ? PERF_SW[id] : MATS[st.mat].colors[id][2];
+  const insSwatch = id => MATS[st.mat].colors[id][2];
   const summary = () => [
     ["Автомобиль", st.model ? A.carName(st.model) : "не выбран"],
-    ["Боковины", "Экокожа, " + ECO[st.side][0].toLowerCase()],
-    ["Вставки", (MATS[st.mat].full || MATS[st.mat].name) + ", " + insColor()[0].toLowerCase()],
+    ["Боковины", "Экокожа " + ECO[st.side][0]],
+    ["Вставки", (MATS[st.mat].full || MATS[st.mat].name) + " " + insColor()[0]],
     ["Рисунок", DESIGNS[st.design].name],
-    ["Строчка", (st.stitch === "double" ? "двойная, " : "одинарная, ") + THREAD[st.thread][0].toLowerCase() + " нить"],
-    ["Кант", st.piping ? THREAD[st.pipe][0].toLowerCase() : "без канта"],
-    ["Опции", [...st.opts].map(id => OPTS[id].name).join(", ") || "—"]
+    ["Комплектация", CONFIG.filter(c => st.cfg[c.id]).map(c => c.name.toLowerCase() + ": " + st.cfg[c.id].toLowerCase()).join(", ") || "уточнит менеджер"],
+    ["Дополнительно", [...st.opts].map(id => OPTS[id].name).join(", ") || "—"]
   ];
 
   /* ---------- интерфейс ---------- */
   const swBtn = (id, name, bg, on, attr) => `<button type="button" class="${on ? "is-selected" : ""}" ${attr}="${id}" title="${e(name)}" aria-label="${e(name)}" style="${bg}"></button>`;
   function renderControls() {
-    $("[data-b-designs]").innerHTML = Object.entries(DESIGNS).map(([id, d]) => `<button type="button" class="${st.design === id ? "is-selected" : ""}" data-design="${id}"><svg viewBox="0 0 40 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="1" width="38" height="24" rx="5"/>${d.ico}</svg><b>${d.name}</b><span>${d.add ? "+ " + A.fmt(d.add) : "без доплаты"}</span></button>`).join("");
+    $("[data-b-designs]").innerHTML = Object.entries(DESIGNS).map(([id, d]) => `<button type="button" class="${st.design === id ? "is-selected" : ""}" data-design="${id}"><svg viewBox="0 0 40 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="1" width="38" height="24" rx="5"/>${d.ico}</svg><b>${d.name}</b><span>${d.note}</span></button>`).join("");
     $("[data-b-sides]").innerHTML = Object.entries(ECO).map(([id, c]) => swBtn(id, c[0], `background-image:url('${SW(c[2])}')`, st.side === id, "data-side")).join("");
     const base = st.model ? st.model.p : DEF_P;
-    $("[data-b-mats]").innerHTML = Object.entries(MATS).map(([id, m]) => { const c = Object.values(m.colors)[0]; return `<button type="button" class="${st.mat === id ? "is-selected" : ""}" data-mat="${id}"><img src="${SW(id === "perf" ? "perf-black" : c[2])}" alt=""><b>${m.name}</b><span>${A.fmt(base[m.idx] + m.add)}</span></button>`; }).join("");
+    $("[data-b-mats]").innerHTML = Object.entries(MATS).map(([id, m]) => { const c = Object.values(m.colors)[0]; return `<button type="button" class="${st.mat === id ? "is-selected" : ""}" data-mat="${id}"><img src="${SW(c[2])}" alt=""><b>${m.name}</b><span>${A.fmt(base[m.idx])}</span></button>`; }).join("");
     $("[data-b-inserts]").innerHTML = Object.entries(MATS[st.mat].colors).map(([id, c]) => swBtn(id, c[0], `background-image:url('${SW(insSwatch(id))}')`, (MATS[st.mat].colors[st.ins] ? st.ins : Object.keys(MATS[st.mat].colors)[0]) === id, "data-ins")).join("");
-    $("[data-b-thread]").innerHTML = Object.entries(THREAD).map(([id, t]) => swBtn(id, t[0] + " нить", `background:${t[1]}`, st.thread === id, "data-thread")).join("");
-    $("[data-b-pipe]").innerHTML = Object.entries(THREAD).map(([id, t]) => swBtn(id, t[0], `background:${t[1]}`, st.pipe === id, "data-pipe")).join("");
-    $("[data-b-pipe-row]").hidden = !st.piping;
-    $$("[data-b-stitch] button").forEach(b => b.classList.toggle("is-selected", b.dataset.stitch === st.stitch));
+    const cfgBox = $("[data-b-config]");
+    if (cfgBox && !cfgBox.children.length) cfgBox.innerHTML = CONFIG.map(c => `<select class="select" data-cfg="${c.id}" aria-label="${c.name}"><option value="">${c.name}</option>${c.opts.map(o => `<option>${o}</option>`).join("")}</select>`).join("");
+    $$("[data-cfg]").forEach(sel => { sel.value = st.cfg[sel.dataset.cfg] || ""; });
     $$("[data-opt]").forEach(i => { i.checked = st.opts.has(i.dataset.opt); });
-    $("[data-piping]").checked = st.piping;
   }
   function render() {
     if (!MATS[st.mat].colors[st.ins]) st.ins = Object.keys(MATS[st.mat].colors)[0];
@@ -189,15 +190,14 @@ ${seam("M50 520 Q210 528 370 520", "cCushF")}
     $("[data-b-canvas]").innerHTML = svg;
     const set = (sel, v) => $$(sel, document).forEach(x => { x.innerHTML = v; });
     set("[data-b-total]", A.fmt(c.total));
-    set("[data-b-lines]", c.lines.map(l => `<div><span>${e(l.n)}</span><b class="${l.v ? "" : "free"}">${l.gift ? `<s class="muted">${A.fmt(l.gift)}</s> подарок` : l.base ? A.fmt(l.v) : l.v ? "+ " + A.fmt(l.v) : "включено"}</b></div>`).join(""));
+    set("[data-b-lines]", c.lines.map(l => `<div><span>${e(l.n)}</span><b class="${l.base || l.ask ? "" : "free"}">${l.gift ? "подарок по акции" : l.base ? A.fmt(l.v) : l.ask ? "по запросу" : "включено"}</b></div>`).join(""));
     set("[data-b-car]", m ? e(A.carName(m)) : "Автомобиль не выбран");
     set("[data-b-car-sub]", m ? e([m.v, A.yearsText(m)].filter(Boolean).join(" · ")) + " · лекала в базе" : "Выберите авто слева — цена зависит от лекала");
     set("[data-b-val=car]", m ? e(A.genName(m)) : "не выбран");
     set("[data-b-val=design]", DESIGNS[st.design].name);
     set("[data-b-val=side]", ECO[st.side][0]);
     set("[data-b-val=ins]", insColor()[0]);
-    set("[data-b-val=thread]", THREAD[st.thread][0]);
-    set("[data-b-legend]", [["Боковины", `background-image:url('${SW(ECO[st.side][2])}')`, ECO[st.side][0]], ["Вставки", `background-image:url('${SW(insSwatch(st.ins))}')`, MATS[st.mat].name + ", " + insColor()[0].toLowerCase()], ["Нить", `background:${THREAD[st.thread][1]}`, THREAD[st.thread][0]], ["Рисунок", "", DESIGNS[st.design].name]].concat(st.piping ? [["Кант", `background:${THREAD[st.pipe][1]}`, THREAD[st.pipe][0]]] : []).map(([k, bg, v]) => `<span>${bg ? `<i style="${bg}"></i>` : ""}${k}: <b>${e(v)}</b></span>`).join(""));
+    set("[data-b-legend]", [["Боковины", `background-image:url('${SW(ECO[st.side][2])}')`, ECO[st.side][0]], ["Вставки", `background-image:url('${SW(insSwatch(st.ins))}')`, MATS[st.mat].name + ", " + insColor()[0].toLowerCase()], ["Рисунок", "", DESIGNS[st.design].name]].map(([k, bg, v]) => `<span>${bg ? `<i style="${bg}"></i>` : ""}${k}: <b>${e(v)}</b></span>`).join(""));
   }
 
   /* ---------- события ---------- */
@@ -208,9 +208,6 @@ ${seam("M50 520 Q210 528 370 520", "cCushF")}
     else if (d.side) st.side = d.side;
     else if (d.mat) st.mat = d.mat;
     else if (d.ins) st.ins = d.ins;
-    else if (d.thread) st.thread = d.thread;
-    else if (d.pipe) st.pipe = d.pipe;
-    else if (d.stitch) st.stitch = d.stitch;
     else if (d.pickChip) { picker && picker.set(d.pickChip); return; }
     else return;
     render();
@@ -218,7 +215,7 @@ ${seam("M50 520 Q210 528 370 520", "cCushF")}
   root.addEventListener("change", ev => {
     const t = ev.target;
     if (t.dataset.opt) { t.checked ? st.opts.add(t.dataset.opt) : st.opts.delete(t.dataset.opt); render(); }
-    if (t.hasAttribute("data-piping")) { st.piping = t.checked; render(); }
+    if (t.dataset.cfg) { st.cfg[t.dataset.cfg] = t.value; }
   });
   const picker = A.initPicker($("[data-cpicker]"), s => {
     st.model = s.m ? A.BY_SLUG[s.m] : null;
@@ -226,7 +223,7 @@ ${seam("M50 520 Q210 528 370 520", "cCushF")}
     render();
   });
   const preset = A.qs("m");
-  $$("[data-b-reset]", document).forEach(b => b.addEventListener("click", () => { Object.assign(st, DEF); st.opts.clear(); render(); A.toast("Настройки сброшены"); }));
+  $$("[data-b-reset]", document).forEach(b => b.addEventListener("click", () => { Object.assign(st, DEF); st.opts.clear(); st.cfg = {}; render(); A.toast("Настройки сброшены"); }));
 
   /* лёгкий 3D-поворот превью за курсором */
   const stage = $("[data-b-canvas]");
@@ -246,7 +243,7 @@ ${seam("M50 520 Q210 528 370 520", "cCushF")}
       g.fillStyle = "#131416"; g.font = "800 44px Inter, Arial, sans-serif"; g.fillText("Эскиз чехлов" + (st.model ? " на " + A.carName(st.model) : ""), 70, 1120);
       g.font = "500 28px Inter, Arial, sans-serif"; let y = 1180;
       summary().slice(1).forEach(([k, v]) => { g.fillStyle = "#6b6e74"; g.fillText(k, 70, y); g.fillStyle = "#131416"; g.fillText(v.length > 52 ? v.slice(0, 50) + "…" : v, 300, y); y += 44; });
-      g.font = "800 40px Inter, Arial, sans-serif"; g.fillText(A.fmt(compute().total).replace(/ /g, " "), 70, H - 60);
+      g.font = "800 40px Inter, Arial, sans-serif"; g.fillText("от " + A.fmt(compute().total).replace(/ /g, " "), 70, H - 60);
       g.font = "500 26px Inter, Arial, sans-serif"; g.fillStyle = "#6b6e74"; g.textAlign = "right"; g.fillText("Автостиль · 8 (800) 775-32-60", W - 70, H - 64);
       cv.toBlob(b => { const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "avtostil-eskiz.png"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 3000); });
     });
@@ -257,7 +254,7 @@ ${seam("M50 520 Q210 528 370 520", "cCushF")}
   const modal = document.querySelector("[data-b-modal]");
   function openModal() {
     $("[data-b-mini]", modal).innerHTML = `<img src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(seatSVG())}" alt="Ваш дизайн">`;
-    $("[data-b-summary]", modal).innerHTML = summary().map(([k, v]) => `<div><dt>${k}</dt><dd>${e(v)}</dd></div>`).join("") + `<div class="breq__total"><dt>Стоимость</dt><dd>${A.fmt(compute().total)}</dd></div>`;
+    $("[data-b-summary]", modal).innerHTML = summary().map(([k, v]) => `<div><dt>${k}</dt><dd>${e(v)}</dd></div>`).join("") + `<div class="breq__total"><dt>Комплект от</dt><dd>${A.fmt(compute().total)}</dd></div>`;
     $("[data-b-form]", modal).hidden = false; $("[data-b-done]", modal).hidden = true;
     modal.classList.add("is-open"); document.body.style.overflow = "hidden";
     setTimeout(() => { const i = $("input", modal); i && i.focus(); }, 50);

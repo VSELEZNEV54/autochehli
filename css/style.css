@@ -576,12 +576,20 @@ a.card__title:hover { color: var(--text-2); }
 
 /* карточки моделей / поколений */
 .fams { display: grid; grid-template-columns: repeat(auto-fill, minmax(clamp(240px, 17vw, 320px), 1fr)); gap: var(--gap); }
+.price--ask { font-size: 1rem !important; font-weight: 700; letter-spacing: -0.01em; }
+.price--ask small, .card__foot .price small { display: block; font-size: 0.6875rem; font-weight: 500; color: var(--text-2); letter-spacing: 0; }
+.reps { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.reps > div { padding: 14px 16px; border-radius: var(--r-md); background: var(--band); font-size: var(--t-sm); }
+.reps b { display: block; margin-bottom: 4px; }
+.reps span { color: var(--text-2); font-size: var(--t-xs); }
 .fam { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; background: #fff; transition: box-shadow var(--d-base), border-color var(--d-base); }
 .fam:hover { box-shadow: var(--sh-md); border-color: transparent; }
 .fam__media { aspect-ratio: 16 / 10; position: relative; overflow: hidden; background: var(--band); display: block; }
 .fam__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease); }
 .fam:hover .fam__media img { transform: scale(1.04); }
 .fam__media .tag { position: absolute; left: 12px; top: 12px; }
+.fam__media--car { background: #fff; }
+.fam__media--car img { object-fit: contain; }
 .fam__body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .fam__title { font-size: 1.125rem; font-weight: 750; letter-spacing: -0.02em; line-height: 1.2; }
 .fam__years { font-size: var(--t-xs); color: var(--text-2); margin-top: -6px; }
@@ -595,6 +603,8 @@ a.card__title:hover { color: var(--text-2); }
 .gen { display: grid; grid-template-columns: 112px 1fr; gap: 16px; align-items: center; padding: 12px; border: 1px solid var(--line); border-radius: var(--r-lg); background: #fff; transition: box-shadow var(--d-base), border-color var(--d-base); }
 .gen:hover { box-shadow: var(--sh-md); border-color: transparent; }
 .gen img { width: 112px; height: 112px; object-fit: cover; border-radius: 12px; }
+.gen--car { grid-template-columns: 144px 1fr; }
+.gen--car img { width: 144px; height: 90px; object-fit: contain; border-radius: 0; }
 .gen b { display: block; font-size: 1rem; font-weight: 750; letter-spacing: -0.01em; }
 .gen span { display: block; font-size: var(--t-xs); color: var(--text-2); margin-top: 3px; }
 .gen .price { font-size: 1rem; margin-top: 10px; }
@@ -1028,6 +1038,8 @@ body.has-sticky { padding-bottom: 80px; }
   .ready-strip > div { padding: 12px; gap: 10px; }
   .gen { grid-template-columns: 88px 1fr; }
   .gen img { width: 88px; height: 88px; }
+  .gen--car { grid-template-columns: 112px 1fr; }
+  .gen--car img { width: 112px; height: 70px; }
   .gallery { grid-template-columns: 1fr; }
   .gallery__thumbs { flex-direction: row; order: 2; overflow-x: auto; }
   .gallery__thumbs button { flex: 0 0 64px; }

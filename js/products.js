@@ -1,41 +1,36 @@
-/* Товары для разделов «Универсальные чехлы», «Накидки», «Коврики EVA», «Оплётки», «Ткани оптом». Цены демонстрационные. */
+/* Товары разделов «Накидки», «Коврики EVA», «Оплётки», «Экокожа оптом». Цены не публикуются: на старом сайте их нет, стоимость сообщает менеджер. Позиции с demo: true — примеры. */
 window.AS_PRODUCTS = [
+  /* Накидки: на старом сайте раздела нет — все позиции примеры, цены не публикуем */
+  { id: "c1", cat: "capes", demo: true, title: "Накидка из алькантары на переднее сиденье", sub: "Пример позиции", img: "assets/photos/avtochehol2.jpg" },
+  { id: "c2", cat: "capes", demo: true, title: "Накидки из алькантары, комплект на передние сиденья", sub: "Пример позиции", img: "assets/photos/seat2.jpg" },
+  { id: "c3", cat: "capes", demo: true, title: "Накидка из экокожи с перфорацией", sub: "Пример позиции", img: "assets/photos/6p.jpg" },
+  { id: "c4", cat: "capes", demo: true, title: "Накидка на заднее сиденье", sub: "Пример позиции", img: "assets/photos/seat6.jpg" },
 
-  { id: "c1", cat: "capes", title: "Накидка из алькантары на переднее сиденье, серая", sub: "1 шт. · противоскользящая основа", price: 1890, old: 2190, img: "assets/photos/avtochehol2.jpg", tag: "Хит", rating: 162 },
-  { id: "c2", cat: "capes", title: "Накидки из алькантары, чёрные, комплект на передние сиденья", sub: "2 шт. · стёжка ромб", price: 3490, old: 3990, img: "assets/photos/seat2.jpg", rating: 88 },
-  { id: "c3", cat: "capes", title: "Накидка из экокожи с перфорацией, бежевая", sub: "1 шт. · не греется летом", price: 1690, img: "assets/photos/6p.jpg", rating: 41 },
-  { id: "c4", cat: "capes", title: "Накидка на заднее сиденье, алькантара, чёрная", sub: "Цельная · под подлокотник", price: 2790, img: "assets/photos/seat6.jpg", rating: 29 },
-  { id: "c5", cat: "capes", title: "Накидка на переднее сиденье, экокожа, чёрно-оранжевая", sub: "1 шт. · спортивная строчка", price: 1790, img: "assets/photos/seat11.jpg", tag: "Акция", rating: 35 },
+  /* Коврики: на старом сайте — «Автоковрики EVA в цвет авточехлов», ассортимента и цен нет */
+  { id: "m1", cat: "mats", title: "Автоковрики EVA в цвет авточехлов", sub: "Производство «Автостиль» · по модели автомобиля", img: "assets/products/mat-4.jpg" },
+  { id: "m2", cat: "mats", demo: true, title: "Коврики EVA в салон", sub: "Пример позиции", img: "assets/products/mat-1.jpg" },
+  { id: "m3", cat: "mats", demo: true, title: "Коврики EVA с бортами", sub: "Пример позиции", img: "assets/products/mat-2.jpg" },
+  { id: "m4", cat: "mats", demo: true, title: "Коврик EVA в багажник", sub: "Пример позиции", img: "assets/products/mat-3.jpg" },
 
-  { id: "m1", cat: "mats", title: "Коврики EVA в салон, ячейка «ромб», чёрные с серым кантом", sub: "Комплект 5 шт. · под вашу модель", price: 2550, old: 2890, img: "assets/products/mat-1.jpg", tag: "Хит", rating: 480 },
-  { id: "m2", cat: "mats", title: "Коврики EVA 3D с бортами, ячейка «сота»", sub: "Борт 5 см · комплект 5 шт.", price: 3650, old: 4100, img: "assets/products/mat-2.jpg", rating: 212 },
-  { id: "m3", cat: "mats", title: "Коврик EVA в багажник", sub: "По форме багажника · любой цвет", price: 1890, img: "assets/products/mat-3.jpg", rating: 93 },
-  { id: "m4", cat: "mats", title: "Коврики EVA в цвет чехлов, комплект", sub: "Цвет кожи и канта под чехлы · −15 % с чехлами", price: 3900, old: 4590, img: "assets/products/mat-4.jpg", tag: "Акция", rating: 67 },
-  { id: "m5", cat: "mats", title: "Коврики EVA для 7-местных авто", sub: "3 ряда · комплект 7 шт.", price: 4490, img: "assets/products/mat-5.jpg", rating: 38 },
-  { id: "m6", cat: "mats", title: "Коврик EVA под детское кресло", sub: "Защита сиденья · 45×45 см", price: 690, img: "assets/products/mat-6.jpg", rating: 120 },
+  /* Оплётки: на старом сайте — акция «Оплётка на руль за 500 ₽ в подарок» */
+  { id: "w1", cat: "wheel", gift: true, title: "Оплётка на руль в подарок к комплекту чехлов", sub: "Акция: оплётка стоимостью 500 ₽ · подробности у менеджеров", img: "assets/swatches/eco-black.jpg" },
+  { id: "w2", cat: "wheel", demo: true, title: "Оплётка на руль из экокожи с перфорацией", sub: "Пример позиции", img: "assets/swatches/perf-grey.jpg" },
+  { id: "w3", cat: "wheel", demo: true, title: "Оплётка на руль из алькантары", sub: "Пример позиции", img: "assets/swatches/alca-grey.jpg" },
+  { id: "w4", cat: "wheel", demo: true, title: "Оплётка на руль из бежевой экокожи", sub: "Пример позиции", img: "assets/swatches/eco-beige.jpg" },
 
-  { id: "w1", cat: "wheel", title: "Оплётка на руль, экокожа, чёрная", sub: "Размер M (37–39 см) · со шнуровкой", price: 590, old: 990, img: "assets/swatches/eco-black.jpg", tag: "Хит", rating: 305 },
-  { id: "w2", cat: "wheel", title: "Оплётка на руль, экокожа с перфорацией, серая", sub: "Размер M · не скользит", price: 690, img: "assets/swatches/perf-grey.jpg", rating: 74 },
-  { id: "w3", cat: "wheel", title: "Оплётка на руль, алькантара, тёмно-серая", sub: "Размер M · бархатная", price: 1290, img: "assets/swatches/alca-grey.jpg", tag: "Новинка", rating: 22 },
-  { id: "w4", cat: "wheel", title: "Оплётка на руль, экокожа с красной строчкой", sub: "Размер M · спорт", price: 690, img: "assets/swatches/eco-red.jpg", rating: 56 },
-  { id: "w5", cat: "wheel", title: "Оплётка на руль, экокожа, бежевая", sub: "Размер M · под светлый салон", price: 690, img: "assets/swatches/eco-beige.jpg", rating: 33 },
-  { id: "w6", cat: "wheel", title: "Оплётка на руль, экокожа, чёрная, размер L", sub: "Размер L (39–41 см) · кроссоверы и внедорожники", price: 690, img: "assets/swatches/eco-navy.jpg", rating: 48 },
-
-  { id: "f1", cat: "fabrics", title: "Экокожа автомобильная «Автостиль», чёрная, 1,2 мм", sub: "Рулон 30 м · ширина 140 см", price: 690, note: "за погонный метр", img: "assets/swatches/eco-black.jpg", tag: "Хит" },
-  { id: "f2", cat: "fabrics", title: "Экокожа перфорированная, чёрная", sub: "Рулон 30 м · ширина 140 см", price: 790, note: "за погонный метр", img: "assets/swatches/perf-black.jpg" },
-  { id: "f3", cat: "fabrics", title: "Алькантара искусственная, серая", sub: "Рулон 25 м · ширина 145 см", price: 1490, note: "за погонный метр", img: "assets/swatches/alca-grey.jpg" },
-  { id: "f4", cat: "fabrics", title: "Жаккард автомобильный «рогожка», чёрно-серый", sub: "Рулон 40 м · ширина 150 см", price: 490, note: "за погонный метр", img: "assets/swatches/jac-bw.jpg" },
-  { id: "f5", cat: "fabrics", title: "Флок «антикоготь», серый", sub: "Рулон 30 м · ширина 140 см", price: 590, note: "за погонный метр", img: "assets/swatches/flock-grey.jpg" },
-  { id: "f6", cat: "fabrics", title: "Экокожа автомобильная, бежевая, 1,2 мм", sub: "Рулон 30 м · ширина 140 см", price: 690, note: "за погонный метр", img: "assets/swatches/eco-beige.jpg" },
-  { id: "f7", cat: "fabrics", title: "Экокожа автомобильная, красная, 1,2 мм", sub: "Рулон 30 м · ширина 140 см", price: 690, note: "за погонный метр", img: "assets/swatches/eco-red.jpg" },
-  { id: "f8", cat: "fabrics", title: "Экокожа мебельная, шоколад", sub: "Рулон 30 м · ширина 140 см", price: 590, note: "за погонный метр", img: "assets/swatches/eco-choco.jpg" }
+  /* Экокожа оптом: на старом сайте — поставки автомобильной и мебельной экокожи, прайс по заявке */
+  { id: "f1", cat: "fabrics", title: "Экокожа автомобильная «Аригон»", sub: "Полиуретановое покрытие на хлопковой основе · 1,05–1,15 мм · 500 г/п. м", note: "оптовый прайс по заявке", img: "assets/swatches/eco-black.jpg" },
+  { id: "f2", cat: "fabrics", title: "Экокожа мебельная", sub: "Поставки из Китая · склад в наличии", note: "оптовый прайс по заявке", img: "assets/swatches/eco-choco.jpg" },
+  { id: "f3", cat: "fabrics", title: "Мебельные и автомобильные ткани", sub: "Жаккард, флок · ассортимент уточняйте", note: "оптовый прайс по заявке", img: "assets/swatches/jac-bw.jpg" },
+  { id: "f4", cat: "fabrics", demo: true, title: "Экокожа с перфорацией", sub: "Пример позиции", note: "оптовый прайс по заявке", img: "assets/swatches/perf-black.jpg" }
 ];
 /* Статьи блога: список для главной блога и блоков «Читайте также» */
 window.AS_POSTS = [
-  { slug: "blog-eco-vs-alcantara", title: "Экокожа или алькантара: что выбрать для салона", date: "18 сентября 2026", tag: "Материалы", img: "assets/photos/avtochehol1.jpg", lead: "Разбираем два самых популярных материала: как ведут себя летом и зимой, сколько служат и кому какой подойдёт." },
-  { slug: "blog-winter-care", title: "Как ухаживать за чехлами зимой: соль, реагенты и мороз", date: "10 сентября 2026", tag: "Уход", img: "assets/photos/3p.jpg", lead: "Пять правил, которые продлят жизнь экокоже и алькантаре в холодный сезон." },
-  { slug: "blog-install-mistakes", title: "5 ошибок при установке авточехлов и как их избежать", date: "2 сентября 2026", tag: "Установка", img: "assets/photos/2p.jpg", lead: "Складки, перекос спинки, незакрытый Airbag — типичные ошибки самостоятельной установки и простые способы их не допустить." },
-  { slug: "blog-airbag", title: "Чехлы и подушки безопасности: как работают молнии-разрывники", date: "25 августа 2026", tag: "Безопасность", img: "assets/photos/seat2.jpg", lead: "Почему нельзя ставить чехлы без разрывных швов на сиденья с боковыми Airbag и как это устроено у нас." },
-  { slug: "blog-camry-xv70", title: "Обзор: чехлы на Toyota Camry XV70 — фото, комплектация, цена", date: "14 августа 2026", tag: "Обзор", img: "assets/photos/1p.jpg", lead: "Самая популярная модель в нашем каталоге. Показываем посадку в трёх материалах и разбираем комплектации салона." },
-  { slug: "blog-new-patterns", title: "Новые лекала осени: Haval Jolion, Geely Coolray, Chery Tiggo 7 Pro", date: "5 августа 2026", tag: "Новости", img: "assets/photos/seat5.jpg", lead: "Сняли лекала с шести новых китайских моделей — теперь чехлы для них шьются за стандартные 3 дня." }
+  { slug: "blog-news-fabrics", title: "Расширение оптового ассортимента тканей", date: "1 октября 2021", tag: "Новости", img: "assets/swatches/eco-choco.jpg", lead: "В ассортименте для оптовых покупателей экокожи и автомобильных тканей появились мебельная экокожа и мебельные ткани." },
+  { slug: "blog-news-prius", title: "Запущено производство для Toyota Prius A", date: "1 сентября 2021", tag: "Новости", img: "assets/photos/seat5.jpg", lead: "В базе появились лекала авточехлов для Toyota Prius A в кузове 2011–2014 годов. Комплект подойдёт на 5-местную комплектацию салона." },
+  { slug: "blog-news-khabarovsk", title: "Открыто новое представительство в Хабаровске", date: "1 августа 2021", tag: "Новости", img: "assets/photos/1p.jpg", lead: "У «Чехлы Автостиль» появился официальный дилер в Хабаровске — теперь заказ можно забрать самовывозом." },
+  { slug: "blog-eco-vs-alcantara", title: "Экокожа, жаккард или алькантара: что выбрать", date: "", tag: "Материалы", img: "assets/photos/avtochehol1.jpg", lead: "Чем отличаются материалы, из которых мы шьём чехлы, и как выбрать под свой салон." },
+  { slug: "blog-winter-care", title: "Уход за чехлами из экокожи", date: "", tag: "Уход", img: "assets/photos/3p.jpg", lead: "Как убрать бытовые загрязнения и продлить срок службы экокожи." },
+  { slug: "blog-install-mistakes", title: "Как правильно надеть чехлы на сиденья", date: "", tag: "Установка", img: "assets/photos/2p.jpg", lead: "Порядок установки, на что обратить внимание и почему важно не перепутать правое и левое кресло." },
+  { slug: "blog-airbag", title: "Чехлы и подушки безопасности", date: "", tag: "Безопасность", img: "assets/photos/seat2.jpg", lead: "Зачем в чехлах разрывные швы и как ставить чехлы с ярлыком AIRBAG." }
 ];

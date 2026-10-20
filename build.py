@@ -18,7 +18,7 @@ for src in sorted((root / "content").glob("*.html")):
     body = re.sub(r"<!-- @include ([\w/.-]+) -->", lambda mm: (root / mm.group(1)).read_text(encoding="utf-8").strip(), body)
     html = parts["layout"]
     meta.setdefault("js", [])
-    meta["js"] = "\n".join(f'<script src="js/{j}?v=6"></script>' for j in meta["js"])
+    meta["js"] = "\n".join(f'<script src="js/{j}?v=7"></script>' for j in meta["js"])
     meta.setdefault("canonical", "https://1avtochehol.ru/" + ("" if src.stem == "index" else src.stem + "/"))
     for k in ("title", "description", "page", "head", "scripts", "js", "canonical"):
         html = html.replace("{{" + k + "}}", meta.get(k, "" if k in ("head", "scripts", "js") else src.stem))

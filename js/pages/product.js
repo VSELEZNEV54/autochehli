@@ -1,18 +1,26 @@
-/* Карточка товара: готовые чехлы на модель (?m=&v=) или аксессуар (?p=) */
+/* Карточка товара: чехлы на модель (?m=&v=) или аксессуар (?p=). Сроки, оплата, доставка и гарантия — по старому сайту 1avtochehol.ru */
 (function () {
   const A = window.AS, e = A.esc, root = document.getElementById("p-root");
   document.body.classList.add("has-sticky");
-  const ADDONS = [
-    { id: "mats", name: "Коврики EVA в цвет чехлов", sub: "Комплект в салон, −15 % с чехлами", add: 3900 },
-    { id: "armrest", name: "Чехол на задний подлокотник", sub: "Из того же материала", add: 600 },
-    { id: "install", name: "Установка в Москве", sub: "Мастерская на Полярной, 1,5 часа", add: 2500 }
+  /* Комплектация салона — те же вопросы, что в форме заказа на старом сайте */
+  const CONFIG = [
+    { id: "back", name: "Задняя спинка", opts: ["Раздельная 50/50", "Раздельная 40/60", "Делённая на 3 части", "Цельная"] },
+    { id: "armrest", name: "Задний подлокотник", opts: ["Есть", "Нет"] },
+    { id: "heads", name: "Подголовники", opts: ["2+0", "2+2", "2+3", "2+3+2"] }
   ];
-  const deliveryDate = d => { const t = new Date(); t.setDate(t.getDate() + d); return t.toLocaleDateString("ru-RU", { day: "numeric", month: "long" }); };
-  const infoBlock = (ship) => `<div class="buybox__info">
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg><div>Доставка в <b data-city-name>${e(window.AS_city ? window.AS_city() : "Москва")}</b><span>СДЭК, Boxberry, Почта · от 10 000 ₽ бесплатно</span></div><em>с ${deliveryDate(ship + 2)}</em></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><div>Самовывоз в Москве<span>Производство на Полярной, 9:00–21:00</span></div><em>${deliveryDate(ship)}</em></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><div>Оплата при получении<span>Или картой онлайн со скидкой 3 %</span></div><em>−3 %</em></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg><div>Гарантия 12 месяцев<span>Не подошли по посадке — перешьём бесплатно</span></div><em>14 дней</em></div>
+  const IC = {
+    truck: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>',
+    pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+    card: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>',
+    shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>',
+    clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>',
+    phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>'
+  };
+  const infoBlock = () => `<div class="buybox__info">
+      <div>${IC.truck}<div>Доставка в <b data-city-name>${e(window.AS_city ? window.AS_city() : "ваш город")}</b><span>DPD, EMS Почта России · по тарифу транспортной компании</span></div><em>от 250 ₽</em></div>
+      <div>${IC.pin}<div>Самовывоз в Новосибирске<span>ул. Бориса Богаткова 253/2, оф. 116</span></div><em></em></div>
+      <div>${IC.card}<div>Предоплата от 1 000 ₽<span>Картой онлайн или по QR-коду, комиссия 0 %. Остаток — при получении, где доступен наложенный платёж</span></div><em></em></div>
+      <div>${IC.shield}<div>Гарантия на качество пошива<span>При соблюдении правил ухода. Если товар не подойдёт — вернём деньги</span></div><em>1 год</em></div>
     </div>`;
   const gallery = (imgs, tags) => `<div class="gallery" data-gallery><div class="gallery__thumbs">${imgs.map((src, i) => `<button type="button" class="${i ? "" : "is-active"}" data-thumb="${src}" aria-label="Фото ${i + 1}"><img src="${src}" alt="" loading="lazy"></button>`).join("")}</div><div class="gallery__main"><img id="p-main" src="${imgs[0]}" alt="" width="900" height="900">${tags}</div></div>`;
   function bindGallery() {
@@ -34,65 +42,70 @@
     /* --- аксессуар --- */
     const p = (window.AS_PRODUCTS || []).find(x => x.id === pid) || window.AS_PRODUCTS[0];
     const CAT = { capes: ["Накидки", "capes.html"], mats: ["Коврики EVA", "mats.html"], wheel: ["Оплётки на руль", "wheel.html"], fabrics: ["Экокожа оптом", "fabrics.html"] }[p.cat] || ["Каталог", "catalog.html"];
-    document.title = p.title + " — купить, цена " + A.fmt(p.price) + " | Автостиль";
+    document.title = p.title + " | Автостиль";
     document.getElementById("p-crumbs").insertAdjacentHTML("beforeend", `<li><a href="${CAT[1]}">${CAT[0]}</a></li><li>${e(p.title)}</li>`);
     const same = window.AS_PRODUCTS.filter(x => x.cat === p.cat && x.id !== p.id);
     const imgs = [p.img].concat(same.slice(0, 3).map(x => x.img));
-    root.innerHTML = gallery(imgs, p.tag ? `<div class="card__tags"><span class="card__tag${p.tag === "Акция" ? " card__tag--sale" : ""}">${p.tag}</span></div>` : "") + `<div class="buybox">
+    const ask = `<div class="buybox__cta"><a class="btn btn--primary btn--lg" href="contacts.html#form">Оставить заявку</a><a class="btn btn--dark btn--lg" href="tel:88007753260">8 (800) 775-32-60</a><button class="btn btn--ghost btn--lg btn--icon" type="button" data-fav="product:${p.id}" aria-label="В избранное">${A.ICON.heart}</button></div>`;
+    const giftCta = `<div class="buybox__cta"><a class="btn btn--primary btn--lg" href="catalog.html">Выбрать чехлы</a><a class="btn btn--dark btn--lg" href="tel:88007753260">8 (800) 775-32-60</a><button class="btn btn--ghost btn--lg btn--icon" type="button" data-fav="product:${p.id}" aria-label="В избранное">${A.ICON.heart}</button></div>`;
+    root.innerHTML = gallery(imgs, p.demo ? `<div class="card__tags"><span class="card__tag card__tag--white">Пример позиции</span></div>` : p.gift ? `<div class="card__tags"><span class="card__tag card__tag--sale">Акция</span></div>` : "") + `<div class="buybox">
       <h1>${e(p.title)}</h1>
-      <div class="buybox__meta">${p.rating ? `<span class="stars">★★★★★</span><span><b>4,9</b> · ${p.rating} отзывов</span>` : ""}<span>Артикул <b>AS-${p.id.toUpperCase()}</b></span><span>${e(p.sub || "")}</span></div>
-      ${panel(`<div class="buybox__price"><div class="price">${A.fmt(p.price)}${p.old ? `<s>${A.fmt(p.old)}</s>` : ""}</div>${p.old ? `<span class="calc__savings">−${A.fmt(p.old - p.price)}</span>` : `<span class="muted small">${e(p.note || "за комплект")}</span>`}</div>`,
-        `<div class="buy-panel__ready"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><b>В наличии</b><span>отправим сегодня до 15:00</span></div></div>`,
-        `<div class="buybox__cta"><button class="btn btn--primary btn--lg" type="button" data-add="product:${p.id}">В корзину</button><button class="btn btn--dark btn--lg" type="button" data-add="product:${p.id}" data-add-go>Купить в 1 клик</button><button class="btn btn--ghost btn--lg btn--icon" type="button" data-fav="product:${p.id}" aria-label="В избранное">${A.ICON.heart}</button></div>`,
-        ["Оплата при получении", "Гарантия 12 месяцев", "Возврат 14 дней"])}
+      <div class="buybox__meta"><span>${e(p.sub || "")}</span></div>
+      ${panel(`<div class="buybox__price">${window.AS_accPrice(p)}</div>`,
+        `<div class="buy-panel__ready">${IC.phone}<div><b>${p.gift ? "Подробности акции" : "Наличие и стоимость"}</b><span>уточнит менеджер</span></div></div>`,
+        p.gift ? giftCta : ask,
+        ["Бесплатный звонок по России", "Заявки через сайт — круглосуточно"])}
+      ${p.demo ? `<p class="small muted" style="margin-top:14px">Это пример позиции: ассортимент и цены раздела «${CAT[0]}» уточняются у производителя.</p>` : ""}
       ${p.cat === "mats" ? `<div class="opt-block" data-picker><h4>Ваш автомобиль</h4><div class="calc__grid"><select class="select" data-pick-brand></select><select class="select" data-pick-fam disabled></select></div></div>` : ""}
-      ${infoBlock(0)}
+      ${infoBlock()}
     </div>`;
-    tabsBox.innerHTML = `<div class="tabs"><button class="is-active" data-tab="d">Описание</button><button data-tab="s">Характеристики</button></div><div class="tab-pane is-active" data-pane="d"><div class="prose"><p>${e(p.title)}. ${e(p.sub || "")}. Производство «Автостиль», гарантия 12 месяцев, возврат 14 дней.</p></div></div><div class="tab-pane" data-pane="s"><dl class="spec"><div><dt>Категория</dt><dd>${CAT[0]}</dd></div><div><dt>Артикул</dt><dd>AS-${p.id.toUpperCase()}</dd></div><div><dt>Наличие</dt><dd>На складе в Москве</dd></div><div><dt>Гарантия</dt><dd>12 месяцев</dd></div></dl></div>`;
-    document.getElementById("p-more-title").textContent = "Похожие товары";
+    tabsBox.innerHTML = `<div class="tabs"><button class="is-active" data-tab="d">Описание</button><button data-tab="s">Характеристики</button></div><div class="tab-pane is-active" data-pane="d"><div class="prose"><p>${e(p.title)}. ${e(p.sub || "")}.</p><p>${p.demo ? "Позиция приведена как пример. Точный ассортимент, наличие и стоимость сообщит менеджер по телефону 8 (800) 775-32-60." : p.gift ? "Оплётка на руль стоимостью 500 ₽ — в подарок к комплекту авточехлов. Подробности акции уточняйте у менеджеров." : "Наличие и стоимость для вашего автомобиля сообщит менеджер по телефону 8 (800) 775-32-60."}</p></div></div><div class="tab-pane" data-pane="s"><dl class="spec"><div><dt>Категория</dt><dd>${CAT[0]}</dd></div><div><dt>Наличие</dt><dd>уточняйте у менеджера</dd></div><div><dt>Цена</dt><dd>${p.gift ? "в подарок к комплекту чехлов" : "по запросу"}</dd></div></dl></div>`;
+    document.getElementById("p-more-title").textContent = "Ещё в разделе";
     document.getElementById("p-more-link").href = CAT[1]; document.getElementById("p-more-link").textContent = "Весь раздел";
     document.getElementById("p-more").innerHTML = same.slice(0, 5).map(A.productCard).join("");
-    document.getElementById("p-sticky-name").textContent = p.sub || CAT[0]; document.getElementById("p-sticky-price").textContent = A.fmt(p.price);
-    document.getElementById("p-sticky-btn").setAttribute("data-add", "product:" + p.id);
+    document.getElementById("p-sticky-name").textContent = p.sub || CAT[0]; document.getElementById("p-sticky-price").textContent = p.gift ? "В подарок" : "Цена по запросу";
+    const sbtn = document.getElementById("p-sticky-btn"); sbtn.textContent = p.gift ? "Выбрать чехлы" : "Оставить заявку"; sbtn.addEventListener("click", () => { location.href = p.gift ? "catalog.html" : "contacts.html#form"; });
     document.getElementById("p-sticky-img").src = p.img; document.getElementById("p-sticky-title").textContent = p.title;
-    const sb = document.getElementById("p-sticky-buy"); sb.setAttribute("data-add", "product:" + p.id); sb.setAttribute("data-add-go", "");
+    document.getElementById("p-sticky-buy").hidden = true;
     document.querySelectorAll("[data-picker]").forEach(x => A.initPicker(x));
     bindGallery(); bindTabs(); bindSticky(); A.badges();
     return;
   }
 
-  /* --- готовые чехлы на модель --- */
+  /* --- чехлы на модель: стандартное сочетание материала и цвета --- */
   let m = A.BY_SLUG[A.qs("m")] || A.BY_SLUG["toyota_camry-xv70"], v = A.VAR[A.qs("v")] || A.VARIANTS[0];
   const f = A.FAMILIES[m.f], b = A.BRAND[m.b];
-  const addons = new Set();
+  const cfg = {}; let withMats = false;
   const title = () => `Чехлы на сиденья ${A.carName(m)}, ${v.name.toLowerCase()}`;
-  const total = () => A.priceOf(m, v) + [...addons].reduce((s, id) => s + ADDONS.find(a => a.id === id).add, 0);
+  const total = () => A.priceOf(m, v);
   const cartId = () => `cover:${m.s}:${v.id}`;
   document.title = `${title()} — ${A.fmt(A.priceOf(m, v))} | Автостиль`;
-  document.querySelector('meta[name="description"]').content = `${title()}${m.y ? " (" + m.y + ")" : ""}. Цена ${A.fmt(A.priceOf(m, v))} за комплект на весь салон, пошив за 1 день, молнии под Airbag, доставка по России, установка в Москве.`;
+  document.querySelector('meta[name="description"]').content = `${title()}${m.y ? " (" + m.y + ")" : ""}. Цена ${A.fmt(A.priceOf(m, v))} за комплект на весь салон. Пошив по заводскому лекалу, разрывные швы под Airbag, доставка по России, гарантия на пошив 1 год.`;
   document.getElementById("p-crumbs").insertAdjacentHTML("beforeend", `<li><a href="catalog.html">Авточехлы на модель</a></li><li><a href="${A.URL.brand(b.id)}">${e(b.n)}</a></li><li><a href="${A.URL.fam(f)}">${e(f.n)}</a></li>${f.items.length > 1 ? `<li><a href="${A.URL.pos(m)}">${e([m.g, m.v].filter(Boolean).join(", ") || m.y)}</a></li>` : ""}<li>${e(v.name)}</li>`);
   const imgs = [A.varPhoto(v), "assets/photos/seat6.jpg", "assets/photos/2p.jpg", "assets/photos/avtochehol2.jpg", A.posPhoto(m)].filter((x, i, a) => a.indexOf(x) === i).slice(0, 5);
   const matVariants = mat => A.VARIANTS.filter(x => x.mat === mat);
-  root.innerHTML = gallery(imgs, `<div class="card__tags">${v.tag ? `<span class="card__tag${v.tag === "Премиум" ? " card__tag--dark" : ""}">${v.tag}</span>` : ""}<span class="card__tag card__tag--white">Фото реального комплекта</span></div>`) + `<div class="buybox">
+  root.innerHTML = gallery(imgs, `<div class="card__tags">${v.tag ? `<span class="card__tag${v.tag === "Премиум" ? " card__tag--dark" : ""}">${v.tag}</span>` : ""}<span class="card__tag card__tag--white">Фото наших работ</span></div>`) + `<div class="buybox">
     <h1>${e(title())}</h1>
-    <div class="buybox__meta"><span class="stars">★★★★★</span><span><b>4,9</b> · ${12 + (m.s.length * 7) % 40} отзывов</span><span>Артикул <b>AS-${e(m.s.toUpperCase().replace(/[^A-Z0-9]+/g, "-"))}-${v.id.toUpperCase()}</b></span>${m.y ? `<span>${e(m.y)}</span>` : ""}</div>
+    <div class="buybox__meta"><span>Цвет <b>${e(v.code)}</b></span>${m.y ? `<span>${e(m.y)}</span>` : ""}<a class="link" href="reviews.html">Отзывы покупателей</a></div>
     ${panel(`<div class="buybox__price"><div class="price" id="p-total">${A.fmt(total())}</div><span class="muted small">за комплект<br>на весь салон</span></div>`,
-      `<div class="buy-panel__ready"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg><div><b>Сошьём за 1 день</b><span>отправим ${deliveryDate(1)}</span></div></div>`,
+      `<div class="buy-panel__ready">${IC.clock}<div><b>Пошив до 3 недель</b><span>после предоплаты, срочный — по договорённости</span></div></div>`,
       `<div class="buybox__cta"><button class="btn btn--primary btn--lg" type="button" id="p-add">В корзину</button><button class="btn btn--dark btn--lg" type="button" id="p-buy">Купить в 1 клик</button><button class="btn btn--ghost btn--lg btn--icon" type="button" data-fav="${cartId()}" aria-label="В избранное">${A.ICON.heart}</button></div>`,
-      ["Оплата при получении", "Молнии под Airbag", "Гарантия 12 месяцев"])}
+      ["Предоплата от 1 000 ₽", "Разрывные швы под Airbag", "Гарантия на пошив 1 год"])}
     <div class="opt-block"><h4>Поколение и салон <b>${e(A.genName(m))}</b></h4><select class="select" id="p-gen">${f.items.map(x => `<option value="${x.s}" ${x.s === m.s ? "selected" : ""}>${e([x.g, x.v].filter(Boolean).join(", ") || x.m)}${x.y ? " · " + e(x.y) : ""}</option>`).join("")}</select></div>
     <div class="opt-block"><h4>Материал</h4><div class="seg">${[1, 2, 0].map(mt => `<a href="${A.URL.product(m, matVariants(mt)[0])}" class="${v.mat === mt ? "is-selected" : ""}">${A.MAT_NAME[mt].replace("Экокожа + алькантара", "Алькантара")}<small>${A.fmt(m.p[mt])}</small></a>`).join("")}</div></div>
-    <div class="opt-block"><h4>Цвет <b>${e(v.name.split(", ").slice(1).join(", "))}</b></h4><div class="variants">${matVariants(v.mat).map(x => `<a class="variant${x.id === v.id ? " is-active" : ""}" href="${A.URL.product(m, x)}" title="${e(x.name)}"><img src="${A.varPhoto(x)}" alt="${e(x.name)}" loading="lazy"></a>`).join("")}</div></div>
-    <div class="opt-block"><h4>Дополнительно</h4><div class="addons">${ADDONS.map(a => `<label class="toggle"><div><b>${a.name}</b><span>${a.sub}</span></div><span class="tp">+ ${A.fmt(a.add)}</span><input type="checkbox" data-addon="${a.id}"><i class="sw"></i></label>`).join("")}</div></div>
-    <a class="buybox__custom" href="${A.URL.custom(m)}"><img src="assets/photos/avtochehol1.jpg" alt=""><div><b>Нужен другой цвет или строчка?</b><span>Соберите дизайн в конструкторе — пошив 3 дня</span></div>${A.ICON.arrow}</a>
-    ${infoBlock(1)}
+    <div class="opt-block"><h4>Цвет <b>${e(v.name)}</b></h4><div class="variants">${matVariants(v.mat).map(x => `<a class="variant${x.id === v.id ? " is-active" : ""}" href="${A.URL.product(m, x)}" title="${e(x.name)}"><img src="${A.varPhoto(x)}" alt="${e(x.name)}" loading="lazy"></a>`).join("")}</div></div>
+    <div class="opt-block"><h4>Комплектация салона <b>поможет точно подобрать лекало</b></h4><div class="calc__grid calc__grid--3">${CONFIG.map(c => `<select class="select" data-cfg="${c.id}" aria-label="${c.name}"><option value="">${c.name}</option>${c.opts.map(o => `<option>${o}</option>`).join("")}</select>`).join("")}</div></div>
+    <div class="opt-block"><div class="addons"><label class="toggle"><div><b>Автоковрики EVA в цвет чехлов</b><span>Стоимость уточнит менеджер</span></div><span class="tp">по запросу</span><input type="checkbox" data-mats><i class="sw"></i></label></div></div>
+    <a class="buybox__custom" href="${A.URL.custom(m)}"><img src="assets/photos/avtochehol1.jpg" alt=""><div><b>Нужен другой цвет?</b><span>Соберите сочетание в конструкторе и отправьте заявку</span></div>${A.ICON.arrow}</a>
+    ${infoBlock()}
   </div>`;
   document.getElementById("p-gen").addEventListener("change", ev => { location.href = A.URL.product(A.BY_SLUG[ev.target.value], v); });
   const upd = () => { document.getElementById("p-total").textContent = A.fmt(total()); document.getElementById("p-sticky-price").textContent = A.fmt(total()); };
-  document.querySelectorAll("[data-addon]").forEach(i => i.addEventListener("change", () => { i.checked ? addons.add(i.dataset.addon) : addons.delete(i.dataset.addon); upd(); }));
+  document.querySelectorAll("[data-cfg]").forEach(sel => sel.addEventListener("change", () => { cfg[sel.dataset.cfg] = sel.value; }));
+  document.querySelector("[data-mats]").addEventListener("change", ev => { withMats = ev.target.checked; });
   const add = go => {
-    const extra = [...addons].map(id => ADDONS.find(a => a.id === id).name);
-    A.Cart.add({ id: cartId() + (extra.length ? ":" + [...addons].sort().join("+") : ""), title: `Чехлы на ${A.carName(m)}`, sub: `${v.name} · ${m.y || "все годы"} · пошив 1 день${extra.length ? " · " + extra.join(", ") : ""}`, price: total(), img: A.varPhoto(v), url: location.pathname.split("/").pop() + location.search });
+    const extra = CONFIG.filter(c => cfg[c.id]).map(c => c.name.toLowerCase() + ": " + cfg[c.id].toLowerCase()).concat(withMats ? ["+ автоковрики EVA в цвет (цена по запросу)"] : []);
+    A.Cart.add({ id: cartId() + (extra.length ? ":" + extra.join("|") : ""), title: `Чехлы на ${A.carName(m)}`, sub: `${v.name} (${v.code}) · ${m.y || "все годы"} · пошив до 3 недель${extra.length ? " · " + extra.join(", ") : ""}`, price: total(), img: A.varPhoto(v), url: location.pathname.split("/").pop() + location.search });
     if (go) location.href = "cart.html"; else A.toast("Добавлено в корзину", ["Перейти", "cart.html"]);
   };
   document.getElementById("p-add").addEventListener("click", () => add(false));
@@ -104,12 +117,12 @@
   document.getElementById("p-sticky-buy").addEventListener("click", () => add(true));
   upd();
   tabsBox.innerHTML = `<div class="tabs"><button class="is-active" data-tab="d">Описание</button><button data-tab="s">Характеристики</button><button data-tab="k">Комплект</button><button data-tab="i">Установка</button><button data-tab="r">Отзывы</button></div>
-    <div class="tab-pane is-active" data-pane="d"><div class="prose"><p>Готовый комплект чехлов на ${e(A.carName(m))}${m.v ? " (" + e(m.v) + ")" : ""}, ${e(v.name.toLowerCase())}. Шьётся по лекалу, снятому с сидений этого кузова: повторяет форму боковой поддержки, учитывает подголовники, подлокотник и подушки безопасности.</p><h3>Почему сядут как штатная обивка</h3><ul><li>Лекало под конкретное поколение и вариант салона</li><li>Прорези под ремни, Isofix, подлокотник и ручки регулировки</li><li>Поролон 5 мм под лицевым материалом — чехол не «гуляет»</li><li>Стяжки и крючки под сиденьем: не сползает через год</li></ul></div></div>
-    <div class="tab-pane" data-pane="s"><dl class="spec"><div><dt>Автомобиль</dt><dd>${e(A.carName(m))}</dd></div><div><dt>Вариант салона</dt><dd>${e(m.v || "стандартный")}</dd></div><div><dt>Годы выпуска</dt><dd>${e(m.y || "все годы")}</dd></div><div><dt>Материал</dt><dd>${A.MAT_NAME[v.mat]}</dd></div><div><dt>Цвет</dt><dd>${e(v.name.split(", ").slice(1).join(", "))}</dd></div><div><dt>Срок пошива</dt><dd>1 рабочий день</dd></div><div><dt>Молнии под Airbag</dt><dd>Есть</dd></div><div><dt>Гарантия</dt><dd>12 месяцев</dd></div></dl></div>
-    <div class="tab-pane" data-pane="k"><div class="includes"><div>${A.ICON.check}Чехлы на 2 передних сиденья</div><div>${A.ICON.check}Задняя спинка и подушка</div><div>${A.ICON.check}Чехлы на все подголовники</div><div>${A.ICON.check}Молнии-разрывники под Airbag</div><div>${A.ICON.check}Крепёж: стяжки, крючки, липучки</div><div>${A.ICON.check}Оплётка на руль в подарок</div></div></div>
-    <div class="tab-pane" data-pane="i"><div class="prose"><p>Установка 1,5–2 часа без инструмента, видеоинструкция для ${e(f.n)} приходит вместе с заказом. Подробно — <a href="info-install.html">в инструкции</a>. В Москве ставим на Полярной за 2 500 ₽.</p></div></div>
-    <div class="tab-pane" data-pane="r"><div class="reviews"><article class="review"><div class="review__head"><div class="avatar">ИВ</div><div><b>Игорь В.</b><span>Самара · месяц назад</span></div><span class="stars">★★★★★</span></div><p>Взял этот вариант на ${e(f.n)}. Сели ровно, швы аккуратные, через неделю после установки ни одной складки.</p></article><article class="review"><div class="review__head"><div class="avatar">ОП</div><div><b>Ольга П.</b><span>Москва · 2 месяца назад</span></div><span class="stars">★★★★★</span></div><p>Забрала на Полярной на следующий день и сразу поставили. Удобно, что всё в одном месте.</p></article></div></div>`;
-  document.getElementById("p-more-title").textContent = `Другие готовые чехлы на ${A.carName(m)}`;
+    <div class="tab-pane is-active" data-pane="d"><div class="prose"><p>Комплект чехлов на ${e(A.carName(m))}${m.v ? " (" + e(m.v) + ")" : ""}: ${e(v.name.toLowerCase())}. Шьётся под заказ по заводскому лекалу этой модели, поэтому повторяет контуры и линии сидений, не пузырится и не собирается гармошкой.</p><h3>Что важно знать</h3><ul><li>Лекало под конкретную марку, модель и комплектацию салона</li><li>Специальные разрывные швы не мешают срабатыванию подушек безопасности</li><li>Экокожа «Аригон» 1,05–1,15 мм, цикл истирания — не менее 40 000 раз</li><li>Фотоотчёт перед отправкой</li><li>На некоторых моделях отверстия под подголовники и мелкие кнопки не прорезаны — их прорезают при установке</li></ul></div></div>
+    <div class="tab-pane" data-pane="s"><dl class="spec"><div><dt>Автомобиль</dt><dd>${e(A.carName(m))}</dd></div><div><dt>Вариант салона</dt><dd>${e(m.v || "стандартный")}</dd></div><div><dt>Годы выпуска</dt><dd>${e(m.y || "все годы")}</dd></div><div><dt>Материал вставок</dt><dd>${A.MAT_NAME[v.mat].replace("Экокожа + алькантара", "Алькантара")}</dd></div><div><dt>Цвет</dt><dd>${e(v.code)}</dd></div><div><dt>Боковины</dt><dd>Экокожа</dd></div><div><dt>Срок пошива</dt><dd>до 3 недель с момента предоплаты</dd></div><div><dt>Подушки безопасности</dt><dd>разрывные швы</dd></div><div><dt>Гарантия</dt><dd>1 год на качество пошива</dd></div></dl></div>
+    <div class="tab-pane" data-pane="k"><div class="includes"><div>${A.ICON.check}Чехлы на сиденья, спинки и подголовники</div><div>${A.ICON.check}Разрывные швы под Airbag</div><div>${A.ICON.check}Крепёж: резинки с крючками, шнур для утяжки</div><div>${A.ICON.check}Оплётка на руль в подарок — по акции, подробности у менеджеров</div></div></div>
+    <div class="tab-pane" data-pane="i"><div class="prose"><p>Качественная установка может занять около двух часов. Не путайте правое и левое передние кресла: разрывные швы должны быть со стороны дверей, кресла различают по вшитым ярлыкам AIRBAG. Подробно — <a href="info-install.html">в инструкции по установке</a>.</p></div></div>
+    <div class="tab-pane" data-pane="r"><div class="reviews"><article class="review"><div class="review__head"><div class="avatar">П</div><div><b>Петр</b><span>Улан-Удэ · 12.06.2022</span></div></div><p>Без проблем обговорили с менеджером цвет и текстуру чехлов. Установил самостоятельно, для удобства снимал сиденья. Мне пошили отличные чехлы, я доволен качеством материала и изготовления.</p><span class="review__car">Chevrolet Niva</span></article><article class="review"><div class="review__head"><div class="avatar">Ю</div><div><b>Юлия</b><span>Новосибирск · 24.02.2022</span></div></div><p>Качественные чехлы. Не везде есть отверстия, и чтобы их надеть, пришлось вытаскивать кресла из машины, очень трудоёмкий процесс. Но не жалею, салон как новенький. Рекомендую.</p><span class="review__car">Toyota Gaia</span></article></div><p class="small muted" style="margin-top:12px">Отзывы покупателей с сайта 1avtochehol.ru. <a class="link" href="reviews.html">Все отзывы</a></p></div>`;
+  document.getElementById("p-more-title").textContent = `Другие сочетания на ${A.carName(m)}`;
   document.getElementById("p-more-link").href = A.URL.pos(m); document.getElementById("p-more-link").innerHTML = "Все варианты " + A.ICON.arrow;
   document.getElementById("p-more").innerHTML = A.VARIANTS.filter(x => x.id !== v.id).slice(0, 5).map(x => A.coverCard(m, x)).join("");
   bindGallery(); bindTabs(); bindSticky(); A.badges();

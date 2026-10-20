@@ -1,6 +1,6 @@
 /* =====================================================================
    АВТОСТИЛЬ — ядро прототипа (v4)
-   Каталог: марка → модель → поколение (лекало) → готовые чехлы.
+   Каталог: марка → модель → поколение (лекало) → чехлы.
    Индивидуальный пошив: пошаговый конструктор. Корзина и избранное в localStorage.
    ===================================================================== */
 (function () {
@@ -47,21 +47,22 @@
     return a.n.localeCompare(b.n);
   });
 
-  /* ---------- готовые (стандартные) чехлы на любую модель ---------- */
+  /* ---------- стандартные сочетания чехлов на любую модель ---------- */
   const SW = n => ASSETS + "swatches/" + n + ".jpg";
   const MAT_NAME = ["Жаккард", "Экокожа", "Экокожа + алькантара"];
+  /* Стандартные сочетания из реальных материалов каталога: номера цветов — со страниц моделей 1avtochehol.ru.
+     Фото — работы ателье с ближайшим сочетанием цветов. */
   const VARIANTS = [
-    { id: "eco-black", mat: 1, name: "Экокожа, чёрный", photo: "4p", sw: ["eco-black", "eco-black"], tag: "Хит" },
-    { id: "eco-grey", mat: 1, name: "Экокожа, чёрный + серые вставки", photo: "seat10", sw: ["eco-black", "eco-grey"] },
-    { id: "eco-beige", mat: 1, name: "Экокожа, чёрный + бежевые вставки", photo: "5p", sw: ["eco-black", "eco-beige"] },
-    { id: "eco-blue", mat: 1, name: "Экокожа, чёрный + синие вставки", photo: "seat1", sw: ["eco-black", "eco-blue"] },
-    { id: "eco-red", mat: 1, name: "Экокожа, чёрный + красные вставки", photo: "avtochehol3", sw: ["eco-black", "eco-red"] },
-    { id: "eco-orange", mat: 1, name: "Экокожа, чёрный + оранжевые вставки", photo: "seat11", sw: ["eco-black", "eco-orange"] },
-    { id: "alc-grey", mat: 2, name: "Алькантара, чёрный + серый, ромб", photo: "avtochehol1", sw: ["eco-black", "alca-grey"], tag: "Премиум" },
-    { id: "alc-black", mat: 2, name: "Алькантара, чёрный, ромб", photo: "3p", sw: ["eco-black", "alca-black"] },
-    { id: "alc-brown", mat: 2, name: "Алькантара, чёрный + коричневый, ромб", photo: "seat7", sw: ["eco-black", "eco-chestnut"] },
-    { id: "jac-black", mat: 0, name: "Жаккард, чёрный + серый", photo: "seat9", sw: ["eco-black", "jac-bw"], tag: "Выгодно" },
-    { id: "jac-grey", mat: 0, name: "Жаккард, серый", photo: "seat8", sw: ["eco-grey", "jac-bw"] }
+    { id: "eco-black", mat: 1, name: "Экокожа, чёрный", code: "№ 100", photo: "seat8", sw: ["eco-black", "eco-black"] },
+    { id: "eco-grey", mat: 1, name: "Экокожа, чёрный + серые вставки", code: "№ 100 + № 102", photo: "seat10", sw: ["eco-black", "eco-grey"] },
+    { id: "eco-beige", mat: 1, name: "Экокожа, чёрный + бежевые вставки", code: "№ 100 + № 113", photo: "5p", sw: ["eco-black", "eco-beige"] },
+    { id: "eco-blue", mat: 1, name: "Экокожа, чёрный + синяя перфорация", code: "№ 100 + № 107", photo: "seat1", sw: ["eco-black", "eco-blue"] },
+    { id: "eco-red", mat: 1, name: "Экокожа, чёрный + красная перфорация", code: "№ 100 + № 108", photo: "avtochehol3", sw: ["eco-black", "eco-red"] },
+    { id: "eco-orange", mat: 1, name: "Экокожа, чёрный + оранжевая перфорация", code: "№ 100 + № 109", photo: "seat11", sw: ["eco-black", "eco-orange"] },
+    { id: "eco-paprika", mat: 1, name: "Экокожа, чёрный + перфорация «паприка»", code: "№ 100 + № 118", photo: "seat7", sw: ["eco-black", "eco-chestnut"] },
+    { id: "alc-grey", mat: 2, name: "Алькантара светлая, боковины — чёрная экокожа", code: "№ 314", photo: "avtochehol1", sw: ["eco-black", "alca-grey"] },
+    { id: "alc-black", mat: 2, name: "Алькантара тёмная, боковины — чёрная экокожа", code: "№ 215", photo: "3p", sw: ["eco-black", "alca-black"] },
+    { id: "jac-black", mat: 0, name: "Жаккард «рогожка серая», боковины — чёрная экокожа", code: "№ 355", photo: "seat9", sw: ["eco-black", "jac-bw"], tag: "Выгодно" }
   ];
   const VAR = Object.fromEntries(VARIANTS.map(v => [v.id, v]));
 
@@ -73,6 +74,9 @@
   const famPhoto = f => ASSETS + "photos/" + PHOTOS[hash(f.id) % PHOTOS.length] + ".jpg";
   const posPhoto = m => ASSETS + "photos/" + PHOTOS[hash(m.s) % PHOTOS.length] + ".jpg";
   const varPhoto = v => ASSETS + "photos/" + v.photo + ".jpg";
+  /* Рендеры кузовов (assets/cars, белый фон, 16:10): лекало → файл, js/cars.js */
+  const CAR_RENDERS = window.AS_CARS || {};
+  const carRender = m => CAR_RENDERS[m.s] ? ASSETS + "cars/" + CAR_RENDERS[m.s] + ".png" : "";
   const priceOf = (m, v) => (m ? m.p : [7975, 9375, 9975])[v.mat];
   const URL_ = {
     brand: id => "brand.html?b=" + encodeURIComponent(id),
@@ -120,7 +124,7 @@
     const [kind, a, b] = id.split(":");
     if (kind === "cover") {
       const m = BY_SLUG[a], v = VAR[b]; if (!m || !v) return null;
-      return { id, title: `Чехлы на ${carName(m)}`, sub: `${v.name} · ${yearsText(m)} · пошив 1 день`, price: priceOf(m, v), img: varPhoto(v), url: URL_.product(m, v) };
+      return { id, title: `Чехлы на ${carName(m)}`, sub: `${v.name} · ${yearsText(m)} · пошив до 3 недель`, price: priceOf(m, v), img: varPhoto(v), url: URL_.product(m, v) };
     }
     if (kind === "product") {
       const p = (window.AS_PRODUCTS || []).find(x => x.id === a); if (!p) return null;
@@ -149,7 +153,7 @@
       <button type="button" class="card__fav" aria-label="В избранное" data-fav="${id}">${ICON.heart}</button>
       <div class="card__body">
         <a class="card__title" href="${url}">Чехлы на ${esc(carName(m))}, ${esc(v.name.toLowerCase())}</a>
-        <div class="card__meta"><span>${esc(yearsText(m))}</span><span class="card__ready">Сошьём за 1 день</span></div>
+        <div class="card__meta"><span>${esc(yearsText(m))}</span><span class="card__ready">Заводские лекала</span></div>
         <div class="card__foot"><div class="price">${fmt(priceOf(m, v))}</div><button type="button" class="cart-btn" data-add="${id}" aria-label="В корзину">${ICON.cart}</button></div>
       </div>
     </article>`;
@@ -158,9 +162,9 @@
       <div class="custom-card__body">
         <span class="tag tag--yellow">Индивидуальный пошив</span>
         <h3>${m ? "Соберите свои чехлы на " + esc(carName(m)) : "Соберите чехлы под свой вкус"}</h3>
-        <p>Не нашли подходящий вариант среди готовых? Выберите материал, цвета боковин и вставок, рисунок строчки и цвет нити — сошьём по лекалам вашего авто.</p>
-        <ul><li>12 цветов экокожи, алькантара, жаккард</li><li>Строчка «ромб», «соты» или прямая</li><li>Контрастная нить и вышивка на подголовниках</li></ul>
-        <div class="custom-card__price"><div><small>от</small><b>${fmt(m ? m.p[1] : 9375)}</b><small>пошив за 3 дня</small></div><span class="btn btn--primary">Открыть конструктор ${ICON.arrow}</span></div>
+        <p>Не нашли подходящее сочетание? Выберите цвет боковин, материал и цвет вставок — менеджер уточнит комплектацию салона и рассчитает стоимость.</p>
+        <ul><li>Экокожа, перфорация, алькантара, жаккард</li><li>21 цвет вставок по номерам каталога</li><li>Учитываем спинку, подлокотник и подголовники</li></ul>
+        <div class="custom-card__price"><div><small>комплект от</small><b>${fmt(m ? Math.min(...m.p) : 7975)}</b><small>итог рассчитает менеджер</small></div><span class="btn btn--primary">Открыть конструктор ${ICON.arrow}</span></div>
       </div>
       <div class="custom-card__visual"><img src="${ASSETS}photos/avtochehol1.jpg" alt="" loading="lazy"><div class="pal">${["eco-black", "eco-grey", "eco-beige", "eco-red", "eco-blue", "eco-orange", "alca-grey", "eco-choco"].map(n => `<i style="background-image:url('${SW(n)}')"></i>`).join("")}</div></div>
     </a>`;
@@ -178,24 +182,26 @@
   };
   const priceRange = (a, b) => a === b ? fmt(a) : `${fmt(a).replace(/\s?₽$/, "")} – ${fmt(b)}`;
   const famCard = f => {
-    const st = famStats(f), n = f.items.length;
+    const st = famStats(f), n = f.items.length, car = f.items.map(carRender).find(Boolean);
     return `<a class="fam" href="${URL_.fam(f)}">
-      <div class="fam__media"><img src="${famPhoto(f)}" alt="Чехлы на ${esc(brandName(f.b) + " " + f.n)}" loading="lazy">${f.fresh ? '<span class="tag tag--yellow">Есть свежие поколения</span>' : ""}</div>
+      <div class="fam__media${car ? " fam__media--car" : ""}"><img src="${car || famPhoto(f)}" alt="Чехлы на ${esc(brandName(f.b) + " " + f.n)}" loading="lazy">${f.fresh ? '<span class="tag tag--yellow">Есть свежие поколения</span>' : ""}</div>
       <div class="fam__body">
         <div class="fam__title">${esc(brandName(f.b))} ${esc(f.n)}</div>
         <div class="fam__years">${esc(st.years)}</div>
         <div class="fam__stats"><span><b>${st.gens}</b> ${plural(st.gens, "поколение", "поколения", "поколений")}</span><span><b>${n}</b> ${plural(n, "лекало", "лекала", "лекал")}</span></div>
-        <div class="fam__foot"><div class="price"><small>готовые чехлы</small>${priceRange(f.min, st.max)}</div><span class="btn btn--ghost btn--sm">Выбрать</span></div>
+        <div class="fam__foot"><div class="price"><small>комплект</small>${priceRange(f.min, st.max)}</div><span class="btn btn--ghost btn--sm">Выбрать</span></div>
       </div>
     </a>`;
   };
-  const productCard = p => `<article class="card">
-      <a class="card__media" href="${URL_.acc(p)}"><img src="${p.img}" alt="${esc(p.title)}" loading="lazy" width="400" height="400">${p.tag ? `<div class="card__tags"><span class="card__tag${p.tag === "Акция" ? " card__tag--sale" : p.tag === "Хит" ? "" : " card__tag--dark"}">${p.tag}</span></div>` : ""}</a>
+  /* Аксессуары: цены не публикуем (их нет на старом сайте) — «цена по запросу»; demo — пример позиции */
+  const accPrice = p => p.gift ? `<div class="price">В подарок<small>к комплекту чехлов</small></div>` : `<div class="price price--ask">Цена по запросу${p.note ? `<small>${esc(p.note)}</small>` : ""}</div>`;
+  const productCard = p => `<article class="card${p.demo ? " card--demo" : ""}">
+      <a class="card__media" href="${URL_.acc(p)}"><img src="${p.img}" alt="${esc(p.title)}" loading="lazy" width="400" height="400">${p.demo ? `<div class="card__tags"><span class="card__tag card__tag--white">Пример</span></div>` : p.gift ? `<div class="card__tags"><span class="card__tag card__tag--sale">Акция</span></div>` : ""}</a>
       <button type="button" class="card__fav" aria-label="В избранное" data-fav="product:${p.id}">${ICON.heart}</button>
-      <div class="card__body"><a class="card__title" href="${URL_.acc(p)}">${esc(p.title)}</a><div class="card__meta"><span>${esc(p.sub || "")}</span>${p.rating ? `<span class="stars">★★★★★</span><span>${p.rating}</span>` : ""}</div>
-      <div class="card__foot"><div class="price">${fmt(p.price)}${p.old ? `<s>${fmt(p.old)}</s>` : ""}${p.note ? `<small>${esc(p.note)}</small>` : ""}</div><button type="button" class="cart-btn" data-add="product:${p.id}" aria-label="В корзину">${ICON.cart}</button></div></div>
+      <div class="card__body"><a class="card__title" href="${URL_.acc(p)}">${esc(p.title)}</a><div class="card__meta"><span>${esc(p.sub || "")}</span></div>
+      <div class="card__foot">${accPrice(p)}<a class="btn btn--ghost btn--sm" href="${URL_.acc(p)}">Подробнее</a></div></div>
     </article>`;
-  const postCard = (p, wide) => `<a class="post${wide ? " post--wide" : ""}" href="${p.slug}.html"><div class="post__img"><img src="${p.img}" alt="" loading="lazy"></div><div class="post__body"><div class="post__meta"><span class="tag">${esc(p.tag)}</span><span>${esc(p.date)}</span></div><div class="post__title">${esc(p.title)}</div><div class="post__lead">${esc(p.lead)}</div></div></a>`;
+  const postCard = (p, wide) => `<a class="post${wide ? " post--wide" : ""}" href="${p.slug}.html"><div class="post__img"><img src="${p.img}" alt="" loading="lazy"></div><div class="post__body"><div class="post__meta"><span class="tag">${esc(p.tag)}</span>${p.date ? `<span>${esc(p.date)}</span>` : ""}</div><div class="post__title">${esc(p.title)}</div><div class="post__lead">${esc(p.lead)}</div></div></a>`;
   function plural(n, a, b, c) { const n10 = n % 10, n100 = n % 100; return n10 === 1 && n100 !== 11 ? a : n10 >= 2 && n10 <= 4 && (n100 < 10 || n100 >= 20) ? b : c; }
 
   /* ---------- мобильное меню ---------- */
@@ -224,7 +230,7 @@
       if (current === id) return; current = id;
       $$(".mega__brand", list).forEach(el => el.classList.toggle("is-active", el.dataset.brand === id));
       const b = BRAND[id];
-      pane.innerHTML = `<div class="mega__title"><img src="${brandLogo(id)}" alt=""><div><h3>Чехлы на ${esc(b.n)}</h3><span>${b.fams.length} ${plural(b.fams.length, "модель", "модели", "моделей")} · ${b.cnt} ${plural(b.cnt, "лекало", "лекала", "лекал")} · готовые от ${fmt(Math.min(...b.fams.map(f => f.min)))}</span></div><a class="link" href="${URL_.brand(id)}">Все модели ${esc(b.n)} ${ICON.arrow}</a></div>
+      pane.innerHTML = `<div class="mega__title"><img src="${brandLogo(id)}" alt=""><div><h3>Чехлы на ${esc(b.n)}</h3><span>${b.fams.length} ${plural(b.fams.length, "модель", "модели", "моделей")} · ${b.cnt} ${plural(b.cnt, "лекало", "лекала", "лекал")} · комплект от ${fmt(Math.min(...b.fams.map(f => f.min)))}</span></div><a class="link" href="${URL_.brand(id)}">Все модели ${esc(b.n)} ${ICON.arrow}</a></div>
         <div class="mega__cols">${b.fams.map(f => `<div class="mega__fam"><a href="${URL_.fam(f)}">${esc(f.n)}</a>${f.items.length > 1 ? `<ul>${f.items.map(m => `<li><a href="${URL_.pos(m)}">${esc([m.g, m.v].filter(Boolean).join(", ") || "Все годы")}${m.y ? " · " + esc(m.y) : ""}</a></li>`).join("")}</ul>` : `<ul><li><a href="${URL_.pos(f.items[0])}">${esc(f.items[0].y || "все годы")}</a></li></ul>`}</div>`).join("")}</div>`;
       if (customLink) customLink.href = "custom.html";
     };
@@ -387,7 +393,7 @@
   $$("form[data-form]").forEach(form => form.addEventListener("submit", e => {
     e.preventDefault();
     const btn = form.querySelector("[type=submit]"); if (btn) { btn.disabled = true; btn.textContent = "Отправляем…"; }
-    setTimeout(() => { form.reset(); if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Отправить"; } toast(form.dataset.formMessage || "Заявка отправлена. Перезвоним в течение 15 минут"); }, 600);
+    setTimeout(() => { form.reset(); if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Отправить"; } toast(form.dataset.formMessage || "Заявка отправлена. В рабочее время вам перезвонит оператор"); }, 600);
   }));
 
   /* ---------- вкладки, галерея, блоки по data-атрибутам ---------- */
@@ -395,7 +401,8 @@
   $$("[data-products]").forEach(box => { const list = (window.AS_PRODUCTS || []).filter(p => p.cat === box.dataset.products); box.innerHTML = list.map(productCard).join("") || '<div class="empty">Товары появятся позже</div>'; });
   $$("[data-posts]").forEach(box => { const n = +box.dataset.posts || 3, ex = box.dataset.postsExclude || ""; box.innerHTML = (window.AS_POSTS || []).filter(p => p.slug !== ex).slice(0, n).map(p => postCard(p)).join(""); });
 
-  window.AS = { $, $$, esc, fmt, qs, plural, ICON, BRANDS, MODELS, BRAND, BY_SLUG, FAMILIES, VARIANTS, VAR, MAT_NAME, sortedBrands, brandName, brandLogo, genName, carName, yearsText, famPhoto, posPhoto, varPhoto, priceOf, URL: URL_, coverCard, customCard, famCard, productCard, postCard, toast, Cart, Fav, badges, initPicker, search };
+  window.AS_accPrice = accPrice;
+  window.AS = { $, $$, esc, fmt, qs, plural, ICON, BRANDS, MODELS, BRAND, BY_SLUG, FAMILIES, VARIANTS, VAR, MAT_NAME, sortedBrands, brandName, brandLogo, genName, carName, yearsText, famPhoto, posPhoto, varPhoto, carRender, priceOf, URL: URL_, coverCard, customCard, famCard, productCard, postCard, toast, Cart, Fav, badges, initPicker, search };
   window.AS_cart = Cart; window.AS_fav = Fav; window.AS_postCard = postCard; window.AS_productCard = productCard;
   badges();
 })();
