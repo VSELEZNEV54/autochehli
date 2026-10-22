@@ -10,7 +10,7 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const fmt = n => Math.round(n).toLocaleString("ru-RU") + " ₽";
+  const fmt = n => Math.round(n).toLocaleString("ru-RU").replace(/\s/g, "\u00a0") + "\u00a0₽";
   const qs = k => new URLSearchParams(location.search).get(k);
   const hash = s => { let h = 0; for (const c of String(s)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; };
   const ICON = {

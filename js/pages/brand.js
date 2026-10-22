@@ -22,5 +22,5 @@
   }
   q.addEventListener("input", render); sort.addEventListener("change", render); render();
   document.getElementById("b-custom").innerHTML = A.customCard(null, true);
-  document.getElementById("b-seo").innerHTML = `<h2>Чехлы на сиденья ${A.esc(b.n)} от производителя</h2><p>Автостиль шьёт модельные чехлы на ${fams.length} ${A.plural(fams.length, "модель", "модели", "моделей")} ${A.esc(b.n)}: ${fams.slice(0, 10).map(f => A.esc(f.n)).join(", ")}${fams.length > 10 ? " и другие" : ""}. Для каждого поколения и варианта салона — своё заводское лекало.</p><p>Комплекты из жаккарда, экокожи и алькантары — от ${A.fmt(min)} за весь салон. Своё сочетание цветов можно собрать в конструкторе. Доставка в 6 000 населённых пунктов России и СНГ.</p>`;
+  document.getElementById("b-seo").innerHTML = `<h2>Чехлы на сиденья ${A.esc(b.n)} от производителя</h2><p>Автостиль шьёт модельные чехлы на ${fams.length} ${A.plural(fams.length, "модель", "модели", "моделей")} ${A.esc(b.n)}: ${fams.slice(0, 10).map(f => A.esc(f.n)).join(", ")}${fams.length > 10 ? " и другие" : ""}. Для каждого поколения и варианта салона — своё заводское лекало.</p><p>Комплекты из жаккарда, экокожи и алькантары — от ${A.fmt(min)} за весь салон. Своё сочетание цветов можно собрать в конструкторе. Доставка в 6 000 населённых пунктов России и СНГ.</p>`;
 })();

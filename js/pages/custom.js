@@ -136,7 +136,7 @@
 <rect x="175" y="118" width="9" height="30" rx="3" fill="url(#chrome)"/><rect x="236" y="118" width="9" height="30" rx="3" fill="url(#chrome)"/>
 ${frame("head", "gR")}
 ${insert("headIn", "cHead", emb)}${edge("headIn")}
-${emb ? `<text x="210.6" y="${fx(79 + fs * 0.35 + 0.8)}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="${fx(fs)}" letter-spacing="1.6" fill="rgba(0,0,0,.45)">${e(brand)}</text><text x="210" y="${fx(79 + fs * 0.35)}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="${fx(fs)}" letter-spacing="1.6" fill="${thread}">${e(brand)}</text>` : ""}
+${emb ? `<text x="210.6" y="${fx(79 + fs * 0.35 + 0.8)}" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-weight="800" font-size="${fx(fs)}" letter-spacing="1.6" fill="rgba(0,0,0,.45)">${e(brand)}</text><text x="210" y="${fx(79 + fs * 0.35)}" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-weight="800" font-size="${fx(fs)}" letter-spacing="1.6" fill="${thread}">${e(brand)}</text>` : ""}
 ${frame("back")}
 <path d="M106 196 L99 344" stroke="#fff" stroke-opacity=".14" stroke-width="12" stroke-linecap="round" filter="url(#hl)"/><path d="M314 196 L321 344" stroke="#fff" stroke-opacity=".1" stroke-width="12" stroke-linecap="round" filter="url(#hl)"/>
 ${insert("backIn", "cBack")}
@@ -240,11 +240,11 @@ ${seam("M50 520 Q210 528 370 520", "cCushF")}
       const g = cv.getContext("2d"), grd = g.createRadialGradient(W / 2, 380, 80, W / 2, 560, 900);
       grd.addColorStop(0, "#ffffff"); grd.addColorStop(1, "#e6e6e1"); g.fillStyle = grd; g.fillRect(0, 0, W, H);
       const sh = 1000, sw = sh * 420 / 600; g.drawImage(img, (W - sw) / 2, 40, sw, sh);
-      g.fillStyle = "#131416"; g.font = "800 44px Inter, Arial, sans-serif"; g.fillText("Эскиз чехлов" + (st.model ? " на " + A.carName(st.model) : ""), 70, 1120);
-      g.font = "500 28px Inter, Arial, sans-serif"; let y = 1180;
+      g.fillStyle = "#131416"; g.font = "800 44px Golos Text, Arial, sans-serif"; g.fillText("Эскиз чехлов" + (st.model ? " на " + A.carName(st.model) : ""), 70, 1120);
+      g.font = "500 28px Golos Text, Arial, sans-serif"; let y = 1180;
       summary().slice(1).forEach(([k, v]) => { g.fillStyle = "#6b6e74"; g.fillText(k, 70, y); g.fillStyle = "#131416"; g.fillText(v.length > 52 ? v.slice(0, 50) + "…" : v, 300, y); y += 44; });
-      g.font = "800 40px Inter, Arial, sans-serif"; g.fillText("от " + A.fmt(compute().total).replace(/ /g, " "), 70, H - 60);
-      g.font = "500 26px Inter, Arial, sans-serif"; g.fillStyle = "#6b6e74"; g.textAlign = "right"; g.fillText("Автостиль · 8 (800) 775-32-60", W - 70, H - 64);
+      g.font = "800 40px Golos Text, Arial, sans-serif"; g.fillText("от " + A.fmt(compute().total).replace(/ /g, " "), 70, H - 60);
+      g.font = "500 26px Golos Text, Arial, sans-serif"; g.fillStyle = "#6b6e74"; g.textAlign = "right"; g.fillText("Автостиль · 8 (800) 775-32-60", W - 70, H - 64);
       cv.toBlob(b => { const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "avtostil-eskiz.png"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 3000); });
     });
   }

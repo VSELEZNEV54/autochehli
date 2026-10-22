@@ -1,7 +1,7 @@
 /* Страница корзины: рендер из localStorage, доставка, форма заказа (демо) */
 (function () {
   const A = window.AS, Cart = window.AS_cart, box = document.getElementById("cart");
-  /* Доставка и оплата — как на старом сайте: DPD, EMS Почта России, самовывоз и курьер в Новосибирске; предоплата от 1 000 ₽ */
+  /* Доставка и оплата — как на старом сайте: DPD, EMS Почта России, самовывоз и курьер в Новосибирске; предоплата от 1 000 ₽ */
   const DELIVERY = [
     { id: "dpd", name: "Транспортная компания DPD", sub: "Срок и стоимость — по тарифу транспортной компании", price: null },
     { id: "ems", name: "EMS Почта России", sub: "Срок и стоимость — по тарифу Почты России", price: null },
@@ -23,12 +23,12 @@
     box.innerHTML = `
       <div>
         <div class="cart-list">${Cart.items.map(i => `<div class="cart-item"><img class="cart-item__img" src="${i.img}" alt=""><div><a class="cart-item__title" href="${i.url}">${i.title}</a><div class="cart-item__sub">${i.sub || ""}</div>${i.id.startsWith("cfg:any") ? '<div class="cart-item__sub" style="color:var(--c-sale)">Модель не выбрана — уточним при подтверждении</div>' : ""}</div><div class="cart-item__right"><div class="price">${A.fmt(i.price * i.qty)}${i.old ? `<s>${A.fmt(i.old * i.qty)}</s>` : ""}</div><div class="qty"><button type="button" data-qty="${i.id}" data-d="-1">−</button><span>${i.qty}</span><button type="button" data-qty="${i.id}" data-d="1">+</button></div><button type="button" class="cart-item__remove" data-remove="${i.id}">Удалить</button></div></div>`).join("")}</div>
-        <div class="callout" style="margin-top:14px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 22V7"/></svg><div><b>Оплётка на руль в подарок</b>Оплётка стоимостью 500 ₽ — в подарок к комплекту чехлов. Подробности акции уточнит менеджер.</div></div>
+        <div class="callout" style="margin-top:14px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 22V7"/></svg><div><b>Оплётка на руль в подарок</b>Оплётка стоимостью 500 ₽ — в подарок к комплекту чехлов. Подробности акции уточнит менеджер.</div></div>
         <form class="tile" data-form="order" style="margin-top:16px" id="order-form">
           <h2 style="font-size:1.25rem; margin-bottom:14px">Доставка</h2>
           ${DELIVERY.map(x => `<label class="radio"><input type="radio" name="delivery" value="${x.id}" ${x.id === delivery ? "checked" : ""}><div><b>${x.name}</b><span>${x.sub}</span></div><span class="rp">${x.price == null ? "по тарифу" : x.price ? A.fmt(x.price) : ""}</span></label>`).join("")}
           <h2 style="font-size:1.25rem; margin:20px 0 14px">Оплата</h2>
-          <label class="radio"><input type="radio" name="pay" value="prepay" ${pay === "prepay" ? "checked" : ""}><div><b>Предоплата от 1 000 ₽</b><span>Остаток — при получении, если в вашем городе доступен наложенный платёж</span></div></label>
+          <label class="radio"><input type="radio" name="pay" value="prepay" ${pay === "prepay" ? "checked" : ""}><div><b>Предоплата от 1 000 ₽</b><span>Остаток — при получении, если в вашем городе доступен наложенный платёж</span></div></label>
           <label class="radio"><input type="radio" name="pay" value="online" ${pay === "online" ? "checked" : ""}><div><b>Полная оплата картой или по QR-коду</b><span>Visa, Mastercard, Maestro, МИР — через Сбербанк, комиссия 0 %</span></div></label>
           <label class="radio"><input type="radio" name="pay" value="invoice" ${pay === "invoice" ? "checked" : ""}><div><b>Безналичный расчёт для юрлиц</b><span>Счёт выставляем по реквизитам организации</span></div></label>
           <h2 style="font-size:1.25rem; margin:20px 0 14px">Получатель</h2>
@@ -51,7 +51,7 @@
         </div>
         <div class="calc__total"><div><div class="small muted">Итого${dprice == null ? " без доставки" : ""}</div><div class="price">${A.fmt(total)}</div></div></div>
         <button class="btn btn--primary btn--lg btn--block" type="submit" form="order-form" data-label="Оформить заказ">Оформить заказ</button>
-        <div class="calc__note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Менеджер перезвонит и уточнит комплектацию салона. Работаем по предоплате от 1 000 ₽.</div>
+        <div class="calc__note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Менеджер перезвонит и уточнит комплектацию салона. Работаем по предоплате от 1 000 ₽.</div>
       </aside>`;
     box.querySelectorAll("[data-qty]").forEach(b => b.addEventListener("click", () => { const it = Cart.items.find(i => i.id === b.dataset.qty); Cart.setQty(b.dataset.qty, it.qty + +b.dataset.d); }));
     box.querySelectorAll("[data-remove]").forEach(b => b.addEventListener("click", () => Cart.remove(b.dataset.remove)));

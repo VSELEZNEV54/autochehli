@@ -12,8 +12,8 @@ window.AS_PRODUCTS = [
   { id: "m3", cat: "mats", demo: true, title: "Коврики EVA с бортами", sub: "Пример позиции", img: "assets/products/mat-2.jpg" },
   { id: "m4", cat: "mats", demo: true, title: "Коврик EVA в багажник", sub: "Пример позиции", img: "assets/products/mat-3.jpg" },
 
-  /* Оплётки: на старом сайте — акция «Оплётка на руль за 500 ₽ в подарок» */
-  { id: "w1", cat: "wheel", gift: true, title: "Оплётка на руль в подарок к комплекту чехлов", sub: "Акция: оплётка стоимостью 500 ₽ · подробности у менеджеров", img: "assets/swatches/eco-black.jpg" },
+  /* Оплётки: на старом сайте — акция «Оплётка на руль за 500 ₽ в подарок» */
+  { id: "w1", cat: "wheel", gift: true, title: "Оплётка на руль в подарок к комплекту чехлов", sub: "Акция: оплётка стоимостью 500 ₽ · подробности у менеджеров", img: "assets/swatches/eco-black.jpg" },
   { id: "w2", cat: "wheel", demo: true, title: "Оплётка на руль из экокожи с перфорацией", sub: "Пример позиции", img: "assets/swatches/perf-grey.jpg" },
   { id: "w3", cat: "wheel", demo: true, title: "Оплётка на руль из алькантары", sub: "Пример позиции", img: "assets/swatches/alca-grey.jpg" },
   { id: "w4", cat: "wheel", demo: true, title: "Оплётка на руль из бежевой экокожи", sub: "Пример позиции", img: "assets/swatches/eco-beige.jpg" },
