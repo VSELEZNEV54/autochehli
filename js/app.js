@@ -124,7 +124,7 @@
     const [kind, a, b] = id.split(":");
     if (kind === "cover") {
       const m = BY_SLUG[a], v = VAR[b]; if (!m || !v) return null;
-      return { id, title: `Чехлы на ${carName(m)}`, sub: `${v.name} · ${yearsText(m)} · пошив до 3 недель`, price: priceOf(m, v), img: varPhoto(v), url: URL_.product(m, v) };
+      return { id, title: `Чехлы на ${carName(m)}`, sub: `${v.name} · ${yearsText(m)}`, price: priceOf(m, v), img: varPhoto(v), url: URL_.product(m, v) };
     }
     if (kind === "product") {
       const p = (window.AS_PRODUCTS || []).find(x => x.id === a); if (!p) return null;

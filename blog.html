@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="stylesheet" href="css/style.css?v=10">
   <link rel="canonical" href="https://1avtochehol.ru/blog/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 2 4 8v12c0 9.5 6.8 16.5 16 18 9.2-1.5 16-8.5 16-18V8L20 2z' fill='%23fff450'/%3E%3Cpath fill-rule='evenodd' d='M20 11 12 30h4l1.6-4.5h4.8L24 30h4L20 11zm0 6.5-1.4 4.7h2.8L20 17.5z' fill='%231b1c1f'/%3E%3C/svg%3E">
 
@@ -146,10 +146,10 @@
 </div>
 <!-- /@footer -->
 
-<script src="js/data.js?v=9"></script>
-<script src="js/products.js?v=9"></script>
-<script src="js/cars.js?v=9"></script>
-<script src="js/app.js?v=9"></script>
+<script src="js/data.js?v=10"></script>
+<script src="js/products.js?v=10"></script>
+<script src="js/cars.js?v=10"></script>
+<script src="js/app.js?v=10"></script>
 
 <script>(function(){const A=window.AS,posts=window.AS_POSTS||[];const tag=new URLSearchParams(location.search).get('tag')||'';const tags=['Все',...new Set(posts.map(p=>p.tag))];const f=document.getElementById('post-filter');f.innerHTML=tags.map(t=>`<a class="chip${(t==='Все'&&!tag)||t===tag?' is-selected':''}" href="blog.html${t==='Все'?'':'?tag='+encodeURIComponent(t)}">${t}</a>`).join('');const list=tag?posts.filter(p=>p.tag===tag):posts;document.getElementById('posts').innerHTML=list.map((p,i)=>window.AS_postCard(p,i===0&&!tag)).join('')||'<div class="empty">Статей в рубрике пока нет</div>';})();</script>
 </body>

@@ -51,7 +51,7 @@
         </div>
         <div class="calc__total"><div><div class="small muted">Итого${dprice == null ? " без доставки" : ""}</div><div class="price">${A.fmt(total)}</div></div></div>
         <button class="btn btn--primary btn--lg btn--block" type="submit" form="order-form" data-label="Оформить заказ">Оформить заказ</button>
-        <div class="calc__note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Менеджер перезвонит, уточнит комплектацию салона и срок пошива. Работаем по предоплате от 1 000 ₽.</div>
+        <div class="calc__note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Менеджер перезвонит и уточнит комплектацию салона. Работаем по предоплате от 1 000 ₽.</div>
       </aside>`;
     box.querySelectorAll("[data-qty]").forEach(b => b.addEventListener("click", () => { const it = Cart.items.find(i => i.id === b.dataset.qty); Cart.setQty(b.dataset.qty, it.qty + +b.dataset.d); }));
     box.querySelectorAll("[data-remove]").forEach(b => b.addEventListener("click", () => Cart.remove(b.dataset.remove)));
