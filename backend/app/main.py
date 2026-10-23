@@ -128,6 +128,10 @@ async def http_error(request: Request, exc: StarletteHTTPException):
         return HTMLResponse(f'<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="/admin/static/admin.css">'
                             f'<div class="page"><h1>{exc.status_code}</h1><p>{text}</p><p><a href="/admin/orders">К заказам</a></p></div>',
                             status_code=exc.status_code)
+    # режим разработки со статикой: страница сайта не найдена — отдаём 404.html, как nginx на проде
+    if (settings.serve_static and exc.status_code == 404 and request.method == "GET"
+            and not request.url.path.startswith(("/api", "/admin")) and (settings.site_root / "404.html").is_file()):
+        return FileResponse(settings.site_root / "404.html", status_code=404, headers={"Cache-Control": "no-cache"})
     detail = exc.detail if exc.detail not in (None, "Not Found") else "Не найдено"
     return JSONResponse({"detail": detail}, status_code=exc.status_code, headers=getattr(exc, "headers", None))
 

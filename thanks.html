@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=82">
+  <link rel="stylesheet" href="css/style.css?v=83">
   <link rel="canonical" href="https://1avtochehol.ru/thanks/">
   <link rel="icon" href="assets/logo/icon.svg" type="image/svg+xml">
 <meta name="robots" content="noindex">
@@ -83,8 +83,12 @@
 
 <main>
 <div class="container">
-  <div class="thanks" data-thanks>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+  <div class="thanks" data-thanks data-state="ok">
+    <span class="thanks__icon" aria-hidden="true">
+      <svg class="thanks__i thanks__i--ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+      <svg class="thanks__i thanks__i--wait" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+      <svg class="thanks__i thanks__i--fail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7 7 17"/></svg>
+    </span>
     <h1 data-t-title>Заказ принят</h1>
     <p data-t-text>В рабочее время вам перезвонит оператор, уточнит комплектацию салона и условия предоплаты. Перед отправкой пришлём фотоотчёт.</p>
     <div class="actions thanks__actions" data-t-actions><a class="btn btn--primary" href="index.html">На главную</a><a class="btn btn--ghost" href="info-install.html">Инструкция по установке</a></div>
@@ -171,11 +175,11 @@
 </div>
 <!-- /@footer -->
 
-<script src="js/data.js?v=82"></script>
-<script src="js/products.js?v=82"></script>
-<script src="js/cars.js?v=82"></script>
-<script src="js/app.js?v=82"></script>
-<script src="js/pages/thanks.js?v=82"></script>
+<script src="js/data.js?v=83"></script>
+<script src="js/products.js?v=83"></script>
+<script src="js/cars.js?v=83"></script>
+<script src="js/app.js?v=83"></script>
+<script src="js/pages/thanks.js?v=83"></script>
 
 </body>
 </html>

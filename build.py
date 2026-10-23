@@ -25,11 +25,15 @@ for src in sorted((root / "content").glob("*.html")):
         meta["head"] = meta.get("head", "") + '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": qa}, ensure_ascii=False) + "</script>"
     html = parts["layout"]
     meta.setdefault("js", [])
-    meta["js"] = "\n".join(f'<script src="js/{j}?v=82"></script>' for j in meta["js"])
+    meta["js"] = "\n".join(f'<script src="js/{j}?v=83"></script>' for j in meta["js"])
     meta.setdefault("canonical", "https://1avtochehol.ru/" + ("" if src.stem == "index" else src.stem + "/"))
     for k in ("title", "description", "page", "head", "scripts", "js", "canonical"):
         html = html.replace("{{" + k + "}}", meta.get(k, "" if k in ("head", "scripts", "js") else src.stem))
     html = html.replace("{{body}}", body.strip())
+    # "base": "/" — для страниц, которые сервер отдаёт по любому адресу (404): относительные ссылки идут от корня.
+    # <base> ставим сразу после <meta charset>, до стилей и скриптов, иначе они загрузятся от неверного адреса
+    if meta.get("base"):
+        html = re.sub(r"(<meta charset=[^>]*>)", lambda mm: mm.group(1) + f'\n  <base href="{meta["base"]}">', html, count=1)
     (root / f"{src.stem}.html").write_text(html, encoding="utf-8")
     print("rendered", src.stem + ".html")
 # 2. шапка и футер

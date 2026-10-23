@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=82">
+  <link rel="stylesheet" href="css/style.css?v=83">
   <link rel="canonical" href="https://1avtochehol.ru/blog/">
   <link rel="icon" href="assets/logo/icon.svg" type="image/svg+xml">
 
@@ -172,10 +172,10 @@
 </div>
 <!-- /@footer -->
 
-<script src="js/data.js?v=82"></script>
-<script src="js/products.js?v=82"></script>
-<script src="js/cars.js?v=82"></script>
-<script src="js/app.js?v=82"></script>
+<script src="js/data.js?v=83"></script>
+<script src="js/products.js?v=83"></script>
+<script src="js/cars.js?v=83"></script>
+<script src="js/app.js?v=83"></script>
 
 <script>(function(){const A=window.AS,posts=window.AS_POSTS||[];const tag=new URLSearchParams(location.search).get('tag')||'';const tags=['Все',...new Set(posts.map(p=>p.tag))];const f=document.getElementById('post-filter');f.innerHTML=tags.map(t=>`<a class="chip${(t==='Все'&&!tag)||t===tag?' is-selected':''}" href="blog.html${t==='Все'?'':'?tag='+encodeURIComponent(t)}">${t}</a>`).join('');const list=tag?posts.filter(p=>p.tag===tag):posts;document.getElementById('posts').innerHTML=list.map(p=>window.AS_postCard(p)).join('')||'<div class="empty">Статей в рубрике пока нет</div>';})();</script>
 </body>
