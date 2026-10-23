@@ -1,0 +1,30 @@
+{% extends "admin/base.html" %}
+{% block title %}Пользователи{% endblock %}
+{% block body %}
+<h1>Пользователи</h1>
+<div class="table-wrap mt-14">
+<table class="t">
+  <thead><tr><th>Логин</th><th>Имя</th><th>Роль</th><th>2FA</th><th>Последний вход</th><th>Статус</th><th></th></tr></thead>
+  <tbody>
+  {% for u in users %}
+  <tr><td class="mono">{{ u.username }}</td><td>{{ u.name }}</td><td>{{ 'администратор' if u.role == 'admin' else 'менеджер' }}</td>
+    <td>{{ 'включена' if u.totp_secret else '—' }}</td><td>{{ u.last_login_at|local }}</td>
+    <td><span class="b b--{{ 'done' if u.is_active else 'canceled' }}">{{ 'активен' if u.is_active else 'отключён' }}</span></td>
+    <td>{% if u.id != me.id %}<form method="post" action="/admin/users/{{ u.id }}/toggle"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="btn btn--sm">{{ 'Отключить' if u.is_active else 'Включить' }}</button></form>{% endif %}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+<section class="card mt-14">
+  <h2>Новый пользователь</h2>
+  <form method="post" action="/admin/users" class="row">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <label class="f">Логин<input class="input" name="username" required pattern="[a-z0-9._\-]{3,40}" autocomplete="off"></label>
+    <label class="f">Имя<input class="input" name="name"></label>
+    <label class="f">Роль<select class="input" name="role"><option value="manager">менеджер</option><option value="admin">администратор</option></select></label>
+    <label class="f">Пароль<input class="input" name="password" type="password" required minlength="10" autocomplete="new-password"></label>
+    <button class="btn btn--dark">Создать</button>
+  </form>
+  <p class="small muted">Пароль — от 10 символов, строчные и заглавные буквы и цифры. Менеджер видит заказы и VIN, администратор — ещё пользователей и удаление записей.</p>
+</section>
+{% endblock %}

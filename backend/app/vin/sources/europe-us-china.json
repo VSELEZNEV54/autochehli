@@ -1,0 +1,4096 @@
+{
+ "group": "europe-us-china",
+ "wmi": [
+  {
+   "code": "WVW",
+   "maker": "Volkswagen AG (легковые)",
+   "country": "DE",
+   "brands": [
+    "volkswagen"
+   ],
+   "year_pos10": true,
+   "note": "Для Европы позиции 4–6 = ZZZ, модель — 7–8. Машины из Мексики/ЮАР для Европы тоже бывают с WVW (завод — 11-й символ, M — Пуэбла).",
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=WVW",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes"
+   ]
+  },
+  {
+   "code": "WVG",
+   "maker": "Volkswagen AG (внедорожники: Tiguan, Touareg)",
+   "country": "DE",
+   "brands": [
+    "volkswagen"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes"
+   ]
+  },
+  {
+   "code": "WV1",
+   "maker": "Volkswagen Коммерческие автомобили (фургоны/грузовые: Caddy фургон, Amarok, Crafter)",
+   "country": "DE",
+   "brands": [
+    "volkswagen"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=WV1",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes"
+   ]
+  },
+  {
+   "code": "WV2",
+   "maker": "Volkswagen Коммерческие автомобили (пассажирские: Caddy Kombi/Life, Multivan)",
+   "country": "DE",
+   "brands": [
+    "volkswagen"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=WV2"
+   ]
+  },
+  {
+   "code": "XW8",
+   "maker": "Фольксваген Груп Рус (Калуга; контрактная сборка в Нижнем Новгороде на ГАЗ)",
+   "country": "RU",
+   "brands": [
+    "volkswagen",
+    "skoda",
+    "audi"
+   ],
+   "year_pos10": true,
+   "note": "Общий WMI для VW, Skoda и Audi российской сборки. У VW и Audi позиции 4–6 = ZZZ, у Skoda там коды кузова/двигателя/подушек. 11-й символ по примерам: G — Калуга (VW), K — Калуга (Skoda), H — Нижний Новгород (Skoda Octavia A7/A8, Kodiaq, Yeti), N — Нижний Новгород (VW Jetta).",
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=XW8",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/polo/"
+   ]
+  },
+  {
+   "code": "TMB",
+   "maker": "Škoda Auto a.s. (Млада-Болеслав, Квасины, Врхлаби)",
+   "country": "CZ",
+   "brands": [
+    "skoda"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=TMB"
+   ]
+  },
+  {
+   "code": "WAU",
+   "maker": "Audi AG (Ингольштадт, Неккарзульм; также Дьёр)",
+   "country": "DE",
+   "brands": [
+    "audi"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=WAU",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Audi/VIN_Codes",
+    "https://www.drive2.ru/l/9275716/"
+   ]
+  },
+  {
+   "code": "WA1",
+   "maker": "Audi AG — внедорожники (Q3/Q5/Q7) для рынка США/Канады",
+   "country": "DE",
+   "brands": [
+    "audi"
+   ],
+   "year_pos10": true,
+   "note": "У машин для США позиции 4–6 не ZZZ, модель кодируется по-своему (Q5 = FP, Q3 = FS с 2010/2015).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Audi/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/WA1LFAFP*D?format=json"
+   ]
+  },
+  {
+   "code": "WF0",
+   "maker": "Ford-Werke GmbH (Германия/Европа: Кёльн, Саарлуис, Генк, Валенсия, Коджаэли и др.)",
+   "country": "DE",
+   "brands": [
+    "ford"
+   ],
+   "year_pos10": false,
+   "note": "У европейских Ford модельный год — 11-й символ, 12-й — месяц; 10-й символ дублирует код кузова (4-й). В 2008 г. WF0 также использовался на SKD-сборке во Всеволожске (carinfo).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=WF0"
+   ]
+  },
+  {
+   "code": "X9F",
+   "maker": "Форд Мотор Компани ЗАО (Всеволожск)",
+   "country": "RU",
+   "brands": [
+    "ford"
+   ],
+   "year_pos10": false,
+   "note": "Год — 11-й символ (как у WF0). 7–8 = EE — завод во Всеволожске.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=X9F",
+    "https://www.drive2.ru/l/1201817/"
+   ]
+  },
+  {
+   "code": "Z6F",
+   "maker": "Форд Соллерс (Всеволожск, Елабуга, Набережные Челны)",
+   "country": "RU",
+   "brands": [
+    "ford"
+   ],
+   "year_pos10": false,
+   "note": "Год — 11-й символ. По примерам 7–8: EE — Всеволожск (Focus III рест.), ES — Елабуга (Kuga II), EC — Набережные Челны (EcoSport, Fiesta). По carinfo в Елабуге под Z6F собирали Explorer, Transit, Kuga, S-MAX, Galaxy; ранее у ООО «Соллерс-Елабуга» был код Z7G.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=Z6F"
+   ]
+  },
+  {
+   "code": "1FM",
+   "maker": "Ford Motor Company (США) — внедорожники/MPV",
+   "country": "US",
+   "brands": [
+    "ford"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1FM5K8GT6DGC18757?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes"
+   ]
+  },
+  {
+   "code": "W0L",
+   "maker": "Adam Opel AG (Германия и другие заводы Opel в Европе; также GM Korea — Antara, Mokka)",
+   "country": "DE",
+   "brands": [
+    "opel"
+   ],
+   "year_pos10": true,
+   "note": "До ~2009 г. старая схема: 4-й символ 0, 5–6 — платформа (TG — Astra G, AH — Astra H/Zafira B, SD — Corsa D), 7 — серия, 8–9 — код кузова GM (35 универсал, 48 5-дв. хэтчбек, 08 3-дв., 68 5-дв. (Corsa), 69 седан, 75 минивэн). С ~2009 новая схема GM: 4 — модель (P — Astra J/Zafira C, L — Antara, J — Mokka), 5 — комплектация, 6 — кузов, 7 — подушки, 8 — двигатель.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=W0L",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/"
+   ]
+  },
+  {
+   "code": "W0V",
+   "maker": "Opel Automobile GmbH (с 2018, под PSA)",
+   "country": "DE",
+   "brands": [
+    "opel"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=W0V"
+   ]
+  },
+  {
+   "code": "XUF",
+   "maker": "Дженерал Моторз Авто (Санкт-Петербург, Шушары)",
+   "country": "RU",
+   "brands": [
+    "opel"
+   ],
+   "year_pos10": true,
+   "note": "Также Chevrolet (Cruze — XUFJ…, Aveo — XUFT…, Captiva — XUFC…).",
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=XUF",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes"
+   ]
+  },
+  {
+   "code": "XWF",
+   "maker": "Автотор (Калининград)",
+   "country": "RU",
+   "brands": [
+    "opel",
+    "chery"
+   ],
+   "year_pos10": true,
+   "note": "Мультибрендовый: Opel (Zafira B, Astra J, Meriva B, Insignia), Chery (Tiggo 7) и др.",
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=XWF",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/"
+   ]
+  },
+  {
+   "code": "XUU",
+   "maker": "Автотор (Калининград) — GM (Chevrolet, Opel)",
+   "country": "RU",
+   "brands": [
+    "opel"
+   ],
+   "year_pos10": true,
+   "note": "carinfo указывает Chevrolet; по реальным VIN (avtogermes) под XUU шли и Opel Mokka (XUUJ…) и Antara (XUUL…).",
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=XUU",
+    "https://www.avtogermes.ru/sale/second_hand/opel/"
+   ]
+  },
+  {
+   "code": "VF3",
+   "maker": "Peugeot (PSA), Франция",
+   "country": "FR",
+   "brands": [
+    "peugeot"
+   ],
+   "year_pos10": null,
+   "note": "4-й символ — модель (4 — 308/T7, V — 4007, B — 4008, Y — Boxer III). 10-й символ — год только примерно с 2009–2010; у более ранних машин и у Boxer (Sevel) 10-й символ — не год.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Peugeot/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=VF3"
+   ]
+  },
+  {
+   "code": "VF7",
+   "maker": "Citroën (PSA), Франция",
+   "country": "FR",
+   "brands": [
+    "citroen"
+   ],
+   "year_pos10": null,
+   "note": "Схема как у Peugeot: V — C-Crosser, Y — Jumper II (X250).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Peugeot/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=VF7"
+   ]
+  },
+  {
+   "code": "VR3",
+   "maker": "Peugeot (Stellantis), Франция",
+   "country": "FR",
+   "brands": [
+    "peugeot"
+   ],
+   "year_pos10": null,
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Peugeot/VIN_Codes"
+   ]
+  },
+  {
+   "code": "Z8T",
+   "maker": "ПСМА Рус (Калуга): Peugeot, Citroën, Mitsubishi",
+   "country": "RU",
+   "brands": [
+    "peugeot",
+    "citroen"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=Z8T",
+    "https://www.avtogermes.ru/sale/second_hand/peugeot/",
+    "https://www.avtogermes.ru/sale/second_hand/citroen/"
+   ]
+  },
+  {
+   "code": "ZFA",
+   "maker": "Fiat (Италия; также Fiat Польша/Tofaş для внешних рынков)",
+   "country": "IT",
+   "brands": [
+    "fiat"
+   ],
+   "year_pos10": false,
+   "note": "У европейских Fiat 4–6 — тип (250 — Ducato X250), 7–9 обычно 000, 10-й символ — не год (в примерах Ducato — 0).",
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=ZFA",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Fiat/VIN_Codes"
+   ]
+  },
+  {
+   "code": "TSM",
+   "maker": "Magyar Suzuki (Эстергом) — Fiat Sedici и Suzuki",
+   "country": "HU",
+   "brands": [
+    "fiat"
+   ],
+   "year_pos10": null,
+   "note": "Тот же WMI у Suzuki SX4/Swift/Vitara венгерской сборки — марку по WMI не определить.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Fiat/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=TSM"
+   ]
+  },
+  {
+   "code": "Z7G",
+   "maker": "Соллерс-Елабуга — SKD-сборка Fiat Ducato",
+   "country": "RU",
+   "brands": [
+    "fiat"
+   ],
+   "year_pos10": null,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=Z7G"
+   ]
+  },
+  {
+   "code": "Z76",
+   "maker": "Соллерс-Елабуга — CKD-сборка Fiat Ducato",
+   "country": "RU",
+   "brands": [
+    "fiat"
+   ],
+   "year_pos10": null,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=Z76"
+   ]
+  },
+  {
+   "code": "XU3",
+   "maker": "Соллерс-Набережные Челны — CKD-сборка Fiat (и SsangYong)",
+   "country": "RU",
+   "brands": [
+    "fiat"
+   ],
+   "year_pos10": null,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=XU3"
+   ]
+  },
+  {
+   "code": "WBA",
+   "maker": "BMW AG",
+   "country": "DE",
+   "brands": [
+    "bmw"
+   ],
+   "year_pos10": false,
+   "note": "Вне США 10-й символ — не год (в европейских VIN обычно 0). 4–7 — типовой код BMW.",
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=WBA",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/WBADT434*1?format=json"
+   ]
+  },
+  {
+   "code": "X4X",
+   "maker": "Автотор (Калининград): BMW, Chery, Kia и др.",
+   "country": "RU",
+   "brands": [
+    "bmw",
+    "chery"
+   ],
+   "year_pos10": false,
+   "note": "У BMW автоторской сборки 10-й символ — 0, как у европейских BMW.",
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=X4X",
+    "https://www.avtogermes.ru/sale/second_hand/bmw/"
+   ]
+  },
+  {
+   "code": "WDB",
+   "maker": "Daimler (Mercedes-Benz: легковые до ~2001, фургоны Sprinter/Vito)",
+   "country": "DE",
+   "brands": [
+    "mercedes"
+   ],
+   "year_pos10": false,
+   "note": "Вне США 10-й символ — не год (у фургонов — признак руля: 1 — левый, 2 — правый). 4–6 — серия (906 — Sprinter NCV3).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mercedes-Benz/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=WDB"
+   ]
+  },
+  {
+   "code": "WDD",
+   "maker": "Daimler (Mercedes-Benz легковые)",
+   "country": "DE",
+   "brands": [
+    "mercedes"
+   ],
+   "year_pos10": false,
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mercedes-Benz/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=WDD"
+   ]
+  },
+  {
+   "code": "W1K",
+   "maker": "Mercedes-Benz (легковые, с 2020)",
+   "country": "DE",
+   "brands": [
+    "mercedes"
+   ],
+   "year_pos10": false,
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mercedes-Benz/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=W1K"
+   ]
+  },
+  {
+   "code": "W1V",
+   "maker": "Mercedes-Benz (фургоны, с ~2019)",
+   "country": "DE",
+   "brands": [
+    "mercedes"
+   ],
+   "year_pos10": false,
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mercedes-Benz/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=W1V"
+   ]
+  },
+  {
+   "code": "WME",
+   "maker": "Smart (Micro Compact Car / Daimler), завод Хамбах",
+   "country": "FR",
+   "brands": [
+    "smart"
+   ],
+   "year_pos10": null,
+   "note": "Wikibooks: схема WMEE… (4 — серия, 10 — год) только для Северной Америки. Европейские Smart — по схеме Mercedes: 4–6 = серия (451 — Fortwo II), см. VIN из объявлений; 10-й символ у них не проверен как год.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Smart/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=WME"
+   ]
+  },
+  {
+   "code": "YV1",
+   "maker": "Volvo Car Corporation — легковые",
+   "country": "SE",
+   "brands": [
+    "volvo"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volvo/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/YV1MS382*6?format=json"
+   ]
+  },
+  {
+   "code": "YV4",
+   "maker": "Volvo Car Corporation — MPV/внедорожники",
+   "country": "SE",
+   "brands": [
+    "volvo"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volvo/VIN_Codes"
+   ]
+  },
+  {
+   "code": "SAL",
+   "maker": "Land Rover (Солихалл, Хейлвуд; Нитра)",
+   "country": "GB",
+   "brands": [
+    "land-rover"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Land_Rover/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=SAL"
+   ]
+  },
+  {
+   "code": "1B3",
+   "maker": "Chrysler Group / FCA US — легковые Dodge",
+   "country": "US",
+   "brands": [
+    "dodge"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1B3HB48B07D555772?format=json"
+   ]
+  },
+  {
+   "code": "1C3",
+   "maker": "Chrysler Group / FCA US — легковые (с 2011)",
+   "country": "US",
+   "brands": [
+    "dodge"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1C3CDWBA*C?format=json"
+   ]
+  },
+  {
+   "code": "5Y2",
+   "maker": "NUMMI (Фримонт, США) — Pontiac Vibe",
+   "country": "US",
+   "brands": [
+    "pontiac"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5Y2SL63865Z411166?format=json"
+   ]
+  },
+  {
+   "code": "LVV",
+   "maker": "Chery Automobile (Китай)",
+   "country": "CN",
+   "brands": [
+    "chery"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=LVV",
+    "https://www.avtogermes.ru/sale/second_hand/chery/"
+   ]
+  },
+  {
+   "code": "LVT",
+   "maker": "Chery Automobile (Китай)",
+   "country": "CN",
+   "brands": [
+    "chery"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=LVT",
+    "https://www.avtogermes.ru/sale/second_hand/chery/"
+   ]
+  },
+  {
+   "code": "X9W",
+   "maker": "Дервейс (Черкесск) — SKD-сборка Lifan, Chery, Geely и др.",
+   "country": "RU",
+   "brands": [
+    "lifan",
+    "chery"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=X9W",
+    "https://www.avtogermes.ru/sale/second_hand/lifan/"
+   ]
+  },
+  {
+   "code": "LLV",
+   "maker": "Chongqing Lifan (Китай)",
+   "country": "CN",
+   "brands": [
+    "lifan"
+   ],
+   "year_pos10": null,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=LLV"
+   ]
+  },
+  {
+   "code": "LGW",
+   "maker": "Great Wall Motor (Китай) — Great Wall и Haval",
+   "country": "CN",
+   "brands": [
+    "great-wall",
+    "haval"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=LGW",
+    "https://www.avtogermes.ru/sale/second_hand/haval/"
+   ]
+  },
+  {
+   "code": "X9X",
+   "maker": "ИМС / Ирито (Гжель) — SKD-сборка Great Wall",
+   "country": "RU",
+   "brands": [
+    "great-wall"
+   ],
+   "year_pos10": null,
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=X9X"
+   ]
+  },
+  {
+   "code": "XZG",
+   "maker": "Хавейл Мотор Мануфэкчуринг Рус (Тула) — по реальным VIN Haval Jolion/F7",
+   "country": "RU",
+   "brands": [
+    "haval"
+   ],
+   "year_pos10": true,
+   "note": "В справочниках WMI не нашли; вывод по VIN из объявлений дилера (Jolion, F7 2019–2025), год в 10-м символе совпадает с годом выпуска.",
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/haval/"
+   ]
+  },
+  {
+   "code": "LCN",
+   "maker": "Lifan (Китай) — по реальным VIN Lifan X60",
+   "country": "CN",
+   "brands": [
+    "lifan"
+   ],
+   "year_pos10": true,
+   "note": "В справочнике carinfo нет; у X60 2012–2013 из объявлений auto.ria 10-й символ совпадает с годом.",
+   "sources": [
+    "https://auto.ria.com/uk/"
+   ]
+  }
+ ],
+ "vin_rules": [
+  {
+   "mask": "XW8ZZZ61Z",
+   "years": [
+    2010,
+    2020
+   ],
+   "model": "Polo",
+   "body": "Polo V седан (тип 61/612, Калуга)",
+   "detail": "спинка 60/40 или сплошная по VIN не определяется — выбирает клиент",
+   "slugs": [
+    "volkswagen_polo",
+    "volkswagen_polo-sedan"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8ZZZ61ZBG013510 — avtogermes, Polo V 2011",
+    "XW8ZZZ61ZEG067767 — avtogermes, Polo V 2014",
+    "XW8ZZZ61ZLG010671 — avtogermes, Polo V рестайлинг 2019",
+    "XW8ZZZ61ZDG054788 — auto.ria.com, Polo V седан 2013"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/polo/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://auto.ria.com/uk/auto_volkswagen_polo_40120966.html"
+   ]
+  },
+  {
+   "mask": "XW8ZZZCKZ",
+   "years": [
+    2020,
+    2022
+   ],
+   "model": "Polo",
+   "body": "Polo VI лифтбек (Калуга)",
+   "detail": "лекал на Polo лифтбек в каталоге нет",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8ZZZCKZNG006324 — avtogermes, Polo VI 2021",
+    "XW8ZZZCKZMG039425 — avtogermes, Polo VI 2021"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/polo/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "XW8ZZZ5NZ",
+   "years": [
+    2007,
+    2015
+   ],
+   "model": "Tiguan",
+   "body": "Tiguan I (5N)",
+   "detail": "Tiguan I и II имеют одинаковый код 5N — поколение определяется только по модельному году",
+   "slugs": [
+    "volkswagen_tiguan-sport",
+    "volkswagen_tiguan"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8ZZZ5NZ9G005867 — avtogermes, Tiguan I 2009",
+    "XW8ZZZ5NZDG119676 — avtogermes, Tiguan I рестайлинг 2012"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/tiguan/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "XW8ZZZ5NZ",
+   "years": [
+    2016,
+    2017
+   ],
+   "model": "Tiguan",
+   "body": "Tiguan I или Tiguan II (переходные годы)",
+   "detail": "в 2016–2017 модельных годах встречаются оба поколения — уточнить по фото салона",
+   "slugs": [
+    "volkswagen_tiguan-sport",
+    "volkswagen_tiguan",
+    "volkswagen_tiguan-comfortline",
+    "volkswagen_tiguan-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8ZZZ5NZHG207909 — avtogermes, Tiguan II 2017"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/tiguan/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "XW8ZZZ5NZ",
+   "years": [
+    2018,
+    2024
+   ],
+   "model": "Tiguan",
+   "body": "Tiguan II (AD/BW, код в VIN 5N)",
+   "slugs": [
+    "volkswagen_tiguan-comfortline",
+    "volkswagen_tiguan-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8ZZZ5NZJG223658 — avtogermes, Tiguan II 2018",
+    "XW8ZZZ5NZKG234900 — avtogermes, Tiguan II 2019"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/tiguan/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "WVGZZZ5NZ",
+   "years": [
+    2007,
+    2015
+   ],
+   "model": "Tiguan",
+   "body": "Tiguan I (5N)",
+   "detail": "Tiguan I и II имеют одинаковый код 5N — поколение определяется только по модельному году",
+   "slugs": [
+    "volkswagen_tiguan-sport",
+    "volkswagen_tiguan"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WVGZZZ5NZ9W023005 — fastcarcheck.uk, Tiguan 2009"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://carsbat.com/de/detail/wvgzzz5nznw400843-fwpxhc/"
+   ]
+  },
+  {
+   "mask": "WVGZZZ5NZ",
+   "years": [
+    2016,
+    2017
+   ],
+   "model": "Tiguan",
+   "body": "Tiguan I или Tiguan II (переходные годы)",
+   "detail": "в 2016–2017 модельных годах встречаются оба поколения — уточнить по фото салона",
+   "slugs": [
+    "volkswagen_tiguan-sport",
+    "volkswagen_tiguan",
+    "volkswagen_tiguan-comfortline",
+    "volkswagen_tiguan-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WVGZZZ5NZGW529639 — carsbat.com, Tiguan 2016"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://carsbat.com/de/detail/wvgzzz5nznw400843-fwpxhc/"
+   ]
+  },
+  {
+   "mask": "WVGZZZ5NZ",
+   "years": [
+    2018,
+    2024
+   ],
+   "model": "Tiguan",
+   "body": "Tiguan II (AD/BW, код в VIN 5N)",
+   "slugs": [
+    "volkswagen_tiguan-comfortline",
+    "volkswagen_tiguan-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WVGZZZ5NZKW902433 — fastcarcheck.uk, Tiguan 2019",
+    "WVGZZZ5NZNW400843 — carsbat.com, Tiguan 2021"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://carsbat.com/de/detail/wvgzzz5nznw400843-fwpxhc/"
+   ]
+  },
+  {
+   "mask": "WVWZZZ1KZ",
+   "years": [
+    2004,
+    2008
+   ],
+   "model": "Golf / Golf Plus / Jetta",
+   "body": "Golf V, Golf Plus, Jetta V (платформа 1K)",
+   "detail": "код 1K общий для Golf V/VI, Golf Plus и Jetta V — модель по VIN не различается, выбирает клиент",
+   "slugs": [
+    "volkswagen_golfv",
+    "volkswagen_golf-plus",
+    "volkswagen_jetta"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WVWZZZ1KZ5W547003 — surplex.com, Golf Plus 2005",
+    "WVWZZZ1KZ7W620720 — veacom.cz, Golf Plus 2007"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://www.surplex.com/en/l/volkswagen-golf-plus-passenger-car-A7-48957-5"
+   ]
+  },
+  {
+   "mask": "WVWZZZ1KZ",
+   "years": [
+    2009,
+    2009
+   ],
+   "model": "Golf / Golf Plus / Jetta",
+   "body": "Golf V или VI, Golf Plus, Jetta V (переходный год)",
+   "detail": "2009 модельный год — смена Golf V на VI (универсал Golf V выпускался до 2009)",
+   "slugs": [
+    "volkswagen_golfv",
+    "volkswagen_golfvi",
+    "volkswagen_golf-plus",
+    "volkswagen_jetta"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "WVWZZZ1KZ",
+   "years": [
+    2010,
+    2014
+   ],
+   "model": "Golf / Golf Plus / Jetta",
+   "body": "Golf VI, Golf Plus, Jetta V (до 2010)",
+   "detail": "Jetta V — только до 2010 модельного года",
+   "slugs": [
+    "volkswagen_golfvi",
+    "volkswagen_golf-plus",
+    "volkswagen_jetta"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WVWZZZ1KZDW111517 — avtogermes, Golf VI 2012",
+    "WVWZZZ1KZDW567377 — tipcars.com, Golf Plus 2013"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/golf/"
+   ]
+  },
+  {
+   "mask": "XW8ZZZ1KZ",
+   "years": [
+    2008,
+    2010
+   ],
+   "model": "Jetta",
+   "body": "Jetta V калужской сборки",
+   "detail": "Golf V/VI в Калуге не собирали (по нашим данным); при сомнении предложить и Golf",
+   "slugs": [
+    "volkswagen_jetta"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8ZZZ1KZ9G105296 — avtogermes, Jetta V 2009"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/jetta/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "WVWZZZ16Z",
+   "years": [
+    2011,
+    2013
+   ],
+   "model": "Jetta",
+   "body": "Jetta VI до рестайлинга",
+   "detail": "код 16 у VW также был у Jetta I/II 1980-х — правило только для 2011+",
+   "slugs": [
+    "volkswagen_jetta-new"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WVWZZZ16ZDM049394 — avtogermes, Jetta VI 2012"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/jetta/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "WVWZZZ16Z",
+   "years": [
+    2014,
+    2014
+   ],
+   "model": "Jetta",
+   "body": "Jetta VI — год рестайлинга",
+   "detail": "в 2014 модельном году встречаются обе версии",
+   "slugs": [
+    "volkswagen_jetta-new",
+    "volkswagen_jetta-sochi-edition"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/jetta/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "WVWZZZ16Z",
+   "years": [
+    2015,
+    2019
+   ],
+   "model": "Jetta",
+   "body": "Jetta VI рестайлинг",
+   "slugs": [
+    "volkswagen_jetta-sochi-edition"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/jetta/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "XW8ZZZ16Z",
+   "years": [
+    2011,
+    2013
+   ],
+   "model": "Jetta",
+   "body": "Jetta VI до рестайлинга",
+   "detail": "код 16 у VW также был у Jetta I/II 1980-х — правило только для 2011+",
+   "slugs": [
+    "volkswagen_jetta-new"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/jetta/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "XW8ZZZ16Z",
+   "years": [
+    2014,
+    2014
+   ],
+   "model": "Jetta",
+   "body": "Jetta VI — год рестайлинга",
+   "detail": "в 2014 модельном году встречаются обе версии",
+   "slugs": [
+    "volkswagen_jetta-new",
+    "volkswagen_jetta-sochi-edition"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/jetta/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "XW8ZZZ16Z",
+   "years": [
+    2015,
+    2019
+   ],
+   "model": "Jetta",
+   "body": "Jetta VI рестайлинг",
+   "slugs": [
+    "volkswagen_jetta-sochi-edition"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8ZZZ16ZGN906483 — avtogermes, Jetta VI рестайлинг 2016",
+    "XW8ZZZ16ZJN903332 — avtogermes, Jetta VI рестайлинг 2018"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/jetta/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/"
+   ]
+  },
+  {
+   "mask": "WVWZZZAUZ",
+   "years": [
+    2013,
+    2020
+   ],
+   "model": "Golf",
+   "body": "Golf VII (тип AU)",
+   "detail": "Wikibooks: AU = Golf Mk7; универсал Golf VII тоже AU",
+   "slugs": [
+    "volkswagen_golf-7"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WVWZZZAUZHP523039 — tipcars.com, Golf универсал 2016",
+    "WVWZZZAUZEW162581 — fastcarcheck.uk, Golf 2014"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes",
+    "https://www.tipcars.com/volkswagen-golf/kombi/nafta/volkswagen-golf-55970780.html"
+   ]
+  },
+  {
+   "mask": "WVW???3B",
+   "years": [
+    1997,
+    2005
+   ],
+   "model": "Passat",
+   "body": "Passat B5 / B5+ (3B)",
+   "detail": "маска покрывает и европейский (ZZZ), и американский формат VIN",
+   "slugs": [
+    "volkswagen_passat-b5"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WVWZZZ3BZ2P359427 — fastcarcheck.uk, Passat 2002",
+    "WVWMA63B5XE493511 — myfloridalegal.com, Passat 1999 (США)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes",
+    "https://fastcarcheck.uk/vin-check/WVWZZZ3BZ2P359427"
+   ]
+  },
+  {
+   "mask": "WVW???3C",
+   "years": [
+    2005,
+    2015
+   ],
+   "model": "Passat",
+   "body": "Passat B6 / B7 (3C)",
+   "detail": "Passat CC тоже 3C (Wikibooks) — у CC салон другой, уточнить у клиента; Passat B8 = 3G",
+   "slugs": [
+    "volkswagen_passat-b6"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WVWZZZ3CZ7E151040 — nettiauto.com, Passat B6 2007",
+    "WVWZZZ3CZBP343574 — avtogermes, Passat B7 2011",
+    "WVWZZZ3CZEE145208 — avtogermes, Passat B7 2014"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes",
+    "https://www.avtogermes.ru/sale/second_hand/volkswagen/passat/",
+    "https://www.nettiauto.com/en/volkswagen/passat/15856541"
+   ]
+  },
+  {
+   "mask": "WV1ZZZ2HZ",
+   "years": [
+    2010,
+    2022
+   ],
+   "model": "Amarok",
+   "body": "Amarok I (2H)",
+   "slugs": [
+    "volkswagen_amarok"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WV1ZZZ2HZJH007220 — реестр ТС Чехии (hlidacstatu.cz), Amarok 2018",
+    "WV1ZZZ2HZLH012929 — hlidacstatu.cz, Amarok 2020"
+   ],
+   "sources": [
+    "https://www.hlidacstatu.cz/vozidla/vin/WV1ZZZ2HZJH007220",
+    "https://www.hlidacstatu.cz/vozidla/vin/WV1ZZZ2HZLH012929"
+   ]
+  },
+  {
+   "mask": "WV1ZZZ2KZ",
+   "years": [
+    2004,
+    2015
+   ],
+   "model": "Caddy",
+   "body": "Caddy III (2K) — WV1: обычно фургон",
+   "detail": "WV1 чаще у грузового фургона (2 места), WV2 — у пассажирского Kombi/Life (5 мест), но это не строгое правило — число мест выбирает клиент",
+   "slugs": [
+    "volkswagen_caddy-2m",
+    "volkswagen_caddy-5m"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WV1ZZZ2KZ6X054971 — hlidacstatu.cz, Caddy 2KN, 2 места, 2005",
+    "WV1ZZZ2KZ7X011379 — auto.ria.com, Caddy III 2006"
+   ],
+   "sources": [
+    "https://www.hlidacstatu.cz/vozidla/vin/WV1ZZZ2KZ6X054971",
+    "https://auto.ria.com/uk/auto_volkswagen_caddy_40589364.html"
+   ]
+  },
+  {
+   "mask": "WV2ZZZ2KZ",
+   "years": [
+    2004,
+    2015
+   ],
+   "model": "Caddy",
+   "body": "Caddy III (2K) — WV2: обычно пассажирский",
+   "slugs": [
+    "volkswagen_caddy-2m",
+    "volkswagen_caddy-5m"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WV2ZZZ2KZCX139572 — auto.ria.com, Caddy III (FL) 2012",
+    "WV2ZZZ2KZ9X016439 — auto.ria.com, Caddy III 2008"
+   ],
+   "sources": [
+    "https://www.hlidacstatu.cz/vozidla/vin/WV1ZZZ2KZ6X054971",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=WV2",
+    "https://auto.ria.com/uk/auto_volkswagen_caddy_40473564.html",
+    "https://auto.ria.com/uk/auto_volkswagen_caddy_40565336.html"
+   ]
+  },
+  {
+   "mask": "WV1ZZZ2KZ",
+   "years": [
+    2016,
+    2020
+   ],
+   "model": "Caddy",
+   "body": "Caddy IV (тот же код 2K)",
+   "detail": "лекала в каталоге — на Caddy III 2004–2015; салон Caddy IV близок, но не проверен",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "WV1ZZZ2KZKX100814 — carsbat.com, Caddy 2019"
+   ],
+   "sources": [
+    "https://carsbat.com/de/detail/wv1zzz2kzkx100814-c6kdpp/"
+   ]
+  },
+  {
+   "mask": "WV2ZZZ2KZ",
+   "years": [
+    2016,
+    2020
+   ],
+   "model": "Caddy",
+   "body": "Caddy IV (тот же код 2K)",
+   "detail": "лекала в каталоге — на Caddy III 2004–2015",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "WV2ZZZ2KZLX028401 — olx.pl, Caddy 2019"
+   ],
+   "sources": [
+    "https://www.olx.pl/d/oferta/vw-caddy-4motion-4x4-zadbany-CID5-ID1aEFRY.html"
+   ]
+  },
+  {
+   "mask": "WV1ZZZ2EZ",
+   "years": [
+    2006,
+    2017
+   ],
+   "model": "Crafter",
+   "body": "Crafter I (2E, кузов общий с Sprinter NCV3)",
+   "detail": "в каталоге поколение Crafter не указано — проверить, что лекало на Crafter I",
+   "slugs": [
+    "volkswagen_crafter"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WV1ZZZ2EZE6015512 — hlidacstatu.cz, Crafter 2013",
+    "WV1ZZZ2EZF6029098 — hlidacstatu.cz, Crafter 2015",
+    "WV1ZZZ2EZ76015022 — auto.ria.com, Crafter 2006"
+   ],
+   "sources": [
+    "https://www.hlidacstatu.cz/vozidla/vin/WV1ZZZ2EZE6015512",
+    "https://www.hlidacstatu.cz/vozidla/vin/WV1ZZZ2EZF6029098",
+    "https://auto.ria.com/uk/auto_volkswagen_crafter_40538040.html"
+   ]
+  },
+  {
+   "mask": "WV1ZZZSYZ",
+   "years": [
+    2017,
+    2025
+   ],
+   "model": "Crafter",
+   "body": "Crafter II (SY/SZ)",
+   "detail": "если лекало volkswagen_crafter сделано на Crafter II — добавить slug",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "WV1ZZZSYZL9031299 — carsbat.com, Crafter 2020",
+    "WV1ZZZSYZK9073255 — carsbat.com, Crafter 2019"
+   ],
+   "sources": [
+    "https://carsbat.com/de/detail/wv1zzzsyzl9031299-yo0uj6/"
+   ]
+  },
+  {
+   "mask": "TMB???1U",
+   "years": [
+    1996,
+    2010
+   ],
+   "model": "Octavia",
+   "body": "Octavia I (A4 / Tour)",
+   "slugs": [
+    "skoda_octavia-tour"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/octavia/"
+   ]
+  },
+  {
+   "mask": "XW8???1U",
+   "years": [
+    2007,
+    2010
+   ],
+   "model": "Octavia",
+   "body": "Octavia I Tour калужской сборки",
+   "slugs": [
+    "skoda_octavia-tour"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8DC41U69K008966 — avtogermes, Octavia I рестайлинг 2008"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/octavia/"
+   ]
+  },
+  {
+   "mask": "TMB???1Z",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Octavia",
+   "body": "Octavia II (A5)",
+   "detail": "комплектация (Ambiente/Elegance) по VIN не определяется",
+   "slugs": [
+    "skoda_octaviaa5-ambiente",
+    "skoda_octavia-a-5"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TMBKK21Z4D2109258 — avtogermes, Octavia II рестайлинг 2012"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/octavia/"
+   ]
+  },
+  {
+   "mask": "XW8???1Z",
+   "years": [
+    2007,
+    2013
+   ],
+   "model": "Octavia",
+   "body": "Octavia II (A5) калужской сборки",
+   "slugs": [
+    "skoda_octaviaa5-ambiente",
+    "skoda_octavia-a-5"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8CJ41Z8DK221147 — avtogermes, Octavia II рестайлинг 2012"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/octavia/"
+   ]
+  },
+  {
+   "mask": "TMB???NE",
+   "years": [
+    2013,
+    2020
+   ],
+   "model": "Octavia",
+   "body": "Octavia III (A7)",
+   "detail": "комплектация (Ambiente/Active или Elegance) по VIN не определяется",
+   "slugs": [
+    "skoda_octaviaa7-ambiente",
+    "skoda_octavia-a-7"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/octavia/"
+   ]
+  },
+  {
+   "mask": "TMB???NX",
+   "years": [
+    2020,
+    2025
+   ],
+   "model": "Octavia",
+   "body": "Octavia IV (A8)",
+   "detail": "официально (Škoda Storyboard): NX — Octavia",
+   "slugs": [
+    "skoda_octavia-a8"
+   ],
+   "confidence": "official",
+   "examples": [
+    "TMBJR8NX*PY***** — пример Škoda Storyboard"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/octavia/"
+   ]
+  },
+  {
+   "mask": "XW8???NE",
+   "years": [
+    2013,
+    2020
+   ],
+   "model": "Octavia",
+   "body": "Octavia III (A7)",
+   "detail": "комплектация (Ambiente/Active или Elegance) по VIN не определяется",
+   "slugs": [
+    "skoda_octaviaa7-ambiente",
+    "skoda_octavia-a-7"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8AC2NE4HH006686 — avtogermes, Octavia III 2016",
+    "XW8AC4NE3JH010830 — avtogermes, Octavia III рестайлинг 2017",
+    "XW8AD4NE6LH012605 — avtogermes, Octavia III рестайлинг 2019"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/octavia/"
+   ]
+  },
+  {
+   "mask": "XW8???NX",
+   "years": [
+    2020,
+    2025
+   ],
+   "model": "Octavia",
+   "body": "Octavia IV (A8)",
+   "detail": "официально (Škoda Storyboard): NX — Octavia",
+   "slugs": [
+    "skoda_octavia-a8"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XW8AC6NX1MH060112 — avtogermes, Octavia IV 2021"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/octavia/"
+   ]
+  },
+  {
+   "mask": "TMB???NH",
+   "years": [
+    2012,
+    2023
+   ],
+   "model": "Rapid",
+   "body": "Rapid I и Rapid II (лифтбек; у обоих код NH)",
+   "detail": "вариант салона (60/40, спорт, сплошная спинка) по VIN не определяется; Rapid II — с 2020 г.",
+   "slugs": [
+    "skoda_rapid",
+    "skoda_rapid-sport",
+    "skoda_rapid-new"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/rapid/"
+   ]
+  },
+  {
+   "mask": "XW8???NH",
+   "years": [
+    2012,
+    2023
+   ],
+   "model": "Rapid",
+   "body": "Rapid I и Rapid II (лифтбек; у обоих код NH)",
+   "detail": "вариант салона (60/40, спорт, сплошная спинка) по VIN не определяется; Rapid II — с 2020 г.",
+   "slugs": [
+    "skoda_rapid",
+    "skoda_rapid-sport",
+    "skoda_rapid-new"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8AD2NH0FK100376 — avtogermes, Rapid I 2014",
+    "XW8AC4NH5JK118671 — avtogermes, Rapid I рестайлинг 2018",
+    "XW8AT6NH7NK103185 — avtogermes, Rapid II 2021"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/rapid/"
+   ]
+  },
+  {
+   "mask": "TMB???NS",
+   "years": [
+    2016,
+    2024
+   ],
+   "model": "Kodiaq",
+   "body": "Kodiaq I (NS)",
+   "detail": "комплектация (Active или Ambition/Scout) по VIN не определяется",
+   "slugs": [
+    "skoda_kodiaq-active",
+    "skoda_kodiaq-ambition"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/kodiaq/"
+   ]
+  },
+  {
+   "mask": "XW8???NS",
+   "years": [
+    2016,
+    2024
+   ],
+   "model": "Kodiaq",
+   "body": "Kodiaq I (NS)",
+   "detail": "комплектация (Active или Ambition/Scout) по VIN не определяется",
+   "slugs": [
+    "skoda_kodiaq-active",
+    "skoda_kodiaq-ambition"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8LC2NS5KH404849 — avtogermes, Kodiaq 2018",
+    "XW8JA4NS6LH400593 — avtogermes, Kodiaq 2019"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/kodiaq/"
+   ]
+  },
+  {
+   "mask": "TMB???5L",
+   "years": [
+    2009,
+    2013
+   ],
+   "model": "Yeti",
+   "body": "Yeti до рестайлинга (5L)",
+   "slugs": [
+    "skoda_yeti"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/yeti/"
+   ]
+  },
+  {
+   "mask": "TMB???5L",
+   "years": [
+    2014,
+    2014
+   ],
+   "model": "Yeti",
+   "body": "Yeti — год рестайлинга",
+   "detail": "рестайлинг осенью 2013 — в 2014 модельном году возможны обе версии",
+   "slugs": [
+    "skoda_yeti",
+    "skoda_yeti-2",
+    "skoda_yeti2"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/yeti/"
+   ]
+  },
+  {
+   "mask": "TMB???5L",
+   "years": [
+    2015,
+    2018
+   ],
+   "model": "Yeti",
+   "body": "Yeti рестайлинг",
+   "detail": "со столиком или без — по VIN не определяется",
+   "slugs": [
+    "skoda_yeti-2",
+    "skoda_yeti2"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/yeti/"
+   ]
+  },
+  {
+   "mask": "XW8???5L",
+   "years": [
+    2009,
+    2013
+   ],
+   "model": "Yeti",
+   "body": "Yeti до рестайлинга (5L)",
+   "slugs": [
+    "skoda_yeti"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/yeti/"
+   ]
+  },
+  {
+   "mask": "XW8???5L",
+   "years": [
+    2014,
+    2014
+   ],
+   "model": "Yeti",
+   "body": "Yeti — год рестайлинга",
+   "detail": "рестайлинг осенью 2013 — в 2014 модельном году возможны обе версии",
+   "slugs": [
+    "skoda_yeti",
+    "skoda_yeti-2",
+    "skoda_yeti2"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/yeti/"
+   ]
+  },
+  {
+   "mask": "XW8???5L",
+   "years": [
+    2015,
+    2018
+   ],
+   "model": "Yeti",
+   "body": "Yeti рестайлинг",
+   "detail": "со столиком или без — по VIN не определяется",
+   "slugs": [
+    "skoda_yeti-2",
+    "skoda_yeti2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8JJ65L5FH702501 — avtogermes, Yeti рестайлинг 2014",
+    "XW8JJ65L9FH701741 — avtogermes, Yeti рестайлинг 2014"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.avtogermes.ru/sale/second_hand/skoda/yeti/"
+   ]
+  },
+  {
+   "mask": "TMB???6Y",
+   "years": [
+    1999,
+    2008
+   ],
+   "model": "Fabia",
+   "body": "Fabia I (6Y)",
+   "slugs": [
+    "skoda_fabia1"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TMBPW16Y454286984 — реестр ТС Чехии, Fabia 2005",
+    "TMBHC46Y854270950 — реестр ТС Чехии, Fabia Combi 2005"
+   ],
+   "sources": [
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBPW16Y454286984",
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBHC46Y854270950",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/"
+   ]
+  },
+  {
+   "mask": "TMB???5J",
+   "years": [
+    2006,
+    2015
+   ],
+   "model": "Fabia / Roomster",
+   "body": "Fabia II или Roomster (общий код 5J)",
+   "detail": "различаются 4-м символом (кузов): в примерах Roomster — N/U, Fabia — A/B/C/E/G; полного списка нет",
+   "slugs": [
+    "skoda_fabia2",
+    "skoda_roomster"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TMBGH25J983164216 — реестр ТС Чехии, Fabia 2008",
+    "TMBNM25JXC7027421 — реестр ТС Чехии, Roomster 2012"
+   ],
+   "sources": [
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBGH25J983164216",
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBNM25JXC7027421",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/"
+   ]
+  },
+  {
+   "mask": "XW8???5J",
+   "years": [
+    2007,
+    2014
+   ],
+   "model": "Fabia / Roomster",
+   "body": "Fabia II калужской сборки (5J)",
+   "slugs": [
+    "skoda_fabia2",
+    "skoda_roomster"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW8CC15J99K511353 — avtogermes, Fabia II хэтчбек 2009"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/skoda/fabia/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/"
+   ]
+  },
+  {
+   "mask": "TMBN??5J",
+   "years": [
+    2006,
+    2015
+   ],
+   "model": "Roomster",
+   "body": "Roomster (4-й символ N)",
+   "slugs": [
+    "skoda_roomster"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "TMBNM25JXC7027421 — hlidacstatu.cz, Roomster 2012",
+    "TMBNM25JXF5009937 — hlidacstatu.cz, Roomster 2014"
+   ],
+   "sources": [
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBNM25JXC7027421",
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBNM25JXF5009937"
+   ]
+  },
+  {
+   "mask": "TMBU??5J",
+   "years": [
+    2006,
+    2015
+   ],
+   "model": "Roomster",
+   "body": "Roomster (4-й символ U)",
+   "slugs": [
+    "skoda_roomster"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "TMBUHB5J985041930 — hlidacstatu.cz, Roomster 2008",
+    "TMBUDB5J185018475 — hlidacstatu.cz, Roomster"
+   ],
+   "sources": [
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBUHB5J985041930",
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBUDB5J185018475"
+   ]
+  },
+  {
+   "mask": "WAUZZZ4F",
+   "years": [
+    2004,
+    2011
+   ],
+   "model": "A6",
+   "body": "A6 C6 (4F), в т.ч. allroad",
+   "slugs": [
+    "audi_a6-c6"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WAUZZZ4F98N175133 — fastcarcheck.uk, A6 2008",
+    "WAUZZZ4F06N171016 — fastcarcheck.uk, A6 2006"
+   ],
+   "sources": [
+    "https://www.drive2.ru/l/9275716/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Audi/VIN_Codes",
+    "https://fastcarcheck.uk/vin-check/WAUZZZ4F98N175133"
+   ]
+  },
+  {
+   "mask": "WAUZZZ8U",
+   "years": [
+    2011,
+    2018
+   ],
+   "model": "Q3",
+   "body": "Q3 I (8U)",
+   "detail": "в каталоге поколение Q3 не указано («с 2011») — правило считает лекало сделанным на Q3 I",
+   "slugs": [
+    "audi_q3"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WAUZZZ8U7GR020273 — avtogermes, Q3 I рестайлинг 2015",
+    "WAUZZZ8U3CR005960 — fastcarcheck.uk, Q3 2011"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/audi/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Audi/VIN_Codes",
+    "https://fastcarcheck.uk/vin-check/WAUZZZ8U3CR005960"
+   ]
+  },
+  {
+   "mask": "WA1???FS",
+   "years": [
+    2015,
+    2018
+   ],
+   "model": "Q3",
+   "body": "Q3 I (8U) для США",
+   "detail": "Wikibooks: FS (Type 8U) = Q3 ('15–'18)",
+   "slugs": [
+    "audi_q3"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/WA1***FS*F?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Audi/VIN_Codes"
+   ]
+  },
+  {
+   "mask": "WAUZZZF3",
+   "years": [
+    2018,
+    2025
+   ],
+   "model": "Q3",
+   "body": "Q3 II (F3)",
+   "detail": "если лекало audi_q3 подходит и ко II поколению — добавить slug",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "WAUZZZF39L1031861 — fastcarcheck.uk, Q3 2019",
+    "WAUZZZF38P1064419 — fastcarcheck.uk, Q3 2023"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Audi/VIN_Codes",
+    "https://fastcarcheck.uk/vin-check/WAUZZZF39L1031861"
+   ]
+  },
+  {
+   "mask": "WAUZZZ8R",
+   "years": [
+    2008,
+    2017
+   ],
+   "model": "Q5",
+   "body": "Q5 I (8R)",
+   "detail": "в каталоге поколение Q5 не указано («с 2008») — правило считает лекало сделанным на Q5 I",
+   "slugs": [
+    "audi_q5"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WAUZZZ8R59A030782 — fastcarcheck.uk, Q5 2009",
+    "WAUZZZ8RXGA046571 — fastcarcheck.uk, Q5 2016"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Audi/VIN_Codes",
+    "https://fastcarcheck.uk/vin-check/WAUZZZ8R59A030782",
+    "https://auto.ria.com/auto_audi_q5_39759926.html"
+   ]
+  },
+  {
+   "mask": "WA1???FP",
+   "years": [
+    2010,
+    2017
+   ],
+   "model": "Q5",
+   "body": "Q5 I (8R) для США",
+   "detail": "Wikibooks: FP (Type 8R) = Q5 ('10–'17)",
+   "slugs": [
+    "audi_q5"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/WA1LFAFP*D?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Audi/VIN_Codes"
+   ]
+  },
+  {
+   "mask": "WAUZZZFY",
+   "years": [
+    2017,
+    2025
+   ],
+   "model": "Q5",
+   "body": "Q5 II (FY)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "WAUZZZFY4J2058839 — fastcarcheck.uk, Q5 2018"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Audi/VIN_Codes",
+    "https://fastcarcheck.uk/vin-check/WAUZZZFY4J2058839"
+   ]
+  },
+  {
+   "mask": "WF0?XXGCD",
+   "years": [
+    2005,
+    2011
+   ],
+   "model": "Focus",
+   "body": "Focus II (Саарлуис; 9-й символ D)",
+   "detail": "год — 11-й символ VIN; при 4-м символе M — C-Max, R — Kuga I (отдельные правила, они точнее); 2005 г. — возможен Focus I; вариант с ремнём/без — выбирает клиент",
+   "slugs": [
+    "ford_focus2-bez-remny",
+    "ford_focus2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WF0SXXGCDS8R45404 — auto.ria.com, Focus 2008 универсал",
+    "WF0WXXGCDW7C58893 — auto.ria.com, Focus 2007"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://auto.ria.com/auto_ford_focus_40230274.html"
+   ]
+  },
+  {
+   "mask": "X9F?XXEED",
+   "years": [
+    2005,
+    2011
+   ],
+   "model": "Focus",
+   "body": "Focus II российской сборки (Всеволожск)",
+   "detail": "год — 11-й символ VIN; 2005 г. — возможен Focus I",
+   "slugs": [
+    "ford_focus2-bez-remny",
+    "ford_focus2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "X9FHXXEEDH8C61820 — avtogermes, Focus II рестайлинг 2008"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://www.avtogermes.ru/sale/second_hand/ford/focus/",
+    "https://www.drive2.ru/l/1201817/"
+   ]
+  },
+  {
+   "mask": "WF0MXXGCDM",
+   "years": [
+    2003,
+    2010
+   ],
+   "model": "C-Max",
+   "body": "Focus C-Max / C-Max I",
+   "detail": "год — 11-й символ VIN; лекало в каталоге — 2002–2007, рестайлинг 2007–2010 уточнить",
+   "slugs": [
+    "ford_c-max"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WF0MXXGCDM5J03686 — auto.ria.com, C-Max 2005",
+    "WF0MXXGCDM4T77680 — auto.ria.com, C-Max 2005"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://auto.ria.com/auto_ford_c_max_39481476.html"
+   ]
+  },
+  {
+   "mask": "WF0RXXGCDR",
+   "years": [
+    2008,
+    2012
+   ],
+   "model": "Kuga",
+   "body": "Kuga I (Саарлуис)",
+   "detail": "год — 11-й символ VIN",
+   "slugs": [
+    "ford_kuga"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WF0RXXGCDRCB46124 — olx.pl, Kuga 2012",
+    "WF0RXXGCDR9B52814 — auto.ria.com, Kuga 2009"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://www.olx.pl/d/oferta/ford-kuga-stan-idealny-oryginalny-przebieg-CID5-ID1bzrpG.html",
+    "https://auto.ria.com/uk/auto_ford_kuga_20037904.html"
+   ]
+  },
+  {
+   "mask": "Z6FAXXESMA",
+   "years": [
+    2013,
+    2019
+   ],
+   "model": "Kuga",
+   "body": "Kuga II (Елабуга)",
+   "detail": "год — 11-й символ VIN",
+   "slugs": [
+    "ford_kuga-trend-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z6FAXXESMADP39832 — avtogermes, Kuga II 2013",
+    "Z6FAXXESMAJS89900 — avtogermes, Kuga II рестайлинг 2018",
+    "Z6FAXXESMAGY52664 — autospot.ru, Kuga II 2016"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://www.avtogermes.ru/sale/second_hand/ford/kuga/",
+    "https://autospot.ru/brands/ford/kuga/2012/suv/used/958856/"
+   ]
+  },
+  {
+   "mask": "WF0?XXWPM",
+   "years": [
+    2013,
+    2019
+   ],
+   "model": "Kuga",
+   "body": "Kuga II (Валенсия)",
+   "detail": "год — 11-й символ VIN; с 2020 г. тот же код у Kuga III",
+   "slugs": [
+    "ford_kuga-trend-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WF0FXXWPMHTS22553 — nettiauto.com, Kuga 2017"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://www.nettiauto.com/en/ford/kuga/15876770"
+   ]
+  },
+  {
+   "mask": "X9FKXXEEBK",
+   "years": [
+    2011,
+    2015
+   ],
+   "model": "Focus",
+   "body": "Focus III российской сборки, до рестайлинга (хэтчбек)",
+   "detail": "год — 11-й символ VIN; drive2: 4-й и 10-й символ M — седан, K — хэтчбек, L — универсал; 9-й B — Focus III (CB8)",
+   "slugs": [
+    "ford_focusiii",
+    "ford_focus3"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "X9FKXXEEBKDJ78065 — avtogermes, Focus III 2013"
+   ],
+   "sources": [
+    "https://www.drive2.ru/l/1201817/",
+    "https://www.avtogermes.ru/sale/second_hand/ford/focus/",
+    "https://carsvin.ru/auto/vin?vincode=X9FKXXEEBKC****56"
+   ]
+  },
+  {
+   "mask": "X9FMXXEEBM",
+   "years": [
+    2011,
+    2015
+   ],
+   "model": "Focus",
+   "body": "Focus III российской сборки, до рестайлинга (седан)",
+   "detail": "год — 11-й символ VIN; drive2: 4-й и 10-й символ M — седан, K — хэтчбек, L — универсал; 9-й B — Focus III (CB8)",
+   "slugs": [
+    "ford_focusiii",
+    "ford_focus3"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://www.drive2.ru/l/1201817/",
+    "https://www.avtogermes.ru/sale/second_hand/ford/focus/",
+    "https://carsvin.ru/auto/vin?vincode=X9FKXXEEBKC****56"
+   ]
+  },
+  {
+   "mask": "X9FLXXEEBL",
+   "years": [
+    2011,
+    2015
+   ],
+   "model": "Focus",
+   "body": "Focus III российской сборки, до рестайлинга (универсал)",
+   "detail": "год — 11-й символ VIN; drive2: 4-й и 10-й символ M — седан, K — хэтчбек, L — универсал; 9-й B — Focus III (CB8)",
+   "slugs": [
+    "ford_focusiii",
+    "ford_focus3"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://www.drive2.ru/l/1201817/",
+    "https://www.avtogermes.ru/sale/second_hand/ford/focus/",
+    "https://carsvin.ru/auto/vin?vincode=X9FKXXEEBKC****56"
+   ]
+  },
+  {
+   "mask": "Z6F4XXEEC4",
+   "years": [
+    2015,
+    2019
+   ],
+   "model": "Focus",
+   "body": "Focus III рестайлинг российской сборки (Всеволожск, код кузова 4)",
+   "detail": "год — 11-й символ VIN; какой цифре соответствует какой кузов — по источникам не установлено",
+   "slugs": [
+    "ford_focusiii",
+    "ford_focus3"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "Z6F4XXEEC4GK20035 — avtogermes, Focus III рест. 2016",
+    "Z6F4XXEEC4HC38058 — avtogermes, Focus III рест. 2017"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/ford/focus/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/"
+   ]
+  },
+  {
+   "mask": "Z6F5XXEEC5",
+   "years": [
+    2015,
+    2019
+   ],
+   "model": "Focus",
+   "body": "Focus III рестайлинг российской сборки (Всеволожск, код кузова 5)",
+   "detail": "год — 11-й символ VIN; какой цифре соответствует какой кузов — по источникам не установлено",
+   "slugs": [
+    "ford_focusiii",
+    "ford_focus3"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "Z6F5XXEEC5HD43938 — avtogermes, Focus III рест. 2017"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/ford/focus/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/"
+   ]
+  },
+  {
+   "mask": "Z6F6XXEEC6",
+   "years": [
+    2015,
+    2019
+   ],
+   "model": "Focus",
+   "body": "Focus III рестайлинг российской сборки (Всеволожск, код кузова 6)",
+   "detail": "год — 11-й символ VIN; какой цифре соответствует какой кузов — по источникам не установлено",
+   "slugs": [
+    "ford_focusiii",
+    "ford_focus3"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "Z6F6XXEEC6KK63030 — avtogermes, Focus III рест. 2019"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/ford/focus/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/"
+   ]
+  },
+  {
+   "mask": "WF0?XXGCC",
+   "years": [
+    2011,
+    2018
+   ],
+   "model": "Focus",
+   "body": "Focus III (Саарлуис)",
+   "detail": "год — 11-й символ VIN; 2018 г. — возможен Focus IV (код не проверен)",
+   "slugs": [
+    "ford_focusiii",
+    "ford_focus3"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "WF05XXGCC5HG17520 — fastcarcheck.uk, Focus 2017"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://fastcarcheck.uk/vin-check/WF05XXGCC5HG17520"
+   ]
+  },
+  {
+   "mask": "WF0UXXGAJU",
+   "years": [
+    2002,
+    2012
+   ],
+   "model": "Fusion",
+   "body": "Fusion (Кёльн)",
+   "detail": "год — 11-й символ VIN; Fiesta с того же завода тоже имеет 9-й символ J, отличается 4-м/10-м символом (у Fusion — U)",
+   "slugs": [
+    "ford_fusion"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WF0UXXGAJUAT05639 — avtogermes, Fusion рестайлинг 2010",
+    "WF0UXXGAJU8C36683 — auto.ria.com, Fusion 2008"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://www.avtogermes.ru/sale/second_hand/ford/",
+    "https://auto.ria.com/auto_ford_fusion_40157366.html"
+   ]
+  },
+  {
+   "mask": "WF0?XXWPR",
+   "years": [
+    1996,
+    2008
+   ],
+   "model": "Ka",
+   "body": "Ka I (Валенсия)",
+   "detail": "год — 11-й символ VIN; Ka II (с 2008, Тыхы, «LT») — не это правило",
+   "slugs": [
+    "ford_ka"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WF0BXXWPRB3T01442 — carsbat.com, Ka",
+    "WF0BXXWPRB4D44309 — fastcarcheck.uk, Ka"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://carsbat.com/de/detail/wf0bxxwprb3t01442-paijkb/"
+   ]
+  },
+  {
+   "mask": "WF0?XXGBB",
+   "years": [
+    2007,
+    2014
+   ],
+   "model": "Mondeo",
+   "body": "Mondeo IV (Генк)",
+   "detail": "год — 11-й символ VIN; тот же код у Mondeo III (до 2007) — VIN 2007 г. уточнить",
+   "slugs": [
+    "ford_mondeo-4"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WF0EXXGBBEAS62400 — fastcarcheck.uk, Mondeo 2010",
+    "WF0EXXGBBEDU02532 — fastcarcheck.uk, Mondeo 2013"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://fastcarcheck.uk/vin-check/WF0EXXGBBEDU02532"
+   ]
+  },
+  {
+   "mask": "X9FDXXEEBD",
+   "years": [
+    2007,
+    2014
+   ],
+   "model": "Mondeo",
+   "body": "Mondeo IV российской сборки (седан)",
+   "detail": "год — 11-й символ VIN; у Focus III тоже X9F…EEB…, но с кодом кузова K/M/L, у Mondeo в примере — D",
+   "slugs": [
+    "ford_mondeo-4"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "X9FDXXEEBDBL85336 — startmycar.com, Mondeo 2011"
+   ],
+   "sources": [
+    "https://www.startmycar.com/ford/mondeo",
+    "https://www.drive2.ru/l/1201817/"
+   ]
+  },
+  {
+   "mask": "WF0?XXWPC",
+   "years": [
+    2014,
+    2022
+   ],
+   "model": "Mondeo",
+   "body": "Mondeo V (Валенсия)",
+   "detail": "год — 11-й символ VIN; Mondeo V российской сборки (Всеволожск) — код не найден",
+   "slugs": [
+    "ford_mondeo-5"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WF0EXXWPCEKE75373 — avtogermes, Mondeo V рестайлинг 2019",
+    "WF0EXXWPCEGL35806 — fastcarcheck.uk, Mondeo 2016"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://www.avtogermes.ru/sale/second_hand/ford/mondeo/"
+   ]
+  },
+  {
+   "mask": "WF0SXXGBWS",
+   "years": [
+    2006,
+    2015
+   ],
+   "model": "S-Max",
+   "body": "S-Max I (Генк)",
+   "detail": "год — 11-й символ VIN; лекало в каталоге — 2006–2012; Galaxy III с того же завода — WF0MXXGBWM",
+   "slugs": [
+    "ford_s-max"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WF0SXXGBWS6P79156 — avtogermes, S-Max I 2006",
+    "WF0SXXGBWSAM40933 — auto.ria.com, S-Max 2011"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://www.avtogermes.ru/sale/second_hand/ford/",
+    "https://auto.ria.com/auto_ford_s-max_40035200.html"
+   ]
+  },
+  {
+   "mask": "WF0MXXGBWM",
+   "years": [
+    2006,
+    2015
+   ],
+   "model": "Galaxy",
+   "body": "Galaxy III (Генк)",
+   "detail": "год — 11-й символ VIN; лекал на Galaxy нет",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "WF0MXXGBWM8A70582 — auto.ria.com, Galaxy III 2008"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://auto.ria.com/auto_ford_galaxy_36230535.html"
+   ]
+  },
+  {
+   "mask": "WF0?XXTTF",
+   "years": [
+    2006,
+    2014
+   ],
+   "model": "Transit",
+   "body": "Transit VII (V347/V348, Коджаэли)",
+   "detail": "год — 11-й символ VIN; 2006 г. — возможен Transit VI; Transit Custom/Connect — другие коды",
+   "slugs": [
+    "ford_transit"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WF0XXXTTFX8C22627 — fordtransit.org (расшифровка Ford ETIS: Transit 2006–2014, завод Otosan)",
+    "WF0XXXTTFX8R20268 — fastcarcheck.uk, Transit 2008"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://fordtransit.org/forum/viewtopic.php?p=1573485"
+   ]
+  },
+  {
+   "mask": "WF0XXXTTGX",
+   "years": [
+    2014,
+    2024
+   ],
+   "model": "Transit",
+   "body": "Transit VIII (Коджаэли)",
+   "detail": "год — 11-й символ VIN; лекало ford_transit-new в каталоге «с 2017»; Transit Custom тоже имеет 9-й символ G — проверить",
+   "slugs": [
+    "ford_transit-new"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "WF0XXXTTGXHU81600 — реестр ТС Чехии, Transit 2017",
+    "WF0XXXTTGXFE37254 — список отзывной кампании UOKiK (Польша), Transit"
+   ],
+   "sources": [
+    "https://www.hlidacstatu.cz/vozidla/vin/WF0XXXTTGXHU81600",
+    "https://uokik.gov.pl/download.php?plik=17480",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/"
+   ]
+  },
+  {
+   "mask": "1FM5K",
+   "years": [
+    2011,
+    2019
+   ],
+   "model": "Explorer",
+   "body": "Explorer V (США, Чикаго)",
+   "detail": "год — 10-й символ (американский VIN); с 2020 тот же префикс у Explorer VI; Explorer елабужской сборки (Z6F) — код не найден",
+   "slugs": [
+    "ford_explorer-5"
+   ],
+   "confidence": "official",
+   "examples": [
+    "1FM5K8GT6DGC18757 — NHTSA vPIC: Ford Explorer 2013 Sport",
+    "1FM5K7B84DGB61018 — NHTSA vPIC: Explorer 2013",
+    "1FM5K8D87KGB20138 — auto.ria.com, Explorer V (2nd FL) 2019"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1FM5K8GT6DGC18757?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1FM5K8D8*B?format=json",
+    "https://auto.ria.com/uk/auto_ford_explorer_39009553.html"
+   ]
+  },
+  {
+   "mask": "1FM5K",
+   "years": [
+    2020,
+    2025
+   ],
+   "model": "Explorer",
+   "body": "Explorer VI (США)",
+   "detail": "лекал на Explorer VI нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1FM5K8D8*L?format=json"
+   ]
+  },
+  {
+   "mask": "Z6FLXXECHL",
+   "years": [
+    2014,
+    2019
+   ],
+   "model": "EcoSport",
+   "body": "EcoSport II (Набережные Челны)",
+   "detail": "год — 11-й символ VIN",
+   "slugs": [
+    "ford_ecosport"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "Z6FLXXECHLGR14567 — avtogermes, EcoSport II 2016",
+    "Z6FLXXECHLGT25842 — avtogermes, EcoSport II 2016"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/ford/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/"
+   ]
+  },
+  {
+   "mask": "W0L0TGF69",
+   "years": [
+    1998,
+    2009
+   ],
+   "model": "Astra",
+   "body": "Astra G седан (T98)",
+   "detail": "8–9 символы = код кузова GM (69 — седан). Хэтчбек Astra G — другие коды кузова (не проверены); Zafira A на той же платформе — не путать",
+   "slugs": [
+    "opel_astra-g"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "W0L0TGF6925071613 — auto.ria.com (VIN проверен по реестру МВД Украины), Astra G седан 2002",
+    "Y6D0TGF694X000333 — auto.ria.com (VIN проверен по реестру МВД Украины), Astra G седан 2004 (сборка ЗАЗ)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://auto.ria.com/uk/auto_opel_astra_40581686.html",
+    "https://auto.ria.com/uk/auto_opel_astra_40595280.html"
+   ]
+  },
+  {
+   "mask": "W0L0AHL35",
+   "years": [
+    2004,
+    2014
+   ],
+   "model": "Astra",
+   "body": "Astra H универсал (Caravan)",
+   "detail": "8–9 символы = код кузова GM: 35 — универсал",
+   "slugs": [
+    "opel_astra-wag"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "W0L0AHL3572226734 — avtogermes, Astra H универсал 2007",
+    "W0L0AHL3592042288 — avtogermes, Astra H рест. универсал 5 дв. 2009",
+    "W0L0AHL35C2124479 — auto.ria.com (VIN проверен по реестру МВД Украины), Astra H (FL) универсал 2012"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/astra/220408/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/astra/216525/",
+    "https://auto.ria.com/uk/auto_opel_astra_40571281.html"
+   ]
+  },
+  {
+   "mask": "W0L0AHL48",
+   "years": [
+    2004,
+    2014
+   ],
+   "model": "Astra",
+   "body": "Astra H 5-дверный хэтчбек",
+   "detail": "48 — 5-дверный хэтчбек",
+   "slugs": [
+    "opel_astra-h"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "W0L0AHL48D2048369 — auto.ria.com (VIN проверен по реестру МВД Украины), Astra H (FL) хэтчбек 2013",
+    "W0L0AHL48C2028038 — auto.ria.com (VIN проверен по реестру МВД Украины), Astra H (FL) хэтчбек 2011"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://auto.ria.com/uk/auto_opel_astra_40467360.html",
+    "https://auto.ria.com/uk/auto_opel_astra_35744076.html"
+   ]
+  },
+  {
+   "mask": "W0L0AHL",
+   "years": [
+    2004,
+    2014
+   ],
+   "model": "Astra",
+   "body": "Astra H (кузов по 8–9 символам)",
+   "detail": "общее правило на случай других кодов кузова (08 — 3-дв. GTC, 69 — седан); универсал/хэтчбек — см. точные правила AHL35 / AHL48",
+   "slugs": [
+    "opel_astra-h",
+    "opel_astra-wag"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "W0L0AHL3582223825 — auto.ria.com (VIN проверен по реестру МВД Украины), Astra H универсал 2008"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/",
+    "https://auto.ria.com/uk/auto_opel_astra_40411946.html"
+   ]
+  },
+  {
+   "mask": "W0L0AHM75",
+   "years": [
+    2005,
+    2014
+   ],
+   "model": "Zafira",
+   "body": "Zafira B (код кузова 75 — минивэн)",
+   "detail": "в каталоге лекало только на 5-местный вариант (5X); 7-местный Flex7 по VIN не отличается — уточнить у клиента",
+   "slugs": [
+    "opel_zafirab5x"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "W0L0AHM75B2096571 — auto.ria.com (VIN проверен по реестру МВД Украины), Zafira B (FL) 2011",
+    "W0L0AHM757G056029 — auto.ria.com (VIN проверен по реестру МВД Украины), Zafira B 2006"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/",
+    "https://auto.ria.com/uk/auto_opel_zafira_40568951.html",
+    "https://auto.ria.com/uk/auto_opel_zafira_40459553.html"
+   ]
+  },
+  {
+   "mask": "XWF0AHM75",
+   "years": [
+    2005,
+    2014
+   ],
+   "model": "Zafira",
+   "body": "Zafira B (код кузова 75 — минивэн)",
+   "detail": "в каталоге лекало только на 5-местный вариант (5X); 7-местный Flex7 по VIN не отличается — уточнить у клиента",
+   "slugs": [
+    "opel_zafirab5x"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XWF0AHM75B0004742 — avtogermes, Zafira B рест. 2011 (Автотор)",
+    "XWF0AHM75A0000856 — avtogermes, Zafira B рест. 2010"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/"
+   ]
+  },
+  {
+   "mask": "W0LP?9",
+   "years": [
+    2011,
+    2017
+   ],
+   "model": "Zafira",
+   "body": "Zafira C (Tourer; 4-й символ P, 6-й 9 — минивэн)",
+   "detail": "GM-схема: 4 — модель (P — Astra J/Zafira C), 6 — кузов (9 — высокий универсал/монокаб)",
+   "slugs": [
+    "opel_zafirac"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "W0LPE9ENXD2073393 — auto.ria.com (VIN проверен по реестру МВД Украины), Zafira C 2013",
+    "W0LPD9EN2C2079173 — auto.ria.com (VIN проверен по реестру МВД Украины), Zafira 2012 минивэн"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://auto.ria.com/uk/auto_opel_zafira_40136944.html",
+    "https://auto.ria.com/uk/auto_opel_zafira_40567380.html"
+   ]
+  },
+  {
+   "mask": "W0VP?9",
+   "years": [
+    2018,
+    2019
+   ],
+   "model": "Zafira",
+   "body": "Zafira C рестайлинг (W0V)",
+   "slugs": [
+    "opel_zafirac"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "W0VPD9E87K1024157 — auto.ria.com (VIN проверен по реестру МВД Украины), Zafira C (FL) 2018"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://auto.ria.com/uk/auto_opel_zafira_40582999.html"
+   ]
+  },
+  {
+   "mask": "W0LP?6",
+   "years": [
+    2010,
+    2015
+   ],
+   "model": "Astra",
+   "body": "Astra J 5-дверный хэтчбек (6-й символ 6)",
+   "detail": "по документам: P — Astra J (auto.ru), 6-й символ 6 — 4-дверный (5-дв.) хэтчбек (таблица GM); реальным VIN не подтверждено",
+   "slugs": [
+    "opel_astra-j"
+   ],
+   "confidence": "probable",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=W0L"
+   ]
+  },
+  {
+   "mask": "XWFP?6",
+   "years": [
+    2010,
+    2015
+   ],
+   "model": "Astra",
+   "body": "Astra J 5-дверный хэтчбек (6-й символ 6)",
+   "detail": "по документам: P — Astra J (auto.ru), 6-й символ 6 — 4-дверный (5-дв.) хэтчбек (таблица GM); реальным VIN не подтверждено",
+   "slugs": [
+    "opel_astra-j"
+   ],
+   "confidence": "probable",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=XWF"
+   ]
+  },
+  {
+   "mask": "W0LP?8",
+   "years": [
+    2010,
+    2016
+   ],
+   "model": "Astra",
+   "body": "Astra J универсал Sports Tourer (6-й символ 8)",
+   "detail": "лекало opel_astra-j — только на хэтчбек; салон универсала, вероятно, тот же — уточнить",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "W0LPE8EG7B8025341 — auto.ria.com (VIN проверен по реестру МВД Украины), Astra J универсал 2011",
+    "W0LPD8EW9D8071833 — auto.ria.com (VIN проверен по реестру МВД Украины), Astra J (FL) универсал 2013"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://auto.ria.com/uk/auto_opel_astra_40257832.html",
+    "https://auto.ria.com/uk/auto_opel_astra_40373699.html"
+   ]
+  },
+  {
+   "mask": "W0L0SDL",
+   "years": [
+    2006,
+    2014
+   ],
+   "model": "Corsa",
+   "body": "Corsa D (08 — 3-дв., 68 — 5-дв. хэтчбек)",
+   "slugs": [
+    "opel_corsa-d"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "W0L0SDL08D6001524 — avtogermes, Corsa D рест. II хэтчбек 3 дв. 2012",
+    "W0L0SDL68C4231467 — auto.ria.com (VIN проверен по реестру МВД Украины), Corsa D хэтчбек 2012",
+    "W0L0SDL0896075480 — auto.ria.com (VIN проверен по реестру МВД Украины), Corsa D 2009"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/corsa/220308/",
+    "https://auto.ria.com/uk/auto_opel_corsa_40523647.html",
+    "https://auto.ria.com/uk/auto_opel_corsa_40509207.html"
+   ]
+  },
+  {
+   "mask": "W0LL",
+   "years": [
+    2006,
+    2015
+   ],
+   "model": "Antara",
+   "body": "Antara (4-й символ L)",
+   "detail": "лекало в каталоге — 2006–2011; рестайлинг 2010–2015 — уточнить по салону",
+   "slugs": [
+    "opel_antara"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "W0LLA63F080168602 — auto.ria.com (VIN проверен по реестру МВД Украины), Antara 2008 (Корея)",
+    "W0LLJ6EH0BB007810 — auto.ria.com (VIN проверен по реестру МВД Украины), Antara (FL) 2010",
+    "W0LLH6E09EB030979 — auto.ria.com (VIN проверен по реестру МВД Украины), Antara (FL) 2014"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/",
+    "https://auto.ria.com/uk/auto_opel_antara_40577352.html",
+    "https://auto.ria.com/uk/auto_opel_antara_40425223.html",
+    "https://auto.ria.com/uk/auto_opel_antara_40005484.html"
+   ]
+  },
+  {
+   "mask": "XUUL",
+   "years": [
+    2006,
+    2015
+   ],
+   "model": "Antara",
+   "body": "Antara (4-й символ L)",
+   "detail": "лекало в каталоге — 2006–2011; рестайлинг 2010–2015 — уточнить по салону",
+   "slugs": [
+    "opel_antara"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XUULJ6E01C0007616 — avtogermes, Antara рест. 2013",
+    "XUULH6E01C0000607 — avtogermes, Antara рест. 2012"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/"
+   ]
+  },
+  {
+   "mask": "XUFL",
+   "years": [
+    2006,
+    2015
+   ],
+   "model": "Antara",
+   "body": "Antara (4-й символ L)",
+   "detail": "лекало в каталоге — 2006–2011; рестайлинг 2010–2015 — уточнить по салону",
+   "slugs": [
+    "opel_antara"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XUFLH6E07F3501103 — avtogermes, Antara рест. 2015"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/"
+   ]
+  },
+  {
+   "mask": "W0LJ",
+   "years": [
+    2012,
+    2019
+   ],
+   "model": "Mokka",
+   "body": "Mokka A / Mokka X (4-й символ J)",
+   "slugs": [
+    "opel_mokka"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "W0LJD7EC2F4265670 — auto.ria.com (VIN проверен по реестру МВД Украины), Mokka 2015",
+    "W0LJC7E89EB688917 — auto.ria.com (VIN проверен по реестру МВД Украины), Mokka 2014",
+    "W0LJD7EC3GB717543 — auto.ria.com (VIN проверен по реестру МВД Украины), Mokka X 2016"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/",
+    "https://auto.ria.com/uk/auto_opel_mokka_40514303.html",
+    "https://auto.ria.com/uk/auto_opel_mokka_40581844.html",
+    "https://auto.ria.com/uk/auto_opel_mokka_32221056.html"
+   ]
+  },
+  {
+   "mask": "XUUJ",
+   "years": [
+    2012,
+    2019
+   ],
+   "model": "Mokka",
+   "body": "Mokka A / Mokka X (4-й символ J)",
+   "slugs": [
+    "opel_mokka"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XUUJD7D81E0016280 — avtogermes, Mokka I 2014",
+    "XUUJB7D51E0018559 — avtogermes, Mokka I 2014"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://www.avtogermes.ru/sale/second_hand/opel/"
+   ]
+  },
+  {
+   "mask": "VF34",
+   "years": null,
+   "model": "308",
+   "body": "308 I (T7): 5-й символ C — хэтчбек, H/E — универсал SW",
+   "detail": "Wikibooks: 4-й символ 4 — 308. Годы по VIN не проверяем (10-й символ — год только с ~2009). Peugeot 408 калужской сборки — Z8T4D…, это другая модель",
+   "slugs": [
+    "peugeot_308"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "VF34C5FWF9S164317 — avtogermes, 308 I 2009",
+    "VF34C5FS9BS349558 — auto.ria.com (VIN проверен по реестру МВД Украины), 308 (FL) хэтчбек 2012",
+    "VF34H9HZHAS125334 — auto.ria.com (VIN проверен по реестру МВД Украины), 308 универсал 2010"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Peugeot/VIN_Codes",
+    "https://www.avtogermes.ru/sale/second_hand/peugeot/",
+    "https://auto.ria.com/uk/auto_peugeot_308_38202757.html",
+    "https://auto.ria.com/uk/auto_peugeot_308_39999087.html"
+   ]
+  },
+  {
+   "mask": "VF3VV",
+   "years": null,
+   "model": "4007",
+   "body": "4007 (на базе Mitsubishi Outlander XL)",
+   "detail": "4-й символ V; Expert/Traveller — VE…, не путать",
+   "slugs": [
+    "peugeot_4007"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "VF3VV4HNH8U916971 — auto.ria.com (VIN проверен по реестру МВД Украины), 4007 2009",
+    "VF3VV4HK8BU804776 — auto.ria.com (VIN проверен по реестру МВД Украины), 4007 2011"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Peugeot/VIN_Codes",
+    "https://auto.ria.com/uk/auto_peugeot_4007_40007908.html",
+    "https://auto.ria.com/uk/auto_peugeot_4007_35244448.html"
+   ]
+  },
+  {
+   "mask": "VF7VV",
+   "years": null,
+   "model": "C-Crosser",
+   "body": "C-Crosser (на базе Mitsubishi Outlander XL)",
+   "slugs": [
+    "citroen_crosser"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "VF7VV4HNH8U969120 — auto.ria.com (VIN проверен по реестру МВД Украины), C-Crosser 2008",
+    "VF7VV4HK8BZ901187 — auto.ria.com (VIN проверен по реестру МВД Украины), C-Crosser 2010"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Peugeot/VIN_Codes",
+    "https://auto.ria.com/uk/auto_citroen_c-crosser_35246405.html",
+    "https://auto.ria.com/uk/auto_citroen_c-crosser_39787854.html"
+   ]
+  },
+  {
+   "mask": "VF7VU",
+   "years": null,
+   "model": "C-Crosser",
+   "body": "C-Crosser (вариант 5-го символа U)",
+   "slugs": [
+    "citroen_crosser"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "VF7VU4HK8BU904632 — auto.ria.com (VIN проверен по реестру МВД Украины), C-Crosser 2012"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Peugeot/VIN_Codes",
+    "https://auto.ria.com/uk/auto_citroen_c-crosser_40062055.html"
+   ]
+  },
+  {
+   "mask": "VF3BU",
+   "years": null,
+   "model": "4008",
+   "body": "4008 (на базе Mitsubishi ASX)",
+   "detail": "Wikibooks относит 4-й символ B к Expert — для 4008 в примерах всегда BU",
+   "slugs": [
+    "peugeot_4008"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "VF3BU9HDBCZ808983 — auto.ria.com (VIN проверен по реестру МВД Украины), 4008 2012",
+    "VF3BUAFZPCZ800874 — auto.ria.com (VIN проверен по реестру МВД Украины), 4008 2012",
+    "VF3BU9HDKHZ800142 — auto.ria.com (VIN проверен по реестру МВД Украины), 4008 2016"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Peugeot/VIN_Codes",
+    "https://auto.ria.com/uk/auto_peugeot_4008_39080258.html",
+    "https://auto.ria.com/uk/auto_peugeot_4008_38502301.html",
+    "https://auto.ria.com/uk/auto_peugeot_4008_39428177.html"
+   ]
+  },
+  {
+   "mask": "VF3Y",
+   "years": null,
+   "model": "Boxer",
+   "body": "Boxer III (X250, с 2006)",
+   "detail": "10-й символ у Boxer — не год; лекало на 3 места, 2006–2012 — для рестайлинга 2014+ уточнить; длина/высота кузова — 5–6 символы",
+   "slugs": [
+    "peugeot_boxer"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "VF3YCAMFC11300765 — auto.ria.com (VIN проверен по реестру МВД Украины), Boxer 2007",
+    "VF3YBTMFB12276885 — auto.ria.com (VIN проверен по реестру МВД Украины), Boxer III 2012",
+    "VF3YDBMFC11979619 — auto.ria.com (VIN проверен по реестру МВД Украины), Boxer III 2011"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Peugeot/VIN_Codes",
+    "https://auto.ria.com/uk/auto_peugeot_boxer_40571491.html",
+    "https://auto.ria.com/uk/auto_peugeot_boxer_40373280.html",
+    "https://auto.ria.com/uk/auto_peugeot_boxer_40594766.html"
+   ]
+  },
+  {
+   "mask": "VF7Y",
+   "years": null,
+   "model": "Jumper",
+   "body": "Jumper II (X250, с 2006)",
+   "detail": "10-й символ — не год; лекало на 3 места, 2006–2012",
+   "slugs": [
+    "citroen_jumper"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "VF7YAAMFA11130847 — auto.ria.com (VIN проверен по реестру МВД Украины), Jumper 2007",
+    "VF7YCBMFC12142798 — auto.ria.com (VIN проверен по реестру МВД Украины), Jumper II 2012",
+    "VF7YBSMRA12684080 — auto.ria.com (VIN проверен по реестру МВД Украины), Jumper II 2014"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Peugeot/VIN_Codes",
+    "https://auto.ria.com/uk/auto_citroen_jumper_39158883.html",
+    "https://auto.ria.com/uk/auto_citroen_jumper_38461316.html",
+    "https://auto.ria.com/uk/auto_citroen_jumper_40291251.html"
+   ]
+  },
+  {
+   "mask": "ZFA250",
+   "years": null,
+   "model": "Ducato",
+   "body": "Ducato III (тип 250 / X250, с 2006)",
+   "detail": "4–6 = тип 250; 10-й символ — не год. Ducato Sollers (Z7G/Z76/XU3) — структура VDS не найдена",
+   "slugs": [
+    "fiat_ducato"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "ZFA25000001241326 — auto.ria.com (VIN проверен по реестру МВД Украины), Ducato III 2007",
+    "ZFA25000002221890 — auto.ria.com (VIN проверен по реестру МВД Украины), Ducato III 2012",
+    "ZFA25000002593756 — auto.ria.com (VIN проверен по реестру МВД Украины), Ducato III 2014"
+   ],
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=ZFA",
+    "https://auto.ria.com/uk/auto_fiat_ducato_40350545.html",
+    "https://auto.ria.com/uk/auto_fiat_ducato_40561908.html",
+    "https://auto.ria.com/uk/auto_fiat_ducato_40199219.html"
+   ]
+  },
+  {
+   "mask": "TSMFY",
+   "years": null,
+   "model": "Sedici",
+   "body": "Sedici (Magyar Suzuki)",
+   "detail": "WMI TSM общий с Suzuki венгерской сборки; у всех Sedici в примерах 4–5 = FY",
+   "slugs": [
+    "fiat_sedici"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TSMFYB21S00196349 — auto.ria.com (VIN проверен по реестру МВД Украины), Sedici 2007",
+    "TSMFYB91S00495098 — auto.ria.com (VIN проверен по реестру МВД Украины), Sedici (FL) 2010",
+    "TSMFYB21S00656132 — auto.ria.com (VIN проверен по реестру МВД Украины), Sedici 2012"
+   ],
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=TSM",
+    "https://auto.ria.com/uk/auto_fiat_sedici_40400013.html",
+    "https://auto.ria.com/uk/auto_fiat_sedici_40408962.html",
+    "https://auto.ria.com/uk/auto_fiat_sedici_35990609.html"
+   ]
+  },
+  {
+   "mask": "WBAD",
+   "years": null,
+   "model": "5 Series",
+   "body": "5 Series E39 (типовые коды D*: DD, DL, DM, DN, DP, DS, DT…)",
+   "detail": "у европейских BMW 10-й символ — 0, год по VIN не определяется; универсал Touring — тоже WBAD…; M5 E39 — WBS…",
+   "slugs": [
+    "bmw_39"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WBADD11070BN24693 — auto.ria.com (VIN проверен по реестру МВД Украины), E39 седан 1997",
+    "WBADT11080GY61251 — auto.ria.com (VIN проверен по реестру МВД Украины), E39 (FL) седан 2003",
+    "WBADP71000GS67650 — auto.ria.com (VIN проверен по реестру МВД Украины), E39 (FL) универсал 2000",
+    "WBADT434*1 — NHTSA vPIC: BMW 525i 2001 (США)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/WBADT434*1?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/WBADN634*X?format=json",
+    "https://auto.ria.com/uk/auto_bmw_5-series_40594406.html",
+    "https://auto.ria.com/uk/auto_bmw_5-series_39936575.html",
+    "https://auto.ria.com/uk/auto_bmw_5-series_40484347.html"
+   ]
+  },
+  {
+   "mask": "WDB906",
+   "years": null,
+   "model": "Sprinter",
+   "body": "Sprinter II (NCV3, серия 906)",
+   "detail": "Wikibooks: 4–6 = 906 — Sprinter NCV3 (907/910 — новое поколение с 2018). 10-й символ — руль (1 — левый). Volkswagen Crafter I — тот же кузов",
+   "slugs": [
+    "mercedes_sprinter-3x"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WDB9066131S228888 — auto.ria.com (VIN проверен по реестру МВД Украины), Sprinter 2007",
+    "WDB9066351S409235 — auto.ria.com (VIN проверен по реестру МВД Украины), Sprinter 2011",
+    "WDB9067131P505726 — auto.ria.com (VIN проверен по реестру МВД Украины), Sprinter 2017"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mercedes-Benz/VIN_Codes",
+    "https://auto.ria.com/uk/auto_mercedes-benz_sprinter_40233280.html",
+    "https://auto.ria.com/uk/auto_mercedes-benz_sprinter_40521916.html",
+    "https://auto.ria.com/uk/auto_mercedes-benz_sprinter_40476602.html"
+   ]
+  },
+  {
+   "mask": "WME451",
+   "years": null,
+   "model": "Fortwo",
+   "body": "Fortwo II (C451)",
+   "detail": "европейская схема (как у Mercedes): 4–6 = 451",
+   "slugs": [
+    "smart_fortwo"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "WME4513301K169546 — auto.ria.com (VIN проверен по реестру МВД Украины), Fortwo C451 2008",
+    "WME4513801K459327 — auto.ria.com (VIN проверен по реестру МВД Украины), Fortwo C451 2011",
+    "WME4513341K570997 — auto.ria.com (VIN проверен по реестру МВД Украины), Fortwo C451 (FL) 2012"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Smart/VIN_Codes",
+    "https://auto.ria.com/uk/auto_smart_fortwo_40293096.html",
+    "https://auto.ria.com/uk/auto_smart_fortwo_39209402.html",
+    "https://auto.ria.com/uk/auto_smart_fortwo_40457556.html"
+   ]
+  },
+  {
+   "mask": "WMEE",
+   "years": [
+    2008,
+    2016
+   ],
+   "model": "Fortwo",
+   "body": "Fortwo II (C451) для Северной Америки",
+   "detail": "Wikibooks: E = C451; 9A — Electric Drive",
+   "slugs": [
+    "smart_fortwo"
+   ],
+   "confidence": "official",
+   "examples": [
+    "WMEEJ9AA9EK729142 — auto.ria.com (VIN проверен по реестру МВД Украины), Fortwo electric drive 2013"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Smart/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/WMEEJ3BA*B?format=json",
+    "https://auto.ria.com/uk/auto_smart_fortwo_40147762.html"
+   ]
+  },
+  {
+   "mask": "YV1MS",
+   "years": [
+    2004,
+    2012
+   ],
+   "model": "S40",
+   "body": "S40 II седан (передний привод)",
+   "detail": "4-й символ M — S40 II/V50/C30/C70, 5-й — кузов (S/H — седан). У машин для США с 2010 г. код M перенесён в 7-й символ",
+   "slugs": [
+    "volvo_s40"
+   ],
+   "confidence": "official",
+   "examples": [
+    "YV1MS665982370493 — avtogermes, S40 II рест. 2007",
+    "YV1MS84F1C2575609 — auto.ria.com, S40 II (FL) седан 2012"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volvo/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/YV1MS382*6?format=json",
+    "https://www.avtogermes.ru/sale/second_hand/volvo/",
+    "https://auto.ria.com/uk/auto_volvo_s40_40468661.html"
+   ]
+  },
+  {
+   "mask": "YV1MH",
+   "years": [
+    2004,
+    2012
+   ],
+   "model": "S40",
+   "body": "S40 II седан (полный привод)",
+   "detail": "4-й символ M — S40 II/V50/C30/C70, 5-й — кузов (S/H — седан). У машин для США с 2010 г. код M перенесён в 7-й символ",
+   "slugs": [
+    "volvo_s40"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volvo/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/YV1MH682*8?format=json",
+    "https://www.avtogermes.ru/sale/second_hand/volvo/"
+   ]
+  },
+  {
+   "mask": "YV1MW",
+   "years": [
+    2004,
+    2012
+   ],
+   "model": "V50",
+   "body": "V50 универсал (S40 II в кузове универсал)",
+   "detail": "лекал на V50 нет; салон близок к S40 II — уточнить",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volvo/VIN_Codes"
+   ]
+  },
+  {
+   "mask": "YV1MJ",
+   "years": [
+    2004,
+    2012
+   ],
+   "model": "V50",
+   "body": "V50 универсал (S40 II в кузове универсал)",
+   "detail": "лекал на V50 нет; салон близок к S40 II — уточнить",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volvo/VIN_Codes"
+   ]
+  },
+  {
+   "mask": "SALF",
+   "years": [
+    2007,
+    2015
+   ],
+   "model": "Freelander",
+   "body": "Freelander 2 (L359)",
+   "detail": "Wikibooks: 4-й символ F — LR2/Freelander 2 ('08–'15); европейские VIN той же схемы (пример Evoque: SALVA… — V = Evoque)",
+   "slugs": [
+    "landrover_freelander2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SALFA2BC8DH367240 — auto.ria.com, Freelander II (FL) 2013",
+    "SALFA24B99H135256 — auto.ria.com, Freelander II 2008",
+    "SALFR2BG*9 — NHTSA vPIC: Land Rover LR2 2009"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Land_Rover/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/SALFR2BG*9?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/SALFP2BG*C?format=json",
+    "https://auto.ria.com/uk/auto_land-rover_freelander_40232895.html",
+    "https://auto.ria.com/uk/auto_land-rover_freelander_40383588.html"
+   ]
+  },
+  {
+   "mask": "1B3?B",
+   "years": [
+    2007,
+    2011
+   ],
+   "model": "Caliber",
+   "body": "Caliber (PM)",
+   "detail": "vPIC: 1B3 + 5-й символ B в 2007–2011 гг. = Caliber; лекало в каталоге — 2006–2009, рестайлинг 2010+ уточнить",
+   "slugs": [
+    "dodge_caliber"
+   ],
+   "confidence": "official",
+   "examples": [
+    "1B3HB48B07D555772 — NHTSA vPIC: Dodge Caliber SXT 2007"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1B3*B****7?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1B3HB48B07D555772?format=json"
+   ]
+  },
+  {
+   "mask": "1B3?E",
+   "years": [
+    2007,
+    2009
+   ],
+   "model": "Caliber",
+   "body": "Caliber (PM)",
+   "detail": "vPIC: 1B3 + 5-й символ E в 2007–2009 гг. = Caliber; лекало в каталоге — 2006–2009, рестайлинг 2010+ уточнить",
+   "slugs": [
+    "dodge_caliber"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1B3*E****7?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1B3HB48B07D555772?format=json"
+   ]
+  },
+  {
+   "mask": "1C3CDW",
+   "years": [
+    2012,
+    2012
+   ],
+   "model": "Caliber",
+   "body": "Caliber 2012 (новая схема VIN)",
+   "detail": "проверены 7-е символы B/C/D/E; лекало — 2006–2009, рестайлинг уточнить",
+   "slugs": [
+    "dodge_caliber"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1C3CDWBA*C?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1C3CDWDA*C?format=json"
+   ]
+  },
+  {
+   "mask": "5Y2SL",
+   "years": [
+    2003,
+    2008
+   ],
+   "model": "Vibe",
+   "body": "Vibe I (общая с Toyota Matrix E130, NUMMI)",
+   "detail": "L — передний привод, M — AWD, N — GT; столик в салоне по VIN не определяется",
+   "slugs": [
+    "pontiac_vibe",
+    "pontiac_vibe-stolik"
+   ],
+   "confidence": "official",
+   "examples": [
+    "5Y2SL63865Z411166 — NHTSA vPIC: Pontiac Vibe 2005",
+    "5Y2SL64873Z469699 — NHTSA vPIC: Vibe 2003"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5Y2SL****5?format=json"
+   ]
+  },
+  {
+   "mask": "5Y2SM",
+   "years": [
+    2003,
+    2008
+   ],
+   "model": "Vibe",
+   "body": "Vibe I (общая с Toyota Matrix E130, NUMMI)",
+   "detail": "L — передний привод, M — AWD, N — GT; столик в салоне по VIN не определяется",
+   "slugs": [
+    "pontiac_vibe",
+    "pontiac_vibe-stolik"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5Y2SM****5?format=json"
+   ]
+  },
+  {
+   "mask": "5Y2SN",
+   "years": [
+    2003,
+    2008
+   ],
+   "model": "Vibe",
+   "body": "Vibe I (общая с Toyota Matrix E130, NUMMI)",
+   "detail": "L — передний привод, M — AWD, N — GT; столик в салоне по VIN не определяется",
+   "slugs": [
+    "pontiac_vibe",
+    "pontiac_vibe-stolik"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5Y2SN****6?format=json"
+   ]
+  },
+  {
+   "mask": "5Y2SL",
+   "years": [
+    2009,
+    2010
+   ],
+   "model": "Vibe",
+   "body": "Vibe II (2009–2010)",
+   "detail": "лекал на Vibe II нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5Y2SL****9?format=json"
+   ]
+  },
+  {
+   "mask": "5Y2SM",
+   "years": [
+    2009,
+    2010
+   ],
+   "model": "Vibe",
+   "body": "Vibe II (2009–2010)",
+   "detail": "лекал на Vibe II нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5Y2SM****9?format=json"
+   ]
+  },
+  {
+   "mask": "5Y2SP",
+   "years": [
+    2009,
+    2010
+   ],
+   "model": "Vibe",
+   "body": "Vibe II (2009–2010)",
+   "detail": "лекал на Vibe II нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5Y2SP****9?format=json"
+   ]
+  },
+  {
+   "mask": "5Y2SR",
+   "years": [
+    2009,
+    2010
+   ],
+   "model": "Vibe",
+   "body": "Vibe II (2009–2010)",
+   "detail": "лекал на Vibe II нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5Y2SR****9?format=json"
+   ]
+  },
+  {
+   "mask": "XZG?E04A",
+   "years": [
+    2021,
+    2025
+   ],
+   "model": "Jolion",
+   "body": "Jolion (Тула)",
+   "detail": "в тех же объявлениях F7 — XZG?F04A/XZG?F06A (5-й символ F); значение позиций официально не подтверждено",
+   "slugs": [
+    "haval_jolion"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "XZGEE04AXMA801983 — avtogermes, Jolion 2021",
+    "XZGFE04A0PA846150 — avtogermes, Jolion I 2023",
+    "XZGEE04AXRA526977 — avtogermes, Jolion рест. 2024"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/haval/"
+   ]
+  },
+  {
+   "mask": "LGW?F3A5",
+   "years": [
+    2005,
+    2016
+   ],
+   "model": "Hover H3",
+   "body": "Hover / Hover H3 / H5 (Китай, бензин)",
+   "detail": "6-й символ у Great Wall, похоже, код двигателя, а не модели (у Jolion, H6 I и M6 — 4, у H6 II и Dargo — 6), поэтому H3 и H5 по VIN надёжно не различить; лекало в каталоге «Hover H3 с 2014» — для ранних Hover уточнить; российская сборка (X9X) не проверена",
+   "slugs": [
+    "great_wall_hover3",
+    "great_wall_h5"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "LGWFF3A51CB656437 — auto.ria.com (VIN проверен по реестру МВД Украины), Haval H3 2012",
+    "LGWFF3A536B061271 — auto.ria.com (VIN проверен по реестру МВД Украины), Hover 2006",
+    "LGWEF3A52BB652990 — auto.ria.com (VIN проверен по реестру МВД Украины), H3 2011"
+   ],
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=LGW",
+    "https://auto.ria.com/uk/auto_great-wall_haval-h3_40461240.html",
+    "https://auto.ria.com/uk/auto_great-wall_hover_40333111.html",
+    "https://auto.ria.com/uk/auto_great-wall_haval-h3_40301492.html"
+   ]
+  },
+  {
+   "mask": "LGW?FEA5",
+   "years": [
+    2010,
+    2016
+   ],
+   "model": "Hover H5",
+   "body": "Hover H5 (Китай, дизель 2.0)",
+   "detail": "все примеры с этим шаблоном — H5 с дизелем; 6-й символ, вероятно, код двигателя — H3 не исключён; российская сборка (X9X) не проверена",
+   "slugs": [
+    "great_wall_h5",
+    "great_wall_hover3"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "LGWFFEA51BB653029 — auto.ria.com (VIN проверен по реестру МВД Украины), Haval H5 2011",
+    "LGWFFEA55CB656467 — auto.ria.com (VIN проверен по реестру МВД Украины), H5 (FL) 2012"
+   ],
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=LGW",
+    "https://auto.ria.com/uk/auto_great-wall_haval-h5_39403218.html",
+    "https://auto.ria.com/uk/auto_great-wall_haval-h5_38212310.html"
+   ]
+  },
+  {
+   "mask": "WVWZZZ6RZ",
+   "years": [
+    2009,
+    2017
+   ],
+   "model": "Polo",
+   "body": "Polo V хэтчбек (6R, Европа)",
+   "detail": "лекала в каталоге — только на Polo седан (61); салон хэтчбека другой",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "WVWZZZ6RZCY177664 — auto.ria.com (VIN проверен по реестру МВД Украины), Polo V хэтчбек 2012",
+    "WVWZZZ6RZGY072750 — auto.ria.com (VIN проверен по реестру МВД Украины), Polo V (FL) хэтчбек 2015"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://auto.ria.com/uk/auto_volkswagen_polo_40124355.html",
+    "https://auto.ria.com/uk/auto_volkswagen_polo_40438779.html"
+   ]
+  },
+  {
+   "mask": "WVWZZZAWZ",
+   "years": [
+    2017,
+    2025
+   ],
+   "model": "Polo",
+   "body": "Polo VI хэтчбек (AW, Европа)",
+   "detail": "лекал нет",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "WVWZZZAWZKY034951 — auto.ria.com (VIN проверен по реестру МВД Украины), Polo VI хэтчбек 2018"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://auto.ria.com/uk/auto_volkswagen_polo_40576935.html"
+   ]
+  },
+  {
+   "mask": "TMBA??5J",
+   "years": [
+    2007,
+    2015
+   ],
+   "model": "Fabia",
+   "body": "Fabia II (5J, 4-й символ A — хэтчбек)",
+   "detail": "в выборке ~20 VIN 4-й символ у Fabia II — A/B/C/E/F/G/J, у Roomster — L/M/N/U; лекало Fabia 2 одно на хэтчбек и универсал",
+   "slugs": [
+    "skoda_fabia2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TMBAA65J493072482 — auto.ria.com (VIN проверен по реестру МВД Украины), Fabia II хэтчбек 2008",
+    "TMBAA25J983014519 — реестр ТС Чехии, Fabia 2008"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBAA25J983014519",
+    "https://auto.ria.com/uk/auto_skoda_fabia_40590805.html"
+   ]
+  },
+  {
+   "mask": "TMBB??5J",
+   "years": [
+    2007,
+    2015
+   ],
+   "model": "Fabia",
+   "body": "Fabia II (5J, 4-й символ B — хэтчбек)",
+   "detail": "в выборке ~20 VIN 4-й символ у Fabia II — A/B/C/E/F/G/J, у Roomster — L/M/N/U; лекало Fabia 2 одно на хэтчбек и универсал",
+   "slugs": [
+    "skoda_fabia2"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "TMBBA25J7A3106027 — реестр ТС Чехии, Fabia 2010"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBBA25J7A3106027"
+   ]
+  },
+  {
+   "mask": "TMBE??5J",
+   "years": [
+    2007,
+    2015
+   ],
+   "model": "Fabia",
+   "body": "Fabia II (5J, 4-й символ E — хэтчбек)",
+   "detail": "в выборке ~20 VIN 4-й символ у Fabia II — A/B/C/E/F/G/J, у Roomster — L/M/N/U; лекало Fabia 2 одно на хэтчбек и универсал",
+   "slugs": [
+    "skoda_fabia2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TMBEC45J4EB500857 — auto.ria.com (VIN проверен по реестру МВД Украины), Fabia II (FL) хэтчбек 2013",
+    "TMBEM25J4B3096160 — реестр ТС Чехии, Fabia 2011"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBEM25J4B3096160",
+    "https://auto.ria.com/uk/auto_skoda_fabia_40364424.html"
+   ]
+  },
+  {
+   "mask": "TMBF??5J",
+   "years": [
+    2007,
+    2015
+   ],
+   "model": "Fabia",
+   "body": "Fabia II (5J, 4-й символ F — универсал)",
+   "detail": "в выборке ~20 VIN 4-й символ у Fabia II — A/B/C/E/F/G/J, у Roomster — L/M/N/U; лекало Fabia 2 одно на хэтчбек и универсал",
+   "slugs": [
+    "skoda_fabia2"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "TMBFC25J9A3082731 — auto.ria.com (VIN проверен по реестру МВД Украины), Fabia II универсал 2009"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://auto.ria.com/uk/auto_skoda_fabia_40589564.html"
+   ]
+  },
+  {
+   "mask": "TMBG??5J",
+   "years": [
+    2007,
+    2015
+   ],
+   "model": "Fabia",
+   "body": "Fabia II (5J, 4-й символ G — универсал)",
+   "detail": "в выборке ~20 VIN 4-й символ у Fabia II — A/B/C/E/F/G/J, у Roomster — L/M/N/U; лекало Fabia 2 одно на хэтчбек и универсал",
+   "slugs": [
+    "skoda_fabia2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TMBGH65J883186876 — auto.ria.com (VIN проверен по реестру МВД Украины), Fabia II универсал 2008",
+    "TMBGH25J983164216 — реестр ТС Чехии, Fabia 2008"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://www.hlidacstatu.cz/vozidla/vin/TMBGH25J983164216",
+    "https://auto.ria.com/uk/auto_skoda_fabia_40575550.html"
+   ]
+  },
+  {
+   "mask": "TMBJ??5J",
+   "years": [
+    2007,
+    2015
+   ],
+   "model": "Fabia",
+   "body": "Fabia II (5J, 4-й символ J — универсал)",
+   "detail": "в выборке ~20 VIN 4-й символ у Fabia II — A/B/C/E/F/G/J, у Roomster — L/M/N/U; лекало Fabia 2 одно на хэтчбек и универсал",
+   "slugs": [
+    "skoda_fabia2"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "TMBJS25J3B3108156 — auto.ria.com (VIN проверен по реестру МВД Украины), Fabia II (FL) универсал 2010"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://auto.ria.com/uk/auto_skoda_fabia_40452742.html"
+   ]
+  },
+  {
+   "mask": "TMBM??5J",
+   "years": [
+    2006,
+    2015
+   ],
+   "model": "Roomster",
+   "body": "Roomster (5J, 4-й символ M)",
+   "slugs": [
+    "skoda_roomster"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TMBMD45J08B601116 — auto.ria.com (VIN проверен по реестру МВД Украины), Roomster 2008",
+    "TMBMD25J295029700 — auto.ria.com (VIN проверен по реестру МВД Украины), Roomster 2009"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://auto.ria.com/uk/auto_skoda_roomster_40589584.html",
+    "https://auto.ria.com/uk/auto_skoda_roomster_40595830.html"
+   ]
+  },
+  {
+   "mask": "TMBL??5J",
+   "years": [
+    2006,
+    2015
+   ],
+   "model": "Roomster",
+   "body": "Roomster (5J, 4-й символ L)",
+   "slugs": [
+    "skoda_roomster"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "TMBLH65J1A5015413 — auto.ria.com (VIN проверен по реестру МВД Украины), Roomster 2009"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/",
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://auto.ria.com/uk/auto_skoda_roomster_40590181.html"
+   ]
+  },
+  {
+   "mask": "WF0?XXTTG",
+   "years": [
+    2014,
+    2024
+   ],
+   "model": "Transit",
+   "body": "Transit VIII (Коджаэли), любой код кузова",
+   "detail": "год — 11-й символ VIN; Transit Custom (V362) с того же завода, вероятно, тоже TTG — проверить по фото (у Custom короткий кузов)",
+   "slugs": [
+    "ford_transit-new"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "WF0FXXTTGFKK64921 — auto.ria.com (VIN проверен по реестру МВД Украины), Transit VIII 2019",
+    "WF03XXTTG3HK10291 — auto.ria.com (VIN проверен по реестру МВД Украины), Transit VIII 2017",
+    "WF0KXXTTGKFM16679 — auto.ria.com (VIN проверен по реестру МВД Украины), Transit VIII 2015"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://auto.ria.com/uk/auto_ford_transit_40569968.html",
+    "https://auto.ria.com/uk/auto_ford_transit_39927028.html",
+    "https://auto.ria.com/uk/auto_ford_transit_40298975.html"
+   ]
+  },
+  {
+   "mask": "LGW?E4A5",
+   "years": [
+    2020,
+    2025
+   ],
+   "model": "Jolion",
+   "body": "Jolion (Китай; 5-й символ E)",
+   "detail": "5-й символ E в выборке только у Jolion (у H6/H5/H3/Dargo/M6 — F); Haval H2 не проверялся",
+   "slugs": [
+    "haval_jolion"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "LGWEE4A59MK615396 — auto.ria.com (VIN проверен по реестру МВД Украины), Jolion 2021",
+    "LGWFE4A51MK610519 — auto.ria.com (VIN проверен по реестру МВД Украины), Jolion 2021"
+   ],
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=LGW",
+    "https://auto.ria.com/uk/auto_haval_jolion_40480213.html",
+    "https://auto.ria.com/uk/auto_haval_jolion_40315339.html"
+   ]
+  },
+  {
+   "mask": "LGW?F4A5",
+   "years": [
+    2014,
+    2020
+   ],
+   "model": "H6",
+   "body": "H6 I (по одному примеру)",
+   "detail": "тот же шаблон у Haval M6 (2021+); у H6 II и Dargo с мотором 2.0T — LGW?F6A5; 6-й символ, вероятно, двигатель — H6 I с 2.0T может иметь F6",
+   "slugs": [
+    "haval_h6"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "LGWFF4A59KF704862 — avtogermes, Haval H6 I 2019"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/haval/"
+   ]
+  },
+  {
+   "mask": "LGW?F6A5",
+   "years": [
+    2017,
+    2021
+   ],
+   "model": "H6",
+   "body": "H6 II (Китай, 2.0T)",
+   "detail": "лекала на H6 II нет; H6 I с мотором 2.0T, возможно, имеет тот же шаблон — уточнить по фото",
+   "slugs": [],
+   "confidence": "probable",
+   "examples": [
+    "LGWEF6A50LH920242 — auto.ria.com (VIN проверен по реестру МВД Украины), Haval H6 II 2020",
+    "LGWEF6A57KH912203 — auto.ria.com (VIN проверен по реестру МВД Украины), Haval H6 II 2019"
+   ],
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=LGW",
+    "https://auto.ria.com/uk/auto_haval_h6_39926905.html",
+    "https://auto.ria.com/uk/auto_haval_h6_38135698.html"
+   ]
+  },
+  {
+   "mask": "LCN64ED",
+   "years": [
+    2011,
+    2019
+   ],
+   "model": "X60",
+   "body": "X60 (китайская сборка)",
+   "detail": "WMI LCN в справочниках не нашли, у всех X60 в выборке префикс LCN64ED; X60 сборки «Дервейс» (X9W) — не проверен",
+   "slugs": [
+    "lifan_x60"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "LCN64ED58D0022142 — auto.ria.com (VIN проверен по реестру МВД Украины), Lifan X60 2013",
+    "LCN64ED58C0011799 — auto.ria.com (VIN проверен по реестру МВД Украины), Lifan X60 2012"
+   ],
+   "sources": [
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=LLV",
+    "https://auto.ria.com/uk/auto_lifan_x60_38610234.html",
+    "https://auto.ria.com/uk/auto_lifan_x60_40504025.html"
+   ]
+  }
+ ],
+ "frame_rules": [],
+ "position_legend": [
+  {
+   "wmi": [
+    "WVW",
+    "WVG",
+    "WV1",
+    "WV2",
+    "XW8 (VW/Audi)",
+    "WAU"
+   ],
+   "positions": {
+    "4-6": "ZZZ у машин для Европы/России; у машин для США — двигатель/безопасность и т.п.",
+    "7-8": "модель (тип): VW — 61 Polo V седан, 6R Polo V хэтчбек, CK Polo лифтбек, AW Polo VI хэтчбек, 1K Golf V/VI + Golf Plus + Jetta V, AU Golf VII, 16 Jetta VI, 3B Passat B5, 3C Passat B6/B7/CC, 5N Tiguan I и II, 2K Caddy III/IV, 2H Amarok, 2E Crafter I, SY Crafter II; Audi — 4F A6 C6, 4G A6 C7, 8U Q3 I, F3 Q3 II, 8R Q5 I, FY Q5 II, 4L Q7 I, 8K A4 B8, 8P/8V A3",
+    "9": "Z (Европа) или контрольная цифра (США/Канада)",
+    "10": "модельный год (A=2010, B=2011 …; может не совпадать с годом выпуска)",
+    "11": "завод: W — Вольфсбург, H — Ганновер, E — Эмден, G — Калуга, N — Нижний Новгород (по примерам Jetta), M — Пуэбла (Мексика), X — Познань; Audi: A — Ингольштадт, N — Неккарзульм, 1 — Дьёр",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-volkswagen/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volkswagen/VIN_Codes",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Audi/VIN_Codes",
+    "https://www.drive2.ru/l/9275716/"
+   ]
+  },
+  {
+   "wmi": [
+    "TMB",
+    "XW8 (Skoda)"
+   ],
+   "positions": {
+    "4": "тип кузова (+ руль/привод), напр. J — универсал (Škoda); у 5J: Fabia II — A/B/C/E (хэтчбек), F/G/J (универсал), Roomster — L/M/N/U (по выборке VIN)",
+    "5": "двигатель",
+    "6": "система подушек безопасности (4 — 4 подушки, 6 — 6 и т.д.)",
+    "7-8": "модель: 6Y Fabia I, 5J Fabia II и Roomster, NJ Fabia III, 1U Octavia I (Tour), 1Z Octavia II (A5), NE Octavia III (A7), NX Octavia IV (A8), NH Rapid I/II, 5L Yeti, NS Kodiaq",
+    "9": "доп./контрольный символ",
+    "10": "модельный год",
+    "11": "завод: 0–4 и Y — Млада-Болеслав, 5–9 — Квасины, K — Калуга, H — Нижний Новгород (по примерам Octavia A7/A8, Kodiaq, Yeti)",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://www.skoda-storyboard.com/en/skoda-world/innovation-and-technology/what-can-vin-codes-tell-you/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-skoda/"
+   ]
+  },
+  {
+   "wmi": [
+    "WF0",
+    "X9F",
+    "Z6F"
+   ],
+   "positions": {
+    "4": "тип кузова (повторяется в 10-м); Focus III (X9F): K — хэтчбек, M — седан, L — универсал",
+    "5-6": "XX",
+    "7": "источник продукта: G — Ford Германия, W — Испания, T — Турция (Otosan), B — Великобритания, E — филиал Ford Germany (Румыния; по примерам — и российские заводы)",
+    "8": "завод (вместе с 7-м): GA — Кёльн, GB — Генк, GC — Саарлуис, WP — Валенсия, TT — Гёльджюк (Otosan), EE — Всеволожск, ES — Елабуга, EC — Набережные Челны (последние три — по примерам VIN)",
+    "9": "модель: B — Mondeo (и Focus III у X9F), C — Focus III (GC, Z6F рест.) / Mondeo V (WP), D — Focus I/II, C-Max I, Kuga I, F — Transit VII, G — Transit VIII/Custom, H — EcoSport (EC), J — Fiesta/Fusion, K — Fiesta (EC), M — Kuga II/III, R — Ka I, W — S-Max/Galaxy",
+    "10": "тип кузова (как 4-й)",
+    "11": "модельный год (8 — 2008, A — 2010, B — 2011 …)",
+    "12": "месяц выпуска (буквенный код Ford, зависит от года)",
+    "13-17": "серийный номер"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Ford/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-ford/",
+    "https://www.drive2.ru/l/1201817/"
+   ]
+  },
+  {
+   "wmi": [
+    "W0L",
+    "W0V",
+    "XUF",
+    "XWF",
+    "XUU"
+   ],
+   "positions": {
+    "4": "до ~2009: 0; с ~2009 — модель: P — Astra J / Zafira C, L — Antara, J — Mokka, S — Meriva B, G — Insignia",
+    "5-6": "до ~2009: платформа/модель (TG — Astra G, AH — Astra H и Zafira B, SD — Corsa D); с ~2009: 5 — комплектация, 6 — кузов (2 — 3-дв. хэтчбек, 5 — седан, 6 — 5-дв. хэтчбек, 8 — универсал, 9 — минивэн)",
+    "7": "до ~2009: серия (L — Astra/Corsa, M — Zafira); с ~2009: подушки безопасности",
+    "8-9": "до ~2009: код кузова GM (08 — 3-дв., 35 — универсал, 48 — 5-дв. хэтчбек, 68 — 5-дв. (Corsa), 69 — седан, 75 — минивэн); с ~2009: 8 — двигатель, 9 — контрольный символ",
+    "10": "модельный год",
+    "11": "завод (0 — Калининград/Автотор или Корея для Antara; 2 — Бохум; 4 — Сарагоса; 6 — Айзенах …)",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-opel/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/GM/VIN_Codes",
+    "https://www.avtogermes.ru/sale/second_hand/opel/"
+   ]
+  },
+  {
+   "wmi": [
+    "VF3",
+    "VF7",
+    "Z8T"
+   ],
+   "positions": {
+    "4": "модель: 4 — Peugeot 308 I (и 408 у Z8T), V — 4007 / C-Crosser (VV/VU) и Expert/Traveller/SpaceTourer (VE), B — 4008 (BU), Y — Boxer III / Jumper II, N — Citroën C4 седан (Z8T)",
+    "5": "тип кузова",
+    "6-8": "двигатель",
+    "9": "контрольный символ",
+    "10": "год выпуска — примерно с 2009–2010; раньше и у Boxer/Jumper (Sevel) — не год",
+    "11": "завод",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Peugeot/VIN_Codes"
+   ]
+  },
+  {
+   "wmi": [
+    "ZFA",
+    "TSM"
+   ],
+   "positions": {
+    "4-6": "ZFA: тип модели (250 — Ducato III / X250); TSM (Magyar Suzuki): у Fiat Sedici 4–5 = FY",
+    "7-9": "ZFA: обычно 000",
+    "10": "у европейских Fiat — не год (в Ducato — 0)",
+    "11-17": "серийный номер / завод"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Fiat/VIN_Codes",
+    "https://carinfo.kiev.ua/cars/vin/wmi/dic?wmi=TSM"
+   ]
+  },
+  {
+   "wmi": [
+    "WDB",
+    "W1V"
+   ],
+   "positions": {
+    "4-6": "серия: 906 — Sprinter NCV3 (2006–2018), 907/910 — Sprinter VS30 (2018+), 639 — Vito II, 447 — Vito III",
+    "7-9": "модель (масса/длина)",
+    "10": "у фургонов — руль: 1 — левый, 2 — правый (не год)",
+    "11": "завод: S/P/R/5 — Дюссельдорф, N/9 — Людвигсфельде, 3 — Витория",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mercedes-Benz/VIN_Codes"
+   ]
+  },
+  {
+   "wmi": [
+    "WME"
+   ],
+   "positions": {
+    "4-6": "Европа: серия (451 — Fortwo II)",
+    "4 (США)": "E — C451, F — C453; 5 — J купе, K кабрио; 6–7 — модель (3B, 9A — электро)",
+    "10": "США — модельный год; Европа — не проверено"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Smart/VIN_Codes"
+   ]
+  },
+  {
+   "wmi": [
+    "WBA",
+    "X4X (BMW)"
+   ],
+   "positions": {
+    "4-7": "типовой код BMW (E39 5 Series — DD, DE, DH, DL, DM, DN, DP, DR, DS, DT… — на D), напр. DT41",
+    "8": "руль/безопасность",
+    "9": "контрольный (США) или 0",
+    "10": "вне США — 0 (не год)",
+    "11": "завод/серия",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/WBADT434*1?format=json"
+   ]
+  },
+  {
+   "wmi": [
+    "YV1",
+    "YV4"
+   ],
+   "positions": {
+    "4": "модель (до 2009 у США, у Европы и позже): M — S40 II / V50 / C30 / C70 (2004–2012), V — S40/V40 I",
+    "5": "кузов + безопасность: S — седан FWD, H — седан AWD, W — универсал FWD, J — универсал AWD",
+    "6-7": "двигатель",
+    "8": "трансмиссия/прочее",
+    "9": "контрольный",
+    "10": "модельный год",
+    "11": "завод (2 — Гент)"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Volvo/VIN_Codes"
+   ]
+  },
+  {
+   "wmi": [
+    "SAL"
+   ],
+   "positions": {
+    "4": "модель: F — Freelander 2, N — Freelander 1 (США), V — Evoque, C — Discovery Sport, A — Discovery 3/4, S — RR Sport I, M — Range Rover L322",
+    "5": "серия/рынок (A — Европа в примерах)",
+    "6": "кузов",
+    "7-8": "двигатель/КПП",
+    "10": "модельный год",
+    "11": "завод: A — Солихалл, H — Хейлвуд, 2 — Нитра"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Land_Rover/VIN_Codes"
+   ]
+  },
+  {
+   "wmi": [
+    "1B3",
+    "1C3",
+    "5Y2",
+    "1FM"
+   ],
+   "positions": {
+    "1B3 (2007–2011)": "5-й символ — линия: B и E — Dodge Caliber (vPIC), S — Neon",
+    "1C3 (2012)": "1C3CDW… — Caliber",
+    "5Y2": "4 — S (Vibe), 5 — L (FWD) / M (AWD) / N (GT) для 2003–2008, P/R для 2009–2010",
+    "1FM5K": "Explorer (2011–2019 — V поколение, 2020+ — VI)",
+    "10": "модельный год (у всех американских VIN)",
+    "11": "завод"
+   },
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1B3HB48B07D555772?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5Y2SL63865Z411166?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1FM5K8GT6DGC18757?format=json"
+   ]
+  },
+  {
+   "wmi": [
+    "LGW",
+    "XZG",
+    "LVV",
+    "LVT",
+    "LCN"
+   ],
+   "positions": {
+    "4-8": "у китайских марок модель напрямую не кодируется: у Great Wall/Haval 6-й символ, похоже, двигатель (3 — Hover/H3/H5 бензин, E — H5 дизель, 4 — Jolion/H6 I/M6 1.5T, 6 — H6 II/Dargo 2.0T), 5-й E — Jolion; у Chery LVVDB21B встречается у Tiggo 4, Tiggo 7 Pro и Tiggo 7 Pro Max",
+    "10": "модельный год (в примерах совпадает с годом выпуска)"
+   },
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/haval/",
+    "https://www.avtogermes.ru/sale/second_hand/chery/"
+   ]
+  }
+ ],
+ "unresolved": [
+  "chery_tiggo: у Chery позиции 4–8 не указывают модель — Tiggo T11 в выборке LVVDB14B/LVVDB24B/LVVDB11B/LVVDD14B, те же коды у других моделей Chery; российская сборка (Автотор X4X, Дервейс X9W) не проверена — только по году и выбору клиента",
+  "chery_tiggo-5-vortex-tingo: Tiggo 5 (T21) в выборке LVTDB14B/LVTDB24B — такие же префиксы у Tiggo 7/8; Vortex Tingo (ТагАЗ) VIN не найден"
+ ],
+ "notes": "1) Порядок применения: из подошедших правил брать самое длинное (конкретное) совпадение маски; общие правила (например W0L0AHL, TMB???5J, WF0?XXGCD) нарочно перекрываются точными. 2) Год: years — модельные годы. У Ford Европы/России (WF0, X9F, Z6F) год — 11-й символ, не 10-й. У PSA до ~2009, у Boxer/Jumper, Fiat (ZFA), BMW и Mercedes вне США 10-й символ — не год: у таких правил years = null. 3) Если год по VIN прочитать нельзя — показывать все правила маски (например Tiguan I/II, Golf V/VI). 4) XW8 — общий WMI VW/Skoda/Audi российской сборки; марку определяет правило (у VW/Audi 4–6 = ZZZ, у Skoda — нет). 5) Многие реальные VIN взяты из украинских объявлений auto.ria.com (VIN проверен по реестру МВД Украины) и чешского реестра ТС — структура VIN та же, что у машин, ввезённых в Россию; коды российской сборки проверены по объявлениям московского дилера Автогермес (VIN в адресах фото). 6) Не найдены коды российской сборки: Ford Explorer и Transit (Елабуга, Z6F), Mondeo V (Всеволожск), Fiat Ducato (Соллерс: Z7G/Z76/XU3), Great Wall (X9X), Lifan (X9W), Chery (X4X/X9W/XWF), BMW E39 Автотор (X4X), Passat B6 и Audi A6 C6 калужской сборки, Astra H/Astra J российской сборки (XWF/XUF) — на такие VIN сайт должен распознать хотя бы марку по WMI и предложить выбор модели. 7) Лекала с неуказанным в каталоге поколением (Audi Q3/Q5, VW Crafter, Peugeot 308) привязаны к первому поколению; для следующих поколений правила есть со slugs: []. 8) Для рестайлингов вне годов лекала (Caliber 2010–2012, Antara 2011–2015, S-Max 2013–2015, Boxer/Jumper 2014+) slug оставлен, в detail — «уточнить». 9) Квота веб-поиска закончилась в середине работы; часть примеров собрана напрямую со страниц объявлений auto.ria.com и avtogermes.ru."
+}

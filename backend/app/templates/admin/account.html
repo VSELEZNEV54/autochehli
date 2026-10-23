@@ -1,0 +1,47 @@
+{% extends "admin/base.html" %}
+{% block title %}Мой аккаунт{% endblock %}
+{% block body %}
+<h1>{{ me.name or me.username }}</h1>
+<div class="grid2 mt-14">
+<div class="stack">
+  <section class="card">
+    <h2>Пароль</h2>
+    <form method="post" action="/admin/account/password" class="stack tight">
+      <input type="hidden" name="csrf" value="{{ csrf }}">
+      <label class="f">Текущий пароль<input class="input" type="password" name="old" required autocomplete="current-password"></label>
+      <label class="f">Новый пароль<input class="input" type="password" name="new" required minlength="10" autocomplete="new-password"></label>
+      <button class="btn btn--dark">Сменить пароль</button>
+    </form>
+  </section>
+  <section class="card">
+    <h2>Двухфакторный вход</h2>
+    {% if secret %}
+      <p>Добавьте ключ в приложение-аутентификатор (Яндекс Ключ, Google Authenticator, 1Password) — вручную, тип «по времени»:</p>
+      <p class="mono">{{ secret }}</p>
+      <p class="small muted break">{{ uri }}</p>
+      {% if totp_error %}<div class="flash flash--err">{{ totp_error }}</div>{% endif %}
+      <form method="post" action="/admin/account/totp" class="row">
+        <input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="secret" value="{{ secret }}">
+        <label class="f">Код из приложения<input class="input" name="code" inputmode="numeric" maxlength="8" required autocomplete="one-time-code"></label>
+        <button class="btn btn--primary">Включить</button>
+      </form>
+    {% elif me.totp_secret %}
+      <p>Включён: при входе нужен код из приложения.</p>
+      <form method="post" action="/admin/account/totp" class="row">
+        <input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="off" value="1">
+        <label class="f">Код из приложения<input class="input" name="code" inputmode="numeric" maxlength="8" required></label>
+        <button class="btn btn--danger">Отключить</button>
+      </form>
+    {% else %}
+      <p>Не включён. Рекомендуем: даже если пароль утечёт, без телефона войти не получится.</p>
+      <a class="btn btn--primary" href="/admin/account?setup=1">Настроить</a>
+    {% endif %}
+  </section>
+</div>
+<section class="card">
+  <h2>Открытые сессии</h2>
+  <table class="t t--compact">{% for ss in sessions %}<tr><td>{{ ss.last_seen_at|local }}<div class="small muted">{{ ss.ip }} · {{ ss.user_agent[:70] }}</div></td></tr>{% endfor %}</table>
+  <p class="small muted">Смена пароля закрывает все сессии, кроме текущей.</p>
+</section>
+</div>
+{% endblock %}

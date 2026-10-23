@@ -1,0 +1,1719 @@
+{
+ "group": "site-wmi",
+ "notes": "Коды из прототипа сайта (js/app.js, VIN_WMI). Используются, только если кода нет в мировом справочнике и исследовании по маркам.",
+ "wmi": [
+  {
+   "code": "WAU",
+   "brands": [
+    "audi"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WA1",
+   "brands": [
+    "audi"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "TRU",
+   "brands": [
+    "audi"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WUA",
+   "brands": [
+    "audi"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WBA",
+   "brands": [
+    "bmw"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WBS",
+   "brands": [
+    "bmw"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WBX",
+   "brands": [
+    "bmw"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WBY",
+   "brands": [
+    "bmw"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "X4X",
+   "brands": [
+    "bmw"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "LVV",
+   "brands": [
+    "chery"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "KL1",
+   "brands": [
+    "chevrolet"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "X9L",
+   "brands": [
+    "chevrolet"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "1G1",
+   "brands": [
+    "chevrolet"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "1GN",
+   "brands": [
+    "chevrolet"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "XUF",
+   "brands": [
+    "chevrolet",
+    "opel"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "XUU",
+   "brands": [
+    "chevrolet",
+    "opel"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "VF7",
+   "brands": [
+    "citroen"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "Z8T",
+   "brands": [
+    "citroen",
+    "peugeot",
+    "mitsubishi"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "KLA",
+   "brands": [
+    "daewoo"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "KLY",
+   "brands": [
+    "daewoo"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "XWB",
+   "brands": [
+    "daewoo",
+    "chevrolet"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JDA",
+   "brands": [
+    "daihatsu"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "Z8N",
+   "brands": [
+    "nissan",
+    "datsun"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "1B3",
+   "brands": [
+    "dodge"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "2B3",
+   "brands": [
+    "dodge"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "1C3",
+   "brands": [
+    "dodge"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "ZFA",
+   "brands": [
+    "fiat"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WF0",
+   "brands": [
+    "ford"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "X9F",
+   "brands": [
+    "ford"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "1FA",
+   "brands": [
+    "ford"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "1FM",
+   "brands": [
+    "ford"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "1FT",
+   "brands": [
+    "ford"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "3FA",
+   "brands": [
+    "ford"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "NM0",
+   "brands": [
+    "ford"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "X96",
+   "brands": [
+    "gaz"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "XTH",
+   "brands": [
+    "gaz"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "LGW",
+   "brands": [
+    "great-wall",
+    "haval"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JHM",
+   "brands": [
+    "honda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JHL",
+   "brands": [
+    "honda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "SHH",
+   "brands": [
+    "honda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "SHS",
+   "brands": [
+    "honda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "1HG",
+   "brands": [
+    "honda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "2HG",
+   "brands": [
+    "honda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "5J6",
+   "brands": [
+    "honda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "19X",
+   "brands": [
+    "honda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "KMH",
+   "brands": [
+    "hyundai"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "KM8",
+   "brands": [
+    "hyundai"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "Z94",
+   "brands": [
+    "hyundai",
+    "kia"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "X7M",
+   "brands": [
+    "hyundai",
+    "tagaz"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "NLH",
+   "brands": [
+    "hyundai"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "MAL",
+   "brands": [
+    "hyundai"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "TMA",
+   "brands": [
+    "hyundai"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JAA",
+   "brands": [
+    "isuzu"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JAL",
+   "brands": [
+    "isuzu"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "KNA",
+   "brands": [
+    "kia"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "KNC",
+   "brands": [
+    "kia"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "KND",
+   "brands": [
+    "kia"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "KNE",
+   "brands": [
+    "kia"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "XWE",
+   "brands": [
+    "kia"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "XTA",
+   "brands": [
+    "lada"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "SAL",
+   "brands": [
+    "land-rover"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JTH",
+   "brands": [
+    "lexus"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JTJ",
+   "brands": [
+    "lexus"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "LLV",
+   "brands": [
+    "lifan"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JMZ",
+   "brands": [
+    "mazda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JM1",
+   "brands": [
+    "mazda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JM3",
+   "brands": [
+    "mazda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WDD",
+   "brands": [
+    "mercedes"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WDB",
+   "brands": [
+    "mercedes"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WDC",
+   "brands": [
+    "mercedes"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WDF",
+   "brands": [
+    "mercedes"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "W1K",
+   "brands": [
+    "mercedes"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "W1N",
+   "brands": [
+    "mercedes"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JMB",
+   "brands": [
+    "mitsubishi"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JMY",
+   "brands": [
+    "mitsubishi"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JA3",
+   "brands": [
+    "mitsubishi"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JA4",
+   "brands": [
+    "mitsubishi"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "MMB",
+   "brands": [
+    "mitsubishi"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JN1",
+   "brands": [
+    "nissan"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JN6",
+   "brands": [
+    "nissan"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JN8",
+   "brands": [
+    "nissan"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "SJN",
+   "brands": [
+    "nissan"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "VSK",
+   "brands": [
+    "nissan"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "1N4",
+   "brands": [
+    "nissan"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "1N6",
+   "brands": [
+    "nissan"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "5N1",
+   "brands": [
+    "nissan"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "3N1",
+   "brands": [
+    "nissan"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "W0L",
+   "brands": [
+    "opel"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "W0V",
+   "brands": [
+    "opel"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "VF3",
+   "brands": [
+    "peugeot"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "VR3",
+   "brands": [
+    "peugeot"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "1G2",
+   "brands": [
+    "pontiac"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "VF1",
+   "brands": [
+    "renault"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "X7L",
+   "brands": [
+    "renault"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "UU1",
+   "brands": [
+    "renault"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "TMB",
+   "brands": [
+    "skoda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "XW8",
+   "brands": [
+    "volkswagen",
+    "skoda"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WME",
+   "brands": [
+    "smart"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "KPT",
+   "brands": [
+    "ssangyong"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JF1",
+   "brands": [
+    "subaru"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JF2",
+   "brands": [
+    "subaru"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "4S3",
+   "brands": [
+    "subaru"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "4S4",
+   "brands": [
+    "subaru"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JS2",
+   "brands": [
+    "suzuki"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JS3",
+   "brands": [
+    "suzuki"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "JSA",
+   "brands": [
+    "suzuki"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "TSM",
+   "brands": [
+    "suzuki"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "XW7",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "4T1",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "4T3",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "5TD",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "5TF",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "2T1",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "2T3",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "SB1",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "NMT",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "MR0",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "MR1",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "VNK",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "AHT",
+   "brands": [
+    "toyota"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "XTT",
+   "brands": [
+    "uaz"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WVW",
+   "brands": [
+    "volkswagen"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WV1",
+   "brands": [
+    "volkswagen"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WV2",
+   "brands": [
+    "volkswagen"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "WVG",
+   "brands": [
+    "volkswagen"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "3VW",
+   "brands": [
+    "volkswagen"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "9BW",
+   "brands": [
+    "volkswagen"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "AAV",
+   "brands": [
+    "volkswagen"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "YV1",
+   "brands": [
+    "volvo"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "YV4",
+   "brands": [
+    "volvo"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  },
+  {
+   "code": "Y6D",
+   "brands": [
+    "zaz"
+   ],
+   "maker": "",
+   "make": "",
+   "country": "",
+   "year_pos10": null,
+   "sources": [
+    "js/app.js — справочник прототипа (не подтверждён, самый низкий приоритет)"
+   ]
+  }
+ ]
+}

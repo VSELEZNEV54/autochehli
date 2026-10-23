@@ -2,11 +2,13 @@
 # -*- coding: utf-8 -*-
 """Собирает js/data.js из «каталог/Каталог Автостиль — разбор.xlsx», лист «Каталог».
 Марка → модель (семейство) → поколение → вариант лекала, годы, цены сайта (жаккард / экокожа / алькантара).
+Старая (зачёркнутая) цена комплекта «o» — из tools/old_prices.json, собрана со страниц моделей 1avtochehol.ru (22.10.2026).
 Запуск: python3 tools/build_data.py"""
 import zipfile, re, json, pathlib, xml.etree.ElementTree as ET
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 XLSX = ROOT / "каталог" / "Каталог Автостиль — разбор.xlsx"
+OLD = json.loads((ROOT / "tools" / "old_prices.json").read_text(encoding="utf-8"))
 NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 
 def read_sheet(name):
@@ -97,7 +99,7 @@ for r in rows[1:]:
     syn = " ".join(v for k, v in SYN.items() if k in low)
     ru = g(r, "Русское название (PROP41)")
     models.append({"s": slug, "b": bid, "f": bid + "-" + slugify(fam), "m": fam, "g": gen, "v": var, "y": years,
-                   "yr": num(g(r, "Год начала выпуска")) or 0, "p": prices, "ru": (ru + " " + syn).strip()})
+                   "yr": num(g(r, "Год начала выпуска")) or 0, "p": prices, "o": OLD.get(slug, 0), "ru": (ru + " " + syn).strip()})
 
 used = {m["b"] for m in models}
 brands = [{"id": v[0], "n": k, "logo": v[1], "s": v[2]} for k, v in BRANDS.items() if v[0] in used]

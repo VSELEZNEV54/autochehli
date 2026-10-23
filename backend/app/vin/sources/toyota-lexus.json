@@ -1,0 +1,3986 @@
+{
+ "group": "toyota-lexus",
+ "wmi": [
+  {
+   "code": "JTD",
+   "maker": "Toyota Motor Corporation",
+   "country": "JP",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": null,
+   "note": "легковые (Corolla E120 седан/универсал, Camry XV30, Prius, Yaris XP90 из Японии). У машин для Европы/СНГ 10-й символ «0», у машин для США/Канады — модельный год.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://alflash.com.ua/Refer/08vin_t.pdf"
+   ]
+  },
+  {
+   "code": "JTE",
+   "maker": "Toyota Motor Corporation",
+   "country": "JP",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": null,
+   "note": "MPV/SUV: RAV4 XA20, Land Cruiser 100/105, Prado 120/150, Highlander XU20/XU40. 10-й символ: «0» для Европы/СНГ, год — для США.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://alflash.com.ua/Refer/08vin_t.pdf"
+   ]
+  },
+  {
+   "code": "JTM",
+   "maker": "Toyota Motor Corporation",
+   "country": "JP",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": null,
+   "note": "SUV: RAV4 XA30/XA40, Land Cruiser 200/300. 10-й символ «0» (Европа/СНГ) или год (США).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "JTN",
+   "maker": "Toyota Motor Corporation",
+   "country": "JP",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": null,
+   "note": "легковые: Camry XV40/XV50/XV70, Corolla E150, Auris/Corolla iM. 10-й символ «0» (Европа/СНГ) или год (США).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://alflash.com.ua/Refer/08vin_t.pdf"
+   ]
+  },
+  {
+   "code": "JTK",
+   "maker": "Toyota Motor Corporation",
+   "country": "JP",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": null,
+   "note": "легковые (в т. ч. Scion для США).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "JTL",
+   "maker": "Toyota Motor Corporation",
+   "country": "JP",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": null,
+   "note": "SUV.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "JT1",
+   "maker": "Toyota Motor Corporation",
+   "country": "JP",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": false,
+   "note": "старый формат (до ~2002) для Европы: например RAV4 1997 JT171SC1000169336 — расшифровка VDS по нашим правилам не делается.",
+   "sources": [
+    "https://www.drive2.ru/l/594256623950673229/"
+   ]
+  },
+  {
+   "code": "JT2",
+   "maker": "Toyota Motor Corporation",
+   "country": "JP",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "легковые для США/Канады (старый формат).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://www.drive2.ru/l/594256623950673229/"
+   ]
+  },
+  {
+   "code": "JT3",
+   "maker": "Toyota Motor Corporation",
+   "country": "JP",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "MPV/SUV для США (старый формат).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "JT4",
+   "maker": "Toyota Motor Corporation",
+   "country": "JP",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "грузовые/пикапы для США (старый формат).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "JTH",
+   "maker": "Toyota Motor Corporation (Lexus)",
+   "country": "JP",
+   "brands": [
+    "lexus"
+   ],
+   "year_pos10": null,
+   "note": "Lexus легковые (IS, GS, ES, LS). 10-й символ «0» (Европа/СНГ) или год (США).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "JTJ",
+   "maker": "Toyota Motor Corporation (Lexus)",
+   "country": "JP",
+   "brands": [
+    "lexus"
+   ],
+   "year_pos10": null,
+   "note": "Lexus SUV (RX, NX, GX, LX).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "JT6",
+   "maker": "Toyota Motor Corporation (Lexus)",
+   "country": "JP",
+   "brands": [
+    "lexus"
+   ],
+   "year_pos10": true,
+   "note": "Lexus SUV для США (старый формат).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "JT8",
+   "maker": "Toyota Motor Corporation (Lexus)",
+   "country": "JP",
+   "brands": [
+    "lexus"
+   ],
+   "year_pos10": true,
+   "note": "Lexus легковые для США (старый формат).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "XW7",
+   "maker": "Toyota Motor Manufacturing Russia (Санкт-Петербург, Шушары)",
+   "country": "RU",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": false,
+   "note": "Camry XV40/XV50/XV70 (2007–2022), RAV4 XA40/XA50 (2016–2022). 10-й символ всегда «0», 11-й — «S».",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://en.wikipedia.org/wiki/Toyota_Motor_Manufacturing_Russia",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-toyota/"
+   ]
+  },
+  {
+   "code": "SB1",
+   "maker": "Toyota Manufacturing UK (Бернастон)",
+   "country": "GB",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": false,
+   "note": "Avensis T250/T270, Auris E150/E180, Corolla E120 хэтчбек. 10-й символ «0».",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-toyota/"
+   ]
+  },
+  {
+   "code": "NMT",
+   "maker": "Toyota Motor Manufacturing Turkey (Адапазары)",
+   "country": "TR",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": false,
+   "note": "Corolla седан E120 (с 2004)/E160–E180/E210, Auris E150, Verso. 10-й символ «0».",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "VNK",
+   "maker": "Toyota Motor Manufacturing France (Валансьен)",
+   "country": "FR",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": null,
+   "note": "Yaris XP90/XP130. Для Европы 10-й символ «0», для США — год (VNKKTUD34FA… = 2015).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "AHT",
+   "maker": "Toyota South Africa Motors",
+   "country": "ZA",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": false,
+   "note": "Hilux, Fortuner, Corolla. 10-й символ «0» у машин для Европы.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "MR0",
+   "maker": "Toyota Motor Thailand (Самронг/Бан Пхо)",
+   "country": "TH",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": false,
+   "note": "Hilux 7-го и 8-го поколений, Fortuner для России/Европы. 10-й символ «0».",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "MR1",
+   "maker": "Toyota Motor Thailand (Самронг)",
+   "country": "TH",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": null,
+   "note": "Fortuner (по данным Википедии).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "MR2",
+   "maker": "Toyota Motor Thailand (Gateway)",
+   "country": "TH",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": null,
+   "note": "легковые.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "MHF",
+   "maker": "PT Toyota Astra Motor",
+   "country": "ID",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": null,
+   "note": "Индонезия (Fortuner, Rush и др. для Азии).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "LVG",
+   "maker": "GAC Toyota",
+   "country": "CN",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "Camry XV70/XV80 китайской сборки (параллельный импорт с 2022). 10-й символ — год (LVGBC74K5NG… = 2022).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "LFM",
+   "maker": "FAW Toyota",
+   "country": "CN",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "RAV4 XA50/XA60, Corolla Cross китайской сборки. 10-й символ — год.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "LTV",
+   "maker": "FAW Toyota (Тяньцзинь)",
+   "country": "CN",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "4T1",
+   "maker": "Toyota Motor Manufacturing Kentucky",
+   "country": "US",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "Camry для США; 10-й символ — модельный год, 9-й — контрольный.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://alflash.com.ua/Refer/08vin_t.pdf"
+   ]
+  },
+  {
+   "code": "4T3",
+   "maker": "Toyota Motor Manufacturing Kentucky",
+   "country": "US",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "MPV/SUV.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "4T4",
+   "maker": "Subaru of Indiana Automotive (для Toyota)",
+   "country": "US",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "Camry XV40/XV50.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://alflash.com.ua/Refer/08vin_t.pdf"
+   ]
+  },
+  {
+   "code": "2T1",
+   "maker": "Toyota Motor Manufacturing Canada",
+   "country": "CA",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "Corolla, Matrix.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://alflash.com.ua/Refer/08vin_t.pdf"
+   ]
+  },
+  {
+   "code": "2T3",
+   "maker": "Toyota Motor Manufacturing Canada",
+   "country": "CA",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "RAV4.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "2T2",
+   "maker": "Toyota Motor Manufacturing Canada (Lexus)",
+   "country": "CA",
+   "brands": [
+    "lexus"
+   ],
+   "year_pos10": true,
+   "note": "Lexus RX.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "5TD",
+   "maker": "Toyota Motor Manufacturing Indiana",
+   "country": "US",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "Highlander, Sienna, Sequoia.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "5YF",
+   "maker": "Toyota Motor Manufacturing Mississippi",
+   "country": "US",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "Corolla.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "1NX",
+   "maker": "NUMMI",
+   "country": "US",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": true,
+   "note": "Corolla для США.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://alflash.com.ua/Refer/08vin_t.pdf"
+   ]
+  },
+  {
+   "code": "58A",
+   "maker": "Toyota Motor Manufacturing Kentucky (Lexus)",
+   "country": "US",
+   "brands": [
+    "lexus"
+   ],
+   "year_pos10": true,
+   "note": "Lexus ES.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "code": "6T1",
+   "maker": "Toyota Motor Corporation Australia",
+   "country": "AU",
+   "brands": [
+    "toyota"
+   ],
+   "year_pos10": null,
+   "note": "Camry XV30/XV40 австралийской сборки (в т. ч. экспорт на Ближний Восток); в примерах 10-й символ совпадает с годом.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  }
+ ],
+ "vin_rules": [
+  {
+   "mask": "JTDB?3?K",
+   "years": [
+    2001,
+    2006
+   ],
+   "model": "Camry",
+   "body": "XV30 седан, сборка Япония (Европа/СНГ)",
+   "detail": "6-й символ 3 — серия 30, 8-й K — Camry. Леворульные для Европы/СНГ; Camry XV30 для Великобритании была праворульной (редкость).",
+   "slugs": [
+    "toyota_camry-30"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTDBE30K100245371 — auto.ria.com, Toyota Camry 2003 г., V покоління/XV30",
+    "JTDBE38K400152719 — auto.ria.com, Toyota Camry 2003 г., V покоління/XV30",
+    "JTDBE30K100202374 — auto.ria.com, Toyota Camry 2003 г., V покоління/XV30"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/camry/",
+    "https://auto.ria.com/uk/auto_toyota_camry_40498763.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40578704.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40546340.html"
+   ]
+  },
+  {
+   "mask": "4T1B?3?K",
+   "years": [
+    2002,
+    2006
+   ],
+   "model": "Camry",
+   "body": "XV30 седан, США (Кентукки)",
+   "detail": "вPIC: ACV30L/MCV30L. 10-й символ — модельный год.",
+   "slugs": [
+    "toyota_camry-30"
+   ],
+   "confidence": "official",
+   "examples": [
+    "4T1BE32K36U686431 — auto.ria.com, Toyota Camry 2006 г., V покоління/XV30 (FL)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/4T1BE32K36U686431?format=json",
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://auto.ria.com/uk/auto_toyota_camry_40200502.html"
+   ]
+  },
+  {
+   "mask": "6T1B?3?K",
+   "years": [
+    2002,
+    2006
+   ],
+   "model": "Camry",
+   "body": "XV30 седан, Австралия",
+   "detail": "австралийская сборка (экспорт, руль может быть любым — проверить)",
+   "slugs": [
+    "toyota_camry-30"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "6T1BE32K96X552588 — auto.ria.com, Toyota Camry 2006 г."
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://auto.ria.com/uk/auto_toyota_camry_40371855.html"
+   ]
+  },
+  {
+   "mask": "JTNB?40K",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Camry",
+   "body": "XV40 седан, сборка Япония (Европа/СНГ)",
+   "detail": "6-й символ 4 — серия 40 (ACV40/GSV40 по документу Toyota), 5-й: E — 2.4 2AZ-FE, K — 3.5 2GR-FE.",
+   "slugs": [
+    "toyota_camry-vi"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTNBK40KX03017586 — auto.ria.com, Toyota Camry 2006 г., VI покоління/XV40",
+    "JTNBE40K103210278 — auto.ria.com, Toyota Camry 2011 г., VI покоління/XV40 (FL)",
+    "JTNBK40K103040545 — auto.ria.com, Toyota Camry 2008 г., VI покоління/XV40"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/camry/",
+    "https://auto.ria.com/uk/auto_toyota_camry_40581991.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40364983.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_39971658.html"
+   ]
+  },
+  {
+   "mask": "XW7B?40K",
+   "years": [
+    2007,
+    2011
+   ],
+   "model": "Camry",
+   "body": "XV40 седан, сборка TMMR (Санкт-Петербург)",
+   "slugs": [
+    "toyota_camry-vi"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW7BE40K00S032382 — autospot.ru, Toyota Camry, 2011 г., VI (XV40) Рестайлинг"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://www.drom.ru/catalog/toyota/camry/",
+    "https://autospot.ru/used-car/toyota/camry/?page=8"
+   ]
+  },
+  {
+   "mask": "4T1B?4?K",
+   "years": [
+    2007,
+    2011
+   ],
+   "model": "Camry",
+   "body": "XV40 седан, США",
+   "detail": "vPIC: ACV40L/GSV40L/AHV40L",
+   "slugs": [
+    "toyota_camry-vi"
+   ],
+   "confidence": "official",
+   "examples": [
+    "4T1BE46K57U558970 — auto.ria.com, Toyota Camry 2006 г., VI покоління/XV40",
+    "4T1BE46K07U596168 — auto.ria.com, Toyota Camry 2006 г., VI покоління/XV40",
+    "4T1BE46K47U545658 — auto.ria.com, Toyota Camry 2006 г., VI покоління/XV40"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/4T1BE46K07U596168?format=json",
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://auto.ria.com/uk/auto_toyota_camry_40459028.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40162647.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_39307254.html"
+   ]
+  },
+  {
+   "mask": "6T1B?4?K",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Camry",
+   "body": "XV40 седан, Австралия",
+   "detail": "австралийская сборка (руль проверить)",
+   "slugs": [
+    "toyota_camry-vi"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "6T1BE42K87X446933 — auto.ria.com, Toyota Camry 2007 г., VI покоління/XV40"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://auto.ria.com/uk/auto_toyota_camry_40443302.html"
+   ]
+  },
+  {
+   "mask": "JTNB??FK",
+   "years": [
+    2011,
+    2017
+   ],
+   "model": "Camry",
+   "body": "XV50/XV55 седан, сборка Япония",
+   "detail": "7-й символ F — признак XV50 (у XV40 — 0, у XV70 — H); 5-й: F — 2.5 2AR-FE, H — 2.0, K/N — 3.5.",
+   "slugs": [
+    "toyota_camry-i"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTNBF4FK003034182 — auto.ria.com, Toyota Camry 2016 г., VII покоління/XV50 (FL)",
+    "JTNBFYFK903023415 — auto.ria.com, Toyota Camry 2013 г., VII покоління/XV50",
+    "JTNBF4FK703032963 — auto.ria.com, Toyota Camry 2016 г., VII покоління/XV50 (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/camry/",
+    "https://auto.ria.com/uk/auto_toyota_camry_40589743.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40291710.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40510087.html"
+   ]
+  },
+  {
+   "mask": "XW7B??FK",
+   "years": [
+    2011,
+    2018
+   ],
+   "model": "Camry",
+   "body": "XV50/XV55 седан, сборка TMMR",
+   "detail": "7-й символ F — XV50 (включая рестайлинги 2014 и 2017).",
+   "slugs": [
+    "toyota_camry-i"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW7BF4FK70S159070 — autospot.ru, Toyota Camry, 2017 г., VII (XV50) Рестайлинг",
+    "XW7BH4FK00S013636 — autospot.ru, Toyota Camry, 2014 г., VII (XV50)",
+    "XW7BN4FK00S107833 — autospot.ru, Toyota Camry, 2016 г., VII (XV50) Рестайлинг"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://www.drom.ru/catalog/toyota/camry/",
+    "https://autospot.ru/used-car/toyota/camry/",
+    "https://autospot.ru/used-car/toyota/camry/?page=2",
+    "https://autospot.ru/used-car/toyota/camry/?page=8"
+   ]
+  },
+  {
+   "mask": "4T1B??FK",
+   "years": [
+    2012,
+    2017
+   ],
+   "model": "Camry",
+   "body": "XV50 седан, США",
+   "detail": "vPIC: ASV50L/GSV50L/AVV50L",
+   "slugs": [
+    "toyota_camry-i"
+   ],
+   "confidence": "official",
+   "examples": [
+    "4T1BF1FKXFU485198 — auto.ria.com, Toyota Camry 2014 г., VII покоління/XV50 (FL)",
+    "4T1BF1FK0HU341842 — auto.ria.com, Toyota Camry 2017 г., VII покоління/XV50 (FL)",
+    "4T1BF1FK4CU627413 — auto.ria.com, Toyota Camry 2012 г., VII покоління/XV50"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/4T1BF1FK4CU039706?format=json",
+    "https://auto.ria.com/uk/auto_toyota_camry_40463770.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40406261.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40587711.html"
+   ]
+  },
+  {
+   "mask": "4T4B??FK",
+   "years": [
+    2012,
+    2017
+   ],
+   "model": "Camry",
+   "body": "XV50 седан, США (Subaru of Indiana)",
+   "detail": "vPIC: ASV50L",
+   "slugs": [
+    "toyota_camry-i"
+   ],
+   "confidence": "official",
+   "examples": [
+    "4T4BF1FK8ER413825 — реестр выкупа myfloridalegal.com; NHTSA vPIC: 2014 Toyota Camry ASV50L, завод Lafayette"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/4T4BF1FK8ER413825?format=json",
+    "https://www.myfloridalegal.com/resale_vehicle/4T4BF1FK8ER413825"
+   ]
+  },
+  {
+   "mask": "JTNB??HK",
+   "years": [
+    2017,
+    2024
+   ],
+   "model": "Camry",
+   "body": "XV70 седан, сборка Япония",
+   "detail": "7-й символ H — признак XV70 (в т. ч. гибрид AXVH70: JTNB23HK…).",
+   "slugs": [
+    "toyota_camry-xv70"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTNBF3HK503000195 — auto.ria.com, Toyota Camry 2017 г., VIII покоління/XV70",
+    "JTNBF4HKX03052461 — auto.ria.com, Toyota Camry 2020 г., VIII покоління (XV70) (FL)",
+    "JTNB23HK203095973 — auto.ria.com, Toyota Camry 2021 г., VIII покоління (XV70) (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/camry/",
+    "https://auto.ria.com/uk/auto_toyota_camry_40193665.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40458473.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40566403.html"
+   ]
+  },
+  {
+   "mask": "XW7B??HK",
+   "years": [
+    2018,
+    2022
+   ],
+   "model": "Camry",
+   "body": "XV70 седан, сборка TMMR",
+   "detail": "7-й символ H — XV70. Внимание: в объявлениях 2018–2019 гг. такие машины иногда ошибочно подписаны как XV50 «рестайлинг 2» (XW7BF4HK…, XW7BZYHK…); по 7-му символу и двигателю 2GR-FKS (Z) это XV70.",
+   "slugs": [
+    "toyota_camry-xv70"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW7BZ3HK80S115240 — autospot.ru, Toyota Camry, 2021 г., 2020 – н.в., VIII (XV70) Рестайлинг",
+    "XW7BZYHK10S118459 — autospot.ru, Toyota Camry, 2021 г., 2020 – н.в., VIII (XV70) Рестайлинг",
+    "XW7BF3HK60S185649 — autospot.ru, Toyota Camry, 2021 г., 2020 – н.в., VIII (XV70) Рестайлинг",
+    "XW7B1YHK00S210069 — autospot.ru, Toyota Camry, 2021 г., 2020 – н.в., VIII (XV70) Рестайлинг"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://www.drom.ru/catalog/toyota/camry/",
+    "https://autospot.ru/used-car/toyota/camry/"
+   ]
+  },
+  {
+   "mask": "4T1B??HK",
+   "years": [
+    2018,
+    2024
+   ],
+   "model": "Camry",
+   "body": "XV70 седан, США",
+   "detail": "vPIC: AXVA70L/GSV70L/AXVH70L",
+   "slugs": [
+    "toyota_camry-xv70"
+   ],
+   "confidence": "official",
+   "examples": [
+    "4T1BZ1HKXKU030642 — auto.ria.com, Toyota Camry 2019 г., VIII покоління/XV70",
+    "4T1B21HK4JU506984 — auto.ria.com, Toyota Camry 2018 г., VIII покоління/XV70",
+    "4T1B11HK4KU778794 — auto.ria.com, Toyota Camry 2019 г., VIII покоління/XV70"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/4T1B11HK4KU778794?format=json",
+    "https://auto.ria.com/uk/auto_toyota_camry_40091674.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40500211.html",
+    "https://auto.ria.com/uk/auto_toyota_camry_40496881.html"
+   ]
+  },
+  {
+   "mask": "LVGBC74K",
+   "years": [
+    2021,
+    2024
+   ],
+   "model": "Camry",
+   "body": "XV70 рестайлинг, сборка GAC Toyota (Китай)",
+   "detail": "параллельный импорт; китайская версия XV70 — салон может отличаться, менеджеру проверить",
+   "slugs": [
+    "toyota_camry-xv70"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "LVGBC74K6NG618634 — autospot.ru, Toyota Camry, 2022 г., 2020 – н.в., VIII (XV70) Рестайлинг",
+    "LVGBC74K5NG601579 — autospot.ru, Toyota Camry, 2022 г., 2020 – н.в., VIII (XV70) Рестайлинг",
+    "LVGBC74K5NG623355 — autospot.ru, Toyota Camry, 2022 г., 2020 – н.в., VIII (XV70) Рестайлинг"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://autospot.ru/used-car/toyota/camry/",
+    "https://autospot.ru/used-car/toyota/camry/?page=2",
+    "https://autospot.ru/used-car/toyota/camry/?page=3"
+   ]
+  },
+  {
+   "mask": "LVGB??EK",
+   "years": [
+    2023,
+    2026
+   ],
+   "model": "Camry",
+   "body": "XV80, сборка GAC Toyota (Китай)",
+   "detail": "лекал XV80 в каталоге нет",
+   "slugs": [],
+   "confidence": "probable",
+   "examples": [
+    "LVGBECEK6TG155702 — autospot.ru, Toyota Camry, 2026 г., 2023 – н.в. IX (XV80)",
+    "LVGBDCEK4RG500091 — autospot.ru, Toyota Camry, 2024 г., 2023 – н.в. IX (XV80)",
+    "LVGBACEK0RG504731 — autospot.ru, Toyota Camry, 2024 г., 2023 – н.в. IX (XV80)"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://autospot.ru/used-car/toyota/camry/",
+    "https://autospot.ru/used-car/toyota/camry/?page=4",
+    "https://autospot.ru/used-car/toyota/camry/?page=6"
+   ]
+  },
+  {
+   "mask": "SB1K?2?E",
+   "years": [
+    2001,
+    2007
+   ],
+   "model": "Corolla",
+   "body": "E120 хэтчбек 5 дв., сборка Великобритания",
+   "detail": "4-й символ K — 5-дверный, 6-й 2 — серия E12",
+   "slugs": [
+    "toyota_corolla"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SB1KZ28E40E022732 — auto.ria.com, Toyota Corolla 2002 г., IX покоління",
+    "SB1KW20E90E059408 — auto.ria.com, Toyota Corolla 2004 г., IX покоління (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/corolla/",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40526087.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_38083959.html"
+   ]
+  },
+  {
+   "mask": "SB1J?2?E",
+   "years": [
+    2001,
+    2007
+   ],
+   "model": "Corolla",
+   "body": "E120 хэтчбек 3 дв., сборка Великобритания",
+   "detail": "3-дверный: задний ряд отличается — в каталоге лекала для 3-дверного нет, уточнить",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "SB1JW28E70E002933 — auto.ria.com, Toyota Corolla 2002 г., IX покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://auto.ria.com/uk/auto_toyota_corolla_39926091.html"
+   ]
+  },
+  {
+   "mask": "JTDB?2?E",
+   "years": [
+    2001,
+    2007
+   ],
+   "model": "Corolla",
+   "body": "E120 седан, сборка Япония (левый руль)",
+   "slugs": [
+    "toyota_corolla-sedan"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTDBR22E173216448 — auto.ria.com, Toyota Corolla 2007 г., IX покоління (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/corolla/",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40422827.html"
+   ]
+  },
+  {
+   "mask": "NMTB?2?E",
+   "years": [
+    2004,
+    2007
+   ],
+   "model": "Corolla",
+   "body": "E120 седан, сборка Турция",
+   "slugs": [
+    "toyota_corolla-sedan"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "NMTBZ20E80R111851 — auto.ria.com, Toyota Corolla 2005 г., IX покоління (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40467422.html"
+   ]
+  },
+  {
+   "mask": "JTDE?2?E",
+   "years": [
+    2001,
+    2007
+   ],
+   "model": "Corolla",
+   "body": "E120 универсал (Европа)",
+   "detail": "лекал на леворульный универсал E120 в каталоге нет (Fielder — праворульный японский)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JTDER28E403061468 — auto.ria.com, Toyota Corolla 2004 г., IX покоління (FL)",
+    "JTDEM22E900006782 — auto.ria.com, Toyota Corolla 2002 г., IX покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40483314.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_38082565.html"
+   ]
+  },
+  {
+   "mask": "JTNB?5?E",
+   "years": [
+    2007,
+    2013
+   ],
+   "model": "Corolla",
+   "body": "E150 седан, сборка Япония",
+   "detail": "4-й B — седан, 6-й 5 — серия E15, 8-й E — Corolla/Auris",
+   "slugs": [
+    "toyota_corolla-sedan-2007-2012"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTNBC56E102006812 — auto.ria.com, Toyota Corolla 2007 г., X покоління",
+    "JTNBV58E502009512 — auto.ria.com, Toyota Corolla 2007 г., X покоління",
+    "JTNBV56E802032060 — auto.ria.com, Toyota Corolla 2007 г., X покоління",
+    "JTNBH58E50J009958 — auto.ria.com, Toyota Corolla 2011 г., X покоління (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/corolla/",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40594548.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_39787818.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_39927249.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40536199.html"
+   ]
+  },
+  {
+   "mask": "AHTL?5?E",
+   "years": [
+    2007,
+    2013
+   ],
+   "model": "Corolla",
+   "body": "E150 седан, сборка ЮАР",
+   "detail": "один пример; 4-й символ L у южноафриканской сборки",
+   "slugs": [
+    "toyota_corolla-sedan-2007-2012"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "AHTLB56E603019113 — auto.ria.com, Toyota Corolla 2008 г., X покоління"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40528998.html"
+   ]
+  },
+  {
+   "mask": "NMTB??JE",
+   "years": [
+    2013,
+    2019
+   ],
+   "model": "Corolla",
+   "body": "E160/E180 седан, сборка Турция",
+   "detail": "7-й символ J, 8-й E. Российская Corolla 2013–2019 (NRE180/ZRE181/ZRE182)",
+   "slugs": [
+    "toyota_corolla-new",
+    "toyota_corolla-160"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "NMTBE0JE80R256077 — auto.ria.com, Toyota Corolla 2018 г., XI покоління (FL)",
+    "NMTBT9JE90R002999 — auto.ria.com, Toyota Corolla 2013 г., XI покоління",
+    "NMTBB3JE80R080027 — auto.ria.com, Toyota Corolla 2014 г., XI покоління",
+    "NMTBB0JEX0R152473 — auto.ria.com, Toyota Corolla 2016 г., XI покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/corolla/",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40347741.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40501789.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_39184482.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40454512.html"
+   ]
+  },
+  {
+   "mask": "2T1B??HE",
+   "years": [
+    2014,
+    2019
+   ],
+   "model": "Corolla",
+   "body": "E170 седан для США/Канады",
+   "detail": "vPIC: ZRE172L. Североамериканская Corolla отличается от российской E180 — лекал нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "2T1BURHE8JC020599 — auto.ria.com, Toyota Corolla 2017 г., XI покоління (FL)",
+    "2T1BURHE7EC096417 — auto.ria.com, Toyota Corolla 2014 г., XI покоління",
+    "2T1BURHE8HC801388 — auto.ria.com, Toyota Corolla 2016 г., XI покоління (FL)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/2T1BURHE7EC096417?format=json",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40595427.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40462863.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40330426.html"
+   ]
+  },
+  {
+   "mask": "5YFB??HE",
+   "years": [
+    2014,
+    2019
+   ],
+   "model": "Corolla",
+   "body": "E170 седан для США (Миссисипи)",
+   "detail": "vPIC: ZRE172L — лекал нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "5YFBURHEXEP094449 — auto.ria.com, Toyota Corolla 2014 г., XI покоління"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5YFBURHEXEP094449?format=json",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40330801.html"
+   ]
+  },
+  {
+   "mask": "NMTB??BE",
+   "years": [
+    2019,
+    2026
+   ],
+   "model": "Corolla",
+   "body": "E210 седан, сборка Турция",
+   "detail": "7-й символ B, 8-й E (ZRE210, гибрид ZWE211)",
+   "slugs": [
+    "toyota_corolla-210",
+    "toyota_corolla-210spl"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "NMTBZ4BE90R058294 — auto.ria.com, Toyota Corolla 2020 г., XII покоління",
+    "NMTBE4BE40R099332 — auto.ria.com, Toyota Corolla 2021 г., XII покоління",
+    "NMTBE9BE30R020763 — auto.ria.com, Toyota Corolla 2019 г., XII покоління",
+    "NMTBZ4BE60R118628 — auto.ria.com, Toyota Corolla 2021 г., XII покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/corolla/",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40219136.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40305313.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_38791396.html",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40555896.html"
+   ]
+  },
+  {
+   "mask": "NMTK?5?E",
+   "years": [
+    2007,
+    2012
+   ],
+   "model": "Auris",
+   "body": "E150 хэтчбек 5 дв., сборка Турция",
+   "detail": "4-й K — 5-дверный",
+   "slugs": [
+    "toyota_auris"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "NMTKB56EX0R003227 — auto.ria.com, Toyota Auris 2008 г., I покоління",
+    "NMTKV56E40R099525 — auto.ria.com, Toyota Auris 2012 г.",
+    "NMTKV58E60R031059 — auto.ria.com, Toyota Auris 2008 г., I покоління",
+    "NMTKF56E70R013508 — auto.ria.com, Toyota Auris 2008 г., I покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/auris/",
+    "https://auto.ria.com/uk/auto_toyota_auris_39770057.html",
+    "https://auto.ria.com/uk/auto_toyota_auris_40562575.html",
+    "https://auto.ria.com/uk/auto_toyota_auris_40038732.html",
+    "https://auto.ria.com/uk/auto_toyota_auris_40404930.html"
+   ]
+  },
+  {
+   "mask": "SB1K?5?E",
+   "years": [
+    2007,
+    2012
+   ],
+   "model": "Auris",
+   "body": "E150 хэтчбек 5 дв., сборка Великобритания",
+   "slugs": [
+    "toyota_auris"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SB1KV56E20F022190 — auto.ria.com, Toyota Auris 2007 г., I покоління",
+    "SB1KV56E60F039980 — auto.ria.com, Toyota Auris 2007 г., I покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/auris/",
+    "https://auto.ria.com/uk/auto_toyota_auris_40117556.html",
+    "https://auto.ria.com/uk/auto_toyota_auris_40066637.html"
+   ]
+  },
+  {
+   "mask": "NMTJ?5?E",
+   "years": [
+    2007,
+    2012
+   ],
+   "model": "Auris",
+   "body": "E150 хэтчбек 3 дв., сборка Турция",
+   "detail": "3-дверный — лекала нет, уточнить",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "NMTJT56E30R024266 — auto.ria.com, Toyota Auris 2010 г., I покоління (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://auto.ria.com/uk/auto_toyota_auris_35241729.html"
+   ]
+  },
+  {
+   "mask": "SB1K??JE",
+   "years": [
+    2012,
+    2018
+   ],
+   "model": "Auris",
+   "body": "E180 хэтчбек, сборка Великобритания",
+   "detail": "7-й J, 8-й E",
+   "slugs": [
+    "toyota_auris-e180"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SB1KT4JE60E005194 — auto.ria.com, Toyota Auris 2013 г., II покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/auris/",
+    "https://auto.ria.com/uk/auto_toyota_auris_40417396.html"
+   ]
+  },
+  {
+   "mask": "SB1M??JE",
+   "years": [
+    2012,
+    2018
+   ],
+   "model": "Auris",
+   "body": "E180 хэтчбек (в т. ч. гибрид), сборка Великобритания",
+   "detail": "4-й символ M у хэтчбеков E180",
+   "slugs": [
+    "toyota_auris-e180"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SB1ME4JE30E093432 — auto.ria.com, Toyota Auris 2016 г., II покоління (FL)",
+    "SB1MS3JE10E152643 — auto.ria.com, Toyota Auris 2015 г., II покоління",
+    "SB1ME4JE20E036610 — auto.ria.com, Toyota Auris 2013 г., II покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/auris/",
+    "https://auto.ria.com/uk/auto_toyota_auris_40487845.html",
+    "https://auto.ria.com/uk/auto_toyota_auris_36297608.html",
+    "https://auto.ria.com/uk/auto_toyota_auris_39983537.html"
+   ]
+  },
+  {
+   "mask": "SB1Z??JE",
+   "years": [
+    2013,
+    2018
+   ],
+   "model": "Auris",
+   "body": "E180 универсал Touring Sports",
+   "detail": "универсал — лекала нет",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "SB1ZF3JE20E005516 — auto.ria.com, Toyota Auris 2014 г., II покоління",
+    "SB1ZE3JE40E035796 — auto.ria.com, Toyota Auris 2013 г., II покоління",
+    "SB1ZN3JE60E022581 — auto.ria.com, Toyota Auris 2013 г., II покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://auto.ria.com/uk/auto_toyota_auris_40587692.html",
+    "https://auto.ria.com/uk/auto_toyota_auris_40496560.html",
+    "https://auto.ria.com/uk/auto_toyota_auris_39415783.html"
+   ]
+  },
+  {
+   "mask": "JTNK??JE",
+   "years": [
+    2015,
+    2018
+   ],
+   "model": "Auris",
+   "body": "E180 хэтчбек, сборка Япония (в США — Corolla iM)",
+   "detail": "vPIC: ZRE186L",
+   "slugs": [
+    "toyota_auris-e180"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JTNKARJE8JJ566337 — auto.ria.com, Toyota Corolla 2018 г., XI покоління (FL)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTNKARJE8JJ566337?format=json",
+    "https://auto.ria.com/uk/auto_toyota_corolla_40455998.html"
+   ]
+  },
+  {
+   "mask": "SB1??5?L",
+   "years": [
+    2003,
+    2009
+   ],
+   "model": "Avensis",
+   "body": "T250 (седан/лифтбек/универсал), сборка Великобритания",
+   "detail": "6-й символ 5 — T25, 8-й L — Avensis; 4-й: B — седан, D — лифтбек, E — универсал",
+   "slugs": [
+    "toyota_avensis"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SB1EP56L50E012961 — auto.ria.com, Toyota Avensis 2007 г., II покоління (FL)",
+    "SB1BJ56L00E060310 — auto.ria.com, Toyota Avensis 2006 г., II покоління",
+    "SB1BR56L20E191862 — auto.ria.com, Toyota Avensis 2007 г., II покоління (FL)",
+    "SB1EA56L60E047008 — auto.ria.com, Toyota Avensis 2006 г., II покоління (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/avensis/",
+    "https://auto.ria.com/uk/auto_toyota_avensis_39391168.html",
+    "https://auto.ria.com/uk/auto_toyota_avensis_40564014.html",
+    "https://auto.ria.com/uk/auto_toyota_avensis_40410896.html",
+    "https://auto.ria.com/uk/auto_toyota_avensis_40586767.html"
+   ]
+  },
+  {
+   "mask": "SB1B?7?L",
+   "years": [
+    2009,
+    2018
+   ],
+   "model": "Avensis",
+   "body": "T270 седан, сборка Великобритания",
+   "detail": "6-й символ 7 — T27",
+   "slugs": [
+    "toyota_avensis-3"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SB1BG76L40E079355 — auto.ria.com, Toyota Avensis 2012 г., III покоління (FL)",
+    "SB1BK76L20E022697 — auto.ria.com, Toyota Avensis 2011 г., III покоління (FL)",
+    "SB1BD76L40E020945 — auto.ria.com, Toyota Avensis 2009 г., III покоління",
+    "SB1BB76L70E011355 — auto.ria.com, Toyota Avensis 2010 г., III покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/avensis/",
+    "https://auto.ria.com/uk/auto_toyota_avensis_39038076.html",
+    "https://auto.ria.com/uk/auto_toyota_avensis_40592141.html",
+    "https://auto.ria.com/uk/auto_toyota_avensis_39484447.html",
+    "https://auto.ria.com/uk/auto_toyota_avensis_40397521.html"
+   ]
+  },
+  {
+   "mask": "SB1E?7?L",
+   "years": [
+    2009,
+    2018
+   ],
+   "model": "Avensis",
+   "body": "T270 универсал",
+   "detail": "в каталоге лекало Avensis 3 только для седана",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "SB1EB76L60E006855 — auto.ria.com, Toyota Avensis 2009 г., III покоління",
+    "SB1ED76L10E018759 — auto.ria.com, Toyota Avensis 2009 г., III покоління",
+    "SB1EG76L00E052277 — auto.ria.com, Toyota Avensis 2011 г., III покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://auto.ria.com/uk/auto_toyota_avensis_40589321.html",
+    "https://auto.ria.com/uk/auto_toyota_avensis_40199432.html",
+    "https://auto.ria.com/uk/auto_toyota_avensis_40593944.html"
+   ]
+  },
+  {
+   "mask": "NMTD?26R",
+   "years": [
+    2009,
+    2018
+   ],
+   "model": "Verso",
+   "body": "R20 минивэн, сборка Турция",
+   "detail": "число мест (5/7) по VIN не определить; лекала каталога — для рестайлинга 2012+, дорестайлинг 2009–2012 уточнить",
+   "slugs": [
+    "toyota_verso-5m",
+    "toyota_verso-7m"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "NMTDB26R90R006727 — auto.ria.com, Toyota Verso 2010 г., I покоління",
+    "NMTDD26RX0R040606 — auto.ria.com, Toyota Verso 2011 г., I покоління",
+    "NMTDE26R40R029601 — auto.ria.com, Toyota Verso 2013 г., II покоління",
+    "NMTDM26R70R003254 — auto.ria.com, Toyota Verso 2014 г., II покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/verso/",
+    "https://auto.ria.com/uk/auto_toyota_verso_40585045.html",
+    "https://auto.ria.com/uk/auto_toyota_verso_40551574.html",
+    "https://auto.ria.com/uk/auto_toyota_verso_40084282.html",
+    "https://auto.ria.com/uk/auto_toyota_verso_40335168.html"
+   ]
+  },
+  {
+   "mask": "VNKK?9?3",
+   "years": [
+    2005,
+    2011
+   ],
+   "model": "Yaris",
+   "body": "XP90 хэтчбек 5 дв., сборка Франция",
+   "detail": "6-й 9 — серия XP90 (NCP91/NCP93 по документу Toyota), 8-й 3 — Yaris",
+   "slugs": [
+    "toyota_yaris-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "VNKKH96370A069325 — auto.ria.com, Toyota Yaris 2009 г., II покоління",
+    "VNKKL96360A320155 — auto.ria.com, Toyota Yaris 2008 г., II покоління",
+    "VNKKG92300A338676 — auto.ria.com, Toyota Yaris 2011 г., II покоління (FL)",
+    "VNKKC96350A218846 — auto.ria.com, Toyota Yaris 2009 г., II покоління (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/yaris/",
+    "https://auto.ria.com/uk/auto_toyota_yaris_40587685.html",
+    "https://auto.ria.com/uk/auto_toyota_yaris_40171613.html",
+    "https://auto.ria.com/uk/auto_toyota_yaris_40292464.html",
+    "https://auto.ria.com/uk/auto_toyota_yaris_39722736.html"
+   ]
+  },
+  {
+   "mask": "VNKJ?9?3",
+   "years": [
+    2005,
+    2011
+   ],
+   "model": "Yaris",
+   "body": "XP90 хэтчбек 3 дв., сборка Франция",
+   "detail": "3-дверный — уточнить лекало",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "VNKJG92350A344775 — auto.ria.com, Toyota Yaris 2011 г., II покоління (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://auto.ria.com/uk/auto_toyota_yaris_40320737.html"
+   ]
+  },
+  {
+   "mask": "JTDK?9?3",
+   "years": [
+    2005,
+    2011
+   ],
+   "model": "Yaris",
+   "body": "XP90 хэтчбек 5 дв., сборка Япония",
+   "slugs": [
+    "toyota_yaris-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTDKW923802027583 — auto.ria.com, Toyota Yaris 2008 г., II покоління"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://auto.ria.com/uk/auto_toyota_yaris_40548847.html"
+   ]
+  },
+  {
+   "mask": "JTDB?9?3",
+   "years": [
+    2006,
+    2012
+   ],
+   "model": "Yaris",
+   "body": "XP90 седан (NCP93), сборка Япония",
+   "detail": "vPIC: NCP91L/NCP93L, Sedan",
+   "slugs": [
+    "toyota_yaris-sedan"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JTDBT923881240351 — autospot.ru, Toyota Yaris, 2008 г., II"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTDBT923881240351?format=json",
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://autospot.ru/used-car/toyota/yaris/"
+   ]
+  },
+  {
+   "mask": "VNK???D3",
+   "years": [
+    2011,
+    2020
+   ],
+   "model": "Yaris",
+   "body": "XP130 хэтчбек, сборка Франция",
+   "detail": "vPIC (VNKKTUD34FA…): NCP131L. Привязка к лекалу «Yaris New» предположительная — в каталоге у него не указаны годы",
+   "slugs": [
+    "toyota_yaris-new"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "VNKKG0D340A000965 — auto.ria.com, Toyota Yaris 2017 г., III покоління (2nd FL)",
+    "VNKKL3D360A036833 — auto.ria.com, Toyota Yaris 2012 г., III покоління",
+    "VNKKJ0D390A310983 — auto.ria.com, Toyota Yaris 2015 г., III покоління (FL)",
+    "VNKKG3D310A117839 — auto.ria.com, Toyota Yaris 2019 г., III покоління (2nd FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/VNKKTUD34FA043777?format=json",
+    "https://auto.ria.com/uk/auto_toyota_yaris_40483817.html",
+    "https://auto.ria.com/uk/auto_toyota_yaris_38648342.html",
+    "https://auto.ria.com/uk/auto_toyota_yaris_38887812.html",
+    "https://auto.ria.com/uk/auto_toyota_yaris_40295257.html"
+   ]
+  },
+  {
+   "mask": "JTE??20V",
+   "years": [
+    2000,
+    2005
+   ],
+   "model": "RAV4",
+   "body": "XA20 (CA20/CA21)",
+   "detail": "6-й символ 2 — серия 20, 8-й V — RAV4. 3-/5-дверный по VIN надёжно не различаем; в каталоге лекало для 5-дверного CA21",
+   "slugs": [
+    "toyota_rav-4-ca21"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTEHH20V006012483 — auto.ria.com, Toyota Rav4 2001 г., II покоління",
+    "JTEHG20V806009415 — auto.ria.com, Toyota Rav4 2002 г., II покоління",
+    "JTEGH20V430094205 — auto.ria.com, Toyota Rav4 2003 г., II покоління (FL)",
+    "JTEGD20V540010275 — autospot.ru, Toyota RAV4, 2003 г., II (XA20)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/rav4/",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTEGD20V540010275?format=json",
+    "https://auto.ria.com/uk/auto_toyota_rav4_40357914.html",
+    "https://auto.ria.com/uk/auto_toyota_rav4_38315226.html",
+    "https://auto.ria.com/uk/auto_toyota_rav4_40582657.html",
+    "https://autospot.ru/used-car/toyota/rav4/?page=4"
+   ]
+  },
+  {
+   "mask": "JTM??3?V",
+   "years": [
+    2005,
+    2013
+   ],
+   "model": "RAV4",
+   "body": "XA30 (в т. ч. удлинённый)",
+   "detail": "6-й символ 3 — серия 30",
+   "slugs": [
+    "toyota_rav4"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTMBH33V805001880 — auto.ria.com, Toyota Rav4 2005 г., III покоління",
+    "JTMBH31V705025722 — auto.ria.com, Toyota Rav4 2007 г., III покоління",
+    "JTMBD31V475090677 — auto.ria.com, Toyota Rav4 2007 г., III покоління",
+    "JTMBB31V60D025122 — auto.ria.com, Toyota Rav4 2009 г., III покоління (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/rav4/",
+    "https://auto.ria.com/uk/auto_toyota_rav4_39749402.html",
+    "https://auto.ria.com/uk/auto_toyota_rav4_40446068.html",
+    "https://auto.ria.com/uk/auto_toyota_rav4_40367371.html",
+    "https://auto.ria.com/uk/auto_toyota_rav4_40592858.html"
+   ]
+  },
+  {
+   "mask": "JTM??REV",
+   "years": [
+    2012,
+    2019
+   ],
+   "model": "RAV4",
+   "body": "XA40, сборка Япония",
+   "detail": "6–8-й символы REV. Вариант сидений («комфорт»/«стандарт») по VIN не определить",
+   "slugs": [
+    "toyota_rav4-komfort",
+    "toyota_rav4-new"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JTMRJREV80D114611 — auto.ria.com, Toyota Rav4 2017 г., IV покоління (FL)",
+    "JTMRBREV60D083307 — auto.ria.com, Toyota Rav4 2016 г.",
+    "JTMDFREV80D011085 — auto.ria.com, Toyota Rav4 2013 г., IV покоління",
+    "JTMDJREV70D074063 — auto.ria.com, Toyota Rav4 2016 г., IV покоління (FL)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTMBFREV1HJ152763?format=json",
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://auto.ria.com/uk/auto_toyota_rav4_40589916.html",
+    "https://auto.ria.com/uk/auto_toyota_rav4_40563090.html",
+    "https://auto.ria.com/uk/auto_toyota_rav4_40538500.html",
+    "https://auto.ria.com/uk/auto_toyota_rav4_40347369.html"
+   ]
+  },
+  {
+   "mask": "XW7??REV",
+   "years": [
+    2016,
+    2019
+   ],
+   "model": "RAV4",
+   "body": "XA40, сборка TMMR (Санкт-Петербург)",
+   "slugs": [
+    "toyota_rav4-komfort",
+    "toyota_rav4-new"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "XW7RDREV10S048513 — autospot.ru, Toyota RAV4, 2019 г., IV (CA40) Рестайлинг",
+    "XW7WDREV40S015296 — autospot.ru, Toyota RAV4, 2019 г., IV (CA40) Рестайлинг",
+    "XW7DDREV10S009219 — autospot.ru, Toyota RAV4, 2017 г., IV (CA40) Рестайлинг",
+    "XW7RFREV30S002224 — autospot.ru, Toyota RAV4, 2017 г., IV (CA40) Рестайлинг"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://www.drom.ru/catalog/toyota/rav4/",
+    "https://autospot.ru/used-car/toyota/rav4/",
+    "https://autospot.ru/used-car/toyota/rav4/?page=2"
+   ]
+  },
+  {
+   "mask": "2T3??REV",
+   "years": [
+    2013,
+    2018
+   ],
+   "model": "RAV4",
+   "body": "XA40, сборка Канада (рынок США)",
+   "detail": "vPIC: ASA44L/ASA42L/AVA44L",
+   "slugs": [
+    "toyota_rav4-komfort",
+    "toyota_rav4-new"
+   ],
+   "confidence": "official",
+   "examples": [
+    "2T3NFREV3JW445830 — auto.ria.com, Toyota Rav4 2018 г., IV покоління (FL)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/2T3NFREV3JW445830?format=json",
+    "https://auto.ria.com/uk/auto_toyota_rav4_40396225.html"
+   ]
+  },
+  {
+   "mask": "XW7??3FV",
+   "years": [
+    2019,
+    2022
+   ],
+   "model": "RAV4",
+   "body": "XA50, сборка TMMR",
+   "detail": "лекал XA50 в каталоге нет",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "XW7R43FV00S020813 — autospot.ru, Toyota RAV4, 2020 г., 2018 – н.в., V (XA50)",
+    "XW7D43FV50S019781 — autospot.ru, Toyota RAV4, 2020 г., 2018 – н.в., V (XA50)",
+    "XW7D13FV30S011946 — autospot.ru, Toyota RAV4, 2020 г., 2018 – н.в., V (XA50)",
+    "XW7R13FV70S026942 — autospot.ru, Toyota RAV4, 2021 г., 2018 – н.в., V (XA50)"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://www.drom.ru/catalog/toyota/rav4/",
+    "https://autospot.ru/used-car/toyota/rav4/",
+    "https://autospot.ru/used-car/toyota/rav4/?page=3"
+   ]
+  },
+  {
+   "mask": "JTE??05J",
+   "years": [
+    1998,
+    2007
+   ],
+   "model": "Land Cruiser",
+   "body": "100 (UZJ100, HDJ100)",
+   "detail": "6–7-й символы 05, 8-й J — Land Cruiser. Внимание: у LC 200 те же 05J, но WMI JTM",
+   "slugs": [
+    "toyota_cruiser100"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTEHC05J704020102 — auto.ria.com, Toyota Land Cruiser 2003 г., 100 (FL)",
+    "JTEHT05J202016924 — auto.ria.com, Toyota Land Cruiser 2001 г., 100",
+    "JTEHT05J202070434 — auto.ria.com, Toyota Land Cruiser 2004 г., 100 (FL)",
+    "JTEHT05J702041639 — auto.ria.com, Toyota Land Cruiser 2003 г., 100 (FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/land_cruiser/",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser_38060818.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser_40161888.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser_40594563.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser_40400212.html"
+   ]
+  },
+  {
+   "mask": "JTE??01J",
+   "years": [
+    1998,
+    2007
+   ],
+   "model": "Land Cruiser",
+   "body": "105 (HZJ105)",
+   "detail": "салон LC105 проще, чем у LC100 — лекало LC100 не подтверждено, уточнить",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JTECB01J001000066 — auto.ria.com, Toyota Land Cruiser 2001 г., 105",
+    "JTECB01J701010884 — auto.ria.com, Toyota Land Cruiser 2003 г., 105"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/land_cruiser/",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser_39211964.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser_39958374.html"
+   ]
+  },
+  {
+   "mask": "JTM??0?J",
+   "years": [
+    2007,
+    2021
+   ],
+   "model": "Land Cruiser",
+   "body": "200",
+   "detail": "лекал LC 200 в каталоге нет",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JTMHV09J884000820 — auto.ria.com, Toyota Land Cruiser 2007 г., 200",
+    "JTMCT05J204002976 — auto.ria.com, Toyota Land Cruiser 2007 г., 200",
+    "JTMCV02J604200443 — auto.ria.com, Toyota Land Cruiser 2016 г.",
+    "JTMCX05J904205352 — auto.ria.com, Toyota Land Cruiser 2020 г., 200 (2nd FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/land_cruiser/",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser_40450058.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser_40155532.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser_40360025.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser_40348192.html"
+   ]
+  },
+  {
+   "mask": "JTEB?2?J",
+   "years": [
+    2002,
+    2009
+   ],
+   "model": "Land Cruiser Prado",
+   "body": "120, 5 дверей",
+   "detail": "6-й символ 2 — серия 120; 5-й: U — 4.0 1GR-FE, Z — 3.0 дизель, L/M — 2.7. Число мест (5/7) по VIN не определить",
+   "slugs": [
+    "toyota_prado-120l7",
+    "toyota_prado120"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTEBU25J665045249 — auto.ria.com, Toyota Land Cruiser Prado 2006 г., III покоління/120",
+    "JTEBM29J940025520 — auto.ria.com, Toyota Land Cruiser Prado 2004 г., III покоління/120",
+    "JTEBU29J205068593 — auto.ria.com, Toyota Land Cruiser Prado 2006 г., III покоління/120",
+    "JTEBL29J475065921 — auto.ria.com, Toyota Land Cruiser Prado 2007 г., III покоління/120"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/land_cruiser_prado/",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser-prado_40586032.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser-prado_39511551.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser-prado_40488006.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser-prado_40502747.html"
+   ]
+  },
+  {
+   "mask": "JTEB?3?J",
+   "years": [
+    2009,
+    2024
+   ],
+   "model": "Land Cruiser Prado",
+   "body": "150, 5 дверей",
+   "detail": "6-й символ 3 — серия 150; 5-й: U — 4.0, H — 3.0 дизель, R — 2.8 дизель, X — 2.7. Число мест (5/7) по VIN не определить",
+   "slugs": [
+    "toyota_prado-150",
+    "toyota_prado-150arab"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTEBU3FJX05020530 — auto.ria.com, Toyota Land Cruiser Prado 2011 г., V покоління/J150",
+    "JTEBH3FJ905022306 — auto.ria.com, Toyota Land Cruiser Prado 2011 г., V покоління/J150",
+    "JTEBR3FJ305007443 — auto.ria.com, Toyota Land Cruiser Prado 2016 г., V покоління (FL)/J150",
+    "JTEBX3FJ90K210067 — auto.ria.com, Toyota Land Cruiser Prado 2015 г., V покоління (FL)/J150"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/land_cruiser_prado/",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser-prado_40580217.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser-prado_40408990.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser-prado_40382719.html",
+    "https://auto.ria.com/uk/auto_toyota_land-cruiser-prado_40519029.html"
+   ]
+  },
+  {
+   "mask": "MR0F?2?G",
+   "years": [
+    2005,
+    2015
+   ],
+   "model": "Hilux",
+   "body": "7-е поколение (AN10/AN20/AN30), двойная кабина, Таиланд",
+   "detail": "8-й G — Hilux/Fortuner; лекала каталога — для 2011–2015, год по VIN не определить (10-й символ «0»); коробку передач (АКПП/МКПП) по VIN не определить",
+   "slugs": [
+    "toyota_hilux",
+    "toyota_hilux-mkpp"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "MR0FR29G701031835 — auto.ria.com, Toyota Hilux 2014 г., VII покоління (2nd FL)",
+    "MR0FR22G400575080 — auto.ria.com, Toyota Hilux 2010 г., VII покоління (FL)",
+    "MR0FR29G001023933 — auto.ria.com, Toyota Hilux 2013 г., VII покоління (2nd FL)",
+    "MR0FR29G501028481 — auto.ria.com, Toyota Hilux 2013 г., VII покоління (2nd FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/hilux_pick_up/",
+    "https://auto.ria.com/uk/auto_toyota_hilux_40584579.html",
+    "https://auto.ria.com/uk/auto_toyota_hilux_40575794.html",
+    "https://auto.ria.com/uk/auto_toyota_hilux_40319699.html",
+    "https://auto.ria.com/uk/auto_toyota_hilux_37414224.html"
+   ]
+  },
+  {
+   "mask": "AHTF?2?G",
+   "years": [
+    2005,
+    2015
+   ],
+   "model": "Hilux",
+   "body": "7-е поколение, двойная кабина, ЮАР",
+   "slugs": [
+    "toyota_hilux",
+    "toyota_hilux-mkpp"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "AHTFZ29G709108481 — auto.ria.com, Toyota Hilux 2014 г., VII покоління (2nd FL)",
+    "AHTFZ29G609098008 — auto.ria.com, Toyota Hilux 2013 г., VII покоління (2nd FL)"
+   ],
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://www.drom.ru/catalog/toyota/hilux_pick_up/",
+    "https://auto.ria.com/uk/auto_toyota_hilux_40556284.html",
+    "https://auto.ria.com/uk/auto_toyota_hilux_39600351.html"
+   ]
+  },
+  {
+   "mask": "MR0??3CD",
+   "years": [
+    2015,
+    2026
+   ],
+   "model": "Hilux",
+   "body": "8-е поколение (AN120/AN130), Таиланд",
+   "detail": "6–8-й символы 3CD",
+   "slugs": [
+    "toyota_hilux-m70m80"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "MR0HB3CD300400066 — auto.ria.com, Toyota Hilux 2015 г., VII покоління (2nd FL)",
+    "MR0KB3CD800908667 — auto.ria.com, Toyota Hilux 2021 г., VIII покоління (FL)",
+    "MR0BA3CD200110524 — auto.ria.com, Toyota Hilux 2017 г., VIII покоління",
+    "MR0HA3CD300702881 — auto.ria.com, Toyota Hilux 2016 г., VIII покоління"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/hilux_pick_up/",
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://auto.ria.com/uk/auto_toyota_hilux_40578541.html",
+    "https://auto.ria.com/uk/auto_toyota_hilux_40329479.html",
+    "https://auto.ria.com/uk/auto_toyota_hilux_40586255.html",
+    "https://auto.ria.com/uk/auto_toyota_hilux_40569543.html"
+   ]
+  },
+  {
+   "mask": "AHT??3CD",
+   "years": [
+    2015,
+    2026
+   ],
+   "model": "Hilux",
+   "body": "8-е поколение, ЮАР",
+   "slugs": [
+    "toyota_hilux-m70m80"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "AHTBB3CD301763999 — auto.ria.com, Toyota Hilux 2020 г., VIII покоління (FL)"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/hilux_pick_up/",
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://auto.ria.com/uk/auto_toyota_hilux_40319674.html"
+   ]
+  },
+  {
+   "mask": "MR0??3FS",
+   "years": [
+    2017,
+    2026
+   ],
+   "model": "Fortuner",
+   "body": "AN160 (2-е поколение), Таиланд",
+   "detail": "один пример; год/рестайлинг по VIN не определить (10-й символ «0»)",
+   "slugs": [
+    "toyota_fortuner"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "MR0KX3FS700814548 — autospot.ru, Toyota Fortuner, 2021 г., 2020 – н.в., II Рестайлинг"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/fortuner/",
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number",
+    "https://autospot.ru/used-car/toyota/fortuner/"
+   ]
+  },
+  {
+   "mask": "JTE??21A",
+   "years": [
+    2001,
+    2003
+   ],
+   "model": "Highlander",
+   "body": "XU20 дорестайлинг (рынок США)",
+   "detail": "vPIC: MCU20L/ACU20L…; 10-й символ — модельный год: 1–3 → дорестайлинг",
+   "slugs": [
+    "toyota_highlander-xu20"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JTEHF21A910036416 — auto.ria.com, Toyota Highlander 2001 г., I покоління"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTEHF21A910036416?format=json",
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://auto.ria.com/uk/auto_toyota_highlander_39132440.html"
+   ]
+  },
+  {
+   "mask": "JTE??21A",
+   "years": [
+    2004,
+    2007
+   ],
+   "model": "Highlander",
+   "body": "XU20 рестайлинг (рынок США, вкл. гибрид MHU28)",
+   "detail": "10-й символ 4–7 → рестайлинг; 5/7 мест по VIN не определить",
+   "slugs": [
+    "toyota_highlander-xu20re7m",
+    "toyota_highlander-xu20re5m"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JTEHD21A550036781 — auto.ria.com, Toyota Highlander 2005 г., I покоління (FL)",
+    "JTEEW21AX60011535 — auto.ria.com, Toyota Highlander 2006 г.",
+    "JTEHD21A940029525 — auto.ria.com, Toyota Highlander 2004 г., I покоління (FL)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTEHD21A550036781?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTEEW21AX60011535?format=json",
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://auto.ria.com/uk/auto_toyota_highlander_39822653.html",
+    "https://auto.ria.com/uk/auto_toyota_highlander_34668328.html",
+    "https://auto.ria.com/uk/auto_toyota_highlander_37326816.html"
+   ]
+  },
+  {
+   "mask": "JTDK?2?U",
+   "years": [
+    2003,
+    2009
+   ],
+   "model": "Prius",
+   "body": "XW20 (NHW20)",
+   "detail": "vPIC: NHW20L; 8-й U — Prius",
+   "slugs": [
+    "toyota_prius2"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JTDKB20U103097502 — auto.ria.com, Toyota Prius 2005 г., II покоління",
+    "JTDKB22U367061745 — auto.ria.com, Toyota Prius 2006 г., II покоління",
+    "JTDKB20U507861232 — auto.ria.com, Toyota Prius 2008 г., II покоління",
+    "JTDKB20U703483826 — auto.ria.com, Toyota Prius 2008 г., II покоління"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTDKB20U103097502?format=json",
+    "https://auto.ria.com/uk/auto_toyota_prius_40581992.html",
+    "https://auto.ria.com/uk/auto_toyota_prius_40553848.html",
+    "https://auto.ria.com/uk/auto_toyota_prius_40595871.html",
+    "https://auto.ria.com/uk/auto_toyota_prius_39042816.html"
+   ]
+  },
+  {
+   "mask": "JTDK?36U",
+   "years": [
+    2009,
+    2015
+   ],
+   "model": "Prius",
+   "body": "XW30 (ZVW30), не для США",
+   "slugs": [
+    "toyota_prius"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JTDKN36U601058677 — auto.ria.com, Toyota Prius 2009 г., III покоління",
+    "JTDKN36U701493661 — auto.ria.com, Toyota Prius 2012 г., III покоління (FL)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTDKN36U601058677?format=json",
+    "https://www.drom.ru/catalog/toyota/prius/",
+    "https://auto.ria.com/uk/auto_toyota_prius_40575117.html",
+    "https://auto.ria.com/uk/auto_toyota_prius_40559614.html"
+   ]
+  },
+  {
+   "mask": "JTDK?3DU",
+   "years": [
+    2010,
+    2015
+   ],
+   "model": "Prius",
+   "body": "XW30 (ZVW30), рынок США",
+   "detail": "vPIC: ZVW30L",
+   "slugs": [
+    "toyota_prius"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JTDKN3DU7A0043907 — auto.ria.com, Toyota Prius 2010 г., III покоління",
+    "JTDKN3DU3E0362646 — auto.ria.com, Toyota Prius 2014 г., III покоління (FL)",
+    "JTDKN3DU2D5633049 — auto.ria.com, Toyota Prius 2013 г., III покоління (FL)",
+    "JTDKN3DU2F0461962 — auto.ria.com, Toyota Prius 2015 г., III покоління (FL)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTDKN3DU7C1506948?format=json",
+    "https://auto.ria.com/uk/auto_toyota_prius_40506088.html",
+    "https://auto.ria.com/uk/auto_toyota_prius_40536494.html",
+    "https://auto.ria.com/uk/auto_toyota_prius_40532468.html",
+    "https://auto.ria.com/uk/auto_toyota_prius_40518324.html"
+   ]
+  },
+  {
+   "mask": "JTDK??FU",
+   "years": [
+    2016,
+    2022
+   ],
+   "model": "Prius",
+   "body": "XW50 (ZVW50/51/55)",
+   "detail": "vPIC: ZVW50L/ZVW51L/ZVW55L. Prius Prime (JTDK??FP) сюда не входит",
+   "slugs": [
+    "toyota_prius-w50"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JTDKB3FU103026118 — auto.ria.com, Toyota Prius 2016 г., IV покоління",
+    "JTDKARFU7H3529055 — auto.ria.com, Toyota Prius 2016 г., IV покоління",
+    "JTDKARFU0H3052078 — auto.ria.com, Toyota Prius 2017 г., IV покоління",
+    "JTDKARFU7H3544459 — auto.ria.com, Toyota Prius 2017 г., IV покоління"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTDKARFU7H3544459?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTDKB3FU103026118?format=json",
+    "https://auto.ria.com/uk/auto_toyota_prius_39080575.html",
+    "https://auto.ria.com/uk/auto_toyota_prius_40584345.html",
+    "https://auto.ria.com/uk/auto_toyota_prius_40232712.html",
+    "https://auto.ria.com/uk/auto_toyota_prius_38036848.html"
+   ]
+  },
+  {
+   "mask": "2T1K?3?E",
+   "years": [
+    2003,
+    2008
+   ],
+   "model": "Matrix",
+   "body": "E130 (ZZE132), сборка Канада",
+   "detail": "vPIC: ZZE132L/ZZE133L/ZZE134L",
+   "slugs": [
+    "toyota_matrix"
+   ],
+   "confidence": "official",
+   "examples": [
+    "2T1KR32E85C461226 — auto.ria.com, Toyota Matrix 2005 г., I покоління",
+    "2T1KR30E66C587959 — auto.ria.com, Toyota Matrix 2006 г., I покоління (FL)",
+    "2T1KR32E75C334841 — auto.ria.com, Toyota Matrix 2005 г., I покоління",
+    "2T1KR32E95C357652 — auto.ria.com, Toyota Matrix 2004 г., I покоління"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/2T1KR32E63C140007?format=json",
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://auto.ria.com/uk/auto_toyota_matrix_40592140.html",
+    "https://auto.ria.com/uk/auto_toyota_matrix_39760029.html",
+    "https://auto.ria.com/uk/auto_toyota_matrix_40580801.html",
+    "https://auto.ria.com/uk/auto_toyota_matrix_40577576.html"
+   ]
+  },
+  {
+   "mask": "2T1L?3?E",
+   "years": [
+    2003,
+    2008
+   ],
+   "model": "Matrix",
+   "body": "E130 полный привод (ZZE134), сборка Канада",
+   "detail": "vPIC: ZZE132L/ZZE134L",
+   "slugs": [
+    "toyota_matrix"
+   ],
+   "confidence": "official",
+   "examples": [
+    "2T1LR32EX5C478873 — auto.ria.com, Toyota Matrix 2005 г., I покоління (FL)",
+    "2T1LR32E74C295980 — auto.ria.com, Toyota Matrix 2004 г., I покоління"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/2T1LR32E74C295980?format=json",
+    "https://auto.ria.com/uk/auto_toyota_matrix_40452812.html",
+    "https://auto.ria.com/uk/auto_toyota_matrix_40199382.html"
+   ]
+  },
+  {
+   "mask": "2T1K?4?E",
+   "years": [
+    2009,
+    2014
+   ],
+   "model": "Matrix",
+   "body": "E140 (2-е поколение)",
+   "detail": "vPIC: ZRE142L/AZE141L…; лекал нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "2T1KE40E59C012225 — auto.ria.com, Toyota Matrix 2008 г., II покоління"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/2T1KE40E59C012225?format=json",
+    "https://auto.ria.com/uk/auto_toyota_matrix_40516223.html"
+   ]
+  },
+  {
+   "mask": "JTH??262",
+   "years": [
+    2005,
+    2010
+   ],
+   "model": "IS",
+   "body": "XE20 (IS 250 / IS 220d / IS 350)",
+   "detail": "vPIC: JTHBK262 — IS 250 (4GR-FSE), JTHBE262 — IS 350; 5-й символ: K — 2.5, E — 3.5, B/X — 2.2 дизель. VIN нового формата 2011–2013 (…C2) правилом не покрыты",
+   "slugs": [
+    "lexus_is250"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JTHBB262502023347 — auto.ria.com, Lexus Is 2007 г., II поколіния/XE20",
+    "JTHBE262172007941 — auto.ria.com, Lexus Is 2006 г., II поколіния/XE20",
+    "JTHBX262X02040050 — auto.ria.com, Lexus Is 2010 г., II покоління/XE20 (FL)",
+    "JTHBG262202005034 — auto.ria.com, Lexus Is 2007 г., II поколіния/XE20"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTHBK262472030915?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTHBE262172007941?format=json",
+    "https://auto.ria.com/uk/auto_lexus_is_40016725.html",
+    "https://auto.ria.com/uk/auto_lexus_is_40520730.html",
+    "https://auto.ria.com/uk/auto_lexus_is_40473654.html",
+    "https://auto.ria.com/uk/auto_lexus_is_39571466.html"
+   ]
+  },
+  {
+   "mask": "JTJ??11A",
+   "years": [
+    2008,
+    2015
+   ],
+   "model": "RX",
+   "body": "AL10 (RX 350 / RX 270 / RX 450h)",
+   "detail": "vPIC: JTJBK11A — RX 350",
+   "slugs": [
+    "lexus_rx350"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JTJBK11A102026317 — auto.ria.com, Lexus Rx 2012 г., III покоління/AL10 (FL)",
+    "JTJBC11A502423266 — auto.ria.com, Lexus Rx 2011 г., III покоління/AL10",
+    "JTJZA11A002405536 — autospot.ru, Lexus RX, 2011 г., III",
+    "JTJBK11A202031770 — auto.ria.com, Lexus Rx 2013 г., III покоління/AL10 (FL)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTJBK11A302445303?format=json",
+    "https://auto.ria.com/uk/auto_lexus_rx_39922492.html",
+    "https://auto.ria.com/uk/auto_lexus_rx_40468792.html",
+    "https://autospot.ru/used-car/lexus/rx/",
+    "https://auto.ria.com/uk/auto_lexus_rx_40588080.html"
+   ]
+  },
+  {
+   "mask": "JTJ??1BA",
+   "years": [
+    2011,
+    2015
+   ],
+   "model": "RX",
+   "body": "AL10 (RX 450h и др., новый формат)",
+   "detail": "vPIC: GGL1#/GYL1#, 450h",
+   "slugs": [
+    "lexus_rx350"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JTJBC1BA2C2435880 — auto.ria.com, Lexus Rx 2012 г., III покоління/AL10",
+    "JTJBC1BA6D2062604 — auto.ria.com, Lexus Rx 2013 г., III покоління/AL10 (FL)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JTJBC1BA2C2435880?format=json",
+    "https://auto.ria.com/uk/auto_lexus_rx_40592377.html",
+    "https://auto.ria.com/uk/auto_lexus_rx_39760374.html"
+   ]
+  },
+  {
+   "mask": "2T2??1BA",
+   "years": [
+    2010,
+    2015
+   ],
+   "model": "RX",
+   "body": "AL10 RX 350, сборка Канада (рынок США)",
+   "detail": "vPIC: GGL10L/GGL15L",
+   "slugs": [
+    "lexus_rx350"
+   ],
+   "confidence": "official",
+   "examples": [
+    "2T2BK1BA2EC244563 — auto.ria.com, Lexus Rx 2014 г., III покоління/AL10 (FL)",
+    "2T2ZK1BA0FC160399 — auto.ria.com, Lexus Rx 2014 г., III покоління/AL10 (FL)",
+    "2T2BK1BA3AC073901 — auto.ria.com, Lexus Rx 2010 г., III покоління/AL10"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/2T2BK1BA3AC073901?format=json",
+    "https://auto.ria.com/uk/auto_lexus_rx_39922424.html",
+    "https://auto.ria.com/uk/auto_lexus_rx_40579744.html",
+    "https://auto.ria.com/uk/auto_lexus_rx_40591391.html"
+   ]
+  },
+  {
+   "mask": "JTJ??MCA",
+   "years": [
+    2015,
+    2022
+   ],
+   "model": "RX",
+   "body": "AL20",
+   "detail": "лекал RX AL20 в каталоге нет",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JTJBAMCA502094296 — autospot.ru, Lexus RX, 2019 г., IV",
+    "JTJBZMCAX02049833 — autospot.ru, Lexus RX, 2020 г., 2019 – 2022, IV Рестайлинг"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/lexus/rx350/",
+    "https://autospot.ru/used-car/lexus/rx/",
+    "https://autospot.ru/used-car/lexus/rx/?page=2"
+   ]
+  }
+ ],
+ "frame_rules": [
+  {
+   "codes": [
+    "NZT240",
+    "ZZT240",
+    "ZZT245",
+    "AZT240"
+   ],
+   "model": "Allion / Premio",
+   "body": "T240 (седан)",
+   "years": [
+    2001,
+    2007
+   ],
+   "slugs": [
+    "toyota_allion-t240",
+    "toyota_premio-t240"
+   ],
+   "note": "Allion и Premio T240 имеют одинаковые коды кузова — по номеру кузова модель не различить, клиент выбирает сам.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/allion/",
+    "https://ja.wikipedia.org/wiki/トヨタ・アリオン",
+    "https://ja.wikipedia.org/wiki/トヨタ・プレミオ"
+   ]
+  },
+  {
+   "codes": [
+    "NZT260",
+    "ZRT260",
+    "ZRT261",
+    "ZRT265"
+   ],
+   "model": "Allion / Premio",
+   "body": "T260 (седан)",
+   "years": [
+    2007,
+    2021
+   ],
+   "slugs": [
+    "toyota_allion-t260",
+    "toyota_premio-t260"
+   ],
+   "note": "Allion и Premio T260 — одинаковые коды кузова (в т. ч. рестайлинги 2010 и 2016).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/allion/",
+    "https://ja.wikipedia.org/wiki/トヨタ・アリオン",
+    "https://ja.wikipedia.org/wiki/トヨタ・プレミオ"
+   ]
+  },
+  {
+   "codes": [
+    "NHP10"
+   ],
+   "model": "Aqua",
+   "body": "P10 (хэтчбек, гибрид)",
+   "years": [
+    2011,
+    2021
+   ],
+   "slugs": [
+    "toyota_aqua",
+    "toyota_aqua-new"
+   ],
+   "note": "NHP10H — Aqua Crossover/X-Urban (тот же кузов). Вариант «литой подголовник» — по номеру кузова не определить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/aqua/",
+    "https://ja.wikipedia.org/wiki/トヨタ・アクア"
+   ]
+  },
+  {
+   "codes": [
+    "MXPK10",
+    "MXPK11",
+    "MXPK15",
+    "MXPK16"
+   ],
+   "model": "Aqua",
+   "body": "MXPK (2-е поколение)",
+   "years": [
+    2021,
+    null
+   ],
+   "slugs": [
+    "toyota_aqua-2"
+   ],
+   "note": "с 09.2025 рестайлинг: MXPK11/13/16/18 (drom).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/aqua/",
+    "https://ja.wikipedia.org/wiki/トヨタ・アクア"
+   ]
+  },
+  {
+   "codes": [
+    "NZE151",
+    "NZE154",
+    "ZRE152",
+    "ZRE154"
+   ],
+   "model": "Auris",
+   "body": "E150 (хэтчбек, Япония)",
+   "years": [
+    2006,
+    2012
+   ],
+   "slugs": [
+    "toyota_auris"
+   ],
+   "note": "японские праворульные Auris; в каталоге одно лекало поколения без указания руля — менеджеру проверить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/auris/",
+    "https://ja.wikipedia.org/wiki/トヨタ・オーリス"
+   ]
+  },
+  {
+   "codes": [
+    "NZE181",
+    "NZE184",
+    "ZRE186",
+    "NRE185",
+    "ZWE186"
+   ],
+   "model": "Auris",
+   "body": "E180 (хэтчбек, Япония)",
+   "years": [
+    2012,
+    2018
+   ],
+   "slugs": [
+    "toyota_auris-e180"
+   ],
+   "note": "японские праворульные Auris; лекало без указания руля — проверить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/auris/",
+    "https://ja.wikipedia.org/wiki/トヨタ・オーリス"
+   ]
+  },
+  {
+   "codes": [
+    "QNC20",
+    "QNC21",
+    "QNC25"
+   ],
+   "model": "bB",
+   "body": "QNC20",
+   "years": [
+    2005,
+    2016
+   ],
+   "slugs": [
+    "toyota_bb"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/bb/",
+    "https://ja.wikipedia.org/wiki/トヨタ・bB"
+   ]
+  },
+  {
+   "codes": [
+    "ACV30",
+    "ACV35"
+   ],
+   "model": "Camry",
+   "body": "XV30 (Япония, правый руль)",
+   "years": [
+    2001,
+    2006
+   ],
+   "slugs": [
+    "toyota_camry-30r"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/camry/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カムリ"
+   ]
+  },
+  {
+   "codes": [
+    "ACV40",
+    "ACV45"
+   ],
+   "model": "Camry",
+   "body": "XV40 (Япония, правый руль)",
+   "years": [
+    2006,
+    2011
+   ],
+   "slugs": [
+    "toyota_camry-vi"
+   ],
+   "note": "японская праворульная XV40; в каталоге одно лекало XV40 без указания руля — проверить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/camry/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カムリ"
+   ]
+  },
+  {
+   "codes": [
+    "AVV50"
+   ],
+   "model": "Camry",
+   "body": "XV50 (Япония, гибрид, правый руль)",
+   "years": [
+    2011,
+    2017
+   ],
+   "slugs": [
+    "toyota_camry-i"
+   ],
+   "note": "в Японии XV50 продавалась только гибридом (AVV50); лекало без указания руля — проверить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/camry/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カムリ"
+   ]
+  },
+  {
+   "codes": [
+    "AXVH70",
+    "AXVH75"
+   ],
+   "model": "Camry",
+   "body": "XV70 (Япония, гибрид, правый руль)",
+   "years": [
+    2017,
+    2023
+   ],
+   "slugs": [
+    "toyota_camry-xv70"
+   ],
+   "note": "японская праворульная гибридная XV70; лекало без указания руля — проверить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/camry/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カムリ"
+   ]
+  },
+  {
+   "codes": [
+    "NZE121",
+    "ZZE122"
+   ],
+   "model": "Corolla",
+   "body": "E120 седан (Япония, правый руль)",
+   "years": [
+    2000,
+    2006
+   ],
+   "slugs": [
+    "toyota_corolla-120podlokotnik",
+    "toyota_corolla-120r"
+   ],
+   "note": "те же коды у Fielder (NZE121G…), Runx/Allex (хэтчбек) и Spacio — номер кузова не говорит, седан это или нет: см. отдельные правила, кузов уточнить у клиента.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カローラ"
+   ]
+  },
+  {
+   "codes": [
+    "NZE124",
+    "ZZE124",
+    "CE121"
+   ],
+   "model": "Corolla",
+   "body": "E120 седан (Япония, правый руль)",
+   "years": [
+    2000,
+    2006
+   ],
+   "slugs": [
+    "toyota_corolla-120podlokotnik",
+    "toyota_corolla-120r"
+   ],
+   "note": "те же коды у Fielder (NZE121G…), Runx/Allex (хэтчбек) и Spacio — номер кузова не говорит, седан это или нет: см. отдельные правила, кузов уточнить у клиента. Коды есть только на drom.ru (в Википедии не найдены).",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla/"
+   ]
+  },
+  {
+   "codes": [
+    "NZE121",
+    "NZE124",
+    "ZZE122",
+    "ZZE123",
+    "ZZE124"
+   ],
+   "model": "Corolla Allex",
+   "body": "E120 (хэтчбек)",
+   "years": [
+    2001,
+    2006
+   ],
+   "slugs": [
+    "toyota_corolla-allex"
+   ],
+   "note": "коды совпадают с Corolla Runx (близнецы), Fielder, Spacio и седаном Corolla.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/allex/",
+    "https://ja.wikipedia.org/wiki/トヨタ・アレックス"
+   ]
+  },
+  {
+   "codes": [
+    "NZE121",
+    "NZE124",
+    "ZZE122",
+    "ZZE123",
+    "ZZE124"
+   ],
+   "model": "Corolla Runx",
+   "body": "E120 (хэтчбек)",
+   "years": [
+    2001,
+    2006
+   ],
+   "slugs": [
+    "toyota_corolla-runx"
+   ],
+   "note": "коды совпадают с Corolla Allex (близнецы), Fielder, Spacio и седаном Corolla.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla_runx/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カローラランクス"
+   ]
+  },
+  {
+   "codes": [
+    "NZE121",
+    "ZZE122",
+    "ZZE124"
+   ],
+   "model": "Corolla Spacio",
+   "body": "E120 (компактвэн)",
+   "years": [
+    2001,
+    2007
+   ],
+   "slugs": [
+    "toyota_spacio-121",
+    "toyota_spacio"
+   ],
+   "note": "в ja.wikipedia кузов указан как E120N; коды совпадают с другими Corolla E120.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla_spacio/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カローラスパシオ"
+   ]
+  },
+  {
+   "codes": [
+    "NZE121",
+    "NZE124",
+    "ZZE122",
+    "ZZE123",
+    "ZZE124",
+    "CE121"
+   ],
+   "model": "Corolla Fielder",
+   "body": "E120 (универсал)",
+   "years": [
+    2000,
+    2006
+   ],
+   "slugs": [
+    "toyota_corolla-fielder-124",
+    "toyota_corolla-fielder"
+   ],
+   "note": "коды совпадают с седаном Corolla, Runx/Allex, Spacio.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla_fielder/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カローラフィールダー"
+   ]
+  },
+  {
+   "codes": [
+    "NZE141",
+    "NZE144",
+    "ZRE142"
+   ],
+   "model": "Corolla Axio",
+   "body": "E140 (седан)",
+   "years": [
+    2006,
+    2012
+   ],
+   "slugs": [
+    "toyota_corolla-axio-140",
+    "toyota_axio-luxel"
+   ],
+   "note": "Axio-седан и Fielder-универсал E140 имеют одинаковые коды — см. правило Fielder.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla_axio/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カローラアクシオ"
+   ]
+  },
+  {
+   "codes": [
+    "ZRE144"
+   ],
+   "model": "Corolla Axio",
+   "body": "E140 (седан)",
+   "years": [
+    2006,
+    2012
+   ],
+   "slugs": [
+    "toyota_corolla-axio-140",
+    "toyota_axio-luxel"
+   ],
+   "note": "Axio-седан и Fielder-универсал E140 имеют одинаковые коды — см. правило Fielder. Коды есть только на drom.ru (в Википедии не найдены).",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla_axio/"
+   ]
+  },
+  {
+   "codes": [
+    "NZE141",
+    "NZE144",
+    "ZRE142",
+    "ZRE144"
+   ],
+   "model": "Corolla Fielder",
+   "body": "E140 (универсал)",
+   "years": [
+    2006,
+    2012
+   ],
+   "slugs": [
+    "toyota_corolla-fielder-141",
+    "toyota_corolla-fielder-144"
+   ],
+   "note": "те же коды у Axio-седана. Предположительно лекало «141» — передний привод (NZE141/ZRE142), «144» — полный (NZE144/ZRE144); салон выбирает клиент.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla_fielder/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カローラフィールダー"
+   ]
+  },
+  {
+   "codes": [
+    "NZE161",
+    "NZE164",
+    "NRE160",
+    "NRE161",
+    "NKE165"
+   ],
+   "model": "Corolla Axio",
+   "body": "E160 (седан)",
+   "years": [
+    2012,
+    2025
+   ],
+   "slugs": [
+    "toyota_corolla-axio-160"
+   ],
+   "note": "NKE165 — гибрид; коды NZE161/NZE164/NRE161 есть и у Fielder E160.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla_axio/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カローラアクシオ",
+    "https://en.wikipedia.org/wiki/Toyota_Corolla_(E160)"
+   ]
+  },
+  {
+   "codes": [
+    "NZE161",
+    "NZE164",
+    "NRE161",
+    "ZRE162"
+   ],
+   "model": "Corolla Fielder",
+   "body": "E160 (универсал, бензин)",
+   "years": [
+    2012,
+    2025
+   ],
+   "slugs": [
+    "toyota_corolla-fielder-160"
+   ],
+   "note": "коды совпадают с Axio E160 (кроме ZRE162 — только Fielder).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla_fielder/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カローラフィールダー",
+    "https://en.wikipedia.org/wiki/Toyota_Corolla_(E160)"
+   ]
+  },
+  {
+   "codes": [
+    "NKE165"
+   ],
+   "model": "Corolla Fielder",
+   "body": "E160 (универсал, гибрид)",
+   "years": [
+    2013,
+    2025
+   ],
+   "slugs": [
+    "toyota_fielder-160-hybrid"
+   ],
+   "note": "NKE165 есть и у Axio Hybrid.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla_fielder/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カローラフィールダー",
+    "https://en.wikipedia.org/wiki/Toyota_Corolla_(E160)"
+   ]
+  },
+  {
+   "codes": [
+    "NRE210",
+    "ZRE212",
+    "ZWE211",
+    "ZWE214",
+    "MZEA17",
+    "ZWE215",
+    "ZWE219"
+   ],
+   "model": "Corolla",
+   "body": "E210 седан (Япония, правый руль)",
+   "years": [
+    2019,
+    null
+   ],
+   "slugs": [
+    "toyota_corolla-210",
+    "toyota_corolla-210spl"
+   ],
+   "note": "японский праворульный седан Corolla (с 2019). Те же коды у Corolla Touring (универсал) и Corolla Sport (хэтчбек).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カローラ"
+   ]
+  },
+  {
+   "codes": [
+    "NRE210",
+    "ZRE212",
+    "ZWE211",
+    "ZWE214",
+    "MZEA12",
+    "MZEA17",
+    "ZWE215",
+    "ZWE219"
+   ],
+   "model": "Corolla Touring",
+   "body": "E210 (универсал)",
+   "years": [
+    2019,
+    null
+   ],
+   "slugs": [
+    "toyota_corolla-touring"
+   ],
+   "note": "коды совпадают с японским седаном Corolla E210 и Corolla Sport.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/corolla/",
+    "https://ja.wikipedia.org/wiki/トヨタ・カローラツーリング"
+   ]
+  },
+  {
+   "codes": [
+    "NCP20",
+    "NCP21",
+    "NCP25"
+   ],
+   "model": "FunCargo",
+   "body": "XP20",
+   "years": [
+    1999,
+    2005
+   ],
+   "slugs": [
+    "toyota_funcargo-50",
+    "toyota_funcargo"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/funcargo/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ファンカーゴ"
+   ]
+  },
+  {
+   "codes": [
+    "SXM10",
+    "SXM15",
+    "CXM10",
+    "ACM10",
+    "ACM15"
+   ],
+   "model": "Gaia",
+   "body": "XM10",
+   "years": [
+    1998,
+    2004
+   ],
+   "slugs": [
+    "toyota_gaia-5m",
+    "toyota_gaia-7m"
+   ],
+   "note": "SXM10/SXM15/CXM10 — те же коды у Ipsum первого поколения.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/gaia/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ガイア"
+   ]
+  },
+  {
+   "codes": [
+    "SXU10",
+    "SXU15",
+    "MCU10",
+    "MCU15",
+    "ACU10",
+    "ACU15"
+   ],
+   "model": "Harrier",
+   "body": "XU10",
+   "years": [
+    1997,
+    2003
+   ],
+   "slugs": [
+    "toyota_harrier-xu10"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/harrier/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ハリアー"
+   ]
+  },
+  {
+   "codes": [
+    "SXM10",
+    "SXM15",
+    "CXM10"
+   ],
+   "model": "Ipsum",
+   "body": "M10 (SXM10)",
+   "years": [
+    1996,
+    2001
+   ],
+   "slugs": [
+    "toyota_ipsum-m10-5m",
+    "toyota_ipsum-m10-7m"
+   ],
+   "note": "SXM10/SXM15/CXM10 — те же коды у Gaia.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/ipsum/",
+    "https://ja.wikipedia.org/wiki/トヨタ・イプサム"
+   ]
+  },
+  {
+   "codes": [
+    "ACM21",
+    "ACM26"
+   ],
+   "model": "Ipsum",
+   "body": "M20 (ACM20)",
+   "years": [
+    2001,
+    2009
+   ],
+   "slugs": [
+    "toyota_ipsum-m20-5m",
+    "toyota_ipsum-m20-7m"
+   ],
+   "note": "в каталоге лекала Ipsum M20 указаны для 2001–2003; поколение выпускалось до 2009 (рестайлинг 2003) — для 2003–2009 менеджеру проверить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/ipsum/",
+    "https://ja.wikipedia.org/wiki/トヨタ・イプサム"
+   ]
+  },
+  {
+   "codes": [
+    "ACU20",
+    "ACU25",
+    "MCU20",
+    "MCU25"
+   ],
+   "model": "Kluger V",
+   "body": "XU20",
+   "years": [
+    2000,
+    2007
+   ],
+   "slugs": [
+    "toyota_kluger",
+    "toyota_kluger-re"
+   ],
+   "note": "те же коды у Highlander XU20 (рынок США, левый руль). Дорестайлинг / рестайлинг 2003 г. — по году выпуска.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/kluger_v/",
+    "https://ja.wikipedia.org/wiki/トヨタ・クルーガー"
+   ]
+  },
+  {
+   "codes": [
+    "MHU28"
+   ],
+   "model": "Kluger V",
+   "body": "XU20 гибрид (Kluger V Hybrid)",
+   "years": [
+    2005,
+    2007
+   ],
+   "slugs": [
+    "toyota_kluger-re"
+   ],
+   "note": "гибрид, только после рестайлинга.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/kluger_v/",
+    "https://ja.wikipedia.org/wiki/トヨタ・クルーガー"
+   ]
+  },
+  {
+   "codes": [
+    "GRX130",
+    "GRX133",
+    "GRX135"
+   ],
+   "model": "Mark X",
+   "body": "X130",
+   "years": [
+    2009,
+    2019
+   ],
+   "slugs": [
+    "toyota_mark-x"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/mark_x/",
+    "https://ja.wikipedia.org/wiki/トヨタ・マークX"
+   ]
+  },
+  {
+   "codes": [
+    "ZRR80",
+    "ZRR85",
+    "ZWR80"
+   ],
+   "model": "Noah",
+   "body": "R80",
+   "years": [
+    2014,
+    2021
+   ],
+   "slugs": [
+    "toyota_noah-5m",
+    "toyota_noah"
+   ],
+   "note": "Noah, Voxy и Esquire R80 имеют одинаковые коды кузова — модель по номеру кузова не различить. Число мест по номеру кузова не определить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/noah/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ノア"
+   ]
+  },
+  {
+   "codes": [
+    "ZRR80",
+    "ZRR85",
+    "ZWR80"
+   ],
+   "model": "Voxy",
+   "body": "R80",
+   "years": [
+    2014,
+    2021
+   ],
+   "slugs": [
+    "toyota_voxy-5m",
+    "toyota_voxy-7m"
+   ],
+   "note": "Voxy, Noah и Esquire R80 — одинаковые коды кузова.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/voxy/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ヴォクシー"
+   ]
+  },
+  {
+   "codes": [
+    "KGC10",
+    "KGC15",
+    "QNC10"
+   ],
+   "model": "Passo",
+   "body": "XC10 (1-е поколение)",
+   "years": [
+    2004,
+    2010
+   ],
+   "slugs": [
+    "toyota_passo",
+    "toyota_passo-c10"
+   ],
+   "note": "близнец — Daihatsu Boon (по ja.wikipedia); коды кузова Boon в правило не включены.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/passo/",
+    "https://ja.wikipedia.org/wiki/トヨタ・パッソ"
+   ]
+  },
+  {
+   "codes": [
+    "M700A",
+    "M710A"
+   ],
+   "model": "Passo",
+   "body": "M700 (3-е поколение)",
+   "years": [
+    2016,
+    2023
+   ],
+   "slugs": [
+    "toyota_passo-m700",
+    "toyota_passo-m700-splosh"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/passo/",
+    "https://ja.wikipedia.org/wiki/トヨタ・パッソ"
+   ]
+  },
+  {
+   "codes": [
+    "NHW20"
+   ],
+   "model": "Prius",
+   "body": "XW20",
+   "years": [
+    2003,
+    2011
+   ],
+   "slugs": [
+    "toyota_prius2"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/prius/",
+    "https://ja.wikipedia.org/wiki/トヨタ・プリウス"
+   ]
+  },
+  {
+   "codes": [
+    "ZVW30"
+   ],
+   "model": "Prius",
+   "body": "XW30",
+   "years": [
+    2009,
+    2016
+   ],
+   "slugs": [
+    "toyota_prius"
+   ],
+   "note": "ZVW35 (Prius PHV) в правило не включён.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/prius/",
+    "https://ja.wikipedia.org/wiki/トヨタ・プリウス"
+   ]
+  },
+  {
+   "codes": [
+    "ZVW50",
+    "ZVW51",
+    "ZVW55"
+   ],
+   "model": "Prius",
+   "body": "XW50",
+   "years": [
+    2015,
+    2023
+   ],
+   "slugs": [
+    "toyota_prius-w50"
+   ],
+   "note": "ZVW52 (Prius PHV) в правило не включён.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/prius/",
+    "https://ja.wikipedia.org/wiki/トヨタ・プリウス"
+   ]
+  },
+  {
+   "codes": [
+    "ZVW40",
+    "ZVW41"
+   ],
+   "model": "Prius α (Prius A)",
+   "body": "XW40",
+   "years": [
+    2011,
+    2021
+   ],
+   "slugs": [
+    "toyota_prius-a"
+   ],
+   "note": "ZVW40 — 5 мест, ZVW41 — 5 или 7 мест.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/prius_a/",
+    "https://ja.wikipedia.org/wiki/トヨタ・プリウスα"
+   ]
+  },
+  {
+   "codes": [
+    "NCP50",
+    "NCP51",
+    "NCP52",
+    "NCP55",
+    "NCP58",
+    "NCP59",
+    "NLP51"
+   ],
+   "model": "Probox",
+   "body": "XP50 (до 2014)",
+   "years": [
+    2002,
+    2014
+   ],
+   "slugs": [
+    "toyota_probox"
+   ],
+   "note": "те же коды у Toyota Succeed (близнец).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/probox/",
+    "https://ja.wikipedia.org/wiki/トヨタ・プロボックス"
+   ]
+  },
+  {
+   "codes": [
+    "NCP160",
+    "NCP165",
+    "NSP160",
+    "NHP160"
+   ],
+   "model": "Probox",
+   "body": "XP160 (с 2014)",
+   "years": [
+    2014,
+    null
+   ],
+   "slugs": [
+    "toyota_probox"
+   ],
+   "note": "те же коды у Succeed (до 2020).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/probox/",
+    "https://ja.wikipedia.org/wiki/トヨタ・プロボックス"
+   ]
+  },
+  {
+   "codes": [
+    "NCP100",
+    "NCP105",
+    "SCP100"
+   ],
+   "model": "Ractis",
+   "body": "P100",
+   "years": [
+    2005,
+    2010
+   ],
+   "slugs": [
+    "toyota_ractis-100"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/ractis/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ラクティス"
+   ]
+  },
+  {
+   "codes": [
+    "NCP120",
+    "NCP122",
+    "NCP125",
+    "NSP120"
+   ],
+   "model": "Ractis",
+   "body": "P120",
+   "years": [
+    2010,
+    2016
+   ],
+   "slugs": [
+    "toyota_ractis"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/ractis/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ラクティス"
+   ]
+  },
+  {
+   "codes": [
+    "NSP122"
+   ],
+   "model": "Ractis",
+   "body": "P120",
+   "years": [
+    2010,
+    2016
+   ],
+   "slugs": [
+    "toyota_ractis"
+   ],
+   "note": "Коды есть только на drom.ru (в Википедии не найдены).",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/ractis/"
+   ]
+  },
+  {
+   "codes": [
+    "A200A",
+    "A201A",
+    "A202A",
+    "A210A"
+   ],
+   "model": "Raize",
+   "body": "A200",
+   "years": [
+    2019,
+    null
+   ],
+   "slugs": [
+    "toyota_raize"
+   ],
+   "note": "близнец — Daihatsu Rocky (по ja.wikipedia); коды кузова Rocky в правило не включены.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/raize/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ライズ"
+   ]
+  },
+  {
+   "codes": [
+    "ACA21",
+    "ZCA26"
+   ],
+   "model": "RAV4",
+   "body": "XA20 (CA21W, 5 дверей, Япония)",
+   "years": [
+    2000,
+    2005
+   ],
+   "slugs": [
+    "toyota_rav-4-ca21"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/rav4/",
+    "https://ja.wikipedia.org/wiki/トヨタ・RAV4"
+   ]
+  },
+  {
+   "codes": [
+    "ACA20",
+    "ZCA25"
+   ],
+   "model": "RAV4",
+   "body": "XA20 (CA20W, 3 двери, Япония)",
+   "years": [
+    2000,
+    2005
+   ],
+   "slugs": [],
+   "note": "3-дверный RAV4 — лекала нет.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/rav4/",
+    "https://ja.wikipedia.org/wiki/トヨタ・RAV4"
+   ]
+  },
+  {
+   "codes": [
+    "ACA31",
+    "ACA36"
+   ],
+   "model": "RAV4",
+   "body": "XA30 (Япония, правый руль)",
+   "years": [
+    2005,
+    2016
+   ],
+   "slugs": [
+    "toyota_rav4"
+   ],
+   "note": "японский праворульный RAV4 XA30; лекало без указания руля — проверить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/rav4/",
+    "https://ja.wikipedia.org/wiki/トヨタ・RAV4"
+   ]
+  },
+  {
+   "codes": [
+    "M900A",
+    "M910A"
+   ],
+   "model": "Roomy",
+   "body": "M900",
+   "years": [
+    2016,
+    null
+   ],
+   "slugs": [
+    "toyota_roomy"
+   ],
+   "note": "Roomy и Tank — одинаковые коды кузова (M900A/M910A); база — Daihatsu Thor (по ja.wikipedia), её коды в правило не включены.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/roomy/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ルーミー"
+   ]
+  },
+  {
+   "codes": [
+    "M900A",
+    "M910A"
+   ],
+   "model": "Tank",
+   "body": "M900",
+   "years": [
+    2016,
+    2020
+   ],
+   "slugs": [
+    "toyota_tank"
+   ],
+   "note": "Tank и Roomy — одинаковые коды кузова.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/tank/",
+    "https://ja.wikipedia.org/wiki/トヨタ・タンク"
+   ]
+  },
+  {
+   "codes": [
+    "J200E",
+    "J210E"
+   ],
+   "model": "Rush",
+   "body": "J200",
+   "years": [
+    2006,
+    2016
+   ],
+   "slugs": [
+    "toyota_rush"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/rush/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ラッシュ"
+   ]
+  },
+  {
+   "codes": [
+    "NCP81",
+    "NCP85"
+   ],
+   "model": "Sienta",
+   "body": "XP80 (1-е поколение)",
+   "years": [
+    2003,
+    2015
+   ],
+   "slugs": [
+    "toyota_sienta-5m",
+    "toyota_sienta-7m"
+   ],
+   "note": "число мест по номеру кузова не определить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/sienta/",
+    "https://ja.wikipedia.org/wiki/トヨタ・シエンタ"
+   ]
+  },
+  {
+   "codes": [
+    "SCP10",
+    "SCP13",
+    "NCP10",
+    "NCP13",
+    "NCP15"
+   ],
+   "model": "Vitz",
+   "body": "XP10",
+   "years": [
+    1999,
+    2005
+   ],
+   "slugs": [
+    "toyota_vitz-p10",
+    "toyota_vitz-spl",
+    "toyota_vitz"
+   ],
+   "note": "в каталоге три лекала: P10 (1999–2001), со сплошной спинкой, рестайлинг (2001–2005) — по номеру кузова не различить, решает год выпуска и салон.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/vitz/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ヴィッツ"
+   ]
+  },
+  {
+   "codes": [
+    "KSP90",
+    "SCP90",
+    "NCP91",
+    "NCP95"
+   ],
+   "model": "Vitz",
+   "body": "XP90",
+   "years": [
+    2005,
+    2010
+   ],
+   "slugs": [
+    "toyota_vitz-2",
+    "toyota_vitz-2-spl"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/vitz/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ヴィッツ"
+   ]
+  },
+  {
+   "codes": [
+    "KSP130",
+    "NSP130",
+    "NSP135",
+    "NCP131",
+    "NHP130"
+   ],
+   "model": "Vitz",
+   "body": "XP130",
+   "years": [
+    2010,
+    2020
+   ],
+   "slugs": [
+    "toyota_vitz-3",
+    "toyota_vitz-3-spl"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/vitz/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ヴィッツ"
+   ]
+  },
+  {
+   "codes": [
+    "ZZE136",
+    "ZZE137",
+    "ZZE138"
+   ],
+   "model": "Voltz",
+   "body": "E130",
+   "years": [
+    2002,
+    2004
+   ],
+   "slugs": [
+    "toyota_voltz"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/voltz/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ヴォルツ"
+   ]
+  },
+  {
+   "codes": [
+    "ZNE10",
+    "ZNE14",
+    "ANE10",
+    "ANE11"
+   ],
+   "model": "Wish",
+   "body": "XE10",
+   "years": [
+    2003,
+    2009
+   ],
+   "slugs": [
+    "toyota_wish-10-5m",
+    "toyota_wish-10-7m",
+    "toyota_wish-10-5mbez",
+    "toyota_wish-10-7mbez"
+   ],
+   "note": "наличие столика и число мест по номеру кузова не определить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/wish/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ウィッシュ"
+   ]
+  },
+  {
+   "codes": [
+    "ZGE20",
+    "ZGE21",
+    "ZGE22",
+    "ZGE25"
+   ],
+   "model": "Wish",
+   "body": "XE20",
+   "years": [
+    2009,
+    2017
+   ],
+   "slugs": [
+    "toyota_wish-20-5m",
+    "toyota_wish-20-7m"
+   ],
+   "note": "",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/wish/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ウィッシュ"
+   ]
+  },
+  {
+   "codes": [
+    "TRJ120",
+    "GRJ120",
+    "GRJ121",
+    "KDJ120",
+    "KDJ121"
+   ],
+   "model": "Land Cruiser Prado",
+   "body": "120 (5 дверей, Япония, правый руль)",
+   "years": [
+    2002,
+    2009
+   ],
+   "slugs": [
+    "toyota_prado"
+   ],
+   "note": "праворульный японский Prado 120 (5 дверей); в каталоге для правого руля только 5-местное лекало.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/land_cruiser_prado/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ランドクルーザープラド"
+   ]
+  },
+  {
+   "codes": [
+    "RZJ120",
+    "VZJ120",
+    "VZJ121"
+   ],
+   "model": "Land Cruiser Prado",
+   "body": "120 (5 дверей, Япония, правый руль)",
+   "years": [
+    2002,
+    2009
+   ],
+   "slugs": [
+    "toyota_prado"
+   ],
+   "note": "праворульный японский Prado 120 (5 дверей); в каталоге для правого руля только 5-местное лекало. Коды есть только на drom.ru (в Википедии не найдены).",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/land_cruiser_prado/"
+   ]
+  },
+  {
+   "codes": [
+    "TRJ125",
+    "KDJ125"
+   ],
+   "model": "Land Cruiser Prado",
+   "body": "120 (3 двери, Япония)",
+   "years": [
+    2002,
+    2009
+   ],
+   "slugs": [],
+   "note": "3-дверный Prado — лекала нет.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/land_cruiser_prado/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ランドクルーザープラド"
+   ]
+  },
+  {
+   "codes": [
+    "RZJ125",
+    "VZJ125"
+   ],
+   "model": "Land Cruiser Prado",
+   "body": "120 (3 двери, Япония)",
+   "years": [
+    2002,
+    2009
+   ],
+   "slugs": [],
+   "note": "3-дверный Prado — лекала нет. Коды есть только на drom.ru (в Википедии не найдены).",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/land_cruiser_prado/"
+   ]
+  },
+  {
+   "codes": [
+    "TRJ150",
+    "GRJ150",
+    "GRJ151",
+    "GDJ150",
+    "GDJ151"
+   ],
+   "model": "Land Cruiser Prado",
+   "body": "150 (Япония, правый руль)",
+   "years": [
+    2009,
+    2024
+   ],
+   "slugs": [
+    "toyota_prado-150r",
+    "toyota_prado-150arabr"
+   ],
+   "note": "праворульный японский Prado 150; 5/7 мест по номеру кузова не определить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/land_cruiser_prado/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ランドクルーザープラド"
+   ]
+  },
+  {
+   "codes": [
+    "UZJ100",
+    "HDJ101"
+   ],
+   "model": "Land Cruiser",
+   "body": "100 (Япония, правый руль)",
+   "years": [
+    1998,
+    2007
+   ],
+   "slugs": [],
+   "note": "в каталоге LC100 только с левым рулём — для правого руля лекала нет.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/land_cruiser/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ランドクルーザー"
+   ]
+  },
+  {
+   "codes": [
+    "GSE20",
+    "GSE25"
+   ],
+   "model": "IS",
+   "body": "IS 250 (XE20)",
+   "years": [
+    2005,
+    2013
+   ],
+   "slugs": [
+    "lexus_is250"
+   ],
+   "note": "японские праворульные IS 250; лекало без указания руля — проверить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/lexus/is250/",
+    "https://ja.wikipedia.org/wiki/レクサス・IS"
+   ]
+  },
+  {
+   "codes": [
+    "GGL10",
+    "GGL15",
+    "GGL16"
+   ],
+   "model": "RX",
+   "body": "RX 350 (AL10)",
+   "years": [
+    2008,
+    2015
+   ],
+   "slugs": [
+    "lexus_rx350"
+   ],
+   "note": "японские праворульные RX 350; лекало без указания руля — проверить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/lexus/rx350/",
+    "https://ja.wikipedia.org/wiki/レクサス・RX"
+   ]
+  },
+  {
+   "codes": [
+    "AZT250",
+    "AZT251",
+    "AZT255"
+   ],
+   "model": "Avensis",
+   "body": "T250 (Япония, правый руль)",
+   "years": [
+    2003,
+    2008
+   ],
+   "slugs": [
+    "toyota_avensis"
+   ],
+   "note": "японский праворульный Avensis (ввоз из Великобритании); лекало без указания руля — проверить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/avensis/",
+    "https://ja.wikipedia.org/wiki/トヨタ・アベンシス"
+   ]
+  },
+  {
+   "codes": [
+    "GUN125"
+   ],
+   "model": "Hilux",
+   "body": "AN120 (Япония, правый руль)",
+   "years": [
+    2017,
+    null
+   ],
+   "slugs": [
+    "toyota_hilux-m70m80"
+   ],
+   "note": "японский праворульный Hilux (с 2017); в каталоге лекало без указания руля — проверить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/toyota/hilux_pick_up/",
+    "https://ja.wikipedia.org/wiki/トヨタ・ハイラックス"
+   ]
+  }
+ ],
+ "position_legend": [
+  {
+   "wmi": [
+    "JTD",
+    "JTE",
+    "JTM",
+    "JTN",
+    "JTH",
+    "JTJ",
+    "XW7",
+    "SB1",
+    "NMT",
+    "VNK",
+    "AHT",
+    "MR0"
+   ],
+   "positions": {
+    "4": "тип кузова/привод (документ Toyota 2008): легковые B — седан 4 дв., D — купе 3 дв., J — лифтбек 3 дв., K — 5 дв.; MPV/SUV B — 5 дв. 4×4, D — 5 дв. 4×2, E — 5 дв. 4×4, K — 5 дв. 4×2, H — 4 дв. универсал 4×4, Z — 5 дв. 4×2. По объявлениям: E — универсал Corolla/Avensis, Z — Auris Touring Sports, M — Auris E180 хэтчбек",
+    "5": "двигатель (семейство), по документу Toyota 2008: B — гибрид 2AZ-FXE, E — 2AZ-FE 2.4, K — 2GR-FE 3.5, R — 1ZZ-FE 1.8, T — 1NZ-FE, U — 1GR-FE 4.0; по vPIC/объявлениям: F — 2AR-FE 2.5 (Camry XV50/XV70), Z — 2GR-FKS 3.5 (Camry XV70), H — 2.0 у Camry XV50 и 3.0 дизель у Prado 150, T — 2UZ-FE 4.7 у Land Cruiser 100, K — 4GR-FSE 2.5 у Lexus IS. Буквы зависят от модели — для определения модели не использовать",
+    "6": "серия/поколение (цифра): 2 — Corolla E120, RAV4 XA20, Prado 120, Hilux 7; 3 — Camry XV30, RAV4 XA30, Prado 150; 4 — Camry XV40; 5 — Corolla/Auris E150, Avensis T250; 7 — Avensis T270; 9 — Yaris XP90. У Camry российской/японской сборки 2011+ и RAV4 XA40 (R) 6-й символ уже не равен серии — смотреть 7-й",
+    "7": "система пассивной безопасности (подушки)/комплектация; у моделей 2010-х — буква, фактически отличающая поколение: Camry F — XV50, H — XV70; Corolla/Auris J — E160–E180, B — E210; RAV4 E (при R на 6-м) — XA40, F — XA50; Yaris D — XP130",
+    "8": "линия модели: K — Camry, E — Corolla/Auris/Matrix, V — RAV4, J — Land Cruiser/Prado, L — Avensis, R — Verso/Corolla Verso, G — Hilux/Fortuner (до 2015), D — Hilux с 2015, U — Prius, 3 — Yaris, A — Highlander (Toyota) / RX (Lexus), 2 — Lexus IS",
+    "9": "контрольный символ (для машин США/Канады/Китая) или произвольная цифра",
+    "10": "у машин для Европы/России/Японии-экспорт — «0» (не год!); у машин для США/Канады/Китая — модельный год",
+    "11": "завод: 0–9, J, K — заводы Японии (TMC); S — Санкт-Петербург (XW7); E/F — Великобритания (SB1); R — Турция (NMT); A — Франция (VNK); U — Кентукки, C — Канада, Z — Фримонт"
+   },
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://www.drive2.ru/l/594256623950673229/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-toyota/",
+    "https://en.wikipedia.org/wiki/Vehicle_identification_number"
+   ]
+  },
+  {
+   "wmi": [
+    "4T1",
+    "4T3",
+    "4T4",
+    "2T1",
+    "2T2",
+    "2T3",
+    "5TD",
+    "5YF",
+    "1NX"
+   ],
+   "positions": {
+    "4-8": "как у Toyota для Европы (кузов, двигатель, серия, подушки, линия модели) — официальная расшифровка Toyota Technical Training 2008",
+    "9": "контрольная цифра",
+    "10": "модельный год (8 = 2008, A = 2010, … K = 2019)",
+    "11": "завод: U — Джорджтаун (Кентукки), C — Кембридж (Канада), W — Вудсток (Канада), R/L — Subaru of Indiana, Z — Фримонт (NUMMI)"
+   },
+   "sources": [
+    "https://alflash.com.ua/Refer/08vin_t.pdf",
+    "https://vpic.nhtsa.dot.gov/api/"
+   ]
+  },
+  {
+   "wmi": [
+    "номер кузова (JDM)"
+   ],
+   "positions": {
+    "формат": "КОД-СЕРИЙНЫЙ, например NZE141-6012345; на табличке полный код модели, напр. NZE141G-AEXNKW",
+    "код": "буквы семейства двигателя (NZ — 1NZ, ZZ — 1ZZ/3ZZ, ZR — 2ZR, AZ — 1AZ/2AZ, GR — V6 GR, KD — дизель KD, NH/ZV — гибриды) + буква платформы (по справочнику Toyota: E — Corolla, T — Corona/Carina/Caldina и их наследники Premio/Allion, V — Camry, J — Land Cruiser, X — Mark II/Mark X, N — Hilux, P — Starlet и наследники Vitz) + цифры: серия (14 — E140) и вариант (у многих моделей 4/5 в конце — полный привод, напр. NZE141 2WD / NZE144 4WD). У моделей производства Daihatsu (Passo, Roomy/Tank, Raize, Rush) коды вида M700A, M900A, A200A, J200E",
+    "суффикс": "G — универсал (Fielder, Wish), H — хэтчбек, N — Spacio, W — универсал/SUV, L — левый руль; в номере кузова на шильдике суффикса обычно нет"
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Toyota_model_codes",
+    "https://www.drom.ru/catalog/toyota/corolla_fielder/"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "notes": "1) 10-й символ VIN у Toyota/Lexus для Европы, России (XW7) и японских экспортных машин — «0», год по нему не определить; у машин для США/Канады/Китая — модельный год. Поэтому рестайлинги внутри поколения (Camry XV50 2014/2017, Hilux 7 2011, Verso 2012 и т. п.) по VIN не различаются — год берём из ПТС. 2) У Camry, Corolla/Auris и RAV4 2010-х гг. поколение надёжнее всего отличается по 7-му символу (Camry: 0 — XV40, F — XV50, H — XV70) — в объявлениях 2018–2019 гг. XW7B??HK часто ошибочно подписаны как XV50. 3) WMI JTE + 05J — Land Cruiser 100, а JTM + 05J/02J — Land Cruiser 200; не путать. 4) Праворульные японские машины VIN не имеют — используются frame_rules; один и тот же код кузова бывает у нескольких моделей (Allion/Premio, Axio/Fielder, Runx/Allex/Fielder/Spacio/седан Corolla E120, Noah/Voxy, Roomy/Tank, Gaia/Ipsum, Kluger V/Highlander) — сайт должен показывать все совпавшие правила и просить клиента выбрать модель. 5) Для праворульных версий моделей, у которых в каталоге одно лекало без указания руля (Camry XV40/50/70, RAV4 XA30, Auris, Avensis, Lexus IS/RX, Hilux), slug дан, но в note стоит «проверить». 6) Правила по реальным VIN собраны из объявлений auto.ria.com (Украина, VIN проверен по реестру) и autospot.ru (Россия); американские VIN дополнительно проверены через NHTSA vPIC (уровень official). 7) Не покрыто: старый формат VIN до ~2002 (JT1…, JT1xxx…), VIN Lexus IS нового формата 2011–2013 (JTHB?5C2…: vPIC путает с IS 250C), Prado 150 для Ближнего Востока (JTEBX9FJ…, 10-й символ — год), Corolla/Camry китайской сборки (кроме LVGBC74K), RAV4 FAW (LFM…). 8) Лимит веб-поиска (WebSearch) в этой сессии был исчерпан; дальнейшие данные собирались прямыми запросами к drom.ru, ja/en.wikipedia (API), auto.ria.com, autospot.ru и NHTSA vPIC."
+}

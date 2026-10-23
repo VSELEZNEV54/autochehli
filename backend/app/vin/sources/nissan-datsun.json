@@ -1,0 +1,1491 @@
+{
+ "group": "nissan-datsun",
+ "wmi": [
+  {
+   "code": "JN1",
+   "maker": "Nissan Motor Co., Ltd. (Япония), легковые",
+   "country": "JP",
+   "brands": [
+    "nissan"
+   ],
+   "year_pos10": false,
+   "note": "Машины для Европы/России: 10–11 символы — код рынка «U0» (Европа), «Z0» (прочие), модельного года нет. У машин для США/Канады (напр. Leaf JN1AZ0CP…) 10-й символ — модельный год.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan"
+   ]
+  },
+  {
+   "code": "JN8",
+   "maker": "Nissan Motor Co., Ltd. (Япония), MPV/внедорожники",
+   "country": "JP",
+   "brands": [
+    "nissan"
+   ],
+   "year_pos10": true,
+   "note": "Встречается в основном у машин рынка США (Murano, Rogue, Pathfinder); 10-й символ — модельный год по схеме Северной Америки.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes"
+   ]
+  },
+  {
+   "code": "SJN",
+   "maker": "Nissan Motor Manufacturing (UK) Ltd., Сандерленд",
+   "country": "GB",
+   "brands": [
+    "nissan"
+   ],
+   "year_pos10": false,
+   "note": "Almera N16, Primera P12, Micra K12, Note E11, Qashqai J10/J11, Juke F15. 10-й символ — «U» (Европа), не год.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan"
+   ]
+  },
+  {
+   "code": "VSK",
+   "maker": "Nissan Motor Ibérica S.A. (Барселона/Авила)",
+   "country": "ES",
+   "brands": [
+    "nissan"
+   ],
+   "year_pos10": false,
+   "note": "Pathfinder R51, Navara D40 для Европы/России: 10-й символ «U». У D40 для Австралии 10-й символ «A» (рынок), тоже не год.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.hlidacstatu.cz/vozidla/vin/VSKCVND40U0576043"
+   ]
+  },
+  {
+   "code": "Z8N",
+   "maker": "ООО «Ниссан Мэнуфэкчуринг Рус» (WMI Nissan в России)",
+   "country": "RU",
+   "brands": [
+    "nissan",
+    "datsun"
+   ],
+   "year_pos10": false,
+   "note": "Один WMI на разные заводы и разные схемы VDS: (1) Санкт-Петербург — X-Trail T31/T32, Qashqai J11, Murano, Teana, Pathfinder R52: схема Nissan (7–9 = кузов), 10-й символ — постоянная буква поколения (A/D у T31, E у T32 и J11 при выпуске 2015–2020), 11-й «S»; (2) Ижевск — Sentra B17, Tiida C13: схема Nissan, 10-й символ «5»; (3) АвтоВАЗ/Москва (платформа Renault) — Almera G15 «Z8NAJL…», Terrano D10 «Z8NHSN…», 10-й символ «5»/«6»; (4) АвтоВАЗ — Datsun on-DO/mi-DO «Z8N?•ABD0…»: у них 10-й символ ведёт себя как модельный год, но часто на 1 больше года выпуска (2014 г. — F, 2016 — G, 2019 — L, 2020 — M). Поэтому год по 10-му символу у Z8N не определять.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/x_trail/221257/",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/x_trail/214989/",
+    "https://www.avtogermes.ru/sale/second_hand/datsun/on_do/221715/",
+    "https://www.avtogermes.ru/sale/second_hand/datsun/on_do/219071/"
+   ]
+  },
+  {
+   "code": "3N1",
+   "maker": "Nissan Mexicana S.A. de C.V.",
+   "country": "MX",
+   "brands": [
+    "nissan"
+   ],
+   "year_pos10": false,
+   "note": "Tiida C11 для России (2007–2014) — мексиканской сборки: 3N1FCAC11U…, 3N1BCAC11U…, 10-й символ «U» (рынок Европа/Россия). У машин для США (Versa) 10-й символ — модельный год.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://autospot.ru/brands/nissan/tiida/2004/hatchback/used/949299/"
+   ]
+  },
+  {
+   "code": "KNM",
+   "maker": "Renault Samsung Motors (Пусан, Корея)",
+   "country": "KR",
+   "brands": [
+    "nissan"
+   ],
+   "year_pos10": true,
+   "note": "Almera Classic B10 (= Renault Samsung SM3): KNMCSHL…; 10-й символ — модельный год (6 — 2006, 8 — 2008, B — 2011; у машины 2010 г. встречается B). Под KNM также Nissan Rogue T32 для США (KNMAT2MV…).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://autospot.ru/brands/nissan/almera_classic/2006/sedan/used/960441/",
+    "https://carsvin.ru/car_model/NISSAN"
+   ]
+  },
+  {
+   "code": "1N4",
+   "maker": "Nissan North America (Смирна, США), легковые",
+   "country": "US",
+   "brands": [
+    "nissan"
+   ],
+   "year_pos10": true,
+   "note": "Leaf ZE0 2013–2017 и ZE1 2018+ рынка США; 10-й символ — модельный год, 9-й — контрольная цифра.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1N4AZ0CP*DC?format=json"
+   ]
+  },
+  {
+   "code": "5N1",
+   "maker": "Nissan North America (США), MPV/внедорожники",
+   "country": "US",
+   "brands": [
+    "nissan"
+   ],
+   "year_pos10": true,
+   "note": "Pathfinder R51 рынка США (5N1AR18…), Rogue и др. Правил по моделям каталога не заводили.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5N1AR18U*6C?format=json"
+   ]
+  },
+  {
+   "code": "MNT",
+   "maker": "Nissan Motor Thailand",
+   "country": "TH",
+   "brands": [
+    "nissan"
+   ],
+   "year_pos10": null,
+   "note": "Navara D40 и др. для рынков Азии/Австралии; в России встречается редко. Правил не заводили.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes"
+   ]
+  }
+ ],
+ "vin_rules": [
+  {
+   "mask": "JN1T??T30",
+   "years": [
+    2001,
+    2007
+   ],
+   "model": "X-Trail",
+   "body": "T30 (Япония, левый руль)",
+   "detail": "Комплектацию Columbia по VIN не отличить — клиент выбирает лекало сам.",
+   "slugs": [
+    "nissan_x-trail-i",
+    "nissan_x-trailt30-columbia"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JN1TANT30U0132146 — carsvin.ru, X-TRAIL (T30)",
+    "JN1TANT30U0102328 — carsvin.ru, X-TRAIL (T30)",
+    "JN1TANT30U0013598 — carsvin.ru, X-TRAIL (T30)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://carsvin.ru/car_model/NISSAN",
+    "https://www.drom.ru/catalog/nissan/x-trail/"
+   ]
+  },
+  {
+   "mask": "JN1T??T31",
+   "years": [
+    2007,
+    2014
+   ],
+   "model": "X-Trail",
+   "body": "T31 (Япония, левый руль)",
+   "detail": "До запуска сборки в Санкт-Петербурге (2009) T31 для России шли из Японии. Подлокотник по VIN не определить.",
+   "slugs": [
+    "nissan_x-trail",
+    "nissan_x-trailt31r"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JN1TCNT31U0000759 — carsvin.ru, X-TRAIL (T31)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://carsvin.ru/car_model/NISSAN",
+    "https://www.drom.ru/catalog/nissan/x-trail/"
+   ]
+  },
+  {
+   "mask": "Z8NT??T31",
+   "years": [
+    2009,
+    2015
+   ],
+   "model": "X-Trail",
+   "body": "T31 (сборка Санкт-Петербург)",
+   "detail": "Подлокотник по VIN не определить.",
+   "slugs": [
+    "nissan_x-trail",
+    "nissan_x-trailt31r"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8NTBNT31AS008690 — avtogermes.ru, X-Trail II 2010",
+    "Z8NTBNT31DS095255 — carsvin.ru, X-TRAIL (T31)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/x_trail/219615/",
+    "https://carsvin.ru/car_model/NISSAN"
+   ]
+  },
+  {
+   "mask": "Z8NT??T32",
+   "years": [
+    2015,
+    2022
+   ],
+   "model": "X-Trail",
+   "body": "T32 (сборка Санкт-Петербург)",
+   "slugs": [
+    "nissan_x-trailt32"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8NTANT32ES006767 — avtogermes.ru, X-Trail III 2015",
+    "Z8NTAAT32ES130548 — avtogermes.ru, X-Trail III рестайлинг 2020",
+    "Z8NTANT32ES122919 — avtogermes.ru, X-Trail III рестайлинг 2020"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/x_trail/221257/",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/x_trail/221251/",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/x_trail/214989/"
+   ]
+  },
+  {
+   "mask": "JN1???T32",
+   "years": [
+    2014,
+    2022
+   ],
+   "model": "X-Trail",
+   "body": "T32 (Япония, левый руль — импорт из Европы/СНГ)",
+   "detail": "4-й символ бывает T и J; не исключено, что J — 7-местная версия (5+2), для неё лекало 5-местного салона подойдёт только на 1–2 ряд. Уточнять у клиента.",
+   "slugs": [
+    "nissan_x-trailt32"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "JN1JCAT32U0007171 — carsvin.ru, X-TRAIL (T32)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://carsvin.ru/car_model/NISSAN"
+   ]
+  },
+  {
+   "mask": "SJNF??J10",
+   "years": [
+    2007,
+    2013
+   ],
+   "model": "Qashqai",
+   "body": "J10 (Великобритания), 5 мест",
+   "detail": "Подлокотник по VIN не определить.",
+   "slugs": [
+    "nissan_qashqai",
+    "nissan_qashqai-p"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SJNFBNJ10U1291247 — avtogermes.ru, Qashqai I 2008",
+    "SJNFBAJ10U2413033 — avtogermes.ru, Qashqai I рестайлинг 2011",
+    "SJNFAAJ10U2922398 — avtogermes.ru, Qashqai I рестайлинг 2013"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/qashqai/222396/",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/qashqai/221143/",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/qashqai/219906/"
+   ]
+  },
+  {
+   "mask": "SJNJ??J10",
+   "years": [
+    2008,
+    2013
+   ],
+   "model": "Qashqai+2",
+   "body": "JJ10 (Великобритания), 7 мест",
+   "detail": "Удлинённый 7-местный Qashqai+2 — лекал в каталоге нет (4-й символ J вместо F у обычного Qashqai).",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "SJNJAAJ10U7068638 — avtogermes.ru, Qashqai+2 I рестайлинг 2012"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/qashqaiplus2/220926/",
+    "https://carsvin.ru/auto/vin?vincode=SJNJAAJ10U7068638"
+   ]
+  },
+  {
+   "mask": "SJNF??J11",
+   "years": [
+    2014,
+    2021
+   ],
+   "model": "Qashqai",
+   "body": "J11 (Великобритания)",
+   "slugs": [
+    "nissan_qashqai-new2014"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SJNFBNJ11U1158948 — avtogermes.ru, Qashqai II 2014",
+    "SJNFAAJ11U1492790 — carsvin.ru, QASHQAI II (J11)",
+    "SJNFEAJ11U2655423 — carsvin.ru, QASHQAI II (J11)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/qashqai/219807/",
+    "https://carsvin.ru/car_model/NISSAN"
+   ]
+  },
+  {
+   "mask": "Z8NF??J11",
+   "years": [
+    2015,
+    2022
+   ],
+   "model": "Qashqai",
+   "body": "J11 (сборка Санкт-Петербург)",
+   "slugs": [
+    "nissan_qashqai-new2014"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8NFBAJ11ES001581 — avtogermes.ru, Qashqai II 2015",
+    "Z8NFBAJ11ES029750 — avtogermes.ru, Qashqai II 2017",
+    "Z8NFBAJ11ES097227 — avtogermes.ru, Qashqai II рестайлинг 2019"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/qashqai/220904/",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/qashqai/113365/",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/qashqai/219787/"
+   ]
+  },
+  {
+   "mask": "SJNF??E11",
+   "years": [
+    2005,
+    2013
+   ],
+   "model": "Note",
+   "body": "E11 (Великобритания, левый руль)",
+   "slugs": [
+    "nissan_note"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SJNFCAE11U2106782 — avtogermes.ru, Note I рестайлинг 2011 (carsvin: NOTE (E11, NE11))"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/note/220438/",
+    "https://carsvin.ru/auto/vin?vincode=SJNFCAE11U2106782"
+   ]
+  },
+  {
+   "mask": "SJN???K12",
+   "years": [
+    2002,
+    2010
+   ],
+   "model": "Micra",
+   "body": "K12 (Великобритания)",
+   "detail": "4-й символ: F — 5-дверный, E — 3-дверный (по схеме Nissan); кабриолет C+C — тоже K12, лекало не проверено.",
+   "slugs": [
+    "nissan_micra"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SJNFBAK12U2260345 — autospot.ru, Micra III (K12) 2007",
+    "SJNFCAK12U1261251 — autospot.ru, Micra III (K12) 2004"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://autospot.ru/brands/nissan/micra/2002/hatchback/used/960532/",
+    "https://autospot.ru/brands/nissan/micra/2002/hatchback/used/992594/",
+    "https://carsvin.ru/auto/vin?vincode=SJNFBAK12U2260345"
+   ]
+  },
+  {
+   "mask": "SJN???N16",
+   "years": [
+    2000,
+    2006
+   ],
+   "model": "Almera",
+   "body": "N16 (Великобритания): седан, хэтчбек 3/5 дв.",
+   "detail": "4-й символ: B — седан, F — хэтчбек 5 дв., E — хэтчбек 3 дв.",
+   "slugs": [
+    "nissan_almera"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SJNBAAN16U0223311 — autospot.ru, Almera II (N16) седан 2001 (carsvin: ALMERA II (N16))"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://autospot.ru/brands/nissan/almera/2000/sedan/used/994033/",
+    "https://carsvin.ru/auto/vin?vincode=SJNBAAN16U0223311",
+    "https://www.drom.ru/catalog/nissan/almera/"
+   ]
+  },
+  {
+   "mask": "SJN???P12",
+   "years": [
+    2002,
+    2008
+   ],
+   "model": "Primera",
+   "body": "P12 (Великобритания): седан, лифтбек, универсал",
+   "detail": "Подлокотник/тип подголовников по VIN не определить. VIN универсала P12 в источниках не встретился — если не совпадёт с маской, определять вручную.",
+   "slugs": [
+    "nissan_primera12-bp",
+    "nissan_primera12-podgolovniki",
+    "nissan_primera12"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SJNBCAP12U0096064 — VIN из объявления auto.ria.com (Primera P12 2003, найден веб-поиском); carsvin: PRIMERA (P12)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://carsvin.ru/auto/vin?vincode=SJNBCAP12U0096064",
+    "https://www.drom.ru/catalog/nissan/primera/"
+   ]
+  },
+  {
+   "mask": "SJNF??F15",
+   "years": [
+    2010,
+    2019
+   ],
+   "model": "Juke",
+   "body": "F15 (Великобритания, левый руль)",
+   "detail": "Лекало в каталоге указано «до 2014»; год по VIN не определить (10-й символ U) — у машин после рестайлинга 2014 г. уточнять год.",
+   "slugs": [
+    "nissan_juke"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SJNFBAF15U6226174 — carsvin.ru, JUKE (F15)",
+    "SJNFBAF15U7319682 — carsvin.ru, JUKE (F15)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://carsvin.ru/car_model/NISSAN"
+   ]
+  },
+  {
+   "mask": "VSK???R51",
+   "years": [
+    2004,
+    2014
+   ],
+   "model": "Pathfinder",
+   "body": "R51 (Испания)",
+   "slugs": [
+    "nissan_pathfinder-r51"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "VSKJVWR51U0465982 — carsvin.ru, PATHFINDER III (R51)",
+    "VSKJVWR51U0068255 — carsvin.ru, PATHFINDER III (R51)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://carsvin.ru/car_model/NISSAN"
+   ]
+  },
+  {
+   "mask": "VSK???D40",
+   "years": [
+    2004,
+    2015
+   ],
+   "model": "Navara",
+   "body": "D40 (Испания), пикап",
+   "detail": "Кабина (двойная / полуторная) по VIN явно не расшифрована — лекало под двойную кабину уточнять.",
+   "slugs": [
+    "nissan_navara"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "VSKCVND40U0576043 — реестр ТС Чехии (hlidacstatu.cz): Nissan Navara, YD25, 1-я регистрация 2015"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.hlidacstatu.cz/vozidla/vin/VSKCVND40U0576043",
+    "https://carsvin.ru/auto/vin?vincode=VSKCVND40U0576043"
+   ]
+  },
+  {
+   "mask": "3N1F??C11",
+   "years": [
+    2007,
+    2014
+   ],
+   "model": "Tiida",
+   "body": "C11 хэтчбек (Мексика, левый руль)",
+   "detail": "4-й символ F — хэтчбек 5 дв.",
+   "slugs": [
+    "nissan_tiida"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "3N1FCAC11UL451692 — autospot.ru, Tiida I хэтчбек 2008 (carsvin: TIIDA хэтчбек (C11))",
+    "3N1FCAC11UK550121 — autospot.ru, Tiida I рестайлинг хэтчбек 2011 (найден веб-поиском)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://autospot.ru/brands/nissan/tiida/2004/hatchback/used/949299/",
+    "https://carsvin.ru/auto/vin?vincode=3N1FCAC11UL451692"
+   ]
+  },
+  {
+   "mask": "3N1B??C11",
+   "years": [
+    2007,
+    2014
+   ],
+   "model": "Tiida",
+   "body": "C11 седан (Мексика, левый руль)",
+   "detail": "4-й символ B — седан (схема Nissan). В самом объявлении в описании ошибочно указан хэтчбек, поэтому при сомнении уточнять кузов у клиента.",
+   "slugs": [
+    "nissan_tiida-sedan"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "3N1BCAC11UK543031 — autospot.ru, Tiida I рестайлинг 2011, кузов «седан» (carsvin: TIIDA седан (SC11))"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://autospot.ru/brands/nissan/tiida/2010/sedan/used/959215/",
+    "https://carsvin.ru/auto/vin?vincode=3N1BCAC11UK543031"
+   ]
+  },
+  {
+   "mask": "Z8NB??B17",
+   "years": [
+    2014,
+    2017
+   ],
+   "model": "Sentra",
+   "body": "B17 седан (сборка Ижевск)",
+   "detail": "carsvin.ru расшифровывает такие VIN ошибочно (как 100 NX) — не использовать его для Z8N ижевской/вазовской сборки.",
+   "slugs": [
+    "nissan_sentra"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8NBEAB1751971948 — avtogermes.ru, Sentra VII (B17) 2014",
+    "Z8NBEAB1752245469 — autospot.ru, Sentra VII (B17) 2014 (найден веб-поиском, страницу не открывали)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/sentra/221941/"
+   ]
+  },
+  {
+   "mask": "Z8NF??C13",
+   "years": [
+    2015,
+    2016
+   ],
+   "model": "Tiida",
+   "body": "C13 хэтчбек (сборка Ижевск)",
+   "slugs": [
+    "nissan_tiida-c13"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8NFEAC1352301245 — autospot.ru, Tiida II хэтчбек 2015"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://autospot.ru/brands/nissan/tiida/2015/hatchback/used/970414/"
+   ]
+  },
+  {
+   "mask": "Z8NAJL",
+   "years": [
+    2012,
+    2019
+   ],
+   "model": "Almera",
+   "body": "G15 седан (сборка АвтоВАЗ, Тольятти)",
+   "detail": "VDS по схеме Renault/АвтоВАЗ, а не Nissan: 7–8 символы «00» у МКПП, «11» у АКПП (по примерам). Спинка 60/40 или сплошная — по VIN не определить.",
+   "slugs": [
+    "nissan_almera-new",
+    "nissan_almera-g15"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8NAJL00052271801 — autospot.ru, Almera III (G15) 2015, МКПП",
+    "Z8NAJL00050914272 — autospot.ru, Almera III (G15) 2014, МКПП (найден веб-поиском)",
+    "Z8NAJL11059504399 — autospot.ru, Almera III (G15) 2017, АКПП"
+   ],
+   "sources": [
+    "https://autospot.ru/brands/nissan/almera/sedan/used/963657/",
+    "https://autospot.ru/brands/nissan/almera/2012/sedan/used/963555/",
+    "https://www.drom.ru/catalog/nissan/almera/"
+   ]
+  },
+  {
+   "mask": "Z8NHSN",
+   "years": [
+    2014,
+    2022
+   ],
+   "model": "Terrano",
+   "body": "D10 (платформа Duster, сборка Москва)",
+   "detail": "VDS по схеме Renault (как у Duster X7LHSR…). Год не кодируется: лекало (до 2017 / с 2017 без подушек в сиденьях / sport) выбирать по году из ПТС и комплектации.",
+   "slugs": [
+    "nissan_terrano",
+    "nissan_terrano-no-airbag",
+    "nissan_terrano-sport"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8NHSNHGN60954546 — avtogermes.ru, Terrano III (D10) 2018",
+    "Z8NHSNDJA53190725 — carsvin.ru, TERRANO (D10)",
+    "Z8NHSNHGD58104502 — carsvin.ru, TERRANO (D10)"
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/nissan/terrano/218264/",
+    "https://carsvin.ru/auto/vin?vincode=Z8NHSNDJA53190725",
+    "https://carsvin.ru/car_model/NISSAN",
+    "https://www.drom.ru/catalog/nissan/terrano/"
+   ]
+  },
+  {
+   "mask": "KNMCSHL",
+   "years": [
+    2006,
+    2012
+   ],
+   "model": "Almera Classic",
+   "body": "B10 седан (Renault Samsung, Корея)",
+   "detail": "Такой же VIN-префикс у корейского Renault Samsung SM3 первого поколения (тот же автомобиль).",
+   "slugs": [
+    "nissan_almera-classic"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "KNMCSHLAS8P709021 — autospot.ru, Almera Classic I 2008",
+    "KNMCSHLAS6P613903 — carsvin.ru, ALMERA Classic (B10)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://autospot.ru/brands/nissan/almera_classic/2006/sedan/used/960441/",
+    "https://carsvin.ru/car_model/NISSAN",
+    "https://www.drom.ru/catalog/nissan/almera_classic/"
+   ]
+  },
+  {
+   "mask": "Z8NB?ABD",
+   "years": [
+    2014,
+    2021
+   ],
+   "model": "on-DO",
+   "body": "седан (сборка АвтоВАЗ, база Lada Granta, индекс 2195)",
+   "detail": "VDS отличается от Lada (XTA2190…): 4-й символ B — седан, 5-й — двигатель (A — 87 л.с., C — 106 л.с. по примерам), 7–8 «BD». Спинка 60/40 или сплошная — по VIN не определить.",
+   "slugs": [
+    "datsun_on-do",
+    "datsun_on-do2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8NBAABD0F0012501 — avtogermes.ru, Datsun on-DO 2014",
+    "Z8NBAABD0G0040683 — avtogermes.ru, Datsun on-DO 2016",
+    "Z8NBCABD0M0129369 — autospot.ru, Datsun on-DO рестайлинг 2020, 106 л.с."
+   ],
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/datsun/on_do/221715/",
+    "https://www.avtogermes.ru/sale/second_hand/datsun/on_do/219071/",
+    "https://autospot.ru/brands/datsun/on-do/2019/sedan/used/957816/",
+    "https://www.drom.ru/catalog/datsun/on-do/"
+   ]
+  },
+  {
+   "mask": "Z8NF?ABD",
+   "years": [
+    2015,
+    2021
+   ],
+   "model": "mi-DO",
+   "body": "хэтчбек (сборка АвтоВАЗ, база Lada Kalina)",
+   "detail": "Лекал mi-DO в каталоге нет — предложить индивидуальный пошив. 4-й символ F — хэтчбек.",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8NFAABD0J0024402 — autospot.ru, Datsun mi-DO 2017"
+   ],
+   "sources": [
+    "https://autospot.ru/brands/datsun/mi-do/2015/hatchback/used/948969/",
+    "https://www.drom.ru/catalog/datsun/mi-do/"
+   ]
+  },
+  {
+   "mask": "Z8NT??Z51",
+   "years": [
+    2011,
+    2016
+   ],
+   "model": "Murano",
+   "body": "Z51 (сборка Санкт-Петербург)",
+   "detail": "Лекал нет — индивидуальный пошив.",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8NTANZ51BS001201 — avtogermes.ru, Murano II (Z51) рестайлинг 2011"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/murano/216272/",
+    "https://carsvin.ru/car_model/NISSAN"
+   ]
+  },
+  {
+   "mask": "Z8NT??Z52",
+   "years": [
+    2016,
+    2022
+   ],
+   "model": "Murano",
+   "body": "Z52 (сборка Санкт-Петербург)",
+   "detail": "Лекал нет — индивидуальный пошив.",
+   "slugs": [],
+   "confidence": "probable",
+   "examples": [
+    "Z8NTANZ52GS006412 — avtogermes.ru, Murano III (Z52) 2018"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/murano/221007/"
+   ]
+  },
+  {
+   "mask": "Z8NB??J32",
+   "years": [
+    2009,
+    2016
+   ],
+   "model": "Teana",
+   "body": "J32 (сборка Санкт-Петербург)",
+   "detail": "Лекал нет — индивидуальный пошив.",
+   "slugs": [],
+   "confidence": "probable",
+   "examples": [
+    "Z8NBBUJ32DS050851 — avtogermes.ru, Teana II рестайлинг 2013"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/teana/222438/"
+   ]
+  },
+  {
+   "mask": "Z8NV??R52",
+   "years": [
+    2014,
+    2017
+   ],
+   "model": "Pathfinder",
+   "body": "R52 (сборка Санкт-Петербург)",
+   "detail": "Лекал нет (в каталоге только R51) — индивидуальный пошив.",
+   "slugs": [],
+   "confidence": "probable",
+   "examples": [
+    "Z8NVANR52ES004065 — avtogermes.ru, Pathfinder IV 2015"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/pathfinder/221148/"
+   ]
+  },
+  {
+   "mask": "JN1?Z0CP",
+   "years": [
+    2011,
+    2012
+   ],
+   "model": "Leaf",
+   "body": "ZE0 (Япония, для рынка США)",
+   "detail": "Расшифровка по NHTSA vPIC (данные производителя). Левый руль: лекало каталога, вероятно, снято с праворульного японского Leaf — уточнить посадку.",
+   "slugs": [
+    "nissan_leaf"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JN1AZ0CP*BT?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JN1AZ0CP*CT?format=json"
+   ]
+  },
+  {
+   "mask": "1N4?Z0",
+   "years": [
+    2013,
+    2017
+   ],
+   "model": "Leaf",
+   "body": "ZE0/AZE0 (Смирна, США)",
+   "detail": "5-й символ Z — Leaf, 6-й 0 — ZE0. Левый руль — см. оговорку выше.",
+   "slugs": [
+    "nissan_leaf"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1N4AZ0CP*DC?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1N4BZ0CP*GC?format=json"
+   ]
+  },
+  {
+   "mask": "1N4?Z1",
+   "years": [
+    2018,
+    2025
+   ],
+   "model": "Leaf",
+   "body": "ZE1 (Смирна, США)",
+   "detail": "6-й символ 1 — ZE1. Левый руль — лекало уточнить.",
+   "slugs": [
+    "nissan_leaf-ze1"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1N4AZ1CP*JC?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1N4BZ1DP*LC?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1N4CZ1CV*PC?format=json"
+   ]
+  }
+ ],
+ "frame_rules": [
+  {
+   "codes": [
+    "E11",
+    "NE11"
+   ],
+   "model": "Note",
+   "body": "E11 хэтчбек (Япония, правый руль)",
+   "years": [
+    2005,
+    2012
+   ],
+   "slugs": [
+    "nissan_note-e11-r"
+   ],
+   "note": "NE11 — полный привод (e-4WD).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/note/",
+    "https://ja.wikipedia.org/wiki/日産・ノート",
+    "https://www.carsensor.net/catalog/nissan/note/F001/"
+   ]
+  },
+  {
+   "codes": [
+    "ZE11"
+   ],
+   "model": "Note",
+   "body": "E11 хэтчбек (Япония, правый руль)",
+   "years": [
+    2008,
+    2012
+   ],
+   "slugs": [
+    "nissan_note-e11-r"
+   ],
+   "note": "Код ZE11 указан только на drom.ru (рестайлинг 2008–2012).",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/note/"
+   ]
+  },
+  {
+   "codes": [
+    "E12",
+    "NE12"
+   ],
+   "model": "Note",
+   "body": "E12 хэтчбек (Япония, правый руль)",
+   "years": [
+    2012,
+    2020
+   ],
+   "slugs": [
+    "nissan_note-e12-l",
+    "nissan_note-e12"
+   ],
+   "note": "Спинка 60/40 или сплошная — по номеру кузова не определить, клиент выбирает. Пример с рынка: «E12-607747» (avtogermes.ru, Note II рестайлинг 2018).",
+   "confidence": "official",
+   "sources": [
+    "https://history.nissan.co.jp/NOTE/E12/1208/",
+    "https://ja.wikipedia.org/wiki/日産・ノート_E12",
+    "https://www.drom.ru/catalog/nissan/note/"
+   ]
+  },
+  {
+   "codes": [
+    "HE12",
+    "SNE12"
+   ],
+   "model": "Note",
+   "body": "E12 e-POWER (Япония, правый руль)",
+   "years": [
+    2016,
+    2020
+   ],
+   "slugs": [
+    "nissan_note-e12-l",
+    "nissan_note-e12"
+   ],
+   "note": "Гибрид e-POWER (HE12 — 2WD, SNE12 — 4WD). Спинка 60/40 или сплошная — уточнить у клиента.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/日産・ノート_E12",
+    "https://www.drom.ru/catalog/nissan/note/"
+   ]
+  },
+  {
+   "codes": [
+    "C11",
+    "NC11",
+    "JC11"
+   ],
+   "model": "Tiida",
+   "body": "C11 хэтчбек (Япония, правый руль)",
+   "years": [
+    2004,
+    2012
+   ],
+   "slugs": [
+    "nissan_tiida-r"
+   ],
+   "note": "C11/NC11 — официальный каталог Nissan (DBA-C11, DBA-NC11), JC11 (1.8 л, с 2005) — ja.wikipedia и drom.ru.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://history.nissan.co.jp/TIIDA/C11/0801/",
+    "https://ja.wikipedia.org/wiki/日産・ティーダ",
+    "https://www.drom.ru/catalog/nissan/tiida/"
+   ]
+  },
+  {
+   "codes": [
+    "SC11",
+    "SJC11",
+    "SNC11"
+   ],
+   "model": "Tiida Latio",
+   "body": "C11 седан (Япония, правый руль)",
+   "years": [
+    2004,
+    2012
+   ],
+   "slugs": [],
+   "note": "Седан Tiida Latio — отдельного лекала в каталоге нет; tiida-r снято с хэтчбека, совместимость не проверена.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/tiida_latio/",
+    "https://ja.wikipedia.org/wiki/日産・ティーダ"
+   ]
+  },
+  {
+   "codes": [
+    "AK12",
+    "BK12",
+    "BNK12",
+    "YK12",
+    "K12"
+   ],
+   "model": "March",
+   "body": "K12 хэтчбек (Япония, правый руль)",
+   "years": [
+    2002,
+    2010
+   ],
+   "slugs": [
+    "nissan_march",
+    "nissan_march-flat"
+   ],
+   "note": "Спинка 60/40 или сплошная — по номеру кузова не определить.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/march/",
+    "https://www.carsensor.net/catalog/nissan/march/F003/",
+    "https://ja.wikipedia.org/wiki/日産・マーチ_K12"
+   ]
+  },
+  {
+   "codes": [
+    "K13",
+    "NK13"
+   ],
+   "model": "March",
+   "body": "K13 хэтчбек (Япония, правый руль)",
+   "years": [
+    2010,
+    2022
+   ],
+   "slugs": [
+    "nissan_march-k13"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/march/",
+    "https://ja.wikipedia.org/wiki/日産・マーチ_K13",
+    "https://www.carsensor.net/catalog/nissan/march/F004/"
+   ]
+  },
+  {
+   "codes": [
+    "T30",
+    "NT30",
+    "PNT30"
+   ],
+   "model": "X-Trail",
+   "body": "T30 (Япония, правый руль)",
+   "years": [
+    2000,
+    2007
+   ],
+   "slugs": [
+    "nissan_x-trailt30r"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/x-trail/",
+    "https://ja.wikipedia.org/wiki/日産・エクストレイル",
+    "https://www.carsensor.net/catalog/nissan/x-trail/F001/"
+   ]
+  },
+  {
+   "codes": [
+    "T31",
+    "NT31",
+    "TNT31",
+    "DNT31"
+   ],
+   "model": "X-Trail",
+   "body": "T31 (Япония, правый руль)",
+   "years": [
+    2007,
+    2015
+   ],
+   "slugs": [
+    "nissan_x-trail",
+    "nissan_x-trailt31r"
+   ],
+   "note": "В каталоге два лекала T31 (с подлокотником / без) без указания руля — показать оба, выбирает клиент.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/x-trail/",
+    "https://ja.wikipedia.org/wiki/日産・エクストレイル",
+    "https://www.carsensor.net/catalog/nissan/x-trail/F002/"
+   ]
+  },
+  {
+   "codes": [
+    "T32",
+    "NT32",
+    "HT32",
+    "HNT32"
+   ],
+   "model": "X-Trail",
+   "body": "T32 (Япония, правый руль)",
+   "years": [
+    2013,
+    2022
+   ],
+   "slugs": [],
+   "note": "В каталоге лекало T32 только для левого руля (nissan_x-trailt32) — для праворульного уточнять/индивидуальный пошив.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/x-trail/",
+    "https://ja.wikipedia.org/wiki/日産・エクストレイル"
+   ]
+  },
+  {
+   "codes": [
+    "C26",
+    "NC26",
+    "FC26",
+    "FNC26",
+    "HC26",
+    "HFC26",
+    "FPC26",
+    "FNPC26"
+   ],
+   "model": "Serena",
+   "body": "C26 минивэн (Япония)",
+   "years": [
+    2010,
+    2016
+   ],
+   "slugs": [
+    "nissan_serena-c265m",
+    "nissan_serena-c267m"
+   ],
+   "note": "Число мест (лекало 5 или 7 мест) по номеру кузова не определить — выбирает клиент. FC26 — по ja.wikipedia и drom.ru, остальные коды — официальный каталог Nissan.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://history.nissan.co.jp/SERENA/C26/1011/",
+    "https://history.nissan.co.jp/SERENA/C26/1312/",
+    "https://ja.wikipedia.org/wiki/日産・セレナ",
+    "https://www.drom.ru/catalog/nissan/serena/"
+   ]
+  },
+  {
+   "codes": [
+    "J10",
+    "NJ10",
+    "KJ10",
+    "KNJ10"
+   ],
+   "model": "Dualis",
+   "body": "J10 (Япония, правый руль)",
+   "years": [
+    2007,
+    2014
+   ],
+   "slugs": [
+    "nissan_dualis"
+   ],
+   "note": "KJ10/KNJ10 — официальный каталог Nissan (2010), J10/NJ10 — ja.wikipedia и drom.ru (2007–2010).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://history.nissan.co.jp/DUALIS/J10/1008/",
+    "https://ja.wikipedia.org/wiki/日産・デュアリス",
+    "https://www.drom.ru/catalog/nissan/dualis/"
+   ]
+  },
+  {
+   "codes": [
+    "F15",
+    "NF15",
+    "YF15"
+   ],
+   "model": "Juke",
+   "body": "F15 (Япония, правый руль)",
+   "years": [
+    2010,
+    2019
+   ],
+   "slugs": [
+    "nissan_juke-r"
+   ],
+   "note": "Лекало в каталоге указано «до 2014»; год (рестайлинг 2014) по коду кузова не определить — уточнять год у клиента.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/日産・ジューク",
+    "https://www.drom.ru/catalog/nissan/juke/",
+    "https://www.carsensor.net/catalog/nissan/juke/F001/"
+   ]
+  },
+  {
+   "codes": [
+    "ZE0",
+    "AZE0"
+   ],
+   "model": "Leaf",
+   "body": "ZE0/AZE0 (Япония, правый руль)",
+   "years": [
+    2010,
+    2017
+   ],
+   "slugs": [
+    "nissan_leaf"
+   ],
+   "note": "AZE0 — после обновления 2012 г.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/leaf/",
+    "https://ja.wikipedia.org/wiki/日産・リーフ_ZE0",
+    "https://www.carsensor.net/catalog/nissan/leaf/F001/"
+   ]
+  },
+  {
+   "codes": [
+    "ZE1"
+   ],
+   "model": "Leaf",
+   "body": "ZE1 (Япония, правый руль)",
+   "years": [
+    2017,
+    2025
+   ],
+   "slugs": [
+    "nissan_leaf-ze1"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/leaf/",
+    "https://ja.wikipedia.org/wiki/日産・リーフ",
+    "https://www.carsensor.net/catalog/nissan/leaf/F002/"
+   ]
+  },
+  {
+   "codes": [
+    "B21W"
+   ],
+   "model": "DAYZ",
+   "body": "B21W (кей-кар, Япония)",
+   "years": [
+    2013,
+    2019
+   ],
+   "slugs": [
+    "nissan_dayz-b21w"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/dayz/",
+    "https://ja.wikipedia.org/wiki/日産・デイズ",
+    "https://www.carsensor.net/catalog/nissan/dayz/F001/"
+   ]
+  },
+  {
+   "codes": [
+    "B43W",
+    "B44W",
+    "B45W",
+    "B46W",
+    "B47W",
+    "B48W"
+   ],
+   "model": "DAYZ",
+   "body": "B40W-серия (кей-кар, Япония)",
+   "years": [
+    2019,
+    2025
+   ],
+   "slugs": [
+    "nissan_dayz-b40w"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/dayz/",
+    "https://ja.wikipedia.org/wiki/日産・デイズ",
+    "https://www.carsensor.net/catalog/nissan/dayz/F002/"
+   ]
+  },
+  {
+   "codes": [
+    "M20"
+   ],
+   "model": "NV200",
+   "body": "M20 (NV200 Vanette, Япония)",
+   "years": [
+    2009,
+    2025
+   ],
+   "slugs": [
+    "nissan_nv200-5m",
+    "nissan_nv200-7m"
+   ],
+   "note": "Число мест по номеру кузова не определить — клиент выбирает 5 или 7 мест.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/nv200/",
+    "https://ja.wikipedia.org/wiki/日産・NV200バネット"
+   ]
+  },
+  {
+   "codes": [
+    "VM20",
+    "VNM20"
+   ],
+   "model": "NV200",
+   "body": "VM20/VNM20 (NV200 Vanette фургон, Япония)",
+   "years": [
+    2009,
+    2025
+   ],
+   "slugs": [
+    "nissan_nv200-5m",
+    "nissan_nv200-7m"
+   ],
+   "note": "Коды VM20/VNM20 — по ja.wikipedia (на drom.ru только упоминание в комментарии). Число мест уточнить.",
+   "confidence": "probable",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/日産・NV200バネット",
+    "https://www.drom.ru/catalog/nissan/nv200/g_2009_10749/"
+   ]
+  },
+  {
+   "codes": [
+    "SH2F23",
+    "SH4F23",
+    "SP2F23",
+    "SP4F23",
+    "SP6F23",
+    "SR2F23",
+    "SR4F23",
+    "SR8F23"
+   ],
+   "model": "Atlas",
+   "body": "F23 (грузовик 1–1,5 т, Япония)",
+   "years": [
+    1999,
+    2007
+   ],
+   "slugs": [
+    "nissan_atlas-f23"
+   ],
+   "note": "Полные коды — по drom.ru (ja.wikipedia подтверждает только серию F23). Лекало в каталоге указано для 2002–2007, 3 места; коды SP2F23/SP4F23 встречаются и у выпуска 1992–1999 — год уточнить.",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/atlas/",
+    "https://ja.wikipedia.org/wiki/日産・アトラス"
+   ]
+  },
+  {
+   "codes": [
+    "HP12",
+    "RP12",
+    "TP12",
+    "TNP12",
+    "QP12",
+    "WHP12",
+    "WRP12",
+    "WTP12",
+    "WTNP12"
+   ],
+   "model": "Primera",
+   "body": "P12 (Япония, правый руль): седан, универсал",
+   "years": [
+    2001,
+    2005
+   ],
+   "slugs": [],
+   "note": "Лекала Primera P12 в каталоге — для европейской (левый руль, SJN…); для праворульной японской совместимость не проверена.",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/nissan/primera/"
+   ]
+  }
+ ],
+ "position_legend": [
+  {
+   "wmi": [
+    "JN1",
+    "SJN",
+    "VSK",
+    "3N1",
+    "Z8N"
+   ],
+   "positions": {
+    "4": "тип кузова: B — седан 4 дв., F — хэтчбек/лифтбек 5 дв., E — хэтчбек 3 дв., T — внедорожник/универсал (X-Trail, Murano), J — Qashqai+2 (7 мест)",
+    "5": "двигатель (буква зависит от модели)",
+    "6": "привод / тип удерживающей системы / комплектация",
+    "7-9": "серия (код кузова): T30, T31, T32, J10, J11, E11, K12, N16, P12, F15, R51, D40, C11, C13, B17, Z51 …",
+    "10": "у машин для Европы/России — код рынка «U» (Европа; «Z» — прочие рынки); у Z8N Санкт-Петербург — постоянная буква поколения (A/D у T31, E у T32 и J11), у Z8N Ижевск — «5». Модельным годом НЕ является",
+    "11": "служебный символ: у JN1/VSK обычно «0», у SJN — цифра (1, 2, 6, 7 в примерах), у 3N1 для России — буква (K, L), у Z8N Санкт-Петербург — «S»",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://auto62rus.ru/Other/articles/Vin_code/nissan"
+   ]
+  },
+  {
+   "wmi": [
+    "Z8N"
+   ],
+   "positions": {
+    "4-6": "Almera G15 (АвтоВАЗ): «AJL»; Terrano D10: «HSN» — схема Renault",
+    "7-8": "Almera G15: «00» — МКПП, «11» — АКПП (по примерам объявлений); Terrano: «DJ», «HG» — вероятно двигатель/КПП",
+    "10": "«5»/«6» — не год"
+   },
+   "sources": [
+    "https://autospot.ru/brands/nissan/almera/sedan/used/963657/",
+    "https://www.avtogermes.ru/sale/second_hand/nissan/terrano/218264/",
+    "https://carsvin.ru/car_model/NISSAN"
+   ]
+  },
+  {
+   "wmi": [
+    "Z8N"
+   ],
+   "positions": {
+    "4": "Datsun: B — седан on-DO, F — хэтчбек mi-DO",
+    "5": "двигатель: A — 1,6 8 кл. 87 л.с., C — 1,6 16 кл. 106 л.с. (по примерам)",
+    "6": "A",
+    "7-8": "«BD» — Datsun (АвтоВАЗ)",
+    "9": "0",
+    "10": "модельный год, часто на 1 больше календарного года выпуска",
+    "11": "0"
+   },
+   "sources": [
+    "https://www.avtogermes.ru/sale/second_hand/datsun/on_do/221715/",
+    "https://autospot.ru/brands/datsun/on-do/2019/sedan/used/957816/",
+    "https://autospot.ru/brands/datsun/mi-do/2015/hatchback/used/948969/"
+   ]
+  },
+  {
+   "wmi": [
+    "KNM"
+   ],
+   "positions": {
+    "4-7": "«CSHL» — Almera Classic B10 / Samsung SM3",
+    "8": "A/M — вариант (по примерам)",
+    "9": "S",
+    "10": "модельный год",
+    "11": "P — завод Пусан"
+   },
+   "sources": [
+    "https://autospot.ru/brands/nissan/almera_classic/2006/sedan/used/960441/",
+    "https://carsvin.ru/car_model/NISSAN"
+   ]
+  },
+  {
+   "wmi": [
+    "1N4",
+    "JN1",
+    "5N1",
+    "JN8"
+   ],
+   "positions": {
+    "4": "двигатель/батарея (Leaf: A — 24/40 кВт·ч, B — 30/62, C — 60)",
+    "5": "модельная линия (Z — Leaf/370Z, R — Pathfinder)",
+    "6": "номер поколения (Leaf: 0 — ZE0, 1 — ZE1)",
+    "7": "кузов",
+    "8": "удерживающие системы",
+    "9": "контрольная цифра",
+    "10": "модельный год",
+    "11": "завод (C — Смирна, T — Оппама/Йокосука)"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Nissan/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1N4AZ0CP*DC?format=json"
+   ]
+  }
+ ],
+ "unresolved": [],
+ "notes": "1) Европейские/российские VIN Nissan (JN1, SJN, VSK, Z8N СПб/Ижевск, 3N1 для России) строятся по схеме Nissan: 7–9 символы = код кузова (T31, J10…), поэтому маски вида «SJN???J10». 10-й символ у них НЕ модельный год (U = рынок Европа; у Z8N — постоянная буква), год брать из ПТС. 2) Z8N — общий WMI для четырёх разных производств с разными схемами VDS (см. wmi.note). Almera G15 и Terrano D10 — схема Renault (Z8NAJL…, Z8NHSN…), Datsun — АвтоВАЗ (Z8N?•ABD…). 3) Qashqai+2 (SJNJ??J10) отделён от Qashqai (SJNF??J10) по 4-му символу; лекал Qashqai+2 нет. 4) Tiida C11 для России — мексиканская (3N1): 4-й символ F — хэтчбек, B — седан; праворульная японская Tiida — по номеру кузова C11/NC11/JC11. 5) Подлокотник, подголовники, 60/40, Columbia, число мест у NV200/Serena, вариант Terrano по VIN не определяются — в slugs все варианты поколения. 6) carsvin.ru (TecDoc-декодер) правильно определяет SJN/JN1/VSK/Z8N-СПб, но ошибочно — Z8N Ижевск/АвтоВАЗ (Sentra и Almera G15 выдаёт как «100 NX», Tiida C13 как Qashqai J11); его данные для них не использованы. 7) У T32 японской сборки (JN1) 4-й символ бывает J — возможно 7-местная версия, правило помечено probable. 8) Правила для Leaf рынка США — по NHTSA vPIC (official); лекала Leaf, скорее всего, сняты с праворульной машины — для левого руля уточнять. 9) Добавлены правила без лекал (slugs: []): Qashqai+2, Datsun mi-DO, Murano Z51/Z52, Teana J32, Pathfinder R52, Tiida Latio, X-Trail T32 правый руль, Primera P12 правый руль — для ответа «лекал нет, индивидуальный пошив». 10) Номер кузова сопоставлять по самому длинному коду из списка, стоящему в начале номера до дефиса/цифр: иначе «ZE11-…» (Note) спутается с «ZE1» (Leaf), «NE11» с «E11» и т. п. На площадках номер бывает без дефиса и с добивкой («E12607747XXXXXXXX» на avtogermes.ru). 11) Лимит веб-поиска был исчерпан в ходе работы: часть моделей подтверждена одним реальным VIN (Note E11, Sentra, Tiida C13/C11 седан) — при расширении базы стоит добрать примеры."
+}

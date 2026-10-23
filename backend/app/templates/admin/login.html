@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+{% block title %}Вход{% endblock %}
+{% block body %}
+<div class="login card">
+  <h1>Вход в админку</h1>
+  <p class="muted small">Заказы и заявки сайта 1avtochehol.ru</p>
+  {% if error %}<div class="flash flash--err">{{ error }}</div>{% endif %}
+  <form method="post" action="/admin/login" autocomplete="on">
+    <input type="hidden" name="next" value="{{ next }}">
+    <label class="f">Логин<input class="input" name="username" value="{{ username or '' }}" autocomplete="username" required autofocus></label>
+    <label class="f">Пароль<input class="input" name="password" type="password" autocomplete="current-password" required></label>
+    <label class="f">Код из приложения <span class="small">— если включён двухфакторный вход</span><input class="input" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="8"></label>
+    <button class="btn btn--primary">Войти</button>
+  </form>
+</div>
+{% endblock %}

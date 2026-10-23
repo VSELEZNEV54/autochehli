@@ -1,0 +1,67 @@
+{% extends "admin/base.html" %}
+{% block title %}Заказы и заявки{% endblock %}
+{% block body %}
+<h1>{{ {'orders': 'Заказы', 'requests': 'Заявки', 'spam': 'Спам'}.get(tab, KINDS.get(tab, 'Заказы и заявки')) }}</h1>
+<div class="muted">{{ total }} {{ 'запись' if total % 10 == 1 and total % 100 != 11 else 'записи' if total % 10 in (2,3,4) and total % 100 not in (12,13,14) else 'записей' }}</div>
+
+<div class="tabs">
+  {% for key, title in [('all', 'Все'), ('orders', 'Заказы'), ('requests', 'Все заявки'), ('custom', 'Пошив'), ('question', 'Вопросы'), ('contact', 'Сообщения'), ('wholesale', 'Опт'), ('review', 'Отзывы'), ('spam', 'Спам')] %}
+  <a href="/admin/orders?tab={{ key }}" class="{{ 'is-on' if tab == key }}">{{ title }}</a>
+  {% endfor %}
+</div>
+
+<form class="filters" method="get" action="/admin/orders">
+  <input type="hidden" name="tab" value="{{ tab }}">
+  <label class="f">Поиск<input class="input" type="search" name="q" value="{{ q }}" placeholder="Номер, телефон, имя, VIN, авто, ИНН"></label>
+  <label class="f">Статус<select class="input" name="status" data-autosubmit>
+    <option value="">Любой</option>
+    {% for k, v in STATUSES.items() %}<option value="{{ k }}" {{ 'selected' if status == k }}>{{ v }}</option>{% endfor %}
+    {% for k, v in REQUEST_STATUSES.items() if k not in STATUSES %}<option value="{{ k }}" {{ 'selected' if status == k }}>{{ v }} (заявка)</option>{% endfor %}
+  </select></label>
+  <label class="f">Оплата<select class="input" name="pay" data-autosubmit>
+    <option value="">Любая</option>
+    {% for k, v in PAY_STATUSES.items() %}<option value="{{ k }}" {{ 'selected' if pay == k }}>{{ v }}</option>{% endfor %}
+  </select></label>
+  <label class="f">С<input class="input" type="date" name="date_from" value="{{ date_from }}"></label>
+  <label class="f">По<input class="input" type="date" name="date_to" value="{{ date_to }}"></label>
+  <button class="btn btn--dark">Найти</button>
+  {% if params|length > 1 %}<a class="btn" href="/admin/orders?tab={{ tab }}">Сбросить</a>{% endif %}
+  <a class="btn" href="/admin/orders.csv?{{ query }}">Выгрузить в Excel (CSV)</a>
+</form>
+
+<div class="table-wrap">
+<table class="t">
+  <thead><tr><th>Номер</th><th>Тип</th><th>Клиент</th><th>Автомобиль и позиции</th><th>Сумма</th><th>Оплата</th><th>Доставка</th><th>Статус</th></tr></thead>
+  <tbody>
+  {% for o in rows %}
+  <tr class="{{ 'is-new' if o.status == 'new' }}">
+    <td><a class="num" href="/admin/orders/{{ o.id }}">{{ o.number }}</a><div class="small muted">{{ o.created_at|local }}</div></td>
+    <td><span class="b b--{{ o.kind }}">{{ o.kind_title }}</span></td>
+    <td>{{ o.name or '—' }}<div class="small muted">{{ o.phone or o.email }}</div>{% if o.city %}<div class="small muted">{{ o.city }}</div>{% endif %}</td>
+    <td>
+      {% if o.items %}
+        {% for it in o.items[:3] %}<div><b>{{ it.brand }} {{ it.model }} {{ it.generation }}</b>{% if it.salon %} <span class="muted">· {{ it.salon }}</span>{% endif %}<div class="small muted">{{ it.material }}, {{ it.color }}{% if it.qty > 1 %} × {{ it.qty }}{% endif %}</div></div>{% endfor %}
+        {% if o.items|length > 3 %}<div class="small muted">и ещё {{ o.items|length - 3 }}</div>{% endif %}
+      {% elif o.car_title %}<b>{{ o.car_title }}</b>{% if o.kind == 'custom' and o.config %}<div class="small muted">конструктор: {{ (o.config.summary or [])[1:3]|map('last')|join(', ') }}</div>{% endif %}
+      {% else %}<span class="muted">{{ o.topic or (o.message[:80] ~ ('…' if o.message|length > 80 else '')) or '—' }}</span>{% endif %}
+      {% if o.vin %}<div class="small mono {{ 'vin-ok' if o.vin_state == 'ok' else 'vin-bad' if o.vin_state in ('mismatch', 'year', 'body', 'bad') else 'vin-unk' }}">VIN {{ o.vin }}{% if o.vin_state in ('mismatch', 'year', 'body') %} — не совпадает{% endif %}</div>{% endif %}
+    </td>
+    <td class="sum">{% if o.total_kop %}{% if o.kind == 'custom' %}от {% endif %}{{ o.total_kop|rub }}{% else %}—{% endif %}</td>
+    <td>{% if o.is_order %}<span class="b b--{{ o.pay_status }}">{{ PAY_STATUSES.get(o.pay_status) }}</span><div class="small muted">{{ PAY_SCHEMES.get(o.pay_scheme) }}{% if o.paid_kop %} · внесено {{ o.paid_kop|rub }}{% endif %}</div>{% else %}<span class="muted">—</span>{% endif %}</td>
+    <td>{% if o.is_order %}{{ o.delivery_title }}{% if o.track_number %}<div class="small mono">{{ o.track_number }}</div>{% endif %}{% else %}<span class="muted">—</span>{% endif %}</td>
+    <td><span class="b b--{{ o.status }}">{{ o.status_title }}</span></td>
+  </tr>
+  {% else %}
+  <tr><td colspan="8" class="muted">Ничего не найдено</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% if pages > 1 %}
+<div class="pager">
+  {% if page > 1 %}<a class="btn btn--sm" href="/admin/orders?{{ query }}&page={{ page - 1 }}">Назад</a>{% endif %}
+  <span class="muted small">Страница {{ page }} из {{ pages }}</span>
+  {% if page < pages %}<a class="btn btn--sm" href="/admin/orders?{{ query }}&page={{ page + 1 }}">Дальше</a>{% endif %}
+</div>
+{% endif %}
+{% endblock %}

@@ -1,22 +1,24 @@
 <!-- {"title": "Чехлы на сиденья по марке", "description": "Модельные чехлы на сиденья: все модели и поколения марки, комплект на весь салон от 7 975 ₽, пошив по заводским лекалам.", "page": "catalog", "js": ["pages/brand.js"]} -->
 <div class="container">
-  <ol class="crumbs"><li><a href="index.html">Главная</a></li><li><a href="catalog.html">Авточехлы на модель</a></li><li data-crumb>Марка</li></ol>
+  <ol class="crumbs"><li><a href="index.html">Главная</a></li><li><a href="catalog.html">Модельные авточехлы</a></li><li data-crumb>Марка</li></ol>
   <div class="page-head">
     <div class="brand-head"><img id="b-logo" src="assets/brands/toyota.jpg" alt="" width="84" height="84"><div><h1 id="b-h1">Чехлы на сиденья</h1><div class="page-head__meta" id="b-meta"></div></div></div>
   </div>
   <div class="shop">
     <aside class="side">
       <div class="side__box"><h4>Модели</h4><div class="side__list" id="b-side"></div></div>
-      <div class="side__box side__box--yellow"><h4>Нет вашей модели?</h4><p>Позвоните 8 (800) 775-32-60 — подскажем, есть ли лекало для вашего автомобиля.</p><a class="btn btn--dark btn--sm" href="custom.html">Индивидуальный пошив</a></div>
+      <div class="side__box side__box--yellow"><h4>Нет вашей модели?</h4><p>Задайте вопрос или позвоните — подскажем, есть ли лекало для вашего автомобиля.</p><div class="help-cta"><button class="btn btn--dark btn--sm" type="button" data-ask-open>Задать вопрос</button><a class="help-cta__tel" href="tel:88007753260">8 (800) 775-32-60<small>бесплатно по России</small></a></div></div>
     </aside>
     <div>
       <div class="toolbar">
         <div class="search search--light toolbar__search"><div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="b-q" placeholder="Модель или кузов" autocomplete="off"></div></div>
+        <div class="search search--light toolbar__vin"><div class="search__field"><span class="tag tag--yellow">VIN</span><input type="text" id="b-vin" placeholder="Найдите вашу модель по VIN-номеру" maxlength="20" autocomplete="off" spellcheck="false" aria-label="VIN-номер"><button class="btn btn--dark btn--sm" type="button" id="b-vin-go">Найти</button></div></div>
         <div class="toolbar__sort"><span class="toolbar__count" id="b-count"></span><select class="select" id="b-sort" aria-label="Сортировка"><option value="name">По алфавиту</option><option value="new">Сначала новые</option><option value="count">Больше поколений</option></select></div>
       </div>
+      <div class="vin-banner" id="b-vin-out" hidden></div>
       <div class="fams" id="b-fams"></div>
-      <div class="grid" style="margin-top:var(--gap)" id="b-custom"></div>
     </div>
   </div>
+  <section class="section" data-studio></section>
   <section class="section section--last"><div class="seo" id="b-seo"></div></section>
 </div>

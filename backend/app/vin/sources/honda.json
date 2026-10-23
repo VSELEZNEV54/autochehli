@@ -1,0 +1,2711 @@
+{
+ "group": "honda",
+ "wmi": [
+  {
+   "code": "JHM",
+   "maker": "Honda Motor Co., Ltd. (легковые)",
+   "country": "JP",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "Япония: Sayama (11-й символ C), Suzuka (S), Yorii (X). Accord VII/VIII, Civic FD, Jazz/Fit, HR-V для Европы/России и часть машин для США. У машин не для Северной Америки 9-й символ = «0».",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-avtomobiley-honda/",
+    "https://uokik.gov.pl/download/16294",
+    "https://uokik.gov.pl/download/18015",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118"
+   ]
+  },
+  {
+   "code": "JHL",
+   "maker": "Honda Motor Co., Ltd. (MPV/SUV)",
+   "country": "JP",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "Японская сборка CR-V (RD/RE/RM).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHLRE38527C044975?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHLRD1874YS020631?format=json"
+   ]
+  },
+  {
+   "code": "JH4",
+   "maker": "Honda Motor Co., Ltd. — Acura (легковые)",
+   "country": "JP",
+   "brands": [],
+   "year_pos10": true,
+   "note": "Марка Acura (нет в нашем списке марок). Acura TSX CL9/CU2 — кузов Accord VII/VIII.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes"
+   ]
+  },
+  {
+   "code": "SHH",
+   "maker": "Honda of the U.K. Manufacturing (легковые)",
+   "country": "GB",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "Суиндон (11-й символ U): Civic 5D/3D 8-го поколения (FK/FN), Jazz II (GG5/GG6).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://uokik.gov.pl/download/11542",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118"
+   ]
+  },
+  {
+   "code": "SHS",
+   "maker": "Honda of the U.K. Manufacturing (MPV/SUV)",
+   "country": "GB",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "Суиндон (U): CR-V 2 (RD6–RD9), CR-V 3 (RE5/RE6/RE7), CR-V 4 (RE5/RE6). Основной WMI CR-V 2.0 в России.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-avtomobiley-honda/",
+    "https://uokik.gov.pl/download/12509",
+    "https://uokik.gov.pl/download/18015",
+    "https://uokik.gov.pl/download.php?plik=16668",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/SHSRD78802U003251?format=json"
+   ]
+  },
+  {
+   "code": "NLA",
+   "maker": "Honda Turkiye (Гебзе)",
+   "country": "TR",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "11-й символ W. Civic 4D 7-го (ES7) и 8-го (FD6/FD7) поколений, City.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://uokik.gov.pl/download/13490",
+    "https://uokik.gov.pl/download/18015",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118"
+   ]
+  },
+  {
+   "code": "LUC",
+   "maker": "Honda Automobile (China) Co. (экспортный завод, Гуанчжоу)",
+   "country": "CN",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "11-й символ 3. Jazz II для Европы (GG2/GG3).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118"
+   ]
+  },
+  {
+   "code": "MRH",
+   "maker": "Honda Automobile (Thailand) (Аюттхая)",
+   "country": "TH",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "11-й символ P. City (GM), Jazz/HR-V для рынков Азии/Австралии (часто правый руль). В VIN-правила не включён: нет подтверждённых машин этого WMI в России.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118"
+   ]
+  },
+  {
+   "code": "LHG",
+   "maker": "GAC Honda (Гуанчжоу)",
+   "country": "CN",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": null,
+   "note": "Китайский рынок (в т. ч. Vezel, Fit, Accord). VDS-правила не собраны — источников нет.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes"
+   ]
+  },
+  {
+   "code": "LVH",
+   "maker": "Dongfeng Honda (Ухань)",
+   "country": "CN",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": null,
+   "note": "Китайский рынок (CR-V, XR-V, Civic). VDS-правила не собраны — источников нет.",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes"
+   ]
+  },
+  {
+   "code": "1HG",
+   "maker": "Honda of America Mfg. (Огайо), легковые",
+   "country": "US",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "Accord, Civic для США; встречается и на экспортных CR-V IV 2.4 (1HGRM4…, 9-й символ 0).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1HGCP26879A131663?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1HGFA165*6L?format=json"
+   ]
+  },
+  {
+   "code": "19X",
+   "maker": "Honda Manufacturing of Indiana, легковые",
+   "country": "US",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "Civic (с 2009 MY).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/19XFA165*9E?format=json"
+   ]
+  },
+  {
+   "code": "5J6",
+   "maker": "Honda of America Mfg., MPV/SUV",
+   "country": "US",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "CR-V (East Liberty, 11-й символ L).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5J6RE3H78AL018946?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5J6RM4H33DL075176?format=json"
+   ]
+  },
+  {
+   "code": "5FN",
+   "maker": "Honda Manufacturing of Alabama, MPV",
+   "country": "US",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "Odyssey, Pilot (в нашем каталоге нет).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes"
+   ]
+  },
+  {
+   "code": "5KB",
+   "maker": "Honda Manufacturing of Alabama, легковые",
+   "country": "US",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "Accord (США).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes"
+   ]
+  },
+  {
+   "code": "7FA",
+   "maker": "Honda Manufacturing of Indiana, MPV",
+   "country": "US",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "CR-V 5-го поколения и новее (в каталоге нет).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes"
+   ]
+  },
+  {
+   "code": "2HG",
+   "maker": "Honda of Canada Mfg., легковые",
+   "country": "CA",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "Civic (Alliston, 11-й символ H).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/2HGFA16569H521640?format=json"
+   ]
+  },
+  {
+   "code": "2HK",
+   "maker": "Honda of Canada Mfg., MPV/SUV",
+   "country": "CA",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "CR-V (Alliston).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/2HKRM4H79FH636514?format=json"
+   ]
+  },
+  {
+   "code": "3HG",
+   "maker": "Honda de Mexico, легковые",
+   "country": "MX",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "Fit 3-го поколения для США (Celaya, 11-й символ M).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/3HGGK5H89FM760578?format=json"
+   ]
+  },
+  {
+   "code": "3CZ",
+   "maker": "Honda de Mexico, MPV/SUV",
+   "country": "MX",
+   "brands": [
+    "honda"
+   ],
+   "year_pos10": true,
+   "note": "HR-V (RU) для США (Celaya), CR-V (El Salto, G).",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/3CZRU5H55HM710331?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/3CZRM3H52GG722437?format=json"
+   ]
+  }
+ ],
+ "vin_rules": [
+  {
+   "mask": "JHLRD1",
+   "years": [
+    1997,
+    2001
+   ],
+   "model": "CR-V",
+   "body": "1 поколение, RD1 (левый руль, рынок США)",
+   "detail": "Лекало honda_cr-v1 сделано под правый руль — для леворульной CR-V 1 не предлагаем",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "JHLRD1874YS020631 — myfloridalegal.com, Honda CR-V 2000 (vPIC: CR-V, B20Z2)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHLRD1874YS020631?format=json",
+    "https://www.myfloridalegal.com/resale_vehicle/JHLRD1874YS020631"
+   ]
+  },
+  {
+   "mask": "JHLRD2",
+   "years": [
+    1997,
+    2001
+   ],
+   "model": "CR-V",
+   "body": "1 поколение, RD2 FF (левый руль, рынок США)",
+   "detail": "Лекало honda_cr-v1 сделано под правый руль — для леворульной CR-V 1 не предлагаем",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "JHLRD284XXC004552 — myfloridalegal.com, Honda CR-V 1999 (vPIC: CR-V LX FWD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHLRD284XXC004552?format=json",
+    "https://www.myfloridalegal.com/resale_vehicle/JHLRD284XXC004552"
+   ]
+  },
+  {
+   "mask": "SHSRD8",
+   "years": [
+    2002,
+    2006
+   ],
+   "model": "CR-V",
+   "body": "2 поколение, RD8 (Европа/Россия, 2.0, Суиндон)",
+   "slugs": [
+    "honda_cr-v2"
+   ],
+   "confidence": "official",
+   "examples": [
+    "SHSRD87203U105316 — список UOKiK (CR-V, Typ RD8, MY2003)",
+    "SHSRD88604U231659 — список UOKiK, MY2004"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/13490",
+    "https://uokik.gov.pl/download/16294",
+    "https://uokik.gov.pl/download/12509",
+    "https://www.drom.ru/catalog/honda/cr-v/"
+   ]
+  },
+  {
+   "mask": "SHSRD9",
+   "years": [
+    2005,
+    2006
+   ],
+   "model": "CR-V",
+   "body": "2 поколение, RD9 (Европа, 2.2 i-CTDi, Суиндон)",
+   "slugs": [
+    "honda_cr-v2"
+   ],
+   "confidence": "official",
+   "examples": [
+    "SHSRD97806U123648 — список UOKiK «Honda CR-V, Wielka Brytania 2002–2006», MY2006"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/12509",
+    "https://www.drom.ru/catalog/honda/cr-v/"
+   ]
+  },
+  {
+   "mask": "SHSRD6",
+   "years": [
+    2002,
+    2006
+   ],
+   "model": "CR-V",
+   "body": "2 поколение, RD6 FF 2.4 (рынок США, Суиндон)",
+   "slugs": [
+    "honda_cr-v2"
+   ],
+   "confidence": "official",
+   "examples": [
+    "SHSRD68556U407037 — myfloridalegal.com, CR-V 2006 (vPIC: K24Z1 FWD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/SHSRD68556U407037?format=json",
+    "https://www.myfloridalegal.com/resale_vehicle/SHSRD68556U407037"
+   ]
+  },
+  {
+   "mask": "SHSRD7",
+   "years": [
+    2002,
+    2006
+   ],
+   "model": "CR-V",
+   "body": "2 поколение, RD7 4WD 2.4 (рынок США, Суиндон)",
+   "slugs": [
+    "honda_cr-v2"
+   ],
+   "confidence": "official",
+   "examples": [
+    "SHSRD78802U003251 — myfloridalegal.com, CR-V 2002 (vPIC: K24A1 4WD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/SHSRD78802U003251?format=json",
+    "https://www.myfloridalegal.com/resale_vehicle/SHSRD78802U003251"
+   ]
+  },
+  {
+   "mask": "JHLRD6",
+   "years": [
+    2002,
+    2006
+   ],
+   "model": "CR-V",
+   "body": "2 поколение, RD6 FF 2.4 (рынок США, Япония)",
+   "slugs": [
+    "honda_cr-v2"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHLRD68565C003489 — myfloridalegal.com, CR-V 2005 (vPIC: K24A1 FWD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHLRD68565C003489?format=json",
+    "https://www.myfloridalegal.com/resale_vehicle/JHLRD68565C003489"
+   ]
+  },
+  {
+   "mask": "JHLRD7",
+   "years": [
+    2002,
+    2006
+   ],
+   "model": "CR-V",
+   "body": "2 поколение, RD7 4WD 2.4 (рынок США, Япония)",
+   "slugs": [
+    "honda_cr-v2"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHLRD78872C010494 — myfloridalegal.com, CR-V 2002 (vPIC: K24A1 4WD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHLRD78872C010494?format=json",
+    "https://www.myfloridalegal.com/resale_vehicle/JHLRD78872C010494"
+   ]
+  },
+  {
+   "mask": "SHSRE5",
+   "years": [
+    2007,
+    2012
+   ],
+   "model": "CR-V",
+   "body": "3 поколение, RE5 (2.0 бензин, Суиндон)",
+   "detail": "Тот же префикс SHSRE5 у CR-V 4 (2012–2018): поколение различать по 10-му символу (год). MY2012 (C) — показать оба поколения",
+   "slugs": [
+    "honda_cr-v3"
+   ],
+   "confidence": "official",
+   "examples": [
+    "SHSRE57307U009426 — список UOKiK (CR-V, Typ RE5, MY2007)",
+    "SHSRE5730AU000311 — список UOKiK, MY2010"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/18015",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://www.drom.ru/catalog/honda/cr-v/"
+   ]
+  },
+  {
+   "mask": "SHSRE6",
+   "years": [
+    2007,
+    2012
+   ],
+   "model": "CR-V",
+   "body": "3 поколение, RE6 (2.2 i-CTDi дизель, Суиндон)",
+   "detail": "Тот же префикс SHSRE6 у CR-V 4 (2012–2018): поколение различать по 10-му символу (год)",
+   "slugs": [
+    "honda_cr-v3"
+   ],
+   "confidence": "official",
+   "examples": [
+    "SHSRE67307U009288 — список UOKiK (CR-V, Typ RE6, MY2007)",
+    "SHSRE6730AU002431 — список UOKiK, MY2010"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/18015",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://www.drom.ru/catalog/honda/cr-v/"
+   ]
+  },
+  {
+   "mask": "SHSRE7",
+   "years": [
+    2007,
+    2012
+   ],
+   "model": "CR-V",
+   "body": "3 поколение, RE7 (2.4 4WD, Суиндон; в России — CR-V 2.4)",
+   "detail": "Код RE7 на drom указан для CR-V 3 рынка России; в списке UOKiK модель не подписана (вывод по коду кузова)",
+   "slugs": [
+    "honda_cr-v3"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SHSRE7870AU000106 — список UOKiK (кампания Honda: Accord, Civic, City, CR-V, Jazz, Insight, Legend), MY2010"
+   ],
+   "sources": [
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://archiwum.uokik.gov.pl/aktualnosci.php?news_id=14015",
+    "https://www.drom.ru/catalog/honda/cr-v/"
+   ]
+  },
+  {
+   "mask": "JHLRE3",
+   "years": [
+    2007,
+    2011
+   ],
+   "model": "CR-V",
+   "body": "3 поколение, RE3 FF 2.4 (рынок США, Япония)",
+   "slugs": [
+    "honda_cr-v3"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHLRE38527C044975 — myfloridalegal.com, CR-V 2007 (vPIC: K24Z1 FWD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHLRE38527C044975?format=json",
+    "https://www.myfloridalegal.com/resale_vehicle/JHLRE38527C044975"
+   ]
+  },
+  {
+   "mask": "JHLRE4",
+   "years": [
+    2007,
+    2011
+   ],
+   "model": "CR-V",
+   "body": "3 поколение, RE4 4WD 2.4 (Япония)",
+   "slugs": [
+    "honda_cr-v3"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHLRE48797C010278 — clearvin.com, CR-V 2007 (vPIC: K24Z1 4WD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHLRE48797C010278?format=json"
+   ]
+  },
+  {
+   "mask": "5J6RE3",
+   "years": [
+    2007,
+    2011
+   ],
+   "model": "CR-V",
+   "body": "3 поколение, RE3 FF 2.4 (рынок США, East Liberty)",
+   "slugs": [
+    "honda_cr-v3"
+   ],
+   "confidence": "official",
+   "examples": [
+    "5J6RE3H78AL018946 — myfloridalegal.com, CR-V 2010 (vPIC: K24Z6 FWD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5J6RE3H78AL018946?format=json",
+    "https://www.myfloridalegal.com/resale_vehicle/5J6RE3H78AL018946"
+   ]
+  },
+  {
+   "mask": "5J6RE4",
+   "years": [
+    2007,
+    2011
+   ],
+   "model": "CR-V",
+   "body": "3 поколение, RE4 4WD 2.4 (рынок США, East Liberty)",
+   "detail": "vPIC по шаблону 5J6RE48507L*: CR-V 2007, K24Z1, 4WD, East Liberty",
+   "slugs": [
+    "honda_cr-v3"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5J6RE48507L*?format=json"
+   ]
+  },
+  {
+   "mask": "SHSRE5",
+   "years": [
+    2012,
+    2018
+   ],
+   "model": "CR-V",
+   "body": "4 поколение, RE5 (2.0 бензин, Суиндон; в России — CR-V 2.0)",
+   "detail": "Тот же префикс у CR-V 3 (2007–2012): различать по 10-му символу (C/D… — 2012/2013…). MY2012 — показать оба поколения",
+   "slugs": [
+    "honda_cr-v4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "SHSRE5790DU003328 — список UOKiK «Honda CR-V, Anglia 2013–2014», MY2013",
+    "SHSRE5890EU… — тот же список, MY2014"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=16668",
+    "https://www.drom.ru/catalog/honda/cr-v/"
+   ]
+  },
+  {
+   "mask": "SHSRE6",
+   "years": [
+    2012,
+    2018
+   ],
+   "model": "CR-V",
+   "body": "4 поколение, RE6 (дизель, Суиндон)",
+   "detail": "Тот же префикс у CR-V 3 (2007–2012): различать по 10-му символу",
+   "slugs": [
+    "honda_cr-v4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "SHSRE6790DU… — список UOKiK «Honda CR-V, Anglia 2013–2014», MY2013"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=16668",
+    "https://www.drom.ru/catalog/honda/cr-v/"
+   ]
+  },
+  {
+   "mask": "1HGRM4",
+   "years": [
+    2012,
+    2016
+   ],
+   "model": "CR-V",
+   "body": "4 поколение, RM4 4WD 2.4 (экспортная версия из США)",
+   "detail": "Код RM4 для CR-V 4 рынка России — по drom; WMI 1HG у CR-V подтверждён одним объявлением (Украина) — менеджеру сверить",
+   "slugs": [
+    "honda_cr-v4"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "1HGRM4850DL512357 — auto.ria.com, Honda CR-V 2013, IV поколение, 2.4 AT"
+   ],
+   "sources": [
+    "https://auto.ria.com/auto_honda_cr-v_40226411.html",
+    "https://www.drom.ru/catalog/honda/cr-v/",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5J6RM4H33DL075176?format=json"
+   ]
+  },
+  {
+   "mask": "5J6RM3",
+   "years": [
+    2012,
+    2016
+   ],
+   "model": "CR-V",
+   "body": "4 поколение, RM3 (рынок Северной Америки)",
+   "detail": "vPIC по шаблону 5J6RM3H3*CL: CR-V 2012 FWD, K24Z7",
+   "slugs": [
+    "honda_cr-v4"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5J6RM3H3*CL?format=json"
+   ]
+  },
+  {
+   "mask": "5J6RM4",
+   "years": [
+    2012,
+    2016
+   ],
+   "model": "CR-V",
+   "body": "4 поколение, RM4 (рынок Северной Америки)",
+   "slugs": [
+    "honda_cr-v4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "5J6RM4H33DL075176 — clearvin.com, CR-V 2013 (vPIC: K24Z7 AWD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5J6RM4H33DL075176?format=json"
+   ]
+  },
+  {
+   "mask": "2HKRM3",
+   "years": [
+    2012,
+    2016
+   ],
+   "model": "CR-V",
+   "body": "4 поколение, RM3 (рынок Северной Америки)",
+   "slugs": [
+    "honda_cr-v4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "2HKRM3H79FH509806 — carvertical.com, CR-V 2015 (vPIC: Alliston, FWD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/2HKRM3H79FH509806?format=json",
+    "https://www.carvertical.com/vin/2HKRM3H79FH509806"
+   ]
+  },
+  {
+   "mask": "2HKRM4",
+   "years": [
+    2012,
+    2016
+   ],
+   "model": "CR-V",
+   "body": "4 поколение, RM4 (рынок Северной Америки)",
+   "slugs": [
+    "honda_cr-v4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "2HKRM4H79FH636514 — carvertical.com, CR-V 2015 (vPIC: Alliston, AWD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/2HKRM4H79FH636514?format=json",
+    "https://www.carvertical.com/vin/2HKRM4H79FH636514"
+   ]
+  },
+  {
+   "mask": "3CZRM3",
+   "years": [
+    2012,
+    2016
+   ],
+   "model": "CR-V",
+   "body": "4 поколение, RM3 (рынок Северной Америки)",
+   "slugs": [
+    "honda_cr-v4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "3CZRM3H52GG722437 — myfloridalegal.com, CR-V 2016 (vPIC: El Salto, FWD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/3CZRM3H52GG722437?format=json",
+    "https://www.myfloridalegal.com/resale_vehicle/3CZRM3H52GG722437"
+   ]
+  },
+  {
+   "mask": "JHMCL7",
+   "years": [
+    2003,
+    2008
+   ],
+   "model": "Accord",
+   "body": "VII седан, CL7 (2.0)",
+   "slugs": [
+    "honda_accord-7"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHMCL76204C203976 — список UOKiK (ACCORD, Typ CL7, MY2004)"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/16294",
+    "https://uokik.gov.pl/download/15543",
+    "https://www.drom.ru/catalog/honda/accord/"
+   ]
+  },
+  {
+   "mask": "JHMCL9",
+   "years": [
+    2003,
+    2008
+   ],
+   "model": "Accord",
+   "body": "VII седан, CL9 (2.4)",
+   "slugs": [
+    "honda_accord-7"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHMCL95804C204800 — список UOKiK (ACCORD, Typ CL9, MY2004)"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/16294",
+    "https://uokik.gov.pl/download/15543",
+    "https://www.drom.ru/catalog/honda/accord/"
+   ]
+  },
+  {
+   "mask": "JHMCN1",
+   "years": [
+    2004,
+    2008
+   ],
+   "model": "Accord",
+   "body": "VII седан, CN1 (2.2 i-CTDi дизель)",
+   "detail": "7-й символ 5 = 4-дверный кузов, МКПП",
+   "slugs": [
+    "honda_accord-7"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHMCN15204C203545 — список UOKiK (ACCORD, Typ CN1, MY2004)"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/16294",
+    "https://www.drom.ru/catalog/honda/accord/"
+   ]
+  },
+  {
+   "mask": "JHMCM1",
+   "years": [
+    2003,
+    2008
+   ],
+   "model": "Accord",
+   "body": "VII универсал Tourer, CM1 (2.0)",
+   "detail": "Лекало honda_accord-7 — для седана; на универсал (задний ряд другой) не предлагаем",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "JHMCM17104C200380 — список UOKiK (ACCORD, Typ CM1, MY2004)"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/16294",
+    "https://uokik.gov.pl/download/15543",
+    "https://www.drom.ru/catalog/honda/accord/",
+    "https://ja.wikipedia.org/wiki/ホンダ・アコードツアラー"
+   ]
+  },
+  {
+   "mask": "JHMCM2",
+   "years": [
+    2003,
+    2008
+   ],
+   "model": "Accord",
+   "body": "VII универсал Tourer, CM2 (2.4)",
+   "detail": "Лекало honda_accord-7 — для седана",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "JHMCM28804C200575 — список UOKiK (ACCORD, Typ CM2, MY2004)"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/16294",
+    "https://uokik.gov.pl/download/15543",
+    "https://www.drom.ru/catalog/honda/accord/"
+   ]
+  },
+  {
+   "mask": "JHMCU1",
+   "years": [
+    2008,
+    2013
+   ],
+   "model": "Accord",
+   "body": "VIII седан, CU1 (2.0)",
+   "slugs": [
+    "honda_accord-viii"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JHMCU1500AC200004 — список UOKiK (кампания Honda, MY2010)"
+   ],
+   "sources": [
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://www.drom.ru/catalog/honda/accord/",
+    "https://ja.wikipedia.org/wiki/ホンダ・アコード"
+   ]
+  },
+  {
+   "mask": "JHMCU2",
+   "years": [
+    2008,
+    2013
+   ],
+   "model": "Accord",
+   "body": "VIII седан, CU2 (2.4)",
+   "detail": "По разбору VIN в статье auto.ru: JHM — Honda (Япония), CU — Accord, 6-й символ 2 — двигатель 2.4",
+   "slugs": [
+    "honda_accord-viii"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JHMCU2500AC200011 — список UOKiK (кампания Honda, MY2010)"
+   ],
+   "sources": [
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-avtomobiley-honda/",
+    "https://www.drom.ru/catalog/honda/accord/",
+    "https://ja.wikipedia.org/wiki/ホンダ・アコード"
+   ]
+  },
+  {
+   "mask": "JHMCU3",
+   "years": [
+    2008,
+    2013
+   ],
+   "model": "Accord",
+   "body": "VIII седан, CU3 (2.2 i-DTEC дизель)",
+   "slugs": [
+    "honda_accord-viii"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHMCU3500AC200693 — список UOKiK «Honda Accord MY2009–2011»"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=10290",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118"
+   ]
+  },
+  {
+   "mask": "JHMCW1",
+   "years": [
+    2008,
+    2013
+   ],
+   "model": "Accord",
+   "body": "VIII универсал Tourer, CW1",
+   "detail": "Лекало honda_accord-viii — для седана (в России официально продавался седан CU1/CU2)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JHMCW1700AC200003 — список UOKiK, MY2010"
+   ],
+   "sources": [
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://ja.wikipedia.org/wiki/ホンダ・アコードツアラー"
+   ]
+  },
+  {
+   "mask": "JHMCW2",
+   "years": [
+    2008,
+    2013
+   ],
+   "model": "Accord",
+   "body": "VIII универсал Tourer, CW2",
+   "detail": "Лекало honda_accord-viii — для седана (в России официально продавался седан CU1/CU2)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JHMCW2700AC200001 — список UOKiK, MY2010"
+   ],
+   "sources": [
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://ja.wikipedia.org/wiki/ホンダ・アコードツアラー"
+   ]
+  },
+  {
+   "mask": "JHMCW3",
+   "years": [
+    2008,
+    2013
+   ],
+   "model": "Accord",
+   "body": "VIII универсал Tourer, CW3",
+   "detail": "Лекало honda_accord-viii — для седана (в России официально продавался седан CU1/CU2)",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "JHMCW3700AC200149 — список UOKiK, MY2010"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=10290",
+    "https://ja.wikipedia.org/wiki/ホンダ・アコードツアラー"
+   ]
+  },
+  {
+   "mask": "1HGCM",
+   "years": [
+    2003,
+    2007
+   ],
+   "model": "Accord (США)",
+   "body": "американский Accord 2003–2007 (CM5–CM8, седан/купе) — не Accord VII",
+   "detail": "Другая модель (больше Euro/JDM Accord VII) — лекала Accord 7 не подходят, индивидуальный пошив",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "1HGCM82626A010471 — myfloridalegal.com, Accord 2006 купе (vPIC)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1HGCM82626A010471?format=json"
+   ]
+  },
+  {
+   "mask": "1HGCP",
+   "years": [
+    2008,
+    2012
+   ],
+   "model": "Accord (США)",
+   "body": "американский Accord 2008–2012 (CP2/CP3) — не Accord VIII",
+   "detail": "Другая модель — лекала Accord VIII не подходят",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "1HGCP26879A131663 — myfloridalegal.com, Accord 2009 (vPIC)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1HGCP26879A131663?format=json"
+   ]
+  },
+  {
+   "mask": "JHMCP",
+   "years": [
+    2008,
+    2012
+   ],
+   "model": "Accord (США, сборка Япония)",
+   "body": "американский Accord 2008–2012 (CP2) — не Accord VIII",
+   "detail": "Другая модель — лекала Accord VIII не подходят",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "JHMCP26708C406717 — forcar.org, Accord 2008 (vPIC: Sayama)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHMCP26708C406717?format=json"
+   ]
+  },
+  {
+   "mask": "JH4CL9",
+   "years": [
+    2004,
+    2008
+   ],
+   "model": "Acura TSX",
+   "body": "TSX 1-го поколения (кузов Accord VII CL9)",
+   "detail": "Кузов как у Accord VII седана — лекало honda_accord-7 может подойти, но марка Acura не в каталоге; уточнить",
+   "slugs": [],
+   "confidence": "probable",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes"
+   ]
+  },
+  {
+   "mask": "JH4CU2",
+   "years": [
+    2009,
+    2014
+   ],
+   "model": "Acura TSX",
+   "body": "TSX 2-го поколения (кузов Accord VIII CU2)",
+   "detail": "Кузов как у Accord VIII седана — лекало honda_accord-viii может подойти; уточнить",
+   "slugs": [],
+   "confidence": "probable",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes"
+   ]
+  },
+  {
+   "mask": "NLAFD",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Civic",
+   "body": "8 поколение, седан 4D турецкой сборки (FD6/FD7)",
+   "detail": "Седан для Европы/России из Гебзе (drom: Россия — FD7). Вариант задней спинки (60/40 или сплошная) по VIN не определить",
+   "slugs": [
+    "honda_civic",
+    "honda_civic-d4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "NLAFD75506W000002 — список UOKiK (CIVIC, Typ FD7, MY2006)",
+    "NLAFD6570AW000218 — список UOKiK, MY2010"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/18015",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://www.drom.ru/catalog/honda/civic/"
+   ]
+  },
+  {
+   "mask": "JHMFD",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Civic",
+   "body": "8 поколение, седан 4D японской сборки (FD1, FD3 гибрид, FD4)",
+   "detail": "FD3 — гибрид (у него неподвижная задняя спинка). Вариант задней спинки по VIN не определить",
+   "slugs": [
+    "honda_civic",
+    "honda_civic-d4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHMFD15706S206580 — список UOKiK (CIVIC, Typ FD1, MY2006)",
+    "JHMFD36206S202094 — список UOKiK (CIVIC, Typ FD3)",
+    "JHMFD16268S419157 — ifixit.com, Honda Civic"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/18015",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://www.drom.ru/catalog/honda/civic/",
+    "https://ifixit.com/Answers/View/656920/honda+civic+radio+code"
+   ]
+  },
+  {
+   "mask": "1HGFA1",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Civic",
+   "body": "8 поколение, седан североамериканской версии, FA1 1.8 (США, East Liberty/Marysville)",
+   "detail": "Седан того же поколения, что FD (североамериканский код FA) — менеджеру сверить посадку лекала",
+   "slugs": [
+    "honda_civic",
+    "honda_civic-d4"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/1HGFA165*6L?format=json"
+   ]
+  },
+  {
+   "mask": "2HGFA1",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Civic",
+   "body": "8 поколение, седан североамериканской версии, FA1 1.8 (Канада, Alliston)",
+   "detail": "Седан того же поколения, что FD (североамериканский код FA) — менеджеру сверить посадку лекала",
+   "slugs": [
+    "honda_civic",
+    "honda_civic-d4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "2HGFA16569H521640 — carvertical.com, Civic 2009 седан (vPIC)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/2HGFA16569H521640?format=json"
+   ]
+  },
+  {
+   "mask": "19XFA1",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Civic",
+   "body": "8 поколение, седан североамериканской версии, FA1 1.8 (США, Greensburg)",
+   "detail": "Седан того же поколения, что FD (североамериканский код FA) — менеджеру сверить посадку лекала",
+   "slugs": [
+    "honda_civic",
+    "honda_civic-d4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "19XFA1E52AE045340 — список UOKiK, MY2010"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/19XFA165*9E?format=json",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118"
+   ]
+  },
+  {
+   "mask": "JHMFA3",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Civic",
+   "body": "8 поколение, седан североамериканской версии, FA3 гибрид (Япония, Suzuka)",
+   "detail": "Седан того же поколения, что FD (североамериканский код FA) — менеджеру сверить посадку лекала",
+   "slugs": [
+    "honda_civic",
+    "honda_civic-d4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHMFA36236S009692 — myfloridalegal.com, Civic Hybrid 2006 (vPIC)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHMFA36236S009692?format=json"
+   ]
+  },
+  {
+   "mask": "2HGFA5",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Civic",
+   "body": "8 поколение, седан североамериканской версии, FA5 Civic Si седан (Канада)",
+   "detail": "Седан того же поколения, что FD (североамериканский код FA) — менеджеру сверить посадку лекала; Si — спортивные сиденья",
+   "slugs": [
+    "honda_civic",
+    "honda_civic-d4"
+   ],
+   "confidence": "official",
+   "examples": [
+    "2HGFA5E50AH701256 — список UOKiK, MY2010"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118"
+   ]
+  },
+  {
+   "mask": "SHHFN",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Civic",
+   "body": "8 поколение, хэтчбек 3D британской сборки (FN, в т. ч. Type R FN2)",
+   "detail": "В каталоге только седан — для хэтчбека лекал нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "SHHFN23207U005723 — список UOKiK «Civic Type R, Wielka Brytania, MY2007–2010»"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/11542",
+    "https://www.drom.ru/catalog/honda/civic/"
+   ]
+  },
+  {
+   "mask": "JHMGD",
+   "years": [
+    2002,
+    2008
+   ],
+   "model": "Fit",
+   "body": "1 поколение (Jazz/Fit GD1/GD3/GD5, левый руль, Япония)",
+   "detail": "Jazz — европейское название Fit. Не путать с Fit Aria/City (GD6–GD9 — седан, JDM без VIN)",
+   "slugs": [
+    "honda_fit"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHMGD17503S201969 — список UOKiK (FIT/JAZZ, Typ GD1, MY2003)",
+    "JHMGD38498S059851 — myfloridalegal.com, Fit 2008 (vPIC)"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download/13490",
+    "https://uokik.gov.pl/download/16294",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHMGD38498S059851?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes"
+   ]
+  },
+  {
+   "mask": "JHMGE",
+   "years": [
+    2008,
+    2014
+   ],
+   "model": "Fit",
+   "body": "2 поколение (Jazz/Fit GE6/GE8, Япония)",
+   "slugs": [
+    "honda_fit-2"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JHMGE8H32CC036139 — myfloridalegal.com, Fit 2012 (vPIC)",
+    "JHMGE6740AS200360 — список UOKiK, MY2010"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JHMGE8H32CC036139?format=json",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://www.drom.ru/catalog/honda/jazz/"
+   ]
+  },
+  {
+   "mask": "JHMGG1",
+   "years": [
+    2009,
+    2015
+   ],
+   "model": "Fit",
+   "body": "2 поколение (Jazz II для Европы/России, код GG1)",
+   "detail": "Коды GG1–GG6 — европейский Jazz II (drom: Россия — GG6); не путать с GG7/GG8 японского Fit Shuttle",
+   "slugs": [
+    "honda_fit-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JHMGG1730AS200001 — список UOKiK (кампания Honda: … Jazz …), MY2010"
+   ],
+   "sources": [
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://archiwum.uokik.gov.pl/aktualnosci.php?news_id=14015",
+    "https://www.drom.ru/catalog/honda/jazz/"
+   ]
+  },
+  {
+   "mask": "LUCGG2",
+   "years": [
+    2009,
+    2015
+   ],
+   "model": "Fit",
+   "body": "2 поколение (Jazz II для Европы/России, код GG2)",
+   "detail": "Коды GG1–GG6 — европейский Jazz II (drom: Россия — GG6); не путать с GG7/GG8 японского Fit Shuttle",
+   "slugs": [
+    "honda_fit-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "LUCGG2730A3200781 — список UOKiK (кампания Honda: … Jazz …), MY2010"
+   ],
+   "sources": [
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://archiwum.uokik.gov.pl/aktualnosci.php?news_id=14015",
+    "https://www.drom.ru/catalog/honda/jazz/"
+   ]
+  },
+  {
+   "mask": "LUCGG3",
+   "years": [
+    2009,
+    2015
+   ],
+   "model": "Fit",
+   "body": "2 поколение (Jazz II для Европы/России, код GG3)",
+   "detail": "Коды GG1–GG6 — европейский Jazz II (drom: Россия — GG6); не путать с GG7/GG8 японского Fit Shuttle",
+   "slugs": [
+    "honda_fit-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "LUCGG3740A3200541 — список UOKiK (кампания Honda: … Jazz …), MY2010"
+   ],
+   "sources": [
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://archiwum.uokik.gov.pl/aktualnosci.php?news_id=14015",
+    "https://www.drom.ru/catalog/honda/jazz/"
+   ]
+  },
+  {
+   "mask": "SHHGG5",
+   "years": [
+    2009,
+    2015
+   ],
+   "model": "Fit",
+   "body": "2 поколение (Jazz II для Европы/России, код GG5)",
+   "detail": "Коды GG1–GG6 — европейский Jazz II (drom: Россия — GG6); не путать с GG7/GG8 японского Fit Shuttle",
+   "slugs": [
+    "honda_fit-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SHHGG5730AU000101 — список UOKiK (кампания Honda: … Jazz …), MY2010"
+   ],
+   "sources": [
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://archiwum.uokik.gov.pl/aktualnosci.php?news_id=14015",
+    "https://www.drom.ru/catalog/honda/jazz/"
+   ]
+  },
+  {
+   "mask": "SHHGG6",
+   "years": [
+    2009,
+    2015
+   ],
+   "model": "Fit",
+   "body": "2 поколение (Jazz II для Европы/России, код GG6)",
+   "detail": "Коды GG1–GG6 — европейский Jazz II (drom: Россия — GG6); не путать с GG7/GG8 японского Fit Shuttle",
+   "slugs": [
+    "honda_fit-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "SHHGG6740AU000283 — список UOKiK (кампания Honda: … Jazz …), MY2010"
+   ],
+   "sources": [
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://archiwum.uokik.gov.pl/aktualnosci.php?news_id=14015",
+    "https://www.drom.ru/catalog/honda/jazz/"
+   ]
+  },
+  {
+   "mask": "JHMGK",
+   "years": [
+    2014,
+    2020
+   ],
+   "model": "Fit",
+   "body": "3 поколение (Jazz III / Fit GK3/GK5, Япония)",
+   "detail": "Вариант салона (с подлокотником или без) по VIN не определить",
+   "slugs": [
+    "honda_fit-3bp",
+    "honda_fit3"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JHMGK3730GX230476 — объявление (carsbat.com), Honda Jazz 2016 1.3"
+   ],
+   "sources": [
+    "https://carsbat.com/en/detail/jhmgk3730gx230476-kmc3s1",
+    "https://www.drom.ru/catalog/honda/jazz/"
+   ]
+  },
+  {
+   "mask": "3HGGK5",
+   "years": [
+    2015,
+    2020
+   ],
+   "model": "Fit",
+   "body": "3 поколение (Fit GK5 для США, Мексика)",
+   "slugs": [
+    "honda_fit-3bp",
+    "honda_fit3"
+   ],
+   "confidence": "official",
+   "examples": [
+    "3HGGK5H89FM760578 — carvertical.com, Fit 2015 (vPIC)",
+    "3HGGK5H47KM706705 — forcar.org, Fit 2019 (vPIC)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/3HGGK5H89FM760578?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/3HGGK5H47KM706705?format=json"
+   ]
+  },
+  {
+   "mask": "JHMGR",
+   "years": [
+    2020,
+    2025
+   ],
+   "model": "Fit",
+   "body": "4 поколение (Jazz IV / Fit GR, Япония)",
+   "slugs": [
+    "honda_fit4"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JHMGR6870NS202950 — carsbat.com, Honda Jazz (Suzuka)"
+   ],
+   "sources": [
+    "https://carsbat.com/de/detail/jhmgr6870ns202950-22tb5g/",
+    "https://www.drom.ru/catalog/honda/jazz/",
+    "https://www.drom.ru/catalog/honda/fit/"
+   ]
+  },
+  {
+   "mask": "3CZRU5",
+   "years": [
+    2016,
+    2018
+   ],
+   "model": "Vezel",
+   "body": "1 поколение (HR-V для США = Vezel RU, RU5), до рестайлинга",
+   "detail": "Лекало honda_vezel без указания руля — сверить для левого руля",
+   "slugs": [
+    "honda_vezel"
+   ],
+   "confidence": "official",
+   "examples": [
+    "3CZRU5H55HM710331 — carsbat.com/copart, HR-V 2017 (vPIC: FWD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/3CZRU5H55HM710331?format=json"
+   ]
+  },
+  {
+   "mask": "3CZRU6",
+   "years": [
+    2016,
+    2018
+   ],
+   "model": "Vezel",
+   "body": "1 поколение (HR-V для США = Vezel RU, RU6), до рестайлинга",
+   "detail": "Лекало honda_vezel без указания руля — сверить для левого руля",
+   "slugs": [
+    "honda_vezel"
+   ],
+   "confidence": "official",
+   "examples": [
+    "3CZRU6H5XJM730666 — carvertical.com, HR-V 2018 (vPIC: 4WD)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/3CZRU6H5XJM730666?format=json"
+   ]
+  },
+  {
+   "mask": "3CZRU5",
+   "years": [
+    2019,
+    2022
+   ],
+   "model": "Vezel",
+   "body": "1 поколение рестайлинг (HR-V для США, RU5 FWD), левый руль",
+   "slugs": [
+    "honda_vezel-re-l"
+   ],
+   "confidence": "official",
+   "examples": [
+    "3CZRU5H32NM723838 — forcar.org, HR-V 2022 (vPIC)"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/3CZRU5H32NM723838?format=json"
+   ]
+  },
+  {
+   "mask": "3CZRU6",
+   "years": [
+    2019,
+    2022
+   ],
+   "model": "Vezel",
+   "body": "1 поколение рестайлинг (HR-V для США, RU6 AWD), левый руль",
+   "detail": "Год рестайлинга для США — MY2019",
+   "slugs": [
+    "honda_vezel-re-l"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/3CZRU6H5XJM730666?format=json"
+   ]
+  },
+  {
+   "mask": "JHMRU",
+   "years": [
+    2015,
+    2018
+   ],
+   "model": "Vezel",
+   "body": "1 поколение (HR-V для Европы = Vezel RU), до рестайлинга",
+   "detail": "Префикс JHMRU встречен только в объявлении о запчастях (HR-V 2020 RU1); полный VIN не видели",
+   "slugs": [
+    "honda_vezel"
+   ],
+   "confidence": "probable",
+   "examples": [],
+   "sources": [
+    "https://www.drom.ru/catalog/honda/hr-v/",
+    "https://www.autoparts-24.com/item/D_0127_717429/"
+   ]
+  },
+  {
+   "mask": "JHMRU",
+   "years": [
+    2019,
+    2021
+   ],
+   "model": "Vezel",
+   "body": "1 поколение рестайлинг (HR-V для Европы), левый руль",
+   "detail": "Префикс JHMRU встречен только в объявлении о запчастях; полный VIN не видели",
+   "slugs": [
+    "honda_vezel-re-l"
+   ],
+   "confidence": "probable",
+   "examples": [],
+   "sources": [
+    "https://www.drom.ru/catalog/honda/hr-v/",
+    "https://www.autoparts-24.com/item/D_0127_717429/"
+   ]
+  }
+ ],
+ "frame_rules": [
+  {
+   "codes": [
+    "GD1",
+    "GD2",
+    "GD3",
+    "GD4"
+   ],
+   "model": "Fit",
+   "body": "1 поколение (хэтчбек)",
+   "years": [
+    2001,
+    2007
+   ],
+   "slugs": [
+    "honda_fit"
+   ],
+   "note": "GD1/GD3 — FF, GD2/GD4 — 4WD. GD6–GD9 — это Fit Aria (седан), не Fit",
+   "confidence": "official",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/fit/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フィット",
+    "https://uokik.gov.pl/download/13490"
+   ]
+  },
+  {
+   "codes": [
+    "GE6",
+    "GE7",
+    "GE8",
+    "GE9"
+   ],
+   "model": "Fit",
+   "body": "2 поколение",
+   "years": [
+    2007,
+    2013
+   ],
+   "slugs": [
+    "honda_fit-2"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/fit/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フィット"
+   ]
+  },
+  {
+   "codes": [
+    "GP1",
+    "GP4"
+   ],
+   "model": "Fit",
+   "body": "2 поколение, Fit Hybrid (GP4 — Hybrid RS)",
+   "years": [
+    2010,
+    2013
+   ],
+   "slugs": [
+    "honda_fit-2"
+   ],
+   "note": "Салон гибрида — того же поколения; вариант лекала уточнить",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/fit/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フィットハイブリッド"
+   ]
+  },
+  {
+   "codes": [
+    "GK3",
+    "GK4",
+    "GK5",
+    "GK6",
+    "GP5",
+    "GP6"
+   ],
+   "model": "Fit",
+   "body": "3 поколение (GP5/GP6 — гибрид)",
+   "years": [
+    2013,
+    2020
+   ],
+   "slugs": [
+    "honda_fit-3bp",
+    "honda_fit3"
+   ],
+   "note": "Подлокотник есть/нет — по коду кузова не определить",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/fit/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フィット",
+    "https://ja.wikipedia.org/wiki/ホンダ・フィットハイブリッド"
+   ]
+  },
+  {
+   "codes": [
+    "GR1",
+    "GR2",
+    "GR3",
+    "GR4",
+    "GR5",
+    "GR6",
+    "GR7",
+    "GR8",
+    "GS4",
+    "GS5",
+    "GS6",
+    "GS7"
+   ],
+   "model": "Fit",
+   "body": "4 поколение",
+   "years": [
+    2020,
+    2025
+   ],
+   "slugs": [
+    "honda_fit4"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/fit/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フィット"
+   ]
+  },
+  {
+   "codes": [
+    "GK8",
+    "GK9",
+    "GP7",
+    "GP8"
+   ],
+   "model": "Shuttle",
+   "body": "универсал 2015–2022 (GP7/GP8 — гибрид)",
+   "years": [
+    2015,
+    2022
+   ],
+   "slugs": [
+    "honda_shuttle"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/shuttle/",
+    "https://ja.wikipedia.org/wiki/ホンダ・シャトル"
+   ]
+  },
+  {
+   "codes": [
+    "GG7",
+    "GG8",
+    "GP2"
+   ],
+   "model": "Fit Shuttle",
+   "body": "универсал 2011–2015",
+   "years": [
+    2011,
+    2015
+   ],
+   "slugs": [],
+   "note": "В каталоге только Shuttle с 2015 — для Fit Shuttle лекал нет",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/fit_shuttle/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フィットシャトル"
+   ]
+  },
+  {
+   "codes": [
+    "GD6",
+    "GD7",
+    "GD8",
+    "GD9"
+   ],
+   "model": "Fit Aria",
+   "body": "седан 2002–2009",
+   "years": [
+    2002,
+    2009
+   ],
+   "slugs": [],
+   "note": "Не путать с Fit GD1–GD4; лекал нет",
+   "confidence": "confirmed",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/ホンダ・フィットアリア",
+    "https://www.drom.ru/catalog/honda/fit_aria/"
+   ]
+  },
+  {
+   "codes": [
+    "GB3",
+    "GB4"
+   ],
+   "model": "Freed",
+   "body": "1 поколение, салоны 2008–2011",
+   "years": [
+    2008,
+    2011
+   ],
+   "slugs": [
+    "honda_freed-5m-cap",
+    "honda_freed-7m-cap",
+    "honda_freed-7m-cap-spl"
+   ],
+   "note": "Те же коды у Freed 2011–2016 и у Freed Spike — по номеру кузова год и модель не определить; клиент выбирает по ПТС/салону",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/freed/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フリード"
+   ]
+  },
+  {
+   "codes": [
+    "GB3",
+    "GB4",
+    "GP3"
+   ],
+   "model": "Freed",
+   "body": "1 поколение, салоны 2011–2016 (GP3 — Freed Hybrid)",
+   "years": [
+    2011,
+    2016
+   ],
+   "slugs": [
+    "honda_freed-5m",
+    "honda_freed-7m"
+   ],
+   "note": "GP3 выпускался только с 10.2011",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/freed/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フリード"
+   ]
+  },
+  {
+   "codes": [
+    "GB3",
+    "GB4",
+    "GP3"
+   ],
+   "model": "Freed Spike",
+   "body": "5-местный вариант Freed 1",
+   "years": [
+    2010,
+    2016
+   ],
+   "slugs": [
+    "honda_freed-spike"
+   ],
+   "note": "Коды кузова общие с Freed — модель различается по ПТС (название модели)",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/freed_spike/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フリードスパイク"
+   ]
+  },
+  {
+   "codes": [
+    "GB5",
+    "GB6",
+    "GB7",
+    "GB8"
+   ],
+   "model": "Freed",
+   "body": "2 поколение (GB7/GB8 — гибрид)",
+   "years": [
+    2016,
+    2024
+   ],
+   "slugs": [
+    "honda_freed-4m-gb5",
+    "honda_freed-5m-gb5",
+    "honda_freed-6m-cap",
+    "honda_freed-7m-gb5"
+   ],
+   "note": "Те же коды у Freed+; число мест выбирает клиент",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/freed/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フリード",
+    "https://en.wikipedia.org/wiki/Honda_Freed"
+   ]
+  },
+  {
+   "codes": [
+    "GB5",
+    "GB6",
+    "GB7",
+    "GB8"
+   ],
+   "model": "Freed+",
+   "body": "5-местный вариант Freed 2",
+   "years": [
+    2016,
+    2024
+   ],
+   "slugs": [
+    "honda_freed-plus"
+   ],
+   "note": "Коды кузова общие с Freed 2 — модель по ПТС",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/freed_plus/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フリード"
+   ]
+  },
+  {
+   "codes": [
+    "GT1",
+    "GT2",
+    "GT3",
+    "GT4",
+    "GT5",
+    "GT6",
+    "GT7",
+    "GT8"
+   ],
+   "model": "Freed",
+   "body": "3 поколение",
+   "years": [
+    2024,
+    2026
+   ],
+   "slugs": [],
+   "note": "Лекал нет — индивидуальный пошив",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/freed/",
+    "https://ja.wikipedia.org/wiki/ホンダ・フリード"
+   ]
+  },
+  {
+   "codes": [
+    "GB1",
+    "GB2"
+   ],
+   "model": "Mobilio",
+   "body": "1 поколение (минивэн)",
+   "years": [
+    2001,
+    2008
+   ],
+   "slugs": [
+    "honda_mobilio",
+    "honda_mobilio7",
+    "honda_mobilio5m-podlok",
+    "honda_mobilio7-podlok"
+   ],
+   "note": "5/7 мест и подлокотник по коду кузова не определить",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/mobilio/",
+    "https://ja.wikipedia.org/wiki/ホンダ・モビリオ",
+    "https://en.wikipedia.org/wiki/Honda_Mobilio"
+   ]
+  },
+  {
+   "codes": [
+    "GK1",
+    "GK2"
+   ],
+   "model": "Mobilio Spike",
+   "body": "1 поколение",
+   "years": [
+    2002,
+    2008
+   ],
+   "slugs": [
+    "honda_mobilio-spike",
+    "honda_mobilio-spike-6040"
+   ],
+   "note": "GK1/GK2 — не Fit 3 (у Fit 3 GK3–GK6)",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/mobilio_spike/",
+    "https://ja.wikipedia.org/wiki/ホンダ・モビリオスパイク"
+   ]
+  },
+  {
+   "codes": [
+    "RG1",
+    "RG2",
+    "RG3",
+    "RG4"
+   ],
+   "model": "Stepwgn",
+   "body": "3 поколение",
+   "years": [
+    2005,
+    2009
+   ],
+   "slugs": [
+    "honda_stepwgn"
+   ],
+   "note": "В каталоге вариант 7 мест; 8-местные бывают — уточнить",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/stepwgn/",
+    "https://ja.wikipedia.org/wiki/ホンダ・ステップワゴン"
+   ]
+  },
+  {
+   "codes": [
+    "RF1",
+    "RF2",
+    "RF3",
+    "RF4",
+    "RF5",
+    "RF6",
+    "RF7",
+    "RF8"
+   ],
+   "model": "Stepwgn",
+   "body": "1–2 поколение",
+   "years": [
+    1996,
+    2005
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/stepwgn/",
+    "https://ja.wikipedia.org/wiki/ホンダ・ステップワゴン"
+   ]
+  },
+  {
+   "codes": [
+    "RK1",
+    "RK2",
+    "RK3",
+    "RK4",
+    "RK5",
+    "RK6",
+    "RK7"
+   ],
+   "model": "Stepwgn",
+   "body": "4 поколение",
+   "years": [
+    2009,
+    2015
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/stepwgn/",
+    "https://ja.wikipedia.org/wiki/ホンダ・ステップワゴン"
+   ]
+  },
+  {
+   "codes": [
+    "RP1",
+    "RP2",
+    "RP3",
+    "RP4",
+    "RP5",
+    "RP6",
+    "RP7",
+    "RP8"
+   ],
+   "model": "Stepwgn",
+   "body": "5–6 поколение",
+   "years": [
+    2015,
+    2026
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/stepwgn/",
+    "https://ja.wikipedia.org/wiki/ホンダ・ステップワゴン"
+   ]
+  },
+  {
+   "codes": [
+    "RU1",
+    "RU2",
+    "RU3",
+    "RU4"
+   ],
+   "model": "Vezel",
+   "body": "1 поколение до рестайлинга (RU3/RU4 — гибрид)",
+   "years": [
+    2013,
+    2018
+   ],
+   "slugs": [
+    "honda_vezel"
+   ],
+   "note": "Рестайлинг (02.2018) по коду кузова не виден — смотреть дату выпуска",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/vezel/",
+    "https://ja.wikipedia.org/wiki/ホンダ・ヴェゼル"
+   ]
+  },
+  {
+   "codes": [
+    "RU1",
+    "RU2",
+    "RU3",
+    "RU4"
+   ],
+   "model": "Vezel",
+   "body": "1 поколение рестайлинг, правый руль",
+   "years": [
+    2018,
+    2021
+   ],
+   "slugs": [
+    "honda_vezel-re"
+   ],
+   "note": "Коды те же, что до рестайлинга — смотреть дату выпуска",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/vezel/",
+    "https://ja.wikipedia.org/wiki/ホンダ・ヴェゼル"
+   ]
+  },
+  {
+   "codes": [
+    "RV3",
+    "RV4",
+    "RV5",
+    "RV6"
+   ],
+   "model": "Vezel",
+   "body": "2 поколение",
+   "years": [
+    2021,
+    2026
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/vezel/",
+    "https://ja.wikipedia.org/wiki/ホンダ・ヴェゼル"
+   ]
+  },
+  {
+   "codes": [
+    "GH1",
+    "GH2",
+    "GH3",
+    "GH4"
+   ],
+   "model": "HR-V",
+   "body": "1 поколение (GH1/GH2 — 3 двери, GH3/GH4 — 5 дверей)",
+   "years": [
+    1998,
+    2006
+   ],
+   "slugs": [
+    "honda_hr-v"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/hr-v/",
+    "https://ja.wikipedia.org/wiki/ホンダ・HR-V"
+   ]
+  },
+  {
+   "codes": [
+    "RD1",
+    "RD2"
+   ],
+   "model": "CR-V",
+   "body": "1 поколение",
+   "years": [
+    1995,
+    2001
+   ],
+   "slugs": [
+    "honda_cr-v1"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/cr-v/",
+    "https://ja.wikipedia.org/wiki/ホンダ・CR-V"
+   ]
+  },
+  {
+   "codes": [
+    "RD4",
+    "RD5",
+    "RD6",
+    "RD7"
+   ],
+   "model": "CR-V",
+   "body": "2 поколение",
+   "years": [
+    2001,
+    2006
+   ],
+   "slugs": [
+    "honda_cr-v2"
+   ],
+   "note": "ja.wikipedia: RD4/5/7; drom для Японии 2004–2006 указывает также RD6",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/cr-v/",
+    "https://ja.wikipedia.org/wiki/ホンダ・CR-V"
+   ]
+  },
+  {
+   "codes": [
+    "RE3",
+    "RE4"
+   ],
+   "model": "CR-V",
+   "body": "3 поколение",
+   "years": [
+    2006,
+    2011
+   ],
+   "slugs": [
+    "honda_cr-v3"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/cr-v/",
+    "https://ja.wikipedia.org/wiki/ホンダ・CR-V"
+   ]
+  },
+  {
+   "codes": [
+    "RM1",
+    "RM4"
+   ],
+   "model": "CR-V",
+   "body": "4 поколение",
+   "years": [
+    2011,
+    2016
+   ],
+   "slugs": [
+    "honda_cr-v4"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/cr-v/",
+    "https://ja.wikipedia.org/wiki/ホンダ・CR-V"
+   ]
+  },
+  {
+   "codes": [
+    "RW1",
+    "RW2",
+    "RT5",
+    "RT6"
+   ],
+   "model": "CR-V",
+   "body": "5 поколение (RT5/RT6 — гибрид)",
+   "years": [
+    2018,
+    2022
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/cr-v/",
+    "https://ja.wikipedia.org/wiki/ホンダ・CR-V"
+   ]
+  },
+  {
+   "codes": [
+    "CL7",
+    "CL8",
+    "CL9"
+   ],
+   "model": "Accord",
+   "body": "VII седан",
+   "years": [
+    2002,
+    2008
+   ],
+   "slugs": [
+    "honda_accord-7"
+   ],
+   "note": "CL7 Euro R — с ковшами Recaro, лекало может не подойти",
+   "confidence": "official",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/accord/",
+    "https://ja.wikipedia.org/wiki/ホンダ・アコード",
+    "https://uokik.gov.pl/download/16294"
+   ]
+  },
+  {
+   "codes": [
+    "CM1",
+    "CM2",
+    "CM3"
+   ],
+   "model": "Accord Wagon",
+   "body": "VII универсал",
+   "years": [
+    2002,
+    2008
+   ],
+   "slugs": [],
+   "note": "Лекало honda_accord-7 — для седана",
+   "confidence": "official",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/accord/",
+    "https://ja.wikipedia.org/wiki/ホンダ・アコードツアラー",
+    "https://uokik.gov.pl/download/16294"
+   ]
+  },
+  {
+   "codes": [
+    "CU1",
+    "CU2"
+   ],
+   "model": "Accord",
+   "body": "VIII седан",
+   "years": [
+    2008,
+    2013
+   ],
+   "slugs": [
+    "honda_accord-viii"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/accord/",
+    "https://ja.wikipedia.org/wiki/ホンダ・アコード"
+   ]
+  },
+  {
+   "codes": [
+    "CW1",
+    "CW2"
+   ],
+   "model": "Accord Tourer",
+   "body": "VIII универсал",
+   "years": [
+    2008,
+    2013
+   ],
+   "slugs": [],
+   "note": "Лекало honda_accord-viii — для седана",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/accord/",
+    "https://ja.wikipedia.org/wiki/ホンダ・アコードツアラー"
+   ]
+  },
+  {
+   "codes": [
+    "FD1",
+    "FD3"
+   ],
+   "model": "Civic",
+   "body": "8 поколение, седан (FD3 — Civic Hybrid)",
+   "years": [
+    2005,
+    2011
+   ],
+   "slugs": [
+    "honda_civic",
+    "honda_civic-d4"
+   ],
+   "note": "Вариант задней спинки (60/40 или сплошная) по коду не определить",
+   "confidence": "official",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/civic/",
+    "https://uokik.gov.pl/download/18015",
+    "https://ja.wikipedia.org/wiki/ホンダ・シビック"
+   ]
+  },
+  {
+   "codes": [
+    "FD2"
+   ],
+   "model": "Civic Type R",
+   "body": "8 поколение, седан Type R",
+   "years": [
+    2007,
+    2010
+   ],
+   "slugs": [],
+   "note": "Спортивные ковши — обычные лекала Civic не подходят",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/civic/",
+    "https://ja.wikipedia.org/wiki/ホンダ・シビック"
+   ]
+  },
+  {
+   "codes": [
+    "RN1",
+    "RN2",
+    "RN3",
+    "RN4",
+    "RN5"
+   ],
+   "model": "Stream",
+   "body": "1 поколение",
+   "years": [
+    2000,
+    2006
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/stream/"
+   ]
+  },
+  {
+   "codes": [
+    "RN6",
+    "RN7",
+    "RN8",
+    "RN9"
+   ],
+   "model": "Stream",
+   "body": "2 поколение",
+   "years": [
+    2006,
+    2014
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/stream/"
+   ]
+  },
+  {
+   "codes": [
+    "GJ1",
+    "GJ2"
+   ],
+   "model": "Airwave",
+   "body": "универсал",
+   "years": [
+    2005,
+    2010
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "probable",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/ホンダ・エアウェイブ"
+   ]
+  },
+  {
+   "codes": [
+    "GJ3",
+    "GJ4"
+   ],
+   "model": "Partner",
+   "body": "2 поколение",
+   "years": [
+    2006,
+    2010
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "probable",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/ホンダ・パートナー"
+   ]
+  },
+  {
+   "codes": [
+    "RA1",
+    "RA2",
+    "RA3",
+    "RA4",
+    "RA5",
+    "RA6",
+    "RA7",
+    "RA8",
+    "RA9"
+   ],
+   "model": "Odyssey",
+   "body": "1–2 поколение",
+   "years": [
+    1994,
+    2003
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "confirmed",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/ホンダ・オデッセイ",
+    "https://www.drom.ru/catalog/honda/odyssey/"
+   ]
+  },
+  {
+   "codes": [
+    "RB1",
+    "RB2",
+    "RB3",
+    "RB4"
+   ],
+   "model": "Odyssey",
+   "body": "3–4 поколение",
+   "years": [
+    2003,
+    2013
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "confirmed",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/ホンダ・オデッセイ",
+    "https://www.drom.ru/catalog/honda/odyssey/"
+   ]
+  },
+  {
+   "codes": [
+    "RC1",
+    "RC2",
+    "RC4"
+   ],
+   "model": "Odyssey",
+   "body": "5 поколение",
+   "years": [
+    2013,
+    2021
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/honda/odyssey/"
+   ]
+  },
+  {
+   "codes": [
+    "ZE2",
+    "ZE3"
+   ],
+   "model": "Insight",
+   "body": "2 поколение",
+   "years": [
+    2009,
+    2014
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "probable",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/ホンダ・インサイト"
+   ]
+  },
+  {
+   "codes": [
+    "ZE4"
+   ],
+   "model": "Insight",
+   "body": "3 поколение",
+   "years": [
+    2018,
+    2022
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "probable",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/ホンダ・インサイト"
+   ]
+  },
+  {
+   "codes": [
+    "RT1",
+    "RT2",
+    "RT3",
+    "RT4"
+   ],
+   "model": "Crossroad",
+   "body": "2007–2010",
+   "years": [
+    2007,
+    2010
+   ],
+   "slugs": [],
+   "note": "Лекал нет. Не путать с RT5/RT6 (CR-V 5 гибрид)",
+   "confidence": "probable",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/ホンダ・クロスロード"
+   ]
+  },
+  {
+   "codes": [
+    "RR1",
+    "RR2",
+    "RR3",
+    "RR4",
+    "RR5",
+    "RR6"
+   ],
+   "model": "Elysion",
+   "body": "1 поколение",
+   "years": [
+    2004,
+    2013
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "probable",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/ホンダ・エリシオン"
+   ]
+  },
+  {
+   "codes": [
+    "GM4",
+    "GM5",
+    "GM6",
+    "GM9"
+   ],
+   "model": "Grace",
+   "body": "седан",
+   "years": [
+    2014,
+    2020
+   ],
+   "slugs": [],
+   "note": "Лекал нет",
+   "confidence": "probable",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/ホンダ・グレイス"
+   ]
+  }
+ ],
+ "position_legend": [
+  {
+   "wmi": [
+    "JHM",
+    "JHL",
+    "SHH",
+    "SHS",
+    "NLA",
+    "LUC",
+    "MRH"
+   ],
+   "positions": {
+    "4-6": "код кузова Honda — тот же, что в номере кузова японских машин и в графе «Typ» документов Honda: CL7/CL9/CN1 — Accord VII седан, CM1/CM2 — Accord VII универсал, CU1/CU2/CU3 — Accord VIII седан, CW1–CW3 — Accord VIII универсал, FD1/FD3/FD4/FD6/FD7 — Civic 8 седан, FN — Civic 8 хэтчбек 3D, GD — Jazz/Fit 1, GE6/GE8 и GG1/GG2/GG3/GG5/GG6 — Jazz/Fit 2, GK — Jazz/Fit 3, GR — Jazz/Fit 4, RD8/RD9 — CR-V 2, RE5/RE6/RE7 — CR-V 3, RE5/RE6 — также CR-V 4 (по году), RU — HR-V 2 (= Vezel). Позиции 4–5 — модель, 6 — двигатель/исполнение (auto.ru: CU2 — Accord 2.4)",
+    "7": "кузов и КПП: 5/6 — седан 4 дв. МКПП/АКПП, 7/8 — 5-дверный кузов (универсал, хэтчбек, SUV) МКПП/АКПП (видно по спискам UOKiK: CL/CU/FD — 5x/6x, CM/CW/RD/RE/GG — 7x/8x)",
+    "8": "комплектация (grade)",
+    "9": "у машин для Европы/России всегда «0» — контрольная цифра не используется",
+    "10": "модельный год (стандартный код; в списках UOKiK совпадает с графой «Rok modelowy»)",
+    "11": "завод: C — Саяма, S — Судзука, X — Ёрии (Япония), U — Суиндон (Великобритания), W — Гебзе (Турция), 3 — Гуанчжоу (Honda Automobile China), P — Аюттхая (Таиланд)",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://uokik.gov.pl/download/16294",
+    "https://uokik.gov.pl/download/18015",
+    "https://archiwum.uokik.gov.pl/download.php?plik=21118",
+    "https://uokik.gov.pl/download.php?plik=10290",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-avtomobiley-honda/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes"
+   ]
+  },
+  {
+   "wmi": [
+    "1HG",
+    "19X",
+    "5J6",
+    "5FN",
+    "5KB",
+    "7FA",
+    "2HG",
+    "2HK",
+    "3HG",
+    "3CZ"
+   ],
+   "positions": {
+    "4-6": "модель/код шасси: CM5–CM8 — Accord 2003–07, CP2/CP3 — Accord 2008–12, FA1/FA3/FA5 — Civic 2006–11, GD3/GE8/GK5 — Fit, RD1/RD2 — CR-V 1997–2001, RD6/RD7 — CR-V 2002–06, RE3/RE4 — CR-V 2007–11, RM3/RM4 — CR-V 2012–16, RU5/RU6 — HR-V 2016–22 (5 — FWD, 6 — AWD)",
+    "7": "кузов + КПП: 1987–2009 — цифры (5/6 седан, 7/8 5-дверный/MPV), с 2010 — буквы (E/F седан, G/H хэтчбек/MPV и т. п.)",
+    "8": "комплектация и система пассивной безопасности",
+    "9": "контрольная цифра",
+    "10": "модельный год",
+    "11": "завод: A — Marysville, L — East Liberty, E — Greensburg, B — Lincoln (Alabama), H — Alliston (Канада), G — El Salto, M — Celaya (Мексика), C — Саяма, S — Судзука, U — Суиндон",
+    "12-17": "серийный номер (у канадских машин с 800000)"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Honda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5J6RE3H78AL018946?format=json"
+   ]
+  }
+ ],
+ "unresolved": [
+  "honda_hr-v: правило только по номеру кузова (GH1–GH4). VIN леворульного HR-V 1 (Европа/Россия, вероятно JHMGH…) источником не подтверждён",
+  "honda_vezel-re-l: покрыто VIN-правилами HR-V США (3CZRU5/3CZRU6, официально) и Европы (JHMRU, вероятно). VIN китайского Vezel (GAC Honda, LHG…) и XR-V (Dongfeng, LVH…) не найдены",
+  "honda_cr-v1: только номер кузова (правый руль). Леворульные CR-V 1 (JHLRD1/JHLRD2) расшифровываются, но лекала R им не предлагаются",
+  "honda_cr-v2: VIN японской сборки для России (drom указывает код RD5 в 2001–2004) не найден — JHLRD4/JHLRD5 не включены",
+  "honda_cr-v4: WMI CR-V 2.4 (RM4) рынка России подтверждён одним объявлением (1HGRM4…, Украина) — требуется проверка",
+  "honda_fit, honda_fit-2: Jazz китайской экспортной сборки 2005–2008 (LUCGD…) и Jazz Hybrid GP1 для Европы — VIN не найдены",
+  "honda_freed-*, honda_freed-spike, honda_freed-plus, honda_mobilio*, honda_shuttle, honda_stepwgn: только японский рынок, VIN нет — правила только по номеру кузова"
+ ],
+ "notes": "1) У Honda символы 4–6 VIN = код кузова (тот же, что перед дефисом в номере кузова японской машины: «GB3-1234567»). Для Европы/России это подтверждено официальными списками отзывных кампаний Honda (UOKiK, Польша: графы Model/Typ/VIN). Номер кузова нормализовать: верхний регистр, убрать пробелы, взять часть до дефиса (2 буквы + 1 цифра). 2) У Honda не для Северной Америки 9-й символ всегда «0», контрольную цифру не проверять; у машин рынка США — проверять. 3) Год (10-й символ) повторяется каждые 30 лет; выбирать цикл по годам поколения (vPIC сам путает: 1HGRM4850DL… → 1983). 4) SHSRE5/SHSRE6 — и CR-V 3 (MY 2007–2012), и CR-V 4 (MY 2012–2018): только по году; для MY 2012 показывать оба поколения. 5) Одинаковые коды кузова у разных моделей: GB3/GB4/GP3 — Freed и Freed Spike; GB5–GB8 — Freed и Freed+; RU1–RU4 — Vezel до и после рестайлинга (02.2018). Показывать все варианты, модель выбирает клиент по ПТС/дате выпуска. 6) Американские Accord 2003–2012 (CM, CP) — другие автомобили, не Accord VII/VIII: лекал нет. Универсалы Accord (CM, CW) и Civic Type R FD2 — лекал нет. 7) Правила для Северной Америки проверены через NHTSA vPIC (данные производителя) на реальных VIN; для Европы — по спискам UOKiK (уровень official там, где в списке есть графа модели/типа, иначе confirmed с drom). 8) drom.ru (объявления) и Росстандарт во время сбора были недоступны (429 / нет DNS), поэтому VIN российских объявлений не собраны; соответствие рынку России — по каталогу drom (коды кузова по рынкам), заводы те же, что для Европы. 9) Лекала Civic 8 седан для североамериканских FA1/FA3/FA5 и Vezel (без указания руля) для левого руля — менеджеру сверить посадку."
+}

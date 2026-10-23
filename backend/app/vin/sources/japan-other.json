@@ -1,0 +1,4706 @@
+{
+ "group": "japan-other",
+ "wmi": [
+  {
+   "code": "JMB",
+   "maker": "Mitsubishi Motors Corporation (экспорт: Европа, Россия)",
+   "country": "JP",
+   "brands": [
+    "mitsubishi"
+   ],
+   "year_pos10": true,
+   "note": "Основной WMI леворульных Mitsubishi японской сборки для РФ/Европы. 6–9 символы = модельный код кузова (CW5W, GF2W, CY4A, V97W…). 10 — модельный год (проверено по объявлениям и отзывным спискам).",
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=15675",
+    "https://uokik.gov.pl/download.php?plik=20354",
+    "https://autospot.ru/used-car/mitsubishi/"
+   ]
+  },
+  {
+   "code": "JMY",
+   "maker": "Mitsubishi Motors Corporation (экспорт, прочие рынки)",
+   "country": "JP",
+   "brands": [
+    "mitsubishi"
+   ],
+   "year_pos10": true,
+   "note": "Та же схема, что у JMB (6–9 — код кузова). Встречается у «серых» машин (Гонконг, ОАЭ) — руль может быть правым.",
+   "sources": [
+    "https://www.td.gov.hk/filemanager/en/content_4798/10000280.pdf",
+    "https://autospot.ru/used-car/mitsubishi/"
+   ]
+  },
+  {
+   "code": "Z8T",
+   "maker": "ООО «ПСМА Рус» (Калуга), сборка Mitsubishi",
+   "country": "RU",
+   "brands": [
+    "mitsubishi"
+   ],
+   "year_pos10": true,
+   "note": "Outlander XL (CW) и Outlander III (GF) калужской сборки; 11-й символ M — Калуга.",
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-mitsubishi/",
+    "https://autospot.ru/used-car/mitsubishi/outlander/"
+   ]
+  },
+  {
+   "code": "X2M",
+   "maker": "ООО «ПСМА Рус» (Калуга) — по объявлениям 2021–2022 гг.",
+   "country": "RU",
+   "brands": [
+    "mitsubishi"
+   ],
+   "year_pos10": true,
+   "note": "Только по реальным VIN из объявлений (Outlander III 2021–2022, 11-й символ M); официального подтверждения WMI не найдено.",
+   "sources": [
+    "https://autospot.ru/used-car/mitsubishi/outlander/"
+   ]
+  },
+  {
+   "code": "MMC",
+   "maker": "Mitsubishi Motors (Thailand)",
+   "country": "TH",
+   "brands": [
+    "mitsubishi"
+   ],
+   "year_pos10": true,
+   "note": "Pajero Sport II (KH), L200 V (KL1T) — по реальным VIN из объявлений. Модельный код в 6–8 символах без последней буквы (KH4, KL1).",
+   "sources": [
+    "https://autospot.ru/used-car/mitsubishi/pajero_sport/",
+    "https://autospot.ru/used-car/mitsubishi/l200_new/"
+   ]
+  },
+  {
+   "code": "JA3",
+   "maker": "Mitsubishi Motors Corporation — легковые для США",
+   "country": "JP",
+   "brands": [
+    "mitsubishi"
+   ],
+   "year_pos10": true,
+   "note": "Американская схема VIN: 5-й символ — модельная линия (U/V — Lancer 2008–2017, X/Y — Lancer Sportback, J — Lancer 2002–2007).",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeWMI/JA3?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ]
+  },
+  {
+   "code": "JA4",
+   "maker": "Mitsubishi Motors Corporation — внедорожники/MPV для США",
+   "country": "JP",
+   "brands": [
+    "mitsubishi"
+   ],
+   "year_pos10": true,
+   "note": "Американская схема VIN: 5-й символ — модельная линия (W — Montero 2001–2006, S/T — Montero Sport 1997–2004 и Outlander 2007–2013, X/Z — Outlander 2003–2006, D/Z — Outlander 2014–2020, P/R — Outlander Sport).",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeWMI/JA4?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ]
+  },
+  {
+   "code": "JE4",
+   "maker": "Mitsubishi Motors Corporation",
+   "country": "JP",
+   "brands": [
+    "mitsubishi"
+   ],
+   "year_pos10": true,
+   "note": "Новая схема VIN (≈ с 2017 г.) у части экспортных машин (Pajero IV, Outlander из ОАЭ и т. п.); модельный код в VIN не виден — правил нет, подбирать по документам.",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeWMI/JE4?format=json",
+    "https://autospot.ru/used-car/mitsubishi/pajero/"
+   ]
+  },
+  {
+   "code": "JMZ",
+   "maker": "Mazda Motor Corporation (экспорт: Европа, Россия)",
+   "country": "JP",
+   "brands": [
+    "mazda"
+   ],
+   "year_pos10": false,
+   "note": "4–5 символы — модель/платформа (BK, BL, BM, GH, GJ, KE, ER…), у Mazda3 7-й символ: 2 — седан, 4 — хэтчбек. 10-й символ — НЕ год (по примерам и отзывному списку UOKiK).",
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=21057",
+    "https://autospot.ru/used-car/mazda/"
+   ]
+  },
+  {
+   "code": "RUM",
+   "maker": "ООО «Мазда Соллерс Мануфэкчуринг Рус» (Владивосток) — по объявлениям",
+   "country": "RU",
+   "brands": [
+    "mazda"
+   ],
+   "year_pos10": null,
+   "note": "CX-5 владивостокской сборки. До 2016 г.: 10 — модельный год, 11 — V. С 2017 г. 10–11 — цифры (не год). ВНИМАНИЕ: у CX-5 2-го поколения (KF) в 4–5 символах тоже «KE» — поколение различается по 6–9 символам.",
+   "sources": [
+    "https://autospot.ru/used-car/mazda/cx-5/"
+   ]
+  },
+  {
+   "code": "JM1",
+   "maker": "Mazda Motor Corporation — легковые для США",
+   "country": "JP",
+   "brands": [
+    "mazda"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeWMI/JM1?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ]
+  },
+  {
+   "code": "JM3",
+   "maker": "Mazda Motor Corporation — MPV/SUV для США",
+   "country": "JP",
+   "brands": [
+    "mazda"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeWMI/JM3?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ]
+  },
+  {
+   "code": "3MZ",
+   "maker": "Mazda de Mexico — Mazda3 для Северной Америки",
+   "country": "MX",
+   "brands": [
+    "mazda"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ]
+  },
+  {
+   "code": "JF1",
+   "maker": "Subaru Corporation (Fuji Heavy Industries) — легковые",
+   "country": "JP",
+   "brands": [
+    "subaru"
+   ],
+   "year_pos10": true,
+   "note": "Для РФ/Европы 4–6 символы = код кузова (SG5, SH5, SHJ, SJ5, SJ9, SK9…), 10 — модельный год.",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeWMI/JF1?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://autospot.ru/used-car/subaru/forester/"
+   ]
+  },
+  {
+   "code": "JF2",
+   "maker": "Subaru Corporation — MPV/SUV (в основном США)",
+   "country": "JP",
+   "brands": [
+    "subaru"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeWMI/JF2?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ]
+  },
+  {
+   "code": "4S3",
+   "maker": "Subaru of Indiana Automotive — легковые (Legacy для США)",
+   "country": "US",
+   "brands": [
+    "subaru"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ]
+  },
+  {
+   "code": "4S4",
+   "maker": "Subaru of Indiana Automotive — MPV (Outback для США)",
+   "country": "US",
+   "brands": [
+    "subaru"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ]
+  },
+  {
+   "code": "JSA",
+   "maker": "Suzuki Motor Corporation (экспорт: Европа, Россия)",
+   "country": "JP",
+   "brands": [
+    "suzuki"
+   ],
+   "year_pos10": false,
+   "note": "5–8(9) символы — модельный код (TD54V, TDA4V, TA74V…); 10–11 — «00», модельного года нет.",
+   "sources": [
+    "https://autospot.ru/used-car/suzuki/grand_vitara/"
+   ]
+  },
+  {
+   "code": "JS2",
+   "maker": "Suzuki — легковые для США",
+   "country": "JP",
+   "brands": [
+    "suzuki"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeWMI/JS2?format=json"
+   ]
+  },
+  {
+   "code": "JS3",
+   "maker": "Suzuki — MPV/SUV для США",
+   "country": "JP",
+   "brands": [
+    "suzuki"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeWMI/JS3?format=json"
+   ]
+  },
+  {
+   "code": "KL5",
+   "maker": "GM Daewoo для Suzuki (Forenza, Reno — США)",
+   "country": "KR",
+   "brands": [
+    "suzuki"
+   ],
+   "year_pos10": true,
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeWMI/KL5?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/KL5JD66Z*5K?format=json"
+   ]
+  },
+  {
+   "code": "MMB",
+   "maker": "Mitsubishi Motors (Thailand)",
+   "country": "TH",
+   "brands": [
+    "mitsubishi"
+   ],
+   "year_pos10": true,
+   "note": "L200 IV (KB4T) — по реальному VIN из объявления (MMBJNKB40…, 10-й символ 7 = 2007).",
+   "sources": [
+    "https://voronezh.autospot.ru/brands/mitsubishi/l200/2006/pickup/used/1009409/",
+    "https://www.drom.ru/catalog/mitsubishi/l200/"
+   ]
+  },
+  {
+   "code": "MME",
+   "maker": "Mitsubishi Motors (Thailand) — новая схема VIN",
+   "country": "TH",
+   "brands": [
+    "mitsubishi"
+   ],
+   "year_pos10": true,
+   "note": "Pajero Sport / Montero Sport 2020–2022 (MMEMC…) — только по объявлениям; модельного кода в VIN нет. 10-й символ L/N совпал с годом 2020/2022.",
+   "sources": [
+    "https://autospot.ru/used-car/mitsubishi/montero_sport/",
+    "https://autospot.ru/brands/mitsubishi/pajero_sport_iii/suv/used/965174/"
+   ]
+  },
+  {
+   "code": "XMC",
+   "maker": "NedCar (Нидерланды) — Mitsubishi Colt Z30",
+   "country": "NL",
+   "brands": [
+    "mitsubishi"
+   ],
+   "year_pos10": true,
+   "note": "Colt Z30 для Европы/России (XMCXJZ34A…); 6–9 — код кузова. Wikibooks: X (XL–XR) — Нидерланды (NedCar).",
+   "sources": [
+    "https://autospot.ru/used-car/mitsubishi/colt/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ]
+  },
+  {
+   "code": "TSM",
+   "maker": "Magyar Suzuki (Эстергом, Венгрия)",
+   "country": "HU",
+   "brands": [
+    "suzuki"
+   ],
+   "year_pos10": false,
+   "note": "Swift, Vitara LY, SX4, Splash для Европы/России. Схема как у JSA: 5–9 — модельный код (у Vitara 4–5 = LY), 10–11 — «00» (не год).",
+   "sources": [
+    "https://autospot.ru/used-car/suzuki/vitara/",
+    "https://autospot.ru/used-car/suzuki/swift/"
+   ]
+  },
+  {
+   "code": "LVR",
+   "maker": "Changan Mazda (Китай) — по объявлениям",
+   "country": "CN",
+   "brands": [
+    "mazda"
+   ],
+   "year_pos10": null,
+   "note": "CX-5 KF рестайлинг и Mazda3 BP китайской сборки (параллельный импорт 2020–2025); официального подтверждения WMI не найдено.",
+   "sources": [
+    "https://autospot.ru/used-car/mazda/cx-5/",
+    "https://autospot.ru/used-car/mazda/3/"
+   ]
+  },
+  {
+   "code": "LFP",
+   "maker": "FAW Mazda (Китай) — по объявлениям",
+   "country": "CN",
+   "brands": [
+    "mazda"
+   ],
+   "year_pos10": null,
+   "note": "Mazda6 GJ рестайлинг китайской сборки (LFPM4ACP…/LFPM5ACP…, 2022–2023); официального подтверждения WMI не найдено.",
+   "sources": [
+    "https://autospot.ru/used-car/mazda/6_new/"
+   ]
+  }
+ ],
+ "vin_rules": [
+  {
+   "mask": "JMB??CU",
+   "years": [
+    2003,
+    2009
+   ],
+   "model": "Outlander",
+   "body": "CU (1-е поколение)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (CU2W, CU5W)",
+   "slugs": [
+    "mitsubishi_outlander"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "JMB************** — drom.ru, Mitsubishi Outlander 2004–2006 (VIN скрыт, виден только WMI)"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/outlander/"
+   ],
+   "note": "Реального VIN этой модели не найдено; схема JMB (6–9 — код кузова) подтверждена на других моделях."
+  },
+  {
+   "mask": "JMB??CW",
+   "years": [
+    2006,
+    2012
+   ],
+   "model": "Outlander",
+   "body": "CW (2-е поколение, Outlander XL)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (CW4W 2.0, CW5W 2.4, CW6W 3.0, CW7W/CW8W/CW1W — дизели Европы)",
+   "slugs": [
+    "mitsubishi_outlanderxl"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JMBXNCW4WBU****** — autospot.ru, Mitsubishi Outlander II Рестайлинг, 2011 г., 1998 см³",
+    "JMBXTCW4WBU****** — autospot.ru, Mitsubishi Outlander II Рестайлинг, 2011 г., 1998 см³",
+    "JMBXTCW5W9Z****** — autospot.ru, Mitsubishi Outlander II, 2008 г., 2360 см³"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=15675",
+    "https://uokik.gov.pl/download.php?plik=22673",
+    "https://www.drom.ru/catalog/mitsubishi/outlander/",
+    "https://spb.autospot.ru/brands/mitsubishi/outlander/2009/suv/used/1014824/",
+    "https://kazan.autospot.ru/brands/mitsubishi/outlander/2009/suv/used/994270/",
+    "https://autospot.ru/brands/mitsubishi/outlander/2005/suv/used/1008226/"
+   ],
+   "note": "Отзывной список UOKiK прямо называет модель: «Outlander (CW0W) MY07-09»."
+  },
+  {
+   "mask": "JMY??CW",
+   "years": [
+    2006,
+    2012
+   ],
+   "model": "Outlander",
+   "body": "CW (2-е поколение, экспорт JMY)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi",
+   "slugs": [
+    "mitsubishi_outlanderxl"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JMYXTCW5W8Z****** — autospot.ru, Mitsubishi Outlander II, 2008 г., 2360 см³"
+   ],
+   "sources": [
+    "https://www.td.gov.hk/filemanager/en/content_4798/10000280.pdf",
+    "https://cheboksary.autospot.ru/brands/mitsubishi/outlander/2005/suv/used/1018251/"
+   ],
+   "note": "JMY — экспорт на прочие рынки (руль может быть правым). Отзывной список Транспортного департамента Гонконга: JMYXTCW5W8Z…, JMYXLCW6W8Z… — Outlander."
+  },
+  {
+   "mask": "Z8T??CW",
+   "years": [
+    2010,
+    2013
+   ],
+   "model": "Outlander",
+   "body": "CW (2-е поколение, рестайлинг; калужская сборка)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi",
+   "slugs": [
+    "mitsubishi_outlanderxl"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8TXTCW5WCM****** — autospot.ru, Mitsubishi Outlander II Рестайлинг, 2012 г., 2360 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/outlander/",
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-mitsubishi/",
+    "https://rostov-na-donu.autospot.ru/brands/mitsubishi/outlander/2009/suv/used/1015429/"
+   ]
+  },
+  {
+   "mask": "JMB??GF",
+   "years": [
+    2012,
+    2018
+   ],
+   "model": "Outlander",
+   "body": "GF (3-е поколение, японская сборка)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (GF2W 2.0, GF3W 2.4, GF4W/GF8W 3.0)",
+   "slugs": [
+    "mitsubishi_outlander-3"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMBXTGF2WDZ****** — autospot.ru, Mitsubishi Outlander III, 2013 г., 1998 см³",
+    "JMBXTGF3WDZ****** — autospot.ru, Mitsubishi Outlander III, 2012 г., 2360 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/outlander/",
+    "https://autospot.ru/brands/mitsubishi/outlander/2012/suv/used/1019462/",
+    "https://autospot.ru/brands/mitsubishi/outlander/2012/suv/used/1010991/"
+   ],
+   "note": "До середины 2018 г. (до 3-го рестайлинга) — outlander-3."
+  },
+  {
+   "mask": "JMB??GF",
+   "years": [
+    2018,
+    2022
+   ],
+   "model": "Outlander",
+   "body": "GF (3-е поколение, 3-й рестайлинг)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi",
+   "slugs": [
+    "mitsubishi_outlander-4"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMBXTGF7WKZ****** — carsbat.com, Mitsubishi Outlander 2019"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/outlander/",
+    "https://carsbat.com/de/detail/jmbxtgf7wkz008081-s7osav/"
+   ],
+   "note": "С середины 2018 г. (3-й рестайлинг) — outlander-4; машины 2018 модельного года могут быть обоими."
+  },
+  {
+   "mask": "Z8T??GF",
+   "years": [
+    2012,
+    2018
+   ],
+   "model": "Outlander",
+   "body": "GF (3-е поколение, калужская сборка)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi; 11-й символ M — Калуга",
+   "slugs": [
+    "mitsubishi_outlander-3"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8TXLGF4WHM****** — autospot.ru, Mitsubishi Outlander III Рестайлинг 2, 2018 г., 2998 см³",
+    "Z8TXTGF2WKM****** — autospot.ru, Mitsubishi Outlander III Рестайлинг 2, 2018 г., 1998 см³",
+    "Z8TXTGF3WHM****** — autospot.ru, Mitsubishi Outlander III Рестайлинг 2, 2018 г., 2360 см³"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-mitsubishi/",
+    "https://www.drom.ru/catalog/mitsubishi/outlander/",
+    "https://spb.autospot.ru/brands/mitsubishi/outlander/2015/suv/used/917555/",
+    "https://spb.autospot.ru/brands/mitsubishi/outlander/2015/suv/used/1006928/",
+    "https://autospot.ru/brands/mitsubishi/outlander/2015/suv/used/1007338/"
+   ],
+   "note": "До середины 2018 г. (до 3-го рестайлинга) — outlander-3."
+  },
+  {
+   "mask": "Z8T??GF",
+   "years": [
+    2018,
+    2022
+   ],
+   "model": "Outlander",
+   "body": "GF (3-е поколение, 3-й рестайлинг, калужская сборка)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi",
+   "slugs": [
+    "mitsubishi_outlander-4"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Z8TXTGF2WLM****** — autospot.ru, Mitsubishi Outlander 2018 – 2022, III Рестайлинг 3, 2020 г., 1998 см³",
+    "Z8TXLGF4WLM****** — autospot.ru, Mitsubishi Outlander 2018 – 2022, III Рестайлинг 3, 2020 г., 2998 см³",
+    "Z8TXTGF3WKM****** — autospot.ru, Mitsubishi Outlander 2018 – 2022, III Рестайлинг 3, 2019 г., 2360 см³"
+   ],
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-mitsubishi/",
+    "https://www.drom.ru/catalog/mitsubishi/outlander/",
+    "https://autospot.ru/brands/mitsubishi/outlander/suv/used/995404/",
+    "https://autospot.ru/brands/mitsubishi/outlander/suv/used/1017836/",
+    "https://ufa.autospot.ru/brands/mitsubishi/outlander/suv/used/950129/"
+   ],
+   "note": "С середины 2018 г. (3-й рестайлинг) — outlander-4; машины 2018 модельного года могут быть обоими."
+  },
+  {
+   "mask": "X2M??GF",
+   "years": [
+    2020,
+    2022
+   ],
+   "model": "Outlander",
+   "body": "GF (3-е поколение, 3-й рестайлинг, калужская сборка)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi",
+   "slugs": [
+    "mitsubishi_outlander-4"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "X2MXTGF2WMM****** — autospot.ru, Mitsubishi Outlander 2018 – 2022, III Рестайлинг 3, 2022 г., 1998 см³",
+    "X2MXTGF3WMM****** — autospot.ru, Mitsubishi Outlander 2018 – 2022, III Рестайлинг 3, 2021 г., 2360 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/outlander/",
+    "https://spb.autospot.ru/brands/mitsubishi/outlander/suv/used/1017301/",
+    "https://autospot.ru/brands/mitsubishi/outlander/suv/used/1019046/"
+   ],
+   "note": "WMI X2M — только по VIN из объявлений 2021–2022 гг."
+  },
+  {
+   "mask": "JMB??GG",
+   "years": [
+    2013,
+    2022
+   ],
+   "model": "Outlander PHEV",
+   "body": "GG (3-е поколение, гибрид PHEV)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (GG2W, GG3W)",
+   "slugs": [
+    "mitsubishi_outlander-3",
+    "mitsubishi_outlander-4"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMBXDGG2WEZ****** — carsbat.com (openlane.eu), Mitsubishi Outlander 2015",
+    "JMBXDGG3WLZ****** — carsbat.com, Mitsubishi Outlander 2020"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=19866",
+    "https://carsbat.com/de/detail/jmbxdgg2wezc06512-fujtt9/",
+    "https://carsbat.com/de/detail/jmbxdgg3wlz013923-mstnvy/",
+    "https://www.drom.ru/catalog/mitsubishi/outlander/"
+   ],
+   "note": "До 2018 г. — outlander-3, после рестайлинга 2018 г. — outlander-4. Салон PHEV проверить (батарея под полом)."
+  },
+  {
+   "mask": "JMB??GA",
+   "years": [
+    2010,
+    2023
+   ],
+   "model": "ASX",
+   "body": "GA",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (GA1W 1.6, GA2W 2.0 2WD, GA3W 2.0 4WD, GA6W/GA8W — дизели Европы)",
+   "slugs": [
+    "mitsubishi_asx"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMBXNGA1WJU****** — carsbat.com, Mitsubishi ASX 2019 (1.6, МКПП)"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/asx/",
+    "https://carsbat.com/de/detail/jmbxnga1wju006106-jrygy4/",
+    "https://uokik.gov.pl/download.php?plik=20960",
+    "https://uokik.gov.pl/download.php?plik=22416"
+   ]
+  },
+  {
+   "mask": "JMB??CS?A",
+   "years": [
+    2003,
+    2010
+   ],
+   "model": "Lancer",
+   "body": "CS седан (Lancer IX)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (CS1A 1.3, CS3A 1.6, CS9A 2.0); 9-й символ A — седан",
+   "slugs": [
+    "mitsubishi_lancer-ix"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMBSRCS3A7U****** — autospot.ru, Mitsubishi Lancer IX Рестайлинг, 2007 г., 1584 см³",
+    "JMBSNCS9A6U****** — autospot.ru, Mitsubishi Lancer IX Рестайлинг, 2006 г., 1997 см³",
+    "JMBSNCS3A6U****** — autospot.ru, Mitsubishi Lancer IX, 2006 г., 1584 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/lancer/",
+    "https://autospot.ru/brands/mitsubishi/lancer/2005/sedan/used/1018829/",
+    "https://krasnodar.autospot.ru/brands/mitsubishi/lancer/2005/sedan/used/1021823/",
+    "https://voronezh.autospot.ru/brands/mitsubishi/lancer/2000/sedan/used/1010546/"
+   ]
+  },
+  {
+   "mask": "JMB??CS?W",
+   "years": [
+    2003,
+    2009
+   ],
+   "model": "Lancer",
+   "body": "CS универсал (Lancer IX Wagon)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (CS3W, CS9W); 9-й символ W — универсал",
+   "slugs": [],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/lancer/"
+   ],
+   "note": "Лекало Lancer IX в каталоге — седан; универсал уточнить у менеджера."
+  },
+  {
+   "mask": "JMB??CY",
+   "years": [
+    2007,
+    2012
+   ],
+   "model": "Lancer",
+   "body": "CY седан (Lancer X)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (CY1A 1.6, CY2A 1.5, CY3A 1.8, CY4A 2.0)",
+   "slugs": [
+    "mitsubishi_lancer-x",
+    "mitsubishi_lancer10-sedanv2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMBSTCY3ADU****** — autospot.ru, Mitsubishi Lancer X Рестайлинг, 2012 г., 1798 см³",
+    "JMBSRCY1ACU****** — autospot.ru, Mitsubishi Lancer X Рестайлинг, 2012 г., 1590 см³",
+    "JMBSRCY2ABU****** — autospot.ru, Mitsubishi Lancer X, 2010 г., 1499 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/lancer/",
+    "https://www.td.gov.hk/filemanager/en/content_4798/10000280.pdf",
+    "https://autospot.ru/brands/mitsubishi/lancer/2011/sedan/used/1007117/",
+    "https://autospot.ru/brands/mitsubishi/lancer/2011/sedan/used/1011993/",
+    "https://spb.autospot.ru/brands/mitsubishi/lancer/2007/sedan/used/1000030/"
+   ],
+   "note": "Обычный седан или «sport» — выбирает клиент. Машины 2011–2012 гг. могут быть уже рестайлинговыми (lancer-10new)."
+  },
+  {
+   "mask": "JMB??CY",
+   "years": [
+    2011,
+    2017
+   ],
+   "model": "Lancer",
+   "body": "CY седан, рестайлинг (Lancer X)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi",
+   "slugs": [
+    "mitsubishi_lancer-10new"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMBSRCY1AEU****** — autospot.ru, Mitsubishi Lancer X Рестайлинг, 2014 г., 1590 см³",
+    "JMBSNCY1AEU****** — autospot.ru, Mitsubishi Lancer X Рестайлинг, 2013 г., 1590 см³",
+    "JMBSTCY3ADU****** — autospot.ru, Mitsubishi Lancer X Рестайлинг, 2012 г., 1798 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/lancer/",
+    "https://autospot.ru/brands/mitsubishi/lancer/2011/sedan/used/1014159/",
+    "https://kazan.autospot.ru/brands/mitsubishi/lancer/2011/sedan/used/1014528/",
+    "https://autospot.ru/brands/mitsubishi/lancer/2011/sedan/used/1007117/"
+   ]
+  },
+  {
+   "mask": "JMB??CX",
+   "years": [
+    2007,
+    2017
+   ],
+   "model": "Lancer Sportback",
+   "body": "CX хэтчбек (Lancer X)",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi; 8-й символ — мотор",
+   "slugs": [
+    "mitsubishi_lancer10-sportback",
+    "mitsubishi_lancer-10hb"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMBLNCX3A9U****** — autospot.ru, Mitsubishi Lancer X, 2008 г., 1798 см³",
+    "JMBLNCX3A9U****** — autospot.ru, Mitsubishi Lancer X, 2008 г., 1798 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/lancer/",
+    "https://www.drom.ru/catalog/mitsubishi/galant_fortis/",
+    "https://yekaterinburg.autospot.ru/brands/mitsubishi/lancer/2007/hatchback/used/1020312/",
+    "https://murmansk.autospot.ru/brands/mitsubishi/lancer/2007/hatchback/used/1010757/"
+   ],
+   "note": "Если известен 8-й символ: 4 — мотор 2.0 (lancer10-sportback), 1/2/3 — 1.6/1.5/1.8 (lancer-10hb)."
+  },
+  {
+   "mask": "JMB??CX4",
+   "years": [
+    2007,
+    2017
+   ],
+   "model": "Lancer Sportback",
+   "body": "CX4A — хэтчбек, мотор 2.0",
+   "detail": "CX4A — 2.0 л 4B11 (как CY4A у седана)",
+   "slugs": [
+    "mitsubishi_lancer10-sportback"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/lancer/",
+    "https://ja.wikipedia.org/wiki/三菱・ギャランフォルティス"
+   ]
+  },
+  {
+   "mask": "JMB??CX3",
+   "years": [
+    2007,
+    2017
+   ],
+   "model": "Lancer Sportback",
+   "body": "CX3A — хэтчбек, мотор 1.8",
+   "detail": "CX3A — 1.8 л 4B10",
+   "slugs": [
+    "mitsubishi_lancer-10hb"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMBLNCX3A9U****** — autospot.ru, Mitsubishi Lancer X, 2008 г., 1798 см³",
+    "JMBLNCX3A9U****** — autospot.ru, Mitsubishi Lancer X, 2008 г., 1798 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/lancer/",
+    "https://ja.wikipedia.org/wiki/三菱・ギャランフォルティス",
+    "https://yekaterinburg.autospot.ru/brands/mitsubishi/lancer/2007/hatchback/used/1020312/",
+    "https://murmansk.autospot.ru/brands/mitsubishi/lancer/2007/hatchback/used/1010757/"
+   ]
+  },
+  {
+   "mask": "JMB??V7",
+   "years": [
+    1999,
+    2006
+   ],
+   "model": "Pajero",
+   "body": "V70 (3-е поколение), 5 дверей",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (V73W, V75W, V77W, V78W)",
+   "slugs": [
+    "mitsubishi_pajero_3",
+    "mitsubishi_montero"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/pajero/",
+    "https://ja.wikipedia.org/wiki/三菱・パジェロ"
+   ],
+   "note": "Montero — испанское/американское имя той же генерации; лекало выбирает клиент. Реального VIN Pajero III не найдено; схема JMB подтверждена на Pajero II/IV."
+  },
+  {
+   "mask": "JMB??V6",
+   "years": [
+    1999,
+    2006
+   ],
+   "model": "Pajero",
+   "body": "V60 (3-е поколение), 3 двери",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (V63W, V65W, V68W)",
+   "slugs": [],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/pajero/",
+    "https://ja.wikipedia.org/wiki/三菱・パジェロ"
+   ],
+   "note": "3-дверный Pajero III — в каталоге не указан; уточнить у менеджера."
+  },
+  {
+   "mask": "JMB??V9",
+   "years": [
+    2006,
+    2021
+   ],
+   "model": "Pajero",
+   "body": "V90 (4-е поколение), 5 дверей",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (V93W 3.0, V97W 3.8, V98W 3.2 DI-D); 4-й символ L — 5 дверей",
+   "slugs": [
+    "mitsubishi_pajero-4"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMBLYV93WKJ****** — autospot.ru, Mitsubishi Pajero 2014 – 2022, IV Рестайлинг 2, 2018 г., 2972 см³",
+    "JMBLYV98WEJ****** — autospot.ru, Mitsubishi Pajero IV Рестайлинг 1, 2014 г., 3200 см³"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=20354",
+    "https://www.drom.ru/catalog/mitsubishi/pajero/",
+    "https://ja.wikipedia.org/wiki/三菱・パジェロ",
+    "https://autospot.ru/brands/mitsubishi/pajero/suv/used/1015215/",
+    "https://autospot.ru/brands/mitsubishi/pajero/2011/suv/used/1010498/"
+   ]
+  },
+  {
+   "mask": "JMY??V9",
+   "years": [
+    2006,
+    2021
+   ],
+   "model": "Pajero",
+   "body": "V90 (4-е поколение), 5 дверей, экспорт JMY",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi",
+   "slugs": [
+    "mitsubishi_pajero-4"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMYLRV93W8J****** — autospot.ru, Mitsubishi Pajero IV, 2008 г., 2972 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/pajero/",
+    "https://rostov-na-donu.autospot.ru/brands/mitsubishi/pajero/2006/suv/used/1008299/"
+   ],
+   "note": "JMY — экспорт на прочие рынки, руль может быть правым."
+  },
+  {
+   "mask": "JMB??V8",
+   "years": [
+    2006,
+    2021
+   ],
+   "model": "Pajero",
+   "body": "V80 (4-е поколение), 3 двери",
+   "detail": "6–9 символы — модельный код кузова Mitsubishi (V83W, V87W, V88W); 4-й символ M — 3 двери",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JMBMYV87W8J****** — autospot.ru, Mitsubishi Pajero IV, 2008 г., 3828 см³"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=20354",
+    "https://www.drom.ru/catalog/mitsubishi/pajero/",
+    "https://ja.wikipedia.org/wiki/三菱・パジェロ",
+    "https://autospot.ru/brands/mitsubishi/pajero/2006/suv/used/999030/"
+   ],
+   "note": "3-дверный Pajero IV — в каталоге нет."
+  },
+  {
+   "mask": "JMB??V4",
+   "years": [
+    1991,
+    1999
+   ],
+   "model": "Pajero",
+   "body": "V40 (2-е поколение), 5 дверей",
+   "detail": "6–8 — код кузова (V46…), 9 — 0",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JMB0NV460XJ****** — autospot.ru, Mitsubishi Pajero II Рестайлинг, 1998 г., 2835 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/pajero/",
+    "https://ja.wikipedia.org/wiki/三菱・パジェロ",
+    "https://izhevsk.autospot.ru/brands/mitsubishi/pajero/1997/suv/used/1013194/"
+   ],
+   "note": "Pajero II — лекал в каталоге нет."
+  },
+  {
+   "mask": "JMB??K9",
+   "years": [
+    1996,
+    2009
+   ],
+   "model": "Pajero Sport",
+   "body": "K90 (1-е поколение)",
+   "detail": "6–8 — код кузова K94/K96/K97/K99, 9 — 0",
+   "slugs": [
+    "mitsubishi_pajero-sport"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMB0NK9408J****** — autospot.ru, Pajero Sport I рестайлинг 2008"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/pajero_sport/",
+    "https://ja.wikipedia.org/wiki/三菱・チャレンジャー",
+    "https://autospot.ru/brands/mitsubishi/pajero_sport/2004/suv/used/968325/"
+   ]
+  },
+  {
+   "mask": "MMC??KH",
+   "years": [
+    2008,
+    2013
+   ],
+   "model": "Pajero Sport",
+   "body": "KH (2-е поколение, Таиланд)",
+   "detail": "6–8 — KH4 (KH4W 2.5 DI-D) / KH6 (3.0), 9 — 0",
+   "slugs": [
+    "mitsubishi_pajero-sportnew"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "MMCGYKH40BF****** — autospot.ru, Pajero Sport II 2011"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/pajero_sport/",
+    "https://autospot.ru/brands/mitsubishi/pajero_sport/2008/suv/used/959435/"
+   ]
+  },
+  {
+   "mask": "MMC??KH",
+   "years": [
+    2013,
+    2016
+   ],
+   "model": "Pajero Sport",
+   "body": "KH (2-е поколение, рестайлинг, Таиланд)",
+   "slugs": [
+    "mitsubishi_pajero-sport-2-2014"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/pajero_sport/"
+   ],
+   "note": "Для рестайлинга реального VIN с MMC…KH не найдено (часть машин 2013–2016 собрана в Калуге — WMI Z8T)."
+  },
+  {
+   "mask": "MMC??KL1",
+   "years": [
+    2015,
+    2024
+   ],
+   "model": "L200",
+   "body": "KL (5-е поколение)",
+   "detail": "6–8 — KL1 (KL1T), 9 — 0",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "MMCJLKL10MH****** — autospot.ru, Mitsubishi L200 2018 – н.в., V Рестайлинг, 2020 г., 2442 см³",
+    "MMCJJKL10LH****** — autospot.ru, Mitsubishi L200 2018 – н.в., V Рестайлинг, 2020 г., 2442 см³",
+    "MMCJYKL10HH****** — autospot.ru, Mitsubishi L200 V, 2017 г., 2442 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/l200/",
+    "https://autospot.ru/brands/mitsubishi/l200_new/pickup/used/950615/",
+    "https://krasnodar.autospot.ru/brands/mitsubishi/l200_new/pickup/used/1000223/",
+    "https://voronezh.autospot.ru/brands/mitsubishi/l200/2015/pickup/used/828325/"
+   ],
+   "note": "Лекал на L200 5-го поколения нет (в каталоге только 4-е поколение KB4T)."
+  },
+  {
+   "mask": "MMB??KB4",
+   "years": [
+    2006,
+    2013
+   ],
+   "model": "L200",
+   "body": "KB4T (4-е поколение, двойная кабина)",
+   "detail": "6–8 — KB4 (KB4T), 9 — 0; WMI MMB — Таиланд",
+   "slugs": [
+    "mitsubishi_l200-i"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "MMBJNKB407D****** — autospot.ru, Mitsubishi L200 IV, 2008 г., 2477 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/l200/",
+    "https://voronezh.autospot.ru/brands/mitsubishi/l200/2006/pickup/used/1009409/"
+   ],
+   "note": "С рестайлингом 2013 г. — лекало l200-ii (тот же код кузова, выбор по году)."
+  },
+  {
+   "mask": "MMB??KB4",
+   "years": [
+    2013,
+    2016
+   ],
+   "model": "L200",
+   "body": "KB4T (4-е поколение, рестайлинг)",
+   "detail": "6–8 — KB4, 9 — 0",
+   "slugs": [
+    "mitsubishi_l200-ii"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/l200/",
+    "https://voronezh.autospot.ru/brands/mitsubishi/l200/2006/pickup/used/1009409/"
+   ],
+   "note": "Рестайлинг отличается только годом (с 09.2013, drom.ru)."
+  },
+  {
+   "mask": "MMEMC",
+   "years": [
+    2019,
+    2024
+   ],
+   "model": "Pajero Sport / Montero Sport",
+   "body": "3-е поколение, рестайлинг (Таиланд, новая схема VIN)",
+   "detail": "Модельный код в VIN не виден; по объявлениям MMEMC71X… (Pajero Sport 2020), MMEMCY1X… (Montero Sport 2022)",
+   "slugs": [
+    "mitsubishi_pajero-sport-3"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "MMEMC71X2LH****** — autospot.ru, Pajero Sport III рестайлинг, 2020 г.",
+    "MMEMCY1XXNH****** — autospot.ru, Mitsubishi Montero Sport, 2022 г., 3497 см³",
+    "MMEMCY1XXNH****** — autospot.ru, Mitsubishi Montero Sport, 2022 г., 2972 см³"
+   ],
+   "sources": [
+    "https://autospot.ru/brands/mitsubishi/pajero_sport_iii/suv/used/965174/",
+    "https://www.drom.ru/catalog/mitsubishi/pajero_sport/",
+    "https://autospot.ru/brands/mitsubishi/montero_sport/1996/suv/used/987553/",
+    "https://kazan.autospot.ru/brands/mitsubishi/montero_sport/1996/suv/used/984644/"
+   ],
+   "note": "Только по реальным VIN из объявлений; лекало pajero-sport-3 «с 2016» — для рестайлинга 2019+ уточнить салон."
+  },
+  {
+   "mask": "XMC??Z3",
+   "years": [
+    2004,
+    2012
+   ],
+   "model": "Colt",
+   "body": "Z30 (6-е поколение, сборка NedCar, левый руль)",
+   "detail": "6–9 — код кузова Z31A–Z39A (drom.ru: Россия Z31A–Z35A)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "XMCXJZ34A8F****** — autospot.ru, Mitsubishi Colt VI (Z20/Z30), 2007 г., 1332 см³",
+    "XMCXJZ34A8F****** — autospot.ru, Mitsubishi Colt VI (Z20/Z30), 2007 г., 1332 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/colt/",
+    "https://autospot.ru/brands/mitsubishi/colt/2002/hatchback/used/1008564/",
+    "https://spb.autospot.ru/brands/mitsubishi/colt/2002/sw/used/1014091/"
+   ],
+   "note": "Лекала Colt в каталоге — только под правый руль (японский Colt Z2#); для леворульного уточнить у менеджера."
+  },
+  {
+   "mask": "JMZBK?2",
+   "years": [
+    2003,
+    2009
+   ],
+   "model": "Mazda3",
+   "body": "BK седан",
+   "detail": "4–5 BK — Mazda3 1-го поколения; 6–7 «12» — седан",
+   "slugs": [
+    "mazda_3-sedan"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZBK12F501****** — autospot.ru, Mazda 3 I (BK) Рестайлинг, 2008 г., 1999 см³",
+    "JMZBK12Z501****** — autospot.ru, Mazda 3 I (BK) Рестайлинг, 2008 г., 1598 см³",
+    "JMZBK12Z281****** — autospot.ru, Mazda 3 I (BK) Рестайлинг, 2008 г., 1598 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda3/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://autospot.ru/brands/mazda/3/2006/sedan/used/1020859/",
+    "https://autospot.ru/brands/mazda/3/2006/sedan/used/1019520/",
+    "https://autospot.ru/brands/mazda/3/2006/sedan/used/1009165/"
+   ]
+  },
+  {
+   "mask": "JMZBK?4",
+   "years": [
+    2003,
+    2009
+   ],
+   "model": "Mazda3",
+   "body": "BK хэтчбек 5 дв.",
+   "detail": "6–7 «14» — хэтчбек",
+   "slugs": [
+    "mazda_3-hatchback"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZBK14Z591****** — autospot.ru, Mazda 3 I (BK) Рестайлинг, 2008 г., 1598 см³",
+    "JMZBK14Z281****** — autospot.ru, Mazda 3 I (BK) Рестайлинг, 2008 г., 1598 см³",
+    "JMZBK14F681****** — autospot.ru, Mazda 3 I (BK) Рестайлинг, 2007 г., 1999 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda3/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://autospot.ru/brands/mazda/3/2006/hatchback/used/1010786/",
+    "https://pskov.autospot.ru/brands/mazda/3/2006/hatchback/used/1015272/",
+    "https://ufa.autospot.ru/brands/mazda/3/2006/hatchback/used/1005254/"
+   ]
+  },
+  {
+   "mask": "JMZBL?4",
+   "years": [
+    2009,
+    2013
+   ],
+   "model": "Mazda3",
+   "body": "BL хэтчбек 5 дв.",
+   "detail": "drom.ru: Европа BL14F — хэтчбек",
+   "slugs": [
+    "mazda_3-bl"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda3/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ],
+   "note": "Реального VIN хэтчбека BL не найдено; схема (7-й символ 4 — хэтчбек) подтверждена на BK/BM."
+  },
+  {
+   "mask": "JMZBL?2",
+   "years": [
+    2009,
+    2013
+   ],
+   "model": "Mazda3",
+   "body": "BL седан",
+   "detail": "drom.ru: Европа BL12F — седан",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZBL12Z511****** — autospot.ru, Mazda 3 II (BL) Рестайлинг, 2013 г., 1598 см³",
+    "JMZBL12Z211****** — autospot.ru, Mazda 3 II (BL) Рестайлинг, 2011 г., 1598 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda3/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://krasnodar.autospot.ru/brands/mazda/3/2011/sedan/used/987749/",
+    "https://autospot.ru/brands/mazda/3/2011/sedan/used/1012731/"
+   ],
+   "note": "Лекало BL в каталоге только для хэтчбека — для седана уточнить у менеджера / индивидуальный пошив."
+  },
+  {
+   "mask": "JMZBM?2",
+   "years": [
+    2013,
+    2019
+   ],
+   "model": "Mazda3",
+   "body": "BM седан",
+   "detail": "7-й символ 2 — седан (как у BK/BL)",
+   "slugs": [
+    "mazda_3-new"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZBM52A801****** — autospot.ru, Mazda 3 III (BM) Рестайлинг, 2018 г., 1496 см³",
+    "JMZBM42Z531****** — autospot.ru, Mazda 3 III (BM), 2014 г., 1598 см³",
+    "JMZBM42Z231****** — autospot.ru, Mazda 3 III (BM), 2014 г., 1598 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda3/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://autospot.ru/brands/mazda/3/2016/sedan/used/987476/",
+    "https://autospot.ru/brands/mazda/3/2013/sedan/used/1015748/",
+    "https://autospot.ru/brands/mazda/3/2013/sedan/used/1022272/"
+   ],
+   "note": "В объявлениях встречаются BM42…, подписанные как хэтчбек, — при сомнении сверить кузов по ПТС."
+  },
+  {
+   "mask": "JMZBM?4",
+   "years": [
+    2013,
+    2019
+   ],
+   "model": "Mazda3",
+   "body": "BM хэтчбек 5 дв.",
+   "detail": "7-й символ 4 — хэтчбек",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZBM44Z531****** — autospot.ru, Mazda 3 III (BM), 2014 г., 1598 см³",
+    "JMZBM44Z231****** — autospot.ru, Mazda 3 III (BM), 2014 г., 1598 см³",
+    "JMZBM44Z231****** — autospot.ru, Mazda 3 III (BM), 2014 г., 1598 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda3/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://autospot.ru/brands/mazda/3/2013/hatchback/used/1019943/",
+    "https://krasnodar.autospot.ru/brands/mazda/3/2013/hatchback/used/1010522/",
+    "https://voronezh.autospot.ru/brands/mazda/3/2013/hatchback/used/1014493/"
+   ],
+   "note": "Лекало BM в каталоге — седан; для хэтчбека уточнить у менеджера."
+  },
+  {
+   "mask": "JMZBP",
+   "years": [
+    2019,
+    2025
+   ],
+   "model": "Mazda3",
+   "body": "BP (4-е поколение)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZBP5SAA01****** — autospot.ru, Mazda 3 IV (BP), 2019 г., 1496 см³",
+    "JMZBP5H7A01****** — autospot.ru, Mazda 3 IV (BP), 2019 г., 1998 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda3/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://autospot.ru/brands/mazda/3/2019/hatchback/used/1019129/",
+    "https://autospot.ru/brands/mazda/3/2019/hatchback/used/1022077/"
+   ],
+   "note": "Лекал на Mazda3 4-го поколения нет — индивидуальный пошив."
+  },
+  {
+   "mask": "3MZBP",
+   "years": [
+    2019,
+    2025
+   ],
+   "model": "Mazda3",
+   "body": "BP (4-е поколение, сборка Мексика)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "3MZBPACM8PM****** — autospot.ru, Mazda 3 IV (BP), 2023 г., 1998 см³",
+    "3MZBPACL8LM****** — autospot.ru, Mazda 3 IV (BP), 2019 г., 1998 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda3/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://autospot.ru/brands/mazda/3/2019/sedan/used/1012121/",
+    "https://rostov-na-donu.autospot.ru/brands/mazda/3/2019/hatchback/used/1010381/"
+   ],
+   "note": "Лекал на Mazda3 4-го поколения нет."
+  },
+  {
+   "mask": "JMZGG",
+   "years": [
+    2002,
+    2008
+   ],
+   "model": "Mazda6",
+   "body": "GG/GY (1-е поколение)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZGG148281****** — autospot.ru, Mazda 6 I (GG) Рестайлинг, 2007 г., 1798 см³",
+    "JMZGG12F771****** — autospot.ru, Mazda 6 I (GG) Рестайлинг, 2006 г., 1999 см³",
+    "JMZGG128271****** — autospot.ru, Mazda 6 I (GG) Рестайлинг, 2006 г., 1798 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda6/",
+    "https://www.drom.ru/catalog/mazda/atenza/",
+    "https://ufa.autospot.ru/brands/mazda/6_new/2005/liftback/used/1010918/",
+    "https://autospot.ru/brands/mazda/6_new/2005/sedan/used/1015720/",
+    "https://voronezh.autospot.ru/brands/mazda/6_new/2005/sedan/used/1009893/"
+   ],
+   "note": "Лекал на Mazda6 1-го поколения в каталоге нет."
+  },
+  {
+   "mask": "JMZGH",
+   "years": [
+    2007,
+    2013
+   ],
+   "model": "Mazda6",
+   "body": "GH (2-е поколение; 7-й символ: 2 — седан, 4 — лифтбек)",
+   "slugs": [
+    "mazda_6-0712"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZGH12F701****** — autospot.ru, Mazda 6 II (GH) Рестайлинг, 2012 г., 1999 см³",
+    "JMZGH128211****** — autospot.ru, Mazda 6 II (GH) Рестайлинг, 2011 г., 1798 см³",
+    "JMZGH14F701****** — autospot.ru, Mazda 6 II (GH) Рестайлинг, 2011 г., 1999 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda6/",
+    "https://www.drom.ru/catalog/mazda/atenza/",
+    "https://autospot.ru/brands/mazda/6_new/2009/sedan/used/1018146/",
+    "https://autospot.ru/brands/mazda/6_new/2009/sedan/used/1004230/",
+    "https://autospot.ru/brands/mazda/6_new/2009/liftback/used/999855/"
+   ],
+   "note": "Кузов в каталоге не указан; для универсала уточнить задний ряд."
+  },
+  {
+   "mask": "JMZGJ",
+   "years": [
+    2012,
+    2024
+   ],
+   "model": "Mazda6",
+   "body": "GJ (3-е поколение)",
+   "detail": "Отзывной список UOKiK по Mazda: все VIN JMZGJ…",
+   "slugs": [
+    "mazda_6new"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZGJ426631****** — autospot.ru, Mazda 6 III (GJ), 2013 г., 1998 см³",
+    "JMZGJ426811****** — autospot.ru, Mazda 6 III (GJ), 2013 г., 1998 см³"
+   ],
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=21057",
+    "https://www.drom.ru/catalog/mazda/mazda6/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://voronezh.autospot.ru/brands/mazda/6_new/2012/sedan/used/1000790/",
+    "https://tyumen.autospot.ru/brands/mazda/6_new/2012/sedan/used/1011175/"
+   ]
+  },
+  {
+   "mask": "RUMGJ",
+   "years": [
+    2013,
+    2022
+   ],
+   "model": "Mazda6",
+   "body": "GJ седан владивостокской сборки",
+   "detail": "drom.ru (Россия): GJ523, GJ526, GJ52Y = символы 4–8 VIN; 6-й: 4 — до рестайлинга, 5 — после",
+   "slugs": [
+    "mazda_6new"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "RUMGJ526805****** — autospot.ru, Mazda 6 2018 – 2024, III (GJ) Рестайлинг 2, 2022 г., 1998 см³",
+    "RUMGJ523805****** — autospot.ru, Mazda 6 2018 – 2024, III (GJ) Рестайлинг 2, 2021 г., 2488 см³",
+    "RUMGJ52Y804****** — autospot.ru, Mazda 6 2018 – 2024, III (GJ) Рестайлинг 2, 2019 г., 2488 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda6/",
+    "https://rostov-na-donu.autospot.ru/brands/mazda/6_iiifl2/sedan/used/971774/",
+    "https://autospot.ru/brands/mazda/6_iiifl2/sedan/used/1008389/",
+    "https://autospot.ru/brands/mazda/6_iiifl2/sedan/used/1006127/"
+   ]
+  },
+  {
+   "mask": "LFPM?ACP",
+   "years": [
+    2019,
+    2024
+   ],
+   "model": "Mazda6",
+   "body": "GJ (китайская сборка FAW Mazda), седан",
+   "slugs": [
+    "mazda_6new"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "LFPM5ACP0P1****** — autospot.ru, Mazda 6 2018 – 2024, III (GJ) Рестайлинг 2, 2023 г., 2488 см³",
+    "LFPM5ACP4P1****** — autospot.ru, Mazda 6 2018 – 2024, III (GJ) Рестайлинг 2, 2023 г., 2488 см³",
+    "LFPM5ACP7P1****** — autospot.ru, Mazda 6 2018 – 2024, III (GJ) Рестайлинг 2, 2023 г., 2488 см³"
+   ],
+   "sources": [
+    "https://autospot.ru/brands/mazda/6_iiifl2/sedan/used/988575/",
+    "https://autospot.ru/brands/mazda/6_iiifl2/sedan/used/1014455/",
+    "https://autospot.ru/brands/mazda/6_iiifl2/sedan/used/1014949/"
+   ],
+   "note": "Только по VIN из объявлений 2022–2023 гг.; WMI LFP (FAW) официально не подтверждён."
+  },
+  {
+   "mask": "JMZKE",
+   "years": [
+    2011,
+    2017
+   ],
+   "model": "CX-5",
+   "body": "KE (1-е поколение, японская сборка)",
+   "slugs": [
+    "mazda_cx5-direct-drive",
+    "mazda_cx-5",
+    "mazda_cx5-supreme"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZKE197800****** — autospot.ru, Mazda CX-5 I, 2012 г., 1997 см³",
+    "JMZKE197600****** — autospot.ru, Mazda CX-5 I, 2012 г., 1997 см³",
+    "JMZKE897800****** — autospot.ru, Mazda CX-5 I, 2012 г., 1997 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/cx-5/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://autospot.ru/brands/mazda/cx-5/2011/suv/used/1006939/",
+    "https://vladimir.autospot.ru/brands/mazda/cx-5/2011/suv/used/1011504/",
+    "https://rostov-na-donu.autospot.ru/brands/mazda/cx-5/2011/suv/used/1011209/"
+   ],
+   "note": "10-й символ у JMZ не год — комплектацию/рестайлинг выбирает клиент."
+  },
+  {
+   "mask": "RUMKE?9",
+   "years": [
+    2012,
+    2015
+   ],
+   "model": "CX-5",
+   "body": "KE (1-е поколение, Владивосток)",
+   "detail": "6–9 символы 1978/8978/8938 (позже C978/K978/K938), 10 — модельный год (D/E/F/G), 11 — V",
+   "slugs": [
+    "mazda_cx5-direct-drive",
+    "mazda_cx-5"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "RUMKE1978GV****** — autospot.ru, Mazda CX-5 I Рестайлинг, 2015 г., 1997 см³",
+    "RUMKE8938FV****** — autospot.ru, Mazda CX-5 I Рестайлинг, 2015 г., 2488 см³",
+    "RUMKEK978GV****** — autospot.ru, Mazda CX-5 I Рестайлинг, 2015 г., 1997 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/cx-5/",
+    "https://autospot.ru/brands/mazda/cx-5/2015/suv/used/1011974/",
+    "https://autospot.ru/brands/mazda/cx-5/2015/suv/used/989016/",
+    "https://ufa.autospot.ru/brands/mazda/cx-5/2015/suv/used/991651/"
+   ],
+   "note": "До 2015 г. — лекала direct/drive и touring/active (выбирает клиент)."
+  },
+  {
+   "mask": "RUMKE?9",
+   "years": [
+    2015,
+    2017
+   ],
+   "model": "CX-5",
+   "body": "KE рестайлинг (Владивосток)",
+   "slugs": [
+    "mazda_cx5-supreme"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "RUMKEC97803****** — autospot.ru, Mazda CX-5 I Рестайлинг, 2017 г., 1997 см³",
+    "RUMKEK938GV****** — autospot.ru, Mazda CX-5 I Рестайлинг, 2016 г., 2488 см³",
+    "RUMKE1978GV****** — autospot.ru, Mazda CX-5 I Рестайлинг, 2015 г., 1997 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/cx-5/",
+    "https://volgograd.autospot.ru/brands/mazda/cx-5/2015/suv/used/1017020/",
+    "https://novorossiysk.autospot.ru/brands/mazda/cx-5/2015/suv/used/937923/",
+    "https://autospot.ru/brands/mazda/cx-5/2015/suv/used/1011974/"
+   ],
+   "note": "С 2015 г. в каталоге — лекало supreme. У машин 2017 г. 10–11 символы цифровые (год по VIN не читается)."
+  },
+  {
+   "mask": "RUMKE?W",
+   "years": [
+    2017,
+    2022
+   ],
+   "model": "CX-5",
+   "body": "KF (2-е поколение, Владивосток)",
+   "detail": "ВНИМАНИЕ: у владивостокских CX-5 2-го поколения в 4–5 символах тоже «KE»; 2-е поколение — 7-й символ W (5W7A, EW7A, EWLA)",
+   "slugs": [
+    "mazda_cx5-2"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "RUMKEEW7A04****** — autospot.ru, Mazda CX-5 2017 – 2021, II, 2021 г., 1998 см³",
+    "RUMKEEWLA04****** — autospot.ru, Mazda CX-5 2017 – 2021, II, 2021 г., 2488 см³",
+    "RUMKE5W7A03****** — autospot.ru, Mazda CX-5 2017 – 2021, II, 2020 г., 1998 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/cx-5/",
+    "https://autospot.ru/brands/mazda/cx_5/suv/used/1002100/",
+    "https://rostov-na-donu.autospot.ru/brands/mazda/cx_5/suv/used/1015105/",
+    "https://kazan.autospot.ru/brands/mazda/cx_5/suv/used/1002349/"
+   ],
+   "note": "Поколение определено по объявлениям (годы 2017–2021, мотор 2.5 у EWLA); 10–11 символы — цифры, не год."
+  },
+  {
+   "mask": "JMZKF",
+   "years": [
+    2017,
+    2022
+   ],
+   "model": "CX-5",
+   "body": "KF (2-е поколение, японская сборка)",
+   "slugs": [
+    "mazda_cx5-2"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/cx-5/"
+   ],
+   "note": "Код KF для Европы/России — по каталогу drom.ru; реального VIN с JMZKF не найдено."
+  },
+  {
+   "mask": "LVRHDCAC",
+   "years": [
+    2021,
+    2025
+   ],
+   "model": "CX-5",
+   "body": "KF рестайлинг (китайская сборка Changan Mazda)",
+   "slugs": [],
+   "confidence": "probable",
+   "examples": [
+    "LVRHDCAC7SN****** — autospot.ru, Mazda CX-5 2021 – 2025, II Рестайлинг, 2025 г., 1998 см³",
+    "LVRHDCAC6SN****** — autospot.ru, Mazda CX-5 2021 – 2025, II Рестайлинг, 2025 г., 1997 см³",
+    "LVRHDCAC7PN****** — autospot.ru, Mazda CX-5 2021 – 2025, II Рестайлинг, 2023 г., 1997 см³"
+   ],
+   "sources": [
+    "https://autospot.ru/brands/mazda/cx5_ii/suv/used/1016271/",
+    "https://ufa.autospot.ru/brands/mazda/cx5_ii/suv/used/1000416/",
+    "https://autospot.ru/brands/mazda/cx5_ii/suv/used/1009635/"
+   ],
+   "note": "Только по VIN из объявлений 2023–2025 гг. Лекало cx5-2 сделано под 2017–2019 — уточнить у менеджера."
+  },
+  {
+   "mask": "JMZDE",
+   "years": [
+    2007,
+    2014
+   ],
+   "model": "Mazda2",
+   "body": "DE (2-е поколение Mazda2 = Demio DE)",
+   "detail": "4–5 DE; 6–7 «14» — хэтчбек 5 дв. (по объявлению)",
+   "slugs": [
+    "mazda_demio-de"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZDE145280****** — autospot.ru, Mazda 2 II (DE), 2008 г., 1498 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mazda2/",
+    "https://www.drom.ru/catalog/mazda/demio/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://spb.autospot.ru/brands/mazda/2/2007/hatchback/used/1011885/"
+   ],
+   "note": "Лекало Demio DE — 5-дверный хэтчбек; у Европы был и 3-дверный Mazda2 — его код не найден, уточнить кузов."
+  },
+  {
+   "mask": "JMZER",
+   "years": [
+    2006,
+    2012
+   ],
+   "model": "CX-7",
+   "body": "ER",
+   "slugs": [
+    "mazda_cx-7"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JMZER893800****** — autospot.ru, Mazda CX-7 I Рестайлинг, 2011 г., 2260 см³",
+    "JMZER19L700****** — autospot.ru, Mazda CX-7 I Рестайлинг, 2011 г., 2488 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/cx-7/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://autospot.ru/brands/mazda/cx-7/2009/suv/used/999018/",
+    "https://autospot.ru/brands/mazda/cx-7/2009/suv/used/1021255/"
+   ]
+  },
+  {
+   "mask": "JF1SG",
+   "years": [
+    2002,
+    2008
+   ],
+   "model": "Forester",
+   "body": "SG (2-е поколение), 4–6 символы — код кузова SG5/SG9",
+   "slugs": [
+    "subaru_forester-2",
+    "subaru_forester-2-podlokotniki"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JF1SG5LE57G****** — autospot.ru, Subaru Forester II Рестайлинг, 2006 г., 1994 см³",
+    "JF1SG67665H****** — autospot.ru, Subaru Forester II, 2004 г., 2457 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/forester/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JF1SG636*3H?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JF1SG656*8H?format=json",
+    "https://ufa.autospot.ru/brands/subaru/forester/2005/sw/used/1012581/",
+    "https://spb.autospot.ru/brands/subaru/forester/2002/sw/used/1018802/"
+   ],
+   "note": "С подлокотниками или без — выбирает клиент."
+  },
+  {
+   "mask": "JF1SH",
+   "years": [
+    2007,
+    2013
+   ],
+   "model": "Forester",
+   "body": "SH (3-е поколение), 4–6 — SH5/SH9/SHJ/SHM",
+   "slugs": [
+    "subaru_forester-3",
+    "subaru_forester-3-pdl"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JF1SHJLS5CG****** — autospot.ru, Subaru Forester III Рестайлинг, 2012 г., 1995 см³",
+    "JF1SHJLW4CG****** — autospot.ru, Subaru Forester III Рестайлинг, 2012 г., 1995 см³",
+    "JF1SHMLS5CG****** — autospot.ru, Subaru Forester III Рестайлинг, 2012 г., 2498 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/forester/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://autospot.ru/brands/subaru/forester/2011/suv/used/989165/",
+    "https://voronezh.autospot.ru/brands/subaru/forester/2011/suv/used/997635/",
+    "https://kazan.autospot.ru/brands/subaru/forester/2011/suv/used/1016024/"
+   ],
+   "note": "Вариант с подстаканником или без — выбирает клиент."
+  },
+  {
+   "mask": "JF1SJ",
+   "years": [
+    2012,
+    2018
+   ],
+   "model": "Forester",
+   "body": "SJ (4-е поколение), 4–6 — SJ5/SJ9/SJG",
+   "slugs": [
+    "subaru_forester-4"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JF1SJ5LC5JG****** — autospot.ru, Subaru Forester IV Рестайлинг 2, 2018 г., 1995 см³",
+    "JF1SJGL85JG****** — autospot.ru, Subaru Forester IV Рестайлинг 2, 2017 г., 1998 см³",
+    "JF1SJ9LC5JG****** — autospot.ru, Subaru Forester IV Рестайлинг 2, 2017 г., 2498 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/forester/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://autospot.ru/brands/subaru/forester/2016/suv/used/989164/",
+    "https://autospot.ru/brands/subaru/forester/2016/suv/used/981759/",
+    "https://autospot.ru/brands/subaru/forester/2016/suv/used/1011576/"
+   ]
+  },
+  {
+   "mask": "JF1SK",
+   "years": [
+    2018,
+    2025
+   ],
+   "model": "Forester",
+   "body": "SK (5-е поколение)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JF1SK9LL5NG****** — autospot.ru, Subaru Forester V, 2022 г., 2498 см³",
+    "JF1SK7LL5KG****** — autospot.ru, Subaru Forester V, 2019 г., 1995 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/forester/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://autospot.ru/brands/subaru/forester/2018/suv/used/1014043/",
+    "https://autospot.ru/brands/subaru/forester/2018/suv/used/1014439/"
+   ],
+   "note": "Лекал на Forester 5-го поколения нет."
+  },
+  {
+   "mask": "JF2SK",
+   "years": [
+    2019,
+    2024
+   ],
+   "model": "Forester",
+   "body": "SK (5-е поколение, рынок США)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JF2SKARCXLH****** — autospot.ru, Subaru Forester V, 2020 г., 2498 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/forester/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://autospot.ru/brands/subaru/forester/2018/suv/used/1007518/"
+   ],
+   "note": "Лекал на Forester 5-го поколения нет."
+  },
+  {
+   "mask": "JF1SF",
+   "years": [
+    1997,
+    2002
+   ],
+   "model": "Forester",
+   "body": "SF (1-е поколение), левый руль",
+   "slugs": [],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/forester/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JF1SF635*YH?format=json"
+   ],
+   "note": "Лекала SF5 в каталоге — только под правый руль; для леворульного уточнить у менеджера."
+  },
+  {
+   "mask": "JF1GE",
+   "years": [
+    2007,
+    2012
+   ],
+   "model": "Impreza",
+   "body": "GE седан (3-е поколение)",
+   "slugs": [
+    "subaru_impreza"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JF1GE3LF39G****** — autospot.ru, Subaru Impreza III, 2008 г., 1498 см³",
+    "JF1GE3LF39G****** — autospot.ru, Subaru Impreza III, 2008 г., 1498 см³",
+    "JF1GE3LF39G****** — autospot.ru, Subaru Impreza III, 2008 г., 1498 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/impreza/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JF1GE616*9H?format=json",
+    "https://spb.autospot.ru/brands/subaru/impreza/2007/hatchback/used/1017606/",
+    "https://rostov-na-donu.autospot.ru/brands/subaru/impreza/2007/sedan/used/866566/",
+    "https://kazan.autospot.ru/brands/subaru/impreza/2007/sedan/used/1018769/"
+   ]
+  },
+  {
+   "mask": "JF1GH",
+   "years": [
+    2007,
+    2012
+   ],
+   "model": "Impreza",
+   "body": "GH хэтчбек (3-е поколение)",
+   "slugs": [
+    "subaru_impreza"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JF1GH7LS5BG****** — autospot.ru, Subaru Impreza III, 2010 г., 1994 см³",
+    "JF1GH3LS59G****** — autospot.ru, Subaru Impreza III, 2008 г., 1498 см³",
+    "JF1GH7LW48G****** — autospot.ru, Subaru Impreza III, 2007 г., 1994 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/impreza/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JF1GH616*9H?format=json",
+    "https://cheboksary.autospot.ru/brands/subaru/impreza/2007/hatchback/used/1012965/",
+    "https://krasnodar.autospot.ru/brands/subaru/impreza/2007/hatchback/used/991582/",
+    "https://voronezh.autospot.ru/brands/subaru/impreza/2007/hatchback/used/1010392/"
+   ],
+   "note": "Тот же код у Impreza XV (2010–2011)."
+  },
+  {
+   "mask": "JF1GP",
+   "years": [
+    2011,
+    2017
+   ],
+   "model": "XV / Impreza",
+   "body": "GP: XV 1-го поколения или Impreza 4-го поколения (хэтчбек)",
+   "slugs": [
+    "subaru_xv"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JF1GP7LA3EG****** — autospot.ru, Subaru XV I, 2014 г., 1995 см³",
+    "JF1GP7LC5DG****** — autospot.ru, Subaru XV I, 2013 г., 1995 см³",
+    "JF1GP3LC5CG****** — autospot.ru, Subaru Impreza IV, 2012 г., 1600 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/xv/",
+    "https://www.drom.ru/catalog/subaru/impreza/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://kazan.autospot.ru/brands/subaru/xv/2011/suv/used/1008627/",
+    "https://autospot.ru/brands/subaru/xv/2011/suv/used/1010298/",
+    "https://autospot.ru/brands/subaru/impreza/2011/hatchback/used/1022296/"
+   ],
+   "note": "Код GP одинаков у XV и хэтчбека Impreza 2011–2016 — модель уточнить по ПТС; лекала на Impreza GP нет."
+  },
+  {
+   "mask": "JF1GT",
+   "years": [
+    2017,
+    2023
+   ],
+   "model": "XV / Impreza",
+   "body": "GT: XV 2-го поколения или Impreza 5-го поколения (хэтчбек)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JF1GT7LL5MG****** — autospot.ru, Subaru XV II, 2021 г., 1995 см³",
+    "JF1GT7LL5KG****** — autospot.ru, Subaru XV II, 2019 г., 1995 см³",
+    "JF1GT7LL5JG****** — autospot.ru, Subaru XV I Рестайлинг, 2017 г., 1995 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/xv/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://autospot.ru/brands/subaru/xv/2017/suv/used/1013079/",
+    "https://autospot.ru/brands/subaru/xv/2017/suv/used/992194/",
+    "https://autospot.ru/brands/subaru/xv/2016/suv/used/1015226/"
+   ],
+   "note": "Лекало XV в каталоге — под GP; для GT уточнить у менеджера."
+  },
+  {
+   "mask": "JF1BE",
+   "years": [
+    1998,
+    2004
+   ],
+   "model": "Legacy B4",
+   "body": "BE седан (3-е поколение)",
+   "slugs": [
+    "subaru_legacy-b4"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/legacy/",
+    "https://www.drom.ru/catalog/subaru/legacy_b4/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ],
+   "note": "Реального VIN JF1BE… не найдено; схема та же, что у Forester/Impreza (4–6 символы — код кузова), у Legacy для США BE = седан 2000–2004."
+  },
+  {
+   "mask": "JF1BL",
+   "years": [
+    2003,
+    2009
+   ],
+   "model": "Legacy B4",
+   "body": "BL седан (4-е поколение)",
+   "slugs": [
+    "subaru_legacy-b4-bl"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/legacy/",
+    "https://www.drom.ru/catalog/subaru/legacy_b4/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ],
+   "note": "Реального VIN JF1BL… не найдено; у Legacy для США BL = седан 2005–2009, drom.ru (Россия): BL5, BL9, BLE."
+  },
+  {
+   "mask": "JF1BH",
+   "years": [
+    1998,
+    2003
+   ],
+   "model": "Legacy / Outback",
+   "body": "BH универсал (3-е поколение)",
+   "slugs": [],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/legacy/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ],
+   "note": "Универсал Legacy/Outback — лекала нет."
+  },
+  {
+   "mask": "JF1BP",
+   "years": [
+    2003,
+    2009
+   ],
+   "model": "Legacy / Outback",
+   "body": "BP универсал (4-е поколение)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JF1BP9LKB7G****** — autospot.ru, Subaru Outback III Рестайлинг, 2006 г., 2457 см³",
+    "JF1BPELUA4G****** — autospot.ru, Subaru Outback III, 2004 г., 2999 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/legacy/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://yekaterinburg.autospot.ru/brands/subaru/outback/2006/sw/used/1000067/",
+    "https://kazan.autospot.ru/brands/subaru/outback/2003/sw/used/1013672/"
+   ],
+   "note": "Универсал Legacy/Outback — лекала нет (есть только седан B4)."
+  },
+  {
+   "mask": "JF1BR",
+   "years": [
+    2009,
+    2014
+   ],
+   "model": "Legacy / Outback",
+   "body": "BR универсал (5-е поколение)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JF1BR9L95EG****** — autospot.ru, Subaru Outback IV Рестайлинг, 2014 г., 2457 см³",
+    "JF1BR9L95AG****** — autospot.ru, Subaru Outback IV, 2010 г., 2457 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/legacy/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://autospot.ru/brands/subaru/outback/2012/sw/used/1013496/",
+    "https://volgograd.autospot.ru/brands/subaru/outback/2009/sw/used/999279/"
+   ],
+   "note": "Outback/Legacy универсал — лекала нет."
+  },
+  {
+   "mask": "JF1BS",
+   "years": [
+    2014,
+    2020
+   ],
+   "model": "Outback",
+   "body": "BS (6-е поколение Outback)",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JF1BS9LC2LG****** — autospot.ru, Subaru Outback 2019 – н.в., VI, 2020 г., 2498 см³"
+   ],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://krasnodar.autospot.ru/brands/subaru/outback_vi/suv/used/980883/"
+   ],
+   "note": "Лекала нет."
+  },
+  {
+   "mask": "JSA?TD?4",
+   "years": [
+    2005,
+    2016
+   ],
+   "model": "Grand Vitara",
+   "body": "2-е поколение, 5 дверей (TD54V 2.0, TDA4V 2.4, TD44V 1.9D)",
+   "detail": "5–9 символы — модельный код Suzuki; 10–11 — «00» (не год)",
+   "slugs": [
+    "suzuki_vitara5d-bp",
+    "suzuki_vitara5d"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JSAJTD54V00****** — autospot.ru, Suzuki Grand Vitara III Рестайлинг 2, 2014 г., 1995 см³",
+    "JSAJTDA4V00****** — autospot.ru, Suzuki Grand Vitara III Рестайлинг, 2011 г., 2393 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/grand_vitara/",
+    "https://www.drom.ru/catalog/suzuki/escudo/",
+    "https://autospot.ru/brands/suzuki/grand_vitara/2012/suv/used/1009638/",
+    "https://spb.autospot.ru/brands/suzuki/grand_vitara/2008/suv/used/1016038/"
+   ],
+   "note": "С подлокотником или без — выбирает клиент."
+  },
+  {
+   "mask": "JSA?TA?4",
+   "years": [
+    2005,
+    2016
+   ],
+   "model": "Grand Vitara",
+   "body": "2-е поколение, 3 двери (TA74V 1.6, TAA4V 2.4)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [
+    "suzuki_vitara3d"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JSAJTA74V00****** — autospot.ru, Suzuki Grand Vitara III Рестайлинг, 2011 г., 1586 см³",
+    "JSAJTA74V00****** — autospot.ru, Suzuki Grand Vitara III, 2007 г., 1586 см³",
+    "JSAJTA74V00****** — autospot.ru, Suzuki Grand Vitara II Рестайлинг, 2006 г., 1590 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/grand_vitara/",
+    "https://www.drom.ru/catalog/suzuki/escudo/",
+    "https://autospot.ru/brands/suzuki/grand_vitara/2008/suv/used/1020618/",
+    "https://spb.autospot.ru/brands/suzuki/grand_vitara/2005/suv/used/1007555/",
+    "https://rostov-na-donu.autospot.ru/brands/suzuki/grand_vitara/2000/suv/used/1015483/"
+   ]
+  },
+  {
+   "mask": "JSA?JB43",
+   "years": [
+    1998,
+    2018
+   ],
+   "model": "Jimny",
+   "body": "JB43 (3-е поколение, 1.3)",
+   "detail": "5–9 символы — модельный код Suzuki (JB43V)",
+   "slugs": [
+    "suzuki_jimny"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JSAFJB43V00****** — autospot.ru, Suzuki Jimny III Рестайлинг 2, 2012 г., 1328 см³",
+    "JSAFJB43V00****** — autospot.ru, Suzuki Jimny III Рестайлинг 1, 2011 г., 1328 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/jimny/",
+    "https://ja.wikipedia.org/wiki/スズキ・ジムニー",
+    "https://spb.autospot.ru/brands/suzuki/novyj_jimny/2012/suv/used/986579/",
+    "https://tyumen.autospot.ru/brands/suzuki/novyj_jimny/2005/suv/used/1016466/"
+   ],
+   "note": "В каталоге Jimny 2005–2018; машины до 2005 г. — салон уточнить."
+  },
+  {
+   "mask": "JSA?JB33",
+   "years": [
+    1998,
+    2005
+   ],
+   "model": "Jimny",
+   "body": "JB33 (3-е поколение, 1.3, ранние)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [
+    "suzuki_jimny"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/jimny/"
+   ],
+   "note": "Код JB33 для Европы — по каталогу drom.ru; в каталоге лекал Jimny 2005–2018, салон до 2005 г. уточнить."
+  },
+  {
+   "mask": "JSA?JB74",
+   "years": [
+    2018,
+    2025
+   ],
+   "model": "Jimny",
+   "body": "JB74 (4-е поколение)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JSAGJB74V00****** — autospot.ru, Suzuki Jimny 2018 – н.в., IV, 2021 г., 1462 см³",
+    "JSAGJB74V00****** — autospot.ru, Suzuki Jimny 2018 – н.в., IV, 2021 г., 1462 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/jimny/",
+    "https://www.drom.ru/catalog/suzuki/jimny_sierra/",
+    "https://autospot.ru/brands/suzuki/jimny/suv/used/1003027/",
+    "https://autospot.ru/brands/suzuki/jimny/suv/used/1008173/"
+   ],
+   "note": "Лекал на Jimny 4-го поколения нет."
+  },
+  {
+   "mask": "JSA?ZC?1",
+   "years": [
+    2004,
+    2010
+   ],
+   "model": "Swift",
+   "body": "3-е поколение (ZC11S 1.3, ZC21S 1.5; японская сборка)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [
+    "suzuki_swift"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "JSAEZC21S00****** — autospot.ru, Suzuki Swift III, 2008 г., 1490 см³",
+    "JSAEZC11S00****** — autospot.ru, Suzuki Swift III, 2007 г., 1328 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/swift/",
+    "https://ja.wikipedia.org/wiki/スズキ・スイフト",
+    "https://ufa.autospot.ru/brands/suzuki/swift/2004/hatchback/used/996513/",
+    "https://autospot.ru/brands/suzuki/swift/2004/hatchback/used/1001069/"
+   ],
+   "note": "В каталоге Swift «до 2013» без поколения — уточнить у менеджера."
+  },
+  {
+   "mask": "TSM?ZC?1",
+   "years": [
+    2004,
+    2010
+   ],
+   "model": "Swift",
+   "body": "3-е поколение (венгерская сборка)",
+   "detail": "5–9 символы — модельный код Suzuki (ZC11S, ZC21S, ZD11S…)",
+   "slugs": [
+    "suzuki_swift"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TSMMZC11S00****** — autospot.ru, Suzuki Swift III, 2005 г., 1328 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/swift/",
+    "https://ja.wikipedia.org/wiki/スズキ・スイフト",
+    "https://rostov-na-donu.autospot.ru/brands/suzuki/swift/2004/hatchback/used/1015905/"
+   ],
+   "note": "В каталоге Swift «до 2013» без поколения — уточнить у менеджера."
+  },
+  {
+   "mask": "TSM?ZC?2",
+   "years": [
+    2010,
+    2013
+   ],
+   "model": "Swift",
+   "body": "4-е поколение (ZC72S 1.2; венгерская сборка)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [
+    "suzuki_swift"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TSMNZC72S00****** — autospot.ru, Suzuki Swift IV, 2013 г., 1242 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/swift/",
+    "https://ja.wikipedia.org/wiki/スズキ・スイフト",
+    "https://tyumen.autospot.ru/brands/suzuki/swift/2011/hatchback/used/1015616/"
+   ],
+   "note": "Лекало «до 2013»: машины 2010–2013 гг.; для 4-го поколения уточнить у менеджера. После 2013 г. — лекала нет."
+  },
+  {
+   "mask": "TSM?ZD?2",
+   "years": [
+    2010,
+    2013
+   ],
+   "model": "Swift",
+   "body": "4-е поколение, полный привод (ZD72S)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [
+    "suzuki_swift"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/swift/",
+    "https://ja.wikipedia.org/wiki/スズキ・スイフト"
+   ],
+   "note": "Код ZD72S — по каталогу drom.ru и ja.wikipedia; реального VIN не найдено."
+  },
+  {
+   "mask": "TSMLY",
+   "years": [
+    2015,
+    2024
+   ],
+   "model": "Vitara",
+   "body": "LY (4-е поколение)",
+   "detail": "4–5 «LY» (drom.ru: Россия — LY); 6–9 — исполнение (D21S 1.6 2WD, E21S 1.6 4WD, DA1S/EA1S 1.4T)",
+   "slugs": [
+    "suzuki_vitara"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TSMLYEA1S00****** — autospot.ru, Suzuki Vitara 2018 – 2024, II Рестайлинг, 2021 г., 1373 см³",
+    "TSMLYD21S00****** — autospot.ru, Suzuki Vitara 2018 – 2024, II Рестайлинг, 2021 г., 1586 см³",
+    "TSMLYE21S00****** — autospot.ru, Suzuki Vitara II, 2019 г., 1586 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/vitara/",
+    "https://spb.autospot.ru/brands/suzuki/vitara/suv/used/981747/",
+    "https://vologda.autospot.ru/brands/suzuki/vitara/suv/used/1011312/",
+    "https://voronezh.autospot.ru/brands/suzuki/vitara/2014/suv/used/944076/"
+   ],
+   "note": "10–11 — «00», год по VIN не читается."
+  },
+  {
+   "mask": "JSA?RA31",
+   "years": [
+    2001,
+    2007
+   ],
+   "model": "Liana",
+   "body": "седан (RA31S/ERA31S)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [
+    "JSAERA31S00****** — autospot.ru, Suzuki Liana I Рестайлинг, 2007 г., 1586 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/liana/",
+    "https://autospot.ru/brands/suzuki/liana/2004/sedan/used/1008563/"
+   ],
+   "note": "Лекало Liana в каталоге — хэтчбек; седан уточнить у менеджера."
+  },
+  {
+   "mask": "JSA?RC31",
+   "years": [
+    2001,
+    2007
+   ],
+   "model": "Liana",
+   "body": "хэтчбек (RC31S, 2WD)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [
+    "suzuki_liana"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/liana/"
+   ],
+   "note": "Код хэтчбека RC31S — по каталогу drom.ru (Россия), реального VIN не найдено; схема как у седана JSAERA31S…."
+  },
+  {
+   "mask": "JSA?RD31",
+   "years": [
+    2001,
+    2007
+   ],
+   "model": "Liana",
+   "body": "хэтчбек (RD31S, 4WD)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [
+    "suzuki_liana"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/liana/"
+   ],
+   "note": "Код RD31S — по каталогу drom.ru (Россия), реального VIN не найдено."
+  },
+  {
+   "mask": "TSM?XB32",
+   "years": [
+    2008,
+    2015
+   ],
+   "model": "Splash",
+   "body": "XB32 (венгерская сборка)",
+   "detail": "5–9 символы — модельный код Suzuki (XB32S); drom.ru: Россия XB32",
+   "slugs": [
+    "suzuki_splash"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "TSMEXB32S00****** — autospot.ru, Suzuki Splash I Рестайлинг, 2013 г., 1242 см³"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/splash/",
+    "https://ja.wikipedia.org/wiki/スズキ・スプラッシュ",
+    "https://pskov.autospot.ru/brands/suzuki/splash/2012/hatchback/used/1020333/"
+   ]
+  },
+  {
+   "mask": "TSM?YA21",
+   "years": [
+    2006,
+    2014
+   ],
+   "model": "SX4",
+   "body": "1-е поколение, хэтчбек 2WD (YA21S)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [
+    "suzuki_sx4sedan",
+    "suzuki_sx4"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/sx4/"
+   ],
+   "note": "По каталогу drom.ru (Россия YA21S, рестайлинг GYA); реального VIN не найдено. Спинку выбирает клиент."
+  },
+  {
+   "mask": "TSM?YB21",
+   "years": [
+    2006,
+    2014
+   ],
+   "model": "SX4",
+   "body": "1-е поколение, хэтчбек 4WD (YB21S)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [
+    "suzuki_sx4sedan",
+    "suzuki_sx4"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/sx4/"
+   ],
+   "note": "По каталогу drom.ru (Россия YB21S, рестайлинг GYB); реального VIN не найдено. Спинку выбирает клиент."
+  },
+  {
+   "mask": "TSM?YC21",
+   "years": [
+    2007,
+    2014
+   ],
+   "model": "SX4",
+   "body": "1-е поколение, седан (GYC21S)",
+   "detail": "5–9 символы — модельный код Suzuki",
+   "slugs": [],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/sx4/"
+   ],
+   "note": "Седан SX4 — лекала нет."
+  },
+  {
+   "mask": "TSMJY",
+   "years": [
+    2013,
+    2021
+   ],
+   "model": "SX4",
+   "body": "2-е поколение (S-Cross): JYA — 2WD, JYB — 4WD",
+   "detail": "drom.ru: Россия JYA, JYB; Европа JYA22, JYB22",
+   "slugs": [
+    "suzuki_sx4-new"
+   ],
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/sx4/"
+   ],
+   "note": "Реального VIN не найдено."
+  },
+  {
+   "mask": "JA4?W",
+   "years": [
+    2001,
+    2006
+   ],
+   "model": "Montero",
+   "body": "V60/V70 (= Pajero III), 5 дверей",
+   "detail": "5-й символ W — Montero 2001–2006",
+   "slugs": [
+    "mitsubishi_montero",
+    "mitsubishi_pajero_3"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4MW51R*2J?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4MW51S*3J?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4NW61S*6J?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4MW31R*1J?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Montero и Pajero III L — одна генерация, лекало выбирает клиент."
+  },
+  {
+   "mask": "JA4?S",
+   "years": [
+    1997,
+    2004
+   ],
+   "model": "Montero Sport",
+   "body": "K90 (= Pajero Sport I), 2WD",
+   "slugs": [
+    "mitsubishi_pajero-sport"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4LS21H*XP?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4LS31R*1P?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4LS21H*4P?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA4?T",
+   "years": [
+    1997,
+    2004
+   ],
+   "model": "Montero Sport",
+   "body": "K90 (= Pajero Sport I), 4WD",
+   "slugs": [
+    "mitsubishi_pajero-sport"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4LT31H*XP?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4MT31R*2P?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes",
+    "https://krasnodar.autospot.ru/brands/mitsubishi/montero_sport/1996/suv/used/995025/"
+   ],
+   "note": "Машина американского рынка (схема VIN США).",
+   "examples": [
+    "JA4MT21H21P****** — autospot.ru, Mitsubishi Montero Sport, 2001 г., 2972 см³"
+   ]
+  },
+  {
+   "mask": "JA4?X",
+   "years": [
+    2003,
+    2006
+   ],
+   "model": "Outlander",
+   "body": "CU (1-е поколение), 2WD",
+   "slugs": [
+    "mitsubishi_outlander"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4LX31F*6U?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA4?Z",
+   "years": [
+    2003,
+    2006
+   ],
+   "model": "Outlander",
+   "body": "CU (1-е поколение), AWD",
+   "slugs": [
+    "mitsubishi_outlander"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4LZ31F*4U?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4LZ31G*3U?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA4?S",
+   "years": [
+    2007,
+    2013
+   ],
+   "model": "Outlander",
+   "body": "CW (2-е поколение, XL), 2WD",
+   "slugs": [
+    "mitsubishi_outlanderxl"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4MS31X*8Z?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA4?T",
+   "years": [
+    2007,
+    2013
+   ],
+   "model": "Outlander",
+   "body": "CW (2-е поколение, XL), 4WD",
+   "slugs": [
+    "mitsubishi_outlanderxl"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4JT3AW*CU?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4AT3AW*DU?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA4?D",
+   "years": [
+    2014,
+    2018
+   ],
+   "model": "Outlander",
+   "body": "GF (3-е поколение), 2WD",
+   "slugs": [
+    "mitsubishi_outlander-3"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4AD3A3*GZ?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA4?Z",
+   "years": [
+    2014,
+    2018
+   ],
+   "model": "Outlander",
+   "body": "GF (3-е поколение), AWD",
+   "slugs": [
+    "mitsubishi_outlander-3"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4AZ3A3*EZ?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA4?D",
+   "years": [
+    2019,
+    2020
+   ],
+   "model": "Outlander",
+   "body": "GF (3-е поколение, рестайлинг), 2WD",
+   "slugs": [
+    "mitsubishi_outlander-4"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4AD3A3*LZ?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Рестайлинг 2018 г. — outlander-4; модельный год 2019–2020."
+  },
+  {
+   "mask": "JA4?Z",
+   "years": [
+    2019,
+    2020
+   ],
+   "model": "Outlander",
+   "body": "GF (3-е поколение, рестайлинг), AWD",
+   "slugs": [
+    "mitsubishi_outlander-4"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4AZ3A3*KZ?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA4?3",
+   "years": [
+    2022,
+    2026
+   ],
+   "model": "Outlander",
+   "body": "GN (4-е поколение), 2WD",
+   "slugs": [],
+   "confidence": "official",
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Лекал на 4-е поколение нет."
+  },
+  {
+   "mask": "JA4?4",
+   "years": [
+    2022,
+    2026
+   ],
+   "model": "Outlander",
+   "body": "GN (4-е поколение), AWD",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "JA4J4TA82NZ****** — autospot.ru, Mitsubishi Outlander 2.5 4WD (дилер указал 2021 г.)"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4J4TA82NZ?format=json"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Лекал на 4-е поколение нет."
+  },
+  {
+   "mask": "JA4?P",
+   "years": [
+    2011,
+    2022
+   ],
+   "model": "Outlander Sport",
+   "body": "GA (= ASX), 2WD",
+   "slugs": [
+    "mitsubishi_asx"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JA4AP3AU4JU****** — autospot.ru, Outlander Sport 2018"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4AP3AU*CZ?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA4?R",
+   "years": [
+    2011,
+    2022
+   ],
+   "model": "Outlander Sport",
+   "body": "GA (= ASX), AWD",
+   "slugs": [
+    "mitsubishi_asx"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4AR3AU*BZ?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4AR3AU*GU?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA3?J",
+   "years": [
+    2002,
+    2007
+   ],
+   "model": "Lancer",
+   "body": "CS седан (= Lancer IX)",
+   "slugs": [
+    "mitsubishi_lancer-ix"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA3AJ26E*2U?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA3AJ86E*5U?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA3AJ26E*7U?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA3?U",
+   "years": [
+    2008,
+    2011
+   ],
+   "model": "Lancer",
+   "body": "CY седан, FWD",
+   "slugs": [
+    "mitsubishi_lancer-x",
+    "mitsubishi_lancer10-sedanv2"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA32U2FU*8U?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA3?U",
+   "years": [
+    2012,
+    2017
+   ],
+   "model": "Lancer",
+   "body": "CY седан (рестайлинг), FWD",
+   "slugs": [
+    "mitsubishi_lancer-10new"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA32U2FU*HU?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JA3?V",
+   "years": [
+    2009,
+    2017
+   ],
+   "model": "Lancer",
+   "body": "CY седан, AWD (Ralliart/SE/SEL)",
+   "slugs": [
+    "mitsubishi_lancer-x",
+    "mitsubishi_lancer10-sedanv2",
+    "mitsubishi_lancer-10new"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA32V2FW*BU?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Выбор лекала по году: до 2011–2012 — lancer-x/sedanv2, позже — lancer-10new."
+  },
+  {
+   "mask": "JA3?X",
+   "years": [
+    2009,
+    2014
+   ],
+   "model": "Lancer Sportback",
+   "body": "CX хэтчбек, FWD",
+   "slugs": [
+    "mitsubishi_lancer10-sportback",
+    "mitsubishi_lancer-10hb"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA32X8HW*AU?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA32X2HU*EU?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Мотор 2.0 или 2.4 — в каталоге «мотор 2 л» / «кроме 2 л», уточнить объём по ПТС."
+  },
+  {
+   "mask": "JM1BK?2",
+   "years": [
+    2004,
+    2009
+   ],
+   "model": "Mazda3",
+   "body": "BK седан",
+   "detail": "7-й символ 2 — седан",
+   "slugs": [
+    "mazda_3-sedan"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM1BK32F*71?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JM1BK?4",
+   "years": [
+    2004,
+    2009
+   ],
+   "model": "Mazda3",
+   "body": "BK хэтчбек 5 дв.",
+   "detail": "7-й символ 4 — хэтчбек",
+   "slugs": [
+    "mazda_3-hatchback"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM1BK344*71?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JM1BL",
+   "years": [
+    2010,
+    2013
+   ],
+   "model": "Mazda3",
+   "body": "BL (седан или хэтчбек)",
+   "slugs": [
+    "mazda_3-bl"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM1BL1SF*A1?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM1BL1H4*B1?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM1BL1H5*D1?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Лекало BL в каталоге — хэтчбек; для седана уточнить."
+  },
+  {
+   "mask": "JM1BM",
+   "years": [
+    2014,
+    2018
+   ],
+   "model": "Mazda3",
+   "body": "BM (седан или хэтчбек)",
+   "slugs": [
+    "mazda_3-new"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM1BM1V7*E1?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM1BM1L7*G1?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Лекало BM в каталоге — седан; для хэтчбека уточнить."
+  },
+  {
+   "mask": "3MZBM",
+   "years": [
+    2014,
+    2018
+   ],
+   "model": "Mazda3",
+   "body": "BM мексиканской сборки (седан или хэтчбек)",
+   "slugs": [
+    "mazda_3-new"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/3MZBM1V7*FM?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Лекало BM в каталоге — седан; для хэтчбека уточнить."
+  },
+  {
+   "mask": "JM1GJ",
+   "years": [
+    2014,
+    2021
+   ],
+   "model": "Mazda6",
+   "body": "GJ/GL седан",
+   "slugs": [
+    "mazda_6new"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM1GJ1U5*E1?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JM1DE",
+   "years": [
+    2011,
+    2014
+   ],
+   "model": "Mazda2",
+   "body": "DE хэтчбек",
+   "slugs": [
+    "mazda_demio-de"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM1DE1HY*B0?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JM3KE",
+   "years": [
+    2013,
+    2016
+   ],
+   "model": "CX-5",
+   "body": "KE (1-е поколение)",
+   "slugs": [
+    "mazda_cx5-direct-drive",
+    "mazda_cx-5",
+    "mazda_cx5-supreme"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM3KE4CY*E0?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Комплектацию выбирает клиент."
+  },
+  {
+   "mask": "JM3KF",
+   "years": [
+    2017,
+    2025
+   ],
+   "model": "CX-5",
+   "body": "KF (2-е поколение)",
+   "slugs": [
+    "mazda_cx5-2"
+   ],
+   "confidence": "official",
+   "examples": [
+    "JM3KFACM9K0****** — autospot.ru, CX-5 2019",
+    "JM3KFADM8J0****** — autospot.ru, CX-5 2018",
+    "JM3KFBDM4M1****** — autospot.ru, Mazda CX-5 2017 – 2021, II, 2021 г., 2488 см³"
+   ],
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM3KFBCM*J0?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://autospot.ru/brands/mazda/cx_5/suv/used/994079/"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JM3ER",
+   "years": [
+    2007,
+    2012
+   ],
+   "model": "CX-7",
+   "body": "ER",
+   "slugs": [
+    "mazda_cx-7"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM3ER293*70?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM3ER2B5*C0?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JM3LW",
+   "years": [
+    2000,
+    2006
+   ],
+   "model": "MPV",
+   "body": "LW (2-е поколение)",
+   "slugs": [
+    "mazda_mpvii",
+    "mazda_mpvii-5"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM3LW28A*20?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JM3LW28J*60?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JF2SH",
+   "years": [
+    2009,
+    2013
+   ],
+   "model": "Forester",
+   "body": "SH (3-е поколение)",
+   "slugs": [
+    "subaru_forester-3",
+    "subaru_forester-3-pdl"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JF2SH636*9H?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JF2SH6BC*DH?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JF2SJ",
+   "years": [
+    2014,
+    2018
+   ],
+   "model": "Forester",
+   "body": "SJ (4-е поколение)",
+   "slugs": [
+    "subaru_forester-4"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JF2SJAAC*EH?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "4S3BE",
+   "years": [
+    2000,
+    2004
+   ],
+   "model": "Legacy",
+   "body": "BE седан (3-е поколение)",
+   "slugs": [
+    "subaru_legacy-b4"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/4S3BE646*37?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "4S3BL",
+   "years": [
+    2005,
+    2009
+   ],
+   "model": "Legacy",
+   "body": "BL седан (4-е поколение)",
+   "slugs": [
+    "subaru_legacy-b4-bl"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/4S3BL616*57?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/4S3BL616*97?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JF2GP",
+   "years": [
+    2013,
+    2017
+   ],
+   "model": "XV Crosstrek / Crosstrek",
+   "body": "GP (1-е поколение XV)",
+   "slugs": [
+    "subaru_xv"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JF2GPAAC*D2?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JF2GPACC*G8?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JF2GT",
+   "years": [
+    2018,
+    2023
+   ],
+   "model": "Crosstrek",
+   "body": "GT (2-е поколение XV)",
+   "slugs": [],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JF2GTABC*JH?format=json",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Лекало XV в каталоге — под GP; для GT уточнить."
+  },
+  {
+   "mask": "JS2YA",
+   "years": [
+    2007,
+    2013
+   ],
+   "model": "SX4",
+   "body": "хэтчбек 2WD (1-е поколение)",
+   "slugs": [
+    "suzuki_sx4sedan",
+    "suzuki_sx4"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JS2YA413*76?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JS2YA5A3*D6?format=json"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Спинку выбирает клиент."
+  },
+  {
+   "mask": "JS2YB",
+   "years": [
+    2007,
+    2013
+   ],
+   "model": "SX4",
+   "body": "хэтчбек AWD (1-е поколение)",
+   "slugs": [
+    "suzuki_sx4sedan",
+    "suzuki_sx4"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JS2YB417*96?format=json"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Спинку выбирает клиент."
+  },
+  {
+   "mask": "JS2YC",
+   "years": [
+    2008,
+    2013
+   ],
+   "model": "SX4",
+   "body": "седан (1-е поколение)",
+   "slugs": [],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JS2YC414*86?format=json"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Седан SX4 — лекала нет."
+  },
+  {
+   "mask": "JS3TD94",
+   "years": [
+    2006,
+    2013
+   ],
+   "model": "Grand Vitara",
+   "body": "2-е поколение, 5 дверей, 4WD",
+   "slugs": [
+    "suzuki_vitara5d-bp",
+    "suzuki_vitara5d"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JS3TD941*84?format=json"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JS3TE94",
+   "years": [
+    2006,
+    2013
+   ],
+   "model": "Grand Vitara",
+   "body": "2-е поколение, 5 дверей, 2WD",
+   "slugs": [
+    "suzuki_vitara5d-bp",
+    "suzuki_vitara5d"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JS3TE941*84?format=json"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JS3TD62",
+   "years": [
+    1999,
+    2005
+   ],
+   "model": "Grand Vitara",
+   "body": "1-е поколение, 5 дверей, 4WD",
+   "slugs": [
+    "suzuki_vitara-5d"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JS3TD62V*14?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JS3TD62V*54?format=json"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "JS3TE62",
+   "years": [
+    1999,
+    2005
+   ],
+   "model": "Grand Vitara",
+   "body": "1-е поколение, 5 дверей, 2WD",
+   "slugs": [
+    "suzuki_vitara-5d"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JS3TE62V*Y4?format=json"
+   ],
+   "note": "Машина американского рынка (схема VIN США)."
+  },
+  {
+   "mask": "KL5JD66",
+   "years": [
+    2005,
+    2008
+   ],
+   "model": "Reno",
+   "body": "хэтчбек 5 дв. (Daewoo Lacetti)",
+   "slugs": [
+    "suzuki_reno"
+   ],
+   "confidence": "official",
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/KL5JD66Z*5K?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/KL5JD66Z*7K?format=json",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/KL5JD66Z*8K?format=json"
+   ],
+   "note": "Машина американского рынка (схема VIN США). Седан Forenza (KL5JD56…) — лекала нет."
+  }
+ ],
+ "frame_rules": [
+  {
+   "codes": [
+    "CU2W",
+    "CU4W",
+    "CU5W"
+   ],
+   "model": "Airtrek",
+   "body": "CU (кроссовер, японский аналог Outlander I)",
+   "years": [
+    2001,
+    2005
+   ],
+   "slugs": [
+    "mitsubishi_air-trak"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "CU2******** — drom.ru, Mitsubishi Airtrek 2001 и 2002, правый руль"
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/airtrek/",
+    "https://ja.wikipedia.org/wiki/三菱・エアトレック"
+   ]
+  },
+  {
+   "codes": [
+    "CW4W",
+    "CW5W",
+    "CW6W"
+   ],
+   "model": "Outlander",
+   "body": "CW (2-е поколение, Outlander XL)",
+   "years": [
+    2005,
+    2012
+   ],
+   "slugs": [
+    "mitsubishi_outlanderxl"
+   ],
+   "note": "Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/outlander/",
+    "https://ja.wikipedia.org/wiki/三菱・アウトランダー"
+   ]
+  },
+  {
+   "codes": [
+    "GF7W",
+    "GF8W",
+    "GG2W",
+    "GG3W"
+   ],
+   "model": "Outlander",
+   "body": "GF/GG (3-е поколение; GG — PHEV)",
+   "years": [
+    2012,
+    2021
+   ],
+   "slugs": [
+    "mitsubishi_outlander-3",
+    "mitsubishi_outlander-4"
+   ],
+   "note": "По номеру кузова рестайлинг не различить: до 2018 г. — outlander-3, с середины 2018 г. (3-й рестайлинг) — outlander-4. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "examples": [
+    "GG2W-03***** — autospot.ru (номер кузова в поле VIN), Mitsubishi Outlander III Рестайлинг 2, 2015 г."
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/outlander/",
+    "https://ja.wikipedia.org/wiki/三菱・アウトランダー",
+    "https://novorossiysk.autospot.ru/brands/mitsubishi/outlander/2015/suv/used/980946/"
+   ]
+  },
+  {
+   "codes": [
+    "GA3W",
+    "GA4W"
+   ],
+   "model": "RVR",
+   "body": "GA (японское название ASX)",
+   "years": [
+    2010,
+    2024
+   ],
+   "slugs": [
+    "mitsubishi_asx"
+   ],
+   "note": "RVR — название ASX на японском рынке, кузов тот же (GA). Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/rvr/",
+    "https://ja.wikipedia.org/wiki/三菱・RVR"
+   ]
+  },
+  {
+   "codes": [
+    "Z21A",
+    "Z22A",
+    "Z23A",
+    "Z24A",
+    "Z25A",
+    "Z26A",
+    "Z27A",
+    "Z28A"
+   ],
+   "model": "Colt",
+   "body": "Z2# (хэтчбек 5 дв., японский рынок)",
+   "years": [
+    2002,
+    2012
+   ],
+   "slugs": [
+    "mitsubishi_colt-r-50",
+    "mitsubishi_colt-r"
+   ],
+   "note": "Вариант спинки (50/50 или цельная) по номеру не определить — выбирает клиент. Colt Plus (универсал Z2#W) сюда не входит.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/colt/",
+    "https://ja.wikipedia.org/wiki/三菱・コルト"
+   ]
+  },
+  {
+   "codes": [
+    "CS2A",
+    "CS5A",
+    "CS6A"
+   ],
+   "model": "Lancer (Lancer Cedia)",
+   "body": "CS седан (японский рынок)",
+   "years": [
+    2000,
+    2010
+   ],
+   "slugs": [
+    "mitsubishi_lancer-ix"
+   ],
+   "note": "Lancer Cedia / Lancer седан CS — тот же кузов, что Lancer IX. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/lancer/",
+    "https://www.drom.ru/catalog/mitsubishi/lancer_cedia/",
+    "https://ja.wikipedia.org/wiki/三菱・ランサー"
+   ]
+  },
+  {
+   "codes": [
+    "CS2W",
+    "CS5W"
+   ],
+   "model": "Lancer Cedia Wagon",
+   "body": "CS универсал (японский рынок)",
+   "years": [
+    2000,
+    2007
+   ],
+   "slugs": [],
+   "note": "Универсал — лекала в каталоге нет (Lancer IX сделан под седан), предложить индивидуальный пошив.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/lancer/",
+    "https://www.drom.ru/catalog/mitsubishi/lancer_cedia/",
+    "https://ja.wikipedia.org/wiki/三菱・ランサー"
+   ]
+  },
+  {
+   "codes": [
+    "CY3A",
+    "CY4A",
+    "CY6A"
+   ],
+   "model": "Galant Fortis",
+   "body": "CY седан (японский Lancer X)",
+   "years": [
+    2007,
+    2015
+   ],
+   "slugs": [
+    "mitsubishi_lancer-x",
+    "mitsubishi_lancer10-sedanv2",
+    "mitsubishi_lancer-10new"
+   ],
+   "note": "Galant Fortis — японское название Lancer X. До 2011–2012 г. — lancer-x / lancer10-sedanv2 (sport), после рестайлинга — lancer-10new. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/galant_fortis/",
+    "https://ja.wikipedia.org/wiki/三菱・ギャランフォルティス"
+   ]
+  },
+  {
+   "codes": [
+    "CX4A"
+   ],
+   "model": "Galant Fortis Sportback",
+   "body": "CX хэтчбек, мотор 2.0 (4B11)",
+   "years": [
+    2008,
+    2015
+   ],
+   "slugs": [
+    "mitsubishi_lancer10-sportback"
+   ],
+   "note": "Цифра 4 в коде — мотор 2.0 л; по каталогу лекало «хэтчбек, мотор 2 л». Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/galant_fortis/",
+    "https://ja.wikipedia.org/wiki/三菱・ギャランフォルティス"
+   ]
+  },
+  {
+   "codes": [
+    "CX3A",
+    "CX6A"
+   ],
+   "model": "Galant Fortis Sportback",
+   "body": "CX хэтчбек, мотор 1.8",
+   "years": [
+    2010,
+    2015
+   ],
+   "slugs": [
+    "mitsubishi_lancer-10hb"
+   ],
+   "note": "CX3A/CX6A — 1.8 л (по ja.wikipedia: смена мотора → тип CY3A/CX3A, затем CY6A/CX6A); лекало «хэтчбек, кроме 2 л». Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/galant_fortis/",
+    "https://ja.wikipedia.org/wiki/三菱・ギャランフォルティス"
+   ]
+  },
+  {
+   "codes": [
+    "V73W",
+    "V75W",
+    "V77W",
+    "V78W"
+   ],
+   "model": "Pajero",
+   "body": "V70 (3-е поколение, 5 дверей)",
+   "years": [
+    1999,
+    2006
+   ],
+   "slugs": [
+    "mitsubishi_pajero-3-right"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/pajero/",
+    "https://ja.wikipedia.org/wiki/三菱・パジェロ"
+   ]
+  },
+  {
+   "codes": [
+    "V63W",
+    "V65W",
+    "V68W"
+   ],
+   "model": "Pajero",
+   "body": "V60 (3-е поколение, 3 двери, короткая база)",
+   "years": [
+    1999,
+    2006
+   ],
+   "slugs": [],
+   "note": "3-дверный Pajero III — в каталоге не указан (лекало, вероятно, под 5 дверей); уточнить у менеджера.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/pajero/",
+    "https://ja.wikipedia.org/wiki/三菱・パジェロ"
+   ]
+  },
+  {
+   "codes": [
+    "V93W",
+    "V97W",
+    "V98W"
+   ],
+   "model": "Pajero",
+   "body": "V90 (4-е поколение, 5 дверей)",
+   "years": [
+    2006,
+    2019
+   ],
+   "slugs": [
+    "mitsubishi_pajero-4"
+   ],
+   "note": "Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/pajero/",
+    "https://ja.wikipedia.org/wiki/三菱・パジェロ"
+   ]
+  },
+  {
+   "codes": [
+    "V83W",
+    "V87W",
+    "V88W"
+   ],
+   "model": "Pajero",
+   "body": "V80 (4-е поколение, 3 двери)",
+   "years": [
+    2006,
+    2018
+   ],
+   "slugs": [],
+   "note": "3-дверный Pajero IV — в каталоге не указан; уточнить у менеджера.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/pajero/",
+    "https://ja.wikipedia.org/wiki/三菱・パジェロ"
+   ]
+  },
+  {
+   "codes": [
+    "K94W",
+    "K96W",
+    "K97W",
+    "K99W"
+   ],
+   "model": "Challenger",
+   "body": "K90 (японский Pajero Sport I)",
+   "years": [
+    1996,
+    2001
+   ],
+   "slugs": [
+    "mitsubishi_pajero-sport"
+   ],
+   "note": "Challenger — японское название Pajero Sport I (в номере кузова бывает суффикс G: K94WG, K97WG). Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mitsubishi/challenger/",
+    "https://ja.wikipedia.org/wiki/三菱・チャレンジャー"
+   ]
+  },
+  {
+   "codes": [
+    "DE3AS",
+    "DE3FS",
+    "DE5FS",
+    "DEJFS"
+   ],
+   "model": "Demio",
+   "body": "DE (3-е поколение)",
+   "years": [
+    2007,
+    2014
+   ],
+   "slugs": [
+    "mazda_demio-de"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/demio/",
+    "https://ja.wikipedia.org/wiki/マツダ・デミオ"
+   ]
+  },
+  {
+   "codes": [
+    "DJ3AS",
+    "DJ3FS",
+    "DJ5AS",
+    "DJ5FS",
+    "DJLAS",
+    "DJLFS"
+   ],
+   "model": "Demio",
+   "body": "DJ (4-е поколение)",
+   "years": [
+    2014,
+    2019
+   ],
+   "slugs": [
+    "mazda_demio-dj"
+   ],
+   "note": "С 2019 г. в Японии та же машина продаётся как Mazda2 с теми же кодами кузова.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/demio/",
+    "https://www.drom.ru/catalog/mazda/mazda2/",
+    "https://ja.wikipedia.org/wiki/マツダ・デミオ"
+   ]
+  },
+  {
+   "codes": [
+    "BK3P",
+    "BK5P",
+    "BKEP"
+   ],
+   "model": "Axela",
+   "body": "BK (1-е поколение)",
+   "years": [
+    2003,
+    2009
+   ],
+   "slugs": [
+    "mazda_3-hatchback",
+    "mazda_3-sedan"
+   ],
+   "note": "У BK седан и хэтчбек (Axela Sport) имеют одинаковые коды кузова — кузов выбирает клиент.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/axela/",
+    "https://ja.wikipedia.org/wiki/マツダ・アクセラ"
+   ]
+  },
+  {
+   "codes": [
+    "BL3FW",
+    "BL5FW",
+    "BLEAW",
+    "BLEFW",
+    "BLFFW"
+   ],
+   "model": "Axela Sport",
+   "body": "BL хэтчбек (2-е поколение)",
+   "years": [
+    2009,
+    2013
+   ],
+   "slugs": [
+    "mazda_3-bl"
+   ],
+   "note": "Последняя буква W — хэтчбек, P — седан.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/axela/",
+    "https://ja.wikipedia.org/wiki/マツダ・アクセラ"
+   ]
+  },
+  {
+   "codes": [
+    "BL5FP",
+    "BLEAP",
+    "BLEFP",
+    "BLFFP"
+   ],
+   "model": "Axela",
+   "body": "BL седан (2-е поколение)",
+   "years": [
+    2009,
+    2013
+   ],
+   "slugs": [],
+   "note": "Лекало BL в каталоге только для хэтчбека; седан — уточнить у менеджера / индивидуальный пошив.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/axela/",
+    "https://ja.wikipedia.org/wiki/マツダ・アクセラ"
+   ]
+  },
+  {
+   "codes": [
+    "BM2AP",
+    "BM2FP",
+    "BM5AP",
+    "BM5FP",
+    "BMLFP",
+    "BYEFP"
+   ],
+   "model": "Axela",
+   "body": "BM/BY седан (3-е поколение)",
+   "years": [
+    2013,
+    2019
+   ],
+   "slugs": [
+    "mazda_3-new"
+   ],
+   "note": "Последняя буква P — седан (BYEFP — гибрид), S — хэтчбек.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/axela/",
+    "https://ja.wikipedia.org/wiki/マツダ・アクセラ"
+   ]
+  },
+  {
+   "codes": [
+    "BM2AS",
+    "BM2FS",
+    "BM5AS",
+    "BM5FS",
+    "BMEFS",
+    "BMLFS"
+   ],
+   "model": "Axela Sport",
+   "body": "BM хэтчбек (3-е поколение)",
+   "years": [
+    2013,
+    2019
+   ],
+   "slugs": [],
+   "note": "Лекало BM в каталоге сделано под седан; хэтчбек — уточнить у менеджера.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/axela/",
+    "https://ja.wikipedia.org/wiki/マツダ・アクセラ"
+   ]
+  },
+  {
+   "codes": [
+    "GH5AP",
+    "GH5FP",
+    "GHEFP",
+    "GH5AS",
+    "GH5FS",
+    "GHEFS",
+    "GH5AW",
+    "GH5FW",
+    "GHEFW"
+   ],
+   "model": "Atenza",
+   "body": "GH (2-е поколение: седан P, лифтбек S, универсал W)",
+   "years": [
+    2008,
+    2012
+   ],
+   "slugs": [
+    "mazda_6-0712"
+   ],
+   "note": "Кузов в каталоге не указан; универсал (W) — уточнить задний ряд. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/atenza/",
+    "https://ja.wikipedia.org/wiki/マツダ・アテンザ"
+   ]
+  },
+  {
+   "codes": [
+    "GJ2AP",
+    "GJ2FP",
+    "GJ5FP",
+    "GJEFP",
+    "GJ2AW",
+    "GJ2FW",
+    "GJ5FW",
+    "GJEFW"
+   ],
+   "model": "Atenza / Mazda6",
+   "body": "GJ (3-е поколение: седан P, универсал W)",
+   "years": [
+    2012,
+    2024
+   ],
+   "slugs": [
+    "mazda_6new"
+   ],
+   "note": "С 2019 г. в Японии Atenza переименована в Mazda6, коды кузова те же. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/atenza/",
+    "https://www.drom.ru/catalog/mazda/mazda6/",
+    "https://ja.wikipedia.org/wiki/マツダ・MAZDA6"
+   ]
+  },
+  {
+   "codes": [
+    "LW3W",
+    "LW5W",
+    "LWEW",
+    "LWFW"
+   ],
+   "model": "MPV",
+   "body": "LW (2-е поколение)",
+   "years": [
+    1999,
+    2006
+   ],
+   "slugs": [
+    "mazda_mpvii",
+    "mazda_mpvii-5"
+   ],
+   "note": "Число мест (7 или 5) по номеру кузова не определить — выбирает клиент.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/mpv/",
+    "https://ja.wikipedia.org/wiki/マツダ・MPV"
+   ]
+  },
+  {
+   "codes": [
+    "KE2AW",
+    "KE2FW",
+    "KE5AW",
+    "KE5FW",
+    "KEEAW",
+    "KEEFW"
+   ],
+   "model": "CX-5",
+   "body": "KE (1-е поколение)",
+   "years": [
+    2012,
+    2016
+   ],
+   "slugs": [
+    "mazda_cx5-direct-drive",
+    "mazda_cx-5",
+    "mazda_cx5-supreme"
+   ],
+   "note": "Комплектацию (direct/drive, touring/active, supreme с 2015) по номеру не определить — выбирает клиент. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/cx-5/",
+    "https://ja.wikipedia.org/wiki/マツダ・CX-5"
+   ]
+  },
+  {
+   "codes": [
+    "KF2P",
+    "KF5P",
+    "KFEP"
+   ],
+   "model": "CX-5",
+   "body": "KF (2-е поколение)",
+   "years": [
+    2016,
+    2021
+   ],
+   "slugs": [
+    "mazda_cx5-2"
+   ],
+   "note": "Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "examples": [
+    "KFEP-30***** — autospot.ru (номер кузова в поле VIN), Mazda CX-5 2017 – 2021, II, 2019 г."
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/cx-5/",
+    "https://ja.wikipedia.org/wiki/マツダ・CX-5",
+    "https://autospot.ru/brands/mazda/cx_5/suv/used/981595/"
+   ]
+  },
+  {
+   "codes": [
+    "ER3P"
+   ],
+   "model": "CX-7",
+   "body": "ER",
+   "years": [
+    2006,
+    2012
+   ],
+   "slugs": [
+    "mazda_cx-7"
+   ],
+   "note": "Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/mazda/cx-7/",
+    "https://ja.wikipedia.org/wiki/マツダ・CX-7"
+   ]
+  },
+  {
+   "codes": [
+    "SF5",
+    "SF9"
+   ],
+   "model": "Forester",
+   "body": "SF (1-е поколение)",
+   "years": [
+    1997,
+    2002
+   ],
+   "slugs": [
+    "subaru_forestersf5-r",
+    "subaru_forestersf5"
+   ],
+   "note": "Лекала SF5 в каталоге — под правый руль; с подлокотниками или без — выбирает клиент.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/forester/",
+    "https://ja.wikipedia.org/wiki/スバル・フォレスター"
+   ]
+  },
+  {
+   "codes": [
+    "SG5",
+    "SG9"
+   ],
+   "model": "Forester",
+   "body": "SG (2-е поколение)",
+   "years": [
+    2002,
+    2007
+   ],
+   "slugs": [
+    "subaru_forester-2",
+    "subaru_forester-2-podlokotniki"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/forester/",
+    "https://ja.wikipedia.org/wiki/スバル・フォレスター"
+   ]
+  },
+  {
+   "codes": [
+    "SH5",
+    "SH9",
+    "SHJ"
+   ],
+   "model": "Forester",
+   "body": "SH (3-е поколение)",
+   "years": [
+    2007,
+    2012
+   ],
+   "slugs": [
+    "subaru_forester-3",
+    "subaru_forester-3-pdl"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/forester/",
+    "https://ja.wikipedia.org/wiki/スバル・フォレスター"
+   ]
+  },
+  {
+   "codes": [
+    "SJ5",
+    "SJG"
+   ],
+   "model": "Forester",
+   "body": "SJ (4-е поколение)",
+   "years": [
+    2012,
+    2018
+   ],
+   "slugs": [
+    "subaru_forester-4"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/forester/",
+    "https://ja.wikipedia.org/wiki/スバル・フォレスター"
+   ]
+  },
+  {
+   "codes": [
+    "GE2",
+    "GE3",
+    "GE6",
+    "GE7",
+    "GH2",
+    "GH3",
+    "GH6",
+    "GH7",
+    "GH8"
+   ],
+   "model": "Impreza",
+   "body": "GE седан (Anesis) / GH хэтчбек (3-е поколение)",
+   "years": [
+    2007,
+    2011
+   ],
+   "slugs": [
+    "subaru_impreza"
+   ],
+   "note": "В каталоге Impreza 2009–2012 без кузова. Те же коды GH2/GH3/GH6/GH7 у Impreza XV (2010–2011).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/impreza/",
+    "https://ja.wikipedia.org/wiki/スバル・インプレッサ"
+   ]
+  },
+  {
+   "codes": [
+    "BE5",
+    "BE9",
+    "BEE",
+    "BES"
+   ],
+   "model": "Legacy B4",
+   "body": "BE (3-е поколение, седан)",
+   "years": [
+    1998,
+    2003
+   ],
+   "slugs": [
+    "subaru_legacy-b4"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/legacy_b4/",
+    "https://ja.wikipedia.org/wiki/スバル・レガシィ"
+   ]
+  },
+  {
+   "codes": [
+    "BL5",
+    "BL9",
+    "BLE"
+   ],
+   "model": "Legacy B4",
+   "body": "BL (4-е поколение, седан)",
+   "years": [
+    2003,
+    2009
+   ],
+   "slugs": [
+    "subaru_legacy-b4-bl"
+   ],
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/legacy_b4/",
+    "https://ja.wikipedia.org/wiki/スバル・レガシィ"
+   ]
+  },
+  {
+   "codes": [
+    "BH5",
+    "BH9",
+    "BHC",
+    "BHE"
+   ],
+   "model": "Legacy Touring Wagon",
+   "body": "BH (3-е поколение, универсал)",
+   "years": [
+    1998,
+    2003
+   ],
+   "slugs": [],
+   "note": "Универсал Legacy — лекала в каталоге нет (есть только седан B4).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/legacy/",
+    "https://ja.wikipedia.org/wiki/スバル・レガシィ"
+   ]
+  },
+  {
+   "codes": [
+    "BP5",
+    "BP9",
+    "BPE"
+   ],
+   "model": "Legacy Touring Wagon / Outback",
+   "body": "BP (4-е поколение, универсал)",
+   "years": [
+    2003,
+    2009
+   ],
+   "slugs": [],
+   "note": "Универсал Legacy — лекала в каталоге нет (есть только седан B4 BL).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/legacy/",
+    "https://ja.wikipedia.org/wiki/スバル・レガシィ"
+   ]
+  },
+  {
+   "codes": [
+    "GP7",
+    "GPE"
+   ],
+   "model": "XV",
+   "body": "GP (1-е поколение)",
+   "years": [
+    2012,
+    2017
+   ],
+   "slugs": [
+    "subaru_xv"
+   ],
+   "note": "Коды GP7/GPE есть и у Impreza Sport 4-го поколения (хэтчбек 2011–2016) — модель уточнить по ПТС; лекала на Impreza GP нет.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/xv/",
+    "https://www.drom.ru/catalog/subaru/impreza/",
+    "https://ja.wikipedia.org/wiki/スバル・XV",
+    "https://ja.wikipedia.org/wiki/スバル・インプレッサ"
+   ]
+  },
+  {
+   "codes": [
+    "GP2",
+    "GP3",
+    "GP6",
+    "GJ2",
+    "GJ3",
+    "GJ6",
+    "GJ7"
+   ],
+   "model": "Impreza Sport / Impreza G4",
+   "body": "GP хэтчбек / GJ седан (4-е поколение)",
+   "years": [
+    2011,
+    2016
+   ],
+   "slugs": [],
+   "note": "Лекал на Impreza 4-го поколения нет.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/impreza/",
+    "https://ja.wikipedia.org/wiki/スバル・インプレッサ"
+   ]
+  },
+  {
+   "codes": [
+    "GT2",
+    "GT6",
+    "GK2",
+    "GK3",
+    "GK6",
+    "GK7"
+   ],
+   "model": "Impreza Sport / Impreza G4",
+   "body": "GT хэтчбек / GK седан (5-е поколение)",
+   "years": [
+    2016,
+    2023
+   ],
+   "slugs": [],
+   "note": "Лекал на Impreza 5-го поколения нет.",
+   "confidence": "confirmed",
+   "examples": [
+    "GK3-00***** — autospot.ru (номер кузова в поле VIN), Subaru Impreza V, 2019 г."
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/impreza/",
+    "https://ja.wikipedia.org/wiki/スバル・インプレッサ",
+    "https://novorossiysk.autospot.ru/brands/subaru/impreza/2016/sedan/used/895419/"
+   ]
+  },
+  {
+   "codes": [
+    "GT3",
+    "GT7",
+    "GTE"
+   ],
+   "model": "XV",
+   "body": "GT (2-е поколение)",
+   "years": [
+    2017,
+    2023
+   ],
+   "slugs": [],
+   "note": "В каталоге XV «с 2011» — лекало, судя по годам, под GP; для GT уточнить у менеджера. Коды GT3/GT7/GTE есть и у Impreza Sport 5-го поколения.",
+   "confidence": "confirmed",
+   "examples": [
+    "GT3-09***** — autospot.ru (номер кузова в поле VIN), Subaru Impreza V, 2022 г."
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/xv/",
+    "https://ja.wikipedia.org/wiki/スバル・XV",
+    "https://krasnodar.autospot.ru/brands/subaru/impreza/2016/hatchback/used/985889/"
+   ]
+  },
+  {
+   "codes": [
+    "M900F",
+    "M910F"
+   ],
+   "model": "Justy",
+   "body": "M900 (OEM-версия Daihatsu Thor)",
+   "years": [
+    2016,
+    2025
+   ],
+   "slugs": [
+    "daihatsu_thor"
+   ],
+   "note": "Subaru Justy 5-го поколения — тот же кузов M900, что Daihatsu Thor (ja.wikipedia: раздел ведёт к ダイハツ・トール).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/subaru/justy/",
+    "https://ja.wikipedia.org/wiki/スバル・ジャスティ"
+   ]
+  },
+  {
+   "codes": [
+    "TD02W",
+    "TD32W",
+    "TD52W",
+    "TD62W",
+    "TL52W"
+   ],
+   "model": "Escudo",
+   "body": "2-е поколение, 5 дверей",
+   "years": [
+    1997,
+    2005
+   ],
+   "slugs": [
+    "suzuki_escudo"
+   ],
+   "note": "Escudo — японское название Grand Vitara I.",
+   "confidence": "confirmed",
+   "examples": [
+    "TD62W-15***** — autospot.ru (номер кузова в поле VIN), Suzuki Escudo II, 2000 г."
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/escudo/",
+    "https://ja.wikipedia.org/wiki/スズキ・エスクード",
+    "https://stavropol.autospot.ru/brands/suzuki/escudo/1997/suv/used/998128/"
+   ]
+  },
+  {
+   "codes": [
+    "TA02W",
+    "TA52W"
+   ],
+   "model": "Escudo",
+   "body": "2-е поколение, 3 двери",
+   "years": [
+    1997,
+    2005
+   ],
+   "slugs": [],
+   "note": "3-дверный Escudo — в каталоге не указан; уточнить у менеджера.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/escudo/",
+    "https://ja.wikipedia.org/wiki/スズキ・エスクード"
+   ]
+  },
+  {
+   "codes": [
+    "TD54W",
+    "TD94W",
+    "TDA4W",
+    "TDB4W"
+   ],
+   "model": "Escudo",
+   "body": "3-е поколение, 5 дверей (= Grand Vitara II)",
+   "years": [
+    2005,
+    2017
+   ],
+   "slugs": [
+    "suzuki_vitara5d-bp",
+    "suzuki_vitara5d"
+   ],
+   "note": "С подлокотником или без — выбирает клиент. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/escudo/",
+    "https://ja.wikipedia.org/wiki/スズキ・エスクード"
+   ]
+  },
+  {
+   "codes": [
+    "TA74W"
+   ],
+   "model": "Escudo",
+   "body": "3-е поколение, 3 двери (= Grand Vitara II 3d)",
+   "years": [
+    2005,
+    2008
+   ],
+   "slugs": [
+    "suzuki_vitara3d"
+   ],
+   "note": "Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/escudo/",
+    "https://ja.wikipedia.org/wiki/スズキ・エスクード"
+   ]
+  },
+  {
+   "codes": [
+    "YD21S",
+    "YE21S",
+    "YEA1S",
+    "YEH1S"
+   ],
+   "model": "Escudo",
+   "body": "4-е поколение (= Vitara LY)",
+   "years": [
+    2015,
+    2024
+   ],
+   "slugs": [
+    "suzuki_vitara"
+   ],
+   "note": "Escudo 4-го поколения — японская Vitara (LY). Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/escudo/",
+    "https://ja.wikipedia.org/wiki/スズキ・エスクード"
+   ]
+  },
+  {
+   "codes": [
+    "JB23W",
+    "JB33W",
+    "JB43W"
+   ],
+   "model": "Jimny / Jimny Wide / Jimny Sierra",
+   "body": "JB23/JB33/JB43 (3-е поколение)",
+   "years": [
+    1998,
+    2018
+   ],
+   "slugs": [
+    "suzuki_jimny"
+   ],
+   "note": "В каталоге Jimny 2005–2018; машины 1998–2004 — тот же кузов, салон уточнить. JB23W — кей-кар 660 см³, JB33W/JB43W — 1.3 л. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "examples": [
+    "JB23W-66***** — autospot.ru (номер кузова в поле VIN), Suzuki Jimny III Рестайлинг 1, 2011 г.",
+    "JB23W-61***** — autospot.ru (номер кузова в поле VIN), Suzuki Jimny III Рестайлинг 1, 2009 г."
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/jimny/",
+    "https://www.drom.ru/catalog/suzuki/jimny_sierra/",
+    "https://www.drom.ru/catalog/suzuki/jimny_wide/",
+    "https://ja.wikipedia.org/wiki/スズキ・ジムニー",
+    "https://krasnodar.autospot.ru/brands/suzuki/novyj_jimny/2005/suv/used/1021835/",
+    "https://krasnodar.autospot.ru/brands/suzuki/novyj_jimny/2005/suv/used/1021834/"
+   ]
+  },
+  {
+   "codes": [
+    "JB64W",
+    "JB74W"
+   ],
+   "model": "Jimny / Jimny Sierra",
+   "body": "JB64/JB74 (4-е поколение)",
+   "years": [
+    2018,
+    2025
+   ],
+   "slugs": [],
+   "note": "Лекал на Jimny 4-го поколения нет.",
+   "confidence": "confirmed",
+   "examples": [
+    "JB64W-12***** — autospot.ru (номер кузова в поле VIN), Suzuki Jimny III Рестайлинг 2, 2019 г."
+   ],
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/jimny/",
+    "https://www.drom.ru/catalog/suzuki/jimny_sierra/",
+    "https://rostov-na-donu.autospot.ru/brands/suzuki/novyj_jimny/2012/suv/used/997404/"
+   ]
+  },
+  {
+   "codes": [
+    "RB21S",
+    "RD51S"
+   ],
+   "model": "Aerio",
+   "body": "хэтчбек (японская Liana)",
+   "years": [
+    2001,
+    2007
+   ],
+   "slugs": [
+    "suzuki_liana"
+   ],
+   "note": "Aerio — японское название Liana. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/aerio/",
+    "https://ja.wikipedia.org/wiki/スズキ・エリオ"
+   ]
+  },
+  {
+   "codes": [
+    "RA21S",
+    "RC51S"
+   ],
+   "model": "Aerio",
+   "body": "седан (японская Liana)",
+   "years": [
+    2001,
+    2007
+   ],
+   "slugs": [],
+   "note": "Лекало Liana в каталоге — хэтчбек; седан уточнить у менеджера.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/aerio/",
+    "https://ja.wikipedia.org/wiki/スズキ・エリオ"
+   ]
+  },
+  {
+   "codes": [
+    "XB32S"
+   ],
+   "model": "Splash",
+   "body": "XB32",
+   "years": [
+    2008,
+    2014
+   ],
+   "slugs": [
+    "suzuki_splash"
+   ],
+   "note": "Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/splash/",
+    "https://ja.wikipedia.org/wiki/スズキ・スプラッシュ"
+   ]
+  },
+  {
+   "codes": [
+    "ZC11S",
+    "ZC21S",
+    "ZC31S",
+    "ZC71S",
+    "ZD11S",
+    "ZD21S"
+   ],
+   "model": "Swift",
+   "body": "3-е поколение (ZC11S, ZC31S — Swift Sport)",
+   "years": [
+    2004,
+    2010
+   ],
+   "slugs": [
+    "suzuki_swift"
+   ],
+   "note": "В каталоге Swift «до 2013» без поколения — уточнить, под какое поколение лекало. ZD — полный привод. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/swift/",
+    "https://ja.wikipedia.org/wiki/スズキ・スイフト"
+   ]
+  },
+  {
+   "codes": [
+    "ZC32S",
+    "ZC72S",
+    "ZD72S"
+   ],
+   "model": "Swift",
+   "body": "4-е поколение (ZC32S — Swift Sport)",
+   "years": [
+    2010,
+    2013
+   ],
+   "slugs": [
+    "suzuki_swift"
+   ],
+   "note": "В каталоге Swift «до 2013» без поколения — уточнить, подходит ли лекало к 4-му поколению (2010–2013); после 2013 — лекала нет. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/swift/",
+    "https://ja.wikipedia.org/wiki/スズキ・スイフト"
+   ]
+  },
+  {
+   "codes": [
+    "YA11S",
+    "YA41S",
+    "YB11S",
+    "YB41S"
+   ],
+   "model": "SX4",
+   "body": "1-е поколение, хэтчбек",
+   "years": [
+    2006,
+    2014
+   ],
+   "slugs": [
+    "suzuki_sx4sedan",
+    "suzuki_sx4"
+   ],
+   "note": "Спинка заднего сиденья (сплошная или 60/40) по номеру не определяется — выбирает клиент. YB — полный привод. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/sx4/",
+    "https://ja.wikipedia.org/wiki/スズキ・SX4"
+   ]
+  },
+  {
+   "codes": [
+    "YC11S"
+   ],
+   "model": "SX4",
+   "body": "1-е поколение, седан",
+   "years": [
+    2007,
+    2014
+   ],
+   "slugs": [],
+   "note": "Седан SX4 — лекала в каталоге нет (оба лекала SX4 1 — хэтчбек).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/sx4/",
+    "https://ja.wikipedia.org/wiki/スズキ・SX4"
+   ]
+  },
+  {
+   "codes": [
+    "YA22S",
+    "YB22S"
+   ],
+   "model": "SX4 S-Cross",
+   "body": "2-е поколение",
+   "years": [
+    2014,
+    2020
+   ],
+   "slugs": [
+    "suzuki_sx4-new"
+   ],
+   "note": "Код подтверждён только каталогом drom.ru. Праворульная версия японского рынка; лекало в каталоге без указания руля — проверить посадку водительского сиденья.",
+   "confidence": "probable",
+   "sources": [
+    "https://www.drom.ru/catalog/suzuki/sx4/"
+   ]
+  },
+  {
+   "codes": [
+    "M900S",
+    "M910S"
+   ],
+   "model": "Thor",
+   "body": "M900 (1-е поколение)",
+   "years": [
+    2016,
+    2025
+   ],
+   "slugs": [
+    "daihatsu_thor"
+   ],
+   "note": "Близнецы того же кузова: Toyota Roomy / Tank (M900A, M910A), Subaru Justy (M900F, M910F).",
+   "confidence": "confirmed",
+   "sources": [
+    "https://www.drom.ru/catalog/daihatsu/thor/",
+    "https://ja.wikipedia.org/wiki/ダイハツ・トール"
+   ]
+  }
+ ],
+ "position_legend": [
+  {
+   "wmi": [
+    "JMB",
+    "JMY",
+    "Z8T",
+    "X2M"
+   ],
+   "positions": {
+    "4": "исполнение/тип кузова (по реальным VIN: S — седан Lancer, X — кроссовер Outlander/ASX, L — 5-дверный кузов (Pajero IV 5 дв., Lancer Sportback, Grandis), M — 3-дверный Pajero IV, 0 — старые модели: Pajero II, Pajero Sport I); официальной таблицы не найдено",
+    "5": "трансмиссия/исполнение (auto.ru: «тип трансмиссии»; по объявлениям N — МКПП, T — вариатор, R/Y/L — АКПП)",
+    "6-9": "модельный код кузова Mitsubishi — тот же, что в номере кузова: CU5W, CW5W, GF2W, GG2W, GA1W, CS3A, CY4A, CX3A, V97W… Последняя буква: A — седан/хэтчбек, W — универсал/SUV. У старых моделей (Pajero II, Pajero Sport I) 6–8 — код (V46, K94), 9 — «0»",
+    "10": "модельный год (подтверждено объявлениями и отзывными списками)",
+    "11": "завод: Z — Окадзаки, U — Мидзусима, J — Нагоя (по декодеру NHTSA для тех же кодов), M — Калуга (auto.ru); F, D — встречаются, расшифровка не найдена",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://auto.ru/mag/article/kak-rasshifrovat-vin-mitsubishi/",
+    "https://uokik.gov.pl/download.php?plik=15675",
+    "https://uokik.gov.pl/download.php?plik=20354",
+    "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/JA4AZ3A3*EZ?format=json",
+    "https://autospot.ru/used-car/mitsubishi/"
+   ]
+  },
+  {
+   "wmi": [
+    "MMC",
+    "MMB",
+    "MME"
+   ],
+   "positions": {
+    "4-5": "исполнение (кабина/трансмиссия), расшифровка не найдена",
+    "6-8": "у MMC/MMB — модельный код без последней буквы: KH4 — Pajero Sport II 2.5D, KB4 — L200 IV, KL1 — L200 V; 9 — «0»",
+    "10": "модельный год (по объявлениям)",
+    "note": "MME (Таиланд, с ≈2019 г.) — новая схема, модельный код в VIN не виден (MMEMC… — Pajero Sport / Montero Sport 2020–2022)"
+   },
+   "sources": [
+    "https://autospot.ru/used-car/mitsubishi/l200_new/",
+    "https://autospot.ru/brands/mitsubishi/pajero_sport/2008/suv/used/959435/"
+   ]
+  },
+  {
+   "wmi": [
+    "JA3",
+    "JA4",
+    "JE4"
+   ],
+   "positions": {
+    "4": "JA3 — система пассивной безопасности; JA4 — полная масса (GVWR) + подушки (с 2010 г.)",
+    "5": "модельная линия: JA4 — W Montero 2001–2006, S/T Montero Sport 1997–2004 и Outlander 2007–2013, X/Z Outlander 2003–2006, D/Z Outlander 2014–2020, P/R Outlander Sport, 3/4 Outlander 2022+; JA3 — J Lancer 2002–2007, U/V Lancer 2008–2017, X/Y Lancer Sportback",
+    "6": "комплектация",
+    "7": "тип кузова",
+    "8": "двигатель",
+    "9": "контрольная цифра",
+    "10": "модельный год",
+    "11": "завод (U — Мидзусима, Z — Окадзаки, J/P — Нагоя)"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mitsubishi/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/"
+   ]
+  },
+  {
+   "wmi": [
+    "JMZ"
+   ],
+   "positions": {
+    "4-5": "модель/платформа: BK, BL, BM, BP — Mazda3; GG, GH, GJ — Mazda6; KE, KF — CX-5; ER — CX-7; DE, DJ — Mazda2; LW — MPV",
+    "6": "исполнение (у Mazda6 GJ: 4 — до рестайлинга, 5 — после — по VIN владивостокской сборки)",
+    "7": "кузов у Mazda3/Mazda6: 2 — седан, 4 — хэтчбек/лифтбек (по объявлениям; drom.ru: BL12F — седан, BL14F — хэтчбек)",
+    "8-9": "двигатель/исполнение",
+    "10": "НЕ модельный год (у JMZ здесь 0/1/2/5/6/7/8 вне связи с годом — по объявлениям и отзывному списку UOKiK)",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://uokik.gov.pl/download.php?plik=21057",
+    "https://www.drom.ru/catalog/mazda/mazda3/",
+    "https://autospot.ru/used-car/mazda/"
+   ]
+  },
+  {
+   "wmi": [
+    "RUM"
+   ],
+   "positions": {
+    "4-5": "модель: GJ — Mazda6, KE — CX-5 (ОБОИХ поколений!)",
+    "6-9": "исполнение: CX-5 1-го поколения — 1978/8978/8938/C978/K978/K938 (7-й символ 9), CX-5 2-го поколения — 5W7A/EW7A/EWLA (7-й символ W); Mazda6 — 4238/4266/4268/5238/5268/52Y8 (drom.ru: GJ523, GJ526, GJ52Y)",
+    "10": "до 2016 г. — модельный год (D, E, F, G), с 2017 г. — цифра (не год)",
+    "11": "V — Владивосток (до 2016 г.)"
+   },
+   "sources": [
+    "https://autospot.ru/used-car/mazda/cx-5/",
+    "https://autospot.ru/used-car/mazda/6_new/",
+    "https://www.drom.ru/catalog/mazda/mazda6/"
+   ]
+  },
+  {
+   "wmi": [
+    "JM1",
+    "JM3",
+    "3MZ"
+   ],
+   "positions": {
+    "4-5": "модельная линия (BK/BL/BM — Mazda3, GJ — Mazda6, DE — Mazda2, KE/KF — CX-5, ER — CX-7, LW — MPV)",
+    "6": "система безопасности",
+    "7": "кузов (Mazda3 2004–2009: 2 — седан, 4 — хэтчбек)",
+    "8": "двигатель",
+    "9": "контрольная цифра",
+    "10": "модельный год",
+    "11": "завод"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Mazda/VIN_Codes",
+    "https://vpic.nhtsa.dot.gov/api/"
+   ]
+  },
+  {
+   "wmi": [
+    "JF1",
+    "JF2",
+    "4S3",
+    "4S4"
+   ],
+   "positions": {
+    "4": "линия: S — Forester, G — Impreza/XV, B — Legacy/Outback",
+    "5": "кузов/поколение: у Forester F/G/H/J/K = SF/SG/SH/SJ/SK; у Impreza E — седан GE, H — хэтчбек GH, P — GP (XV/Impreza), T — GT; у Legacy E — седан BE, L — седан BL, H/P/R/S — универсалы",
+    "6": "двигатель (для JF1 России/Европы 4–6 совпадают с кодом кузова: SH5, SHJ, SJ9, SG5…)",
+    "7-8": "модель/система безопасности",
+    "9": "контрольная цифра (США) / исполнение",
+    "10": "модельный год",
+    "11": "завод и тип КПП"
+   },
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Subaru/VIN_Codes",
+    "https://www.drom.ru/catalog/subaru/forester/",
+    "https://autospot.ru/used-car/subaru/forester/"
+   ]
+  },
+  {
+   "wmi": [
+    "JSA",
+    "TSM"
+   ],
+   "positions": {
+    "4": "серия/исполнение (E, F, G, J, L, M, N — по объявлениям)",
+    "5-9": "модельный код Suzuki: TD54V/TDA4V/TA74V — Grand Vitara II, JB43V/JB74V — Jimny, ZC11S/ZC21S/ZC72S — Swift, RA31S — Liana, YD21S/YE21S — Vitara LY (у Vitara 4–5 = LY)",
+    "10-11": "«00» — модельного года в VIN нет",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://autospot.ru/used-car/suzuki/",
+    "https://www.drom.ru/catalog/suzuki/grand_vitara/",
+    "https://www.drom.ru/catalog/suzuki/vitara/"
+   ]
+  },
+  {
+   "wmi": [
+    "JS2",
+    "JS3",
+    "KL5"
+   ],
+   "positions": {
+    "4-5": "модель (JS2 YA/YB/YC — SX4 хэтчбек 2WD/AWD/седан; JS3 TD/TE — Grand Vitara 4WD/2WD; KL5 JD — Forenza/Reno)",
+    "6-8": "кузов/двигатель (KL5JD5 — седан Forenza, KL5JD6 — хэтчбек Reno)",
+    "9": "контрольная цифра",
+    "10": "модельный год",
+    "11": "завод"
+   },
+   "sources": [
+    "https://vpic.nhtsa.dot.gov/api/"
+   ]
+  }
+ ],
+ "unresolved": [
+  "isuzu_elf: 5-е поколение (1993–2006) — десятки вариантов шасси (NHR/NKR/NPR + индекс двигателя 55/58/66/69/71/81, стандартная и широкая кабина); каталог drom.ru это поколение не описывает, ja.wikipedia упоминает лишь NKR81 — надёжного списка кодов кузова не найдено, VIN (JAA/JAL, российская сборка) — нет источника.",
+  "suzuki_solio: в каталоге не указано поколение; коды есть (MA34S 2005–2010, MA15S 2010–2015, MA26S/MA36S/MA46S 2015–2020, MA27S/MA37S/MA47S 2020+ — drom.ru и ja.wikipedia), но к какому из них относится лекало — неизвестно. Машина только японского рынка (номер кузова).",
+  "mitsubishi_pajero-sport-3 (частично): VIN калужской сборки 2017–2020 гг. (KS0W по drom.ru) не найден — есть только probable-правило MMEMC… для импортных машин 2020–2022 гг.",
+  "mitsubishi_pajero-sport-2-2014 (частично): реальных VIN рестайлинга нет; часть машин 2013–2016 гг. собрана в Калуге — их WMI/VDS не подтверждены.",
+  "suzuki_vitara-5d / suzuki_escudo (VIN): леворульный Grand Vitara I для Европы/России (JSA…, drom.ru: 3TD62, TL52) — реального VIN не найдено; покрыты номер кузова (Escudo) и VIN США (JS3TD62/JS3TE62).",
+  "mazda_mpvii (VIN Европы/России JMZLW…): реального VIN не найдено; покрыты номер кузова и VIN США (JM3LW)."
+ ],
+ "notes": "1) Mitsubishi с WMI JMB/JMY/Z8T/X2M: символы 6–9 VIN — тот же модельный код, что в номере кузова (CW5W, GF2W, CY4A, V97W…). Разработчику проще всего: взять VIN[5:9] и искать его в codes из frame_rules + в масках vin_rules. Исключения — старые модели (Pajero II, Pajero Sport I) и MMC/MMB: там 6–8 = код без последней буквы (K94, KH4, KB4), 9-й = 0. 2) Mazda Соллерс (WMI RUM): у CX-5 2-го поколения в 4–5 символах ТОЖЕ «KE» — поколение различать только по 7-му символу (9 — 1-е, W — 2-е). 3) 10-й символ НЕ год у JMZ, JSA, TSM и у RUM после 2016 г. — годы в таких правилах взяты из годов выпуска поколения, проверять 10-й символ нельзя (year_pos10=false). 4) Рестайлинги внутри одного кода кузова (Outlander GF → outlander-3/outlander-4, Lancer CY → lancer-x/lancer-10new, CX-5 KE → supreme с 2015, L200 KB4 → l200-ii с 2013, Pajero Sport KH → 2-2014) различаются только годом: где 10-й символ — год, сайт может выбрать сам, иначе показать оба лекала. Правила с пересекающимися годами (2011–2012, 2015, 2018) — намеренно. 5) Многие праворульные «японцы» в России вбивают номер кузова в поле VIN (в объявлениях встречено: GG2W-0301…, KFEP-301658, JB23W-661669, Z23W-0202955, GK3-006763) — сайт должен распознавать формат «КОД-цифры» (и без дефиса) и идти в frame_rules. 6) Руль: frame_rules — всегда правый руль. Для части моделей в каталоге есть лекала только под один руль (Colt, Forester SF5 — только R; Outlander I, Pajero 3 L — только L) — где руль не совпадает, slugs пустые или стоит пометка. 7) Кузов кодируется: Pajero 3/4 (V6/V8 — 3 двери, V7/V9 — 5 дверей; у JMB также 4-й символ L/M), Mazda3 (7-й символ 2 — седан, 4 — хэтчбек), Axela/Atenza (последняя буква кода P — седан, W/S — хэтчбек/универсал), Subaru (5-й символ). Для кузовов без лекал slugs = [] (предложить индивидуальный пошив). 8) Сомнения по каталогу: Swift «до 2013» — не указано поколение (правила даны на 3-е и 4-е); XV «с 2011» — отнесено к GP, GT — пусто; Impreza «2009–2012» — отнесено к 3-му поколению GE/GH; JF1GP — общий код XV и хэтчбека Impreza 4-го поколения. 9) Новые схемы VIN без модельного кода (JE4 — Mitsubishi Япония ≈2017+, MME — Mitsubishi Таиланд ≈2019+, LVR — Changan Mazda, LFP — FAW Mazda, LL6 — GAC Mitsubishi, MA3 — Maruti Suzuki) — правила только probable по объявлениям или отсутствуют. 10) Примеры VIN — из объявлений autospot.ru (официальные дилеры; серийный номер замаскирован), отзывных списков UOKiK (Польша) и Транспортного департамента Гонконга; правила США подтверждены частичной расшифровкой NHTSA vPIC. Лимит веб-поиска в сессии исчерпан, drom.ru заблокировал частые запросы (HTTP 429) — поэтому для Outlander I, Pajero III, Pajero Sport III (Калуга), SX4, Liana хэтчбек, Legacy-седана, Forester SF и европейского MPV реальных VIN нет (правила probable или только номер кузова)."
+}

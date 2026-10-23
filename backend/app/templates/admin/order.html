@@ -1,0 +1,222 @@
+{% extends "admin/base.html" %}
+{% block title %}{{ o.number }}{% endblock %}
+{% block body %}
+{% set vin_bad = o.vin_state in ('mismatch', 'year', 'body') %}
+<div class="head">
+  <h1>{{ o.kind_title }} {{ o.number }}</h1>
+  <span class="b b--{{ o.kind }}">{{ o.kind_title }}</span>
+  <span class="b b--{{ o.status }}">{{ o.status_title }}</span>
+  {% if o.is_order %}<span class="b b--{{ o.pay_status }}">{{ PAY_STATUSES.get(o.pay_status) }}</span>{% endif %}
+  <span class="muted">{{ o.created_at|local }} (Новосибирск)</span>
+  <a class="btn btn--sm" href="/admin/orders?tab={{ 'orders' if o.is_order else 'requests' }}">К списку</a>
+</div>
+
+{% if vin_bad %}<div class="alert alert--bad"><b>VIN не совпадает с заказанным лекалом.</b> {{ (o.vin_info or {}).get('message', '') }} Проверьте автомобиль с клиентом до пошива.</div>{% endif %}
+{% if o.spam_score >= 10 %}<div class="alert alert--bad">Похоже на спам: форма заполнена роботом (скрытое поле или слишком быстро).</div>{% endif %}
+
+<div class="strip">
+  <div class="card accent">
+    <small>{{ 'Что заказали' if o.is_order else 'Автомобиль' }}</small>
+    <b>{{ o.car_title or '—' }}</b>
+    {% if o.items %}<span class="muted small">{{ o.items|length }} поз. · {% for it in o.items[:2] %}{{ it.material|lower }}, {{ it.color|lower }}{{ '; ' if not loop.last }}{% endfor %}</span>
+    {% elif o.kind == 'custom' %}<span class="muted small">индивидуальный пошив по конструктору</span>{% endif %}
+  </div>
+  <div class="card {{ 'accent' if o.is_order }}">
+    <small>Оплата</small>
+    {% if o.is_order %}
+      <b>{{ PAY_SCHEMES.get(o.pay_scheme) }}</b>
+      <span class="small">внесено <b class="inline">{{ o.paid_kop|rub }}</b> из {{ o.total_kop|rub }}{% if o.delivery_kop is none %} + доставка по тарифу{% endif %}</span>
+      {% if o.due_now_kop and o.paid_kop < o.due_now_kop %}<div class="small muted">к оплате при оформлении: {{ o.due_now_kop|rub }}</div>{% endif %}
+      {% if o.pay_scheme == 'prepay' and o.paid_kop and rest %}<div class="small muted">остаток {{ rest|rub }} — при получении или по ссылке</div>{% endif %}
+    {% elif o.kind == 'custom' %}<b>от {{ o.total_kop|rub }}</b><span class="small muted">стоимость рассчитает менеджер</span>
+    {% else %}<b class="muted">—</b>{% endif %}
+  </div>
+  <div class="card">
+    <small>Доставка</small>
+    {% if o.is_order %}<b>{{ o.delivery_title }}</b><span class="small">{{ o.city }}{{ ', ' ~ o.delivery_address if o.delivery_address }}</span>
+      <div class="small muted">{% if o.delivery_kop is none %}по тарифу транспортной компании{% elif o.delivery_kop %}{{ o.delivery_kop|rub }}{% else %}бесплатно{% endif %}{% if o.track_number %} · трек <span class="mono">{{ o.track_number }}</span>{% endif %}</div>
+    {% else %}<b class="muted">—</b>{% endif %}
+  </div>
+  <div class="card">
+    <small>{{ 'Получатель' if o.is_order else 'Клиент' }}</small>
+    <b>{{ o.name or 'без имени' }}</b>
+    {% if o.phone %}<a href="tel:{{ o.phone|replace(' ', '')|replace('(', '')|replace(')', '')|replace('-', '') }}">{{ o.phone }}</a>{% endif %}
+    {% if o.email %}<div class="small"><a href="mailto:{{ o.email }}">{{ o.email }}</a></div>{% endif %}
+    {% if o.contact_method %}<div class="small muted">связь: {{ {'call': 'позвонить', 'whatsapp': 'WhatsApp', 'telegram': 'Telegram', 'max': 'MAX'}.get(o.contact_method, o.contact_method) }}</div>{% endif %}
+    {% if o.company %}<div class="small">{{ o.company }}, ИНН {{ o.inn }}</div>{% endif %}
+  </div>
+</div>
+
+<div class="grid2">
+<div class="stack">
+  {% if o.items %}
+  <section class="card">
+    <h2>Позиции</h2>
+    <div class="table-wrap table-wrap--flat">
+    <table class="t t--items">
+      <thead><tr><th>Автомобиль и лекало</th><th>Вариант салона</th><th>Материал и цвет</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr></thead>
+      <tbody>
+      {% for it in o.items %}
+      <tr>
+        <td><b>{{ it.brand }} {{ it.model }} {{ it.generation }}</b><div class="small muted">{{ it.years or 'все годы' }} · <a href="{{ site_url }}/car.html?m={{ it.slug }}" target="_blank" rel="noopener">{{ it.slug }}</a></div></td>
+        <td>{{ it.salon or 'стандартный' }}</td>
+        <td><b>{{ it.material }}</b> · {{ it.color }}<div class="small muted">{{ it.variant_name }}</div></td>
+        <td>{{ it.qty }}</td>
+        <td class="nowrap">{{ it.price_kop|rub }}{% if it.old_price_kop %}<div class="small muted"><s>{{ it.old_price_kop|rub }}</s></div>{% endif %}</td>
+        <td class="sum">{{ it.sum_kop|rub }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+    {% if o.extras %}
+    <div class="row small mt-10">
+      {% if o.extras.mats %}<span class="b b--pending">+ Автоковрики EVA — по запросу</span>{% endif %}
+      {% if o.extras.install %}<span class="b b--pending">+ Установка в городе клиента — по запросу</span>{% endif %}
+      {% if o.extras.gift %}<span class="b">Подарок: {{ o.extras.gift }}</span>{% endif %}
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  {% if o.kind == 'custom' and o.config %}
+  <section class="card">
+    <h2>Конструктор</h2>
+    <dl class="kv">{% for k, v in o.config.summary or [] %}<dt>{{ k }}</dt><dd>{{ v }}</dd>{% endfor %}
+      <dt>Ориентир по цене</dt><dd><b>от {{ ((o.config.price_from or 0) * 100)|rub }}</b></dd></dl>
+    {% if o.extras and (o.extras.mats or o.extras.install) %}<p class="small">Дополнительно: {{ 'коврики EVA' if o.extras.mats }}{{ ', ' if o.extras.mats and o.extras.install }}{{ 'установка' if o.extras.install }}</p>{% endif %}
+  </section>
+  {% endif %}
+
+  {% if o.topic or o.message or o.comment %}
+  <section class="card">
+    <h2>{{ 'Комментарий клиента' if o.is_order else 'Сообщение' }}</h2>
+    {% if o.topic %}<p><b>Тема:</b> {{ o.topic }}</p>{% endif %}
+    {% if o.message %}<p class="pre">{{ o.message }}</p>{% endif %}
+    {% if o.comment %}<p class="pre">{{ o.comment }}</p>{% endif %}
+  </section>
+  {% endif %}
+
+  <section class="card" id="vin">
+    <h2>VIN и подбор лекала</h2>
+    {% if not o.vin %}
+      <p class="muted">Клиент не указал VIN. Спросите VIN (достаточно первых 11 символов) или номер кузова — сверим лекало.</p>
+    {% else %}
+      <dl class="kv">
+        <dt>{{ 'Номер кузова' if vin and vin.kind == 'frame' else 'VIN' }}</dt><dd class="mono">{{ o.vin }}</dd>
+        {% if vin %}
+        <dt>Расшифровка</dt><dd>{{ vin.message }}</dd>
+        {% if vin.wmi %}<dt>Производитель</dt><dd>{{ vin.wmi.maker or vin.wmi.make }}{% if vin.wmi.country %} · {{ vin.wmi.country }}{% endif %} <span class="muted mono">({{ vin.wmi.code }})</span></dd>{% endif %}
+        {% if vin.year %}<dt>Модельный год</dt><dd>{{ vin.year }}{% if not vin.year_sure %} <span class="muted small">— по 10-му символу; этот производитель может не кодировать в нём год</span>{% endif %}{% if vin.years_possible|length > 1 %} <span class="muted small">(или {{ vin.years_possible[:-1]|join(', ') }})</span>{% endif %}</dd>{% endif %}
+        {% if vin.vehicle %}<dt>Модель по VIN</dt><dd>{{ vin.vehicle.model }}{% if vin.vehicle.body %}, {{ vin.vehicle.body }}{% endif %}{% if vin.vehicle.detail %} <span class="muted">· {{ vin.vehicle.detail }}</span>{% endif %}
+          <div class="small muted">достоверность: {{ {'learned': 'сверено менеджером', 'official': 'документ производителя', 'confirmed': 'подтверждено источниками', 'probable': 'вероятно — проверьте'}.get(vin.vehicle.confidence, vin.vehicle.confidence) }}{% for src in vin.vehicle.sources or [] if src.startswith('http') %} · <a href="{{ src }}" target="_blank" rel="noopener noreferrer">источник</a>{% endfor %}</div></dd>{% endif %}
+        {% for p in vin.problems %}<dt></dt><dd class="vin-bad">{{ p }}</dd>{% endfor %}
+        {% endif %}
+        <dt>Сверка с заказом</dt><dd>
+          {% if o.vin_state == 'ok' %}<span class="vin-ok">совпадает{% if o.vin_confirmed_slug %} — подтвердил менеджер{% endif %}</span>
+          {% elif o.vin_state in ('mismatch', 'year', 'body') %}<span class="vin-bad">не совпадает</span>
+          {% elif o.vin_state == 'frame' %}<span class="vin-unk">номер кузова — сверьте вручную</span>
+          {% elif o.vin_state == 'bad' %}<span class="vin-bad">не похоже на VIN</span>
+          {% else %}<span class="vin-unk">автоматически не определить — сверьте вручную</span>{% endif %}
+        </dd>
+      </dl>
+      {% if cand %}
+      <form method="post" action="/admin/orders/{{ o.id }}/vin" class="row mt-10">
+        <input type="hidden" name="csrf" value="{{ csrf }}">
+        <label class="f grow">Лекало, которое подходит этому автомобилю
+          <select class="input" name="slug">{% for m in cand %}<option value="{{ m.s }}" {{ 'selected' if m.s == (o.vin_confirmed_slug or o.car_slug) }}>{{ catalog.car_name(m) }}{{ ' · ' ~ m.v if m.v }} · {{ m.y or 'все годы' }}</option>{% endfor %}</select></label>
+        <button class="btn btn--dark">Подтвердить и запомнить</button>
+      </form>
+      <p class="small muted">После подтверждения сайт будет сразу предлагать это лекало клиентам с таким же началом VIN (8 символов) или кодом кузова.</p>
+      {% endif %}
+    {% endif %}
+  </section>
+
+  <section class="card" id="history">
+    <h2>История</h2>
+    <form method="post" action="/admin/orders/{{ o.id }}/note" class="mb-14">
+      <input type="hidden" name="csrf" value="{{ csrf }}">
+      <textarea class="input" name="text" placeholder="Заметка: о чём договорились с клиентом, комплектация салона…" required maxlength="2000"></textarea>
+      <button class="btn btn--sm mt-6">Добавить заметку</button>
+    </form>
+    <ul class="history">
+      {% for ev in o.events|reverse %}
+      <li class="{{ ev.type }}"><time>{{ ev.at|local }}</time> · <span class="small muted">{{ ev.actor }}</span><div class="pre">{{ ev.text }}</div></li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
+
+<div class="stack">
+  <section class="card">
+    <h2>Статус</h2>
+    <form method="post" action="/admin/orders/{{ o.id }}/status" class="stack tight">
+      <input type="hidden" name="csrf" value="{{ csrf }}">
+      <label class="f">Статус<select class="input" name="status">{% for k, v in statuses.items() %}<option value="{{ k }}" {{ 'selected' if o.status == k }}>{{ v }}</option>{% endfor %}</select></label>
+      {% if o.is_order %}<label class="f">Трек-номер<input class="input" name="track" value="{{ o.track_number }}" maxlength="64" placeholder="DPD или Почта России"></label>{% endif %}
+      <button class="btn btn--dark">Сохранить</button>
+    </form>
+  </section>
+
+  {% if o.is_order %}
+  <section class="card" id="pay">
+    <h2>Деньги</h2>
+    <div class="money">
+      <div><span>Товары</span><b>{{ o.items_kop|rub }}</b></div>
+      <div><span>Доставка</span><b>{% if o.delivery_kop is none %}по тарифу ТК{% else %}{{ o.delivery_kop|rub }}{% endif %}</b></div>
+      <div class="total"><span>Итого</span><span>{{ o.total_kop|rub }}</span></div>
+      <div><span>Внесено</span><b class="vin-ok">{{ o.paid_kop|rub }}</b></div>
+      <div><span>Остаток</span><b>{{ rest|rub }}</b></div>
+    </div>
+    {% if o.payments %}
+    <h3 class="mt-14">Платежи</h3>
+    <div class="pays">
+      {% for p in o.payments %}
+      <div class="pay">
+        <div class="pay__top"><b>{{ p.amount_kop|rub }}</b>
+          <span class="b b--{{ 'paid' if p.status == 'succeeded' else 'canceled' if p.status in ('canceled', 'error') else 'pending' }}">{{ {'succeeded': 'оплачен', 'pending': 'ждёт оплаты', 'canceled': 'отменён', 'error': 'ошибка', 'new': 'создаётся', 'waiting_for_capture': 'ждёт подтверждения'}.get(p.status, p.status) }}</span></div>
+        <div class="small muted">{{ p.created_at|local('%d.%m %H:%M') }} · {{ {'prepay': 'предоплата', 'full': 'полная оплата', 'rest': 'доплата', 'manual': 'отмечено вручную'}.get(p.purpose) }} · {{ p.provider }}{% if p.method %} · {{ p.method }}{% endif %}{% if p.created_by != 'customer' %} · {{ p.created_by }}{% endif %}</div>
+        {% if p.cancel_reason %}<div class="small muted">{{ p.cancel_reason }}</div>{% endif %}
+        {% if p.status == 'pending' and p.confirmation_url %}<button type="button" class="btn btn--sm mt-6" data-copy="{{ p.confirmation_url }}">Копировать ссылку на оплату</button>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if rest %}
+    <form method="post" action="/admin/orders/{{ o.id }}/payment-link" class="row mt-14">
+      <input type="hidden" name="csrf" value="{{ csrf }}">
+      <label class="f">Ссылка на оплату, ₽<input class="input" name="amount" type="number" min="1" max="1000000" value="{{ rest // 100 }}" required></label>
+      <button class="btn btn--primary">Создать ссылку</button>
+    </form>
+    <p class="small muted">Ссылку на оплату остатка или доставки отправьте клиенту в мессенджер. Оплата придёт в этот заказ сама.</p>
+    <form method="post" action="/admin/orders/{{ o.id }}/manual-payment" class="row" data-confirm="Отметить оплату вручную?">
+      <input type="hidden" name="csrf" value="{{ csrf }}">
+      <label class="f">Оплата мимо сайта, ₽<input class="input" name="amount" type="number" min="1" max="1000000" value="{{ rest // 100 }}" required></label>
+      <label class="f">Способ<select class="input" name="method"><option value="cod">наложенный платёж</option><option value="cash">наличные</option><option value="invoice">по счёту</option><option value="transfer">перевод</option></select></label>
+      <button class="btn">Отметить</button>
+    </form>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  <section class="card">
+    <h2>Откуда пришёл</h2>
+    <dl class="kv small">
+      <dt>Страница</dt><dd>{{ o.source_page or '—' }}</dd>
+      {% if o.referrer %}<dt>Переход с</dt><dd>{{ o.referrer }}</dd>{% endif %}
+      {% if o.utm %}<dt>Метки</dt><dd>{% for k, v in o.utm.items() %}{{ k }}={{ v }}{{ ', ' if not loop.last }}{% endfor %}</dd>{% endif %}
+      <dt>IP</dt><dd class="mono">{{ o.ip }}</dd>
+      <dt>Согласие на ПДн</dt><dd>{{ o.consent_at|local }} · {{ o.consent_doc }}</dd>
+      <dt>Браузер</dt><dd class="muted">{{ o.user_agent[:140] }}</dd>
+    </dl>
+  </section>
+
+  {% if me.role == 'admin' and not o.paid_kop %}
+  <form method="post" action="/admin/orders/{{ o.id }}/delete" data-confirm="Удалить {{ o.number }} без возможности восстановления?">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <button class="btn btn--sm btn--danger">Удалить запись (по запросу клиента или спам)</button>
+  </form>
+  {% endif %}
+</div>
+</div>
+{% endblock %}

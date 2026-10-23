@@ -1,0 +1,30 @@
+# systemd-служба бэкенда без Docker: /etc/systemd/system/avtostil.service
+# Установка: python3.12 -m venv /opt/avtostil/backend/.venv && /opt/avtostil/backend/.venv/bin/pip install -r requirements.txt
+#            systemctl daemon-reload && systemctl enable --now avtostil
+[Unit]
+Description=Avtostil backend (orders, payments, VIN)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=avtostil
+Group=avtostil
+WorkingDirectory=/opt/avtostil/backend
+EnvironmentFile=/opt/avtostil/backend/.env
+ExecStart=/opt/avtostil/backend/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 2 --no-proxy-headers --no-server-header
+Restart=always
+RestartSec=3
+# песочница: только чтение системы, запись — в data/
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/opt/avtostil/backend/data
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

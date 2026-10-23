@@ -1,0 +1,9 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+sqlalchemy==2.0.36
+jinja2==3.1.5
+httpx==0.28.1
+python-multipart==0.0.20
+# PostgreSQL в проде (DATABASE_URL=postgresql+psycopg://…)
+psycopg[binary]==3.2.3
+tzdata==2025.2

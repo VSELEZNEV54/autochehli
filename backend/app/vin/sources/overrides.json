@@ -1,0 +1,65 @@
+{
+ "group": "overrides",
+ "notes": "Поправки поверх справочников — самый высокий приоритет. Каждую поправку объяснять в note со ссылкой на источник.",
+ "wmi": [
+  {
+   "code": "X7L",
+   "year_pos10": false,
+   "note": "Renault Россия: после ~2012 символы 10–17 — сквозной заводской номер, год кодируют только Logan I и Sandero I (X7LLSR, X7LBSR). По реальным VIN из лотов torgi.gov.ru, исследование korea-renault.",
+   "sources": [
+    "https://autokonfiskat.org/"
+   ]
+  },
+  {
+   "code": "WF0",
+   "year_pos": 11,
+   "year_pos10": true,
+   "note": "Ford Европы и России (Германия, Испания, Турция и др.): модельный год — 11-й символ по стандартной таблице (8 — 2008, A — 2010, D — 2013), 10-й повторяет код кузова. Сверено по реальным VIN из объявлений, исследование europe-us-china.",
+   "sources": [
+    "https://auto.ria.com/",
+    "https://avtogermes.ru/"
+   ]
+  },
+  {
+   "code": "X9F",
+   "year_pos": 11,
+   "year_pos10": true,
+   "note": "Ford Европы и России (Всеволожск): модельный год — 11-й символ по стандартной таблице (8 — 2008, A — 2010, D — 2013), 10-й повторяет код кузова. Сверено по реальным VIN из объявлений, исследование europe-us-china.",
+   "sources": [
+    "https://auto.ria.com/",
+    "https://avtogermes.ru/"
+   ]
+  },
+  {
+   "code": "Z6F",
+   "year_pos": 11,
+   "year_pos10": true,
+   "note": "Ford Европы и России («Форд Соллерс»: Всеволожск, Елабуга, Набережные Челны): модельный год — 11-й символ по стандартной таблице (8 — 2008, A — 2010, D — 2013), 10-й повторяет код кузова. Сверено по реальным VIN из объявлений, исследование europe-us-china.",
+   "sources": [
+    "https://auto.ria.com/",
+    "https://avtogermes.ru/"
+   ]
+  }
+ ],
+ "vin_rules": [
+  {
+   "mask": "TSMFYB21",
+   "model": "Sedici",
+   "body": "кроссовер (двойник Suzuki SX4, венгерская сборка Magyar Suzuki)",
+   "slugs": [
+    "fiat_sedici"
+   ],
+   "years": null,
+   "confidence": "confirmed",
+   "detail": "4-й символ F — Fiat; общее правило Suzuki TSM?YB21 иначе отдаёт SX4",
+   "examples": [
+    "TSMFYB21S00196349 — исследование europe-us-china",
+    "TSMFYB21S00656132 — исследование europe-us-china"
+   ],
+   "sources": [
+    "https://auto.ria.com/",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/World_Manufacturer_Identifier_(WMI)"
+   ]
+  }
+ ]
+}

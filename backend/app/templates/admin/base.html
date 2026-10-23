@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{% block title %}Админка{% endblock %} · Автостиль</title>
+  <link rel="stylesheet" href="/admin/static/admin.css?v=1">
+  <script src="/admin/static/admin.js?v=1" defer></script>
+</head>
+<body>
+{% if me %}
+<header class="top"><div class="top__in">
+  <a class="top__logo" href="/admin/orders"><i>А</i>АВТОСТИЛЬ</a>
+  {% set path = request.url.path %}
+  <nav>
+    <a href="/admin/orders?tab=orders" class="{{ 'is-on' if path.startswith('/admin/orders') and request.query_params.get('tab') == 'orders' }}">Заказы{% if new_orders is defined and new_orders %}<b>{{ new_orders }}</b>{% endif %}</a>
+    <a href="/admin/orders?tab=requests" class="{{ 'is-on' if path.startswith('/admin/orders') and request.query_params.get('tab') == 'requests' }}">Заявки{% if new_requests is defined and new_requests %}<b>{{ new_requests }}</b>{% endif %}</a>
+    <a href="/admin/orders" class="{{ 'is-on' if path == '/admin/orders' and not request.query_params.get('tab') }}">Все</a>
+    <a href="/admin/vin" class="{{ 'is-on' if path.startswith('/admin/vin') }}">VIN-справочник</a>
+    {% if me.role == 'admin' %}<a href="/admin/users" class="{{ 'is-on' if path.startswith('/admin/users') }}">Пользователи</a>{% endif %}
+  </nav>
+  <a class="me" href="/admin/account">{{ me.name or me.username }}</a>
+  <form method="post" action="/admin/logout"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="btn btn--sm btn--ghost-dark">Выйти</button></form>
+</div></header>
+{% endif %}
+<main class="page">
+  {% if flash %}<div class="flash">{{ flash }}</div>{% endif %}
+  {% if err %}<div class="flash flash--err">{{ err }}</div>{% endif %}
+  {% block body %}{% endblock %}
+</main>
+</body>
+</html>

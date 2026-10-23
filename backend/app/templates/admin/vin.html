@@ -1,0 +1,57 @@
+{% extends "admin/base.html" %}
+{% block title %}VIN-справочник{% endblock %}
+{% block body %}
+<h1>VIN-справочник</h1>
+<p class="muted">В справочнике {{ stats.wmi }} кодов производителя, {{ stats.vin_rules }} правил расшифровки VIN и {{ stats.frame_codes }} кодов кузова праворульных машин.
+  Подтверждённые менеджерами VIN — ниже, они важнее справочника.</p>
+
+<form class="filters mt-14" method="get" action="/admin/vin">
+  <label class="f grow">VIN, начало VIN или номер кузова<input class="input mono" name="q" value="{{ q }}" placeholder="XTA219010K0123456, Z94CT41DBDR, NZE141-6012345" autofocus></label>
+  <button class="btn btn--dark">Расшифровать</button>
+</form>
+
+{% if res %}
+<section class="card mt-14">
+  <h2>{{ res.message }}</h2>
+  <dl class="kv">
+    <dt>Тип</dt><dd>{{ {'vin': 'VIN, 17 символов', 'vin_partial': 'начало VIN', 'frame': 'номер кузова', 'invalid': 'не распознано'}.get(res.kind) }}</dd>
+    {% if res.wmi %}<dt>WMI {{ res.wmi.code }}</dt><dd>{{ res.wmi.maker or res.wmi.make }}{% if res.wmi.country %} · {{ res.wmi.country }}{% endif %}{% if res.wmi.brand_names %} · марки каталога: {{ res.wmi.brand_names|join(', ') }}{% endif %}
+      {% if res.wmi.year_pos10 == false %}<div class="small muted">10-й символ у этого производителя — не модельный год</div>{% endif %}</dd>{% endif %}
+    {% if res.country and not res.wmi %}<dt>Страна</dt><dd>{{ res.country }}</dd>{% endif %}
+    {% if res.year %}<dt>Модельный год</dt><dd>{{ res.year }}{% if not res.year_sure %} <span class="muted small">— по 10-му символу; этот производитель может не кодировать в нём год</span>{% endif %}{% if res.years_possible|length > 1 %} <span class="muted">(по 30-летнему циклу возможен и {{ res.years_possible[:-1]|join(', ') }})</span>{% endif %}</dd>{% endif %}
+    {% if res.check_digit %}<dt>Контрольный знак</dt><dd>{{ 'сходится' if res.check_digit.valid else 'не сходится' }}{% if not res.check_digit.required %} <span class="muted">(для этого рынка необязателен)</span>{% endif %}</dd>{% endif %}
+    {% if res.vehicle %}<dt>Модель</dt><dd>{{ res.vehicle.model }}{% if res.vehicle.body %}, {{ res.vehicle.body }}{% endif %}{% if res.vehicle.detail %} · {{ res.vehicle.detail }}{% endif %}
+      <div class="small muted">{{ {'learned': 'сверено менеджером', 'official': 'документ производителя', 'confirmed': 'подтверждено источниками', 'probable': 'вероятно — проверьте'}.get(res.vehicle.confidence, res.vehicle.confidence) }}{% for src in res.vehicle.sources or [] if src.startswith('http') %} · <a href="{{ src }}" target="_blank" rel="noopener noreferrer">источник {{ loop.index }}</a>{% endfor %}</div></dd>{% endif %}
+    {% for p in res.problems %}<dt></dt><dd class="vin-bad">{{ p }}</dd>{% endfor %}
+    <dt>Лекала</dt><dd>{% for m in res.matches %}<div><a href="{{ site_url }}/{{ m.url }}" target="_blank" rel="noopener">{{ m.title }}</a>{{ ' · ' ~ m.salon if m.salon }} · {{ m.years or 'все годы' }}</div>{% else %}<span class="muted">не найдены</span>{% endfor %}</dd>
+  </dl>
+  {% if legend %}
+  <h3 class="mt-14">Что значат символы у этого производителя</h3>
+  {% for lg in legend %}
+  <table class="t legend t--compact">{% for pos, text in lg.positions.items() %}<tr><td>{{ pos }}</td><td>{{ text }}</td></tr>{% endfor %}</table>
+  {% endfor %}
+  {% endif %}
+</section>
+{% endif %}
+
+<section class="card mt-14">
+  <h2>Подтверждено менеджерами</h2>
+  {% if learned %}
+  <div class="table-wrap">
+  <table class="t">
+    <thead><tr><th>Начало VIN / кузов</th><th>Лекало</th><th>Годы</th><th>Сверок</th><th>Кто</th><th></th></tr></thead>
+    <tbody>
+    {% for r in learned %}{% set m = catalog.models.get(r.slug) %}
+    <tr><td class="mono">{{ r.key|replace('FRAME:', 'кузов ') }}</td>
+      <td>{% if m %}{{ catalog.car_name(m) }}{{ ' · ' ~ m.v if m.v }}{% else %}<span class="vin-bad">{{ r.slug }} — нет в каталоге</span>{% endif %}</td>
+      <td>{{ (r.years or [])|join(', ') or '—' }}</td><td>{{ r.hits }}</td><td class="small">{{ r.created_by }}{% if r.order_id %} · <a href="/admin/orders/{{ r.order_id }}">заказ</a>{% endif %}</td>
+      <td><form method="post" action="/admin/vin/learned/{{ r.id }}/delete" data-confirm="Удалить правило?"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="btn btn--sm btn--danger">Удалить</button></form></td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% else %}
+  <p class="muted">Пока пусто. В карточке заказа с VIN нажмите «Подтвердить и запомнить» — правило появится здесь.</p>
+  {% endif %}
+</section>
+{% endblock %}

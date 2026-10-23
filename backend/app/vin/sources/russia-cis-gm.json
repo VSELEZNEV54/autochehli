@@ -1,0 +1,4517 @@
+{
+ "group": "russia-cis-gm",
+ "wmi": [
+  {
+   "code": "XTA",
+   "maker": "АВТОВАЗ (Тольятти); также LADA Ижевск, LADA Спорт, ВИС-Авто по ОТТС АВТОВАЗа",
+   "country": "RU",
+   "brands": [
+    "lada"
+   ],
+   "year_pos10": true,
+   "note": "10-й знак — модельный год; по руководствам LADA модельный год начинается 1 июля (машина, выпущенная с июля по декабрь, получает следующий год). 11-й знак — сборочный завод: 0 — АВТОВАЗ (или Чечен-Авто), Y — ООО «ОАГ» (Ижевск), U — АО «Азия Авто». С 2021–2022 под XTA выпускается и Lada Niva Travel (ранее X9L).",
+   "sources": [
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://media.siteedu.ru/sub/3717/documents/LADA-%D0%93%D1%80%D0%B0%D0%BD%D1%82%D0%B0_%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.pdf",
+    "https://lada-aym.github.io/LADA_Largus/tehnicheskaya-harakteristika3.html"
+   ]
+  },
+  {
+   "code": "XWW",
+   "maker": "АО «Азия Авто» (Усть-Каменогорск) — сборка LADA, Chevrolet и УАЗ по ОТТС производителей",
+   "country": "KZ",
+   "brands": [
+    "lada",
+    "chevrolet",
+    "uaz"
+   ],
+   "year_pos10": true,
+   "note": "VDS как у исходного производителя: XWW219…, XWWGF…, XWWGAB…, XWW?S0?5L… (LADA), XWW212300… (Chevrolet Niva), XWW316300… (УАЗ Патриот), XWWJ?6… (Cruze), XWWC?26… (Captiva), XWWT?69… (Aveo). Страну по WMI не путать: X — диапазон России, но завод казахстанский — так в ОТТС.",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00317.%D1%807.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8012.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%802%D0%B81.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00374.%D0%BF1%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00602.html"
+   ]
+  },
+  {
+   "code": "MX1",
+   "maker": "ТОО «СарыаркаАвтоПром» (Костанай) — сборка LADA, Chevrolet/Lada Niva, Chevrolet Cobalt, УАЗ",
+   "country": "KZ",
+   "brands": [
+    "lada",
+    "chevrolet",
+    "uaz"
+   ],
+   "year_pos10": true,
+   "note": "VDS как у исходного производителя: MX1219…, MX1GF…, MX1GA…, MX1?S0?5L…, MX1212300…, MX1316300… (УАЗ), MX1J?69V… (Cobalt)",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8015.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00317.%D1%8013.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.01024.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00374.%D0%BF1%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%B0%D0%B158.00922.html"
+   ]
+  },
+  {
+   "code": "X9L",
+   "maker": "ЗАО «Джи Эм-АВТОВАЗ» (позже АО «Лада Нива»), Тольятти",
+   "country": "RU",
+   "brands": [
+    "chevrolet",
+    "lada"
+   ],
+   "year_pos10": true,
+   "note": "Chevrolet Niva 2123 (2002–2020), Lada Niva (2020) и первые Lada Niva Travel. Схема по руководству Chevrolet Niva: 3 знака — завод, 6 знаков — модель (212300), знак — модельный год, 7 знаков — номер.",
+   "sources": [
+    "https://mcgrp.ru/files/viewer/118/63",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00374.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.01024.html"
+   ]
+  },
+  {
+   "code": "KL1",
+   "maker": "GM Daewoo / GM Korea (марка Chevrolet)",
+   "country": "KR",
+   "brands": [
+    "chevrolet",
+    "daewoo"
+   ],
+   "year_pos10": true,
+   "note": "4-й знак — линия (N — Lacetti J200, S — Aveo T200/T250, T — Aveo T300, J — Cruze, C — Captiva …), 5-й — серия/исполнение, 6–7 — кузов (19/69 — седан, 48/68 — хэтчбек 5 дв., 08 — хэтчбек 3 дв., 35 — универсал, 26 — SUV), 8-й — двигатель, 10-й — модельный год, 11-й — завод.",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B505399.%D1%801.html",
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00285.html"
+   ]
+  },
+  {
+   "code": "KLA",
+   "maker": "Daewoo Motor / GM Daewoo (марка Daewoo)",
+   "country": "KR",
+   "brands": [
+    "daewoo",
+    "chevrolet"
+   ],
+   "year_pos10": true,
+   "note": "Тот же VDS, что у KL1 (в ОТТС Lacetti указаны KL1N…, KLAN…).",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html"
+   ]
+  },
+  {
+   "code": "XUU",
+   "maker": "ЗАО «Автотор-менеджмент» (Калининград) — сборка Chevrolet",
+   "country": "RU",
+   "brands": [
+    "chevrolet"
+   ],
+   "year_pos10": true,
+   "note": "VDS как у корейских KL1 (XUUN?19… Lacetti, XUUS… Aveo T250, XUUT… Aveo T300, XUUC?26… Captiva).",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00087.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00098.%D1%801.html"
+   ]
+  },
+  {
+   "code": "X4X",
+   "maker": "ЗАО «Автотор» (Калининград)",
+   "country": "RU",
+   "brands": [
+    "chevrolet"
+   ],
+   "year_pos10": true,
+   "note": "в ОТТС Lacetti и Aveo 2006–2007 (X4XN…, X4XS…); тот же WMI у BMW сборки Автотор",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500636.%D1%801.html"
+   ]
+  },
+  {
+   "code": "XUF",
+   "maker": "ООО «Джи Эм Авто» (Шушары, Санкт-Петербург)",
+   "country": "RU",
+   "brands": [
+    "chevrolet"
+   ],
+   "year_pos10": true,
+   "note": "Cruze (XUFJ…), Captiva (XUFC?26…), Aveo T300 (XUFT…); 11-й знак у машин GM Авто — 3 или A",
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00007.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00833.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00319.html"
+   ]
+  },
+  {
+   "code": "Y6D",
+   "maker": "ЗАЗ (Запорожский автозавод)",
+   "country": "UA",
+   "brands": [
+    "zaz",
+    "daewoo",
+    "chevrolet"
+   ],
+   "year_pos10": true,
+   "note": "Lanos/Sens/Chance собирались под марками Daewoo, ZAZ и Chevrolet (Chevrolet Lanos для РФ 2005–2009, ZAZ Chance для РФ с 07.2009) с одним VIN-префиксом — марку по VIN не определить. 4–5: TF (T100/T150), 6–7: 69 седан, 48 хэтчбек 5 дв., 8: двигатель (Y — 1,5 GM, 8 — 1,3 МеМЗ «Sens»). На ЗАЗе также собирались Chevrolet Aveo — по SBKTS встречается Y6DTF… у Aveo, поэтому маски Lanos взяты 8-значные.",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ua.%D0%BC%D1%8202.%D0%B505569.%D1%801.html",
+    "https://hpt.su/documents/otts/by112-03.09.049-10294.html",
+    "https://ru.wikipedia.org/wiki/%D0%97%D0%90%D0%97_Chance",
+    "https://hpt.su/documents/sbkts/index.html?vin=Y6DTF"
+   ]
+  },
+  {
+   "code": "XWB",
+   "maker": "УзДЭУавто / GM Uzbekistan / UzAuto Motors (Асака)",
+   "country": "UZ",
+   "brands": [
+    "daewoo",
+    "chevrolet"
+   ],
+   "year_pos10": true,
+   "note": "Daewoo Nexia (XWB3…), Matiz (XWB4…), Gentra (XWB5V…), Chevrolet Spark M300 (XWB2…, XWBMA48N…), Cobalt (XWBJ?69V…), Nexia R3 (XWBT?69V…). 11-й знак — A (Асака). Хотя X — диапазон России, WMI присвоен узбекскому заводу (так в ОТТС).",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B506835.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B505460.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-uz.%D0%BC%D1%8202.00233.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-uz.%D0%BC%D1%8202.00561.html"
+   ]
+  },
+  {
+   "code": "ULV",
+   "maker": "УзДЭУавто (ранний WMI, ОТТС 2003–2004)",
+   "country": "UZ",
+   "brands": [
+    "daewoo"
+   ],
+   "year_pos10": true,
+   "note": "Nexia ULV3?31…, Matiz ULV4A11…; позже — XWB",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B503321.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B503375.html"
+   ]
+  },
+  {
+   "code": "X7M",
+   "maker": "ТагАЗ (Таганрогский автомобильный завод)",
+   "country": "RU",
+   "brands": [
+    "tagaz"
+   ],
+   "year_pos10": null,
+   "note": "Tager — X7MT… (тип KJ, лицензионный SsangYong Korando); тем же WMI маркировались Hyundai/Kia/Chery сборки ТагАЗ (другие группы). Модельный год в 10-м знаке не подтверждён источником.",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505543.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B506350.html"
+   ]
+  },
+  {
+   "code": "XTT",
+   "maker": "УАЗ (Ульяновский автомобильный завод)",
+   "country": "RU",
+   "brands": [
+    "uaz"
+   ],
+   "year_pos10": true,
+   "note": "4–9 — обозначение модели: 316300 — Patriot 3163, 31631x/31638x — дизельные 3163, 3164xx — Patriot Sport, 236320/236380 — Pickup 23632/23638, 23602x/23608x — Cargo, 236021/236022/236031/236323/236324 — Profi. 11-й знак — 1 (по ОТТС «XTT3163?0?1…»). 10-й — год (по объявлениям: XTT316300L… — 2019–2020 г. в.).",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html"
+   ]
+  },
+  {
+   "code": "XU1",
+   "maker": "второй код VIN УАЗ-3163 по ОТТС 2007 (производитель в выписке не расшифрован)",
+   "country": "RU",
+   "brands": [
+    "uaz"
+   ],
+   "year_pos10": null,
+   "note": "в ОТТС РОСС RU.МТ02.Е03935.Р1 коды VIN: XTT316300…, XU1316300… — встречается редко",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html"
+   ]
+  },
+  {
+   "code": "XTH",
+   "maker": "ГАЗ (Горьковский автомобильный завод) — старый WMI",
+   "country": "RU",
+   "brands": [
+    "gaz"
+   ],
+   "year_pos10": null,
+   "note": "до ~2005–2007: Волга XTH3110…/XTH31105…, Газель XTH3302…/XTH2705…; в ОТТС 2005–2007 указаны одновременно XTH и X96",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502328.%D0%BF4.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504066.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502030.%D0%BF3%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html"
+   ]
+  },
+  {
+   "code": "X96",
+   "maker": "ГАЗ (Группа ГАЗ, Нижний Новгород)",
+   "country": "RU",
+   "brands": [
+    "gaz"
+   ],
+   "year_pos10": true,
+   "note": "4–9 — обозначение модели (330200 — 3302, 330230/330232 — «Фермер», 270500 — 2705, 311050 — 31105 …); у NEXT — заводской индекс A21R22, A31R32 и т. п. в 4–9 знаках (X96A??R…). 10-й знак — год (по реальным VIN, например X96A21R33K… — 2019); официально не расшифрован.",
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505599.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00033.%D1%8011.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505604.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=X96A21"
+   ]
+  }
+ ],
+ "vin_rules": [
+  {
+   "mask": "XTA2108",
+   "years": [
+    1984,
+    2004
+   ],
+   "model": "ВАЗ 2108–21099 (Samara)",
+   "body": "хэтчбек 3 дв. (ВАЗ-2108, 21083)",
+   "detail": "ОТТС РОСС RU.МТ02.Е00983: типы 210800, 210830, код VIN XTA210…; 4–9 знаки = обозначение типа",
+   "slugs": [
+    "lada_vaz-2108"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B500983.html",
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%90%D0%97-2108",
+    "https://ru.wikipedia.org/wiki/Lada_Samara"
+   ]
+  },
+  {
+   "mask": "XTA21090",
+   "years": [
+    1986,
+    2006
+   ],
+   "model": "ВАЗ 2108–21099 (Samara)",
+   "body": "хэтчбек 5 дв. (ВАЗ-2109)",
+   "detail": "тип 210900",
+   "slugs": [
+    "lada_vaz-2109"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B500983.html",
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%90%D0%97-2108",
+    "https://ru.wikipedia.org/wiki/Lada_Samara"
+   ]
+  },
+  {
+   "mask": "XTA21093",
+   "years": [
+    1986,
+    2006
+   ],
+   "model": "ВАЗ 2108–21099 (Samara)",
+   "body": "хэтчбек 5 дв. (ВАЗ-21093)",
+   "detail": "тип 210930",
+   "slugs": [
+    "lada_vaz-2109"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B500983.html",
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%90%D0%97-2108",
+    "https://ru.wikipedia.org/wiki/Lada_Samara"
+   ]
+  },
+  {
+   "mask": "XTA21099",
+   "years": [
+    1990,
+    2005
+   ],
+   "model": "ВАЗ 2108–21099 (Samara)",
+   "body": "седан (ВАЗ-21099)",
+   "detail": "типы 210990, 210993",
+   "slugs": [
+    "lada_vaz-21099"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B500983.html",
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%90%D0%97-2108",
+    "https://ru.wikipedia.org/wiki/Lada_Samara"
+   ]
+  },
+  {
+   "mask": "XTA2113",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "ВАЗ 2113–2115 (Samara 2)",
+   "body": "хэтчбек 3 дв. (2113)",
+   "detail": "ОТТС Е-RU.МТ02.В.00196: модификация 211340, код VIN XTA211?40…",
+   "slugs": [
+    "lada_2113"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00196.html",
+    "https://ru.wikipedia.org/wiki/Lada_Samara",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2114"
+   ]
+  },
+  {
+   "mask": "XTA2114",
+   "years": [
+    2001,
+    2013
+   ],
+   "model": "ВАЗ 2113–2115 (Samara 2)",
+   "body": "хэтчбек 5 дв. (2114)",
+   "detail": "модификация 211440",
+   "slugs": [
+    "lada_vaz-2114"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00196.html",
+    "https://ru.wikipedia.org/wiki/Lada_Samara",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2114"
+   ]
+  },
+  {
+   "mask": "XTA2115",
+   "years": [
+    1997,
+    2012
+   ],
+   "model": "ВАЗ 2113–2115 (Samara 2)",
+   "body": "седан (2115)",
+   "detail": "модификация 211540",
+   "slugs": [
+    "lada_vaz-2115"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00196.html",
+    "https://ru.wikipedia.org/wiki/Lada_Samara",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2114"
+   ]
+  },
+  {
+   "mask": "XTA2110",
+   "years": [
+    1995,
+    2007
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "седан ВАЗ-2110",
+   "detail": "ОТТС РОСС RU.МТ02.Е03136: типы 211000…211030, код VIN XTA2110…; в каталоге лекало седана 2110 общее с Priora до 2013",
+   "slugs": [
+    "lada_priora"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503136.html",
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%90%D0%97-2110"
+   ]
+  },
+  {
+   "mask": "XTA2111",
+   "years": [
+    1997,
+    2009
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "универсал ВАЗ-2111",
+   "detail": "типы 211100…211130, код VIN XTA2111…",
+   "slugs": [
+    "lada_priora-hatchback"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503136.html",
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%90%D0%97-2110"
+   ]
+  },
+  {
+   "mask": "XTA2112",
+   "years": [
+    1998,
+    2008
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "хэтчбек ВАЗ-2112",
+   "detail": "типы 211200, 211220, код VIN XTA2112…",
+   "slugs": [
+    "lada_priora-hatchback"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503136.html",
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%90%D0%97-2110"
+   ]
+  },
+  {
+   "mask": "XTA2170",
+   "years": [
+    2007,
+    2014
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "седан 2170, до рестайлинга",
+   "detail": "рестайлинг — сентябрь 2013; модельный год с 1 июля, поэтому 2014 (E) может быть и старой, и новой Priora",
+   "slugs": [
+    "lada_priora"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ]
+  },
+  {
+   "mask": "XTA2170",
+   "years": [
+    2014,
+    2018
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "седан 2170, рестайлинг 2013",
+   "slugs": [
+    "lada_priora-new"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ]
+  },
+  {
+   "mask": "XTA2171",
+   "years": [
+    2009,
+    2014
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "универсал 2171, до рестайлинга",
+   "slugs": [
+    "lada_priora-hatchback"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ]
+  },
+  {
+   "mask": "XTA2171",
+   "years": [
+    2014,
+    2015
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "универсал 2171, рестайлинг 2013",
+   "slugs": [
+    "lada_priora-new"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ]
+  },
+  {
+   "mask": "XTA2172",
+   "years": [
+    2008,
+    2014
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "хэтчбек 2172, до рестайлинга",
+   "detail": "кроме купе 21728 — см. правило XTA21728",
+   "slugs": [
+    "lada_priora-hatchback"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ]
+  },
+  {
+   "mask": "XTA2172",
+   "years": [
+    2014,
+    2016
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "хэтчбек 2172, рестайлинг 2013",
+   "slugs": [
+    "lada_priora-new"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ]
+  },
+  {
+   "mask": "XTA21728",
+   "years": [
+    2010,
+    2015
+   ],
+   "model": "Priora",
+   "body": "купе 3 дв. (21728)",
+   "detail": "модификация 217280 входит в тип 2172; трёхдверного купе в каталоге нет — индивидуальный пошив",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora"
+   ]
+  },
+  {
+   "mask": "XTA1117",
+   "years": [
+    2007,
+    2013
+   ],
+   "model": "Kalina",
+   "body": "универсал 1117 (1-е поколение)",
+   "slugs": [
+    "lada_kalina"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505345.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00197.html",
+    "https://ru.wikipedia.org/wiki/Lada_Kalina",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA1117"
+   ]
+  },
+  {
+   "mask": "XTA1118",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Kalina",
+   "body": "седан 1118 (1-е поколение)",
+   "slugs": [
+    "lada_kalina"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505345.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00197.html",
+    "https://ru.wikipedia.org/wiki/Lada_Kalina",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA1117"
+   ]
+  },
+  {
+   "mask": "XTA1119",
+   "years": [
+    2006,
+    2013
+   ],
+   "model": "Kalina",
+   "body": "хэтчбек 1119 (1-е поколение)",
+   "slugs": [
+    "lada_kalina"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505345.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00197.html",
+    "https://ru.wikipedia.org/wiki/Lada_Kalina",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA1117"
+   ]
+  },
+  {
+   "mask": "XTA2192",
+   "years": [
+    2013,
+    2019
+   ],
+   "model": "Kalina",
+   "body": "хэтчбек 2192 (2-е поколение)",
+   "detail": "тот же код 2192 с августа 2018 у Granta-хэтчбека; модельный год 2019 (K) может быть и Kalina, и Granta",
+   "slugs": [
+    "lada_kalina-2"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/by112-03.11.021-11440.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://ru.wikipedia.org/wiki/Lada_Kalina",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2192"
+   ]
+  },
+  {
+   "mask": "XTA2194",
+   "years": [
+    2013,
+    2019
+   ],
+   "model": "Kalina",
+   "body": "универсал 2194 (2-е поколение, в т. ч. Kalina Cross)",
+   "detail": "тот же код 2194 с августа 2018 у Granta-универсала / Granta Cross",
+   "slugs": [
+    "lada_kalina-2"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/by112-03.11.021-11440.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://ru.wikipedia.org/wiki/Lada_Kalina",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2194"
+   ]
+  },
+  {
+   "mask": "XTA2190",
+   "years": [
+    2011,
+    2019
+   ],
+   "model": "Granta",
+   "body": "седан 2190, до рестайлинга",
+   "detail": "«норма»/«люкс» по VIN не различить. Рестайлинг выпускается с 14.08.2018, модельный год с 1 июля → 2019 (K) может быть и до-, и послерестайлинговой",
+   "slugs": [
+    "lada_granta",
+    "lada_granta-luxe"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XTA219010H0462700 — отчёт Автотеки, LADA 2190 Granta 2017"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00232.html"
+   ]
+  },
+  {
+   "mask": "XTA2190",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "седан 2190, рестайлинг 2018",
+   "slugs": [
+    "lada_granta-re",
+    "lada_granta-luxe-re"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XTA219010L0671373 — отчёт Автотеки, LADA 2190 Granta 2019"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ]
+  },
+  {
+   "mask": "XTA2191",
+   "years": [
+    2014,
+    2019
+   ],
+   "model": "Granta",
+   "body": "лифтбек 2191, до рестайлинга",
+   "detail": "спинка 60/40 или сплошная — по VIN не различить; лифтбек выпускается с мая 2014",
+   "slugs": [
+    "lada_granta-liftback",
+    "lada_granta-liftback-flat"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2191"
+   ]
+  },
+  {
+   "mask": "XTA2191",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "лифтбек 2191, рестайлинг 2018",
+   "slugs": [
+    "lada_granta-liftback-re",
+    "lada_granta-liftback-flat-re"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XTA219110M0416574 — отчёт Автотеки, LADA 2191 Granta 2021"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ]
+  },
+  {
+   "mask": "XTA2192",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "хэтчбек 2192 (Granta с 2018)",
+   "detail": "бывшая Kalina 2; отдельного лекала Granta-хэтчбек в каталоге нет — уточнить у производства (вероятно, как Kalina 2)",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ]
+  },
+  {
+   "mask": "XTA2194",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "универсал 2194 / Granta Cross (с 2018)",
+   "detail": "бывшая Kalina 2 универсал; лекала Granta-универсал в каталоге нет — уточнить у производства",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ]
+  },
+  {
+   "mask": "XTAGFL",
+   "years": [
+    2015,
+    null
+   ],
+   "model": "Vesta",
+   "body": "седан (GFL…, в т. ч. Vesta Cross седан)",
+   "detail": "GF — семейство Vesta, 6-й знак L — седан, K — универсал (ОТТС: первая версия 2015 — только GFL110/120/130 седан). С 2023 по тому же ОТТС идут Vesta NG и LADA Aura (новые модификации AGF-…): Aura — удлинённый седан, лекало Vesta ей не подходит — уточнять модель",
+   "slugs": [
+    "lada_vesta"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XTAGFL110KY325203 — отчёт Автотеки, Lada Vesta 2019",
+    "XTAGFL110JY188792 — отчёт Автотеки, Lada Vesta"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8012.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8015.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAGFL"
+   ]
+  },
+  {
+   "mask": "XTAGFK",
+   "years": [
+    2017,
+    null
+   ],
+   "model": "Vesta",
+   "body": "универсал Vesta SW / SW Cross (GFK…)",
+   "detail": "в каталоге одно лекало Vesta на все кузова",
+   "slugs": [
+    "lada_vesta"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XTAGFK110NY594088 — отчёт Автотеки, Lada Vesta SW",
+    "XTAGFK110MY517972 — отчёт Автотеки, Lada Vesta SW"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8012.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8015.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAGFK"
+   ]
+  },
+  {
+   "mask": "XTAGAB",
+   "years": [
+    2016,
+    2022
+   ],
+   "model": "XRAY",
+   "body": "хэтчбек 5 дв. (GAB…, в т. ч. XRAY Cross)",
+   "detail": "ОТТС: тип GA, модификации GAB110…GAB440, код VIN XTAGAB??0…",
+   "slugs": [
+    "lada_xray"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XTAGAB330L1286530 — отчёт Автотеки, LADA XRAY 2020"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00317.%D1%807.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00317.%D1%8013.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAGAB"
+   ]
+  },
+  {
+   "mask": "XTAKS",
+   "years": [
+    2012,
+    null
+   ],
+   "model": "Largus",
+   "body": "универсал R90, 5 мест (KS0…/KSA…)",
+   "detail": "ОТТС ТС RU Е-RU.МТ02.00286.Р2И1: 5 мест — модификации KS0?5L, 7 мест — RS0?5L. Норма/люкс по VIN не различить; Largus Cross 5 мест — тоже KS0…",
+   "slugs": [
+    "lada_largus5m",
+    "lada_largus5m-luxe"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XTAKS0Y5LF0913596 — auto.ria, Lada Largus 2015",
+    "XTAKS0Y5LH0977360 — autospot, Lada Largus универсал"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%802%D0%B81.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%8010.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00338.html",
+    "https://largus-mcv.ru/kat/modifikacii.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAKS0"
+   ]
+  },
+  {
+   "mask": "XTARS",
+   "years": [
+    2012,
+    null
+   ],
+   "model": "Largus",
+   "body": "универсал R90, 7 мест (RS0…)",
+   "detail": "7-местного лекала Largus в каталоге нет — индивидуальный пошив",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%802%D0%B81.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%8010.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00338.html",
+    "https://largus-mcv.ru/kat/modifikacii.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTARS0"
+   ]
+  },
+  {
+   "mask": "XTAFS",
+   "years": [
+    2012,
+    null
+   ],
+   "model": "Largus",
+   "body": "фургон F90 (FS0…)",
+   "detail": "грузовой фургон, 2 места; лекала нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00285.%D1%807.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00338.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAFS0"
+   ]
+  },
+  {
+   "mask": "XTA21213",
+   "years": null,
+   "model": "Niva Legend (4x4)",
+   "body": "3 дв. ВАЗ-21213",
+   "detail": "ОТТС: тип 212130, код VIN XTA212130…",
+   "slugs": [
+    "lada_niva-21214"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503955.html"
+   ]
+  },
+  {
+   "mask": "XTA21214",
+   "years": [
+    1994,
+    2014
+   ],
+   "model": "Niva Legend (4x4)",
+   "body": "3 дв. ВАЗ-21214 / LADA 4x4",
+   "detail": "тип 2121, модификация 212140 (ОТТС 2007–2018)",
+   "slugs": [
+    "lada_niva-21214"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00271.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505535.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA21214"
+   ]
+  },
+  {
+   "mask": "XTA21214",
+   "years": [
+    2015,
+    2019
+   ],
+   "model": "Niva Legend (4x4)",
+   "body": "3 дв. LADA 4x4 / 4x4 Urban",
+   "detail": "Urban (с октября 2014) — исполнение той же модификации 212140, по VIN не отличается",
+   "slugs": [
+    "lada_niva-21214",
+    "lada_niva-urban"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XTA212140B1980221 — auto.ria, LADA 4x4 (21214)"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00271.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505535.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA21214"
+   ]
+  },
+  {
+   "mask": "XTA21214",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Niva Legend (4x4)",
+   "body": "3 дв. LADA 4x4 / Niva Legend / Urban",
+   "detail": "обычный, Urban и обновлённый Urban по VIN не различить — выбирает клиент",
+   "slugs": [
+    "lada_niva-21214",
+    "lada_niva-urban",
+    "lada_niva-urban-new"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00271.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505535.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA21214",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00271.%D0%BF1%D1%802.html"
+   ]
+  },
+  {
+   "mask": "XTA2131",
+   "years": null,
+   "model": "Niva Legend (4x4)",
+   "body": "5 дв. ВАЗ-2131",
+   "detail": "модификация 213100; лекала 5-дверной Нивы в каталоге нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505536.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2131"
+   ]
+  },
+  {
+   "mask": "X9L2123",
+   "years": [
+    2002,
+    2014
+   ],
+   "model": "Niva",
+   "body": "Chevrolet Niva 2123 (до обновления 2014)",
+   "detail": "модели 212300 (в т. ч. 212300-55 Bertone) и 212360; поколения в каталоге различаются только годом выпуска",
+   "slugs": [
+    "chevrolet_niva"
+   ],
+   "confidence": "official",
+   "examples": [
+    "X9L21230070178398 — auto.ria, Chevrolet Niva 2007"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00374.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503638.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503966.%D0%BF1%D1%801.html",
+    "https://mcgrp.ru/files/viewer/118/63",
+    "https://hpt.su/documents/sbkts/index.html?vin=X9L2123",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Niva"
+   ]
+  },
+  {
+   "mask": "X9L2123",
+   "years": [
+    2014,
+    2016
+   ],
+   "model": "Niva",
+   "body": "Chevrolet Niva 2123, обновление 2014",
+   "detail": "граница 2014/2016 — по каталогу лекал, по VIN различается только модельный год (10-й знак)",
+   "slugs": [
+    "chevrolet_niva-2014"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00374.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503638.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503966.%D0%BF1%D1%801.html",
+    "https://mcgrp.ru/files/viewer/118/63",
+    "https://hpt.su/documents/sbkts/index.html?vin=X9L2123",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Niva"
+   ]
+  },
+  {
+   "mask": "X9L2123",
+   "years": [
+    2016,
+    2021
+   ],
+   "model": "Niva",
+   "body": "Chevrolet Niva 2123, обновление 2016 (с июля 2020 — Lada Niva)",
+   "slugs": [
+    "chevrolet_niva-2016"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00374.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503638.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503966.%D0%BF1%D1%801.html",
+    "https://mcgrp.ru/files/viewer/118/63",
+    "https://hpt.su/documents/sbkts/index.html?vin=X9L2123",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Niva"
+   ]
+  },
+  {
+   "mask": "X9L2123",
+   "years": [
+    2021,
+    null
+   ],
+   "model": "Niva Travel",
+   "body": "Lada Niva Travel 2123 (212300-80)",
+   "detail": "ОТТС Niva Travel (с 12.07.2021): коды VIN X9L212300…, XTA212300…, MX1212300…; 2021 модельный год может быть и старой Niva",
+   "slugs": [
+    "lada_niva-travel"
+   ],
+   "confidence": "official",
+   "examples": [
+    "X9L212300L0712292 — autospot, LADA Niva (Travel) 2020"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.01024.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Niva"
+   ]
+  },
+  {
+   "mask": "XTA2123",
+   "years": [
+    2021,
+    null
+   ],
+   "model": "Niva Travel",
+   "body": "Lada Niva Travel 2123",
+   "slugs": [
+    "lada_niva-travel"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XTA212300N0820116 — autospot, LADA Niva Travel 2022",
+    "XTA212300R0913610 — autospot, LADA Niva Travel 2024"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.01024.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2123"
+   ]
+  },
+  {
+   "mask": "XWW2170",
+   "years": [
+    2007,
+    2014
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "седан 2170, до рестайлинга",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. рестайлинг — сентябрь 2013; модельный год с 1 июля, поэтому 2014 (E) может быть и старой, и новой Priora",
+   "slugs": [
+    "lada_priora"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ]
+  },
+  {
+   "mask": "XWW2170",
+   "years": [
+    2014,
+    2018
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "седан 2170, рестайлинг 2013",
+   "slugs": [
+    "lada_priora-new"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ],
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA."
+  },
+  {
+   "mask": "XWW2171",
+   "years": [
+    2009,
+    2014
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "универсал 2171, до рестайлинга",
+   "slugs": [
+    "lada_priora-hatchback"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ],
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA."
+  },
+  {
+   "mask": "XWW2171",
+   "years": [
+    2014,
+    2015
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "универсал 2171, рестайлинг 2013",
+   "slugs": [
+    "lada_priora-new"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ],
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA."
+  },
+  {
+   "mask": "XWW2172",
+   "years": [
+    2008,
+    2014
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "хэтчбек 2172, до рестайлинга",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. кроме купе 21728 — см. правило XTA21728",
+   "slugs": [
+    "lada_priora-hatchback"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ]
+  },
+  {
+   "mask": "XWW2172",
+   "years": [
+    2014,
+    2016
+   ],
+   "model": "Priora / ВАЗ 2110",
+   "body": "хэтчбек 2172, рестайлинг 2013",
+   "slugs": [
+    "lada_priora-new"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00313.%D1%804.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2170"
+   ],
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA."
+  },
+  {
+   "mask": "XWW21728",
+   "years": [
+    2010,
+    2015
+   ],
+   "model": "Priora",
+   "body": "купе 3 дв. (21728)",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. модификация 217280 входит в тип 2172; трёхдверного купе в каталоге нет — индивидуальный пошив",
+   "slugs": [],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00195.html",
+    "https://ru.wikipedia.org/wiki/Lada_Priora"
+   ]
+  },
+  {
+   "mask": "XWW2192",
+   "years": [
+    2013,
+    2019
+   ],
+   "model": "Kalina",
+   "body": "хэтчбек 2192 (2-е поколение)",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. тот же код 2192 с августа 2018 у Granta-хэтчбека; модельный год 2019 (K) может быть и Kalina, и Granta",
+   "slugs": [
+    "lada_kalina-2"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/by112-03.11.021-11440.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://ru.wikipedia.org/wiki/Lada_Kalina",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2192"
+   ]
+  },
+  {
+   "mask": "MX12192",
+   "years": [
+    2013,
+    2019
+   ],
+   "model": "Kalina",
+   "body": "хэтчбек 2192 (2-е поколение)",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA. тот же код 2192 с августа 2018 у Granta-хэтчбека; модельный год 2019 (K) может быть и Kalina, и Granta",
+   "slugs": [
+    "lada_kalina-2"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/by112-03.11.021-11440.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://ru.wikipedia.org/wiki/Lada_Kalina",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2192"
+   ]
+  },
+  {
+   "mask": "XWW2194",
+   "years": [
+    2013,
+    2019
+   ],
+   "model": "Kalina",
+   "body": "универсал 2194 (2-е поколение, в т. ч. Kalina Cross)",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. тот же код 2194 с августа 2018 у Granta-универсала / Granta Cross",
+   "slugs": [
+    "lada_kalina-2"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/by112-03.11.021-11440.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://ru.wikipedia.org/wiki/Lada_Kalina",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2194"
+   ]
+  },
+  {
+   "mask": "MX12194",
+   "years": [
+    2013,
+    2019
+   ],
+   "model": "Kalina",
+   "body": "универсал 2194 (2-е поколение, в т. ч. Kalina Cross)",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA. тот же код 2194 с августа 2018 у Granta-универсала / Granta Cross",
+   "slugs": [
+    "lada_kalina-2"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/by112-03.11.021-11440.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://ru.wikipedia.org/wiki/Lada_Kalina",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2194"
+   ]
+  },
+  {
+   "mask": "XWW2190",
+   "years": [
+    2011,
+    2019
+   ],
+   "model": "Granta",
+   "body": "седан 2190, до рестайлинга",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. «норма»/«люкс» по VIN не различить. Рестайлинг выпускается с 14.08.2018, модельный год с 1 июля → 2019 (K) может быть и до-, и послерестайлинговой",
+   "slugs": [
+    "lada_granta",
+    "lada_granta-luxe"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00232.html"
+   ]
+  },
+  {
+   "mask": "MX12190",
+   "years": [
+    2011,
+    2019
+   ],
+   "model": "Granta",
+   "body": "седан 2190, до рестайлинга",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA. «норма»/«люкс» по VIN не различить. Рестайлинг выпускается с 14.08.2018, модельный год с 1 июля → 2019 (K) может быть и до-, и послерестайлинговой",
+   "slugs": [
+    "lada_granta",
+    "lada_granta-luxe"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00232.html"
+   ]
+  },
+  {
+   "mask": "XWW2190",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "седан 2190, рестайлинг 2018",
+   "slugs": [
+    "lada_granta-re",
+    "lada_granta-luxe-re"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ],
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA."
+  },
+  {
+   "mask": "MX12190",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "седан 2190, рестайлинг 2018",
+   "slugs": [
+    "lada_granta-re",
+    "lada_granta-luxe-re"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ],
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA."
+  },
+  {
+   "mask": "XWW2191",
+   "years": [
+    2014,
+    2019
+   ],
+   "model": "Granta",
+   "body": "лифтбек 2191, до рестайлинга",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. спинка 60/40 или сплошная — по VIN не различить; лифтбек выпускается с мая 2014",
+   "slugs": [
+    "lada_granta-liftback",
+    "lada_granta-liftback-flat"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2191"
+   ]
+  },
+  {
+   "mask": "MX12191",
+   "years": [
+    2014,
+    2019
+   ],
+   "model": "Granta",
+   "body": "лифтбек 2191, до рестайлинга",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA. спинка 60/40 или сплошная — по VIN не различить; лифтбек выпускается с мая 2014",
+   "slugs": [
+    "lada_granta-liftback",
+    "lada_granta-liftback-flat"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTA2191"
+   ]
+  },
+  {
+   "mask": "XWW2191",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "лифтбек 2191, рестайлинг 2018",
+   "slugs": [
+    "lada_granta-liftback-re",
+    "lada_granta-liftback-flat-re"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ],
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA."
+  },
+  {
+   "mask": "MX12191",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "лифтбек 2191, рестайлинг 2018",
+   "slugs": [
+    "lada_granta-liftback-re",
+    "lada_granta-liftback-flat-re"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ],
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA."
+  },
+  {
+   "mask": "XWW2192",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "хэтчбек 2192 (Granta с 2018)",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. бывшая Kalina 2; отдельного лекала Granta-хэтчбек в каталоге нет — уточнить у производства (вероятно, как Kalina 2)",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ]
+  },
+  {
+   "mask": "MX12192",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "хэтчбек 2192 (Granta с 2018)",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA. бывшая Kalina 2; отдельного лекала Granta-хэтчбек в каталоге нет — уточнить у производства (вероятно, как Kalina 2)",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ]
+  },
+  {
+   "mask": "XWW2194",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "универсал 2194 / Granta Cross (с 2018)",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. бывшая Kalina 2 универсал; лекала Granta-универсал в каталоге нет — уточнить у производства",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ]
+  },
+  {
+   "mask": "MX12194",
+   "years": [
+    2019,
+    null
+   ],
+   "model": "Granta",
+   "body": "универсал 2194 / Granta Cross (с 2018)",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA. бывшая Kalina 2 универсал; лекала Granta-универсал в каталоге нет — уточнить у производства",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%802.html",
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://ru.wikipedia.org/wiki/Lada_Granta"
+   ]
+  },
+  {
+   "mask": "XWWGFL",
+   "years": [
+    2015,
+    null
+   ],
+   "model": "Vesta",
+   "body": "седан (GFL…, в т. ч. Vesta Cross седан)",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. GF — семейство Vesta, 6-й знак L — седан, K — универсал (ОТТС: первая версия 2015 — только GFL110/120/130 седан). С 2023 по тому же ОТТС идут Vesta NG и LADA Aura (новые модификации AGF-…): Aura — удлинённый седан, лекало Vesta ей не подходит — уточнять модель",
+   "slugs": [
+    "lada_vesta"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8012.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8015.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAGFL"
+   ]
+  },
+  {
+   "mask": "MX1GFL",
+   "years": [
+    2015,
+    null
+   ],
+   "model": "Vesta",
+   "body": "седан (GFL…, в т. ч. Vesta Cross седан)",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA. GF — семейство Vesta, 6-й знак L — седан, K — универсал (ОТТС: первая версия 2015 — только GFL110/120/130 седан). С 2023 по тому же ОТТС идут Vesta NG и LADA Aura (новые модификации AGF-…): Aura — удлинённый седан, лекало Vesta ей не подходит — уточнять модель",
+   "slugs": [
+    "lada_vesta"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8012.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8015.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAGFL"
+   ]
+  },
+  {
+   "mask": "XWWGFK",
+   "years": [
+    2017,
+    null
+   ],
+   "model": "Vesta",
+   "body": "универсал Vesta SW / SW Cross (GFK…)",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. в каталоге одно лекало Vesta на все кузова",
+   "slugs": [
+    "lada_vesta"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8012.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8015.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAGFK"
+   ]
+  },
+  {
+   "mask": "MX1GFK",
+   "years": [
+    2017,
+    null
+   ],
+   "model": "Vesta",
+   "body": "универсал Vesta SW / SW Cross (GFK…)",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA. в каталоге одно лекало Vesta на все кузова",
+   "slugs": [
+    "lada_vesta"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8012.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8015.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAGFK"
+   ]
+  },
+  {
+   "mask": "XWWGAB",
+   "years": [
+    2016,
+    2022
+   ],
+   "model": "XRAY",
+   "body": "хэтчбек 5 дв. (GAB…, в т. ч. XRAY Cross)",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. ОТТС: тип GA, модификации GAB110…GAB440, код VIN XTAGAB??0…",
+   "slugs": [
+    "lada_xray"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00317.%D1%807.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00317.%D1%8013.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAGAB"
+   ]
+  },
+  {
+   "mask": "MX1GAB",
+   "years": [
+    2016,
+    2022
+   ],
+   "model": "XRAY",
+   "body": "хэтчбек 5 дв. (GAB…, в т. ч. XRAY Cross)",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA. ОТТС: тип GA, модификации GAB110…GAB440, код VIN XTAGAB??0…",
+   "slugs": [
+    "lada_xray"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00317.%D1%807.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00317.%D1%8013.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAGAB"
+   ]
+  },
+  {
+   "mask": "XWWKS",
+   "years": [
+    2012,
+    null
+   ],
+   "model": "Largus",
+   "body": "универсал R90, 5 мест (KS0…/KSA…)",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. ОТТС ТС RU Е-RU.МТ02.00286.Р2И1: 5 мест — модификации KS0?5L, 7 мест — RS0?5L. Норма/люкс по VIN не различить; Largus Cross 5 мест — тоже KS0…",
+   "slugs": [
+    "lada_largus5m",
+    "lada_largus5m-luxe"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%802%D0%B81.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%8010.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00338.html",
+    "https://largus-mcv.ru/kat/modifikacii.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAKS0"
+   ]
+  },
+  {
+   "mask": "MX1KS",
+   "years": [
+    2012,
+    null
+   ],
+   "model": "Largus",
+   "body": "универсал R90, 5 мест (KS0…/KSA…)",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA. ОТТС ТС RU Е-RU.МТ02.00286.Р2И1: 5 мест — модификации KS0?5L, 7 мест — RS0?5L. Норма/люкс по VIN не различить; Largus Cross 5 мест — тоже KS0…",
+   "slugs": [
+    "lada_largus5m",
+    "lada_largus5m-luxe"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%802%D0%B81.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%8010.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00338.html",
+    "https://largus-mcv.ru/kat/modifikacii.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTAKS0"
+   ]
+  },
+  {
+   "mask": "XWWRS",
+   "years": [
+    2012,
+    null
+   ],
+   "model": "Largus",
+   "body": "универсал R90, 7 мест (RS0…)",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у XTA. 7-местного лекала Largus в каталоге нет — индивидуальный пошив",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%802%D0%B81.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%8010.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00338.html",
+    "https://largus-mcv.ru/kat/modifikacii.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTARS0"
+   ]
+  },
+  {
+   "mask": "MX1RS",
+   "years": [
+    2012,
+    null
+   ],
+   "model": "Largus",
+   "body": "универсал R90, 7 мест (RS0…)",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у XTA. 7-местного лекала Largus в каталоге нет — индивидуальный пошив",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%802%D0%B81.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%8010.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00338.html",
+    "https://largus-mcv.ru/kat/modifikacii.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTARS0"
+   ]
+  },
+  {
+   "mask": "XWW2123",
+   "years": [
+    2014,
+    2016
+   ],
+   "model": "Niva",
+   "body": "Chevrolet Niva 2123, обновление 2014",
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у X9L. граница 2014/2016 — по каталогу лекал, по VIN различается только модельный год (10-й знак)",
+   "slugs": [
+    "chevrolet_niva-2014"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00374.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503638.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503966.%D0%BF1%D1%801.html",
+    "https://mcgrp.ru/files/viewer/118/63",
+    "https://hpt.su/documents/sbkts/index.html?vin=X9L2123",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Niva"
+   ]
+  },
+  {
+   "mask": "MX12123",
+   "years": [
+    2014,
+    2016
+   ],
+   "model": "Niva",
+   "body": "Chevrolet Niva 2123, обновление 2014",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у X9L. граница 2014/2016 — по каталогу лекал, по VIN различается только модельный год (10-й знак)",
+   "slugs": [
+    "chevrolet_niva-2014"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00374.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503638.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503966.%D0%BF1%D1%801.html",
+    "https://mcgrp.ru/files/viewer/118/63",
+    "https://hpt.su/documents/sbkts/index.html?vin=X9L2123",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Niva"
+   ]
+  },
+  {
+   "mask": "XWW2123",
+   "years": [
+    2016,
+    2021
+   ],
+   "model": "Niva",
+   "body": "Chevrolet Niva 2123, обновление 2016 (с июля 2020 — Lada Niva)",
+   "slugs": [
+    "chevrolet_niva-2016"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00374.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503638.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503966.%D0%BF1%D1%801.html",
+    "https://mcgrp.ru/files/viewer/118/63",
+    "https://hpt.su/documents/sbkts/index.html?vin=X9L2123",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Niva"
+   ],
+   "detail": "сборка в Казахстане (Азия Авто), VDS как у X9L."
+  },
+  {
+   "mask": "MX12123",
+   "years": [
+    2016,
+    2021
+   ],
+   "model": "Niva",
+   "body": "Chevrolet Niva 2123, обновление 2016 (с июля 2020 — Lada Niva)",
+   "slugs": [
+    "chevrolet_niva-2016"
+   ],
+   "confidence": "confirmed",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00374.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503638.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503966.%D0%BF1%D1%801.html",
+    "https://mcgrp.ru/files/viewer/118/63",
+    "https://hpt.su/documents/sbkts/index.html?vin=X9L2123",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Niva"
+   ],
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у X9L."
+  },
+  {
+   "mask": "MX12123",
+   "years": [
+    2021,
+    null
+   ],
+   "model": "Niva Travel",
+   "body": "Lada Niva Travel 2123 (212300-80)",
+   "detail": "сборка в Казахстане (СарыаркаАвтоПром), VDS как у X9L. ОТТС Niva Travel (с 12.07.2021): коды VIN X9L212300…, XTA212300…, MX1212300…; 2021 модельный год может быть и старой Niva",
+   "slugs": [
+    "lada_niva-travel"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.01024.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Niva"
+   ]
+  },
+  {
+   "mask": "KL1N?19",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, седан",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), седан — KL1N?19?…; WMI KL1 — Корея (Chevrolet)",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [
+    "KL1NF196E7K584079 — auto.ria, Chevrolet Lacetti седан 2007",
+    "KL1NF196E8K303496 — auto.ria, Chevrolet Lacetti седан 2008"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "KL1N?48",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, хэтчбек 5 дв.",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), хэтчбек 5 дв. — KL1N?48?…; WMI KL1 — Корея (Chevrolet)",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [
+    "KL1NF486E6K406921 — auto.ria, Chevrolet Lacetti хэтчбек"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "KL1N?35",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, универсал",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), универсал — KL1N?35?…; WMI KL1 — Корея (Chevrolet)",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "KLAN?19",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, седан",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), седан — KLAN?19?…; WMI KLA — Корея (Daewoo/Chevrolet Nubira)",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "KLAN?48",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, хэтчбек 5 дв.",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), хэтчбек 5 дв. — KLAN?48?…; WMI KLA — Корея (Daewoo/Chevrolet Nubira)",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "KLAN?35",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, универсал",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), универсал — KLAN?35?…; WMI KLA — Корея (Daewoo/Chevrolet Nubira)",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "XUUN?19",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, седан",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), седан — XUUN?19?…; WMI XUU — Автотор-менеджмент, Калининград",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "XUUN?48",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, хэтчбек 5 дв.",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), хэтчбек 5 дв. — XUUN?48?…; WMI XUU — Автотор-менеджмент, Калининград",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "XUUN?35",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, универсал",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), универсал — XUUN?35?…; WMI XUU — Автотор-менеджмент, Калининград",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "X4XN?19",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, седан",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), седан — X4XN?19?…; WMI X4X — Автотор, Калининград",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "X4XN?48",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, хэтчбек 5 дв.",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), хэтчбек 5 дв. — X4XN?48?…; WMI X4X — Автотор, Калининград",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "X4XN?35",
+   "years": [
+    2004,
+    2013
+   ],
+   "model": "Lacetti",
+   "body": "J200, универсал",
+   "detail": "ОТТС: тип KLAN (J200 / Chevrolet Lacetti), универсал — X4XN?35?…; WMI X4X — Автотор, Калининград",
+   "slugs": [
+    "chevrolet_lacetti"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B503949.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500638.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500872.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=KL1NF"
+   ]
+  },
+  {
+   "mask": "KL1T?69",
+   "years": [
+    2011,
+    null
+   ],
+   "model": "Aveo",
+   "body": "T300, седан",
+   "detail": "тип KL1T (T300); WMI KL1 — Корея",
+   "slugs": [
+    "chevrolet_aveo-new"
+   ],
+   "confidence": "official",
+   "examples": [
+    "KL1TF69FJEB683316 — ОТТС BY112 03.19.049 12488, Chevrolet Aveo",
+    "KL1TF69EJCB092186 — auto.ria, Chevrolet Aveo T300 седан 2012"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00086.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00087.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00319.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00608.html",
+    "https://hpt.su/documents/otts/by112-03.19.021-10955.html"
+   ]
+  },
+  {
+   "mask": "KL1T?48",
+   "years": [
+    2011,
+    null
+   ],
+   "model": "Aveo",
+   "body": "T300, хэтчбек 5 дв.",
+   "detail": "тип KL1T (T300); WMI KL1 — Корея",
+   "slugs": [
+    "chevrolet_aveo-new"
+   ],
+   "confidence": "official",
+   "examples": [
+    "KL1TF48F9CB165025 — ОТТС BY112 03.19.021 10955, Chevrolet Aveo хэтчбек"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00086.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00087.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00319.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00608.html",
+    "https://hpt.su/documents/otts/by112-03.19.021-10955.html"
+   ]
+  },
+  {
+   "mask": "XUUT?69",
+   "years": [
+    2011,
+    null
+   ],
+   "model": "Aveo",
+   "body": "T300, седан",
+   "detail": "тип KL1T (T300); WMI XUU — Автотор-менеджмент, Калининград",
+   "slugs": [
+    "chevrolet_aveo-new"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00086.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00087.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00319.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00608.html",
+    "https://hpt.su/documents/otts/by112-03.19.021-10955.html"
+   ]
+  },
+  {
+   "mask": "XUUT?48",
+   "years": [
+    2011,
+    null
+   ],
+   "model": "Aveo",
+   "body": "T300, хэтчбек 5 дв.",
+   "detail": "тип KL1T (T300); WMI XUU — Автотор-менеджмент, Калининград",
+   "slugs": [
+    "chevrolet_aveo-new"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00086.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00087.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00319.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00608.html",
+    "https://hpt.su/documents/otts/by112-03.19.021-10955.html"
+   ]
+  },
+  {
+   "mask": "XUFT?69",
+   "years": [
+    2011,
+    null
+   ],
+   "model": "Aveo",
+   "body": "T300, седан",
+   "detail": "тип KL1T (T300); WMI XUF — GM (ОТТС Е-RU.АЯ04.В.00319)",
+   "slugs": [
+    "chevrolet_aveo-new"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XUFTA69EJEN025428 — ОТТС BY112 03.13.049 12335, Chevrolet Aveo седан"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00086.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00087.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00319.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00608.html",
+    "https://hpt.su/documents/otts/by112-03.19.021-10955.html"
+   ]
+  },
+  {
+   "mask": "XUFT?48",
+   "years": [
+    2011,
+    null
+   ],
+   "model": "Aveo",
+   "body": "T300, хэтчбек 5 дв.",
+   "detail": "тип KL1T (T300); WMI XUF — GM (ОТТС Е-RU.АЯ04.В.00319)",
+   "slugs": [
+    "chevrolet_aveo-new"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00086.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00087.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00319.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00608.html",
+    "https://hpt.su/documents/otts/by112-03.19.021-10955.html"
+   ]
+  },
+  {
+   "mask": "XWWT?69",
+   "years": [
+    2011,
+    null
+   ],
+   "model": "Aveo",
+   "body": "T300, седан",
+   "detail": "тип KL1T (T300); WMI XWW — Азия Авто, Казахстан",
+   "slugs": [
+    "chevrolet_aveo-new"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00086.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00087.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00319.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00608.html",
+    "https://hpt.su/documents/otts/by112-03.19.021-10955.html"
+   ]
+  },
+  {
+   "mask": "KL1S",
+   "years": [
+    2003,
+    2012
+   ],
+   "model": "Aveo",
+   "body": "T200/T250 (седан ?69, хэтчбек 5 дв. ?48, 3 дв. ?08)",
+   "detail": "тип KLAS (T200/T250 Chevrolet Aveo); в каталоге есть только Aveo T300 — индивидуальный пошив",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B505399.%D1%803.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500636.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B501999.html"
+   ]
+  },
+  {
+   "mask": "XUUS",
+   "years": [
+    2003,
+    2012
+   ],
+   "model": "Aveo",
+   "body": "T200/T250 (седан ?69, хэтчбек 5 дв. ?48, 3 дв. ?08)",
+   "detail": "тип KLAS (T200/T250 Chevrolet Aveo); в каталоге есть только Aveo T300 — индивидуальный пошив",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B505399.%D1%803.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500636.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B501999.html"
+   ]
+  },
+  {
+   "mask": "X4XS",
+   "years": [
+    2003,
+    2012
+   ],
+   "model": "Aveo",
+   "body": "T200/T250 (седан ?69, хэтчбек 5 дв. ?48, 3 дв. ?08)",
+   "detail": "тип KLAS (T200/T250 Chevrolet Aveo); в каталоге есть только Aveo T300 — индивидуальный пошив",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B505399.%D1%803.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500636.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B501999.html"
+   ]
+  },
+  {
+   "mask": "XUFJ?69",
+   "years": [
+    2009,
+    2015
+   ],
+   "model": "Cruze",
+   "body": "J300, седан (GM Авто, Шушары)",
+   "detail": "ОТТС: XUFJF69…/XUFJA69…, код VIN XUFJ?6??J?3…",
+   "slugs": [
+    "chevrolet_cruze"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XUFJA695JD3062863 — отчёт Автотеки, Chevrolet Cruze седан 2013"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00007.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B506381.%D1%801.html",
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00285.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00602.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XUFJA"
+   ]
+  },
+  {
+   "mask": "XUFJ?68",
+   "years": [
+    2011,
+    2015
+   ],
+   "model": "Cruze",
+   "body": "J300, хэтчбек 5 дв. (GM Авто)",
+   "slugs": [
+    "chevrolet_cruze"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00007.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B506381.%D1%801.html",
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00285.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00602.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XUFJA"
+   ]
+  },
+  {
+   "mask": "KL1J?69",
+   "years": [
+    2009,
+    2016
+   ],
+   "model": "Cruze",
+   "body": "J300, седан (Корея)",
+   "slugs": [
+    "chevrolet_cruze"
+   ],
+   "confidence": "official",
+   "examples": [
+    "KL1JF69E9EK572182 — ОТТС BY112 03.19.049 12500, Chevrolet Cruze",
+    "KL1JF6959CK557499 — ОТТС BY112 03.07.021 10498, Chevrolet Cruze"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00007.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B506381.%D1%801.html",
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00285.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00602.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XUFJA"
+   ]
+  },
+  {
+   "mask": "KL1J?68",
+   "years": [
+    2011,
+    2016
+   ],
+   "model": "Cruze",
+   "body": "J300, хэтчбек 5 дв. (Корея)",
+   "slugs": [
+    "chevrolet_cruze"
+   ],
+   "confidence": "official",
+   "examples": [
+    "KL1JF68E9EK566321 — ОТТС BY112 03.19.049 12500, Chevrolet Cruze"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00007.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B506381.%D1%801.html",
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00285.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00602.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XUFJA"
+   ]
+  },
+  {
+   "mask": "KL1J?35",
+   "years": [
+    2012,
+    2016
+   ],
+   "model": "Cruze",
+   "body": "J300, универсал (Корея)",
+   "slugs": [
+    "chevrolet_cruze"
+   ],
+   "confidence": "official",
+   "examples": [
+    "KL1JF3589DK025431 — ОТТС BY112 03.19.021 10954, Chevrolet Cruze универсал"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00007.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B506381.%D1%801.html",
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00285.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00602.html",
+    "https://hpt.su/documents/sbkts/index.html?vin=XUFJA",
+    "https://hpt.su/documents/otts/by112-03.19.021-10954.html"
+   ]
+  },
+  {
+   "mask": "XWWJ?6",
+   "years": [
+    2016,
+    2019
+   ],
+   "model": "Cruze",
+   "body": "J300, седан/хэтчбек (Азия Авто)",
+   "slugs": [
+    "chevrolet_cruze"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00602.html"
+   ]
+  },
+  {
+   "mask": "KL1C?26",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Captiva",
+   "body": "C100 (до рестайлинга), 5/7 мест",
+   "detail": "ОТТС: тип KLAC (C100 / Chevrolet Captiva), универсал 5 дв., 5 или 7 мест — число мест по VIN не различить; WMI KL1",
+   "slugs": [
+    "chevrolet_captiva"
+   ],
+   "confidence": "official",
+   "examples": [
+    "KL1CD2669BB075262 — ОТТС BY112 03.09.049 10386, Chevrolet Captiva"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B505298.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505415.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00098.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00833.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00526.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Captiva"
+   ]
+  },
+  {
+   "mask": "KL1C?26",
+   "years": [
+    2011,
+    2018
+   ],
+   "model": "Captiva",
+   "body": "рестайлинг 2011 (C140)",
+   "detail": "в каталоге Captiva 2006–2011; для рестайлинга лекала нет — уточнить у производства",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B505298.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505415.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00098.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00833.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00526.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Captiva"
+   ]
+  },
+  {
+   "mask": "XUFC?26",
+   "years": [
+    2006,
+    2011
+   ],
+   "model": "Captiva",
+   "body": "C100 (до рестайлинга), 5/7 мест",
+   "detail": "ОТТС: тип KLAC (C100 / Chevrolet Captiva), универсал 5 дв., 5 или 7 мест — число мест по VIN не различить; WMI XUF",
+   "slugs": [
+    "chevrolet_captiva"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B505298.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505415.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00098.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00833.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00526.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Captiva"
+   ]
+  },
+  {
+   "mask": "XUFC?26",
+   "years": [
+    2011,
+    2018
+   ],
+   "model": "Captiva",
+   "body": "рестайлинг 2011 (C140)",
+   "detail": "в каталоге Captiva 2006–2011; для рестайлинга лекала нет — уточнить у производства",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B505298.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505415.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00098.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00833.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00526.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Captiva"
+   ]
+  },
+  {
+   "mask": "XUUC?26",
+   "years": [
+    2011,
+    2018
+   ],
+   "model": "Captiva",
+   "body": "рестайлинг 2011 (C140)",
+   "detail": "в каталоге Captiva 2006–2011; для рестайлинга лекала нет — уточнить у производства",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [
+    "XUUCD26UJE0001072 — ОТТС BY112 03.19.021 11661, Chevrolet Captiva"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B505298.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505415.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00098.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00833.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00526.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Captiva"
+   ]
+  },
+  {
+   "mask": "XWWC?26",
+   "years": [
+    2011,
+    2018
+   ],
+   "model": "Captiva",
+   "body": "рестайлинг 2011 (C140)",
+   "detail": "в каталоге Captiva 2006–2011; для рестайлинга лекала нет — уточнить у производства",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B505298.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505415.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00098.%D1%801.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00833.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00526.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Captiva"
+   ]
+  },
+  {
+   "mask": "XWBJ?69V",
+   "years": [
+    2012,
+    null
+   ],
+   "model": "Cobalt",
+   "body": "седан (тип J69V; также Ravon R4)",
+   "detail": "ОТТС: модификация J69VJ/J69V9, код VIN XWBJ?69V…; Ravon R4 (2016–2020) — та же машина",
+   "slugs": [
+    "chevrolet_cobalt"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XWBJF69VJEA054402 — ОТТС BY112 03.13.049 12267, Chevrolet Cobalt",
+    "XWBJA69VJEA057605 — ОТТС BY112 03.13.049 12267, Chevrolet Cobalt"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-uz.%D0%BC%D1%8202.00561.html",
+    "https://hpt.su/documents/otts/e-uz.%D0%BC%D1%8202.%D0%B2.00608.html",
+    "https://hpt.su/documents/otts/by112-03.13.049-12267.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Cobalt"
+   ]
+  },
+  {
+   "mask": "MX1J?69V",
+   "years": [
+    2020,
+    null
+   ],
+   "model": "Cobalt",
+   "body": "седан (сборка СарыаркаАвтоПром, Казахстан)",
+   "detail": "ОТТС: модификация J69V9, код VIN MX1J?69V9…",
+   "slugs": [
+    "chevrolet_cobalt"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%B0%D0%B158.00922.html"
+   ]
+  },
+  {
+   "mask": "KL1Y?75",
+   "years": [
+    2011,
+    2015
+   ],
+   "model": "Orlando",
+   "body": "компактвэн 5 дв. (Корея)",
+   "detail": "ОТТС: тип KL1Y, код VIN KL1Y?75…, 7 мест по ОТТС; вариант салона 5/7 мест по VIN не определить — выбирает клиент",
+   "slugs": [
+    "chevrolet_orlando-5m",
+    "chevrolet_orlando-7m"
+   ],
+   "confidence": "official",
+   "examples": [
+    "KL1YF75Y9BK075063 — ОТТС BY112 03.09.049 10118, Chevrolet Orlando",
+    "KL1YA75Y9CK593289 — ОТТС BY112 03.09.021 10480, Chevrolet Orlando"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00069.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00062.%D1%801.html",
+    "https://hpt.su/documents/otts/by112-03.13.021-11292.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Orlando"
+   ]
+  },
+  {
+   "mask": "XUUY?75",
+   "years": [
+    2012,
+    2015
+   ],
+   "model": "Orlando",
+   "body": "компактвэн 5 дв. (Автотор, Калининград)",
+   "slugs": [
+    "chevrolet_orlando-5m",
+    "chevrolet_orlando-7m"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XUUYA755JE0002330 — ОТТС BY112 03.14.049 12345, Chevrolet Orlando"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00069.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%B0%D1%8F04.%D0%B2.00062.%D1%801.html",
+    "https://hpt.su/documents/otts/by112-03.13.021-11292.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Orlando"
+   ]
+  },
+  {
+   "mask": "KL1K?48",
+   "years": [
+    2005,
+    2010
+   ],
+   "model": "Spark",
+   "body": "M200, хэтчбек 5 дв.",
+   "detail": "ОТТС: тип KLAK (M200 / Chevrolet Spark), код VIN KL?K?48…",
+   "slugs": [
+    "chevrolet_spark-m200"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504791.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504370.%D1%801.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Spark"
+   ]
+  },
+  {
+   "mask": "KLAK?48",
+   "years": [
+    2005,
+    2010
+   ],
+   "model": "Spark",
+   "body": "M200, хэтчбек 5 дв.",
+   "detail": "ОТТС: тип KLAK (M200 / Chevrolet Spark), код VIN KL?K?48…",
+   "slugs": [
+    "chevrolet_spark-m200"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504791.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504370.%D1%801.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Spark"
+   ]
+  },
+  {
+   "mask": "KL1M?48",
+   "years": [
+    2010,
+    2015
+   ],
+   "model": "Spark",
+   "body": "M300, хэтчбек 5 дв. (Корея)",
+   "detail": "ОТТС: тип KL1M, модификации KL1MF481/KL1MF48D, код VIN KL1MF48?9…",
+   "slugs": [
+    "chevrolet_spark-m300"
+   ],
+   "confidence": "official",
+   "examples": [
+    "KL1MF4819BC563760 — ОТТС BY112 03.09.021 10058, Chevrolet Spark"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%B0%D1%8F04.%D0%B501870.html",
+    "https://hpt.su/documents/otts/by112-03.09.021-10058.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B506832.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-uz.%D0%BC%D1%8202.00465.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Spark"
+   ]
+  },
+  {
+   "mask": "XWB2?11E",
+   "years": [
+    2011,
+    2016
+   ],
+   "model": "Spark",
+   "body": "M300, хэтчбек 5 дв. (GM Uzbekistan, типы 2C11/2F11)",
+   "detail": "ОТТС РОСС UZ.МТ02.Е06832: модификации 2C11ED, 2C11EV, 2F11E, код VIN XWB2?11E…; производство M300 в Асаке с августа 2010",
+   "slugs": [
+    "chevrolet_spark-m300"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%B0%D1%8F04.%D0%B501870.html",
+    "https://hpt.su/documents/otts/by112-03.09.021-10058.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B506832.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-uz.%D0%BC%D1%8202.00465.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Spark"
+   ]
+  },
+  {
+   "mask": "XWBMA48N",
+   "years": [
+    2016,
+    null
+   ],
+   "model": "Spark",
+   "body": "M300 узбекской сборки — Ravon R2 (2016–2020) / Chevrolet Spark (с 2020)",
+   "detail": "ОТТС ТС RU E-UZ.МТ02.00465: тип 2N11, модификация 2N119, код VIN XWBMA48N9?A…; в каталоге M300 указан 2010–2015 — салон узбекской версии уточнить",
+   "slugs": [
+    "chevrolet_spark-m300"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%B0%D1%8F04.%D0%B501870.html",
+    "https://hpt.su/documents/otts/by112-03.09.021-10058.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B506832.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-uz.%D0%BC%D1%8202.00465.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Spark"
+   ]
+  },
+  {
+   "mask": "KL1UF75",
+   "years": [
+    2004,
+    2009
+   ],
+   "model": "Rezzo",
+   "body": "U100, компактвэн 5 дв. (Корея, Chevrolet)",
+   "detail": "ОТТС: тип KLAU (U100 / Chevrolet Rezzo), код VIN KL1UF75…",
+   "slugs": [
+    "chevrolet_rezzo"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504310.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504650.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500637.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500871.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Rezzo"
+   ]
+  },
+  {
+   "mask": "KLAUF75",
+   "years": [
+    2004,
+    2009
+   ],
+   "model": "Rezzo",
+   "body": "U100, компактвэн 5 дв. (Корея, Daewoo)",
+   "detail": "ОТТС: тип KLAU (U100 / Chevrolet Rezzo), код VIN KLAUF75…",
+   "slugs": [
+    "chevrolet_rezzo"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504310.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504650.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500637.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500871.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Rezzo"
+   ]
+  },
+  {
+   "mask": "XUUUF75",
+   "years": [
+    2004,
+    2009
+   ],
+   "model": "Rezzo",
+   "body": "U100, компактвэн 5 дв. (Автотор-менеджмент)",
+   "detail": "ОТТС: тип KLAU (U100 / Chevrolet Rezzo), код VIN XUUUF75…",
+   "slugs": [
+    "chevrolet_rezzo"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504310.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504650.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500637.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500871.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Rezzo"
+   ]
+  },
+  {
+   "mask": "X4XUF75",
+   "years": [
+    2004,
+    2009
+   ],
+   "model": "Rezzo",
+   "body": "U100, компактвэн 5 дв. (Автотор)",
+   "detail": "ОТТС: тип KLAU (U100 / Chevrolet Rezzo), код VIN X4XUF75…",
+   "slugs": [
+    "chevrolet_rezzo"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504310.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504650.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500637.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%B0%D1%8F04.%D0%B500871.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Rezzo"
+   ]
+  },
+  {
+   "mask": "KL1B?76",
+   "years": [
+    2013,
+    2017
+   ],
+   "model": "Tracker",
+   "body": "Tracker / Trax 1-го поколения (Корея)",
+   "detail": "код VIN по ОТТС Е-KR.АЯ04.В.00447 (тип KL1B) — official; но в каталоге Tracker указан «с 2003» — вероятно, имеется в виду Tracker 2013 (в России продавался с 2013, ранний Tracker на базе Suzuki в ОТТС не найден). Проверить лекало у производства",
+   "slugs": [
+    "chevrolet_tracker"
+   ],
+   "confidence": "probable",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00447.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-by-e-kr.021.00078.html",
+    "https://ru.wikipedia.org/wiki/Chevrolet_Tracker"
+   ]
+  },
+  {
+   "mask": "Y6DTF69Y",
+   "years": [
+    2004,
+    2017
+   ],
+   "model": "Lanos / Chance",
+   "body": "T100/T150 седан, двигатель 1,5 (Daewoo/Chevrolet Lanos, ZAZ Chance)",
+   "detail": "ОТТС РОСС UA.МТ02.Е05569.Р1: модификации TF69Y0/TF69YP — Lanos, TF698K/TF698P — Sens; марку (Daewoo / Chevrolet / ZAZ Chance) по VIN не различить — выбирает клиент",
+   "slugs": [
+    "daewoo_dlanos",
+    "chevrolet_lanos",
+    "zaz_chance"
+   ],
+   "confidence": "official",
+   "examples": [
+    "Y6DTF69Y0B0275647 — ОТТС BY112 03.09.049 10421, ZAZ Lanos",
+    "Y6DTF69YD6W275581 — auto.ria, Daewoo Lanos 2006"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ua.%D0%BC%D1%8202.%D0%B505569.%D1%801.html",
+    "https://hpt.su/documents/otts/by112-03.09.049-10294.html",
+    "https://hpt.su/documents/otts/by112-03.09.049-10421.html",
+    "https://ru.wikipedia.org/wiki/%D0%97%D0%90%D0%97_Chance",
+    "https://hpt.su/documents/sbkts/index.html?vin=Y6DTF"
+   ]
+  },
+  {
+   "mask": "Y6DTF698",
+   "years": [
+    2004,
+    2017
+   ],
+   "model": "Lanos / Chance",
+   "body": "T100/T150 седан, двигатель 1,3 МеМЗ (ZAZ Sens / Chance 1.3)",
+   "slugs": [
+    "daewoo_dlanos",
+    "chevrolet_lanos",
+    "zaz_chance"
+   ],
+   "confidence": "official",
+   "examples": [
+    "Y6DTF698KB0272131 — ОТТС BY112 03.09.049 10421, ZAZ Sens"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ua.%D0%BC%D1%8202.%D0%B505569.%D1%801.html",
+    "https://hpt.su/documents/otts/by112-03.09.049-10294.html",
+    "https://hpt.su/documents/otts/by112-03.09.049-10421.html",
+    "https://ru.wikipedia.org/wiki/%D0%97%D0%90%D0%97_Chance",
+    "https://hpt.su/documents/sbkts/index.html?vin=Y6DTF"
+   ]
+  },
+  {
+   "mask": "Y6DTF48Y",
+   "years": [
+    2009,
+    2017
+   ],
+   "model": "Lanos / Chance",
+   "body": "T150 хэтчбек 5 дв., 1,5",
+   "detail": "хэтчбек ZAZ Chance/Lanos; есть ли отдельное лекало хэтчбека — уточнить",
+   "slugs": [
+    "daewoo_dlanos",
+    "chevrolet_lanos",
+    "zaz_chance"
+   ],
+   "confidence": "official",
+   "examples": [
+    "Y6DTF48YPB0272276 — ОТТС BY112 03.09.049 10421"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ua.%D0%BC%D1%8202.%D0%B505569.%D1%801.html",
+    "https://hpt.su/documents/otts/by112-03.09.049-10294.html",
+    "https://hpt.su/documents/otts/by112-03.09.049-10421.html",
+    "https://ru.wikipedia.org/wiki/%D0%97%D0%90%D0%97_Chance",
+    "https://hpt.su/documents/sbkts/index.html?vin=Y6DTF"
+   ]
+  },
+  {
+   "mask": "Y6DTF488",
+   "years": [
+    2009,
+    2017
+   ],
+   "model": "Lanos / Chance",
+   "body": "T150 хэтчбек 5 дв., 1,3 (Sens)",
+   "slugs": [
+    "daewoo_dlanos",
+    "chevrolet_lanos",
+    "zaz_chance"
+   ],
+   "confidence": "official",
+   "examples": [
+    "Y6DTF488PB0261161 — ОТТС BY112 03.09.049 10294"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ua.%D0%BC%D1%8202.%D0%B505569.%D1%801.html",
+    "https://hpt.su/documents/otts/by112-03.09.049-10294.html",
+    "https://hpt.su/documents/otts/by112-03.09.049-10421.html",
+    "https://ru.wikipedia.org/wiki/%D0%97%D0%90%D0%97_Chance",
+    "https://hpt.su/documents/sbkts/index.html?vin=Y6DTF"
+   ]
+  },
+  {
+   "mask": "Y6DTA69W",
+   "years": [
+    2011,
+    2017
+   ],
+   "model": "Lanos / Chance",
+   "body": "T150 седан (модификация TA69W)",
+   "detail": "известен по одному VIN в белорусском ОТТС (Y6DTA69W0C0305492, ZAZ Lanos); тип «Т (LANOS)»",
+   "slugs": [
+    "daewoo_dlanos",
+    "chevrolet_lanos",
+    "zaz_chance"
+   ],
+   "confidence": "confirmed",
+   "examples": [
+    "Y6DTA69W0C0305492 — ОТТС BY112 03.09.049 10735, ZAZ Lanos"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/by112-03.09.049-10735.html",
+    "https://hpt.su/documents/otts/by112-03.02.049-10745.html"
+   ]
+  },
+  {
+   "mask": "XWB3?31",
+   "years": [
+    2003,
+    2009
+   ],
+   "model": "Nexia",
+   "body": "седан N100 (типы 3L31/3D31/3K31)",
+   "detail": "модель Nexia по VIN — official (ОТТС: 3L31B/3D31B 2004, 3L31U/3D31U 2007, 3L31C/3K31C 2009). Что 6–7 знаки «31» — дорестайлинговая N100 (лекало с литыми «горбами»), выведено по датам ОТТС и рестайлингу 2008 — проверить по фото салона",
+   "slugs": [
+    "daewoo_nexia2"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "XWB3L31UD8A263798 — auto.ria, Daewoo Nexia",
+    "XWB3L31UD7A236104 — auto.ria, Daewoo Nexia 2007"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B503578.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B501998.%D0%BF3.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B505568.%D1%801.html",
+    "https://ru.wikipedia.org/wiki/Daewoo_Nexia"
+   ]
+  },
+  {
+   "mask": "ULV3?31",
+   "years": [
+    2003,
+    2004
+   ],
+   "model": "Nexia",
+   "body": "седан N100 (ранний WMI УзДЭУ)",
+   "detail": "ОТТС РОСС UZ.МТ02.Е03321: типы 3L31B, 3D31B, код VIN ULV3?31B…",
+   "slugs": [
+    "daewoo_nexia2"
+   ],
+   "confidence": "probable",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B503321.html"
+   ]
+  },
+  {
+   "mask": "XWB3?32",
+   "years": [
+    2008,
+    2016
+   ],
+   "model": "Nexia",
+   "body": "седан N150 (рестайлинг 2008, типы 3L32/3K32)",
+   "detail": "модель по VIN — official (ОТТС: 3L32C/3K32C 2009–2011, 3L32E/3K32E 2012–2016). Соответствие «32» = N150 (лекало с подголовниками, с 2008) выведено по датам ОТТС — проверить",
+   "slugs": [
+    "daewoo_nexia"
+   ],
+   "confidence": "probable",
+   "examples": [
+    "XWB3K32CDBA203369 — ОТТС BY112 03.02.049 10056, Daewoo Nexia",
+    "XWB3L32EDBA204805 — ОТТС BY112 03.02.049 10056, Daewoo Nexia",
+    "XWB3K32CDAA062340 — auto.ria, Daewoo Nexia 2010"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B505568.%D0%BF1.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B506835.html",
+    "https://hpt.su/documents/otts/by112-03.02.049-10056.html",
+    "https://ru.wikipedia.org/wiki/Daewoo_Nexia"
+   ]
+  },
+  {
+   "mask": "XWBT?69V",
+   "years": [
+    2016,
+    null
+   ],
+   "model": "Nexia R3",
+   "body": "Ravon Nexia R3 / Chevrolet Nexia (2016+, тип T69V, на базе Aveo T250)",
+   "detail": "другая машина, не Daewoo Nexia N100/N150 — лекал в каталоге нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-uz.%D0%BC%D1%8202.00539.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-kz.%D0%BC%D1%8202.00726.%D1%801.html"
+   ]
+  },
+  {
+   "mask": "XWB4?11",
+   "years": [
+    2004,
+    2016
+   ],
+   "model": "Matiz",
+   "body": "M150 хэтчбек 5 дв. (типы 4A11/4B11)",
+   "detail": "ОТТС: 4A11A, 4A11B, 4B11B, 4A11C, 4B11C, 4A11E, 4B11E, 4A119, код VIN XWB4?11…",
+   "slugs": [
+    "daewoo_matiz"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XWB4A11CDBA503280 — ОТТС BY112 03.02.049 10057, Daewoo Matiz",
+    "XWB4B11CDBA504577 — ОТТС BY112 03.02.049 10057, Daewoo Matiz"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B503958.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B503088.%D0%BF1.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B505460.html",
+    "https://hpt.su/documents/otts/e-uz.%D0%BC%D1%8202.%D0%B2.00131.html",
+    "https://hpt.su/documents/otts/e-uz.%D0%BC%D1%8202.%D0%B2.00862.html",
+    "https://ru.wikipedia.org/wiki/Daewoo_Matiz"
+   ]
+  },
+  {
+   "mask": "ULV4A11",
+   "years": [
+    2003,
+    2004
+   ],
+   "model": "Matiz",
+   "body": "M150 хэтчбек (ранний WMI УзДЭУ)",
+   "slugs": [
+    "daewoo_matiz"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B503375.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B503639.html"
+   ]
+  },
+  {
+   "mask": "XWB5V319",
+   "years": [
+    2013,
+    null
+   ],
+   "model": "Gentra",
+   "body": "седан (тип 5V31, модификация 5V319; также Ravon Gentra)",
+   "detail": "Gentra — модернизированный Lacetti узбекской сборки (с 2013); с 2016 продавался как Ravon Gentra. С 2023 в Казахстане тот же тип 5V31 идёт как Chevrolet Lacetti — VIN этой версии в источниках не найден",
+   "slugs": [
+    "daewoo_gentra"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-uz.%D0%BC%D1%8202.%D0%B2.00761.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-uz.%D0%BC%D1%8202.00233.html",
+    "https://hpt.su/documents/otts/by112-03.13.049-11845.html",
+    "https://ru.wikipedia.org/wiki/Daewoo_Gentra"
+   ]
+  },
+  {
+   "mask": "X7MT3",
+   "years": [
+    2008,
+    2014
+   ],
+   "model": "Tager",
+   "body": "3-дверный универсал на раме (тип KJ)",
+   "detail": "ОТТС 2008–2009, где был только 3-дверный кузов: код VIN X7MT3???P…",
+   "slugs": [
+    "tagaz_tager"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505543.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505924.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B506350.html",
+    "https://en.wikipedia.org/wiki/SsangYong_Korando"
+   ]
+  },
+  {
+   "mask": "X7MT",
+   "years": [
+    2009,
+    2014
+   ],
+   "model": "Tager",
+   "body": "Tager (тип KJ), 3 или 5 дверей",
+   "detail": "с 2009 ОТТС допускает 3 и 5 дверей при общем коде X7MT????P…; 5-дверного лекала в каталоге нет. Если 5-й знак = 3 — сработает правило X7MT3 (3 дв.); иначе — вероятно 5-дверный, уточнить",
+   "slugs": [],
+   "confidence": "probable",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505543.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505924.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B506350.html",
+    "https://en.wikipedia.org/wiki/SsangYong_Korando"
+   ]
+  },
+  {
+   "mask": "XTT3163",
+   "years": [
+    2005,
+    2007
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163, первый выпуск",
+   "detail": "модель по VIN — official; деление на поколения — по модельному году (10-й знак) и годам каталога",
+   "slugs": [
+    "uaz_patriot-3163"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "XTT3163",
+   "years": [
+    2007,
+    2015
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163 до рестайлинга",
+   "detail": "рестайлинг выпускается с 07.10.2014 — модельный год 2014/2015 может быть и старым, и новым салоном",
+   "slugs": [
+    "uaz_patriot"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "XTT3163",
+   "years": [
+    2014,
+    2015
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163 рестайлинг 2014 (ранний, салон от Rexton)",
+   "detail": "варианты салона по VIN не различить — выбирает клиент",
+   "slugs": [
+    "uaz_patriot-2014",
+    "uaz_patriot-limited",
+    "uaz_patriot-limited-2"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "XTT3163",
+   "years": [
+    2015,
+    null
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163 рестайлинг 2014 и позже",
+   "detail": "limited с подлокотником/без — по VIN не различить",
+   "slugs": [
+    "uaz_patriot-limited",
+    "uaz_patriot-limited-2"
+   ],
+   "confidence": "official",
+   "examples": [
+    "XTT316300L1017428 — autospot, УАЗ Патриот 2019–2020",
+    "XTT316300L1014780 — autospot, УАЗ Патриот 2020"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "XTT3163",
+   "years": [
+    2020,
+    null
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163 обновление 2020 (люкс)",
+   "detail": "граница по каталогу лекал; по VIN определяется только модельный год",
+   "slugs": [
+    "uaz_patriot-luxe"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "XWW3163",
+   "years": [
+    2014,
+    2015
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163 рестайлинг 2014 (ранний, салон от Rexton)",
+   "detail": "сборка Азия Авто (Казахстан) по ОТТС УАЗ. варианты салона по VIN не различить — выбирает клиент",
+   "slugs": [
+    "uaz_patriot-2014",
+    "uaz_patriot-limited",
+    "uaz_patriot-limited-2"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "XWW3163",
+   "years": [
+    2015,
+    null
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163 рестайлинг 2014 и позже",
+   "detail": "сборка Азия Авто (Казахстан) по ОТТС УАЗ. limited с подлокотником/без — по VIN не различить",
+   "slugs": [
+    "uaz_patriot-limited",
+    "uaz_patriot-limited-2"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "XWW3163",
+   "years": [
+    2020,
+    null
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163 обновление 2020 (люкс)",
+   "detail": "сборка Азия Авто (Казахстан) по ОТТС УАЗ. граница по каталогу лекал; по VIN определяется только модельный год",
+   "slugs": [
+    "uaz_patriot-luxe"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "MX13163",
+   "years": [
+    2014,
+    2015
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163 рестайлинг 2014 (ранний, салон от Rexton)",
+   "detail": "сборка СарыаркаАвтоПром (Казахстан) по ОТТС УАЗ. варианты салона по VIN не различить — выбирает клиент",
+   "slugs": [
+    "uaz_patriot-2014",
+    "uaz_patriot-limited",
+    "uaz_patriot-limited-2"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "MX13163",
+   "years": [
+    2015,
+    null
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163 рестайлинг 2014 и позже",
+   "detail": "сборка СарыаркаАвтоПром (Казахстан) по ОТТС УАЗ. limited с подлокотником/без — по VIN не различить",
+   "slugs": [
+    "uaz_patriot-limited",
+    "uaz_patriot-limited-2"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "MX13163",
+   "years": [
+    2020,
+    null
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163 обновление 2020 (люкс)",
+   "detail": "сборка СарыаркаАвтоПром (Казахстан) по ОТТС УАЗ. граница по каталогу лекал; по VIN определяется только модельный год",
+   "slugs": [
+    "uaz_patriot-luxe"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "XU13163",
+   "years": [
+    2005,
+    2007
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163, первый выпуск",
+   "detail": "редкий второй WMI по ОТТС 2007. модель по VIN — official; деление на поколения — по модельному году (10-й знак) и годам каталога",
+   "slugs": [
+    "uaz_patriot-3163"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "XU13163",
+   "years": [
+    2007,
+    2015
+   ],
+   "model": "Patriot",
+   "body": "УАЗ-3163 до рестайлинга",
+   "detail": "редкий второй WMI по ОТТС 2007. рестайлинг выпускается с 07.10.2014 — модельный год 2014/2015 может быть и старым, и новым салоном",
+   "slugs": [
+    "uaz_patriot"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503935.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00305.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00328.%D1%805.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT3163"
+   ]
+  },
+  {
+   "mask": "XTT3164",
+   "years": null,
+   "model": "Patriot Sport",
+   "body": "УАЗ-3164 (короткий)",
+   "detail": "тип 3164/31642; лекала в каталоге нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505601.%D0%BF1.html"
+   ]
+  },
+  {
+   "mask": "XTT236320",
+   "years": [
+    2008,
+    2015
+   ],
+   "model": "Patriot",
+   "body": "UAZ Pickup 23632 до рестайлинга 2014",
+   "detail": "ОТТС: тип 2363, модификации 23632/23638, код VIN XTT236??0…; лекала дорестайлингового пикапа в каталоге нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.01293.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT2363"
+   ]
+  },
+  {
+   "mask": "XTT236320",
+   "years": [
+    2014,
+    null
+   ],
+   "model": "Patriot",
+   "body": "UAZ Pickup 23632 (рестайлинг 2014)",
+   "detail": "спинка сплошная/60:40 по VIN не различить",
+   "slugs": [
+    "uaz_patriot-pickup",
+    "uaz_patriot-pickup6040"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.01293.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT2363"
+   ]
+  },
+  {
+   "mask": "XTT236380",
+   "years": [
+    2008,
+    2015
+   ],
+   "model": "Patriot",
+   "body": "UAZ Pickup 23638 до рестайлинга 2014",
+   "detail": "ОТТС: тип 2363, модификации 23632/23638, код VIN XTT236??0…; лекала дорестайлингового пикапа в каталоге нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.01293.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT2363"
+   ]
+  },
+  {
+   "mask": "XTT236380",
+   "years": [
+    2014,
+    null
+   ],
+   "model": "Patriot",
+   "body": "UAZ Pickup 23638 (рестайлинг 2014)",
+   "detail": "спинка сплошная/60:40 по VIN не различить",
+   "slugs": [
+    "uaz_patriot-pickup",
+    "uaz_patriot-pickup6040"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.01293.html",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%90%D0%97_%D0%9F%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82",
+    "https://hpt.su/documents/sbkts/index.html?vin=XTT2363"
+   ]
+  },
+  {
+   "mask": "XTT23602",
+   "years": null,
+   "model": "Cargo / Profi",
+   "body": "UAZ Cargo / UAZ Profi (23602)",
+   "detail": "грузовые модели на базе Patriot/Pickup; лекал нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html"
+   ]
+  },
+  {
+   "mask": "XTT23608",
+   "years": null,
+   "model": "Cargo / Profi",
+   "body": "UAZ Cargo / UAZ Profi (23608)",
+   "detail": "грузовые модели на базе Patriot/Pickup; лекал нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html"
+   ]
+  },
+  {
+   "mask": "XTT236021",
+   "years": null,
+   "model": "Cargo / Profi",
+   "body": "UAZ Cargo / UAZ Profi (236021)",
+   "detail": "грузовые модели на базе Patriot/Pickup; лекал нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html"
+   ]
+  },
+  {
+   "mask": "XTT236022",
+   "years": null,
+   "model": "Cargo / Profi",
+   "body": "UAZ Cargo / UAZ Profi (236022)",
+   "detail": "грузовые модели на базе Patriot/Pickup; лекал нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html"
+   ]
+  },
+  {
+   "mask": "XTT236031",
+   "years": null,
+   "model": "Cargo / Profi",
+   "body": "UAZ Cargo / UAZ Profi (236031)",
+   "detail": "грузовые модели на базе Patriot/Pickup; лекал нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html"
+   ]
+  },
+  {
+   "mask": "XTT236323",
+   "years": null,
+   "model": "Cargo / Profi",
+   "body": "UAZ Cargo / UAZ Profi (236323)",
+   "detail": "грузовые модели на базе Patriot/Pickup; лекал нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html"
+   ]
+  },
+  {
+   "mask": "XTT236324",
+   "years": null,
+   "model": "Cargo / Profi",
+   "body": "UAZ Cargo / UAZ Profi (236324)",
+   "detail": "грузовые модели на базе Patriot/Pickup; лекал нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html"
+   ]
+  },
+  {
+   "mask": "XTH31100",
+   "years": [
+    1997,
+    2005
+   ],
+   "model": "Волга",
+   "body": "ГАЗ-3110 седан",
+   "detail": "ОТТС РОСС RU.МТ02.Е02328.П3: 3110 — код VIN XTH311000…; 8-значная маска нужна, т. к. у 31105 код XTH311050…",
+   "slugs": [
+    "gaz_3110"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502328.%D0%BF4.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504066.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97-31105"
+   ]
+  },
+  {
+   "mask": "XTH31105",
+   "years": [
+    2003,
+    2007
+   ],
+   "model": "Волга",
+   "body": "ГАЗ-31105 (311050/311052/311053/311055)",
+   "detail": "ОТТС: XTH311050…, XTH311052…, XTH311053…; с 2005 параллельно X96",
+   "slugs": [
+    "gaz_31105"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502328.%D0%BF4.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504066.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504678.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505604.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97-31105"
+   ]
+  },
+  {
+   "mask": "X9631105",
+   "years": [
+    2005,
+    2010
+   ],
+   "model": "Волга",
+   "body": "ГАЗ-31105",
+   "detail": "ОТТС 2005–2009: код VIN X9631105… / X9631????…; рестайлинг салона — июнь 2007 (в каталоге одно лекало 31105)",
+   "slugs": [
+    "gaz_31105"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502328.%D0%BF4.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504066.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504678.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505604.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97-31105"
+   ]
+  },
+  {
+   "mask": "XTH3302",
+   "years": [
+    1994,
+    2007
+   ],
+   "model": "Газель",
+   "body": "ГАЗ-3302 и модификации (330202, 33025, 33027 …), кабина 3 места",
+   "detail": "кроме «Фермера» 33023/330232 (двухрядная кабина) — см. правило XTH33023; Газель Бизнес (с 2010) — тот же тип 3302",
+   "slugs": [
+    "gaz_gazel-3302"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502030.%D0%BF3%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504065.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505599.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00326.%D1%809.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C",
+    "https://hpt.su/documents/sbkts/index.html?vin=X963302"
+   ]
+  },
+  {
+   "mask": "XTH33023",
+   "years": [
+    1994,
+    2007
+   ],
+   "model": "Газель",
+   "body": "ГАЗ-33023 / 330232 «Фермер» (двухрядная кабина)",
+   "detail": "переднее пассажирское сиденье одноместное, сзади второй ряд — лекала в каталоге нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502030.%D0%BF3%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504065.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505599.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00326.%D1%809.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C",
+    "https://hpt.su/documents/sbkts/index.html?vin=X963302"
+   ]
+  },
+  {
+   "mask": "XTH2705",
+   "years": [
+    1994,
+    2007
+   ],
+   "model": "Газель",
+   "body": "ГАЗ-2705 / 27057 фургон (грузовой 3 места или «Комби» 7 мест)",
+   "detail": "грузопассажирский «Комби» (7 мест) — лекало 2705; цельнометаллический грузовой фургон (3 места в кабине) — кабина как у 3302; по VIN не различить — выбирает клиент",
+   "slugs": [
+    "gaz_gazel-2705",
+    "gaz_gazel-3302"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502030.%D0%BF3%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504065.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505599.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00326.%D1%809.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C",
+    "https://hpt.su/documents/sbkts/index.html?vin=X963302",
+    "https://hpt.su/documents/sbkts/index.html?vin=X962705"
+   ]
+  },
+  {
+   "mask": "XTH2752",
+   "years": [
+    1994,
+    2007
+   ],
+   "model": "Соболь",
+   "body": "ГАЗ-2752 / 27527 «Соболь» фургон",
+   "detail": "лекала Соболя в каталоге нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502030.%D0%BF3%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504065.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505599.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00326.%D1%809.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C",
+    "https://hpt.su/documents/sbkts/index.html?vin=X963302"
+   ]
+  },
+  {
+   "mask": "XTH2310",
+   "years": [
+    1994,
+    2007
+   ],
+   "model": "Соболь",
+   "body": "ГАЗ-2310 / 23107 «Соболь» бортовой",
+   "detail": "лекала нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502030.%D0%BF3%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504065.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505599.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00326.%D1%809.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C",
+    "https://hpt.su/documents/sbkts/index.html?vin=X963302"
+   ]
+  },
+  {
+   "mask": "X963302",
+   "years": [
+    2005,
+    null
+   ],
+   "model": "Газель",
+   "body": "ГАЗ-3302 и модификации (330202, 33025, 33027 …), кабина 3 места",
+   "detail": "кроме «Фермера» 33023/330232 (двухрядная кабина) — см. правило X9633023; Газель Бизнес (с 2010) — тот же тип 3302",
+   "slugs": [
+    "gaz_gazel-3302"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502030.%D0%BF3%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504065.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505599.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00326.%D1%809.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C",
+    "https://hpt.su/documents/sbkts/index.html?vin=X963302"
+   ]
+  },
+  {
+   "mask": "X9633023",
+   "years": [
+    2005,
+    null
+   ],
+   "model": "Газель",
+   "body": "ГАЗ-33023 / 330232 «Фермер» (двухрядная кабина)",
+   "detail": "переднее пассажирское сиденье одноместное, сзади второй ряд — лекала в каталоге нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502030.%D0%BF3%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504065.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505599.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00326.%D1%809.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C",
+    "https://hpt.su/documents/sbkts/index.html?vin=X963302"
+   ]
+  },
+  {
+   "mask": "X962705",
+   "years": [
+    2005,
+    null
+   ],
+   "model": "Газель",
+   "body": "ГАЗ-2705 / 27057 фургон (грузовой 3 места или «Комби» 7 мест)",
+   "detail": "грузопассажирский «Комби» (7 мест) — лекало 2705; цельнометаллический грузовой фургон (3 места в кабине) — кабина как у 3302; по VIN не различить — выбирает клиент",
+   "slugs": [
+    "gaz_gazel-2705",
+    "gaz_gazel-3302"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502030.%D0%BF3%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504065.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505599.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00326.%D1%809.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C",
+    "https://hpt.su/documents/sbkts/index.html?vin=X963302",
+    "https://hpt.su/documents/sbkts/index.html?vin=X962705"
+   ]
+  },
+  {
+   "mask": "X962752",
+   "years": [
+    2005,
+    null
+   ],
+   "model": "Соболь",
+   "body": "ГАЗ-2752 / 27527 «Соболь» фургон",
+   "detail": "лекала Соболя в каталоге нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502030.%D0%BF3%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504065.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505599.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00326.%D1%809.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C",
+    "https://hpt.su/documents/sbkts/index.html?vin=X963302"
+   ]
+  },
+  {
+   "mask": "X962310",
+   "years": [
+    2005,
+    null
+   ],
+   "model": "Соболь",
+   "body": "ГАЗ-2310 / 23107 «Соболь» бортовой",
+   "detail": "лекала нет",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502030.%D0%BF3%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504065.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505599.%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00326.%D1%809.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C",
+    "https://hpt.su/documents/sbkts/index.html?vin=X963302"
+   ]
+  },
+  {
+   "mask": "X96A21R",
+   "years": [
+    2013,
+    null
+   ],
+   "model": "Газель NEXT",
+   "body": "бортовой, однорядная кабина (A21R…)",
+   "detail": "ОТТС: модификации A21R22…A32R33, код VIN X96A??R…; базовая/комфорт — по VIN не различить",
+   "slugs": [
+    "gaz_gazel-next",
+    "gaz_gazel-next-comf"
+   ],
+   "confidence": "official",
+   "examples": [
+    "X96A21R33K2766387 — auto.ria, ГАЗель NEXT"
+   ],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00588.%D0%BF1%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00043.%D1%806.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00033.%D1%8011.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C_Next",
+    "https://hpt.su/documents/sbkts/index.html?vin=X96A21"
+   ]
+  },
+  {
+   "mask": "X96A23R",
+   "years": [
+    2013,
+    null
+   ],
+   "model": "Газель NEXT",
+   "body": "шасси/автофургон (A23R…)",
+   "detail": "ОТТС: модификации A21R22…A32R33, код VIN X96A??R…; базовая/комфорт — по VIN не различить",
+   "slugs": [
+    "gaz_gazel-next",
+    "gaz_gazel-next-comf"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00588.%D0%BF1%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00043.%D1%806.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00033.%D1%8011.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C_Next",
+    "https://hpt.su/documents/sbkts/index.html?vin=X96A21"
+   ]
+  },
+  {
+   "mask": "X96A24R",
+   "years": [
+    2013,
+    null
+   ],
+   "model": "Газель NEXT",
+   "body": "A24R…",
+   "detail": "ОТТС: модификации A21R22…A32R33, код VIN X96A??R…; базовая/комфорт — по VIN не различить",
+   "slugs": [
+    "gaz_gazel-next",
+    "gaz_gazel-next-comf"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00588.%D0%BF1%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00043.%D1%806.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00033.%D1%8011.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C_Next",
+    "https://hpt.su/documents/sbkts/index.html?vin=X96A21"
+   ]
+  },
+  {
+   "mask": "X96A31R",
+   "years": [
+    2013,
+    null
+   ],
+   "model": "Газель NEXT",
+   "body": "цельнометаллический фургон (A31R…)",
+   "detail": "ОТТС: модификации A21R22…A32R33, код VIN X96A??R…; базовая/комфорт — по VIN не различить",
+   "slugs": [
+    "gaz_gazel-next",
+    "gaz_gazel-next-comf"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00588.%D0%BF1%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00043.%D1%806.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00033.%D1%8011.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C_Next",
+    "https://hpt.su/documents/sbkts/index.html?vin=X96A21"
+   ]
+  },
+  {
+   "mask": "X96A22R",
+   "years": [
+    2013,
+    null
+   ],
+   "model": "Газель NEXT",
+   "body": "бортовой, двухрядная кабина (A22R…)",
+   "detail": "передний ряд как у NEXT; лекал второго/третьего ряда в каталоге нет — уточнить комплект",
+   "slugs": [
+    "gaz_gazel-next",
+    "gaz_gazel-next-comf"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00588.%D0%BF1%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00043.%D1%806.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00033.%D1%8011.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C_Next",
+    "https://hpt.su/documents/sbkts/index.html?vin=X96A21"
+   ]
+  },
+  {
+   "mask": "X96A32R",
+   "years": [
+    2013,
+    null
+   ],
+   "model": "Газель NEXT",
+   "body": "комби (A32R…)",
+   "detail": "передний ряд как у NEXT; лекал второго/третьего ряда в каталоге нет — уточнить комплект",
+   "slugs": [
+    "gaz_gazel-next",
+    "gaz_gazel-next-comf"
+   ],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00588.%D0%BF1%D1%802.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00043.%D1%806.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00033.%D1%8011.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C_Next",
+    "https://hpt.su/documents/sbkts/index.html?vin=X96A21"
+   ]
+  },
+  {
+   "mask": "X96A6",
+   "years": [
+    2014,
+    null
+   ],
+   "model": "Газель NEXT",
+   "body": "автобусы A6…R (A62R, A63R, A64R, A65R …)",
+   "detail": "код VIN X96A6?R…; пассажирский салон — индивидуально",
+   "slugs": [],
+   "confidence": "official",
+   "examples": [],
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00115.%D1%8016.html"
+   ]
+  },
+  {
+   "mask": "KLAT",
+   "years": [
+    1997,
+    2002
+   ],
+   "model": "Lanos",
+   "body": "Daewoo Lanos T100 корейской сборки",
+   "detail": "по Wikibooks (расшифровка для рынка США): KLA — Daewoo, 4-й знак T — Lanos; российских ОТТС на корейский Lanos не найдено",
+   "slugs": [
+    "daewoo_dlanos"
+   ],
+   "confidence": "probable",
+   "examples": [],
+   "sources": [
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Daewoo/VIN_Codes"
+   ]
+  }
+ ],
+ "frame_rules": [],
+ "position_legend": [
+  {
+   "wmi": [
+    "XTA",
+    "XWW",
+    "MX1"
+   ],
+   "positions": {
+    "4-9": "тип и модификация (6 знаков). Старые и «цифровые» модели — обозначение типа: 210800/210830 — 2108, 210900/210930 — 2109, 210990 — 21099, 211340 — 2113, 211440 — 2114, 211540 — 2115, 2110xx/2111xx/2112xx — 2110/2111/2112, 2170xx — Priora седан, 2171xx — универсал, 2172xx — хэтчбек (217280 — купе), 1117xx/1118xx/1119xx — Kalina универсал/седан/хэтчбек, 2192xx/2194xx — Kalina 2 (с 2018 Granta) хэтчбек/универсал, 2190xx — Granta седан, 2191xx — лифтбек, 212130/212140 — Нива 21213/21214, 213100 — Нива 5 дв., 212300 — Niva Travel. Буквенные: GF + L/K + 3 знака — Vesta седан/универсал (GFL110, GFK330…), GAB… — XRAY, KS0?5L / RS0?5L / FS0?5L — Largus 5 мест / 7 мест / фургон",
+    "10": "модельный год (с 1 июля — следующий год)",
+    "11": "сборочный завод: 0 — АВТОВАЗ (или Чечен-Авто), Y — LADA Ижевск (ООО «ОАГ»), U — Азия Авто; встречаются и другие (например 1 у XRAY)",
+    "12-17": "производственный номер (для легкового = номер кузова)"
+   },
+   "sources": [
+    "https://lada-forsage.ru/download/CarBodyManualFile.12.pdf",
+    "https://media.siteedu.ru/sub/3717/documents/LADA-%D0%93%D1%80%D0%B0%D0%BD%D1%82%D0%B0_%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.pdf",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00270.%D1%8010.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00245.%D1%8012.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00286.%D1%802%D0%B81.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B500983.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00196.html"
+   ]
+  },
+  {
+   "wmi": [
+    "X9L"
+   ],
+   "positions": {
+    "4-9": "модель: 212300 — Chevrolet Niva / Niva Travel, 212360 — Chevrolet Niva с двигателем Opel (2007)",
+    "10": "модельный год",
+    "11-17": "номер шасси (7 знаков, = номер кузова)"
+   },
+   "sources": [
+    "https://mcgrp.ru/files/viewer/118/63",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00374.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B503966.%D0%BF1%D1%801.html"
+   ]
+  },
+  {
+   "wmi": [
+    "KL1",
+    "KLA",
+    "XUU",
+    "X4X",
+    "XUF",
+    "XWW"
+   ],
+   "positions": {
+    "4": "линия (платформа): K — Spark M200 (тип KLAK), M — Spark M300, S — Aveo T200/T250 (KLAS), T — Aveo T300, N — Lacetti J200 (KLAN), J — Cruze J300, C — Captiva C100/C140 (KLAC), U — Rezzo U100 (KLAU), Y — Orlando",
+    "5": "серия / исполнение (A, F, D, G …)",
+    "6-7": "кузов: 19 — седан 4 дв. (Lacetti), 69 — седан 4 дв. (Aveo, Cruze), 48 — хэтчбек 5 дв., 68 — хэтчбек 5 дв. (Cruze), 08 — хэтчбек 3 дв., 35 — универсал, 26 — универсал/SUV (Captiva), 75 — компактвэн (Orlando, Rezzo)",
+    "8": "двигатель",
+    "9": "у машин для РФ — обычно 9 или J (контрольный/служебный знак)",
+    "10": "модельный год",
+    "11": "завод (K — Кунсан, B — Пупхён, у XUF — 3 или A, у XUU — 0 …)",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504369.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B505399.%D1%801.html",
+    "https://hpt.su/documents/otts/e-kr.%D0%B0%D1%8F04.%D0%B2.00285.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504791.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-kr.%D0%BC%D1%8202.%D0%B504310.html",
+    "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Daewoo/VIN_Codes"
+   ]
+  },
+  {
+   "wmi": [
+    "XTT",
+    "XWW",
+    "MX1",
+    "XU1"
+   ],
+   "positions": {
+    "4-9": "обозначение модели УАЗ: 316300 — Patriot 3163 (31631x, 31638x — модификации 3163), 3164xx — Patriot Sport, 236320 — Pickup 23632, 236380 — Pickup 23638, 236020/236080 — Cargo, 236021/236022/236031/236323/236324 — Profi",
+    "10": "год (по реальным VIN совпадает с годом выпуска/модельным годом)",
+    "11": "1 — Ульяновск (по маске ОТТС XTT3163?0?1…)",
+    "12-17": "серийный номер"
+   },
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00129.%D1%802.html",
+    "https://hpt.su/documents/otts/e-ru.%D0%BC%D1%8202.%D0%B2.00303.%D1%804.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00329.%D1%8014.html"
+   ]
+  },
+  {
+   "wmi": [
+    "X96",
+    "XTH"
+   ],
+   "positions": {
+    "4-9": "обозначение модели ГАЗ: 311000 — Волга 3110, 311050…311055 — 31105, 330200/330202/33025x/33027x — Газель 3302, 33023x/330232 — «Фермер», 2705xx/27057x — 2705, 2752xx — Соболь 2752, 2310xx — Соболь 2310 (по ОТТС: XTH3302…, XTH2705…, X963302…, X962752…); у NEXT — индекс A21R22, A22R32, A31R32 и т. п. (A21 — борт однорядный, A22 — борт двухрядный, A23 — шасси/фургон, A31 — цельнометаллический фургон, A32 — комби, A6x — автобусы)",
+    "10": "год (по реальным VIN)",
+    "11-17": "завод и номер"
+   },
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B502328.%D0%BF4.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B504699.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-ru.%D0%BC%D1%8202.00043.%D1%806.html",
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C_Next"
+   ]
+  },
+  {
+   "wmi": [
+    "XWB",
+    "ULV"
+   ],
+   "positions": {
+    "4": "линия: 2 — Spark M300 (2C11/2F11), 3 — Nexia, 4 — Matiz, 5 — Gentra, J — Cobalt, T — Nexia R3, M — Spark (2N11, с 2016)",
+    "5": "серия/исполнение (L, D, K у Nexia; A, B у Matiz …)",
+    "6-7": "кузов/вариант (Nexia 31 — до 2008, 32 — после рестайлинга; 11 — Matiz/Spark хэтчбек; 69 — седан; 48 — хэтчбек)",
+    "8": "двигатель",
+    "9": "служебный знак (D, 9, J …)",
+    "10": "модельный год",
+    "11": "A — Асака"
+   },
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B505568.%D1%801.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B505460.html",
+    "https://hpt.su/documents/otts/e-uz.%D0%BC%D1%8202.%D0%B2.00761.html",
+    "https://hpt.su/documents/otts/%D1%82%D1%81-ru-e-uz.%D0%BC%D1%8202.00561.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-uz.%D0%BC%D1%8202.%D0%B506832.html"
+   ]
+  },
+  {
+   "wmi": [
+    "Y6D"
+   ],
+   "positions": {
+    "4-5": "TF / TA — Lanos (T100/T150), также Chance, Sens",
+    "6-7": "69 — седан, 48 — хэтчбек 5 дв.",
+    "8": "двигатель: Y — 1,5 GM, 8 — 1,3 МеМЗ (Sens)",
+    "9": "служебный знак",
+    "10": "модельный год",
+    "11": "завод"
+   },
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ua.%D0%BC%D1%8202.%D0%B505569.%D1%801.html",
+    "https://hpt.su/documents/otts/by112-03.09.049-10294.html"
+   ]
+  },
+  {
+   "wmi": [
+    "X7M"
+   ],
+   "positions": {
+    "4": "T — Tager (тип KJ)",
+    "5": "3 — 3-дверный (по ОТТС 2008)",
+    "9": "P (по маске ОТТС X7MT????P…)"
+   },
+   "sources": [
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B505543.html",
+    "https://hpt.su/documents/otts/%D1%80%D0%BE%D1%81%D1%81-ru.%D0%BC%D1%8202.%D0%B506350.html"
+   ]
+  }
+ ],
+ "unresolved": [
+  "lada_niva-2121: классическая ВАЗ-2121 (до 1994): в базе ОТТС (hpt.su) есть только 21213 (XTA212130…), 21214 (XTA212140…) и 2131; ОТТС/реальный VIN с кодом 2121(00) не найден, а поиск в интернете исчерпал лимит — правило не добавлено. Вероятный префикс XTA2121… проверять вручную (у 21213/21214 свои правила)"
+ ],
+ "notes": "1) Маски: «?» — любой символ. Если VIN подходит под несколько масок, брать правило с самой длинной маской (XTA21728 важнее XTA2172, X9633023 важнее X963302, XTA21213/XTA21214 важнее коротких). Если совпало несколько правил с одинаковой маской и пересекающимися годами — показывать все слаги (клиент выбирает). 2) Модельный год (10-й знак): у АВТОВАЗа (и по ОТТС у Chevrolet Niva) модельный год начинается 1 июля — машина, выпущенная во втором полугодии, получает следующий год. Поэтому на границах поколений годы правил перекрываются на 1 год (Granta рестайлинг — 14.08.2018 → 2019 (K) бывает обеих версий; Priora рестайлинг — 09.2013 → 2014 (E); Kalina 2 → Granta хэтчбек/универсал — 2019 (K)). Буквы года повторяются каждые 30 лет (A = 1980/2010, R = 1994/2024): для старых моделей (2108–21099, 2110) год определять по коду модели, а не только по букве. 3) Поколения, которые по VIN не кодируются (Chevrolet Niva 2014/2016, УАЗ Патриот 2014/2020, LADA 4x4 Urban/обновлённый Urban, Granta «норма/люкс», лифтбек 60/40/сплошная, Largus норма/люкс, Orlando 5/7 мест, Captiva 5/7 мест), разделены по модельному году с перекрытием или выданы списком вариантов. 4) Казахстанская сборка: WMI XWW (Азия Авто) и MX1 (СарыаркаАвтоПром) с тем же VDS, что у XTA/X9L/XTT/KL1 — для Granta, Priora, Vesta, XRAY, Largus, Niva, Patriot, Cruze, Captiva, Aveo, Cobalt правила продублированы. WMI XWB (Узбекистан) и X7M, XUU, XUF формально из «российского» диапазона X — это нормально, так в ОТТС. 5) Источники: основной — выписки ОТТС/ОТШ из базы hpt.su (поля «Код VIN», «Модификации», «Тип кузова», «Кол-во мест» — данные документа одобрения типа, поэтому confidence=official), руководства по эксплуатации LADA (структура VIN, модельный год с 1 июля, коды заводов), Википедия (годы поколений). Для подтверждения использован поиск СБКТС на hpt.su по префиксу VIN (ссылки вида https://hpt.su/documents/sbkts/index.html?vin=XTA2190 — реальные зарегистрированные машины с этим префиксом и их моделью) и VIN из белорусских ОТТС (by112-…), где перечислены конкретные VIN. 6) Сомнения: (а) Daewoo Nexia — деление N100/N150 по 6–7 знакам (31/32) выведено по датам ОТТС, помечено probable; (б) Chevrolet Tracker в каталоге «с 2003», а VIN-правило найдено только для Tracker 2013 (KL1B?76) — probable, проверить лекало; (в) лекал Granta-хэтчбек/универсал (2192/2194 с 2018), Largus 7 мест, Niva 5 дв., Aveo T250, Captiva рестайлинг, UAZ Pickup до 2014, Газель «Фермер» в каталоге нет — правила оставлены со slugs [] для распознавания; (г) Vesta: под тем же ОТТС с 2023 выпускаются Vesta NG и LADA Aura (XTAGFL…); Aura — удлинённый седан, лекало Vesta к нему подходить не обязано; (д) Lanos/Chance/Sens ЗАЗ и Chevrolet Lanos — одна машина с одним префиксом Y6DT…, марку по VIN не определить. 7) Праворульных моделей (номер кузова) в группе нет — frame_rules пуст. 8) Во время работы закончился общий лимит веб-поиска; дальнейшие данные брались напрямую из базы ОТТС hpt.su и статей Википедии."
+}

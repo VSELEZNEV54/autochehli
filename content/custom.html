@@ -1,63 +1,73 @@
 <!-- {"title": "Конструктор чехлов: индивидуальный пошив по лекалам вашего авто", "description": "Соберите чехлы на сиденья в онлайн-конструкторе: цвет боковин из экокожи, материал и цвет вставок — экокожа, перфорация, алькантара или жаккард. Превью меняется сразу, заявку рассчитает менеджер. Пошив по заводским лекалам.", "page": "custom", "canonical": "https://1avtochehol.ru/poshiv-na-zakaz/", "js": ["pages/custom.js"]} -->
 <div class="container">
-  <ol class="crumbs"><li><a href="index.html">Главная</a></li><li>Индивидуальный пошив</li></ol>
-  <div class="builder-head">
-    <div><h1>Конструктор чехлов</h1><p class="lead">Соберите сочетание сами — превью меняется сразу. Отправьте заявку: менеджер уточнит комплектацию салона и рассчитает стоимость.</p></div>
-    <ul class="builder-head__perks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Заводские лекала</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Гарантия на пошив 1 год</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Фотоотчёт перед отправкой</li></ul>
-  </div>
-
-  <div class="builder" data-builder>
-    <div class="bstage">
-      <div class="bstage__box">
-        <div class="bstage__top"><div><b data-b-car>Автомобиль не выбран</b><span data-b-car-sub>Выберите авто — цена зависит от лекала</span></div><span class="bstage__hint">Наведите курсор — сиденье повернётся</span></div>
-        <div class="bstage__seat" data-b-canvas></div>
-        <div class="bstage__legend" data-b-legend></div>
-        <div class="bstage__tools"><button type="button" class="btn btn--ghost btn--sm" data-b-download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Скачать эскиз</button><button type="button" class="btn btn--ghost btn--sm" data-b-reset>Сбросить</button></div>
+  <div class="cfg" data-builder>
+    <div class="cfg__stage">
+      <div class="cfg__stagetop">
+        <ol class="crumbs cfg__crumbs"><li><a href="index.html">Главная</a></li><li>Индивидуальный пошив</li></ol>
+      </div>
+      <div class="cfg__car"><b data-b-car>Автомобиль не выбран</b><span data-b-car-sub>Выберите автомобиль справа — цена зависит от лекала</span></div>
+      <div class="cfg__seat" data-b-canvas></div>
+      <div class="cfg__tools">
+        <ul class="cfg__perks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Заводские лекала</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Гарантия на пошив 1 год</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Фотоотчёт перед отправкой</li></ul>
+        <div class="cfg__btns"><button type="button" class="btn btn--ghost btn--sm" data-b-download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Скачать эскиз</button><button type="button" class="btn btn--ghost btn--sm" data-b-reset>Сбросить</button></div>
       </div>
     </div>
 
-    <div class="bpanel bpanel--left">
-      <section class="bsec">
-        <div class="bsec__head"><h3><i>1</i>Автомобиль</h3><span data-b-val="car">не выбран</span></div>
-        <div class="bsec__fields" data-cpicker>
-          <select class="select" data-pick-brand aria-label="Марка"></select>
-          <select class="select" data-pick-fam disabled aria-label="Модель"></select>
-          <select class="select" data-pick-gen disabled aria-label="Поколение, кузов"></select>
+    <aside class="cfg__panel">
+      <div class="cfg__head"><h1>Конструктор чехлов</h1><p>Соберите чехлы сверху вниз — превью и цена меняются сразу.</p></div>
+      <nav class="cfg__steps" data-b-steps aria-label="Шаги конструктора"></nav>
+      <div class="cfg__body" data-b-body>
+        <section class="cfg__step" data-step="car">
+          <div class="cfg__title"><h2><i>1</i>Автомобиль</h2><span data-b-val="car">не выбран</span></div>
+          <div class="picker__tabs cfg__modes" data-c-modes><button type="button" class="is-active" data-mode="model">Марка и модель</button><button type="button" data-mode="vin">VIN-номер</button></div>
+          <div class="cfg__fields" data-c-fields>
+            <div class="cbx" data-cbx="brand"></div>
+            <div class="cbx" data-cbx="fam"></div>
+            <div class="cbx" data-cbx="gen"></div>
+          </div>
+          <div class="cfg__vin" data-c-vinbox hidden>
+            <input class="input" type="text" placeholder="VIN или номер кузова" maxlength="20" autocomplete="off" spellcheck="false" aria-label="VIN или номер кузова" data-c-vin>
+            <p class="cfg__note">Подскажем модель и кузов по первым символам VIN. У праворульных автомобилей вместо VIN — номер кузова, например NZE141-6012345.</p>
+            <div data-c-vin-out></div>
+          </div>
+          <div class="cfg__q"><span>Популярные модели</span><div class="bsec__chips"><button type="button" data-pick-chip="toyota_camry-xv70">Camry XV70</button><button type="button" data-pick-chip="lada_vesta">Lada Vesta</button><button type="button" data-pick-chip="hyundai_solaris-2">Solaris 2</button><button type="button" data-pick-chip="kia_rio-iv">Kia Rio IV</button><button type="button" data-pick-chip="toyota_rav4-new">RAV4</button><button type="button" data-pick-chip="volkswagen_polo">VW Polo</button></div></div>
+        </section>
+        <section class="cfg__step" data-step="salon">
+          <div class="cfg__title"><h2><i>2</i>Салон</h2><span data-b-val="salon"></span></div>
+          <div class="cfg__salon" data-c-salon></div>
+        </section>
+        <section class="cfg__step" data-step="design">
+          <div class="cfg__title"><h2><i>3</i>Рисунок вставок</h2><span data-b-val="design"></span></div>
+          <div class="cfg__cards cfg__cards--3" data-b-designs></div>
+          <p class="cfg__note" data-b-design-note></p>
+        </section>
+        <section class="cfg__step" data-step="side">
+          <div class="cfg__title"><h2><i>4</i>Боковины</h2><span data-b-val="side"></span></div>
+          <div class="cfg__win" data-b-sides></div>
+        </section>
+        <section class="cfg__step" data-step="ins">
+          <div class="cfg__title"><h2><i>5</i>Центральная часть</h2><span data-b-val="ins"></span></div>
+          <div class="cfg__win" data-b-inserts></div>
+        </section>
+        <section class="cfg__step" data-step="back">
+          <div class="cfg__title"><h2><i>6</i>Тыл — задняя часть спинки</h2><span data-b-val="back"></span></div>
+          <div class="cfg__win" data-b-backs></div>
+        </section>
+        <section class="cfg__step" data-step="extra">
+          <div class="cfg__title"><h2><i>7</i>Дополнительно</h2></div>
+          <div class="cfg__opts" data-b-opts></div>
+          <div class="bsec__incl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Разрывные швы под Airbag входят в комплект, оплётка руля в цвет салона — в подарок</div>
+        </section>
+      </div>
+      <div class="cfg__foot">
+        <div class="cfg__total">
+          <div><small data-b-total-label>Итого</small><div class="price" data-b-total></div></div>
+          <button type="button" class="cfg__more" data-b-lines-toggle aria-expanded="false">Что входит</button>
         </div>
-        <div class="bsec__chips"><button type="button" data-pick-chip="toyota_camry-xv70">Camry XV70</button><button type="button" data-pick-chip="lada_vesta">Lada Vesta</button><button type="button" data-pick-chip="hyundai_solaris-2">Solaris 2</button><button type="button" data-pick-chip="kia_rio-iv">Kia Rio IV</button><button type="button" data-pick-chip="toyota_rav4-new">RAV4</button><button type="button" data-pick-chip="volkswagen_polo">VW Polo</button></div>
-      </section>
-      <section class="bsec">
-        <div class="bsec__head"><h3><i>2</i>Рисунок вставок</h3><span data-b-val="design"></span></div>
-        <div class="bdesign" data-b-designs></div>
-      </section>
-      <section class="bsec">
-        <div class="bsec__head"><h3><i>3</i>Боковины <small>экокожа</small></h3><span data-b-val="side"></span></div>
-        <div class="bsw" data-b-sides></div>
-      </section>
-    </div>
-
-    <div class="bpanel bpanel--right">
-      <section class="bsec">
-        <div class="bsec__head"><h3><i>4</i>Центральные вставки</h3><span data-b-val="ins"></span></div>
-        <div class="bmat" data-b-mats></div>
-        <div class="bsw" data-b-inserts></div>
-      </section>
-      <section class="bsec">
-        <div class="bsec__head"><h3><i>5</i>Комплектация салона</h3><span>поможет точно подобрать лекало</span></div>
-        <div class="bsec__fields" data-b-config></div>
-      </section>
-      <section class="bsec">
-        <div class="bsec__head"><h3><i>6</i>Дополнительно</h3></div>
-        <label class="toggle"><div><b>Автоковрики EVA в цвет чехлов</b><span>Стоимость уточнит менеджер</span></div><span class="tp">по запросу</span><input type="checkbox" data-opt="mats"><i class="sw"></i></label>
-        <div class="bsec__incl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Разрывные швы под Airbag входят в комплект</div>
-      </section>
-      <div class="btotal">
-        <div class="btotal__row"><div><small>Комплект от</small><div class="price" data-b-total></div></div></div>
-        <details class="btotal__lines"><summary>Что входит</summary><div class="calc__lines" data-b-lines></div></details>
-        <button type="button" class="btn btn--primary btn--lg btn--block" data-b-open>Отправить заявку</button>
-        <p class="btotal__note">Итоговую стоимость с учётом комплектации подтвердит менеджер. Работаем по предоплате от 1 000 ₽.</p>
+        <div class="calc__lines cfg__lines" data-b-lines hidden></div>
+        <div class="cfg__acts"><button type="button" class="btn btn--primary" data-b-cart>В корзину</button><button type="button" class="btn btn--ghost" data-b-open><span>Заявка<span class="cfg__lbl"> менеджеру</span></span></button></div>
       </div>
-    </div>
+    </aside>
   </div>
 
   <section class="section">
@@ -70,29 +80,30 @@
     </div>
   </section>
   <section class="section section--last">
-    <div class="section__head"><div><h2>Примеры наших работ</h2></div><a class="link" href="reviews.html">Отзывы с фото →</a></div>
+    <div class="section__head"><div><h2>Примеры наших работ</h2></div><a class="btn btn--more" href="reviews.html">Отзывы с фото</a></div>
     <div class="gallery-grid"><img src="assets/photos/avtochehol1.jpg" alt="" loading="lazy"><img src="assets/photos/seat7.jpg" alt="" loading="lazy"><img src="assets/photos/avtochehol3.jpg" alt="" loading="lazy"><img src="assets/photos/seat4.jpg" alt="" loading="lazy"></div>
   </section>
 </div>
 
-<div class="bbar"><div class="container bbar__in"><div><small>Комплект от</small><div class="price" data-b-total></div></div><button type="button" class="btn btn--primary" data-b-open>Отправить заявку</button></div></div>
 
 <div class="modal" data-b-modal role="dialog" aria-modal="true" aria-label="Заявка на индивидуальный пошив">
   <div class="modal__bg" data-b-close></div>
   <div class="modal__panel breq">
-    <div class="modal__head"><h3>Заявка на пошив</h3><button type="button" class="iconbtn" aria-label="Закрыть" data-b-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="modal__head"><h3>Заявка менеджеру</h3><button type="button" class="iconbtn" aria-label="Закрыть" data-b-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
     <div class="breq__body">
       <div class="breq__mini" data-b-mini></div>
       <dl class="breq__list" data-b-summary></dl>
     </div>
     <form class="form-grid breq__form" data-b-form>
-      <div class="field"><label>Имя</label><input class="input" type="text" autocomplete="name" placeholder="Как к вам обращаться"></div>
-      <div class="field"><label>Телефон</label><input class="input" type="tel" required autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>
-      <div class="field full"><label>Как с вами связаться</label><select class="select"><option>Позвонить</option><option>WhatsApp</option><option>Telegram</option></select></div>
-      <div class="field full"><label>Комментарий</label><input class="input" type="text" placeholder="Например: год выпуска, пожелания по строчке"></div>
-      <div class="field full"><label class="check"><input type="checkbox" required> <span>Согласен с <a href="privacy.html">политикой обработки персональных данных</a></span></label></div>
+      <div class="field"><label>Имя</label><input class="input" type="text" name="name" maxlength="80" autocomplete="name" placeholder="Как к вам обращаться"></div>
+      <div class="field"><label>Телефон</label><input class="input" type="tel" name="phone" required autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>
+      <div class="field full"><label>Как с вами связаться</label><select class="select" name="contact_method"><option value="call">Позвонить</option><option value="whatsapp">WhatsApp</option><option value="telegram">Telegram</option></select></div>
+      <div class="field full"><label>VIN-номер <span class="muted">— необязательно, поможет точно подобрать лекало</span></label><input class="input" type="text" name="vin" placeholder="VIN или номер кузова" maxlength="20" autocomplete="off" spellcheck="false" data-req-vin></div>
+      <div class="field full"><label>Комментарий</label><input class="input" type="text" name="message" maxlength="1500" placeholder="Например: год выпуска, пожелания по строчке"></div>
+      <div class="field full" data-consent></div>
       <div class="field full"><button class="btn btn--primary btn--lg btn--block" type="submit">Отправить заявку</button></div>
     </form>
-    <div class="breq__done" data-b-done hidden><div class="breq__ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><h4>Заявка отправлена</h4><p>В рабочее время вам перезвонит оператор, уточнит комплектацию салона и стоимость. Это демо-версия: данные никуда не отправляются.</p><button type="button" class="btn btn--dark" data-b-close>Готово</button></div>
+    <p class="form-tel" style="margin-top:12px">Или позвоните: <a href="tel:88007753260">8 (800) 775-32-60</a><span>бесплатно по России</span></p>
+    <div class="breq__done" data-b-done hidden><div class="breq__ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><h4>Заявка отправлена</h4><p>В рабочее время вам перезвонит оператор, уточнит комплектацию салона и стоимость.</p><button type="button" class="btn btn--dark" data-b-close>Готово</button></div>
   </div>
 </div>

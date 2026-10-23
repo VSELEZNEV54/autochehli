@@ -1,0 +1,24 @@
+# Бэкенд в Docker. nginx на хосте отдаёт сайт и проксирует /api/ и /admin/ на 127.0.0.1:8000 (deploy/nginx.conf).
+# Запуск: cd backend && cp .env.example .env && (заполнить) && docker compose up -d --build
+# Первый пользователь админки: docker compose exec app python -m app.cli create-admin admin
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      SITE_ROOT: /site
+      TRUSTED_PROXIES: 172.16.0.0/12,127.0.0.1
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./data:/app/data                       # база SQLite и бэкапы
+      - /var/www/avtostil:/site:ro             # опубликованный сайт: js/data.js и js/app.js — каталог и цены
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options: { max-size: "10m", max-file: "5" }

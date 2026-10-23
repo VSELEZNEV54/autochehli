@@ -4,3 +4,11 @@
 каталог/
 кп/
 план/
+CLAUDE.md
+
+# бэкенд: окружение, база с персональными данными, секреты
+backend/.venv/
+backend/data/
+backend/.env
+__pycache__/
+*.pyc
