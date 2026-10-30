@@ -16,13 +16,17 @@
   ];
   /* От этой суммы товаров, ₽, доставка бесплатна любым способом (backend/app/catalog.py, FREE_DELIVERY_FROM) */
   const FREE_DELIVERY_FROM = 20000;
-  let delivery = "dpd", pay = "full", prepay = 1000, online = true, sending = false;
+  let delivery = "dpd", pay = "full", prepay = 1000, online = true, sending = false, priceNote = "";
+  /* время на странице для антиспама считаем от открытия: форма пересобирается при смене доставки и новых ценах, повторная отправка — не бот */
+  const OPENED_AT = Date.now();
   const VIN = window.AS_vin;
   const ls = k => { try { return localStorage.getItem(k) || ""; } catch (e) { return ""; } };
   /* чехлы на модель (cover:) и комплекты из конструктора (custom: — с выбором в config, цену сервер считает сам) */
-  const covers = () => Cart.items.filter(i => i.id.startsWith("cover:") || i.id.startsWith("custom:"));
+  const covers = () => Cart.items.filter(i => !i.gone && (i.id.startsWith("cover:") || i.id.startsWith("custom:")));
   /* порог — по тому, что уйдёт на сервер: сумму заказа считает он */
   const coversSum = () => covers().reduce((n, i) => n + i.price * i.qty, 0);
+  /* позиции, а не штуки: комплект в количестве 3 — одна позиция */
+  const positions = () => Cart.items.filter(i => !i.gone).length;
   const isFree = () => coversSum() >= FREE_DELIVERY_FROM;
   const extras = { mats: false, install: false };
   /* введённое в форму не теряется при перерисовке (смена доставки или оплаты) */
@@ -85,12 +89,12 @@
   /* «Ваш заказ»: в корзине — итог и переход к оформлению, на оформлении — ещё и состав заказа, доставка и кнопка оплаты */
   function summaryHtml(sub, dprice, total) {
     const co = MODE === "checkout", free = isFree(), left = FREE_DELIVERY_FROM - coversSum();
-    const list = co ? `<div class="sum-items">${Cart.items.map(i => `<a class="sum-item" href="${A.relink(i.url)}"><img src="${i.img}" alt=""><span><b>${i.title}</b><small>${i.qty > 1 ? i.qty + " × " : ""}${A.fmt(i.price)}</small></span></a>`).join("")}</div><a class="sum-edit" href="${A.href("cart")}">Изменить состав заказа</a>` : "";
+    const list = co ? `<div class="sum-items">${Cart.items.filter(i => !i.gone).map(i => `<a class="sum-item" href="${A.esc(A.relink(i.url))}"><img src="${A.esc(i.img)}" alt=""><span><b>${A.esc(i.title)}</b><small>${i.qty > 1 ? i.qty + " × " : ""}${A.fmt(i.price)}</small></span></a>`).join("")}</div><a class="sum-edit" href="${A.href("cart")}">Изменить состав заказа</a>` : "";
     const btn = co
       ? `<button class="btn btn--primary btn--lg btn--block" type="submit" form="order-form" ${sending ? "disabled" : ""}>${sending ? "Оформляем…" : btnLabel()}</button>`
       : `<a class="btn btn--primary btn--lg btn--block" href="${A.href("checkout")}">Перейти к оформлению</a>`;
     return `<aside class="summary">
-        <div class="calc__car">Ваш заказ<small>${Cart.count()} ${plural(Cart.count())}</small></div>
+        <div class="calc__car">Ваш заказ<small>${positions()} ${plural(positions())}</small></div>
         ${list}
         <div class="calc__lines">
           <div><span>Товары</span><b>${A.fmt(sub)}</b></div>
@@ -101,22 +105,47 @@
           <div><span class="muted">Оплётка руля в цвет салона</span><b class="free">в подарок</b></div>
         </div>
         <div class="calc__total"><div><div class="small muted">Итого${!free && (!co || dprice == null) ? " без доставки" : ""}</div><div class="price">${A.fmt(total)}</div></div></div>
+        ${priceNote ? `<div class="vin-msg vin-msg--warn" role="alert" style="margin-bottom:10px">${A.esc(priceNote)}</div>` : ""}
         ${btn}
         <div class="calc__note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Менеджер перезвонит и уточнит комплектацию салона.</div>
       </aside>`;
   }
   function render() {
-    if (!Cart.items.length) { box.style.display = "block"; box.innerHTML = emptyHtml; bindMega(); return; }
+    if (!Cart.items.length) { box.style.display = "block"; box.innerHTML = emptyHtml; bindMega(); orderBar(); return; }
     box.style.display = "";
     initExtras();
     if (MODE === "checkout") renderCheckout(); else renderCart();
+    orderBar();
+  }
+  /* Плашка заказа внизу экрана (только в корзине): видна, пока кнопка оформления в «Ваш заказ» за пределами экрана.
+     Пока заполняют поле, прячем: над клавиатурой она закрывала бы ввод. */
+  let bar = null, barIo = null, ctaAway = false;
+  const barToggle = () => { const a = document.activeElement, typing = a && box.contains(a) && a.matches("input:not([type=checkbox]), textarea"); document.body.classList.toggle("cta-away", ctaAway && !typing); };
+  function orderBar() {
+    if (MODE !== "cart") return;
+    const n = positions(), cta = n ? box.querySelector(".summary .btn") : null;
+    if (barIo) barIo.disconnect();
+    document.body.classList.toggle("has-sticky", !!cta);
+    if (!cta) { ctaAway = false; barToggle(); return; }
+    if (!bar) {
+      bar = document.createElement("div"); bar.className = "sticky-cta sticky-cta--order";
+      bar.innerHTML = `<div class="container sticky-cta__in"><div class="sticky-cta__order"><span data-bar-count></span><div class="price" data-bar-total></div></div><a class="btn btn--primary" href="${A.href("checkout")}">Перейти к оформлению</a></div>`;
+      document.body.appendChild(bar);
+      box.addEventListener("focusin", barToggle);
+      box.addEventListener("focusout", () => setTimeout(barToggle));
+    }
+    bar.querySelector("[data-bar-count]").textContent = `Ваш заказ · ${n} ${plural(n)}`;
+    bar.querySelector("[data-bar-total]").textContent = A.fmt(Cart.total());
+    if (!("IntersectionObserver" in window)) return;
+    if (!barIo) barIo = new IntersectionObserver(([en]) => { ctaAway = !en.isIntersecting; barToggle(); }, { rootMargin: `-${parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h")) || 60}px 0px 0px 0px` });
+    barIo.observe(cta);
   }
   /* --- корзина: состав, подарок, допы, сверка VIN --- */
   function renderCart() {
     const sub = Cart.total(), e = A.esc, hints = vinHints();
     box.innerHTML = `
       <div class="cart__main">
-        <div class="cart-list">${Cart.items.map(i => `<div class="cart-item"><a href="${A.relink(i.url)}"><img class="cart-item__img" src="${i.img}" alt=""></a><div class="cart-item__info"><a class="cart-item__title" href="${A.relink(i.url)}">${i.title}</a><div class="cart-item__sub">${i.sub || ""}</div>${i.id.startsWith("cfg:any") ? '<div class="cart-item__sub" style="color:var(--sale)">Модель не выбрана — уточним при подтверждении</div>' : ""}</div><div class="cart-item__right"><div class="price">${A.fmt(i.price * i.qty)}${i.old ? `<s>${A.fmt(i.old * i.qty)}</s>` : ""}</div><div class="qty"><button type="button" data-qty="${i.id}" data-d="-1" aria-label="Меньше">−</button><input type="number" min="1" max="99" inputmode="numeric" value="${i.qty}" data-qty-input="${i.id}" aria-label="Количество"><button type="button" data-qty="${i.id}" data-d="1" aria-label="Больше">+</button></div><button type="button" class="cart-item__remove" data-remove="${i.id}">Удалить</button></div></div>`).join("")}</div>
+        <div class="cart-list">${Cart.items.map(i => i.gone ? `<div class="cart-item"><img class="cart-item__img" src="${e(i.img)}" alt=""><div class="cart-item__info"><div class="cart-item__title">${e(i.title)}</div><div class="cart-item__sub" style="color:var(--sale)">Больше нет в каталоге. В сумму и заказ не входит</div></div><div class="cart-item__right"><button type="button" class="cart-item__remove" data-remove="${e(i.id)}">Удалить</button></div></div>` : `<div class="cart-item"><a href="${e(A.relink(i.url))}"><img class="cart-item__img" src="${e(i.img)}" alt=""></a><div class="cart-item__info"><a class="cart-item__title" href="${e(A.relink(i.url))}">${e(i.title)}</a><div class="cart-item__sub">${e(i.sub || "")}</div>${i.id.startsWith("cfg:any") ? '<div class="cart-item__sub" style="color:var(--sale)">Модель не выбрана — уточним при подтверждении</div>' : ""}</div><div class="cart-item__right"><div class="price">${A.fmt(i.price * i.qty)}${i.old ? `<s>${A.fmt(i.old * i.qty)}</s>` : ""}</div><div class="qty"><button type="button" data-qty="${e(i.id)}" data-d="-1" aria-label="Меньше">−</button><input type="number" min="1" max="${A.MAX_QTY}" inputmode="numeric" value="${+i.qty || 1}" data-qty-input="${e(i.id)}" aria-label="Количество"><button type="button" data-qty="${e(i.id)}" data-d="1" aria-label="Больше"${i.qty >= A.MAX_QTY ? " disabled" : ""}>+</button></div><button type="button" class="cart-item__remove" data-remove="${e(i.id)}">Удалить</button></div></div>`).join("")}</div>
         <div class="callout" style="margin-top:12px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 22V7"/></svg><div><b>Оплётка руля в цвет салона — в подарок</b>Положим в заказ к комплекту чехлов.</div></div>
         <div class="cart-extras">
           <section class="tile">
@@ -136,10 +165,10 @@
         </div>
       </div>
       ${summaryHtml(sub, null, sub)}`;
-    box.querySelectorAll("[data-qty]").forEach(b => b.addEventListener("click", () => { const it = Cart.items.find(i => i.id === b.dataset.qty); Cart.setQty(b.dataset.qty, Math.min(99, it.qty + +b.dataset.d)); }));
+    box.querySelectorAll("[data-qty]").forEach(b => b.addEventListener("click", () => { const it = Cart.items.find(i => i.id === b.dataset.qty); Cart.setQty(b.dataset.qty, it.qty + +b.dataset.d); }));
     /* количество можно вписать: применяем по Enter или при уходе из поля */
     box.querySelectorAll("[data-qty-input]").forEach(inp => {
-      inp.addEventListener("change", () => { const n = parseInt(inp.value, 10), it = Cart.items.find(i => i.id === inp.dataset.qtyInput); if (n >= 1) Cart.setQty(inp.dataset.qtyInput, Math.min(99, n)); else inp.value = it.qty; });
+      inp.addEventListener("change", () => { const n = parseInt(inp.value, 10), it = Cart.items.find(i => i.id === inp.dataset.qtyInput); if (n >= 1) Cart.setQty(inp.dataset.qtyInput, n); else inp.value = it.qty; });
       inp.addEventListener("keydown", ev => { if (ev.key === "Enter") { ev.preventDefault(); inp.blur(); } });
     });
     box.querySelectorAll("[data-remove]").forEach(b => b.addEventListener("click", () => Cart.remove(b.dataset.remove)));
@@ -189,6 +218,7 @@
     box.querySelectorAll("input[name=pay]").forEach(r => r.addEventListener("change", () => { pay = r.value; render(); }));
     const form = document.getElementById("order-form");
     A.guardForm(form);
+    form._t0 = OPENED_AT;
     form.addEventListener("input", ev => { const t = ev.target; if (t.name in fv) fv[t.name] = t.type === "checkbox" ? t.checked : t.value; });
     form.addEventListener("change", ev => { const t = ev.target; if (t.name === "consent" || t.name === "marketing") fv[t.name] = t.checked; });
     A.enhanceForm(form);
@@ -199,24 +229,34 @@
     if (!form.reportValidity()) return;
     const items = covers().map(i => i.config ? { id: i.id, qty: i.qty, config: i.config, label: i.label || "" } : { id: i.id, qty: i.qty });
     if (!items.length) { A.toast("В корзине нет чехлов для заказа"); return; }
-    sending = true;
+    sending = true; priceNote = "";
     const btn = box.querySelector("[type=submit]"); btn.disabled = true; btn.textContent = "Оформляем…";
     const body = {
-      items, delivery, payment: pay, vin, extras: { ...extras }, comment: fv.comment, consent: fv.consent, marketing: fv.marketing == null ? !!(form.querySelector("[name=marketing]") || {}).checked : fv.marketing, address: delivery === "pickup" ? "" : fv.address,
+      items, expected_total: coversSum(), delivery, payment: pay, vin, extras: { ...extras }, comment: fv.comment, consent: fv.consent, marketing: fv.marketing == null ? !!(form.querySelector("[name=marketing]") || {}).checked : fv.marketing, address: delivery === "pickup" ? "" : fv.address,
       company: pay === "invoice" ? fv.company : "", inn: pay === "invoice" ? fv.inn : "",
       customer: { name: fv.name, phone: fv.phone, city: fv.city, email: fv.email }, meta: A.formMeta(form)
     };
     const res = await A.api("/orders", body);
     sending = false;
+    /* цена изменилась, пока товар лежал в корзине: заказ не создан, берём цены сервера и показываем новую сумму (заполненная форма остаётся, Cart.save перерисует) */
+    if (res.status === 409 && res.data && Array.isArray(res.data.items)) {
+      res.data.items.forEach(x => { const i = Cart.items.find(y => y.id === x.id); if (i) { i.price = x.price; if ("old" in i) i.old = x.old; } });
+      priceNote = res.error;
+      Cart.save();
+      A.toast(res.error);
+      return;
+    }
     if (!res.ok) {
       btn.disabled = false; btn.textContent = btnLabel();
       A.fieldErrors(form, res); A.toast(res.error); return;
     }
     try { localStorage.setItem("as_last_order", JSON.stringify({ order: res.data.order, number: res.data.number })); } catch (er) {}
     Cart.items = []; try { localStorage.setItem("as_cart4", "[]"); localStorage.removeItem("as_extras"); } catch (er) {}
-    location.href = res.data.payment_url || res.data.redirect;
+    location.href = res.data.payment_url || window.AS.relink(res.data.redirect);
   }
   function bindMega() { box.querySelectorAll("[data-mega-open]").forEach(el => el.addEventListener("click", e => { e.preventDefault(); document.querySelector("[data-mega-toggle]").click(); })); }
+  /* каталог живой: цена могла измениться, а лекало — исчезнуть, пока товар лежал в корзине */
+  if (Cart.sync()) priceNote = "Цена изменилась: в корзине показана новая. Проверьте сумму.";
   document.addEventListener("cart:change", render);
   render();
 })();

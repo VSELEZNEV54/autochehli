@@ -1,13 +1,13 @@
 /* Каталог марок (шаблон T2): все марки, фильтр по букве и поиску (марки и модели) */
 (function () {
-  const A = window.AS, brands = A.BRANDS.slice().sort((a, b) => a.id.localeCompare(b.id)), L = b => b.id[0].toUpperCase();
+  const A = window.AS, brands = A.BRANDS.slice().sort((a, b) => a.id.localeCompare(b.id, "ru")), L = b => b.id[0].toUpperCase(), SSR = window.AS_SSR;  // SSR: контейнеры вывел сервер (lib/pages.php)
   /* По таблице T2: марки по алфавиту, популярные (8 марок-лидеров по продажам, js/catalog-extra.js) — сверху,
      пока не выбрана буква и не введён поиск */
   const CAT = window.AS_CATALOG || {}, popBrands = (CAT.order || []).slice(0, 8);
-  document.querySelector(".page-intro .lead").insertAdjacentHTML("beforeend", ` Комплект на весь салон — от <b>${A.fmt(A.minPrices(A.MODELS)[0])}</b>.`);
+  if (!SSR) document.querySelector(".page-intro .lead").insertAdjacentHTML("beforeend", ` Комплект на весь салон — от <b>${A.fmt(A.minPrices(A.MODELS)[0])}</b>.`);
   const box = document.getElementById("cat-brands"), fams = document.getElementById("cat-fams"), q = document.getElementById("cat-q"), alpha = document.getElementById("cat-alpha");
   const letters = [...new Set(brands.map(L))];
-  alpha.innerHTML = `<button type="button" class="is-active" data-l="">Все</button>` + letters.map(l => `<button type="button" data-l="${l}">${l}</button>`).join("");
+  if (!SSR) alpha.innerHTML = `<button type="button" class="is-active" data-l="">Все</button>` + letters.map(l => `<button type="button" data-l="${l}">${l}</button>`).join("");
   let letter = "";
   const norm = s => s.toLowerCase().replace(/ё/g, "е");
   function render() {
@@ -22,17 +22,17 @@
   }
   q.addEventListener("input", render);
   alpha.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; letter = b.dataset.l; alpha.querySelectorAll("button").forEach(x => x.classList.toggle("is-active", x === b)); render(); });
-  render();
+  if (!SSR) render();
   /* Популярные модели: 15 карточек — ровно 3 ряда по 5 или 5 рядов по 3; блок индивидуального пошива — после всех карточек, перед SEO-текстом */
   const pop = ["toyota-camry", "lada-vesta", "hyundai-solaris", "kia-rio", "renault-duster", "lada-granta", "kia-sportage", "hyundai-creta", "volkswagen-polo", "skoda-octavia", "nissan-qashqai", "mitsubishi-outlander", "toyota-rav4", "lada-largus", "lada-niva-legend-4x4"].map(id => A.FAMILIES[id]).filter(Boolean);
-  document.getElementById("cat-popular").innerHTML = pop.map(A.famCard).join("");
+  if (!SSR) document.getElementById("cat-popular").innerHTML = pop.map(A.famCard).join("");
 
   /* SEO-текст по образцу главной. «Чаще всего заказывают» — по продажам из Битрикса (js/catalog-extra.js), а не список запросов выше */
   const e = A.esc, sold = (CAT.top || []).map(id => A.FAMILIES[id]).filter(Boolean);
   const soldText = sold.map(f => `<a href="${A.URL.fam(f)}">${e(A.brandName(f.b))} ${e(f.n)}</a>`).join(", ");
   const brandLinks = brands.map(b => `<a href="${A.URL.brand(b.id)}">${e(b.n)}</a>`).join(", ");
   const top = brands.slice().sort((x, y) => y.cnt - x.cnt);
-  document.getElementById("cat-seo").innerHTML = A.seoBlock({
+  if (!SSR) document.getElementById("cat-seo").innerHTML = A.seoBlock({
     h2: "Модельные чехлы на сиденья для любой марки",
     intro: `<p>В каталоге «Автостиль» — модельные чехлы на сиденья автомобилей популярных марок: легковые машины, кроссоверы, минивэны, пикапы и коммерческий транспорт. С 2009 года мы шьём модельные авточехлы на собственном производстве в Новосибирске и продаём их напрямую, без наценки посредников. Для каждого поколения и варианта салона — своё заводское лекало, поэтому чехлы повторяют контуры и линии сидений, сохраняют доступ к регулировкам, подлокотникам и креплениям, не пузырятся и не собираются гармошкой.</p>`,
     parts: [
@@ -51,5 +51,5 @@
   const abs = A.abs;
   const ld = { "@context": "https://schema.org", "@graph": [
     { "@type": "ItemList", name: "Авточехлы по маркам автомобилей", itemListElement: brands.map((b, i) => ({ "@type": "ListItem", position: i + 1, name: b.n, url: abs(A.URL.brand(b.id)) })) }] };
-  document.head.insertAdjacentHTML("beforeend", `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`);
+  if (!SSR) document.head.insertAdjacentHTML("beforeend", `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`);
 })();

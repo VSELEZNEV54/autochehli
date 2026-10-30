@@ -1,6 +1,6 @@
 /* Карточка товара: чехлы на модель (?m=&v=) или аксессуар (?p=). Сроки, оплата, доставка и гарантия — по старому сайту 1avtochehol.ru */
 (function () {
-  const A = window.AS, e = A.esc, root = document.getElementById("p-root");
+  const A = window.AS, e = A.esc, root = document.getElementById("p-root"), SSR = window.AS_SSR;  // SSR: чехлы на модель вывел сервер (lib/pages.php), здесь только обработчики
   document.body.classList.add("has-sticky");
   const IC = {
     layers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 16 9 5 9-5"/></svg>',
@@ -22,9 +22,164 @@
     </div>`;
   const isCard = src => /assets\/(cards|seats)\//.test(src);   // карточка или кресло: без плашки «Фото наших работ», она только на настоящих фото
   const gallery = (imgs, tags, cover) => `<div class="gallery${cover ? " gallery--card" : ""}" data-gallery><div class="gallery__thumbs">${imgs.map((src, i) => `<button type="button" class="${i ? "" : "is-active"}" data-thumb="${src}" aria-label="Фото ${i + 1}"><img src="${src}" alt="" loading="lazy"></button>`).join("")}</div><div class="gallery__main${isCard(imgs[0]) ? " is-card" : ""}"><img id="p-main" src="${imgs[0]}" alt="" width="900" height="${cover ? 1200 : 900}">${tags}</div></div>`;
+  /* Просмотр фото на весь экран: миниатюры, листание, приближение.
+     Палец: два пальца или двойное нажатие приближают, при приближении фото двигается, без него свайп листает. Мышь: нажатие и колесо приближают, перетаскивание двигает. */
+  function openViewer(list, start, onClose) {
+    const MAX = 4, TAP = 2.5, ico = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+    const lb = document.createElement("div");
+    lb.className = "lightbox lightbox--zoom is-open";
+    lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", "Просмотр фото");
+    lb.innerHTML = `<button type="button" class="lightbox__close" aria-label="Закрыть">${ico("M6 6l12 12M18 6 6 18")}</button>
+      <button type="button" class="lightbox__zoom" aria-label="Приблизить"></button>
+      ${list.length > 1 ? `<button type="button" class="lightbox__prev" aria-label="Предыдущее фото">${ico("M15 6l-6 6 6 6")}</button><button type="button" class="lightbox__next" aria-label="Следующее фото">${ico("M9 6l6 6-6 6")}</button>` : ""}
+      <figure class="lightbox__fig"><div class="lightbox__stage"><img alt="" draggable="false"></div>${list.length > 1 ? '<figcaption><span class="lightbox__count"></span></figcaption>' : ""}</figure>
+      ${list.length > 1 ? `<div class="lightbox__thumbs">${list.map((s, n) => `<button type="button" aria-label="Фото ${n + 1}"><img src="${s}" alt=""></button>`).join("")}</div>` : ""}`;
+    document.body.appendChild(lb);
+    const q = s => lb.querySelector(s), stage = q(".lightbox__stage"), img = q(".lightbox__stage img"), zoomBtn = q(".lightbox__zoom"), minis = [...lb.querySelectorAll(".lightbox__thumbs button")];
+    let cur = 0, scale = 1, tx = 0, ty = 0, one = null, pinch = null, lastTap = 0;
+    const pts = new Map();
+    const paint = () => {
+      const mx = Math.max(0, (img.offsetWidth * scale - innerWidth) / 2), my = Math.max(0, (img.offsetHeight * scale - innerHeight) / 2);
+      if (scale <= 1) { tx = 0; ty = 0; } else { tx = Math.min(mx, Math.max(-mx, tx)); ty = Math.min(my, Math.max(-my, ty)); }
+      img.style.transform = `translate3d(${tx}px,${ty}px,0) scale(${scale})`;
+      lb.classList.toggle("is-zoomed", scale > 1);
+      zoomBtn.setAttribute("aria-label", scale > 1 ? "Отдалить" : "Приблизить");
+      zoomBtn.innerHTML = ico(scale > 1 ? "M5 12h14" : "M12 5v14M5 12h14");
+    };
+    /* точка под пальцем или курсором остаётся на месте */
+    const zoomAt = (next, cx, cy) => {
+      next = Math.min(MAX, Math.max(1, next));
+      const r = img.getBoundingClientRect(), lx = r.left + r.width / 2 - tx, ly = r.top + r.height / 2 - ty;
+      tx = cx - lx - (cx - lx - tx) * next / scale; ty = cy - ly - (cy - ly - ty) * next / scale; scale = next;
+      paint();
+    };
+    const centerZoom = next => zoomAt(next, innerWidth / 2, innerHeight / 2);
+    const show = n => {
+      cur = (n + list.length) % list.length; scale = 1; img.src = list[cur]; img.style.transition = "none"; paint();
+      requestAnimationFrame(() => { img.style.transition = ""; });
+      const c = q(".lightbox__count"); if (c) c.textContent = `${cur + 1} / ${list.length}`;
+      minis.forEach((b, i) => { b.classList.toggle("is-active", i === cur); if (i === cur) b.scrollIntoView({ block: "nearest", inline: "center" }); });
+    };
+    const close = () => { document.removeEventListener("keydown", onKey); lb.remove(); document.body.style.overflow = ""; onClose(cur); };
+    function onKey(e) {
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft" && list.length > 1) show(cur - 1);
+      else if (e.key === "ArrowRight" && list.length > 1) show(cur + 1);
+      else if (e.key === "+" || e.key === "=") centerZoom(scale + 1);
+      else if (e.key === "-") centerZoom(scale - 1);
+    }
+    document.addEventListener("keydown", onKey);
+    q(".lightbox__close").addEventListener("click", close);
+    zoomBtn.addEventListener("click", () => centerZoom(scale > 1 ? 1 : TAP));
+    if (list.length > 1) { q(".lightbox__prev").addEventListener("click", () => show(cur - 1)); q(".lightbox__next").addEventListener("click", () => show(cur + 1)); }
+    minis.forEach((b, i) => b.addEventListener("click", () => show(i)));
+    lb.addEventListener("click", e => { if (scale === 1 && [lb, stage, q(".lightbox__fig")].includes(e.target)) close(); });
+    img.addEventListener("wheel", e => { e.preventDefault(); zoomAt(scale * (1 - e.deltaY * 0.002), e.clientX, e.clientY); }, { passive: false });
+    img.addEventListener("pointerdown", e => {
+      img.setPointerCapture(e.pointerId); pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pts.size === 2) { const [a, b] = [...pts.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, s: scale }; one = null; }
+      else if (pts.size === 1) one = { x: e.clientX, y: e.clientY, tx, ty, moved: false, touch: e.pointerType !== "mouse" };
+      img.classList.add("is-moving");
+    });
+    img.addEventListener("pointermove", e => {
+      if (!pts.has(e.pointerId)) return;
+      pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pinch && pts.size === 2) { const [a, b] = [...pts.values()]; return zoomAt(pinch.s * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d, (a.x + b.x) / 2, (a.y + b.y) / 2); }
+      if (!one) return;
+      const dx = e.clientX - one.x, dy = e.clientY - one.y;
+      if (!one.moved && Math.hypot(dx, dy) < 6) return;
+      one.moved = true;
+      if (scale > 1) { tx = one.tx + dx; ty = one.ty + dy; paint(); }
+      else if (one.touch && list.length > 1) img.style.transform = `translate3d(${dx}px,0,0)`;
+    });
+    const up = e => {
+      if (!pts.delete(e.pointerId)) return;
+      if (pts.size < 2) pinch = null;
+      if (pts.size) return;
+      img.classList.remove("is-moving");
+      const o = one; one = null;
+      if (!o) return;
+      const dx = e.clientX - o.x;
+      if (e.type === "pointercancel") return paint();
+      if (o.moved) { if (scale === 1 && o.touch && list.length > 1 && Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); else paint(); return; }
+      if (!o.touch) return zoomAt(scale > 1 ? 1 : TAP, e.clientX, e.clientY);
+      if (e.timeStamp - lastTap < 300) { lastTap = 0; zoomAt(scale > 1 ? 1 : TAP, e.clientX, e.clientY); } else lastTap = e.timeStamp;
+    };
+    img.addEventListener("pointerup", up); img.addEventListener("pointercancel", up);
+    document.body.style.overflow = "hidden";
+    show(start);
+    q(".lightbox__close").focus();
+  }
   function bindGallery() {
-    const main = document.getElementById("p-main");
-    document.querySelectorAll("[data-thumb]").forEach(t => t.addEventListener("click", () => { document.querySelectorAll("[data-thumb]").forEach(x => x.classList.toggle("is-active", x === t)); main.style.opacity = 0; main.parentElement.classList.toggle("is-card", isCard(t.dataset.thumb)); setTimeout(() => { main.src = t.dataset.thumb; main.onload = () => main.style.opacity = 1; }, 100); }));
+    const main = document.getElementById("p-main"), thumbs = [...document.querySelectorAll("[data-thumb]")];
+    if (!thumbs.length) return;
+    const box = main.parentElement, row = thumbs[0].parentElement, src = i => thumbs[i].dataset.thumb, calm = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let cur = 0, fade, drag = null, busy = false, dots = null;
+    /* отметить фото: миниатюра, точка, плашка; ряд миниатюр докручиваем сам, страницу не двигаем */
+    const mark = i => {
+      cur = i;
+      thumbs.forEach((x, n) => x.classList.toggle("is-active", n === i));
+      if (dots) [...dots.children].forEach((d, n) => d.classList.toggle("is-active", n === i));
+      box.classList.toggle("is-card", isCard(src(i)));
+      if (row.scrollWidth > row.clientWidth) { const r = row.getBoundingClientRect(), a = thumbs[i].getBoundingClientRect(); row.scrollBy({ left: a.left - r.left - (r.width - a.width) / 2, behavior: calm() ? "auto" : "smooth" }); }
+    };
+    thumbs.forEach((t, i) => t.addEventListener("click", () => { if (busy) return; clearTimeout(fade); mark(i); main.style.opacity = 0; fade = setTimeout(() => { main.src = src(i); main.onload = () => main.style.opacity = 1; }, 100); }));
+    /* нажатие на фото открывает просмотр; после свайпа нажатие не считаем */
+    const zoomBtn = document.createElement("button");
+    zoomBtn.type = "button"; zoomBtn.className = "gallery__zoom"; zoomBtn.setAttribute("aria-label", "Приблизить фото");
+    zoomBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg>';
+    box.appendChild(zoomBtn);
+    let swiped = false;
+    box.addEventListener("click", () => { if (!swiped && !busy) openViewer(thumbs.map(t => t.dataset.thumb), cur, i => { if (i !== cur) thumbs[i].click(); zoomBtn.focus({ preventScroll: true }); }); });
+    if (thumbs.length < 2) return;
+    dots = document.createElement("div"); dots.className = "gallery__dots"; dots.setAttribute("aria-hidden", "true");
+    dots.innerHTML = thumbs.map((_, i) => `<i${i ? "" : ' class="is-active"'}></i>`).join("");
+    box.after(dots);
+    /* Свайп: фото идёт за пальцем, соседнее едет рядом во временной картинке. Вертикальную прокрутку браузер забирает сам (touch-action в css) и присылает pointercancel */
+    const ghost = new Image(); ghost.className = "gallery__ghost"; ghost.alt = "";
+    const place = (dx, gap) => { main.style.transform = `translate3d(${dx}px,0,0)`; ghost.style.transform = `translate3d(${dx + gap}px,0,0)`; };
+    const release = (ok, time) => {
+      const d = drag; drag = null;
+      if (!d || !d.on) return;
+      swiped = true;
+      const dir = d.dx < 0 ? 1 : -1, next = cur + dir, ms = calm() ? 0 : 240;
+      const go = ok && !!thumbs[next] && (Math.abs(d.dx) > d.w * 0.2 || Math.abs(d.dx) / Math.max(1, time - d.t) > 0.5);
+      busy = true;
+      main.style.transition = ghost.style.transition = `transform ${ms}ms var(--ease)`;
+      place(go ? -dir * d.w : 0, dir * d.w);
+      if (go) mark(next);
+      setTimeout(() => {
+        const done = () => { ghost.remove(); busy = false; };
+        main.style.transition = ghost.style.transition = main.style.transform = "";
+        if (!go) return done();
+        main.src = src(next);
+        main.decode().then(done, done);   // пока новое фото не готово, его закрывает временная картинка
+      }, ms + 20);
+    };
+    box.addEventListener("pointerdown", ev => {
+      if (ev.pointerType === "mouse" || busy) return;
+      swiped = false;
+      if (drag) return release(false);   // второй палец: это уже не свайп
+      drag = { id: ev.pointerId, x: ev.clientX, y: ev.clientY, t: ev.timeStamp, dx: 0, on: false, w: box.clientWidth, dir: 0 };
+      [cur - 1, cur + 1].forEach(i => { if (thumbs[i]) new Image().src = src(i); });
+    });
+    box.addEventListener("pointermove", ev => {
+      if (!drag || ev.pointerId !== drag.id) return;
+      const dx = ev.clientX - drag.x, dy = ev.clientY - drag.y;
+      if (!drag.on) {
+        if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+        if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; }
+        drag.on = true; clearTimeout(fade); main.onload = null; main.style.opacity = 1;
+        if (main.getAttribute("src") !== src(cur)) main.src = src(cur);
+        main.after(ghost);
+      }
+      const dir = dx < 0 ? 1 : -1, has = !!thumbs[cur + dir];
+      if (has && drag.dir !== dir) { ghost.src = src(cur + dir); drag.dir = dir; }
+      ghost.hidden = !has; drag.dx = dx;
+      place(has ? dx : dx * 0.3, dir * drag.w);   // у крайнего фото соседа нет: тянется с сопротивлением и возвращается
+    });
+    box.addEventListener("pointerup", ev => { if (drag && ev.pointerId === drag.id) release(true, ev.timeStamp); });
+    box.addEventListener("pointercancel", ev => { if (drag && ev.pointerId === drag.id) release(false); });
   }
   const perks = items => `<ul class="buy-panel__perks">${items.map(t => `<li>${A.ICON.check}${t}</li>`).join("")}</ul>`;
   const panel = (price, ready, cta, list) => `<div class="buy-panel" id="p-panel"><div class="buy-panel__row">${price}${ready}</div>${cta}${list ? perks(list) : ""}</div>`;
@@ -63,7 +218,7 @@
     document.getElementById("p-more-title").textContent = "Ещё в разделе";
     document.getElementById("p-more-link").href = CAT[1]; document.getElementById("p-more-link").textContent = "Весь раздел";
     document.getElementById("p-more").innerHTML = same.slice(0, 5).map(A.productCard).join("");
-    document.getElementById("p-sticky-name").textContent = p.sub || CAT[0]; document.getElementById("p-sticky-price").textContent = p.gift ? "В подарок" : "Цена по запросу";
+    document.getElementById("p-sticky-name").textContent = p.sub || CAT[0]; document.getElementById("p-sticky-price").innerHTML = `<div class="price">${p.gift ? "В подарок" : "Цена по запросу"}</div>`;
     const sbtn = document.getElementById("p-sticky-btn"); sbtn.textContent = p.gift ? "Выбрать чехлы" : "Оставить заявку"; sbtn.addEventListener("click", () => { location.href = p.gift ? A.href("catalog") : A.href("contacts", {}, "#form"); });
     document.getElementById("p-sticky-img").src = p.img; document.getElementById("p-sticky-title").textContent = p.title;
     document.getElementById("p-sticky-buy").hidden = true;
@@ -82,7 +237,9 @@
   const cartId = () => `cover:${m.s}:${v.id}`;
   /* маска T8: «{Название}: купить, цена …»; разметка Product + Offer — для цены в выдаче */
   const desc = `Чехлы на сиденья ${A.carName(m)}: ${v.label.toLowerCase()}. ${A.fmt(A.priceOf(m, v))} за комплект на весь салон, пошив по заводскому лекалу, гарантия 1 год, доставка по России.`;
-  const url = A.seo({ title: `Чехлы на ${A.carName(m)}: ${v.label.toLowerCase()}, цена ${A.fmt(A.priceOf(m, v))}`, description: desc,
+  /* длинное название: поколение важнее цены, иначе у товаров разных кузовов один Title; цена остаётся в Description и разметке */
+  const short = `${b.n} ${m.m || f.n}`, lbl = v.label.toLowerCase(), cost = A.fmt(A.priceOf(m, v));
+  const url = A.seo({ title: A.titleFit([`Чехлы на ${A.carName(m)}: ${lbl}, цена ${cost}`, `Чехлы на ${A.carName(m)}: ${lbl}`, `${A.carName(m)}: ${lbl}`, `Чехлы на ${short}: ${lbl}`, `${short}: ${lbl}`]), description: desc,
     keywords: [...new Set([`чехлы на сиденья ${A.carName(m)}`, `чехлы ${v.label.toLowerCase().replace(/,/g, "")} ${A.carName(m)}`, `купить чехлы на ${A.carName(m)}`, `чехлы на ${A.carName(m)} ${A.MAT_NAME[v.mat].toLowerCase()}`])].join(", ").toLowerCase(),
     page: "product", params: { m: m.s, v: v.id }, image: A.varPhoto(m, v), noindex: !known });
   const trail = [["Главная", A.href("index")], ["Модельные авточехлы", A.href("catalog")], [b.n, A.URL.brand(b.id)], [f.n, A.URL.fam(f)]]
@@ -91,14 +248,14 @@
     { "@type": "BreadcrumbList", itemListElement: trail.map(([n, u], i) => ({ "@type": "ListItem", position: i + 1, name: n, item: A.abs(u) })) },
     { "@type": "Product", name: title(), description: desc, image: A.varPhotos(m, v).slice(0, 5).map(A.abs), brand: { "@type": "Brand", name: "Автостиль" }, sku: `${m.s}:${v.id}`,
       offers: { "@type": "Offer", url, priceCurrency: "RUB", price: A.priceOf(m, v), availability: "https://schema.org/MadeToOrder", itemCondition: "https://schema.org/NewCondition" } }] };
-  document.head.insertAdjacentHTML("beforeend", `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`);
-  document.getElementById("p-crumbs").insertAdjacentHTML("beforeend", `<li><a href="${A.href("catalog")}">Модельные авточехлы</a></li><li><a href="${A.URL.brand(b.id)}">${e(b.n)}</a></li><li><a href="${A.URL.fam(f)}">${e(f.n)}</a></li>${f.items.length > 1 ? `<li><a href="${A.URL.pos(m)}">${e([m.g, m.v].filter(Boolean).join(", ") || "Этот кузов")}</a></li>` : ""}<li>${e(v.name)}</li>`);
+  if (!SSR) document.head.insertAdjacentHTML("beforeend", `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`);
+  if (!SSR) document.getElementById("p-crumbs").insertAdjacentHTML("beforeend", `<li><a href="${A.href("catalog")}">Модельные авточехлы</a></li><li><a href="${A.URL.brand(b.id)}">${e(b.n)}</a></li><li><a href="${A.URL.fam(f)}">${e(f.n)}</a></li>${f.items.length > 1 ? `<li><a href="${A.URL.pos(m)}">${e([m.g, m.v].filter(Boolean).join(", ") || "Этот кузов")}</a></li>` : ""}<li>${e(v.name)}</li>`);
   const imgs = A.varPhotos(m, v).slice(0, 5);
   const matVariants = mat => A.VARIANTS.filter(x => x.mat === mat);
   const mats = [1, 2, 0].filter(mt => matVariants(mt).length);
   const gift = `<p class="buybox__gift">${IC.gift}Оплётка руля в цвет салона — в подарок</p>`;
   const msgs = `<div class="opt-block"><p class="opt-block__h">Консультация в мессенджере</p><div class="buybox__msg">${A.msgLinks()}</div></div>`;
-  root.innerHTML = gallery(imgs, `<div class="card__tags"><span class="card__tag card__tag--white">Фото наших работ</span></div>`, true) + `<div class="buybox buybox--cover">
+  if (!SSR) root.innerHTML = gallery(imgs, `<div class="card__tags"><span class="card__tag card__tag--white">Фото наших работ</span></div>`, true) + `<div class="buybox buybox--cover">
     <h1>${e(title())}</h1>
     <div class="buybox__rate"><span class="buybox__stars" role="img" aria-label="Оценка 5 из 5">${IC.star.repeat(5)}</span><button class="buybox__rev" type="button" id="p-rev">Отзывы покупателей</button></div>
     <p class="buybox__lead">Шьём под заказ по заводскому лекалу этой модели: чехлы повторяют контуры сидений и выглядят близко к перетяжке салона.</p>
@@ -110,7 +267,7 @@
     <div class="buybox__custom"><p>Не нашли свой материал или цвет? Соберите чехлы в конструкторе</p><a class="btn btn--ghost btn--sm" href="${A.URL.custom(m)}">Открыть конструктор</a></div>
     <div class="opt-block"><p class="opt-block__h">Дополнительно к заказу</p><div class="addons">
       <label class="toggle"><div><b>Автоковрики EVA в цвет чехлов</b><span>Добавим к заказу, стоимость уточнит менеджер</span></div><span class="tp">по запросу</span><input type="checkbox" data-opt="mats"><i class="sw"></i></label>
-      <label class="toggle"><div><b>Установка в вашем городе</b><span>Найдём установщика в вашем городе, стоимость уточнит менеджер</span></div><span class="tp">по запросу</span><input type="checkbox" data-opt="install"><i class="sw"></i></label>
+      <label class="toggle"><div><b>Установка в вашем городе</b><span>Найдём установщика в вашем городе, стоимость уточнит менеджер. <a href="${A.href("ustanovka")}">Подробнее</a></span></div><span class="tp">по запросу</span><input type="checkbox" data-opt="install"><i class="sw"></i></label>
     </div></div>
     <ul class="buybox__facts">
       <li>${IC.clock}<span>Экспресс-пошив за 3 дня — уточните у менеджера</span></li>
@@ -119,11 +276,40 @@
       <li>${IC.shield}<span>Защита от пыли и грязи 90 % салона</span></li>
     </ul>
   </div>`;
-  const upd =() => { const pt = document.getElementById("p-total"); pt.querySelector(".price__now").textContent = A.fmt(total()); document.getElementById("p-sticky-price").textContent = A.fmt(total()); };
-  document.querySelectorAll("[data-opt]").forEach(i => i.addEventListener("change", () => { opt[i.dataset.opt] = i.checked; }));
+  const upd =() => { const pt = document.getElementById("p-total"); pt.querySelector(".price__now").textContent = A.fmt(total()); document.getElementById("p-sticky-price").innerHTML = A.priceHtml(m, v); };
+  const itemId = () => cartId() + (opt.mats ? ":mats" : "") + (opt.install ? ":install" : "");
+  const inCart = () => A.Cart.items.find(i => i.id === itemId() && !i.gone);
+  /* «В корзину» в колонке и в нижней панели: после добавления вместо кнопки счётчик этой позиции. Разметку счётчика добавляет скрипт, серверный вывод не меняется */
+  const MAX_QTY = A.MAX_QTY;
+  const steppers = ["p-add", "p-sticky-btn"].map(id => {
+    const btn = document.getElementById(id), box = document.createElement("div");
+    box.className = "buy-qty"; box.hidden = true;
+    box.innerHTML = `<button type="button" class="buy-qty__btn" data-step="-1" aria-label="Убрать одну штуку">−</button><span class="buy-qty__val" aria-live="polite"><small>В корзине</small><b></b></span><button type="button" class="buy-qty__btn" data-step="1" aria-label="Добавить ещё одну штуку">+</button>`;
+    btn.parentNode.insertBefore(box, btn.nextSibling);
+    box.addEventListener("click", ev => {
+      const b = ev.target.closest("[data-step]"), it = inCart();
+      if (!b || !it) return;
+      const q = it.qty + +b.dataset.step;
+      if (q < 1) A.Cart.remove(it.id); else A.Cart.setQty(it.id, q);
+    });
+    return { btn, box, val: box.querySelector("b"), plus: box.querySelector('[data-step="1"]') };
+  });
+  const showQty = () => {
+    const it = inCart(), q = it ? it.qty : 0, was = document.activeElement;
+    steppers.forEach(s => {
+      s.btn.hidden = !!q; s.box.hidden = !q; s.val.textContent = q; s.plus.disabled = q >= MAX_QTY;
+      if (q && was === s.btn) s.plus.focus({ preventScroll: true });   // фокус клавиатуры не теряем, когда кнопка и счётчик меняются местами
+      if (!q && s.box.contains(was)) s.btn.focus({ preventScroll: true });
+    });
+  };
+  const readOpts = () => document.querySelectorAll("[data-opt]").forEach(i => { opt[i.dataset.opt] = i.checked; });
+  document.querySelectorAll("[data-opt]").forEach(i => i.addEventListener("change", () => { readOpts(); showQty(); }));
+  document.addEventListener("cart:change", showQty);
+  addEventListener("pageshow", () => { readOpts(); showQty(); });   // браузер мог вернуть отметки допов, а корзина могла поменяться на другой странице
   const add = go => {
+    if (go && inCart()) { location.href = A.href("cart"); return; }   // уже лежит: счётчик показал количество, лишнюю штуку не добавляем
     const extra = (opt.mats ? ["+ автоковрики EVA в цвет чехлов (по запросу)"] : []).concat(opt.install ? ["+ установка в вашем городе (по запросу)"] : []);
-    A.Cart.add({ id: cartId() + (opt.mats ? ":mats" : "") + (opt.install ? ":install" : ""), title: `Чехлы на ${A.carName(m)}`, sub: `${v.name} · ${m.y || "все годы"}${extra.length ? " · " + extra.join(", ") : ""}`, price: total(), img: A.seatPhoto(v), url: A.URL.product(m, v), model: m.s, opts: { ...opt } });
+    A.Cart.add({ id: itemId(), title: `Чехлы на ${A.carName(m)}`, sub: `${v.name} · ${m.y || "все годы"}${extra.length ? " · " + extra.join(", ") : ""}`, price: total(), img: A.varPhoto(m, v), url: A.URL.product(m, v), model: m.s, opts: { ...opt } });
     if (go) location.href = A.href("cart"); else A.toast("Добавлено в корзину", ["Перейти", A.href("cart")]);
   };
   document.getElementById("p-add").addEventListener("click", () => add(false));
@@ -131,10 +317,10 @@
   document.getElementById("p-sticky-btn").addEventListener("click", () => add(false));
   document.getElementById("p-sticky-name").textContent = "За комплект на весь салон";
   document.getElementById("p-sticky-title").textContent = "Чехлы на " + A.carName(m);
-  document.getElementById("p-sticky-img").src = A.seatPhoto(v);
+  document.getElementById("p-sticky-img").src = A.varPhoto(m, v);
   document.getElementById("p-sticky-buy").addEventListener("click", () => add(true));
-  upd();
-  tabsBox.innerHTML = `<div class="tabs"><button class="is-active" data-tab="d">Описание</button><button data-tab="s">Характеристики</button><button data-tab="k">Комплект</button><button data-tab="i">Установка</button><button data-tab="r">Отзывы</button></div>
+  upd(); readOpts(); showQty();
+  if (!SSR) tabsBox.innerHTML = `<div class="tabs"><button class="is-active" data-tab="d">Описание</button><button data-tab="s">Характеристики</button><button data-tab="k">Комплект</button><button data-tab="i">Установка</button><button data-tab="r">Отзывы</button></div>
     <div class="tab-pane is-active" data-pane="d"><div class="prose"><p>Комплект чехлов на ${e(A.carName(m))}${m.v ? " (" + e(m.v) + ")" : ""}: ${e(v.name.toLowerCase())}. Шьётся под заказ по заводскому лекалу этой модели, поэтому повторяет контуры и линии сидений, не пузырится и не собирается гармошкой.</p><h2>Что важно знать</h2><ul><li>Лекало под конкретную марку, модель и кузов — комплектацию салона уточнит менеджер</li><li>Специальные разрывные швы не мешают срабатыванию подушек безопасности</li><li>Экокожа «Аригон» 1,05–1,15 мм, цикл истирания — не менее 40 000 раз</li><li>Качественные лекала — близко к перетяжке салона</li><li>Защита от пыли и грязи 90 % салона</li><li>Свой дизайн на выбор, без наценки — соберите его <a class="link" href="${A.URL.custom(m)}">в конструкторе</a></li><li>На некоторых моделях отверстия под подголовники и мелкие кнопки не прорезаны — их прорезают при установке</li></ul>
       <h2>Доставка, оплата и гарантия</h2><div class="buybox__info">
       <div>${IC.truck}<div>Доставка по России<span>DPD, EMS Почта России · по тарифу транспортной компании</span><span>Ваш город: <b data-city-name>${e(window.AS_city())}</b> <button class="buybox__city" type="button" data-city-open>Изменить</button></span></div><em>от 250 ₽</em></div>
@@ -150,8 +336,10 @@
     <div class="tab-pane" data-pane="r"><div class="reviews"><article class="review"><div class="review__head"><div class="avatar">П</div><div><b>Петр</b><span>Улан-Удэ · 12.06.2022</span></div></div><p>Без проблем обговорили с менеджером цвет и текстуру чехлов. Установил самостоятельно, для удобства снимал сиденья. Мне пошили отличные чехлы, я доволен качеством материала и изготовления.</p><span class="review__car">Chevrolet Niva</span></article><article class="review"><div class="review__head"><div class="avatar">Ю</div><div><b>Юлия</b><span>Новосибирск · 24.02.2022</span></div></div><p>Качественные чехлы. Не везде есть отверстия, и чтобы их надеть, пришлось вытаскивать кресла из машины, очень трудоёмкий процесс. Но не жалею, салон как новенький. Рекомендую.</p><span class="review__car">Toyota Gaia</span></article></div><p class="small muted" style="margin-top:12px">Отзывы покупателей с сайта 1avtochehol.ru. <a class="link" href="${A.href("reviews")}">Все отзывы</a></p></div>`;
   /* «Отзывы покупателей» под заголовком: открыть вкладку и плавно прокрутить к блоку */
   document.getElementById("p-rev").addEventListener("click", () => { tabsBox.querySelector('[data-tab="r"]').click(); tabsBox.scrollIntoView({ behavior: "smooth", block: "start" }); });
+  if (!SSR) {
   document.getElementById("p-more-title").textContent = `Другие сочетания на ${A.carName(m)}`;
   document.getElementById("p-more-link").href = A.URL.pos(m); document.getElementById("p-more-link").textContent = "Все варианты";
   document.getElementById("p-more").innerHTML = A.VARIANTS.filter(x => x.id !== v.id).slice(0, 5).map(x => A.coverCard(m, x)).join("");
+  }
   bindGallery(); bindTabs(); bindSticky(); A.badges();
 })();

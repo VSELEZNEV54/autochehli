@@ -1,17 +1,18 @@
 /* Хаб марки (шаблон T3): модели (семейства) с поколениями */
 (function () {
-  const A = window.AS, b = A.BRAND[A.qs("b")] || A.BRAND.toyota;
+  const A = window.AS, b = A.BRAND[A.qs("b")] || A.BRAND.toyota, SSR = window.AS_SSR;  // SSR: контейнеры уже вывел сервер (lib/pages.php, as_page_brand)
   const fams = b.fams, min = Math.min(...fams.map(f => f.min));
   /* Название марки по-русски и популярность по продажам — из Битрикса (js/catalog-extra.js, tools/build_brand_data.py) */
   const CAT = window.AS_CATALOG || {}, ru = (CAT.ru || {})[b.id] || b.n, popAll = (CAT.pop || {})[b.id] || [];
   /* SEO-маска T3 (план/Шаблоны страниц для Битрикса) с решениями 29.10.2026: без числа моделей, срока пошива и «установки в Москве».
-     Title до 75 знаков — иначе без « | Автостиль». */
+     Title до 70 знаков — иначе без « | Автостиль». */
   A.seo({
-    title: `Чехлы на сиденья ${ru}: модельные авточехлы на ${b.n}, цена от ${A.fmt(min)}`,
+    title: A.titleFit([`Чехлы на сиденья ${ru}: модельные авточехлы на ${b.n}, цена от ${A.fmt(min)}`, `Чехлы на сиденья ${ru}: авточехлы на ${b.n}, цена от ${A.fmt(min)}`, `Чехлы на сиденья ${ru}, цена от ${A.fmt(min)}`]),
     description: `Модельные чехлы на сиденья ${ru}: экокожа, алькантара, жаккард. Пошив по заводским лекалам, гарантия 1 год, оплата при получении, доставка по России.`,
     keywords: [...new Set([`чехлы на сиденья ${ru}`, `авточехлы ${ru}`, `чехлы на сиденья ${b.n}`, `авточехлы на ${b.n}`, `модельные чехлы ${b.n}`, `купить чехлы на ${ru}`])].join(", ").toLowerCase(),
     page: "brand", params: { b: b.id }, noindex: !A.BRAND[A.qs("b")]
   });
+  if (!SSR) {
   document.querySelector("[data-crumb]").textContent = b.n;
   document.getElementById("b-logo").src = A.brandLogo(b.id); document.getElementById("b-logo").alt = b.n;
   document.getElementById("b-h1").textContent = "Авточехлы на " + b.n;
@@ -23,6 +24,7 @@
     const box = document.getElementById("b-pop");
     box.innerHTML = `<div class="section__head" style="margin-bottom:16px"><div><h2 style="font-size:1.5rem">Чаще всего заказывают</h2><p>Модели ${A.esc(b.n)}, на которые мы чаще всего шьём чехлы.</p></div></div><div class="fams">${popFams.map(A.famCard).join("")}</div>`;
     box.hidden = false;
+  }
   }
   const q = document.getElementById("b-q"), sort = document.getElementById("b-sort"), box = document.getElementById("b-fams"), cnt = document.getElementById("b-count");
   const norm = s => (s || "").toLowerCase().replace(/ё/g, "е");
@@ -85,20 +87,20 @@
     if (vinSlugs) list = list.filter(f => f.items.some(m => vinSlugs.has(m.s)));
     else if (byYear && VIN) list = list.filter(f => f.items.some(m => VIN.yearMatch(m, vinYear)));
     const popRank = id => { const i = popAll.indexOf(id); return i < 0 ? 99 : i; };
-    if (sort.value === "pop") list = list.slice().sort((x, y) => popRank(x.id) - popRank(y.id) || x.n.localeCompare(y.n));
+    if (sort.value === "pop") list = list.slice().sort((x, y) => popRank(x.id) - popRank(y.id) || x.n.localeCompare(y.n, "ru"));
     else if (sort.value === "new") list = list.slice().sort((x, y) => (y.from || 0) - (x.from || 0) || y.items[0].yr - x.items[0].yr);
-    else if (sort.value === "price") list = list.slice().sort((x, y) => x.min - y.min || x.n.localeCompare(y.n));
-    else if (sort.value === "name") list = list.slice().sort((x, y) => x.n.localeCompare(y.n));
+    else if (sort.value === "price") list = list.slice().sort((x, y) => x.min - y.min || x.n.localeCompare(y.n, "ru"));
+    else if (sort.value === "name") list = list.slice().sort((x, y) => x.n.localeCompare(y.n, "ru"));
     else if (sort.value === "count") list = list.slice().sort((x, y) => y.items.length - x.items.length);
     cnt.textContent = `${list.length} из ${fams.length}`;
     box.innerHTML = list.map(A.famCard).join("") || `<div class="empty">Модель не найдена. Позвоните <a class="link" href="tel:88007753260">8 (800) 775-32-60</a> — подскажем, есть ли лекало.</div>`;
   }
   q.addEventListener("input", render); sort.addEventListener("change", render);
-  if (A.qs("vin")) { vinIn.value = A.qs("vin"); findVin(vinIn.value); } else render();
+  if (A.qs("vin")) { vinIn.value = A.qs("vin"); findVin(vinIn.value); } else if (!SSR) render();
   /* SEO-текст по образцу главной */
   const e = A.esc, all = fams.flatMap(f => f.items);
   const famLine = f => { const st = A.famStats(f); return `<a href="${A.URL.fam(f)}">${e(b.n)} ${e(f.n)}</a> (${e(st.years)})`; };
-  document.getElementById("b-seo").innerHTML = A.seoBlock({
+  if (!SSR) document.getElementById("b-seo").innerHTML = A.seoBlock({
     h2: `Чехлы на сиденья ${e(b.n)} от производителя`,
     intro: `<p>«Автостиль» с 2009 года шьёт модельные чехлы на сиденья ${e(b.n)} на собственном производстве в Новосибирске. В каталоге — модели ${e(b.n)} разных поколений: для каждого поколения и варианта салона своя выкройка. Поэтому чехлы повторяют контуры и линии сидений, сохраняют доступ к регулировкам, подлокотникам и креплениям, не пузырятся и не собираются гармошкой. Купить авточехлы ${e(b.n)} можно напрямую у производителя, с доставкой по всей России и в страны СНГ.</p>`,
     parts: [
@@ -127,11 +129,11 @@
     box.innerHTML = `<div class="section__head"><div><h2>Статьи о ${e(b.n)}</h2></div><a class="btn btn--more" href="${A.href("blog")}">Все статьи</a></div><div class="posts">${posts.map(A.postCard).join("")}</div>`;
     box.hidden = false;
   }
-  document.getElementById("b-strip").innerHTML = A.perkStrip();
+  if (!SSR) document.getElementById("b-strip").innerHTML = A.perkStrip();
   /* Разметка T3: хлебные крошки и список моделей марки */
   const abs = A.abs;
   const ld = { "@context": "https://schema.org", "@graph": [
     { "@type": "BreadcrumbList", itemListElement: [["Главная", A.href("index")], ["Модельные авточехлы", A.href("catalog")], [b.n, A.URL.brand(b.id)]].map(([n, u], i) => ({ "@type": "ListItem", position: i + 1, name: n, item: abs(u) })) },
     { "@type": "ItemList", name: `Авточехлы на ${b.n}`, itemListElement: fams.map((f, i) => ({ "@type": "ListItem", position: i + 1, name: `${b.n} ${f.n}`, url: abs(A.URL.fam(f)) })) }] };
-  document.head.insertAdjacentHTML("beforeend", `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`);
+  if (!SSR) document.head.insertAdjacentHTML("beforeend", `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`);
 })();

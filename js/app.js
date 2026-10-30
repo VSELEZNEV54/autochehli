@@ -51,16 +51,16 @@
     f.items.push(m);
   });
   Object.values(FAMILIES).forEach(f => {
-    f.items.sort((a, b) => (b.yr || 0) - (a.yr || 0) || a.s.localeCompare(b.s));
+    f.items.sort((a, b) => (b.yr || 0) - (a.yr || 0) || a.s.localeCompare(b.s, "ru"));
     f.min = Math.min(...f.items.map(m => m.p[0]));
     const yrs = f.items.map(m => m.yr).filter(Boolean);
     f.from = yrs.length ? Math.min(...yrs) : 0;
   });
-  BRANDS.forEach(b => { b.fams = Object.values(FAMILIES).filter(f => f.b === b.id).sort((x, y) => x.n.localeCompare(y.n)); b.cnt = MODELS.filter(m => m.b === b.id).length; });
+  BRANDS.forEach(b => { b.fams = Object.values(FAMILIES).filter(f => f.b === b.id).sort((x, y) => x.n.localeCompare(y.n, "ru")); b.cnt = MODELS.filter(m => m.b === b.id).length; });
   const sortedBrands = () => BRANDS.slice().sort((a, b) => {
     const ia = POPULAR.indexOf(a.id), ib = POPULAR.indexOf(b.id);
     if (ia !== -1 || ib !== -1) return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
-    return a.n.localeCompare(b.n);
+    return a.n.localeCompare(b.n, "ru");
   });
 
   /* ---------- стандартные сочетания чехлов на любую модель ---------- */
@@ -94,20 +94,10 @@
   const VAR = Object.fromEntries(VARIANTS.map(v => [v.id, v]));
   /* «Чехлы на популярные модели» — главная и страница дилеров: [лекало, карточка] */
   const HITS = [["toyota_camry-xv70", "alc-rhomb-full"], ["lada_vesta", "perf-grey-h"], ["hyundai_solaris-2", "rhomb-grey"], ["kia_rio-iv", "perf-red-h"], ["renault_duster", "perf-grey-h"], ["toyota_rav4-new", "alc-rhomb-grey"], ["hyundai_creta", "perf-blue-h"], ["kia_sportageiv-re", "alc-rhomb-grey"], ["lada_granta-re", "perf-orange-h"], ["volkswagen_polo", "rhomb-grey"]];
-  /* Доплаты к комплекту — розничные цены из дорожной карты продаж. Только для конструктора, в карточке товара их нет (решение клиента 23.10).
-     when(v) — к каким карточкам применимо (на жаккарде настрочек не делают, на ромбе 35 мм отделочная нить и двойная настрочка невозможны, боковины из перфорации не шьют) */
-  const ADDONS = [
-    { id: "pillow-head", name: "Подушка под голову", note: "В цвет комплекта, на молнии, крепится к подголовнику", price: 600 },
-    { id: "pillow-sq", name: "Подушка квадратная", note: "В цвет комплекта, на молнии", price: 600 },
-    { id: "thread", name: "Строчка цветной отделочной нитью", note: "На горизонтальных полосах. Цвет нити уточнит менеджер", price: 600, when: v => v.stitch === "h" },
-    { id: "double", name: "Двойная настрочка", note: "Две параллельные строчки на полосах", price: 400, when: v => v.stitch === "h" },
-    { id: "vseams", name: "Вертикальные швы отделочной нитью", note: "Все видимые швы комплекта — цветной нитью", price: 600, when: v => v.mat !== 0 },
-    { id: "sides", name: "Боковины в цвет серединки", note: "Лицевая часть сидений единым цветом", price: 700, when: v => v.mat === 2 && !v.full }
-  ];
-  const addonsFor = v => ADDONS.filter(a => !a.when || a.when(v));
 
   const brandName = id => (BRAND[id] || {}).n || id;
-  const brandLogo = id => ASSETS + "brands/" + ((BRAND[id] || {}).logo || "toyota.jpg");
+  /* Логотип — файл из assets/brands; у новой марки из Битрикса — готовый путь /upload/… (живой каталог) */
+  const brandLogo = id => { const l = (BRAND[id] || {}).logo || "toyota.jpg"; return l.charAt(0) === "/" ? l : ASSETS + "brands/" + l; };
   const genName = m => [m.m, m.g].filter(Boolean).join(" ");
   const carName = m => brandName(m.b) + " " + genName(m);
   const yearsText = m => m.y || "все годы";
@@ -134,12 +124,18 @@
   const posPhoto = m => ASSETS + "photos/" + PHOTOS[hash(m.s) % PHOTOS.length] + ".jpg";
   /* Карточка 900×1200 на лекало и вариант (tools/mp_cards.py); в галерее за ней — фото этого чехла, а пока фото нет — кресло */
   const varPhoto = (m, v) => ASSETS + "cards/" + m.s + "/" + v.id + ".webp";
-  const seatPhoto = v => ASSETS + "seats/" + v.id + ".webp";   // и для мелких миниатюр: текст карточки там не прочитать
+  const seatPhoto = v => ASSETS + "seats/" + v.id + ".webp";
   const varPhotos = (m, v) => [varPhoto(m, v)].concat(v.photos.length ? v.photos.map(n => ASSETS + "photos/" + n + ".jpg") : seatPhoto(v));
   /* Рендеры кузовов (assets/cars, белый фон, 16:10): лекало → файл, js/cars.js */
   const CAR_RENDERS = window.AS_CARS || {};
-  const carRender = m => CAR_RENDERS[m.s] ? ASSETS + "cars/" + CAR_RENDERS[m.s] + ".png?v=wm1" : "";   /* ?v= — сброс кэша после простановки метки (tools/watermark.py) */
-  const priceOf = (m, v) => (m ? m.p : [7975, 9375, 9975])[v.mat] + (v.extra || 0);
+  const carRender = m => CAR_RENDERS[m.s] ? ASSETS + "cars/" + CAR_RENDERS[m.s] + ".webp" : "";
+  /* Карточки с ромбом — своя цена лекала из Битрикса (m.pr: PERF_ROMB_35_MM, ALCANTARA_35_MM_PRICE), её же считает CRM операторов;
+     свойство пусто — прежняя формула: цена материала + extra. То же в backend/app/catalog.py и local/routes/lib/catalog.php */
+  const ROMB_PR = { "rhomb-grey": [0, 0], "alc-rhomb-grey": [1, 0], "alc-rhomb-full": [1, 700] };
+  const priceOf = (m, v) => {
+    const r = m && m.pr && ROMB_PR[v.id];
+    return r && m.pr[r[0]] ? m.pr[r[0]] + r[1] : (m ? m.p : minPrices(MODELS))[v.mat] + (v.extra || 0);
+  };
   /* Старая цена комплекта — как на старом сайте: зачёркнутая цена модели (обычно 12 975 ₽, поле «o» в data.js) + те же доплаты варианта */
   const oldPriceOf = (m, v) => { const o = m && m.o ? m.o + (v.extra || 0) : 0; return o > priceOf(m, v) ? o : 0; };
   const discountOf = (m, v) => { const o = oldPriceOf(m, v); return o ? Math.round((1 - priceOf(m, v) / o) * 100) : 0; };
@@ -147,6 +143,8 @@
     const o = oldPriceOf(m, v), now = `<span class="price__now">${fmt(priceOf(m, v))}</span>`;
     return o ? `<div class="price price--sale"${attrs}>${now}<span class="price__was"><s>${fmt(o)}</s><b class="price__off">−${discountOf(m, v)}\u00a0%</b></span></div>` : `<div class="price"${attrs}>${now}</div>`;
   };
+  /* Первая маска, которая влезает в 70 знаков, иначе последняя. Первые — маски таблицы пользователя, остальные — для длинных названий. Как as_title_fit в lib/pages.php */
+  const titleFit = masks => masks.find(t => t.length <= 70) || masks[masks.length - 1];
   /* ---------- адреса страниц ----------
      Прототип: page.html?k=v. В шаблоне Битрикса window.AS_LINKS — карта из bitrix/urls.json, и те же страницы
      получают адреса сайта (/avto/toyota/, /company/ …). Ссылки на страницы строим только через href() и URL_. */
@@ -193,7 +191,9 @@
      description, keywords, robots, canonical и Open Graph. Адрес — всегда адрес сайта из bitrix/urls.json
      (в прототипе карту кладёт build.py в window.AS_SITE_LINKS). page и params — как у href().
      abs(ссылка из href() или assets/…) — тот же адрес сайта для разметки schema.org.
-     noindex — для страницы с неизвестным параметром (на сайте такие адреса отдают 404). */
+     noindex — для страницы с неизвестным параметром (на сайте такие адреса отдают 404) или без карточек.
+     window.AS_SSR — страницу вывел сервер (local/routes/lib/pages.php): мета и разметка уже в HTML, здесь только адрес.
+     Страницы с AS_SSR не строят заново контейнеры, крошки и JSON-LD — иначе задвоятся. */
   function abs(u) {
     const L = LINKS || window.AS_SITE_LINKS, m = /^([a-z0-9-]+)\.html(?:\?([^#]*))?/.exec(u || "");
     if (L && m) {
@@ -205,6 +205,7 @@
   }
   function seo({ title, description, keywords = "", page, params = {}, image, noindex }) {
     const url = abs(href(page, params));
+    if (window.AS_SSR) return url;
     const tag = (attr, key, val) => {
       let el = document.head.querySelector(`meta[${attr}="${key}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, key); document.head.appendChild(el); }
@@ -251,7 +252,7 @@
     try {
       const r = await fetch(API + path, { method: body ? "POST" : "GET", headers: body ? { "Content-Type": "application/json" } : {}, body: body ? JSON.stringify(body) : undefined, signal: ctrl.signal, credentials: "same-origin" });
       let data = null; try { data = await r.json(); } catch (e) {}
-      if (!r.ok) return { ok: false, status: r.status, errors: (data && data.errors) || [], error: (data && typeof data.detail === "string" && data.detail) || `Не удалось отправить — ${PHONE_TEXT}, оформим по телефону.` };
+      if (!r.ok) return { ok: false, status: r.status, data, errors: (data && data.errors) || [], error: (data && typeof data.detail === "string" && data.detail) || `Не удалось отправить — ${PHONE_TEXT}, оформим по телефону.` };
       return { ok: true, data };
     } catch (e) {
       return { ok: false, status: 0, errors: [], error: `Нет связи с сервером. Проверьте интернет или ${PHONE_TEXT}.` };
@@ -280,15 +281,37 @@
 
   /* ---------- корзина и избранное ---------- */
   const store = { get(k) { try { return JSON.parse(localStorage.getItem(k) || "[]"); } catch (e) { return []; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+  /* Штук в одной позиции: больше сервер не примет (Item.qty в backend/app/schemas.py) */
+  const MAX_QTY = 10;
+  const savedCart = () => store.get("as_cart4").map(i => i.qty > MAX_QTY ? Object.assign(i, { qty: MAX_QTY }) : i);
   const Cart = {
-    items: store.get("as_cart4"),
+    /* gone — позиции больше нет в каталоге: остаётся в списке с кнопкой «Удалить», в сумму и заказ не идёт */
+    items: savedCart(),
     save() { store.set("as_cart4", this.items); badges(); document.dispatchEvent(new CustomEvent("cart:change")); },
-    add(item) { const ex = this.items.find(i => i.id === item.id); if (ex) ex.qty += item.qty || 1; else this.items.push(Object.assign({ qty: 1 }, item)); this.save(); },
+    add(item) { const ex = this.items.find(i => i.id === item.id); if (ex) { ex.qty = Math.min(MAX_QTY, ex.qty + (item.qty || 1)); ex.price = item.price; delete ex.gone; } else this.items.push(Object.assign({ qty: 1 }, item)); this.save(); },
     remove(id) { this.items = this.items.filter(i => i.id !== id); this.save(); },
-    setQty(id, q) { const it = this.items.find(i => i.id === id); if (it) { it.qty = Math.max(1, q); this.save(); } },
+    setQty(id, q) { const it = this.items.find(i => i.id === id); if (it) { it.qty = Math.min(MAX_QTY, Math.max(1, q)); this.save(); } },
     clear() { this.items = []; this.save(); },
-    count() { return this.items.reduce((n, i) => n + i.qty, 0); },
-    total() { return this.items.reduce((n, i) => n + i.price * i.qty, 0); }
+    count() { return this.items.reduce((n, i) => n + (i.gone ? 0 : i.qty), 0); },
+    /* Штук товара в корзине для плитки: вместе с позициями того же товара с допами (cover:…:mats) */
+    qtyOf(id) { return this.items.reduce((n, i) => n + (!i.gone && (i.id === id || i.id.startsWith(id + ":")) ? i.qty : 0), 0); },
+    /* Страница вернулась из кэша браузера или корзину поменяли в другой вкладке */
+    reload() { this.items = savedCart(); badges(); document.dispatchEvent(new CustomEvent("cart:change")); },
+    total() { return this.items.reduce((n, i) => n + (i.gone ? 0 : i.price * i.qty), 0); },
+    /* Цена в localStorage — на момент добавления, а каталог живой. Сверка при открытии корзины: чехлы и аксессуары — по каталогу;
+       у комплекта из конструктора — только наличие лекала, его цену считает сервер при заказе (ответ 409). Возвращает, поменялась ли цена. */
+    sync() {
+      let saved = false, priced = false;
+      this.items.forEach(i => {
+        const kind = i.id.split(":")[0], fresh = kind === "cover" || kind === "product" ? resolveItem(i.id) : null;
+        const gone = kind === "custom" ? !BY_SLUG[i.model] : (kind === "cover" || kind === "product") && !fresh;
+        if (fresh && fresh.price !== i.price) { i.price = fresh.price; saved = priced = true; }
+        if (fresh && fresh.img !== i.img) { i.img = fresh.img; saved = true; }   // позиция могла лечь в корзину со старым фото
+        if (!!i.gone !== gone) { if (gone) i.gone = true; else delete i.gone; saved = true; }
+      });
+      if (saved) this.save();
+      return priced;
+    }
   };
   const Fav = {
     items: store.get("as_fav4"),
@@ -300,12 +323,20 @@
     $$("[data-cart-count]").forEach(el => { el.textContent = Cart.count(); el.hidden = !Cart.count(); });
     $$("[data-fav-count]").forEach(el => { el.textContent = Fav.items.length; el.hidden = !Fav.items.length; });
     $$("[data-fav]").forEach(el => el.classList.toggle("is-on", Fav.has(el.dataset.fav)));
+    $$("[data-add]").forEach(el => {
+      const q = Cart.qtyOf(el.dataset.add), n = el.querySelector("b");
+      el.classList.toggle("is-added", q > 0); el.setAttribute("aria-label", addLabel(q));
+      if (q && n) n.textContent = q; else if (q) el.insertAdjacentHTML("afterbegin", `<b>${q}</b>`); else if (n) n.remove();
+    });
   }
+  const addLabel = q => q ? `В корзине: ${q}. Добавить ещё` : "В корзину";
+  addEventListener("pageshow", e => { if (e.persisted) Cart.reload(); });
+  addEventListener("storage", e => { if (e.key === "as_cart4") Cart.reload(); });
   function resolveItem(id) {
     const [kind, a, b] = id.split(":");
     if (kind === "cover") {
       const m = BY_SLUG[a], v = VAR[b]; if (!m || !v) return null;
-      return { id, title: `Чехлы на ${carName(m)}`, sub: `${v.name} · ${yearsText(m)}`, price: priceOf(m, v), img: seatPhoto(v), url: URL_.product(m, v) };
+      return { id, title: `Чехлы на ${carName(m)}`, sub: `${v.name} · ${yearsText(m)}`, price: priceOf(m, v), img: varPhoto(m, v), url: URL_.product(m, v) };
     }
     if (kind === "product") {
       const p = (window.AS_PRODUCTS || []).find(x => x.id === a); if (!p) return null;
@@ -315,26 +346,27 @@
   }
   document.addEventListener("click", e => {
     const f = e.target.closest("[data-fav]");
-    if (f) { e.preventDefault(); e.stopPropagation(); const it = resolveItem(f.dataset.fav); if (!it) return; toast(Fav.toggle(it) ? "Добавлено в избранное" : "Убрано из избранного"); return; }
+    if (f) { e.preventDefault(); e.stopPropagation(); const it = resolveItem(f.dataset.fav) || (Fav.has(f.dataset.fav) ? { id: f.dataset.fav } : null); if (!it) return; toast(Fav.toggle(it) ? "Добавлено в избранное" : "Убрано из избранного"); return; }
     const a = e.target.closest("[data-add]");
     if (a) {
       e.preventDefault(); const it = resolveItem(a.dataset.add); if (!it) return;
+      const full = (Cart.items.find(i => i.id === it.id) || {}).qty >= MAX_QTY;
       Cart.add(it); a.classList.add("is-added");
-      if (a.dataset.addGo !== undefined) location.href = href("cart"); else toast("Добавлено в корзину", ["Перейти", href("cart")]);
+      if (a.dataset.addGo !== undefined) location.href = href("cart"); else toast(full ? `В одной позиции не больше ${MAX_QTY} штук` : "Добавлено в корзину", ["Перейти", href("cart")]);
     }
   });
 
   /* ---------- карточки ---------- */
   const colorDot = c => `background:linear-gradient(135deg, ${c[0]} 0 50%, ${c[1]} 50% 100%)`;
   const coverCard = (m, v, opts = {}) => {
-    const url = URL_.product(m, v), id = `cover:${m.s}:${v.id}`;
+    const url = URL_.product(m, v), id = `cover:${m.s}:${v.id}`, inCart = Cart.qtyOf(id);
     return `<article class="card">
       <a class="card__media card__media--mp" href="${url}"><img src="${varPhoto(m, v)}" alt="Чехлы на ${esc(carName(m))}, ${esc(v.name)}" loading="lazy" width="900" height="1200"></a>
       <button type="button" class="card__fav" aria-label="В избранное" data-fav="${id}">${ICON.heart}</button>
       <div class="card__body">
         <a class="card__title" href="${url}">Чехлы на ${esc(carName(m))}, ${esc(v.name.toLowerCase())}</a>
         <div class="card__meta"><span>${esc(opts.salon && m.v ? m.v + " · " + yearsText(m) : yearsText(m))}</span><span class="card__ready">Заводские лекала</span></div>
-        <div class="card__foot">${priceHtml(m, v)}<button type="button" class="cart-btn" data-add="${id}" aria-label="В корзину">${ICON.cart}</button></div>
+        <div class="card__foot">${priceHtml(m, v)}<button type="button" class="cart-btn${inCart ? " is-added" : ""}" data-add="${id}" aria-label="${addLabel(inCart)}">${inCart ? `<b>${inCart}</b>` : ""}${ICON.cart}</button></div>
       </div>
     </article>`;
   };
@@ -346,7 +378,7 @@
     ['<path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.8 1.6-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.6 1.7-1.6H16a5 5 0 0 0 5-5c0-4-4-7.3-9-7.3z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15" cy="7.5" r="1.2"/>', "Свой дизайн на выбор", "без наценки"]
   ].map(([i, t, s]) => `<div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${i}</svg><div><b>${t}</b>${s}</div></div>`).join("")}</div>`;
   /* Блок «Индивидуальный пошив» — один на весь сайт (главная, каталог, марки, модели, подборки); в сетке карточек встаёт на всю ширину */
-  const customCard = (m, name) => `<div class="studio">
+  const customCard = (m, name, priced = m || BY_SLUG["toyota_camry-xv70"]) => `<div class="studio">
       <div class="studio__body">
         <span class="tag tag--yellow">Индивидуальный пошив</span>
         <h2>Не нашли свой вариант? Соберите чехлы в конструкторе</h2>
@@ -359,7 +391,7 @@
         <div class="studio__panel">
           <b>Ваш дизайн · ${esc(name || (m ? carName(m) : "Toyota Camry XV70"))}</b>
           <div class="row"><span>Боковины / вставки</span><div class="pal"><i class="on" style="background-image:url('${SW("eco-black")}')"></i><i style="background-image:url('${SW("alca-grey")}')"></i><i style="background-image:url('${SW("eco-beige")}')"></i><i style="background-image:url('${SW("perf-black")}')"></i></div></div>
-          <div class="row"><span>Чёрная экокожа + светлая алькантара</span><span class="price">от ${fmt(m ? m.p[2] : 9975)}</span></div>
+          ${priced ? `<div class="row"><span>Чёрная экокожа + светлая алькантара</span><span class="price">от ${fmt(priced.p[2])}</span></div>` : ""}
         </div>
       </div>
     </div>`;
@@ -370,7 +402,8 @@
     materials: name => ["Материалы: экокожа, алькантара, жаккард", `<p>Боковины чехлов${name ? " на " + esc(name) : ""} шьём из экокожи «Аригон» — полиуретановое покрытие на хлопковой основе толщиной 1,05–1,15 мм, цикл истирания не менее 40 000 раз. Для вставок выберите гладкую экокожу, экокожу с перфорацией, алькантару или жаккард. Все материалы гипоаллергенные, «дышащие» и выдерживают морозы до −30 °C. Экокожа легко чистится, алькантара приятна на ощупь, а жаккардовые вставки — самый доступный вариант комплекта.</p>`],
     prices: (name, p) => [`Цены на чехлы${name ? " " + esc(name) : " для сидений"}`, `<ul><li>Чехлы из жаккарда — от ${fmt(p[0])}</li><li>Чехлы из экокожи и экокожи с перфорацией — от ${fmt(p[1])}</li><li>Чехлы из алькантары — от ${fmt(p[2])}</li></ul><p>Цена указана за комплект на весь салон${name ? "" : " и зависит от модели автомобиля"}. Работаем по предоплате от 1 000 ₽, остаток можно оплатить при получении.</p>`],
     custom: name => ["Пошив авточехлов на заказ", `<p>Не нашли готовое сочетание${name ? " для " + esc(name) : ""}? Соберите свои чехлы в <a href="${href("custom")}">конструкторе</a>: выберите цвет боковин, материал и цвет вставок, рисунок — классические полосы или стёжку ромбом. К заказу можно добавить автоковрики EVA в цвет чехлов, а оплётку руля в цвет салона дарим к каждому комплекту. Менеджер уточнит комплектацию салона и рассчитает стоимость пошива.</p>`],
-    service: () => ["Безопасность, гарантия и доставка", `<p>Для сидений с боковыми подушками безопасности делаем разрывные швы с ярлыками AIRBAG — чехлы не мешают их срабатыванию. Гарантия на качество пошива — 1 год. Перед отправкой присылаем фотоотчёт. Доставляем DPD и EMS Почтой России в 6 000 населённых пунктов России и СНГ, в Новосибирске — самовывоз и курьер. Представительства «Автостиля» работают в городах России и Казахстана, установку в вашем городе организуем по запросу.</p>`]
+    /* install: false — на страницах городов, где установку клиент не подтверждал (правила, раздел 10) */
+    service: ({ install = true } = {}) => ["Безопасность, гарантия и доставка", `<p>Для сидений с боковыми подушками безопасности делаем разрывные швы с ярлыками AIRBAG — чехлы не мешают их срабатыванию. Гарантия на качество пошива — 1 год. Перед отправкой присылаем фотоотчёт. Доставляем DPD и EMS Почтой России в 6 000 населённых пунктов России и СНГ, в Новосибирске — самовывоз и курьер. Представительства «Автостиля» работают в городах России и Казахстана${install ? ", установку в вашем городе организуем по запросу" : ""}.</p>`]
   };
   /* Минимальные цены по материалам [жаккард, экокожа, алькантара] для набора лекал */
   const minPrices = list => [0, 1, 2].map(i => Math.min(...list.map(m => m.p[i])));
@@ -483,7 +516,9 @@
     document.addEventListener("click", e => { if (mega.classList.contains("is-open") && !mega.contains(e.target) && !megaBtn.contains(e.target) && !e.target.closest("[data-mega-open]")) close(); });
   }
   const page = document.body.dataset.page;
-  $$(`[data-nav="${page}"]`).forEach(a => a.classList.add("is-active"));
+  /* poshiv — отдельная страница раздела «Индивидуальный пошив»: data-page="custom" добавил бы на мобильных отступ под полосу конструктора */
+  const navOf = { poshiv: "custom" };
+  $$(`[data-nav="${navOf[page] || page}"]`).forEach(a => a.classList.add("is-active"));
 
   /* ---------- слайдер ---------- */
   $$("[data-slider]").forEach(sl => {
@@ -697,7 +732,7 @@
     if (d.message) h += `<div class="search__hint">${esc(d.message)}</div>`;
     h += items.map(sugItem).join("");
     if (d.more) h += `<div class="search__hint">и ещё ${d.more} — введите больше символов, список сузится</div>`;
-    if (d.other && d.other.length) h += `<a class="search__item search__item--custom" href="${href("custom")}"><span class="search__plus">+</span><div><div class="t">${esc(d.other.join(", "))}</div><div class="s">Готовых лекал нет — сошьём на заказ</div></div></a>`;
+    if (d.other && d.other.length) h += `<a class="search__item search__item--custom" href="${href("search", { q: d.query })}"><span class="search__plus">+</span><div><div class="t">${esc(d.other.join(", "))}</div><div class="s">Готовых лекал в каталоге нет — менеджер подскажет, можно ли сшить</div></div></a>`;
     if (!items.length && !(d.other && d.other.length)) {
       if (exclude.length) return "";
       h += `<div class="search__empty">По этим символам автомобилей в каталоге нет. Проверьте VIN или выберите марку и модель в каталоге.</div>`;
@@ -764,6 +799,8 @@
     if (!input || !drop) return;
     let active = -1;
     const close = () => { drop.classList.remove("is-open"); active = -1; };
+    /* Enter и «Найти» — страница результатов (T17); пункт, выбранный стрелками, открывается сразу */
+    const toResults = () => { const q = input.value.trim(); if (norm(q).length < 2) { input.focus(); return; } location.href = href("search", { q }); };
     const render = () => {
       const q = input.value, { models, brands } = search(q);
       if (norm(q).length < 2) { close(); return; }
@@ -792,10 +829,10 @@
     input.addEventListener("keydown", e => {
       const els = $$(".search__item", drop);
       if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); if (!drop.classList.contains("is-open")) render(); active = e.key === "ArrowDown" ? Math.min(active + 1, els.length - 1) : Math.max(active - 1, 0); els.forEach((el, i) => el.classList.toggle("is-active", i === active)); els[active]?.scrollIntoView({ block: "nearest" }); }
-      else if (e.key === "Enter") { e.preventDefault(); const t = els[active >= 0 ? active : 0]; if (t) location.href = t.getAttribute("href"); }
+      else if (e.key === "Enter") { e.preventDefault(); const t = active >= 0 && els[active]; if (t) location.href = t.getAttribute("href"); else toResults(); }
       else if (e.key === "Escape") close();
     });
-    btn?.addEventListener("click", e => { e.preventDefault(); const f = $(".search__item", drop); if (f) location.href = f.getAttribute("href"); else render(); });
+    btn?.addEventListener("click", e => { e.preventDefault(); toResults(); });
     document.addEventListener("click", e => { if (!root.contains(e.target)) close(); });
   }
   $$("[data-search]").forEach(initSearch);
@@ -827,7 +864,7 @@
   }
   $$("[data-picker]").forEach(p => initPicker(p));
 
-  $$("[data-studio]").forEach(el => { el.innerHTML = customCard(null); });
+  if (!window.AS_SSR) $$("[data-studio]").forEach(el => { el.innerHTML = customCard(null); });
   $$("[data-msg-links]").forEach(el => { el.innerHTML = msgLinks(); });
 
   /* ---------- высота шапки для липких блоков: --header-h считается вместе с верхней строкой, обе закреплены ---------- */
@@ -1071,9 +1108,9 @@
 
   window.AS_accPrice = accPrice;
   window.AS_colorDot = colorDot;
-  window.AS_vin = { decodeVin, vinCheck, vinHint, isVin, isFrame, yearMatch, cleanVin, api: vinApi, vinLike, suggest: attachVinSuggest };
-  window.AS = { MSG, msgLinks, perkStrip, api, formMeta, guardForm, fieldErrors, consentHtml, enhanceForm, checkForm, phoneOk, cookieOk, cookieBanner, seoBlock, SEO_PART, minPrices, famStats, $, $$, esc, fmt, qs, plural, ICON, BRANDS, MODELS, BRAND, BY_SLUG, FAMILIES, VARIANTS, ALL_VARIANTS, VAR, HITS, ADDONS, addonsFor, varPhotos, MAT_NAME, sortedBrands, brandName, brandLogo, genName, carName, yearsText, kitOf, kitRows, kitIncludes, specHtml, famPhoto, posPhoto, varPhoto, seatPhoto, carRender, priceOf, oldPriceOf, discountOf, priceHtml, URL: URL_, href, relink, abs, seo, coverCard, customCard, famCard, genCard, productCard, postCard, reviewCard, toast, Cart, Fav, badges, initPicker, search, loadScript };
+  window.AS_vin = { decodeVin, vinCheck, vinHint, isVin, isFrame, yearMatch, cleanVin, api: vinApi, vinLike, sugLike, suggestApi: vinSuggestApi, suggest: attachVinSuggest };
+  window.AS = { titleFit, resolveItem, api, formMeta, guardForm, fieldErrors, consentHtml, enhanceForm, checkForm, phoneOk, cookieOk, cookieBanner, seoBlock, SEO_PART, minPrices, famStats, $, $$, esc, fmt, qs, plural, ICON, BRANDS, MODELS, BRAND, BY_SLUG, FAMILIES, VARIANTS, ALL_VARIANTS, VAR, HITS, varPhotos, MAT_NAME, sortedBrands, brandName, brandLogo, genName, carName, yearsText, kitOf, kitRows, kitIncludes, specHtml, famPhoto, posPhoto, varPhoto, carRender, priceOf, oldPriceOf, discountOf, priceHtml, URL: URL_, href, relink, abs, seo, coverCard, customCard, perkStrip, famCard, genCard, productCard, postCard, reviewCard, toast, Cart, MAX_QTY, Fav, badges, initPicker, search, loadScript, MSG, msgLinks };
   window.AS_cart = Cart; window.AS_fav = Fav; window.AS_postCard = postCard; window.AS_productCard = productCard;
   badges();
-  loadScript("chat.js").catch(() => {});   /* плавающие виджеты: мессенджеры и чат с менеджером */
+  loadScript("chat.js").catch(() => {});   /* кнопка связи: мессенджеры, живой чат и телефон */
 })();

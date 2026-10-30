@@ -1,6 +1,6 @@
 /* Страница модели: ?f=семейство (выбор поколения) или ?m=лекало (стандартные сочетания + индивидуальный пошив) */
 (function () {
-  const A = window.AS, e = A.esc;
+  const A = window.AS, e = A.esc, SSR = window.AS_SSR;  // SSR: контейнеры, крошки и разметку уже вывел сервер (lib/pages.php), здесь только обработчики
   let m = A.BY_SLUG[A.qs("m")], f = m ? A.FAMILIES[m.f] : A.FAMILIES[A.qs("f")];
   const found = !!f;  // неизвестный адрес: в прототипе показываем Camry с noindex, на сайте сервер отдаёт 404
   if (!f) { m = A.BY_SLUG["toyota_camry-xv70"]; f = A.FAMILIES[m.f]; }
@@ -23,11 +23,13 @@
     }).catch(() => {});
   }
   const crumbs = document.getElementById("c-crumbs");
-  crumbs.insertAdjacentHTML("beforeend", `<li><a href="${A.URL.brand(b.id)}">${e(b.n)}</a></li>` + (m && f.items.length > 1 ? `<li><a href="${A.URL.fam(f)}">${e(f.n)}</a></li><li>${e([m.g, m.v].filter(Boolean).join(", ") || m.y)}</li>` : `<li>${e(f.n)}</li>`));
+  if (!SSR) crumbs.insertAdjacentHTML("beforeend", `<li><a href="${A.URL.brand(b.id)}">${e(b.n)}</a></li>` + (m && f.items.length > 1 ? `<li><a href="${A.URL.fam(f)}">${e(f.n)}</a></li><li>${e([m.g, m.v].filter(Boolean).join(", ") || m.y)}</li>` : `<li>${e(f.n)}</li>`));
+  if (!SSR) {
   document.getElementById("c-side-title").textContent = `Поколения ${f.n}`;
   document.getElementById("c-gens").innerHTML = f.items.map(x => `<a href="${A.URL.pos(x)}" class="${m && x.s === m.s ? "is-active" : ""}"><span>${e([x.g, x.v].filter(Boolean).join(", ") || "Все версии")}</span><small>${e(x.y || "")}</small></a>`).join("");
   document.getElementById("c-other-title").textContent = `Другие модели ${b.n}`;
   document.getElementById("c-other").innerHTML = b.fams.filter(x => x.id !== f.id).slice(0, 14).map(x => `<a href="${A.URL.fam(x)}">${e(x.n)}<small>${x.items.length}</small></a>`).join("") + `<a href="${A.URL.brand(b.id)}"><b>Все модели ${e(b.n)}</b></a>`;
+  }
   const main = document.getElementById("c-main");
   const strip = A.perkStrip();
 
@@ -84,14 +86,14 @@
     /* Title и Description — по маске T4 для модели без поколения, H1 — как у марки: «Авточехлы на Lada Vesta» */
     const ruF = A.kitOf(f.items[0]).ru || f.n;
     A.seo({
-      title: `Чехлы на сиденья ${ruF}: авточехлы на ${full}, цена от ${A.fmt(f.min)}`,
+      title: A.titleFit([`Чехлы на сиденья ${ruF}: авточехлы на ${full}, цена от ${A.fmt(f.min)}`, `Чехлы на сиденья ${full}, цена от ${A.fmt(f.min)}`, `Чехлы на ${full}, цена от ${A.fmt(f.min)}`]),
       description: `Модельные чехлы на сиденья ${ruF}: экокожа, алькантара, жаккард. Своё заводское лекало на каждый кузов, разрывные швы под Airbag, доставка по России.`,
       keywords: [...new Set([`чехлы на сиденья ${ruF}`, `чехлы на сиденья ${full}`, `авточехлы на ${full}`, `модельные чехлы ${full}`, `купить чехлы на ${ruF}`])].join(", ").toLowerCase(),
       page: "car", params: { f: f.id }, image: A.carRender(f.items[0]) || undefined, noindex: !found
     });
-    document.getElementById("c-h1").textContent = "Авточехлы на " + full;
-    document.getElementById("c-meta").innerHTML = revLink + `<span><b>${f.items.length}</b> ${A.plural(f.items.length, "лекало", "лекала", "лекал")}</span>${f.from ? `<span>с <b>${f.from}</b> года</span>` : ""}<span>комплект от <b>${A.fmt(f.min)}</b></span>`;
-    main.innerHTML = `<div class="section__head" style="margin-bottom:16px"><div><h2 style="font-size:1.5rem">Выберите поколение${f.items.some(x => x.v) ? " и вариант салона" : ""}</h2><p>Для каждого кузова — своё заводское лекало. Если не уверены в поколении, введите VIN-номер в строке поиска.</p></div></div>
+    if (!SSR) document.getElementById("c-h1").textContent = "Авточехлы на " + full;
+    if (!SSR) document.getElementById("c-meta").innerHTML = revLink + `<span><b>${f.items.length}</b> ${A.plural(f.items.length, "лекало", "лекала", "лекал")}</span>${f.from ? `<span>с <b>${f.from}</b> года</span>` : ""}<span>комплект от <b>${A.fmt(f.min)}</b></span>`;
+    if (!SSR) main.innerHTML = `<div class="section__head" style="margin-bottom:16px"><div><h2 style="font-size:1.5rem">Выберите поколение${f.items.some(x => x.v) ? " и вариант салона" : ""}</h2><p>Для каждого кузова — своё заводское лекало. Если не уверены в поколении, введите VIN-номер в строке поиска.</p></div></div>
       <div class="fams">${f.items.map(A.genCard).join("")}</div>
       <div class="section__head" style="margin:clamp(32px,3vw,48px) 0 16px"><div><h2 style="font-size:1.5rem">Чехлы на ${e(full)}</h2><p>Готовые сочетания на все кузова ${e(full)}. Чтобы видеть чехлы только на свой кузов, выберите поколение выше.</p></div></div>
       ${toolbar(f.items.length)}
@@ -117,32 +119,31 @@
     }
     more.addEventListener("click", ev => { if (!ev.target.closest(".btn")) return; shown += PAGE; render(); });
     bindToolbar(render);
-    render();
+    if (!SSR) render();
     /* Разметка: хлебные крошки и список кузовов модели */
     const ld = { "@context": "https://schema.org", "@graph": [
       { "@type": "BreadcrumbList", itemListElement: [["Главная", A.href("index")], ["Модельные авточехлы", A.href("catalog")], [b.n, A.URL.brand(b.id)], [f.n, A.URL.fam(f)]].map(([n, u], i) => ({ "@type": "ListItem", position: i + 1, name: n, item: A.abs(u) })) },
       { "@type": "ItemList", name: `Авточехлы на ${full}`, itemListElement: f.items.map((x, i) => ({ "@type": "ListItem", position: i + 1, name: A.carName(x), url: A.abs(A.URL.pos(x)) })) }] };
-    document.head.insertAdjacentHTML("beforeend", `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`);
+    if (!SSR) document.head.insertAdjacentHTML("beforeend", `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`);
   } else {
     /* --- лекало (шаблон T4): стандартные сочетания + плашка индивидуального пошива ---
        Title, H1, Description — по SEO-маскам T4 (план/Шаблоны страниц для Битрикса) с решениями 29.10.2026:
-       без срока пошива, Title до 75 знаков, иначе без поколения. */
+       без срока пошива, Title до 70 знаков, иначе без поколения. */
     const name = A.carName(m), model = m.m || f.n, gen = [m.g, m.v].filter(Boolean).join(", "), kit = A.kitOf(m), ru = kit.ru || model;
     const yrs = m.y ? m.y.replace(/^(\d{4})–\1$/, "$1") : "", from = A.fmt(m.p[0]);
     const h1 = `Авточехлы на ${b.n} ${model}${gen ? " " + gen : ""}`;
     const ruGen = m.g && !/\d$/.test(ru) ? " " + m.g : "";  // «Рио 2» из Битрикса уже с поколением — без «II»
-    const title = `Чехлы на сиденья ${ru}${ruGen}: авточехлы на ${b.n} ${model}, цена от ${from}`;
     const desc = `Модельные чехлы на сиденья ${ru}${yrs ? " " + yrs : ""}: экокожа, алькантара, жаккард. Пошив по заводским лекалам, разрывные швы под Airbag, оплата при получении.`;
     A.seo({
-      title: title.length > 70 ? `Чехлы на сиденья ${ru}: авточехлы на ${b.n} ${model}, цена от ${from}` : title,
+      title: A.titleFit([`Чехлы на сиденья ${ru}${ruGen}: авточехлы на ${b.n} ${model}, цена от ${from}`, `Чехлы на сиденья ${ru}: авточехлы на ${b.n} ${model}, цена от ${from}`, `Чехлы на ${name}, цена от ${from}`, `Чехлы на ${b.n} ${model}, цена от ${from}`]),
       description: desc,
       keywords: [...new Set([`чехлы на сиденья ${ru}${ruGen}`, `авточехлы на ${b.n} ${model}`, `чехлы на ${name}`, `чехлы на сиденья ${b.n} ${model}${gen ? " " + gen.replace(/,/g, "") : ""}`, `модельные чехлы ${name}`])].join(", ").toLowerCase(),
       page: "car", params: { m: m.s }, image: A.carRender(m) || A.posPhoto(m), noindex: !found
     });
-    document.getElementById("c-h1").innerHTML = `${e(h1)}${yrs ? ` <span class="muted" style="font-weight:600">(${e(yrs)})</span>` : ""}`;
-    document.getElementById("c-meta").innerHTML = revLink + (kit.n ? "<span><b>Лекало в базе</b></span>" : "") + `<span>Жаккард <b>${A.fmt(m.p[0])}</b></span><span>Экокожа <b>${A.fmt(m.p[1])}</b></span><span>Алькантара <b>${A.fmt(m.p[2])}</b></span>`;
-    document.getElementById("c-side-custom").href = A.URL.custom(m);
-    main.innerHTML = `${toolbar(1)}
+    if (!SSR) document.getElementById("c-h1").innerHTML = `${e(h1)}${yrs ? ` <span class="muted" style="font-weight:600">(${e(yrs)})</span>` : ""}`;
+    if (!SSR) document.getElementById("c-meta").innerHTML = revLink + (kit.n ? "<span><b>Лекало в базе</b></span>" : "") + `<span>Жаккард <b>${A.fmt(m.p[0])}</b></span><span>Экокожа <b>${A.fmt(m.p[1])}</b></span><span>Алькантара <b>${A.fmt(m.p[2])}</b></span>`;
+    if (!SSR) document.getElementById("c-side-custom").href = A.URL.custom(m);
+    if (!SSR) main.innerHTML = `${toolbar(1)}
       <div class="grid" id="c-grid" style="grid-auto-flow:dense"></div>
       <section class="section section--tight">${strip}</section>
       <section class="section section--tight">
@@ -171,18 +172,18 @@
       A.badges();
     }
     bindToolbar(render);
-    render();
+    if (!SSR) render();
     /* Разметка T4: хлебные крошки и товар с диапазоном цен (AggregateRating — когда у отзывов появятся оценки).
        Нижняя цена — как в Title: базовая цена модели (жаккард доступен через конструктор), верхняя — дорогая карточка. */
-    const abs = A.abs, prices = [m.p[0], ...A.VARIANTS.map(v => A.priceOf(m, v))];
+    const abs = A.abs, prices = A.VARIANTS.map(v => A.priceOf(m, v));
     const trail = [["Главная", A.href("index")], ["Модельные авточехлы", A.href("catalog")], [b.n, A.URL.brand(b.id)]]
       .concat(f.items.length > 1 ? [[f.n, A.URL.fam(f)]] : []).concat([[h1, A.URL.pos(m)]]);
     const ld = { "@context": "https://schema.org", "@graph": [
       { "@type": "BreadcrumbList", itemListElement: trail.map(([n, u], i) => ({ "@type": "ListItem", position: i + 1, name: n, item: abs(u) })) },
       { "@type": "Product", name: h1, description: desc, image: abs(A.carRender(m) || A.posPhoto(m)), brand: { "@type": "Brand", name: "Автостиль" },
         offers: { "@type": "AggregateOffer", priceCurrency: "RUB", lowPrice: Math.min(...prices), highPrice: Math.max(...prices), offerCount: prices.length, url: abs(A.URL.pos(m)) } }] };
-    document.head.insertAdjacentHTML("beforeend", `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`);
-    document.querySelectorAll("[data-tabs]").forEach(box => { const btns = box.querySelectorAll("[data-tab]"), panes = box.querySelectorAll("[data-pane]"); btns.forEach(bt => bt.addEventListener("click", () => { btns.forEach(x => x.classList.toggle("is-active", x === bt)); panes.forEach(p => p.classList.toggle("is-active", p.dataset.pane === bt.dataset.tab)); })); });
+    if (!SSR) document.head.insertAdjacentHTML("beforeend", `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`);
+    if (!SSR) document.querySelectorAll("[data-tabs]").forEach(box => { const btns = box.querySelectorAll("[data-tab]"), panes = box.querySelectorAll("[data-pane]"); btns.forEach(bt => bt.addEventListener("click", () => { btns.forEach(x => x.classList.toggle("is-active", x === bt)); panes.forEach(p => p.classList.toggle("is-active", p.dataset.pane === bt.dataset.tab)); })); });
   }
   showReviews();
   A.badges();

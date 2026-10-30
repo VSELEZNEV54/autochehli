@@ -1,5 +1,5 @@
 /* =====================================================================
-   АВТОСТИЛЬ — плавающие виджеты справа снизу: мессенджеры и чат с менеджером.
+   АВТОСТИЛЬ — плавающая кнопка связи справа снизу: окно с мессенджерами, живым чатом и телефоном, чат с менеджером.
    Подключается одной строкой в конце app.js (loadScript), поэтому есть на всех страницах и в шаблоне Битрикса.
    До контактов сервер ничего не хранит: вопросы лежат в браузере (as_chat) и уходят в /chat/start вместе с именем и телефоном.
    Два пути: клиент пишет вопрос (запоминаем, просим имя и телефон) или сразу жмёт «Оставить контакты» под приветствием.
@@ -24,6 +24,7 @@
     msg: svg('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>'),
     chat: svg('<path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/>'),
     close: svg('<path d="M18 6 6 18M6 6l12 12"/>'),
+    phone: svg('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>'),
     send: svg('<path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/>')
   };
   const isMobile = () => matchMedia("(max-width: 767px)").matches;
@@ -48,17 +49,18 @@
   /* ---------- разметка ---------- */
   const msgLink = id => { const m = A.MSG.find(x => x.id === id); return m ? `<a class="msg-btn" href="${m.url}" target="_blank" rel="noopener"><img src="${m.icon}" alt="" width="48" height="48" loading="lazy">${m.name}</a>` : ""; };
   document.body.insertAdjacentHTML("beforeend", `<div class="fabs">
-      <button type="button" class="fab fab--msg" data-fab-msg aria-haspopup="dialog" aria-expanded="false" aria-controls="as-msgcard" aria-label="Написать в мессенджер">${ICONS.msg}${ICONS.close}</button>
-      <button type="button" class="fab fab--chat" data-fab-chat aria-haspopup="dialog" aria-expanded="false" aria-controls="as-chat" aria-label="Открыть чат с менеджером">${ICONS.chat}${ICONS.close}<span class="fab__badge" data-chat-badge hidden></span></button>
+      <button type="button" class="fab" data-fab aria-haspopup="dialog" aria-expanded="false" aria-controls="as-msgcard" aria-label="Связаться с нами">${ICONS.msg}${ICONS.close}<span class="fab__badge" data-chat-badge hidden></span></button>
     </div>
     <div class="chat-hint" data-chat-hint role="status" hidden>
       <button type="button" class="chat-hint__open" data-hint-open><b>Менеджер «Автостиль»</b><span class="chat__online">Онлайн</span><span class="chat-hint__text">${HELLO}</span></button>
       <button type="button" class="iconbtn" data-hint-close aria-label="Скрыть приветствие">${ICONS.close}</button>
     </div>
-    <div class="msgcard" id="as-msgcard" role="dialog" aria-label="Мессенджеры" hidden>
-      <div class="msgcard__head"><p class="msgcard__title">Напишите в удобный мессенджер</p><button type="button" class="iconbtn" data-card-close aria-label="Закрыть">${ICONS.close}</button></div>
-      <div class="msgcard__list">${["whatsapp", "telegram", "max"].map(msgLink).join("")}</div>
-      <p class="form-tel"><a href="${TEL}">${PHONE}</a><span>бесплатно по России</span></p>
+    <div class="msgcard" id="as-msgcard" role="dialog" aria-label="Связаться с нами" hidden>
+      <div class="msgcard__head"><p class="msgcard__title">Напишите нам в удобный мессенджер</p><button type="button" class="iconbtn" data-card-close aria-label="Закрыть">${ICONS.close}</button></div>
+      <div class="msgcard__list">${["whatsapp", "telegram", "max"].map(msgLink).join("")}
+        <button type="button" class="msgcard__row msgcard__row--chat" data-card-chat>${ICONS.chat}<span class="msgcard__text"><b>Живой чат на сайте</b><span class="chat__online">Менеджер онлайн</span></span><span class="msgcard__badge" data-card-badge role="img" hidden></span></button>
+        <a class="msgcard__row" href="${TEL}">${ICONS.phone}<span class="msgcard__text"><b>${PHONE}</b><span>бесплатно по России</span></span></a>
+      </div>
     </div>
     <div class="chat" id="as-chat" role="dialog" aria-label="Чат с менеджером" hidden>
       <div class="chat__head"><img class="chat__logo" src="assets/logo/icon.svg" alt="" width="36" height="33"><div class="chat__who"><b>Менеджер «Автостиль»</b><span class="chat__online">Онлайн</span></div><button type="button" class="iconbtn" data-chat-close aria-label="Закрыть чат">${ICONS.close}</button></div>
@@ -69,7 +71,7 @@
       </div>
       <div class="chat__bar"><textarea class="chat__input" data-chat-input rows="1" maxlength="${MAX_TEXT}" enterkeyhint="send" placeholder="Напишите сообщение" aria-label="Ваше сообщение"></textarea><button type="button" class="chat__send" data-chat-send aria-label="Отправить">${ICONS.send}</button></div>
     </div>`);
-  const btnMsg = $("[data-fab-msg]"), btnChat = $("[data-fab-chat]"), badge = $("[data-chat-badge]");
+  const btn = $("[data-fab]"), badge = $("[data-chat-badge]"), cardBadge = $("[data-card-badge]");
   const card = $("#as-msgcard"), chat = $("#as-chat"), feed = $("[data-chat-feed]", chat), list = $("[data-chat-list]", chat);
   const typing = $("[data-chat-typing]", chat), slot = $("[data-chat-slot]", chat), input = $("[data-chat-input]", chat);
   const hint = $("[data-chat-hint]");
@@ -96,10 +98,16 @@
     else list.insertAdjacentHTML("beforeend", msgHtml(m, st.msgs.length - 1));
     if (stick) toBottom();
   }
+  /* идёт переписка и есть непрочитанное: кнопка сразу открывает чат, минуя окно связи */
+  const replyWaiting = () => !!st.token && st.unread > 0;
+  /* значок непрочитанных и состояние кнопки: при открытом окне она показывает крестик и закрывает его, а число переходит на строку чата в окне */
   function setBadge() {
-    const n = st.unread;
-    badge.textContent = n > 9 ? "9+" : n; badge.hidden = !n;
-    btnChat.setAttribute("aria-label", chatOpen() ? "Закрыть чат" : "Открыть чат с менеджером" + (n ? `, новых сообщений: ${n}` : ""));
+    const n = st.unread, inChat = chatOpen(), open = inChat || !card.hidden, toChat = inChat || (!open && replyWaiting()), num = n > 9 ? "9+" : n;
+    badge.textContent = num; badge.hidden = !n || open;
+    cardBadge.textContent = num; cardBadge.hidden = !n; cardBadge.setAttribute("aria-label", `Новых сообщений: ${n}`);
+    btn.setAttribute("aria-expanded", open);
+    btn.setAttribute("aria-controls", toChat ? "as-chat" : "as-msgcard");
+    btn.setAttribute("aria-label", inChat ? "Закрыть чат" : open ? "Закрыть окно связи" : toChat ? `Открыть чат, новых сообщений: ${n}` : "Связаться с нами" + (n ? `, новых сообщений: ${n}` : ""));
   }
   /* сообщение менеджера, которое пишет сам сайт: приветствие, просьба оставить контакты, спасибо */
   function say(text) {
@@ -280,7 +288,7 @@
   function openChat() {
     closeCard(); hideHint();
     if (!st.opened) st.opened = Date.now();
-    chat.hidden = false; btnChat.setAttribute("aria-expanded", "true"); document.body.classList.add("chat-lock");
+    chat.hidden = false; document.body.classList.add("chat-lock");
     st.unread = 0; setBadge(); fitViewport(); fitInput(); toBottom(); save();
     if (!st.greeted && !typingDo) afterTyping(sayHello);
     if (!isMobile()) input.focus({ preventScroll: true });   /* на телефоне клавиатура сама не выезжает: сначала человек видит окно */
@@ -288,34 +296,36 @@
   }
   function closeChat(refocus) {
     if (!chatOpen()) return;
-    chat.hidden = true; btnChat.setAttribute("aria-expanded", "false"); document.body.classList.remove("chat-lock");
+    chat.hidden = true; document.body.classList.remove("chat-lock");
     setBadge(); fitViewport(); schedule();
-    if (refocus) btnChat.focus({ preventScroll: true });
+    if (refocus) btn.focus({ preventScroll: true });
   }
-  function openCard() { closeChat(); hideHint(); card.hidden = false; btnMsg.setAttribute("aria-expanded", "true"); btnMsg.setAttribute("aria-label", "Закрыть мессенджеры"); $("a", card).focus({ preventScroll: true }); }
+  function openCard() { closeChat(); hideHint(); card.hidden = false; setBadge(); $("a", card).focus({ preventScroll: true }); }
   function closeCard(refocus) {
     if (card.hidden) return;
-    card.hidden = true; btnMsg.setAttribute("aria-expanded", "false"); btnMsg.setAttribute("aria-label", "Написать в мессенджер");
-    if (refocus) btnMsg.focus({ preventScroll: true });
+    card.hidden = true; setBadge();
+    if (refocus) btn.focus({ preventScroll: true });
   }
   /* приветствие у кнопки: менеджер пишет первым, один раз за сессию и пока чат не начат */
   let hintT = 0;
   function hideHint() { clearTimeout(hintT); hint.hidden = true; }
+  /* на телефоне приветствие закрывало бы фото товара и мешало его листать */
+  const galleryOnScreen = () => { const g = $("[data-gallery]"), r = g && g.getBoundingClientRect(); return !!r && r.bottom > 0 && r.top < innerHeight; };
   function showHint() {
     if (st.greeted || st.token || chatOpen() || !card.hidden) return;
-    if (isMobile() && document.body.classList.contains("cookie-open")) { hintT = setTimeout(showHint, 2000); return; }   /* на телефоне баннер cookie скрывает кнопки */
+    if (isMobile() && (document.body.classList.contains("cookie-open") || galleryOnScreen())) { hintT = setTimeout(showHint, 2000); return; }   /* на телефоне баннер cookie скрывает кнопки */
     try { sessionStorage.setItem(HINT_KEY, "1"); } catch (e) {}
     hint.hidden = false;
     if (isMobile()) hintT = setTimeout(hideHint, HINT_MOBILE_MS);
   }
   $("[data-hint-open]", hint).addEventListener("click", openChat);
   $("[data-hint-close]", hint).addEventListener("click", hideHint);
-  btnChat.addEventListener("click", () => { if (chatOpen()) closeChat(true); else openChat(); });
-  btnMsg.addEventListener("click", () => { if (card.hidden) openCard(); else closeCard(true); });
+  btn.addEventListener("click", () => { if (chatOpen()) closeChat(true); else if (!card.hidden) closeCard(true); else if (replyWaiting()) openChat(); else openCard(); });
   $("[data-chat-close]", chat).addEventListener("click", () => closeChat(true));
   $("[data-card-close]", card).addEventListener("click", () => closeCard(true));
+  $("[data-card-chat]", card).addEventListener("click", openChat);
   document.addEventListener("keydown", e => { if (e.key === "Escape") { closeChat(true); closeCard(true); } });
-  document.addEventListener("click", e => { if (!card.hidden && !card.contains(e.target) && !btnMsg.contains(e.target)) closeCard(); });
+  document.addEventListener("click", e => { if (!card.hidden && !card.contains(e.target) && !btn.contains(e.target)) closeCard(); });
 
   /* ---------- вкладки и переходы: опрос только на видимой вкладке, состояние общее ---------- */
   document.addEventListener("visibilitychange", () => { if (document.hidden) clearTimeout(pollT); else if (st.token) poll(); });
@@ -330,10 +340,9 @@
   });
 
   /* ---------- старт на странице ---------- */
-  /* конструктор: цена и кнопки покупки прижаты к низу экрана (на узких экранах фиксированы) — виджеты стоят над ними, на телефоне в ряд: рабочая область и так низкая */
+  /* конструктор: цена и кнопки покупки прижаты к низу экрана (на узких экранах фиксированы) — кнопка стоит над ними */
   const cfgFoot = $(".cfg__foot");
   if (cfgFoot) {
-    $(".fabs").classList.add("fabs--row");
     const setLift = () => document.body.style.setProperty("--fabs-lift", cfgFoot.offsetHeight + "px");
     setLift(); new ResizeObserver(setLift).observe(cfgFoot);
   }
