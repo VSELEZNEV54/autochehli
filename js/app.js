@@ -99,7 +99,15 @@
   /* Логотип — файл из assets/brands; у новой марки из Битрикса — готовый путь /upload/… (живой каталог) */
   const brandLogo = id => { const l = (BRAND[id] || {}).logo || "toyota.jpg"; return l.charAt(0) === "/" ? l : ASSETS + "brands/" + l; };
   const genName = m => [m.m, m.g].filter(Boolean).join(" ");
-  const carName = m => brandName(m.b) + " " + genName(m);
+  /* Конфигурация лекала по-русски и без внутренних скобок: «правый руль», «гибрид», «спинка 60/40». В заголовках стоит рядом с названием, чтобы лекала одной модели различались.
+     То же в backend/app/catalog.py, local/routes/lib/view.php и tools/mp_cards.py */
+  const CFG_WORD = { R: "правый руль", L: "левый руль", "L и R": "левый и правый руль", hybrid: "гибрид", "60/40": "спинка 60/40", "сплошная": "спинка сплошная" };
+  const cfgText = m => (m.v || "").replace(/\b[LR] \((левый|правый) руль\)/g, "$1 руль").replace(/\s*\(([^)]*)\)/g, ", $1").split(", ").map(t => CFG_WORD[t] || t).join(", ");
+  const genLabel = m => [m.g, cfgText(m)].filter(Boolean).join(", ");
+  const carName = m => {
+    const name = brandName(m.b) + " " + genName(m), cfg = cfgText(m);
+    return !cfg ? name : /\)$/.test(name) ? name + ", " + cfg : name + " (" + cfg + ")";
+  };
   const yearsText = m => m.y || "все годы";
   /* Комплектация салона по лекалу — из Битрикса (js/kit.js собирает tools/build_kit.py). Пустые поля не выводим.
      Блоки T4 «Что входит в комплект» и «Таблица комплектации»: страница лекала и карточка варианта. */
@@ -365,7 +373,7 @@
       <button type="button" class="card__fav" aria-label="В избранное" data-fav="${id}">${ICON.heart}</button>
       <div class="card__body">
         <a class="card__title" href="${url}">Чехлы на ${esc(carName(m))}, ${esc(v.name.toLowerCase())}</a>
-        <div class="card__meta"><span>${esc(opts.salon && m.v ? m.v + " · " + yearsText(m) : yearsText(m))}</span><span class="card__ready">Заводские лекала</span></div>
+        <div class="card__meta"><span>${esc(yearsText(m))}</span><span class="card__ready">Заводские лекала</span></div>
         <div class="card__foot">${priceHtml(m, v)}<button type="button" class="cart-btn${inCart ? " is-added" : ""}" data-add="${id}" aria-label="${addLabel(inCart)}">${inCart ? `<b>${inCart}</b>` : ""}${ICON.cart}</button></div>
       </div>
     </article>`;
@@ -440,7 +448,7 @@
       <div class="fam__body">
         <div class="fam__title">${esc(carName(m))}</div>
         <div class="fam__years">${esc(years)}</div>
-        <div class="fam__stats">${m.v ? `<span>${esc(m.v)}</span>` : ""}<span><b>${VARIANTS.length}</b> ${plural(VARIANTS.length, "сочетание", "сочетания", "сочетаний")}</span><span><b>${mats}</b> ${plural(mats, "материал", "материала", "материалов")}</span></div>
+        <div class="fam__stats"><span><b>${VARIANTS.length}</b> ${plural(VARIANTS.length, "сочетание", "сочетания", "сочетаний")}</span><span><b>${mats}</b> ${plural(mats, "материал", "материала", "материалов")}</span></div>
         <div class="fam__foot"><div class="price"><small>комплект</small>${priceRange(Math.min(...m.p), Math.max(...m.p))}</div><span class="btn btn--ghost btn--sm">Выбрать</span></div>
       </div>
     </a>`;
@@ -502,7 +510,7 @@
       $$(".mega__brand", list).forEach(el => el.classList.toggle("is-active", el.dataset.brand === id));
       const b = BRAND[id];
       pane.innerHTML = `<div class="mega__title"><img src="${brandLogo(id)}" alt=""><div><p class="mega__name">Чехлы на ${esc(b.n)}</p><span>${b.fams.length} ${plural(b.fams.length, "модель", "модели", "моделей")} · ${b.cnt} ${plural(b.cnt, "лекало", "лекала", "лекал")} · комплект от ${fmt(Math.min(...b.fams.map(f => f.min)))}</span></div><a class="btn btn--more" href="${URL_.brand(id)}">Все модели ${esc(b.n)}</a></div>
-        <div class="mega__cols">${b.fams.map(f => `<div class="mega__fam"><a href="${URL_.fam(f)}">${esc(f.n)}</a>${f.items.length > 1 ? `<ul>${f.items.map(m => `<li><a href="${URL_.pos(m)}">${esc([m.g, m.v].filter(Boolean).join(", ") || "Все годы")}${m.y ? " · " + esc(m.y) : ""}</a></li>`).join("")}</ul>` : `<ul><li><a href="${URL_.pos(f.items[0])}">${esc(f.items[0].y || "все годы")}</a></li></ul>`}</div>`).join("")}</div>`;
+        <div class="mega__cols">${b.fams.map(f => `<div class="mega__fam"><a href="${URL_.fam(f)}">${esc(f.n)}</a>${f.items.length > 1 ? `<ul>${f.items.map(m => `<li><a href="${URL_.pos(m)}">${esc(genLabel(m) || "Все годы")}${m.y ? " · " + esc(m.y) : ""}</a></li>`).join("")}</ul>` : `<ul><li><a href="${URL_.pos(f.items[0])}">${esc(f.items[0].y || "все годы")}</a></li></ul>`}</div>`).join("")}</div>`;
       if (customLink) customLink.href = href("custom");
     };
     list.addEventListener("mouseover", e => { const el = e.target.closest(".mega__brand"); if (!el) return; clearTimeout(hoverT); hoverT = setTimeout(() => show(el.dataset.brand), 70); });
@@ -555,7 +563,7 @@
   }
   const INDEX = MODELS.map(m => {
     const b = BRAND[m.b] || { n: m.b, s: "" };
-    const lat = norm([b.n, m.m, m.g, m.v, m.s.replace(/[_-]/g, " ")].join(" "));
+    const lat = norm([b.n, m.m, m.g, m.v, cfgText(m), m.s.replace(/[_-]/g, " ")].join(" "));
     const cyr = norm(b.s + " " + (m.ru || "")).split(" ").filter(Boolean);
     return { m, lat: lat.split(" "), cyr, cyrTr: cyr.map(translit) };
   });
@@ -809,7 +817,7 @@
       if (vd) local = '<div class="search__group">Поиск по VIN</div>' + (vd.brands.length ? vd.brands.map(id => `<a class="search__item" href="${URL_.brand(id, { vin: vd.vin, year: vd.year })}"><img src="${brandLogo(id)}" alt=""><div><div class="t">${esc(brandName(id))}${vd.year ? `, ${vd.year} модельный год` : ""}</div><div class="s">Показать модели с лекалами на этот год</div></div></a>`).join("") : `<div class="search__empty">VIN распознан, но марку по коду ${esc(vd.wmi)} определить не удалось — выберите автомобиль в каталоге или оставьте VIN менеджеру.</div>`);
       else if (isFrame(q)) local = `<div class="search__empty">Похоже на номер кузова праворульного автомобиля. Выберите марку и модель — менеджер сверит номер кузова с лекалом.</div>`;
       if (brands.length) html += '<div class="search__group">Марки</div>' + brands.map(b => `<a class="search__item" href="${URL_.brand(b.id)}"><img src="${brandLogo(b.id)}" alt=""><div><div class="t">${hl(b.n, q)}</div><div class="s">${b.fams.length} моделей в каталоге</div></div><div class="p">Все модели</div></a>`).join("");
-      if (models.length) html += '<div class="search__group">Модели и поколения</div>' + models.map(m => `<a class="search__item" href="${URL_.pos(m)}"><img src="${brandLogo(m.b)}" alt=""><div><div class="t">${hl(carName(m), q)}</div><div class="s">${esc([m.v, yearsText(m)].filter(Boolean).join(" · "))}</div></div><div class="p">от ${fmt(m.p[0])}</div></a>`).join("");
+      if (models.length) html += '<div class="search__group">Модели и поколения</div>' + models.map(m => `<a class="search__item" href="${URL_.pos(m)}"><img src="${brandLogo(m.b)}" alt=""><div><div class="t">${hl(carName(m), q)}</div><div class="s">${esc(yearsText(m))}</div></div><div class="p">от ${fmt(m.p[0])}</div></a>`).join("");
       /* начало VIN или номера кузова — подсказки с сервера: какие автомобили каталога подходят */
       const sq = sugLike(q, models.length + brands.length) ? q : "";
       const notFound = `<div class="search__empty" data-empty>По запросу <b>${esc(q)}</b> ничего не нашли. Попробуйте латиницей или только модель — «Camry», «Солярис». Нет вашей модели — <a href="${href("custom")}"><b>закажите индивидуальный пошив</b></a>.</div>`;
@@ -850,7 +858,7 @@
     };
     const fillGens = () => {
       const f = FAMILIES[st.f]; if (!gSel) return; gSel.disabled = !f;
-      gSel.innerHTML = '<option value="">Поколение, кузов</option>' + (f ? f.items.map(m => `<option value="${m.s}">${esc([m.g, m.v].filter(Boolean).join(", ") || "Все версии")}${m.y ? " · " + esc(m.y) : ""}</option>`).join("") : "");
+      gSel.innerHTML = '<option value="">Поколение, кузов</option>' + (f ? f.items.map(m => `<option value="${m.s}">${esc(genLabel(m) || "Все версии")}${m.y ? " · " + esc(m.y) : ""}</option>`).join("") : "");
       if (f && f.items.length === 1) { gSel.value = f.items[0].s; st.m = f.items[0].s; }
     };
     const target = () => st.m ? URL_.pos(BY_SLUG[st.m]) : st.f ? URL_.fam(FAMILIES[st.f]) : st.b ? URL_.brand(st.b) : href("catalog");
@@ -1109,7 +1117,7 @@
   window.AS_accPrice = accPrice;
   window.AS_colorDot = colorDot;
   window.AS_vin = { decodeVin, vinCheck, vinHint, isVin, isFrame, yearMatch, cleanVin, api: vinApi, vinLike, sugLike, suggestApi: vinSuggestApi, suggest: attachVinSuggest };
-  window.AS = { titleFit, resolveItem, api, formMeta, guardForm, fieldErrors, consentHtml, enhanceForm, checkForm, phoneOk, cookieOk, cookieBanner, seoBlock, SEO_PART, minPrices, famStats, $, $$, esc, fmt, qs, plural, ICON, BRANDS, MODELS, BRAND, BY_SLUG, FAMILIES, VARIANTS, ALL_VARIANTS, VAR, HITS, varPhotos, MAT_NAME, sortedBrands, brandName, brandLogo, genName, carName, yearsText, kitOf, kitRows, kitIncludes, specHtml, famPhoto, posPhoto, varPhoto, carRender, priceOf, oldPriceOf, discountOf, priceHtml, URL: URL_, href, relink, abs, seo, coverCard, customCard, perkStrip, famCard, genCard, productCard, postCard, reviewCard, toast, Cart, MAX_QTY, Fav, badges, initPicker, search, loadScript, MSG, msgLinks };
+  window.AS = { titleFit, resolveItem, api, formMeta, guardForm, fieldErrors, consentHtml, enhanceForm, checkForm, phoneOk, cookieOk, cookieBanner, seoBlock, SEO_PART, minPrices, famStats, $, $$, esc, fmt, qs, plural, ICON, BRANDS, MODELS, BRAND, BY_SLUG, FAMILIES, VARIANTS, ALL_VARIANTS, VAR, HITS, varPhotos, MAT_NAME, sortedBrands, brandName, brandLogo, genName, cfgText, genLabel, carName, yearsText, kitOf, kitRows, kitIncludes, specHtml, famPhoto, posPhoto, varPhoto, carRender, priceOf, oldPriceOf, discountOf, priceHtml, URL: URL_, href, relink, abs, seo, coverCard, customCard, perkStrip, famCard, genCard, productCard, postCard, reviewCard, toast, Cart, MAX_QTY, Fav, badges, initPicker, search, loadScript, MSG, msgLinks };
   window.AS_cart = Cart; window.AS_fav = Fav; window.AS_postCard = postCard; window.AS_productCard = productCard;
   badges();
   loadScript("chat.js").catch(() => {});   /* кнопка связи: мессенджеры, живой чат и телефон */

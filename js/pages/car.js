@@ -23,10 +23,10 @@
     }).catch(() => {});
   }
   const crumbs = document.getElementById("c-crumbs");
-  if (!SSR) crumbs.insertAdjacentHTML("beforeend", `<li><a href="${A.URL.brand(b.id)}">${e(b.n)}</a></li>` + (m && f.items.length > 1 ? `<li><a href="${A.URL.fam(f)}">${e(f.n)}</a></li><li>${e([m.g, m.v].filter(Boolean).join(", ") || m.y)}</li>` : `<li>${e(f.n)}</li>`));
+  if (!SSR) crumbs.insertAdjacentHTML("beforeend", `<li><a href="${A.URL.brand(b.id)}">${e(b.n)}</a></li>` + (m && f.items.length > 1 ? `<li><a href="${A.URL.fam(f)}">${e(f.n)}</a></li><li>${e(A.genLabel(m) || m.y)}</li>` : `<li>${e(f.n)}</li>`));
   if (!SSR) {
   document.getElementById("c-side-title").textContent = `Поколения ${f.n}`;
-  document.getElementById("c-gens").innerHTML = f.items.map(x => `<a href="${A.URL.pos(x)}" class="${m && x.s === m.s ? "is-active" : ""}"><span>${e([x.g, x.v].filter(Boolean).join(", ") || "Все версии")}</span><small>${e(x.y || "")}</small></a>`).join("");
+  document.getElementById("c-gens").innerHTML = f.items.map(x => `<a href="${A.URL.pos(x)}" class="${m && x.s === m.s ? "is-active" : ""}"><span>${e(A.genLabel(x) || "Все версии")}</span><small>${e(x.y || "")}</small></a>`).join("");
   document.getElementById("c-other-title").textContent = `Другие модели ${b.n}`;
   document.getElementById("c-other").innerHTML = b.fams.filter(x => x.id !== f.id).slice(0, 14).map(x => `<a href="${A.URL.fam(x)}">${e(x.n)}<small>${x.items.length}</small></a>`).join("") + `<a href="${A.URL.brand(b.id)}"><b>Все модели ${e(b.n)}</b></a>`;
   }
@@ -34,7 +34,7 @@
   const strip = A.perkStrip();
 
   /* SEO-тексты по образцу главной: семейство (выбор поколения) и конкретное лекало */
-  const genLabel = x => [x.g, x.v].filter(Boolean).join(", ");
+  const genLabel = A.genLabel;
   const famTags = cur => f.items.filter(x => x !== cur).slice(0, 10).map(x => [`Чехлы на ${full} ${genLabel(x) || x.y || ""}`.trim(), A.URL.pos(x)])
     .concat(b.fams.filter(x => x.id !== f.id).slice(0, 12).map(x => [`Чехлы на ${b.n} ${x.n}`, A.URL.fam(x)]))
     .concat([[`Все чехлы ${b.n}`, A.URL.brand(b.id)], ["Авточехлы из экокожи", A.href("collection", { c: "eco" })], ["Чехлы из алькантары", A.href("collection", { c: "alcantara" })], ["Авточехлы жаккард", A.href("collection", { c: "jacquard" })]]);
@@ -58,7 +58,7 @@
     const name = A.carName(x), others = f.items.filter(y => y !== x);
     return A.seoBlock({
       h2: `Чехлы на сиденья ${e(name)} от производителя`,
-      intro: `<p>Комплект для ${e(name)}${x.y ? " (" + e(x.y) + ")" : ""} шьётся на собственном производстве в Новосибирске по заводскому лекалу именно этого поколения${x.v ? " и варианта салона — " + e(x.v) : ""}. Чехлы повторяют контуры и линии сидений, сохраняют доступ к регулировкам, подлокотникам и креплениям, не пузырятся и не собираются гармошкой. Купить чехлы на ${e(name)} можно напрямую у производителя, без наценки посредников.</p>`,
+      intro: `<p>Комплект для ${e(name)}${x.y ? " (" + e(x.y) + ")" : ""} шьётся на собственном производстве в Новосибирске по заводскому лекалу именно этого поколения${x.v ? " и варианта салона — " + e(A.cfgText(x)) : ""}. Чехлы повторяют контуры и линии сидений, сохраняют доступ к регулировкам, подлокотникам и креплениям, не пузырятся и не собираются гармошкой. Купить чехлы на ${e(name)} можно напрямую у производителя, без наценки посредников.</p>`,
       parts: [
         ["Что входит в комплект", `<p>Чехлы на передние и задние сиденья, спинки и подголовники, разрывные швы под Airbag, крепёж — резинки с крючками и шнур для утяжки. Оплётка руля в цвет салона — в подарок к комплекту. Автоковрики EVA в цвет чехлов и установку в вашем городе добавим по запросу.</p>`],
         others.length ? [`Другие поколения ${e(full)}`, `<p>${others.map(y => `<a href="${A.URL.pos(y)}">${e(full)}${genLabel(y) ? " " + e(genLabel(y)) : ""}</a> (${e(y.y || "все годы")})`).join(", ")}. Если не уверены, какое лекало подходит, введите VIN-номер в строке поиска или позвоните 8 (800) 775-32-60.</p>`] : null,
@@ -129,7 +129,7 @@
     /* --- лекало (шаблон T4): стандартные сочетания + плашка индивидуального пошива ---
        Title, H1, Description — по SEO-маскам T4 (план/Шаблоны страниц для Битрикса) с решениями 29.10.2026:
        без срока пошива, Title до 70 знаков, иначе без поколения. */
-    const name = A.carName(m), model = m.m || f.n, gen = [m.g, m.v].filter(Boolean).join(", "), kit = A.kitOf(m), ru = kit.ru || model;
+    const name = A.carName(m), model = m.m || f.n, gen = A.genLabel(m), kit = A.kitOf(m), ru = kit.ru || model;
     const yrs = m.y ? m.y.replace(/^(\d{4})–\1$/, "$1") : "", from = A.fmt(m.p[0]);
     const h1 = `Авточехлы на ${b.n} ${model}${gen ? " " + gen : ""}`;
     const ruGen = m.g && !/\d$/.test(ru) ? " " + m.g : "";  // «Рио 2» из Битрикса уже с поколением — без «II»
@@ -148,7 +148,7 @@
       <section class="section section--tight">${strip}</section>
       <section class="section section--tight">
         <div class="section__head" style="margin-bottom:16px"><div><h2 style="font-size:1.5rem">Комплектация салона ${e(name)}</h2><p>По данным производства. Если в вашем салоне иначе, менеджер уточнит комплектацию после заказа.</p></div></div>
-        ${A.specHtml([["Марка и модель", b.n + " " + model], ["Поколение", m.g], ["Вариант салона", m.v], ["Годы выпуска", yrs], ...A.kitRows(m), ["Гарантия", "1 год на качество пошива"]])}
+        ${A.specHtml([["Марка и модель", b.n + " " + model], ["Поколение", m.g], ["Вариант салона", A.cfgText(m)], ["Годы выпуска", yrs], ...A.kitRows(m), ["Гарантия", "1 год на качество пошива"]])}
       </section>
       <section class="section section--tight">
         <div class="section__head" style="margin-bottom:16px"><div><h2 style="font-size:1.5rem">Что входит в комплект</h2></div></div>
@@ -157,7 +157,7 @@
       <section class="section section--tight" data-tabs>
         <div class="tabs"><button class="is-active" data-tab="install">Установка</button><button data-tab="faq">Вопросы</button></div>
         <div class="tab-pane is-active" data-pane="install"><div class="prose"><p>Качественная установка может занять около двух часов. Сначала надевают чехол на подушку сиденья, затем на спинку; резинки с крючками заводят под сиденье. Разрывные швы должны быть со стороны дверей — кресла различают по ярлыкам AIRBAG. Пошаговая инструкция — <a href="${A.href("info-install")}">в разделе для клиентов</a>.</p></div></div>
-        <div class="tab-pane" data-pane="faq"><div class="faq" style="grid-template-columns:1fr"><div class="faq__list"><details open><summary>Подойдут ли чехлы на мою комплектацию ${e(name)}?</summary><p>Чехлы шьются по заводскому лекалу ${e(name)}${m.v ? " (" + e(m.v) + ")" : ""}. Сверьте комплектацию салона в таблице выше: деление спинки, подлокотники, подголовники. Если в вашем салоне иначе — выберите соседний вариант слева или позвоните менеджеру.</p></details><details><summary>Сработают ли подушки безопасности?</summary><p>Да. Мастера делают специальные разрывные швы, которые не мешают срабатыванию подушек безопасности.</p></details></div></div></div>
+        <div class="tab-pane" data-pane="faq"><div class="faq" style="grid-template-columns:1fr"><div class="faq__list"><details open><summary>Подойдут ли чехлы на мою комплектацию ${e(name)}?</summary><p>Чехлы шьются по заводскому лекалу ${e(name)}. Сверьте комплектацию салона в таблице выше: деление спинки, подлокотники, подголовники. Если в вашем салоне иначе — выберите соседний вариант слева или позвоните менеджеру.</p></details><details><summary>Сработают ли подушки безопасности?</summary><p>Да. Мастера делают специальные разрывные швы, которые не мешают срабатыванию подушек безопасности.</p></details></div></div></div>
       </section>
       ${revSection}
       <section class="section section--tight">${A.customCard(m)}</section>

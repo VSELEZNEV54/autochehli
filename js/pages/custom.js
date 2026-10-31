@@ -308,7 +308,7 @@ ${body}
     $("[data-c-salon]").innerHTML = (!st.model
       ? `<div class="cfg__empty"><p>Сначала выберите автомобиль — от него зависят лекало и цена.</p><button type="button" class="btn btn--ghost btn--sm" data-go="0">Выбрать автомобиль</button></div>`
       : g && g.items.length > 1
-        ? `<div class="cfg__q"><span>Вариант салона — у каждого своё лекало</span><div class="chips">${g.items.map(m => `<button type="button" class="chip${st.model === m ? " is-selected" : ""}" data-variant="${m.s}">${e(m.v || "Стандартный")}</button>`).join("")}</div></div>`
+        ? `<div class="cfg__q"><span>Вариант салона — у каждого своё лекало</span><div class="chips">${g.items.map(m => `<button type="button" class="chip${st.model === m ? " is-selected" : ""}" data-variant="${m.s}">${e(A.cfgText(m) || "Стандартный")}</button>`).join("")}</div></div>`
         : `<p class="cfg__note">Для ${e(A.carName(st.model))} в каталоге одно лекало салона.</p>`)
       + SALON.filter(q => !(q.rear && st.salon.kit === "front")).map(q => `<div class="cfg__q"><span>${q.name}</span><div class="seg seg--auto">${q.opts.map(([v, n]) => `<button type="button" class="${st.salon[q.id] === v ? "is-selected" : ""}" data-salon="${q.id}" data-v="${v}">${SPLIT[v] && (q.id === "backrest" || q.id === "seat") ? splitIco(v) : ""}${n}</button>`).join("")}</div>${q.hint ? `<p class="cfg__hint">${q.hint}</p>` : ""}${q.legend ? `<dl class="cfg__terms">${q.legend.map(([v, n, d]) => `<div><dt>${splitIco(v)}${n}</dt><dd>${d}</dd></div>`).join("")}</dl>` : ""}</div>`).join("")
       + `<p class="cfg__note">${st.model ? "Подставили, что знаем о вашей модели. Если в салоне иначе — поправьте. " : ""}Не уверены — оставьте «Не знаю», комплектацию уточнит менеджер.</p>`;
@@ -354,9 +354,9 @@ ${body}
     set("[data-b-total]", c.front || c.noBase ? "по запросу" : A.fmt(c.total));
     set("[data-b-lines]", (c.front ? `<div><span>Весь салон для сравнения</span><b>${A.fmt(c.total)}</b></div>` : "") + c.lines.map((l, i) => `<div><span>${e(l.n)}</span><b class="${l.kind === "incl" || l.kind === "gift" ? "free" : ""}">${l.kind === "gift" ? "в подарок" : l.kind === "incl" ? "включено" : l.kind === "ask" ? "по запросу" : (i ? "+" : "") + A.fmt(l.v)}</b></div>`).join(""));
     set("[data-b-car]", m ? e(A.carName(m)) : "Автомобиль не выбран");
-    set("[data-b-car-sub]", m ? e([m.v, A.yearsText(m)].filter(Boolean).join(" · ")) : "Выберите автомобиль справа — цена зависит от лекала");
+    set("[data-b-car-sub]", m ? e([A.cfgText(m), A.yearsText(m)].filter(Boolean).join(" · ")) : "Выберите автомобиль справа — цена зависит от лекала");
     set("[data-b-val=car]", m ? e(A.genName(m)) : "не выбран");
-    set("[data-b-val=salon]", c.front ? "передний ряд" : m && m.v ? e(m.v) : "весь салон");
+    set("[data-b-val=salon]", c.front ? "передний ряд" : m && m.v ? e(A.cfgText(m)) : "весь салон");
     set("[data-b-val=design]", DESIGNS[st.design].name);
     set("[data-b-val=side]", st.sideMat === "same" ? "в цвет центра" : ECO[st.side][0]);
     set("[data-b-val=ins]", `${MATS[st.mat].name}, ${insColor()[0].toLowerCase()}`);
