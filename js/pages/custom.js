@@ -1,4 +1,4 @@
-/* Конструктор индивидуального пошива: разделы идут подряд справа — автомобиль, салон, рисунок, боковины, центральная часть, тыл, дополнительно.
+/* Конструктор индивидуального пошива: разделы идут подряд справа, в порядке заполнения заказа — автомобиль, салон, материал и цвет середины, боковины, рисунок, тыл, дополнительно.
    Превью сиденья слева закреплено, полоса разделов сверху и цена с кнопками «В корзину» и «Заявка менеджеру» внизу всегда на экране.
    Материалы, цвета, услуги и их цены — из справочников Битрикса, которые видят операторы в CRM (js/options.js), поля салона — из заказа в CRM, значения по модели — js/kit.js.
    Цену комплекта в заказе сервер считает сам по тому же options.js (backend/app/catalog.py, custom_quote). */
@@ -58,7 +58,7 @@
   const DEF = { design: "classic", sideMat: "eco", side: "c79236", mat: "perf", ins: "c79243", back: "c79236", thread: "" };
   const DEF_SALON = { kit: "full", body: "", wheel: "", heads: "", farm: "", armrest: "", backrest: "", seat: "", airbag: "" };
   const st = Object.assign({ model: null, opts: new Set(), qty: {}, salon: Object.assign({}, DEF_SALON) }, DEF);
-  const STEPS = [["car", "Авто"], ["salon", "Салон"], ["design", "Рисунок"], ["side", "Боковины"], ["ins", "Центр"], ["back", "Тыл"], ["extra", "Опции"]];
+  const STEPS = [["car", "Авто"], ["salon", "Салон"], ["ins", "Материал"], ["side", "Бок"], ["design", "Рисунок"], ["back", "Тыл"], ["extra", "Опции"]];
   let cur = 0, kitFor = null;   /* cur — раздел на экране, kitFor — лекало, с которого подставлен салон */
 
   /* ---------- геометрия сиденья ---------- */
@@ -190,9 +190,9 @@ ${body}
     return [
       ["Автомобиль", st.model ? A.carName(st.model) : "не выбран"],
       ["Салон", salonText()],
-      ["Рисунок", DESIGNS[st.design].name],
       ["Центральная часть", `${matName(st.mat)}, ${insColor()[0].toLowerCase()}`],
       ["Боковины", sideText()],
+      ["Рисунок", DESIGNS[st.design].name],
       ["Тыл", "экокожа, " + ECO[st.back][0].toLowerCase() + (st.back === DEF.back ? "" : " (по запросу)")],
       ["Дополнительно", extrasText()],
       ["Итого на сайте", c.front ? "передний ряд — по запросу" : c.noBase ? "по запросу" : "от " + A.fmt(c.total)]
@@ -289,11 +289,11 @@ ${body}
   }
 
   /* ---------- интерфейс ---------- */
-  const card = (attr, id, on, ico, name, note, tag) => `<button type="button" class="cfg__card${on ? " is-selected" : ""}" ${attr}="${id}">${ico}<b>${name}</b><span>${note}</span>${tag ? `<em>${tag}</em>` : ""}</button>`;
-  /* материал и цвет в одном окне: материалы — открытым списком строк (новый материал — новая строка), ниже цвета; над каждой частью — подсказка, что выбрать */
+  const card = (attr, id, on, ico, name, note, tag, off) => `<button type="button" class="cfg__card${on ? " is-selected" : ""}" ${attr}="${id}"${off ? " disabled" : ""}>${ico}<b>${name}</b><span>${note}</span>${tag ? `<em>${tag}</em>` : ""}</button>`;
+  /* материал и цвет в одном окне: материалы — открытым списком строк (новый материал — новая строка), цвета — прямо под выбранной строкой (under), чтобы их не искать */
   const swatch = c => (c[2] ? `background-image:url('${SW(c[2])}')` : `background-color:${c[1]}`);
   const matRow = x => `${x.color ? `<i style="${swatch(x.color)}"></i>` : ""}<span><b>${e(x.name)}</b><small>${e(x.note)}</small></span><em>${x.price}</em>`;
-  const matList = list => `<div class="mlist">${list.map(x => x.attr ? `<button type="button" class="mlist__opt${x.on ? " is-selected" : ""}" ${x.attr}="${x.id}" aria-pressed="${!!x.on}">${matRow(x)}</button>` : `<div class="mlist__opt is-selected">${matRow(x)}</div>`).join("")}</div>`;
+  const matList = list => `<div class="mlist">${list.map(x => (x.attr ? `<button type="button" class="mlist__opt${x.on ? " is-selected" : ""}" ${x.attr}="${x.id}" aria-pressed="${!!x.on}"${x.off ? " disabled" : ""}>${matRow(x)}</button>` : `<div class="mlist__opt is-selected">${matRow(x)}</div>`) + (x.on && x.under ? `<div class="mlist__under">${x.under}</div>` : "")).join("")}</div>`;
   const part = (label, value, body) => `<div class="cfg__wpart"><div class="cfg__wlabel"><b>${label}</b>${value ? `<span>${e(value)}</span>` : ""}</div>${body}</div>`;
   const tile = (attr, id, c, on, sub) => `<button type="button" class="cfg__color${on ? " is-selected" : ""}" ${attr}="${id}"><i style="${swatch(c)}"></i><span>${e(c[0])}${sub ? `<small>${sub}</small>` : ""}</span></button>`;
   const optRow = (id, name, note, price, on, off) => `<label class="cfg__opt${off ? " is-off" : ""}"><span class="cfg__opt-t"><b>${e(name)}</b><small>${e(note)}</small></span><em>${price}</em><input type="checkbox" data-opt="${id}"${on ? " checked" : ""}${off ? " disabled" : ""}><i class="sw"></i></label>`;
@@ -312,19 +312,16 @@ ${body}
         : `<p class="cfg__note">Для ${e(A.carName(st.model))} в каталоге одно лекало салона.</p>`)
       + SALON.filter(q => !(q.rear && st.salon.kit === "front")).map(q => `<div class="cfg__q"><span>${q.name}</span><div class="seg seg--auto">${q.opts.map(([v, n]) => `<button type="button" class="${st.salon[q.id] === v ? "is-selected" : ""}" data-salon="${q.id}" data-v="${v}">${SPLIT[v] && (q.id === "backrest" || q.id === "seat") ? splitIco(v) : ""}${n}</button>`).join("")}</div>${q.hint ? `<p class="cfg__hint">${q.hint}</p>` : ""}${q.legend ? `<dl class="cfg__terms">${q.legend.map(([v, n, d]) => `<div><dt>${splitIco(v)}${n}</dt><dd>${d}</dd></div>`).join("")}</dl>` : ""}</div>`).join("")
       + `<p class="cfg__note">${st.model ? "Подставили, что знаем о вашей модели. Если в салоне иначе — поправьте. " : ""}Не уверены — оставьте «Не знаю», комплектацию уточнит менеджер.</p>`;
-    /* 3. рисунок */
-    const M = MATS[st.mat];
-    $("[data-b-designs]").innerHTML = O.designs.map(d => card("data-design", d.id, st.design === d.id, `<svg viewBox="0 0 40 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="1" width="38" height="24" rx="5"/>${ICO[d.id]}</svg>`, d.name, d.note, d.price ? "+" + A.fmt(d.price) : "входит")).join("");
+    /* 3. материал и цвет середины */
+    const M = MATS[st.mat], ic = M.colors[st.ins] ? st.ins : Object.keys(M.colors)[0];
+    $("[data-b-inserts]").innerHTML = part("Выберите материал", M.name, matList(O.materials.map(m => { const n = Object.keys(m.colors).length, p = matPrice(st.model, m.id); return { attr: "data-mat", id: m.id, color: m.id === st.mat ? M.colors[ic] : Object.values(m.colors)[0], name: m.name, note: `${m.note} · ${n} ${A.plural(n, "цвет", "цвета", "цветов")}`, price: p == null ? "по запросу" : A.fmt(p), on: st.mat === m.id,
+      under: part("Выберите цвет", M.colors[ic][0], `<div class="cfg__colors">${Object.entries(M.colors).map(([id, c]) => tile("data-ins", id, c, ic === id)).join("")}</div>`) }; })));
+    /* 4. боковины: цвета — под выбранной строкой */
+    $("[data-b-sides]").innerHTML = part("Выберите материал", SIDE_MATS[st.sideMat].name, matList(Object.entries(SIDE_MATS).map(([id, s]) => { const ok = s.ok(st.mat); return { attr: "data-side-mat", id, color: id === "eco" ? ECO[st.side] : M.colors[ic], name: s.name, note: ok ? s.note : "Шьём только с экокожей и алькантарой в центре", price: s.price, on: st.sideMat === id, off: !ok,
+      under: id === "eco" ? part("Выберите цвет", ECO[st.side][0], `<div class="cfg__colors">${Object.entries(ECO).map(([k, c]) => tile("data-side", k, c, st.side === k)).join("")}</div>`) : `<p class="cfg__winnote">Весь перед сиденья — из того же материала и цвета, что середина. Цвет меняется в разделе «Материал», тыл остаётся из экокожи.</p>` }; })));
+    /* 5. рисунок */
+    $("[data-b-designs]").innerHTML = O.designs.map(d => card("data-design", d.id, st.design === d.id, `<svg viewBox="0 0 40 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="1" width="38" height="24" rx="5"/>${ICO[d.id]}</svg>`, d.name, d.note, d.price ? "+" + A.fmt(d.price) : "входит", d.id !== "plain" && !M.design)).join("");
     $("[data-b-design-note]").textContent = M.pattern ? `В материале «${M.name}» рисунок уже есть, отдельный заказывать не нужно.` : !M.design ? `На материале «${M.name}» настрочек нет — только гладкая серединка.` : st.design === "strelki" || st.design === "anakonda" ? "Этот рисунок на превью пока не показан." : "Рисунки шьём на экокоже, перфорации и алькантаре.";
-    /* 4. боковины: материал и цвет в одном окне */
-    $("[data-b-sides]").innerHTML = part("Выберите материал", SIDE_MATS[st.sideMat].name, matList(Object.entries(SIDE_MATS).map(([id, s]) => ({ attr: "data-side-mat", id, color: id === "eco" ? ECO[st.side] : insColor(), name: s.name, note: s.note, price: s.price, on: st.sideMat === id }))))
-      + (st.sideMat === "eco"
-        ? part("Выберите цвет", ECO[st.side][0], `<div class="cfg__colors">${Object.entries(ECO).map(([id, c]) => tile("data-side", id, c, st.side === id)).join("")}</div>`)
-        : part("Цвет", insColor()[0], `<p class="cfg__winnote">Весь перед сиденья — из того же материала и цвета, что центральная часть. Цвет меняется в разделе «Центральная часть», тыл остаётся из экокожи. Так шьём с экокожей и алькантарой.</p>`));
-    /* 5. центральная часть */
-    const ic = M.colors[st.ins] ? st.ins : Object.keys(M.colors)[0];
-    $("[data-b-inserts]").innerHTML = part("Выберите материал", M.name, matList(O.materials.map(m => { const n = Object.keys(m.colors).length, p = matPrice(st.model, m.id); return { attr: "data-mat", id: m.id, color: Object.values(m.colors)[0], name: m.name, note: `${m.note} · ${n} ${A.plural(n, "цвет", "цвета", "цветов")}`, price: p == null ? "по запросу" : A.fmt(p), on: st.mat === m.id }; })))
-      + part("Выберите цвет", M.colors[ic][0], `<div class="cfg__colors">${Object.entries(M.colors).map(([id, c]) => tile("data-ins", id, c, ic === id)).join("")}</div>`);
     /* 6. тыл */
     $("[data-b-backs]").innerHTML = part("Материал", "", matList([{ color: ECO[st.back], name: "Экокожа «Аригон»", note: "Чёрный входит в комплект, другой цвет — по запросу", price: "" }]))
       + part("Выберите цвет", ECO[st.back][0], `<div class="cfg__colors">${Object.entries(ECO).map(([id, c]) => tile("data-back", id, c, st.back === id, id === DEF.back ? "входит" : "по запросу")).join("")}</div>`);
@@ -372,7 +369,7 @@ ${body}
   const topGap = () => headerH() + (mobile() ? $(".cfg__stage").offsetHeight : $("[data-b-steps]").offsetHeight) + 12;
   function renderNav() {
     const bar = $("[data-b-steps]");
-    bar.innerHTML = STEPS.map(([id, short], i) => `<button type="button" class="${i === cur ? "is-active" : ""}${i === 0 && st.model && cur ? " is-done" : ""}" data-go="${i}"${i === cur ? ' aria-current="true"' : ""}><i>${i + 1}</i><span>${short}</span></button>`).join("");
+    bar.innerHTML = STEPS.map(([id, short], i) => `<button type="button" class="${i === cur ? "is-active" : ""}" data-go="${i}"${i === cur ? ' aria-current="true"' : ""}><span>${short}</span></button>`).join("");
     const a = $(".is-active", bar);
     if (a && bar.scrollWidth > bar.clientWidth) bar.scrollLeft = a.offsetLeft - (bar.clientWidth - a.offsetWidth) / 2;
   }
@@ -390,21 +387,20 @@ ${body}
   }
   addEventListener("scroll", spy, { passive: true });
 
-  /* ---------- события: несовместимые сочетания переключаем сами и говорим об этом ---------- */
-  function setDesign(id) {
-    st.design = id;
-    if (id !== "plain" && !MATS[st.mat].design) { const was = MATS[st.mat].name; st.mat = "perf"; A.toast(`Рисунок на материале «${was}» не шьём — центральная часть: ${MATS.perf.name.toLowerCase()}`); }
+  /* ---------- события: материал выбирают раньше рисунка и боковин, поэтому материал сам не меняем: неподходящий рисунок и боковины снимаем и говорим об этом ---------- */
+  /* при смене материала цвет остаётся тем же, если он есть в новом материале: сначала полное совпадение, затем по основному цвету («Серый» → «Тёмно-серая» → «Рогожка серая»); иначе — первый в списке, самый ходовой */
+  const colorStem = n => n.toLowerCase().replace(/ё/g, "е").replace(/(ый|ий|ой|ая|яя|ые|ие)$/, "");
+  const colorBase = n => colorStem(n.split(/[\s,-]+/).pop());
+  function sameColor(id, name) {
+    const list = Object.entries(MATS[id].colors);
+    return (list.find(([, c]) => colorStem(c[0]) === colorStem(name)) || list.find(([, c]) => colorBase(c[0]) === colorBase(name)) || list[0])[0];
   }
   function setMat(id) {
-    const msg = [];
-    st.mat = id;
+    const msg = [], was = insColor()[0];
+    st.mat = id; st.ins = sameColor(id, was);
     if (st.design !== "plain" && !MATS[id].design) { st.design = "plain"; msg.push(MATS[id].pattern ? "рисунок уже есть в материале" : "настрочек на этом материале нет"); }
     if (st.sideMat === "same" && !SIDE_MATS.same.ok(id)) { st.sideMat = "eco"; msg.push("боковины из экокожи: в цвет центра шьём с экокожей и алькантарой"); }
     if (msg.length) A.toast(`${MATS[id].name} — ${msg.join("; ")}`);
-  }
-  function setSideMat(id) {
-    st.sideMat = id;
-    if (!SIDE_MATS[id].ok(st.mat)) { st.mat = "alc"; A.toast("Боковины в цвет центра шьём с экокожей и алькантарой — центральная часть: алькантара"); }
   }
   root.addEventListener("mousedown", ev => { if (ev.target.closest("[data-cbx-drop]")) ev.preventDefault(); });
   root.addEventListener("click", ev => {
@@ -415,8 +411,10 @@ ${body}
     if (d.mode) { setMode(d.mode); return; }
     if (b.matches("[data-b-cart]")) { addToCart(); return; }
     if (b.matches("[data-b-lines-toggle]")) { const l = $("[data-b-lines]"); l.hidden = !l.hidden; b.setAttribute("aria-expanded", String(!l.hidden)); return; }
-    if (d.design) setDesign(d.design);
-    else if (d.sideMat) setSideMat(d.sideMat);
+    /* строка материала раскрывает цвета, блок выше сворачивается: оставляем нажатую строку на том же месте экрана */
+    const anchor = d.mat ? `[data-mat="${d.mat}"]` : d.sideMat ? `[data-side-mat="${d.sideMat}"]` : "", y0 = anchor ? b.getBoundingClientRect().top : 0;
+    if (d.design) st.design = d.design;
+    else if (d.sideMat) st.sideMat = d.sideMat;
     else if (d.side) st.side = d.side;
     else if (d.mat) setMat(d.mat);
     else if (d.ins) st.ins = d.ins;
@@ -428,6 +426,7 @@ ${body}
     else if (d.pickChip) { setModel(A.BY_SLUG[d.pickChip]); if (mode === "vin") $("[data-c-vin-out]").innerHTML = `<div class="vin-msg vin-msg--ok">Выбрано: ${e(A.carName(st.model))}${st.model.y ? " · " + e(st.model.y) : ""}</div>`; }
     else return;
     render();
+    if (anchor) scrollBy({ top: $(anchor).getBoundingClientRect().top - y0, behavior: "instant" });
   });
   root.addEventListener("change", ev => {
     const t = ev.target;

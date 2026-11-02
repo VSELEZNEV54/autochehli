@@ -12,10 +12,9 @@
     clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>',
     phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>',
     wallet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H5a2 2 0 0 1 0-4h13v4M3 5v14a2 2 0 0 0 2 2h15V7"/><path d="M16 14h.01"/></svg>',
-    star: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.95-4.7 4.58 1.1 6.47L12 17.45 6.2 20.5l1.1-6.47-4.7-4.58 6.5-.95z"/></svg>'
   };
   const infoBlock = () => `<div class="buybox__info">
-      <div>${IC.truck}<div>Доставка в <b data-city-name>${e(window.AS_city ? window.AS_city() : "ваш город")}</b><span>DPD, EMS Почта России · по тарифу транспортной компании</span></div><em>от 250 ₽</em></div>
+      <div>${IC.truck}<div>Доставка · <b data-city-name>${e(window.AS_city() || "Выбрать")}</b><span>DPD, EMS Почта России · по тарифу транспортной компании</span></div><em>от 250 ₽</em></div>
       <div>${IC.pin}<div>Самовывоз в Новосибирске<span>ул. Бориса Богаткова 253/2, оф. 116</span></div><em></em></div>
       <div>${IC.card}<div>Предоплата от 1 000 ₽<span>Картой онлайн или по QR-коду, комиссия 0 %. Остаток — при получении, где доступен наложенный платёж</span></div><em></em></div>
       <div>${IC.shield}<div>Гарантия на качество пошива<span>При соблюдении правил ухода. Если товар не подойдёт — вернём деньги</span></div><em>1 год</em></div>
@@ -241,7 +240,8 @@
   const short = `${b.n} ${m.m || f.n}`, lbl = v.label.toLowerCase(), cost = A.fmt(A.priceOf(m, v));
   const url = A.seo({ title: A.titleFit([`Чехлы на ${A.carName(m)}: ${lbl}, цена ${cost}`, `Чехлы на ${A.carName(m)}: ${lbl}`, `${A.carName(m)}: ${lbl}`, `Чехлы на ${short}: ${lbl}`, `${short}: ${lbl}`]), description: desc,
     keywords: [...new Set([`чехлы на сиденья ${A.carName(m)}`, `чехлы ${v.label.toLowerCase().replace(/,/g, "")} ${A.carName(m)}`, `купить чехлы на ${A.carName(m)}`, `чехлы на ${A.carName(m)} ${A.MAT_NAME[v.mat].toLowerCase()}`])].join(", ").toLowerCase(),
-    page: "product", params: { m: m.s, v: v.id }, image: A.varPhoto(m, v), noindex: !known });
+    page: "product", params: { m: m.s, v: v.id }, image: A.varPhoto(m, v), noindex: !known,
+    city: w => ({ title: [`Чехлы на ${A.carName(m)} ${w}: ${lbl}`, `Чехлы на ${short} ${w}: ${lbl}`, `Купить чехлы на ${short} ${w}`], description: `Купить чехлы на сиденья ${A.carName(m)} ${w}: ${lbl}. ${cost} за комплект на весь салон, пошив по заводскому лекалу, гарантия 1 год, доставка.` }) });
   const trail = [["Главная", A.href("index")], ["Модельные авточехлы", A.href("catalog")], [b.n, A.URL.brand(b.id)], [f.n, A.URL.fam(f)]]
     .concat(f.items.length > 1 ? [[A.genName(m), A.URL.pos(m)]] : []).concat([[title(), A.URL.product(m, v)]]);
   const ld = { "@context": "https://schema.org", "@graph": [
@@ -257,14 +257,14 @@
   const msgs = `<div class="opt-block"><p class="opt-block__h">Консультация в мессенджере</p><div class="buybox__msg">${A.msgLinks()}</div></div>`;
   if (!SSR) root.innerHTML = gallery(imgs, `<div class="card__tags"><span class="card__tag card__tag--white">Фото наших работ</span></div>`, true) + `<div class="buybox buybox--cover">
     <h1>${e(title())}</h1>
-    <div class="buybox__rate"><span class="buybox__stars" role="img" aria-label="Оценка 5 из 5">${IC.star.repeat(5)}</span><button class="buybox__rev" type="button" id="p-rev">Отзывы покупателей</button></div>
+    <div class="buybox__rate"><button class="buybox__rev" type="button" id="p-rev">Отзывы покупателей</button></div>
     <p class="buybox__lead">Шьём под заказ по заводскому лекалу этой модели: чехлы повторяют контуры сидений и выглядят близко к перетяжке салона.</p>
     ${panel(`<div class="buybox__price">${A.priceHtml(m, v, ' id="p-total"')}<span class="muted small">за комплект<br>на весь салон</span></div>`,
       "",
       `<div class="buybox__cta"><button class="btn btn--primary btn--lg" type="button" id="p-add">В корзину</button><button class="btn btn--dark btn--lg" type="button" id="p-buy">Купить в 1 клик</button><button class="btn btn--ghost btn--lg btn--icon" type="button" data-fav="${cartId()}" aria-label="В избранное">${A.ICON.heart}</button></div>${msgs}${gift}`)}
     <div class="opt-block"><p class="opt-block__h">Цвет: <b>${e(v.label)}</b></p><div class="colors">${matVariants(v.mat).map(x => `<a class="color-chip${x.id === v.id ? " is-active" : ""}" href="${A.URL.product(m, x)}" aria-label="${e(x.label)}" title="${e(x.label)}"${x.id === v.id ? ' aria-current="true"' : ""}><i style="${window.AS_colorDot(x.colors)}"></i></a>`).join("")}</div></div>
     <div class="opt-block"><p class="opt-block__h">Материал</p><div class="seg${mats.length === 2 ? " seg--2" : ""}">${mats.map(mt => `<a href="${A.URL.product(m, matVariants(mt)[0])}" class="${v.mat === mt ? "is-selected" : ""}">${A.MAT_NAME[mt].replace("Экокожа + алькантара", "Алькантара")}<small>от ${A.fmt(Math.min(...matVariants(mt).map(x => A.priceOf(m, x))))}</small></a>`).join("")}</div></div>
-    <div class="buybox__custom"><p>Не нашли свой материал или цвет? Соберите чехлы в конструкторе</p><a class="btn btn--ghost btn--sm" href="${A.URL.custom(m)}">Открыть конструктор</a></div>
+    <div class="buybox__custom"><div><b>Не нашли свой материал или цвет?</b><p>Соберите чехлы в конструкторе</p></div><a class="btn btn--primary" href="${A.URL.custom(m)}">Открыть конструктор</a></div>
     <div class="opt-block"><p class="opt-block__h">Дополнительно к заказу</p><div class="addons">
       <label class="toggle"><div><b>Автоковрики EVA в цвет чехлов</b><span>Добавим к заказу, стоимость уточнит менеджер</span></div><span class="tp">по запросу</span><input type="checkbox" data-opt="mats"><i class="sw"></i></label>
       <label class="toggle"><div><b>Установка в вашем городе</b><span>Найдём установщика в вашем городе, стоимость уточнит менеджер. <a href="${A.href("ustanovka")}">Подробнее</a></span></div><span class="tp">по запросу</span><input type="checkbox" data-opt="install"><i class="sw"></i></label>
@@ -332,7 +332,7 @@
     </div></div></div>
     <div class="tab-pane" data-pane="s">${A.specHtml([["Автомобиль", A.carName(m)], ["Вариант салона", A.cfgText(m) || "стандартный"], ["Годы выпуска", m.y || "все годы"], ["Материал вставок", A.MAT_NAME[v.mat].replace("Экокожа + алькантара", "Алькантара")], ["Цвет", v.label], ["Боковины", "Экокожа"], ...A.kitRows(m), ["Гарантия", "1 год на качество пошива"]])}<p class="muted small" style="margin-top:12px">Комплектация салона — по данным производства. Если в вашем салоне иначе, менеджер уточнит после заказа.</p></div>
     <div class="tab-pane" data-pane="k">${A.kitIncludes(m)}</div>
-    <div class="tab-pane" data-pane="i"><div class="prose"><p>Качественная установка может занять около двух часов. Не путайте правое и левое передние кресла: разрывные швы должны быть со стороны дверей, кресла различают по вшитым ярлыкам AIRBAG. Подробно — <a href="${A.href("info-install")}">в инструкции по установке</a>.</p><p>Если не хотите ставить сами, отметьте «Установка в вашем городе» — найдём установщика в вашем городе, стоимость уточнит менеджер.</p></div></div>
+    <div class="tab-pane" data-pane="i"><div class="prose"><p>Качественная установка может занять около двух часов. Не путайте правое и левое передние кресла: разрывные швы должны быть со стороны дверей, кресла различают по вшитым ярлыкам AIRBAG.</p><p>Если не хотите ставить сами, отметьте «Установка в вашем городе» — найдём установщика в вашем городе, стоимость уточнит менеджер.</p></div></div>
     <div class="tab-pane" data-pane="r"><div class="reviews"><article class="review"><div class="review__head"><div class="avatar">П</div><div><b>Петр</b><span>Улан-Удэ · 12.06.2022</span></div></div><p>Без проблем обговорили с менеджером цвет и текстуру чехлов. Установил самостоятельно, для удобства снимал сиденья. Мне пошили отличные чехлы, я доволен качеством материала и изготовления.</p><span class="review__car">Chevrolet Niva</span></article><article class="review"><div class="review__head"><div class="avatar">Ю</div><div><b>Юлия</b><span>Новосибирск · 24.02.2022</span></div></div><p>Качественные чехлы. Не везде есть отверстия, и чтобы их надеть, пришлось вытаскивать кресла из машины, очень трудоёмкий процесс. Но не жалею, салон как новенький. Рекомендую.</p><span class="review__car">Toyota Gaia</span></article></div><p class="small muted" style="margin-top:12px">Отзывы покупателей с сайта 1avtochehol.ru. <a class="link" href="${A.href("reviews")}">Все отзывы</a></p></div>`;
   /* «Отзывы покупателей» под заголовком: открыть вкладку и плавно прокрутить к блоку */
   document.getElementById("p-rev").addEventListener("click", () => { tabsBox.querySelector('[data-tab="r"]').click(); tabsBox.scrollIntoView({ behavior: "smooth", block: "start" }); });

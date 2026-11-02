@@ -1,6 +1,8 @@
 /* Контакты: Яндекс.Карта на весь экран. Точки берутся из разметки ([data-pt] с data-c), координаты — со старой страницы 1avtochehol.ru/contact/.
    Новосибирск — отдел продаж и производство, остальные города — представительства */
 (function () {
+  /* Ключ JavaScript API Яндекс Карт: кабинет developer.tech.yandex.ru, ограничение по адресу сайта. Этот ключ виден всем в браузере, это нормально. Где взять — «план/Деплой на тестовый домен/04 Незакрытое.md» */
+  const YMAPS_KEY = "";
   const box = document.getElementById("cmap");
   if (!box) return;
   const e = window.AS.esc;
@@ -16,7 +18,7 @@
   function load(cb) {
     if (window.ymaps) return ymaps.ready(cb);
     const s = document.createElement("script");
-    s.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
+    s.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU" + (YMAPS_KEY ? "&apikey=" + YMAPS_KEY : "");
     s.onload = () => window.ymaps ? ymaps.ready(cb) : fail();
     s.onerror = fail;
     document.head.appendChild(s);

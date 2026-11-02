@@ -144,8 +144,8 @@
     const r = m && m.pr && ROMB_PR[v.id];
     return r && m.pr[r[0]] ? m.pr[r[0]] + r[1] : (m ? m.p : minPrices(MODELS))[v.mat] + (v.extra || 0);
   };
-  /* Старая цена комплекта — как на старом сайте: зачёркнутая цена модели (обычно 12 975 ₽, поле «o» в data.js) + те же доплаты варианта */
-  const oldPriceOf = (m, v) => { const o = m && m.o ? m.o + (v.extra || 0) : 0; return o > priceOf(m, v) ? o : 0; };
+  /* Старая цена комплекта — зачёркнутая цена модели из Битрикса (обычно 12 975 ₽, поле «o» в data.js), одна на все материалы: доплаты варианта к ней не прибавляем (правка 02.11.2026). То же в backend/app/catalog.py и lib/view.php */
+  const oldPriceOf = (m, v) => { const o = m && m.o ? m.o : 0; return o > priceOf(m, v) ? o : 0; };
   const discountOf = (m, v) => { const o = oldPriceOf(m, v); return o ? Math.round((1 - priceOf(m, v) / o) * 100) : 0; };
   const priceHtml = (m, v, attrs = "") => {
     const o = oldPriceOf(m, v), now = `<span class="price__now">${fmt(priceOf(m, v))}</span>`;
@@ -157,6 +157,16 @@
      Прототип: page.html?k=v. В шаблоне Битрикса window.AS_LINKS — карта из bitrix/urls.json, и те же страницы
      получают адреса сайта (/avto/toyota/, /company/ …). Ссылки на страницы строим только через href() и URL_. */
   const LINKS = window.AS_LINKS;
+  /* ---------- страницы городов (правка пользователя 02.11.2026) ----------
+     Та же страница по адресу /{город}/…: отличаются только Title, Description, keywords и canonical. Статичные страницы собирает build.py в goroda/{город}/ (маски — CITY_META в tools/seo.py),
+     марки, модели, товары и подборки — AS.seo ниже; остальное nginx отдаёт из корня (backend/deploy/test-domain/nginx-autostyle.conf). В шаблоне Битрикса и на GitHub Pages таких адресов пока нет.
+     Новый город: добавить сюда и в nginx. Список читает build.py: строгий JSON в одну строку. */
+  const CITIES = [{"n":"Москва","w":"в Москве","s":"moskva"},{"n":"Санкт-Петербург","w":"в Санкт-Петербурге","s":"spb"},{"n":"Новосибирск","w":"в Новосибирске","s":"novosibirsk"},{"n":"Екатеринбург","w":"в Екатеринбурге","s":"ekaterinburg"},{"n":"Казань","w":"в Казани","s":"kazan"},{"n":"Нижний Новгород","w":"в Нижнем Новгороде","s":"nizhniy-novgorod"},{"n":"Красноярск","w":"в Красноярске","s":"krasnoyarsk"},{"n":"Челябинск","w":"в Челябинске","s":"chelyabinsk"},{"n":"Самара","w":"в Самаре","s":"samara"},{"n":"Уфа","w":"в Уфе","s":"ufa"},{"n":"Ростов-на-Дону","w":"в Ростове-на-Дону","s":"rostov-na-donu"},{"n":"Краснодар","w":"в Краснодаре","s":"krasnodar"},{"n":"Омск","w":"в Омске","s":"omsk"},{"n":"Воронеж","w":"в Воронеже","s":"voronezh"},{"n":"Пермь","w":"в Перми","s":"perm"},{"n":"Волгоград","w":"в Волгограде","s":"volgograd"},{"n":"Тюмень","w":"в Тюмени","s":"tyumen"},{"n":"Хабаровск","w":"в Хабаровске","s":"khabarovsk"},{"n":"Владивосток","w":"во Владивостоке","s":"vladivostok"},{"n":"Иркутск","w":"в Иркутске","s":"irkutsk"},{"n":"Саратов","w":"в Саратове","s":"saratov"},{"n":"Тольятти","w":"в Тольятти","s":"tolyatti"},{"n":"Барнаул","w":"в Барнауле","s":"barnaul"},{"n":"Ижевск","w":"в Ижевске","s":"izhevsk"},{"n":"Ярославль","w":"в Ярославле","s":"yaroslavl"},{"n":"Томск","w":"в Томске","s":"tomsk"},{"n":"Оренбург","w":"в Оренбурге","s":"orenburg"},{"n":"Кемерово","w":"в Кемерове","s":"kemerovo"},{"n":"Минск","w":"в Минске","s":"minsk"},{"n":"Алматы","w":"в Алматы","s":"almaty"},{"n":"Астана","w":"в Астане","s":"astana"}];
+  const CITY_PATHS = !LINKS && location.protocol !== "file:" && !/github\.io$/.test(location.hostname);
+  const pageCity = CITY_PATHS ? CITIES.find(c => location.pathname === "/" + c.s || location.pathname.startsWith("/" + c.s + "/")) || null : null;
+  const savedCity = () => { try { return localStorage.getItem("as_city") || ""; } catch (e) { return ""; } };
+  if (pageCity) { if (savedCity() && savedCity() !== pageCity.n) { try { localStorage.setItem("as_city", pageCity.n); } catch (e) {} } }
+  else if (CITY_PATHS) { const c = CITIES.find(x => x.n === savedCity()); if (c) location.replace("/" + c.s + location.pathname + location.search + location.hash); }
   function sitePath(page, p, L = LINKS) {
     const R = L.routes, take = k => { const v = encodeURIComponent(p[k]); delete p[k]; return v; };
     if (page === "brand" && p.b) return R.brand.replace("{b}", take("b"));
@@ -177,6 +187,8 @@
   const href = (page, params = {}, hash = "") => {
     const p = {};
     for (const [k, v] of Object.entries(params)) if (v != null && v !== "") p[k] = String(v);
+    const cityPath = CITY_PATHS && page === "collection" && p.city && ((window.AS_SITE_LINKS || {}).cities || {})[p.city];
+    if (cityPath) return "/" + cityPath + "/" + hash;
     const path = (LINKS && sitePath(page, p)) || page + ".html", q = new URLSearchParams(p).toString();
     return path + (q ? "?" + q : "") + hash;
   };
@@ -211,9 +223,16 @@
     if (L && /^assets\//.test(u)) return L.site + L.template + "/" + u.split("?")[0];
     return new URL(u, L ? L.site : location.href).href;
   }
-  function seo({ title, description, keywords = "", page, params = {}, image, noindex }) {
-    const url = abs(href(page, params));
+  function seo({ title, description, keywords = "", page, params = {}, image, noindex, city }) {
+    let url = abs(href(page, params));
     if (window.AS_SSR) return url;
+    if (pageCity) {   /* city(w) — маски Title и Description страницы для «в Санкт-Петербурге», без него — общая формула */
+      const w = pageCity.w, c = city ? city(w) : {}, L = window.AS_SITE_LINKS;
+      if (L && url.startsWith(L.site) && !url.startsWith(`${L.site}/${pageCity.s}/`)) url = `${L.site}/${pageCity.s}${url.slice(L.site.length)}`;
+      title = titleFit(c.title || [`${title.split(":")[0]} ${w}`]);
+      description = c.description || `${description.replace(/\.\s*$/, "")}. Заказать ${w}.`;
+      keywords = [`купить авточехлы ${w}`, `авточехлы ${pageCity.n}`, keywords].filter(Boolean).join(", ").toLowerCase();
+    }
     const tag = (attr, key, val) => {
       let el = document.head.querySelector(`meta[${attr}="${key}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, key); document.head.appendChild(el); }
@@ -874,6 +893,7 @@
 
   if (!window.AS_SSR) $$("[data-studio]").forEach(el => { el.innerHTML = customCard(null); });
   $$("[data-msg-links]").forEach(el => { el.innerHTML = msgLinks(); });
+  $$("[data-msg-icons]").forEach(el => { el.innerHTML = MSG.map(m => `<a href="${m.url}" target="_blank" rel="noopener" aria-label="Написать в ${m.name}"><img src="${m.icon}" alt="" width="52" height="52" loading="lazy"></a>`).join(""); });
 
   /* ---------- высота шапки для липких блоков: --header-h считается вместе с верхней строкой, обе закреплены ---------- */
   const hdr = $(".header"), topbar = $(".topbar");
@@ -881,44 +901,47 @@
   setHeaderH(); addEventListener("resize", setHeaderH); addEventListener("load", setHeaderH);
 
   /* ---------- выбор города ---------- */
-  const CITIES = ["Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Казань", "Нижний Новгород", "Красноярск", "Челябинск", "Самара", "Уфа", "Ростов-на-Дону", "Краснодар", "Омск", "Воронеж", "Пермь", "Волгоград", "Тюмень", "Хабаровск", "Владивосток", "Иркутск", "Саратов", "Тольятти", "Барнаул", "Ижевск", "Ярославль", "Томск", "Оренбург", "Кемерово", "Минск", "Алматы", "Астана"];
-  const cityName = () => { try { return localStorage.getItem("as_city") || "Москва"; } catch (e) { return "Москва"; } };
+  /* Окно открывается само при первом посещении. Выбранный город ведёт на ту же страницу по адресу города. В приватном режиме localStorage недоступен: окно само не открываем, иначе оно появлялось бы на каждой странице */
+  const cityName = () => savedCity() || (pageCity ? pageCity.n : "");
   window.AS_city = cityName;
-  $$("[data-city-name]").forEach(el => el.textContent = cityName());
+  const showCity = () => $$("[data-city-name]").forEach(el => el.textContent = cityName() || "Выбрать");
+  showCity();
   const cityModal = $("[data-city-modal]");
   if (cityModal) {
     const list = $("[data-city-list]", cityModal), filter = $("[data-city-filter]", cityModal);
-    const render = q => { const t = (q || "").toLowerCase(); list.innerHTML = CITIES.filter(c => c.toLowerCase().includes(t)).map(c => `<button type="button" class="city-list__item${c === cityName() ? " is-active" : ""}" data-city="${c}">${c}</button>`).join("") || `<div class="muted small" style="padding:10px">Доставим в любой населённый пункт — уточните у менеджера.</div>`; };
-    const open = () => { cityModal.classList.add("is-open"); document.body.style.overflow = "hidden"; render(""); setTimeout(() => filter.focus(), 50); };
-    const close = () => { cityModal.classList.remove("is-open"); document.body.style.overflow = ""; };
+    const render = q => { const t = (q || "").toLowerCase(); list.innerHTML = CITIES.filter(c => c.n.toLowerCase().includes(t)).map(c => `<button type="button" class="city-list__item${c.n === cityName() ? " is-active" : ""}" data-city="${c.n}">${c.n}</button>`).join("") || `<div class="muted small" style="padding:10px">Доставим в любой населённый пункт — уточните у менеджера.</div>`; };
+    const open = auto => { cityModal.classList.add("is-open"); document.body.style.overflow = "hidden"; filter.value = ""; render(""); if (!auto) setTimeout(() => filter.focus(), 50); };   /* при автооткрытии без фокуса: на телефоне поле сразу подняло бы клавиатуру */
+    const close = () => {
+      if (!cityModal.classList.contains("is-open")) return;
+      cityModal.classList.remove("is-open"); document.body.style.overflow = "";
+      try { if (pageCity && !savedCity()) localStorage.setItem("as_city", pageCity.n); localStorage.setItem("as_city_asked", "1"); } catch (err) {}
+      showCity();
+    };
     document.addEventListener("click", e => { if (e.target.closest("[data-city-open]")) open(); });   /* делегирование: кнопки города есть и в разметке из JS */
     $$("[data-city-close]", cityModal).forEach(b => b.addEventListener("click", close));
     filter.addEventListener("input", () => render(filter.value));
-    list.addEventListener("click", e => { const b = e.target.closest("[data-city]"); if (!b) return; try { localStorage.setItem("as_city", b.dataset.city); } catch (err) {} $$("[data-city-name]").forEach(el => el.textContent = b.dataset.city); close(); toast("Город: " + b.dataset.city); document.dispatchEvent(new CustomEvent("city:change")); });
+    list.addEventListener("click", e => {
+      const b = e.target.closest("[data-city]"); if (!b) return;
+      const c = CITIES.find(x => x.n === b.dataset.city);
+      try { localStorage.setItem("as_city", c.n); localStorage.setItem("as_city_asked", "1"); } catch (err) {}
+      if (CITY_PATHS && c !== pageCity) {
+        const rest = pageCity ? location.pathname.slice(pageCity.s.length + 1) || "/" : location.pathname;
+        location.assign("/" + c.s + rest + location.search + location.hash);
+        return;
+      }
+      close(); toast("Город: " + c.n); document.dispatchEvent(new CustomEvent("city:change"));
+    });
     document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+    let asked = true;
+    try { asked = !!(localStorage.getItem("as_city") || localStorage.getItem("as_city_asked")); } catch (err) {}
+    if (!asked) open(true);
   }
 
-  /* ---------- «Задать вопрос»: модалка из подвала, кнопки [data-ask-open] (значение "consult" — сразу консультация) ----------
-     Два режима: вопрос (kind question, текст обязателен) и консультация (kind contact, перезвонит оператор, текст по желанию) */
+  /* ---------- «Получить консультацию»: окно из подвала. Его открывают все кнопки [data-ask-open], в том числе «Задать вопрос» в блоках помощи. Заявка contact с темой «Консультация» ---------- */
   const askModal = $("[data-ask-modal]");
   if (askModal) {
     const close = () => { askModal.classList.remove("is-open"); document.body.style.overflow = ""; };
-    const ASK = {
-      question: { kind: "question", topic: "Вопрос", title: "Задать вопрос", note: "Ответим в рабочее время — по телефону или на почту.", contact: "Телефон или e-mail", type: "text", ph: "+7 или почта", msg: "Вопрос", msgPh: "Например: подойдут ли чехлы на мой автомобиль?", req: true, btn: "Отправить вопрос", done: "Вопрос отправлен. Менеджер ответит в рабочее время" },
-      consult: { kind: "contact", topic: "Консультация", title: "Получить консультацию", note: "Оставьте телефон — в рабочее время вам перезвонит оператор и поможет подобрать чехлы.", contact: "Телефон", type: "tel", ph: "+7 (___) ___-__-__", msg: "Комментарий", msgPh: "Марка, модель, год или удобное время для звонка", req: false, btn: "Заказать консультацию", done: "Заявка на консультацию отправлена. В рабочее время вам перезвонит оператор" }
-    };
-    const form = $("form", askModal);
-    const setMode = key => {
-      const m = ASK[key] || ASK.question, msg = $("textarea[name=message]", form), contact = $("input[name=contact]", form), btn = $("[type=submit]", form);
-      $$("[data-ask-mode]", askModal).forEach(b => { const on = b.dataset.askMode === key; b.classList.toggle("is-active", on); b.setAttribute("aria-pressed", on); });
-      $("[data-ask-title]", askModal).textContent = m.title; $("[data-ask-note]", askModal).textContent = m.note;
-      $("[data-ask-contact-label]", askModal).textContent = m.contact; contact.type = m.type; contact.placeholder = m.ph;
-      $("[data-ask-msg-label]", askModal).textContent = m.msg; msg.placeholder = m.msgPh; msg.required = m.req;
-      form.dataset.form = m.kind; form.dataset.formMessage = m.done; $("input[name=topic]", form).value = m.topic;
-      btn.textContent = btn.dataset.label = m.btn;
-    };
-    $$("[data-ask-mode]", askModal).forEach(b => b.addEventListener("click", () => setMode(b.dataset.askMode)));
-    document.addEventListener("click", e => { const t = e.target.closest("[data-ask-open]"); if (!t) return; e.preventDefault(); setMode(t.dataset.askOpen === "consult" ? "consult" : "question"); askModal.classList.add("is-open"); document.body.style.overflow = "hidden"; setTimeout(() => $("input[name=name]", askModal).focus(), 50); });
+    document.addEventListener("click", e => { if (!e.target.closest("[data-ask-open]")) return; e.preventDefault(); askModal.classList.add("is-open"); document.body.style.overflow = "hidden"; setTimeout(() => $("input[name=name]", askModal).focus(), 50); });
     $$("[data-ask-close]", askModal).forEach(b => b.addEventListener("click", close));
     $("form", askModal).addEventListener("form:sent", close);
     document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
@@ -959,16 +982,15 @@
   const EMAIL_RE = /^[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,190}\.[A-Za-zА-Яа-я]{2,24}$/;
   /* те же правила, что на сервере (backend/app/schemas.py → normalize_phone) */
   function phoneOk(raw) {
-    raw = String(raw || "").trim();
-    let d = raw.replace(/\D/g, "");
+    let d = String(raw || "").replace(/\D/g, "");
     if (d.length === 11 && d[0] === "8") d = "7" + d.slice(1);
-    else if (d.length === 10 && "3456789".includes(d[0])) d = "7" + d;
-    if (d.length === 11 && d[0] === "7") return d[1] !== "0" && d[1] !== "1";
-    return raw.startsWith("+") && d.length >= 10 && d.length <= 15;
+    else if (d.length === 10) d = "7" + d;
+    return /^7[3-9]\d{9}$/.test(d);
   }
-  /* маска +7 (900) 000-00-00; номер другой страны можно ввести с «+» и своим кодом — тогда маска не мешает */
+  /* маска +7 (900) 000-00-00 во всех формах сайта: только российский формат, буквы и чужие коды не вводятся */
   function phoneMask(el) {
     if (el._mask) return; el._mask = true;
+    el.inputMode = "tel";
     const fmt = d => {
       let s = "+7";
       if (d.length > 1) s += " (" + d.slice(1, 4);
@@ -978,12 +1000,11 @@
       if (d.length > 9) s += "-" + d.slice(9, 11);
       return s;
     };
-    const foreign = v => /^\+[0-689]/.test(v.trim());
     const apply = del => {
       const v = el.value;
-      if (foreign(v)) { el.value = "+" + v.replace(/[^\d ()-]/g, "").slice(0, 22); return; }
       let d = v.replace(/\D/g, "");
-      if (!d) { el.value = ""; el._d = ""; return; }
+      /* вставили номер с чужим кодом: не превращаем его в похожий на российский, очищаем */
+      if (!d || /^\s*\+(?!7)\d/.test(v) || (d.length > 10 && !"78".includes(d[0]))) { el.value = ""; el._d = ""; return; }
       if (d[0] === "8") d = "7" + d.slice(1); else if (d[0] !== "7") d = "7" + d;
       d = d.slice(0, 11);
       if (del && d === el._d) d = d.slice(0, -1);   /* стёрли скобку или дефис — стираем и цифру перед ними */
@@ -1010,11 +1031,10 @@
   function fieldError(el) {
     const v = (el.value || "").trim(), name = el.name || "";
     if (el.type === "checkbox") return el.required && !el.checked ? (name === "consent" ? "Отметьте согласие на обработку персональных данных" : "Отметьте, чтобы продолжить") : "";
-    if (el.required && !v) return el.type === "tel" || name === "phone" ? "Укажите телефон" : name === "contact" ? "Укажите телефон или e-mail" : "Заполните поле";
+    if (el.required && !v) return el.type === "tel" || name === "phone" ? "Укажите телефон" : "Заполните поле";
     if (!v) return "";
     if (el.type === "tel" || name === "phone") return phoneOk(v) ? "" : "Проверьте номер: +7 (900) 000-00-00";
     if (el.type === "email" || name === "email") return EMAIL_RE.test(v) ? "" : "Проверьте e-mail: например, name@mail.ru";
-    if (name === "contact") return (v.includes("@") ? EMAIL_RE.test(v) : phoneOk(v)) ? "" : "Укажите телефон +7 (900) 000-00-00 или e-mail";
     return "";
   }
   function checkForm(form) {
@@ -1039,7 +1059,7 @@
       if (!(after.nextElementSibling && after.nextElementSibling.classList.contains("form-note"))) after.insertAdjacentHTML("afterend", consentNote((btn.dataset.label || btn.textContent).trim()));
     }
     /* ошибку показываем, когда человек ушёл из поля, и убираем, как только исправил */
-    form.addEventListener("focusout", e => { const el = e.target; if (el.matches && el.matches("input[type=tel], input[type=email], input[name=phone], input[name=email], input[name=contact]") && el.value.trim()) setErr(el, fieldError(el)); });
+    form.addEventListener("focusout", e => { const el = e.target; if (el.matches && el.matches("input[type=tel], input[type=email], input[name=phone], input[name=email]") && el.value.trim()) setErr(el, fieldError(el)); });
     const recheck = e => { const el = e.target; if (el._err && !fieldError(el)) setErr(el, ""); };
     form.addEventListener("input", recheck);
     form.addEventListener("change", recheck);

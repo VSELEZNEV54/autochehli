@@ -89,7 +89,8 @@
       title: A.titleFit([`Чехлы на сиденья ${ruF}: авточехлы на ${full}, цена от ${A.fmt(f.min)}`, `Чехлы на сиденья ${full}, цена от ${A.fmt(f.min)}`, `Чехлы на ${full}, цена от ${A.fmt(f.min)}`]),
       description: `Модельные чехлы на сиденья ${ruF}: экокожа, алькантара, жаккард. Своё заводское лекало на каждый кузов, разрывные швы под Airbag, доставка по России.`,
       keywords: [...new Set([`чехлы на сиденья ${ruF}`, `чехлы на сиденья ${full}`, `авточехлы на ${full}`, `модельные чехлы ${full}`, `купить чехлы на ${ruF}`])].join(", ").toLowerCase(),
-      page: "car", params: { f: f.id }, image: A.carRender(f.items[0]) || undefined, noindex: !found
+      page: "car", params: { f: f.id }, image: A.carRender(f.items[0]) || undefined, noindex: !found,
+      city: w => ({ title: [`Купить авточехлы на ${full} ${w}: чехлы на сиденья ${ruF}`, `Купить авточехлы на ${full} ${w}`, `Авточехлы на ${full} ${w}`], description: `Купить авточехлы на ${full} ${w}: модельные чехлы на сиденья ${ruF} из экокожи, алькантары и жаккарда. Своё лекало на каждый кузов, разрывные швы под Airbag, доставка.` })
     });
     if (!SSR) document.getElementById("c-h1").textContent = "Авточехлы на " + full;
     if (!SSR) document.getElementById("c-meta").innerHTML = revLink + `<span><b>${f.items.length}</b> ${A.plural(f.items.length, "лекало", "лекала", "лекал")}</span>${f.from ? `<span>с <b>${f.from}</b> года</span>` : ""}<span>комплект от <b>${A.fmt(f.min)}</b></span>`;
@@ -99,9 +100,9 @@
       ${toolbar(f.items.length)}
       <div class="grid" id="c-grid" style="grid-auto-flow:dense"></div>
       <div class="section__more" id="c-more"></div>
+      <section class="section section--tight">${A.customCard(f.items[0], full)}</section>
       <section class="section section--tight">${strip}</section>
       ${revSection}
-      <section class="section section--tight">${A.customCard(f.items[0], full)}</section>
       <section class="section section--tight"><div class="seo">${seoFam()}</div></section>`;
     /* чехлы на все кузова: популярные сочетания идут «лесенкой» по кузовам — новые кузова первыми, одинаковые фото не встают рядом */
     const grid = document.getElementById("c-grid"), more = document.getElementById("c-more"), PAGE = 12;
@@ -138,13 +139,15 @@
       title: A.titleFit([`Чехлы на сиденья ${ru}${ruGen}: авточехлы на ${b.n} ${model}, цена от ${from}`, `Чехлы на сиденья ${ru}: авточехлы на ${b.n} ${model}, цена от ${from}`, `Чехлы на ${name}, цена от ${from}`, `Чехлы на ${b.n} ${model}, цена от ${from}`]),
       description: desc,
       keywords: [...new Set([`чехлы на сиденья ${ru}${ruGen}`, `авточехлы на ${b.n} ${model}`, `чехлы на ${name}`, `чехлы на сиденья ${b.n} ${model}${gen ? " " + gen.replace(/,/g, "") : ""}`, `модельные чехлы ${name}`])].join(", ").toLowerCase(),
-      page: "car", params: { m: m.s }, image: A.carRender(m) || A.posPhoto(m), noindex: !found
+      page: "car", params: { m: m.s }, image: A.carRender(m) || A.posPhoto(m), noindex: !found,
+      city: w => ({ title: [`Купить авточехлы на ${name} ${w}`, `Купить авточехлы на ${b.n} ${model} ${w}`, `Авточехлы на ${b.n} ${model} ${w}`], description: `Купить авточехлы на ${name} ${w}: модельные чехлы на сиденья ${ru}${yrs ? " " + yrs : ""} из экокожи, алькантары и жаккарда. Пошив по заводским лекалам, разрывные швы под Airbag.` })
     });
     if (!SSR) document.getElementById("c-h1").innerHTML = `${e(h1)}${yrs ? ` <span class="muted" style="font-weight:600">(${e(yrs)})</span>` : ""}`;
     if (!SSR) document.getElementById("c-meta").innerHTML = revLink + (kit.n ? "<span><b>Лекало в базе</b></span>" : "") + `<span>Жаккард <b>${A.fmt(m.p[0])}</b></span><span>Экокожа <b>${A.fmt(m.p[1])}</b></span><span>Алькантара <b>${A.fmt(m.p[2])}</b></span>`;
     if (!SSR) document.getElementById("c-side-custom").href = A.URL.custom(m);
     if (!SSR) main.innerHTML = `${toolbar(1)}
       <div class="grid" id="c-grid" style="grid-auto-flow:dense"></div>
+      <section class="section section--tight">${A.customCard(m)}</section>
       <section class="section section--tight">${strip}</section>
       <section class="section section--tight">
         <div class="section__head" style="margin-bottom:16px"><div><h2 style="font-size:1.5rem">Комплектация салона ${e(name)}</h2><p>По данным производства. Если в вашем салоне иначе, менеджер уточнит комплектацию после заказа.</p></div></div>
@@ -156,11 +159,10 @@
       </section>
       <section class="section section--tight" data-tabs>
         <div class="tabs"><button class="is-active" data-tab="install">Установка</button><button data-tab="faq">Вопросы</button></div>
-        <div class="tab-pane is-active" data-pane="install"><div class="prose"><p>Качественная установка может занять около двух часов. Сначала надевают чехол на подушку сиденья, затем на спинку; резинки с крючками заводят под сиденье. Разрывные швы должны быть со стороны дверей — кресла различают по ярлыкам AIRBAG. Пошаговая инструкция — <a href="${A.href("info-install")}">в разделе для клиентов</a>.</p></div></div>
+        <div class="tab-pane is-active" data-pane="install"><div class="prose"><p>Качественная установка может занять около двух часов. Сначала надевают чехол на подушку сиденья, затем на спинку; резинки с крючками заводят под сиденье. Разрывные швы должны быть со стороны дверей — кресла различают по ярлыкам AIRBAG.</p></div></div>
         <div class="tab-pane" data-pane="faq"><div class="faq" style="grid-template-columns:1fr"><div class="faq__list"><details open><summary>Подойдут ли чехлы на мою комплектацию ${e(name)}?</summary><p>Чехлы шьются по заводскому лекалу ${e(name)}. Сверьте комплектацию салона в таблице выше: деление спинки, подлокотники, подголовники. Если в вашем салоне иначе — выберите соседний вариант слева или позвоните менеджеру.</p></details><details><summary>Сработают ли подушки безопасности?</summary><p>Да. Мастера делают специальные разрывные швы, которые не мешают срабатыванию подушек безопасности.</p></details></div></div></div>
       </section>
       ${revSection}
-      <section class="section section--tight">${A.customCard(m)}</section>
       <section class="section section--tight"><div class="seo">${seoModel(m)}</div></section>`;
     const grid = document.getElementById("c-grid");
     function render() {

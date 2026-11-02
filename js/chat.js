@@ -14,6 +14,7 @@
   const POLL_OPEN = 6000, POLL_CLOSED = 45000, POLL_MAX = 300000;
   const HINT_KEY = "as_chat_hint", HINT_DELAY = 3000, HINT_MOBILE_MS = 12000;
   const PHONE = "8 (800) 775-32-60", TEL = "tel:88007753260";
+  const MANAGER = "Менеджер Юлия", AVA = `<img class="chat__ava" src="assets/photos/manager-yulia.png" alt="" width="51" height="51">`;
   const HELLO = "Добрый день! Готовы вас проконсультировать. Какой у вас вопрос?";
   const ASK = "Спасибо, запомнили ваш вопрос. Как к вам обращаться и на какой номер написать или перезвонить?";
   const ASK_PLAIN = "Как к вам обращаться и на какой номер написать или перезвонить?";
@@ -21,12 +22,13 @@
   const THANKS_PLAIN = name => `Спасибо, ${name}! Менеджер получил ваши контакты и свяжется с вами в рабочее время. Здесь можно сразу написать вопрос.`;
   const svg = inner => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${inner}</svg>`;
   const ICONS = {
-    msg: svg('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>'),
-    chat: svg('<path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/>'),
     close: svg('<path d="M18 6 6 18M6 6l12 12"/>'),
     phone: svg('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>'),
     send: svg('<path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/>')
   };
+  /* значки на кнопке связи: залитые, в паре с заливкой кнопки (цвета — @keyframes fab-fill в style.css) */
+  const FACE_PHONE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
+  const FACE_CHAT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><g fill="#231f20"><circle cx="8" cy="10" r="1.3"/><circle cx="12" cy="10" r="1.3"/><circle cx="16" cy="10" r="1.3"/></g></svg>';
   const isMobile = () => matchMedia("(max-width: 767px)").matches;
 
   /* ---------- состояние: история, токен и черновик живут в localStorage и видны на всех страницах ---------- */
@@ -49,21 +51,21 @@
   /* ---------- разметка ---------- */
   const msgLink = id => { const m = A.MSG.find(x => x.id === id); return m ? `<a class="msg-btn" href="${m.url}" target="_blank" rel="noopener"><img src="${m.icon}" alt="" width="48" height="48" loading="lazy">${m.name}</a>` : ""; };
   document.body.insertAdjacentHTML("beforeend", `<div class="fabs">
-      <button type="button" class="fab" data-fab aria-haspopup="dialog" aria-expanded="false" aria-controls="as-msgcard" aria-label="Связаться с нами">${ICONS.msg}${ICONS.close}<span class="fab__badge" data-chat-badge hidden></span></button>
+      <button type="button" class="fab" data-fab aria-haspopup="dialog" aria-expanded="false" aria-controls="as-msgcard" aria-label="Связаться с нами"><span class="fab__faces" aria-hidden="true"><img class="fab__glyph" src="assets/icons/telegram-glyph.svg" alt="" width="52" height="52"><img class="fab__glyph" src="assets/icons/whatsapp-glyph.svg" alt="" width="52" height="52"><img class="fab__glyph fab__glyph--max" src="assets/icons/max-glyph.png" alt="" width="36" height="36"><span class="fab__glyph fab__glyph--phone">${FACE_PHONE}</span><span class="fab__glyph fab__glyph--chat">${FACE_CHAT}</span></span>${ICONS.close}<span class="fab__badge" data-chat-badge hidden></span></button>
     </div>
     <div class="chat-hint" data-chat-hint role="status" hidden>
-      <button type="button" class="chat-hint__open" data-hint-open><b>Менеджер «Автостиль»</b><span class="chat__online">Онлайн</span><span class="chat-hint__text">${HELLO}</span></button>
+      ${AVA}<button type="button" class="chat-hint__open" data-hint-open><b>${MANAGER}</b><span class="chat__online">Онлайн</span><span class="chat-hint__text">${HELLO}</span></button>
       <button type="button" class="iconbtn" data-hint-close aria-label="Скрыть приветствие">${ICONS.close}</button>
     </div>
     <div class="msgcard" id="as-msgcard" role="dialog" aria-label="Связаться с нами" hidden>
       <div class="msgcard__head"><p class="msgcard__title">Напишите нам в удобный мессенджер</p><button type="button" class="iconbtn" data-card-close aria-label="Закрыть">${ICONS.close}</button></div>
       <div class="msgcard__list">${["whatsapp", "telegram", "max"].map(msgLink).join("")}
-        <button type="button" class="msgcard__row msgcard__row--chat" data-card-chat>${ICONS.chat}<span class="msgcard__text"><b>Живой чат на сайте</b><span class="chat__online">Менеджер онлайн</span></span><span class="msgcard__badge" data-card-badge role="img" hidden></span></button>
+        <button type="button" class="msgcard__row msgcard__row--chat" data-card-chat>${AVA}<span class="msgcard__text"><b>Живой чат на сайте</b><span class="chat__online">${MANAGER}, онлайн</span></span><span class="msgcard__badge" data-card-badge role="img" hidden></span></button>
         <a class="msgcard__row" href="${TEL}">${ICONS.phone}<span class="msgcard__text"><b>${PHONE}</b><span>бесплатно по России</span></span></a>
       </div>
     </div>
     <div class="chat" id="as-chat" role="dialog" aria-label="Чат с менеджером" hidden>
-      <div class="chat__head"><img class="chat__logo" src="assets/logo/icon.svg" alt="" width="36" height="33"><div class="chat__who"><b>Менеджер «Автостиль»</b><span class="chat__online">Онлайн</span></div><button type="button" class="iconbtn" data-chat-close aria-label="Закрыть чат">${ICONS.close}</button></div>
+      <div class="chat__head">${AVA}<div class="chat__who"><b>${MANAGER}</b><span class="chat__online">Онлайн</span></div><button type="button" class="iconbtn" data-chat-close aria-label="Закрыть чат">${ICONS.close}</button></div>
       <div class="chat__feed" data-chat-feed>
         <div class="chat__list" role="log" aria-live="polite" data-chat-list></div>
         <div class="chat__typing" data-chat-typing role="status" aria-label="Менеджер печатает" hidden><i></i><i></i><i></i></div>

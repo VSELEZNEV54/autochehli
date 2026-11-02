@@ -1,4 +1,4 @@
-/* Главная (шаблон T1): популярные марки и хиты по продажам */
+/* Главная (шаблон T1): каталог по маркам и хиты по продажам */
 (function () {
   const A = window.AS;
   /* По таблице T1: марки и хиты — по продажам (js/catalog-extra.js, tools/build_brand_data.py).
@@ -10,11 +10,15 @@
   /* хиты: самое продаваемое лекало каждой из марок-лидеров; сочетания идут по кругу, чтобы фото рядом не повторялись */
   const hits = (CAT.hits || []).map(s => A.BY_SLUG[s]).filter(Boolean).map((m, i) => [m.s, A.VARIANTS[i % A.VARIANTS.length].id]);
   document.getElementById("home-hits").innerHTML = (hits.length ? hits : A.HITS).filter(([s, v]) => A.BY_SLUG[s] && A.VAR[v]).map(([s, v]) => A.coverCard(A.BY_SLUG[s], A.VAR[v], { logo: true })).join("");
-  /* блоки марок: лекала марки по продажам (AS_CATALOG.home); сочетания идут дальше по кругу, чтобы фото рядом не повторялись */
+  /* блоки марок: лекала марки по продажам (AS_CATALOG.home) в один ряд — столько карточек, сколько колонок у сетки на этой ширине; сочетания идут дальше по кругу, чтобы фото рядом не повторялись */
+  const ROW_MAX = 6, boxes = [...document.querySelectorAll("[data-brand-hits]")];
+  const fitRow = box => { const cols = getComputedStyle(box).gridTemplateColumns.split(" ").length; [...box.children].forEach((c, i) => { c.hidden = i >= cols; }); };
   let k = 0;
-  document.querySelectorAll("[data-brand-hits]").forEach(box => {
-    const list = ((CAT.home || {})[box.dataset.brandHits] || []).map(s => A.BY_SLUG[s]).filter(Boolean);
+  boxes.forEach(box => {
+    const list = ((CAT.home || {})[box.dataset.brandHits] || []).map(s => A.BY_SLUG[s]).filter(Boolean).slice(0, ROW_MAX);
     box.innerHTML = list.map(m => A.coverCard(m, A.VARIANTS[k++ % A.VARIANTS.length])).join("");
+    fitRow(box);
   });
+  addEventListener("resize", () => boxes.forEach(fitRow));
   A.badges();
 })();

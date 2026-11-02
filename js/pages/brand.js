@@ -10,7 +10,8 @@
     title: A.titleFit([`Чехлы на сиденья ${ru}: модельные авточехлы на ${b.n}, цена от ${A.fmt(min)}`, `Чехлы на сиденья ${ru}: авточехлы на ${b.n}, цена от ${A.fmt(min)}`, `Чехлы на сиденья ${ru}, цена от ${A.fmt(min)}`]),
     description: `Модельные чехлы на сиденья ${ru}: экокожа, алькантара, жаккард. Пошив по заводским лекалам, гарантия 1 год, оплата при получении, доставка по России.`,
     keywords: [...new Set([`чехлы на сиденья ${ru}`, `авточехлы ${ru}`, `чехлы на сиденья ${b.n}`, `авточехлы на ${b.n}`, `модельные чехлы ${b.n}`, `купить чехлы на ${ru}`])].join(", ").toLowerCase(),
-    page: "brand", params: { b: b.id }, noindex: !A.BRAND[A.qs("b")]
+    page: "brand", params: { b: b.id }, noindex: !A.BRAND[A.qs("b")],
+    city: w => ({ title: [`Купить авточехлы на ${b.n} ${w}: чехлы на сиденья ${ru}`, `Купить авточехлы на ${b.n} ${w}`], description: `Купить авточехлы на ${b.n} ${w}: модельные чехлы на сиденья ${ru} из экокожи, алькантары и жаккарда. Пошив по заводским лекалам, гарантия 1 год, доставка.` })
   });
   if (!SSR) {
   document.querySelector("[data-crumb]").textContent = b.n;
@@ -119,14 +120,6 @@
   if (revs.length) {
     const box = document.getElementById("b-reviews");
     box.innerHTML = `<div class="section__head"><div><h2>Отзывы владельцев ${e(b.n)}</h2><p>Покупатели, которые заказывали у нас чехлы на ${e(b.n)}.</p></div><a class="btn btn--more" href="${A.href("reviews", { b: b.id })}">${revAll.length > revs.length ? `Все отзывы о ${e(b.n)}` : "Все отзывы"}</a></div><div class="reviews">${revs.map(r => A.reviewCard(r)).join("")}</div>`;
-    box.hidden = false;
-  }
-  const reEsc = s => s.replace(/[.*+?^$()|[\]\\{}]/g, "\\$&");
-  const word = s => new RegExp("(^|[^a-zа-я0-9])" + reEsc(norm(s)) + "([^a-zа-я0-9]|$)");
-  const posts = (window.AS_POSTS || []).filter(p => [b.n, ru].some(n => word(n).test(norm(`${p.topic || ""} ${p.title}`)))).slice(0, 3);
-  if (posts.length) {
-    const box = document.getElementById("b-posts");
-    box.innerHTML = `<div class="section__head"><div><h2>Статьи о ${e(b.n)}</h2></div><a class="btn btn--more" href="${A.href("blog")}">Все статьи</a></div><div class="posts">${posts.map(A.postCard).join("")}</div>`;
     box.hidden = false;
   }
   if (!SSR) document.getElementById("b-strip").innerHTML = A.perkStrip();
