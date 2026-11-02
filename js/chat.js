@@ -354,4 +354,5 @@
   if (st.token) poll();
   let hintSeen = false; try { hintSeen = !!sessionStorage.getItem(HINT_KEY); } catch (e) {}
   if (!hintSeen && !st.greeted && !st.token && !(cfgFoot && isMobile())) hintT = setTimeout(showHint, HINT_DELAY);
+  A.chat = { open: openChat, started: () => !!st.token };   /* для окна связи (contact.js) */
 })();

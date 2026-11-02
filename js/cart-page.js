@@ -28,15 +28,15 @@
   /* позиции, а не штуки: комплект в количестве 3 — одна позиция */
   const positions = () => Cart.items.filter(i => !i.gone).length;
   const isFree = () => coversSum() >= FREE_DELIVERY_FROM;
-  const extras = { mats: false, install: false };
+  const extras = { install: false };
   /* введённое в форму не теряется при перерисовке (смена доставки или оплаты) */
   const fv = { name: "", phone: "", city: ls("as_city"), email: "", address: "", company: "", inn: "", comment: "", consent: false, marketing: null };
   let vin = "", extrasInit = false;
   A.api("/config").then(r => { if (r.ok) { prepay = r.data.prepay || prepay; online = !!r.data.online; if (Cart.items.length) render(); } });
   function initExtras() {
     if (extrasInit) return; extrasInit = true;
-    covers().forEach(i => { if (i.opts) { extras.mats = extras.mats || !!i.opts.mats; extras.install = extras.install || !!i.opts.install; } if (i.vin && !vin) vin = i.vin; });
-    try { const saved = JSON.parse(ls("as_extras") || "null"); if (saved) Object.assign(extras, saved); } catch (er) {}
+    covers().forEach(i => { if (i.opts) { extras.install = extras.install || !!i.opts.install; } if (i.vin && !vin) vin = i.vin; });
+    try { const saved = JSON.parse(ls("as_extras") || "null"); if (saved) extras.install = !!saved.install; } catch (er) {}
     if (!vin) vin = ls("as_vin");
   }
   const slugOf = i => i.model || i.id.split(":")[1];
@@ -100,7 +100,6 @@
           <div><span>Товары</span><b>${A.fmt(sub)}</b></div>
           <div><span>Доставка</span>${free ? `<b class="free">Бесплатно</b>` : `<b>${!co ? "при оформлении" : dprice == null ? "по тарифу ТК" : dprice ? A.fmt(dprice) : "—"}</b>`}</div>
           ${free || (co && delivery === "pickup") ? "" : `<div><span class="muted">До бесплатной доставки — ${A.fmt(left)}</span></div>`}
-          ${extras.mats ? `<div><span>Автоковрики EVA в цвет чехлов</span><b>по запросу</b></div>` : ""}
           ${extras.install ? `<div><span>Установка в вашем городе</span><b>по запросу</b></div>` : ""}
           <div><span class="muted">Оплётка руля в цвет салона</span><b class="free">в подарок</b></div>
         </div>
@@ -151,7 +150,6 @@
           <section class="tile">
             <h2 class="cart-h">Дополнительно к заказу</h2>
             <div class="addons">
-              <label class="toggle"><div><b>Автоковрики EVA в цвет чехлов</b><span>Добавим к заказу, стоимость уточнит менеджер</span></div><span class="tp">по запросу</span><input type="checkbox" data-extra="mats" ${extras.mats ? "checked" : ""}><i class="sw"></i></label>
               <label class="toggle"><div><b>Установка в вашем городе</b><span>Найдём установщика в вашем городе, стоимость уточнит менеджер</span></div><span class="tp">по запросу</span><input type="checkbox" data-extra="install" ${extras.install ? "checked" : ""}><i class="sw"></i></label>
             </div>
           </section>

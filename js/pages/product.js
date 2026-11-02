@@ -230,7 +230,7 @@
   const known = !!(A.BY_SLUG[A.qs("m")] && A.VAR[A.qs("v")]);  // неизвестный адрес: на сайте — 404, здесь — noindex
   let m = A.BY_SLUG[A.qs("m")] || A.BY_SLUG["toyota_camry-xv70"], v = A.VAR[A.qs("v")] || A.VARIANTS[0];
   const f = A.FAMILIES[m.f], b = A.BRAND[m.b];
-  const opt = { mats: false, install: false };
+  const opt = { install: false };
   const title = () => `Чехлы на сиденья ${A.carName(m)}, ${v.name.toLowerCase()}`;
   const total = () => A.priceOf(m, v);
   const cartId = () => `cover:${m.s}:${v.id}`;
@@ -266,7 +266,6 @@
     <div class="opt-block"><p class="opt-block__h">Материал</p><div class="seg${mats.length === 2 ? " seg--2" : ""}">${mats.map(mt => `<a href="${A.URL.product(m, matVariants(mt)[0])}" class="${v.mat === mt ? "is-selected" : ""}">${A.MAT_NAME[mt].replace("Экокожа + алькантара", "Алькантара")}<small>от ${A.fmt(Math.min(...matVariants(mt).map(x => A.priceOf(m, x))))}</small></a>`).join("")}</div></div>
     <div class="buybox__custom"><div><b>Не нашли свой материал или цвет?</b><p>Соберите чехлы в конструкторе</p></div><a class="btn btn--primary" href="${A.URL.custom(m)}">Открыть конструктор</a></div>
     <div class="opt-block"><p class="opt-block__h">Дополнительно к заказу</p><div class="addons">
-      <label class="toggle"><div><b>Автоковрики EVA в цвет чехлов</b><span>Добавим к заказу, стоимость уточнит менеджер</span></div><span class="tp">по запросу</span><input type="checkbox" data-opt="mats"><i class="sw"></i></label>
       <label class="toggle"><div><b>Установка в вашем городе</b><span>Найдём установщика в вашем городе, стоимость уточнит менеджер. <a href="${A.href("ustanovka")}">Подробнее</a></span></div><span class="tp">по запросу</span><input type="checkbox" data-opt="install"><i class="sw"></i></label>
     </div></div>
     <ul class="buybox__facts">
@@ -277,7 +276,7 @@
     </ul>
   </div>`;
   const upd =() => { const pt = document.getElementById("p-total"); pt.querySelector(".price__now").textContent = A.fmt(total()); document.getElementById("p-sticky-price").innerHTML = A.priceHtml(m, v); };
-  const itemId = () => cartId() + (opt.mats ? ":mats" : "") + (opt.install ? ":install" : "");
+  const itemId = () => cartId() + (opt.install ? ":install" : "");
   const inCart = () => A.Cart.items.find(i => i.id === itemId() && !i.gone);
   /* «В корзину» в колонке и в нижней панели: после добавления вместо кнопки счётчик этой позиции. Разметку счётчика добавляет скрипт, серверный вывод не меняется */
   const MAX_QTY = A.MAX_QTY;
@@ -308,7 +307,7 @@
   addEventListener("pageshow", () => { readOpts(); showQty(); });   // браузер мог вернуть отметки допов, а корзина могла поменяться на другой странице
   const add = go => {
     if (go && inCart()) { location.href = A.href("cart"); return; }   // уже лежит: счётчик показал количество, лишнюю штуку не добавляем
-    const extra = (opt.mats ? ["+ автоковрики EVA в цвет чехлов (по запросу)"] : []).concat(opt.install ? ["+ установка в вашем городе (по запросу)"] : []);
+    const extra = opt.install ? ["+ установка в вашем городе (по запросу)"] : [];
     A.Cart.add({ id: itemId(), title: `Чехлы на ${A.carName(m)}`, sub: `${v.name} · ${m.y || "все годы"}${extra.length ? " · " + extra.join(", ") : ""}`, price: total(), img: A.varPhoto(m, v), url: A.URL.product(m, v), model: m.s, opts: { ...opt } });
     if (go) location.href = A.href("cart"); else A.toast("Добавлено в корзину", ["Перейти", A.href("cart")]);
   };

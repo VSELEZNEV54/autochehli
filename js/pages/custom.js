@@ -47,7 +47,6 @@
   /* По запросу: цены нет в CRM, считает менеджер */
   const OPTS = {
     armrest: { name: "Чехол на подлокотник", note: "В цвет комплекта" },
-    mats: { name: "Автоковрики EVA в цвет чехлов", note: "Под ваш автомобиль" },
     install: { name: "Установка в вашем городе", note: "Найдём установщика" }
   };
   /* Доступность услуг — правила в options.js, сверены с заказами: needs — с какими рисунками, not — не на каких материалах */
@@ -497,7 +496,7 @@ ${body}
     const label = `${DESIGNS[st.design].name}, вставки: ${matName(st.mat).toLowerCase()} ${insColor()[0].toLowerCase()}, ${st.sideMat === "same" ? "боковины в цвет центра" : "боковины: экокожа " + ECO[st.side][0].toLowerCase()}, тыл: ${ECO[st.back][0].toLowerCase()}`
       + (paid().length ? ", " + paid().map(a => low(a.name) + (a.n > 1 ? ` × ${a.n}` : "")).join(", ") : "") + threadText() + (ask.length ? "; по запросу: " + ask.join(", ") : "");
     A.Cart.add({ id: `custom:${m.s}:${hashStr(JSON.stringify(config))}`, title: `Индивидуальный пошив: чехлы на ${A.carName(m)}`, sub: label, label, price: c.total, img: svgUrl(),
-      url: A.href("custom", { m: m.s, cfg: JSON.stringify(config) }), model: m.s, config, opts: { mats: st.opts.has("mats"), install: st.opts.has("install") } });
+      url: A.href("custom", { m: m.s, cfg: JSON.stringify(config) }), model: m.s, config, opts: { install: st.opts.has("install") } });
     A.toast("Комплект добавлен в корзину", ["Перейти", A.href("cart")]);
   }
 

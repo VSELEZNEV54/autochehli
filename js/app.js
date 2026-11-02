@@ -320,7 +320,7 @@
     setQty(id, q) { const it = this.items.find(i => i.id === id); if (it) { it.qty = Math.min(MAX_QTY, Math.max(1, q)); this.save(); } },
     clear() { this.items = []; this.save(); },
     count() { return this.items.reduce((n, i) => n + (i.gone ? 0 : i.qty), 0); },
-    /* Штук товара в корзине для плитки: вместе с позициями того же товара с допами (cover:…:mats) */
+    /* Штук товара в корзине для плитки: вместе с позициями того же товара с допами (cover:…:install) */
     qtyOf(id) { return this.items.reduce((n, i) => n + (!i.gone && (i.id === id || i.id.startsWith(id + ":")) ? i.qty : 0), 0); },
     /* Страница вернулась из кэша браузера или корзину поменяли в другой вкладке */
     reload() { this.items = savedCart(); badges(); document.dispatchEvent(new CustomEvent("cart:change")); },
@@ -410,7 +410,7 @@
         <span class="tag tag--yellow">Индивидуальный пошив</span>
         <h2>Не нашли свой вариант? Соберите чехлы в конструкторе</h2>
         <p>Соберите свой дизайн комплекта в удобном конструкторе: выберите цвет боковин, материал и цвет вставок, рисунок — и оставьте заявку. Менеджер уточнит комплектацию салона и рассчитает стоимость.</p>
-        <div class="studio__steps"><div><i>01</i><b>Цвет</b><span>боковины и вставки — 21 цвет</span></div><div><i>02</i><b>Материал</b><span>экокожа, перфорация, алькантара, жаккард</span></div><div><i>03</i><b>Рисунок</b><span>классические полосы или стёжка ромбом</span></div><div><i>04</i><b>Дополнительно</b><span>коврики EVA, установка, оплётка руля в подарок</span></div></div>
+        <div class="studio__steps"><div><i>01</i><b>Цвет</b><span>боковины и вставки — 21 цвет</span></div><div><i>02</i><b>Материал</b><span>экокожа, перфорация, алькантара, жаккард</span></div><div><i>03</i><b>Рисунок</b><span>классические полосы или стёжка ромбом</span></div><div><i>04</i><b>Дополнительно</b><span>установка, оплётка руля в подарок</span></div></div>
         <div class="studio__actions"><a class="btn btn--primary btn--lg" href="${URL_.custom(m)}">Открыть конструктор</a>${m ? "" : '<a class="btn btn--glass btn--lg" href="#" data-mega-open>Чехлы на мою модель</a>'}</div>
       </div>
       <div class="studio__visual">
@@ -428,7 +428,7 @@
   const SEO_PART = {
     materials: name => ["Материалы: экокожа, алькантара, жаккард", `<p>Боковины чехлов${name ? " на " + esc(name) : ""} шьём из экокожи «Аригон» — полиуретановое покрытие на хлопковой основе толщиной 1,05–1,15 мм, цикл истирания не менее 40 000 раз. Для вставок выберите гладкую экокожу, экокожу с перфорацией, алькантару или жаккард. Все материалы гипоаллергенные, «дышащие» и выдерживают морозы до −30 °C. Экокожа легко чистится, алькантара приятна на ощупь, а жаккардовые вставки — самый доступный вариант комплекта.</p>`],
     prices: (name, p) => [`Цены на чехлы${name ? " " + esc(name) : " для сидений"}`, `<ul><li>Чехлы из жаккарда — от ${fmt(p[0])}</li><li>Чехлы из экокожи и экокожи с перфорацией — от ${fmt(p[1])}</li><li>Чехлы из алькантары — от ${fmt(p[2])}</li></ul><p>Цена указана за комплект на весь салон${name ? "" : " и зависит от модели автомобиля"}. Работаем по предоплате от 1 000 ₽, остаток можно оплатить при получении.</p>`],
-    custom: name => ["Пошив авточехлов на заказ", `<p>Не нашли готовое сочетание${name ? " для " + esc(name) : ""}? Соберите свои чехлы в <a href="${href("custom")}">конструкторе</a>: выберите цвет боковин, материал и цвет вставок, рисунок — классические полосы или стёжку ромбом. К заказу можно добавить автоковрики EVA в цвет чехлов, а оплётку руля в цвет салона дарим к каждому комплекту. Менеджер уточнит комплектацию салона и рассчитает стоимость пошива.</p>`],
+    custom: name => ["Пошив авточехлов на заказ", `<p>Не нашли готовое сочетание${name ? " для " + esc(name) : ""}? Соберите свои чехлы в <a href="${href("custom")}">конструкторе</a>: выберите цвет боковин, материал и цвет вставок, рисунок — классические полосы или стёжку ромбом. Оплётку руля в цвет салона дарим к каждому комплекту. Менеджер уточнит комплектацию салона и рассчитает стоимость пошива.</p>`],
     /* install: false — на страницах городов, где установку клиент не подтверждал (правила, раздел 10) */
     service: ({ install = true } = {}) => ["Безопасность, гарантия и доставка", `<p>Для сидений с боковыми подушками безопасности делаем разрывные швы с ярлыками AIRBAG — чехлы не мешают их срабатыванию. Гарантия на качество пошива — 1 год. Перед отправкой присылаем фотоотчёт. Доставляем DPD и EMS Почтой России в 6 000 населённых пунктов России и СНГ, в Новосибирске — самовывоз и курьер. Представительства «Автостиля» работают в городах России и Казахстана${install ? ", установку в вашем городе организуем по запросу" : ""}.</p>`]
   };
@@ -1140,5 +1140,5 @@
   window.AS = { titleFit, resolveItem, api, formMeta, guardForm, fieldErrors, consentHtml, enhanceForm, checkForm, phoneOk, cookieOk, cookieBanner, seoBlock, SEO_PART, minPrices, famStats, $, $$, esc, fmt, qs, plural, ICON, BRANDS, MODELS, BRAND, BY_SLUG, FAMILIES, VARIANTS, ALL_VARIANTS, VAR, HITS, varPhotos, MAT_NAME, sortedBrands, brandName, brandLogo, genName, cfgText, genLabel, carName, yearsText, kitOf, kitRows, kitIncludes, specHtml, famPhoto, posPhoto, varPhoto, carRender, priceOf, oldPriceOf, discountOf, priceHtml, URL: URL_, href, relink, abs, seo, coverCard, customCard, perkStrip, famCard, genCard, productCard, postCard, reviewCard, toast, Cart, MAX_QTY, Fav, badges, initPicker, search, loadScript, MSG, msgLinks };
   window.AS_cart = Cart; window.AS_fav = Fav; window.AS_postCard = postCard; window.AS_productCard = productCard;
   badges();
-  loadScript("chat.js").catch(() => {});   /* кнопка связи: мессенджеры, живой чат и телефон */
+  loadScript("chat.js").then(() => loadScript("contact.js")).catch(() => {});   /* кнопка связи и всплывающее окно связи */
 })();
