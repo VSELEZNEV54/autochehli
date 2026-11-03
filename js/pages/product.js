@@ -21,94 +21,6 @@
     </div>`;
   const isCard = src => /assets\/(cards|seats)\//.test(src);   // карточка или кресло: без плашки «Фото наших работ», она только на настоящих фото
   const gallery = (imgs, tags, cover) => `<div class="gallery${cover ? " gallery--card" : ""}" data-gallery><div class="gallery__thumbs">${imgs.map((src, i) => `<button type="button" class="${i ? "" : "is-active"}" data-thumb="${src}" aria-label="Фото ${i + 1}"><img src="${src}" alt="" loading="lazy"></button>`).join("")}</div><div class="gallery__main${isCard(imgs[0]) ? " is-card" : ""}"><img id="p-main" src="${imgs[0]}" alt="" width="900" height="${cover ? 1200 : 900}">${tags}</div></div>`;
-  /* Просмотр фото на весь экран: миниатюры, листание, приближение.
-     Палец: два пальца или двойное нажатие приближают, при приближении фото двигается, без него свайп листает. Мышь: нажатие и колесо приближают, перетаскивание двигает. */
-  function openViewer(list, start, onClose) {
-    const MAX = 4, TAP = 2.5, ico = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
-    const lb = document.createElement("div");
-    lb.className = "lightbox lightbox--zoom is-open";
-    lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", "Просмотр фото");
-    lb.innerHTML = `<button type="button" class="lightbox__close" aria-label="Закрыть">${ico("M6 6l12 12M18 6 6 18")}</button>
-      <button type="button" class="lightbox__zoom" aria-label="Приблизить"></button>
-      ${list.length > 1 ? `<button type="button" class="lightbox__prev" aria-label="Предыдущее фото">${ico("M15 6l-6 6 6 6")}</button><button type="button" class="lightbox__next" aria-label="Следующее фото">${ico("M9 6l6 6-6 6")}</button>` : ""}
-      <figure class="lightbox__fig"><div class="lightbox__stage"><img alt="" draggable="false"></div>${list.length > 1 ? '<figcaption><span class="lightbox__count"></span></figcaption>' : ""}</figure>
-      ${list.length > 1 ? `<div class="lightbox__thumbs">${list.map((s, n) => `<button type="button" aria-label="Фото ${n + 1}"><img src="${s}" alt=""></button>`).join("")}</div>` : ""}`;
-    document.body.appendChild(lb);
-    const q = s => lb.querySelector(s), stage = q(".lightbox__stage"), img = q(".lightbox__stage img"), zoomBtn = q(".lightbox__zoom"), minis = [...lb.querySelectorAll(".lightbox__thumbs button")];
-    let cur = 0, scale = 1, tx = 0, ty = 0, one = null, pinch = null, lastTap = 0;
-    const pts = new Map();
-    const paint = () => {
-      const mx = Math.max(0, (img.offsetWidth * scale - innerWidth) / 2), my = Math.max(0, (img.offsetHeight * scale - innerHeight) / 2);
-      if (scale <= 1) { tx = 0; ty = 0; } else { tx = Math.min(mx, Math.max(-mx, tx)); ty = Math.min(my, Math.max(-my, ty)); }
-      img.style.transform = `translate3d(${tx}px,${ty}px,0) scale(${scale})`;
-      lb.classList.toggle("is-zoomed", scale > 1);
-      zoomBtn.setAttribute("aria-label", scale > 1 ? "Отдалить" : "Приблизить");
-      zoomBtn.innerHTML = ico(scale > 1 ? "M5 12h14" : "M12 5v14M5 12h14");
-    };
-    /* точка под пальцем или курсором остаётся на месте */
-    const zoomAt = (next, cx, cy) => {
-      next = Math.min(MAX, Math.max(1, next));
-      const r = img.getBoundingClientRect(), lx = r.left + r.width / 2 - tx, ly = r.top + r.height / 2 - ty;
-      tx = cx - lx - (cx - lx - tx) * next / scale; ty = cy - ly - (cy - ly - ty) * next / scale; scale = next;
-      paint();
-    };
-    const centerZoom = next => zoomAt(next, innerWidth / 2, innerHeight / 2);
-    const show = n => {
-      cur = (n + list.length) % list.length; scale = 1; img.src = list[cur]; img.style.transition = "none"; paint();
-      requestAnimationFrame(() => { img.style.transition = ""; });
-      const c = q(".lightbox__count"); if (c) c.textContent = `${cur + 1} / ${list.length}`;
-      minis.forEach((b, i) => { b.classList.toggle("is-active", i === cur); if (i === cur) b.scrollIntoView({ block: "nearest", inline: "center" }); });
-    };
-    const close = () => { document.removeEventListener("keydown", onKey); lb.remove(); document.body.style.overflow = ""; onClose(cur); };
-    function onKey(e) {
-      if (e.key === "Escape") close();
-      else if (e.key === "ArrowLeft" && list.length > 1) show(cur - 1);
-      else if (e.key === "ArrowRight" && list.length > 1) show(cur + 1);
-      else if (e.key === "+" || e.key === "=") centerZoom(scale + 1);
-      else if (e.key === "-") centerZoom(scale - 1);
-    }
-    document.addEventListener("keydown", onKey);
-    q(".lightbox__close").addEventListener("click", close);
-    zoomBtn.addEventListener("click", () => centerZoom(scale > 1 ? 1 : TAP));
-    if (list.length > 1) { q(".lightbox__prev").addEventListener("click", () => show(cur - 1)); q(".lightbox__next").addEventListener("click", () => show(cur + 1)); }
-    minis.forEach((b, i) => b.addEventListener("click", () => show(i)));
-    lb.addEventListener("click", e => { if (scale === 1 && [lb, stage, q(".lightbox__fig")].includes(e.target)) close(); });
-    img.addEventListener("wheel", e => { e.preventDefault(); zoomAt(scale * (1 - e.deltaY * 0.002), e.clientX, e.clientY); }, { passive: false });
-    img.addEventListener("pointerdown", e => {
-      img.setPointerCapture(e.pointerId); pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
-      if (pts.size === 2) { const [a, b] = [...pts.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, s: scale }; one = null; }
-      else if (pts.size === 1) one = { x: e.clientX, y: e.clientY, tx, ty, moved: false, touch: e.pointerType !== "mouse" };
-      img.classList.add("is-moving");
-    });
-    img.addEventListener("pointermove", e => {
-      if (!pts.has(e.pointerId)) return;
-      pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
-      if (pinch && pts.size === 2) { const [a, b] = [...pts.values()]; return zoomAt(pinch.s * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d, (a.x + b.x) / 2, (a.y + b.y) / 2); }
-      if (!one) return;
-      const dx = e.clientX - one.x, dy = e.clientY - one.y;
-      if (!one.moved && Math.hypot(dx, dy) < 6) return;
-      one.moved = true;
-      if (scale > 1) { tx = one.tx + dx; ty = one.ty + dy; paint(); }
-      else if (one.touch && list.length > 1) img.style.transform = `translate3d(${dx}px,0,0)`;
-    });
-    const up = e => {
-      if (!pts.delete(e.pointerId)) return;
-      if (pts.size < 2) pinch = null;
-      if (pts.size) return;
-      img.classList.remove("is-moving");
-      const o = one; one = null;
-      if (!o) return;
-      const dx = e.clientX - o.x;
-      if (e.type === "pointercancel") return paint();
-      if (o.moved) { if (scale === 1 && o.touch && list.length > 1 && Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); else paint(); return; }
-      if (!o.touch) return zoomAt(scale > 1 ? 1 : TAP, e.clientX, e.clientY);
-      if (e.timeStamp - lastTap < 300) { lastTap = 0; zoomAt(scale > 1 ? 1 : TAP, e.clientX, e.clientY); } else lastTap = e.timeStamp;
-    };
-    img.addEventListener("pointerup", up); img.addEventListener("pointercancel", up);
-    document.body.style.overflow = "hidden";
-    show(start);
-    q(".lightbox__close").focus();
-  }
   function bindGallery() {
     const main = document.getElementById("p-main"), thumbs = [...document.querySelectorAll("[data-thumb]")];
     if (!thumbs.length) return;
@@ -123,13 +35,13 @@
       if (row.scrollWidth > row.clientWidth) { const r = row.getBoundingClientRect(), a = thumbs[i].getBoundingClientRect(); row.scrollBy({ left: a.left - r.left - (r.width - a.width) / 2, behavior: calm() ? "auto" : "smooth" }); }
     };
     thumbs.forEach((t, i) => t.addEventListener("click", () => { if (busy) return; clearTimeout(fade); mark(i); main.style.opacity = 0; fade = setTimeout(() => { main.src = src(i); main.onload = () => main.style.opacity = 1; }, 100); }));
-    /* нажатие на фото открывает просмотр; после свайпа нажатие не считаем */
+    /* нажатие на фото открывает просмотр на весь экран (AS.viewer в app.js); после свайпа нажатие не считаем */
     const zoomBtn = document.createElement("button");
     zoomBtn.type = "button"; zoomBtn.className = "gallery__zoom"; zoomBtn.setAttribute("aria-label", "Приблизить фото");
     zoomBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg>';
     box.appendChild(zoomBtn);
     let swiped = false;
-    box.addEventListener("click", () => { if (!swiped && !busy) openViewer(thumbs.map(t => t.dataset.thumb), cur, i => { if (i !== cur) thumbs[i].click(); zoomBtn.focus({ preventScroll: true }); }); });
+    box.addEventListener("click", () => { if (!swiped && !busy) A.viewer(thumbs.map(t => t.dataset.thumb), cur, i => { if (i !== cur) thumbs[i].click(); zoomBtn.focus({ preventScroll: true }); }); });
     if (thumbs.length < 2) return;
     dots = document.createElement("div"); dots.className = "gallery__dots"; dots.setAttribute("aria-hidden", "true");
     dots.innerHTML = thumbs.map((_, i) => `<i${i ? "" : ' class="is-active"'}></i>`).join("");

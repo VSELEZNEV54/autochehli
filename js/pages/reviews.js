@@ -2,7 +2,9 @@
    Из адреса: ?b=toyota — марка (со страницы марки), ?f=honda-fit — модель (со страницы модели, если отзывов больше шести) */
 (function () {
   const A = window.AS, e = A.esc, ALL = window.AS_REVIEWS || [], PAGE = 24;
-  const box = document.getElementById("rv-list"), chips = document.getElementById("rv-brands"), more = document.getElementById("rv-more");
+  const box = document.getElementById("rv-list"), box2 = document.getElementById("rv-list-2"), chips = document.getElementById("rv-brands"), more = document.getElementById("rv-more");
+  /* заявка «Связаться с менеджером» (#rv-lead) стоит внутри ленты: над ней первые LEAD_ROWS рядов отзывов, остальные — ниже */
+  const LEAD_ROWS = 3, cols = () => getComputedStyle(box).gridTemplateColumns.split(" ").length;
   const count = {};
   ALL.forEach(r => { if (A.BRAND[r.b]) count[r.b] = (count[r.b] || 0) + 1; });
   const brands = Object.keys(count).sort((a, b) => count[b] - count[a] || A.brandName(a).localeCompare(A.brandName(b)));
@@ -15,7 +17,10 @@
 
   function render() {
     const list = ALL.filter(r => !sel || (sel.startsWith("f:") ? r.f === sel.slice(2) : r.b === sel)), rest = list.length - shown;
-    box.innerHTML = list.slice(0, shown).map(r => A.reviewCard(r)).join("");
+    const cards = list.slice(0, shown).map(r => A.reviewCard(r)), cut = cols() * LEAD_ROWS;
+    box.innerHTML = cards.slice(0, cut).join("");
+    box2.innerHTML = cards.slice(cut).join("");
+    box2.hidden = cards.length <= cut;
     more.innerHTML = rest > 0 ? `<button type="button" class="btn btn--ghost">Показать ещё ${Math.min(PAGE, rest)}</button>` : "";
     chips.querySelectorAll("[data-rf]").forEach(c => c.classList.toggle("is-selected", c.dataset.rf === sel));
   }
@@ -27,5 +32,8 @@
     render();
   });
   more.addEventListener("click", ev => { if (!ev.target.closest(".btn")) return; shown += PAGE; render(); });
+  /* другое число колонок — заявка переезжает под новые первые ряды */
+  let lastCols = cols();
+  addEventListener("resize", () => { if (cols() !== lastCols) { lastCols = cols(); render(); } });
   render();
 })();

@@ -14,9 +14,9 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" href="assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=132">
+  <link rel="stylesheet" href="css/style.css?v=135">
   <link rel="icon" href="assets/logo/icon.svg" type="image/svg+xml">
-<script src="js/links.js?v=132"></script>
+<script src="js/links.js?v=135"></script>
 </head>
 <body data-page="product">
 
@@ -93,6 +93,22 @@
   <section class="section">
     <div class="section__head"><div><h2 id="p-more-title">Другие варианты</h2></div><a class="btn btn--more" id="p-more-link" href="catalog.html">Все варианты</a></div>
     <div class="grid" id="p-more"></div>
+  </section>
+  <section class="section section--last">
+    <!-- «Связаться с менеджером в один клик»: жёлтая заявка, одна на главной, «Индивидуальном пошиве», карточке товара, «О компании» и «Отзывах». Уходит как «Получить консультацию» из подвала: contact, тема «Консультация» -->
+<div class="oneclick">
+  <h2 class="oneclick__title">Связаться с&nbsp;менеджером в&nbsp;один клик!</h2>
+  <p class="oneclick__sub">В ближайшее время вам перезвонит наш консультант и&nbsp;поможет по любым вопросам.</p>
+  <form class="oneclick__form" data-form="contact" data-form-message="Заявка отправлена. В рабочее время вам перезвонит консультант">
+    <input type="hidden" name="topic" value="Консультация">
+    <input type="hidden" data-note="Заявка из блока" value="«Связаться с менеджером в один клик»">
+    <div class="field"><input class="input" type="text" name="name" required maxlength="80" autocomplete="name" placeholder="Ваше имя" aria-label="Ваше имя"></div>
+    <div class="field"><input class="input" type="tel" name="phone" required autocomplete="tel" placeholder="+7 (___) ___-__-__" aria-label="Телефон"></div>
+    <div class="field oneclick__send"><button class="btn btn--dark btn--lg" type="submit" data-label="Отправить">Отправить</button></div>
+    <div class="field oneclick__consent" data-consent></div>
+  </form>
+  <p class="form-tel">Или позвоните: <a href="tel:88007753260">8 (800) 775-32-60</a><span>бесплатно по России</span></p>
+</div>
   </section>
 </div>
 <div class="sticky-cta"><div class="container sticky-cta__in"><img class="sticky-cta__img" id="p-sticky-img" src="assets/photos/seat1.jpg" alt=""><div class="sticky-cta__name"><b id="p-sticky-title"></b><span id="p-sticky-name"></span></div><div class="sticky-cta__price" id="p-sticky-price"></div><button class="btn btn--dark sticky-cta__buy" type="button" id="p-sticky-buy">Купить в 1 клик</button><button class="btn btn--primary" type="button" id="p-sticky-btn">В корзину</button></div></div>
@@ -178,12 +194,12 @@
 </div>
 <!-- /@footer -->
 
-<script src="js/data.js?v=132"></script>
-<script src="js/products.js?v=132"></script>
-<script src="js/cars.js?v=132"></script>
-<script src="js/app.js?v=132"></script>
-<script src="js/kit.js?v=132"></script>
-<script src="js/pages/product.js?v=132"></script>
+<script src="js/data.js?v=135"></script>
+<script src="js/products.js?v=135"></script>
+<script src="js/cars.js?v=135"></script>
+<script src="js/app.js?v=135"></script>
+<script src="js/kit.js?v=135"></script>
+<script src="js/pages/product.js?v=135"></script>
 
 </body>
 </html>

@@ -1012,6 +1012,16 @@
       el.value = d.length > 1 ? fmt(d) : "+7";
     };
     el.addEventListener("input", e => apply(/^delete/.test(e.inputType || "")));
+    /* номер целиком (вставка, перетаскивание, подсказка клавиатуры) заменяет поле, а не дописывается к «+7 (»:
+       иначе «8 913 123-45-67» превращался в «+7 (891) 312-34-56» */
+    const whole = text => {
+      if (String(text || "").replace(/\D/g, "").length < 10) return false;
+      el.value = text; el._d = "";
+      el.dispatchEvent(new Event("input", { bubbles: true }));   // маска и снятие ошибки — обычным обработчиком ввода
+      return true;
+    };
+    el.addEventListener("paste", e => { if (whole(e.clipboardData && e.clipboardData.getData("text"))) e.preventDefault(); });
+    el.addEventListener("beforeinput", e => { if (/^insert/.test(e.inputType || "") && e.inputType !== "insertFromPaste" && whole(e.data)) e.preventDefault(); });
     el.addEventListener("focus", () => { if (!el.value) { el.value = "+7 ("; el._d = "7"; } });
     el.addEventListener("blur", () => { if (el.value.replace(/\D/g, "") === "7") { el.value = ""; el._d = ""; } });
     if (el.value) apply(false);
@@ -1128,6 +1138,101 @@
     });
   });
 
+  /* ---------- просмотр фото на весь экран: миниатюры, листание, приближение ----------
+     Галерея карточки товара (pages/product.js) и лента «Наши чехлы» (photos.js). list — адреса или { src, cap } с подписью.
+     Палец: два пальца или двойное нажатие приближают, при приближении фото двигается, без него свайп листает. Мышь: нажатие и колесо приближают, перетаскивание двигает.
+     opts.label — название окна для экранного диктора, opts.cls — свой класс окна (форма миниатюр). onClose(номер фото) — вернуть фокус и ленту к этому фото */
+  function viewer(list, start, onClose, opts = {}) {
+    list = list.map(x => typeof x === "string" ? { src: x } : x);
+    const MAX = 4, TAP = 2.5, many = list.length > 1, ico = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+    const lb = document.createElement("div");
+    lb.className = "lightbox lightbox--zoom is-open" + (opts.cls ? " " + opts.cls : "");
+    lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", opts.label || "Просмотр фото");
+    lb.innerHTML = `<button type="button" class="lightbox__close" aria-label="Закрыть">${ico("M6 6l12 12M18 6 6 18")}</button>
+      <button type="button" class="lightbox__zoom" aria-label="Приблизить"></button>
+      ${many ? `<button type="button" class="lightbox__prev" aria-label="Предыдущее фото">${ico("M15 6l-6 6 6 6")}</button><button type="button" class="lightbox__next" aria-label="Следующее фото">${ico("M9 6l6 6-6 6")}</button>` : ""}
+      <figure class="lightbox__fig"><div class="lightbox__stage"><img alt="" draggable="false"></div>${many || list.some(x => x.cap) ? '<figcaption><span class="lightbox__cap"></span><span class="lightbox__count"></span></figcaption>' : ""}</figure>
+      ${many ? `<div class="lightbox__thumbs">${list.map((x, n) => `<button type="button" aria-label="Фото ${n + 1}"><img src="${esc(x.src)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}`;
+    document.body.appendChild(lb);
+    const q = s => lb.querySelector(s), stage = q(".lightbox__stage"), img = q(".lightbox__stage img"), zoomBtn = q(".lightbox__zoom"), minis = [...lb.querySelectorAll(".lightbox__thumbs button")];
+    let cur = 0, scale = 1, tx = 0, ty = 0, one = null, pinch = null, lastTap = 0;
+    const pts = new Map();
+    const paint = () => {
+      const mx = Math.max(0, (img.offsetWidth * scale - innerWidth) / 2), my = Math.max(0, (img.offsetHeight * scale - innerHeight) / 2);
+      if (scale <= 1) { tx = 0; ty = 0; } else { tx = Math.min(mx, Math.max(-mx, tx)); ty = Math.min(my, Math.max(-my, ty)); }
+      img.style.transform = `translate3d(${tx}px,${ty}px,0) scale(${scale})`;
+      lb.classList.toggle("is-zoomed", scale > 1);
+      zoomBtn.setAttribute("aria-label", scale > 1 ? "Отдалить" : "Приблизить");
+      zoomBtn.innerHTML = ico(scale > 1 ? "M5 12h14" : "M12 5v14M5 12h14");
+    };
+    /* точка под пальцем или курсором остаётся на месте */
+    const zoomAt = (next, cx, cy) => {
+      next = Math.min(MAX, Math.max(1, next));
+      const r = img.getBoundingClientRect(), lx = r.left + r.width / 2 - tx, ly = r.top + r.height / 2 - ty;
+      tx = cx - lx - (cx - lx - tx) * next / scale; ty = cy - ly - (cy - ly - ty) * next / scale; scale = next;
+      paint();
+    };
+    const centerZoom = next => zoomAt(next, innerWidth / 2, innerHeight / 2);
+    const show = n => {
+      cur = (n + list.length) % list.length; scale = 1; img.src = list[cur].src; img.alt = list[cur].cap || ""; img.style.transition = "none"; paint();
+      requestAnimationFrame(() => { img.style.transition = ""; });
+      const cap = q(".lightbox__cap"), c = q(".lightbox__count");
+      if (cap) cap.textContent = list[cur].cap || "";
+      if (c) c.textContent = many ? `${cur + 1} / ${list.length}` : "";
+      minis.forEach((b, i) => { b.classList.toggle("is-active", i === cur); if (i === cur) b.scrollIntoView({ block: "nearest", inline: "center" }); });
+      if (many) [cur - 1, cur + 1].forEach(i => { new Image().src = list[(i + list.length) % list.length].src; });   // соседние фото — заранее, листание без пустого кадра
+    };
+    const close = () => { document.removeEventListener("keydown", onKey); lb.remove(); document.body.style.overflow = ""; if (onClose) onClose(cur); };
+    function onKey(e) {
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft" && many) show(cur - 1);
+      else if (e.key === "ArrowRight" && many) show(cur + 1);
+      else if (e.key === "+" || e.key === "=") centerZoom(scale + 1);
+      else if (e.key === "-") centerZoom(scale - 1);
+    }
+    document.addEventListener("keydown", onKey);
+    q(".lightbox__close").addEventListener("click", close);
+    zoomBtn.addEventListener("click", () => centerZoom(scale > 1 ? 1 : TAP));
+    if (many) { q(".lightbox__prev").addEventListener("click", () => show(cur - 1)); q(".lightbox__next").addEventListener("click", () => show(cur + 1)); }
+    minis.forEach((b, i) => b.addEventListener("click", () => show(i)));
+    lb.addEventListener("click", e => { if (scale === 1 && [lb, stage, q(".lightbox__fig")].includes(e.target)) close(); });
+    img.addEventListener("wheel", e => { e.preventDefault(); zoomAt(scale * (1 - e.deltaY * 0.002), e.clientX, e.clientY); }, { passive: false });
+    img.addEventListener("pointerdown", e => {
+      img.setPointerCapture(e.pointerId); pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pts.size === 2) { const [a, b] = [...pts.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, s: scale }; one = null; }
+      else if (pts.size === 1) one = { x: e.clientX, y: e.clientY, tx, ty, moved: false, touch: e.pointerType !== "mouse" };
+      img.classList.add("is-moving");
+    });
+    img.addEventListener("pointermove", e => {
+      if (!pts.has(e.pointerId)) return;
+      pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pinch && pts.size === 2) { const [a, b] = [...pts.values()]; return zoomAt(pinch.s * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d, (a.x + b.x) / 2, (a.y + b.y) / 2); }
+      if (!one) return;
+      const dx = e.clientX - one.x, dy = e.clientY - one.y;
+      if (!one.moved && Math.hypot(dx, dy) < 6) return;
+      one.moved = true;
+      if (scale > 1) { tx = one.tx + dx; ty = one.ty + dy; paint(); }
+      else if (one.touch && many) img.style.transform = `translate3d(${dx}px,0,0)`;
+    });
+    const up = e => {
+      if (!pts.delete(e.pointerId)) return;
+      if (pts.size < 2) pinch = null;
+      if (pts.size) return;
+      img.classList.remove("is-moving");
+      const o = one; one = null;
+      if (!o) return;
+      const dx = e.clientX - o.x;
+      if (e.type === "pointercancel") return paint();
+      if (o.moved) { if (scale === 1 && o.touch && many && Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); else paint(); return; }
+      if (!o.touch) return zoomAt(scale > 1 ? 1 : TAP, e.clientX, e.clientY);
+      if (e.timeStamp - lastTap < 300) { lastTap = 0; zoomAt(scale > 1 ? 1 : TAP, e.clientX, e.clientY); } else lastTap = e.timeStamp;
+    };
+    img.addEventListener("pointerup", up); img.addEventListener("pointercancel", up);
+    document.body.style.overflow = "hidden";
+    show(start);
+    q(".lightbox__close").focus();
+  }
+
   /* ---------- вкладки, галерея, блоки по data-атрибутам ---------- */
   $$("[data-tabs]").forEach(box => { const btns = $$("[data-tab]", box), panes = $$("[data-pane]", box); btns.forEach(b => b.addEventListener("click", () => { btns.forEach(x => x.classList.toggle("is-active", x === b)); panes.forEach(p => p.classList.toggle("is-active", p.dataset.pane === b.dataset.tab)); })); });
   $$("[data-products]").forEach(box => { const list = (window.AS_PRODUCTS || []).filter(p => p.cat === box.dataset.products); box.innerHTML = list.map(productCard).join("") || '<div class="empty">Товары появятся позже</div>'; });
@@ -1137,7 +1242,7 @@
   window.AS_accPrice = accPrice;
   window.AS_colorDot = colorDot;
   window.AS_vin = { decodeVin, vinCheck, vinHint, isVin, isFrame, yearMatch, cleanVin, api: vinApi, vinLike, sugLike, suggestApi: vinSuggestApi, suggest: attachVinSuggest };
-  window.AS = { titleFit, resolveItem, api, formMeta, guardForm, fieldErrors, consentHtml, enhanceForm, checkForm, phoneOk, cookieOk, cookieBanner, seoBlock, SEO_PART, minPrices, famStats, $, $$, esc, fmt, qs, plural, ICON, BRANDS, MODELS, BRAND, BY_SLUG, FAMILIES, VARIANTS, ALL_VARIANTS, VAR, HITS, varPhotos, MAT_NAME, sortedBrands, brandName, brandLogo, genName, cfgText, genLabel, carName, yearsText, kitOf, kitRows, kitIncludes, specHtml, famPhoto, posPhoto, varPhoto, carRender, priceOf, oldPriceOf, discountOf, priceHtml, URL: URL_, href, relink, abs, seo, coverCard, customCard, perkStrip, famCard, genCard, productCard, postCard, reviewCard, toast, Cart, MAX_QTY, Fav, badges, initPicker, search, loadScript, MSG, msgLinks };
+  window.AS = { titleFit, resolveItem, api, formMeta, guardForm, fieldErrors, consentHtml, enhanceForm, checkForm, phoneOk, cookieOk, cookieBanner, seoBlock, SEO_PART, minPrices, famStats, $, $$, esc, fmt, qs, plural, ICON, BRANDS, MODELS, BRAND, BY_SLUG, FAMILIES, VARIANTS, ALL_VARIANTS, VAR, HITS, varPhotos, MAT_NAME, sortedBrands, brandName, brandLogo, genName, cfgText, genLabel, carName, yearsText, kitOf, kitRows, kitIncludes, specHtml, famPhoto, posPhoto, varPhoto, carRender, priceOf, oldPriceOf, discountOf, priceHtml, URL: URL_, href, relink, abs, seo, coverCard, customCard, perkStrip, famCard, genCard, productCard, postCard, reviewCard, toast, viewer, Cart, MAX_QTY, Fav, badges, initPicker, search, loadScript, MSG, msgLinks };
   window.AS_cart = Cart; window.AS_fav = Fav; window.AS_postCard = postCard; window.AS_productCard = productCard;
   badges();
   loadScript("chat.js").then(() => loadScript("contact.js")).catch(() => {});   /* кнопка связи и всплывающее окно связи */

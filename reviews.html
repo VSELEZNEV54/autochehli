@@ -20,9 +20,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://1avtochehol.ru/"}, {"@type": "ListItem", "position": 2, "name": "Отзывы", "item": "https://1avtochehol.ru/otzivi/"}]}]}</script>
   <link rel="preload" href="assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=132">
+  <link rel="stylesheet" href="css/style.css?v=135">
   <link rel="icon" href="assets/logo/icon.svg" type="image/svg+xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://1avtochehol.ru/#org", "name": "Автостиль", "url": "https://1avtochehol.ru/"}</script><script src="js/links.js?v=132"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://1avtochehol.ru/#org", "name": "Автостиль", "url": "https://1avtochehol.ru/"}</script><script src="js/links.js?v=135"></script>
 </head>
 <body data-page="reviews">
 
@@ -98,6 +98,24 @@
   <!-- Отзывы выводит js/pages/reviews.js (данные — js/reviews.js) -->
   <div class="review-filters" id="rv-brands" role="group" aria-label="Отзывы по маркам" style="margin-top:20px"></div>
   <div class="reviews" id="rv-list"></div>
+  <!-- заявка внутри ленты: после первых рядов отзывов, остальные — ниже неё (js/pages/reviews.js) -->
+  <div class="rv-lead" id="rv-lead">
+    <!-- «Связаться с менеджером в один клик»: жёлтая заявка, одна на главной, «Индивидуальном пошиве», карточке товара, «О компании» и «Отзывах». Уходит как «Получить консультацию» из подвала: contact, тема «Консультация» -->
+<div class="oneclick">
+  <h2 class="oneclick__title">Связаться с&nbsp;менеджером в&nbsp;один клик!</h2>
+  <p class="oneclick__sub">В ближайшее время вам перезвонит наш консультант и&nbsp;поможет по любым вопросам.</p>
+  <form class="oneclick__form" data-form="contact" data-form-message="Заявка отправлена. В рабочее время вам перезвонит консультант">
+    <input type="hidden" name="topic" value="Консультация">
+    <input type="hidden" data-note="Заявка из блока" value="«Связаться с менеджером в один клик»">
+    <div class="field"><input class="input" type="text" name="name" required maxlength="80" autocomplete="name" placeholder="Ваше имя" aria-label="Ваше имя"></div>
+    <div class="field"><input class="input" type="tel" name="phone" required autocomplete="tel" placeholder="+7 (___) ___-__-__" aria-label="Телефон"></div>
+    <div class="field oneclick__send"><button class="btn btn--dark btn--lg" type="submit" data-label="Отправить">Отправить</button></div>
+    <div class="field oneclick__consent" data-consent></div>
+  </form>
+  <p class="form-tel">Или позвоните: <a href="tel:88007753260">8 (800) 775-32-60</a><span>бесплатно по России</span></p>
+</div>
+  </div>
+  <div class="reviews" id="rv-list-2"></div>
   <div class="section__more" id="rv-more"></div>
   <section class="section section--last">
     <form class="tile" data-form="review" data-form-message="Спасибо! Отзыв отправлен на модерацию">
@@ -195,12 +213,12 @@
 </div>
 <!-- /@footer -->
 
-<script src="js/data.js?v=132"></script>
-<script src="js/products.js?v=132"></script>
-<script src="js/cars.js?v=132"></script>
-<script src="js/app.js?v=132"></script>
-<script src="js/reviews.js?v=132"></script>
-<script src="js/pages/reviews.js?v=132"></script>
+<script src="js/data.js?v=135"></script>
+<script src="js/products.js?v=135"></script>
+<script src="js/cars.js?v=135"></script>
+<script src="js/app.js?v=135"></script>
+<script src="js/reviews.js?v=135"></script>
+<script src="js/pages/reviews.js?v=135"></script>
 
 </body>
 </html>
