@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Пошив авточехлов на заказ: конструктор чехлов онлайн | Автостиль</title>
-  <meta name="description" content="Пошив авточехлов на заказ по заводским лекалам: соберите чехлы в онлайн-конструкторе — материал и цвет вставок, цвет боковин, рисунок. Стоимость рассчитает менеджер.">
+  <meta name="description" content="Пошив авточехлов на заказ по заводским лекалам: соберите чехлы в онлайн-конструкторе — цвет основы, материал и цвет вставки, нить. Цена считается сразу.">
   <meta name="keywords" content="пошив авточехлов, авточехлы на заказ, авточехлы пошив на заказ, индивидуальный пошив авточехлов, конструктор авточехлов">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://1avtochehol.ru/konstruktor/">
@@ -15,13 +15,13 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:title" content="Пошив авточехлов на заказ: конструктор чехлов онлайн">
-  <meta property="og:description" content="Пошив авточехлов на заказ по заводским лекалам: соберите чехлы в онлайн-конструкторе — материал и цвет вставок, цвет боковин, рисунок. Стоимость рассчитает менеджер.">
+  <meta property="og:description" content="Пошив авточехлов на заказ по заводским лекалам: соберите чехлы в онлайн-конструкторе — цвет основы, материал и цвет вставки, нить. Цена считается сразу.">
   <meta property="og:url" content="https://1avtochehol.ru/konstruktor/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" href="assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=135">
+  <link rel="stylesheet" href="css/style.css?v=139">
   <link rel="icon" href="assets/logo/icon.svg" type="image/svg+xml">
-<script src="js/links.js?v=135"></script>
+<script src="js/links.js?v=139"></script>
 </head>
 <body data-page="custom">
 
@@ -124,26 +124,23 @@
           </div>
           <div class="cfg__q"><span>Популярные модели</span><div class="bsec__chips"><button type="button" data-pick-chip="toyota_camry-xv70">Camry XV70</button><button type="button" data-pick-chip="lada_vesta">Lada Vesta</button><button type="button" data-pick-chip="hyundai_solaris-2">Solaris 2</button><button type="button" data-pick-chip="kia_rio-iv">Kia Rio IV</button><button type="button" data-pick-chip="toyota_rav4-new">RAV4</button><button type="button" data-pick-chip="volkswagen_polo">VW Polo</button></div></div>
         </section>
-        <section class="cfg__step" data-step="salon">
-          <div class="cfg__title"><h2>Салон</h2><span data-b-val="salon"></span></div>
-          <div class="cfg__salon" data-c-salon></div>
+        <section class="cfg__step" data-step="base">
+          <div class="cfg__title"><h2>Цвет основы</h2><span data-b-val="base"></span></div>
+          <p class="cfg__note">Экокожа «Аригон»: боковины, спинки сзади и подголовники.</p>
+          <div class="cfg__dots" data-b-base></div>
+        </section>
+        <section class="cfg__step" data-step="mat">
+          <div class="cfg__title"><h2>Центральная вставка: материал</h2><span data-b-val="mat"></span></div>
+          <div data-b-mats></div>
         </section>
         <section class="cfg__step" data-step="ins">
-          <div class="cfg__title"><h2>Материал</h2><span data-b-val="ins"></span></div>
-          <div class="cfg__win" data-b-inserts></div>
+          <div class="cfg__title"><h2>Центральная вставка: цвет</h2><span data-b-val="ins"></span></div>
+          <div class="cfg__dots" data-b-ins></div>
         </section>
-        <section class="cfg__step" data-step="side">
-          <div class="cfg__title"><h2>Бок</h2><span data-b-val="side"></span></div>
-          <div class="cfg__win" data-b-sides></div>
-        </section>
-        <section class="cfg__step" data-step="design">
-          <div class="cfg__title"><h2>Рисунок</h2><span data-b-val="design"></span></div>
-          <div class="cfg__cards cfg__cards--3" data-b-designs></div>
-          <p class="cfg__note" data-b-design-note></p>
-        </section>
-        <section class="cfg__step" data-step="back">
-          <div class="cfg__title"><h2>Тыл — задняя часть спинки</h2><span data-b-val="back"></span></div>
-          <div class="cfg__win" data-b-backs></div>
+        <section class="cfg__step" data-step="thread">
+          <div class="cfg__title"><h2>Цвет отделочной нити</h2><span data-b-val="thread"></span></div>
+          <div class="cfg__dots" data-b-threads></div>
+          <p class="cfg__note" data-b-thread-note></p>
         </section>
         <section class="cfg__step" data-step="extra">
           <div class="cfg__title"><h2>Дополнительно</h2></div>
@@ -153,7 +150,7 @@
       </div>
       <div class="cfg__foot">
         <div class="cfg__total">
-          <div><small data-b-total-label>Итого</small><div class="price" data-b-total></div></div>
+          <div><small>Итого<span class="cfg__lbl"> за весь салон</span></small><div class="price" data-b-total></div></div>
           <button type="button" class="cfg__more" data-b-lines-toggle aria-expanded="false">Что входит</button>
         </div>
         <div class="calc__lines cfg__lines" data-b-lines hidden></div>
@@ -199,6 +196,27 @@
     <div class="breq__done" data-b-done hidden><div class="breq__ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><p class="breq__title">Заявка отправлена</p><p>В рабочее время вам перезвонит оператор, уточнит комплектацию салона и стоимость.</p><button type="button" class="btn btn--dark" data-b-close>Готово</button></div>
   </div>
 </div>
+
+
+<div class="modal" data-b-sketch role="dialog" aria-modal="true" aria-label="Эскиз на почту">
+  <div class="modal__bg" data-sk-close></div>
+  <div class="modal__panel breq">
+    <div class="modal__head"><p class="modal__title">Эскиз на почту</p><button type="button" class="iconbtn" aria-label="Закрыть" data-sk-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="breq__body">
+      <div class="breq__mini" data-sk-mini></div>
+      <dl class="breq__list" data-sk-list></dl>
+    </div>
+    <form class="form-grid breq__form" data-sk-form>
+      <p class="field full breq__lead">Пришлём эскиз со списком материалов и ценой на почту и сразу сохраним файл на ваше устройство.</p>
+      <div class="field full"><label>E-mail</label><input class="input" type="email" name="email" required maxlength="120" autocomplete="email" inputmode="email" placeholder="name@mail.ru"></div>
+      <div class="field full"><label>Имя <span class="muted">— необязательно</span></label><input class="input" type="text" name="name" maxlength="80" autocomplete="name" placeholder="Как к вам обращаться"></div>
+      <div class="field full" data-consent></div>
+      <div class="field full"><button class="btn btn--primary btn--lg btn--block" type="submit">Отправить и скачать</button></div>
+    </form>
+    <p class="form-tel" style="margin-top:12px">Или позвоните: <a href="tel:88007753260">8 (800) 775-32-60</a><span>бесплатно по России</span></p>
+    <div class="breq__done" data-sk-done hidden><div class="breq__ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><p class="breq__title">Эскиз готов</p><p></p><button type="button" class="btn btn--dark" data-sk-close>Готово</button></div>
+  </div>
+</div>
 </main>
 
 <!-- @footer -->
@@ -221,7 +239,7 @@
     <div class="footer__cols">
       <div><p class="footer__h">Марки</p><ul><li><a href="brand.html?b=toyota">Чехлы на Toyota</a></li><li><a href="brand.html?b=lada">Чехлы на Lada</a></li><li><a href="brand.html?b=kia">Чехлы на Kia</a></li><li><a href="brand.html?b=hyundai">Чехлы на Hyundai</a></li><li><a href="brand.html?b=renault">Чехлы на Renault</a></li><li><a href="brand.html?b=nissan">Чехлы на Nissan</a></li><li><a href="brand.html?b=volkswagen">Чехлы на Volkswagen</a></li><li><a href="brand.html?b=skoda">Чехлы на Skoda</a></li><li><a href="brand.html?b=haval">Чехлы на Haval</a></li><li><a class="more" href="catalog.html">Все марки</a></li></ul></div>
       <div><p class="footer__h">Модели</p><ul><li><a href="car.html?m=toyota_camry-xv70">Чехлы на Toyota Camry</a></li><li><a href="car.html?f=lada-vesta">Чехлы на Lada Vesta</a></li><li><a href="car.html?f=hyundai-solaris">Чехлы на Hyundai Solaris</a></li><li><a href="car.html?f=kia-rio">Чехлы на Kia Rio</a></li><li><a href="car.html?f=renault-duster">Чехлы на Renault Duster</a></li><li><a href="car.html?f=lada-granta">Чехлы на Lada Granta</a></li><li><a href="car.html?f=toyota-rav4">Чехлы на Toyota RAV4</a></li><li><a href="car.html?f=hyundai-creta">Чехлы на Hyundai Creta</a></li><li><a href="car.html?f=kia-sportage">Чехлы на Kia Sportage</a></li><li><a class="more" href="catalog.html">Все модели</a></li></ul></div>
-      <div><p class="footer__h">Подборки</p><ul><li><a href="collection.html?c=eco">Чехлы из экокожи</a></li><li><a href="collection.html?c=alcantara">Чехлы из алькантары</a></li><li><a href="collection.html?c=jacquard">Чехлы из жаккарда</a></li><li><a href="collection.html?c=perf">Чехлы с перфорацией</a></li><li><a href="collection.html?c=suv">Для кроссоверов</a></li><li><a href="collection.html?c=mpv">Для 7-местных авто</a></li><li><a href="collection.html?c=budget">Недорогие до 8 000 ₽</a></li><li><a class="more" href="collection.html">Все подборки</a></li></ul></div>
+      <div><p class="footer__h">Подборки</p><ul><li><a href="collection.html?c=eco">Чехлы из экокожи</a></li><li><a href="collection.html?c=alcantara">Чехлы из алькантары</a></li><li><a href="collection.html?c=jacquard">Чехлы из жаккарда</a></li><li><a href="collection.html?c=perf">Чехлы из перфорированной кожи</a></li><li><a href="collection.html?c=suv">Для кроссоверов</a></li><li><a href="collection.html?c=mpv">Для 7-местных авто</a></li><li><a href="collection.html?c=budget">Недорогие до 8 000 ₽</a></li><li><a class="more" href="collection.html">Все подборки</a></li></ul></div>
       <div><p class="footer__h">Услуги</p><ul><li><a href="custom.html">Конструктор чехлов</a></li><li><a href="poshiv-na-zakaz.html">Пошив на заказ</a></li><li><a href="ustanovka.html">Установка чехлов</a></li><li><a href="index.html#vin" data-vin-tile>Подбор по VIN</a></li><li><a href="dealers.html">Стать дилером</a></li><li><a href="fabrics.html">Экокожа оптом</a></li></ul></div>
       <div><p class="footer__h">Покупателям</p><ul><li><a href="delivery.html">Доставка и оплата</a></li><li><a href="returns.html">Гарантия и возврат</a></li><li><a href="info-faq.html">Вопросы и ответы</a></li></ul></div>
       <div><p class="footer__h">Компания</p><ul><li><a href="about.html">О компании</a></li><li><a href="reviews.html">Отзывы</a></li><li><a href="sales.html">Акции</a></li><li><a href="dealers.html">Дилерам</a></li><li><a href="contacts.html">Контакты</a></li></ul></div>
@@ -265,9 +283,10 @@
   <div class="modal__bg" data-ask-close></div>
   <div class="modal__panel">
     <div class="modal__head"><p class="modal__title">Получить консультацию</p><button type="button" class="iconbtn" aria-label="Закрыть" data-ask-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
-    <p class="small muted" style="margin-top:12px">Оставьте телефон — в рабочее время вам перезвонит оператор и ответит на ваши вопросы.</p>
+    <p class="small muted" data-ask-lead style="margin-top:12px">Оставьте телефон — в рабочее время вам перезвонит оператор и ответит на ваши вопросы.</p>
     <form data-form="contact" data-form-message="Заявка на консультацию отправлена. В рабочее время вам перезвонит оператор" style="margin-top:14px">
       <input type="hidden" name="topic" value="Консультация">
+      <input type="hidden" name="car" value="">
       <div class="form-grid">
         <div class="field"><label>Имя</label><input class="input" type="text" name="name" required maxlength="80" autocomplete="name" placeholder="Как к вам обращаться"></div>
         <div class="field"><label>Телефон</label><input class="input" type="tel" name="phone" required autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>
@@ -281,13 +300,13 @@
 </div>
 <!-- /@footer -->
 
-<script src="js/data.js?v=135"></script>
-<script src="js/products.js?v=135"></script>
-<script src="js/cars.js?v=135"></script>
-<script src="js/app.js?v=135"></script>
-<script src="js/kit.js?v=135"></script>
-<script src="js/options.js?v=135"></script>
-<script src="js/pages/custom.js?v=135"></script>
+<script src="js/data.js?v=139"></script>
+<script src="js/products.js?v=139"></script>
+<script src="js/cars.js?v=139"></script>
+<script src="js/app.js?v=139"></script>
+<script src="js/kit.js?v=139"></script>
+<script src="js/options.js?v=139"></script>
+<script src="js/pages/custom.js?v=139"></script>
 
 </body>
 </html>

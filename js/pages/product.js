@@ -21,57 +21,83 @@
     </div>`;
   const isCard = src => /assets\/(cards|seats)\//.test(src);   // карточка или кресло: без плашки «Фото наших работ», она только на настоящих фото
   const gallery = (imgs, tags, cover) => `<div class="gallery${cover ? " gallery--card" : ""}" data-gallery><div class="gallery__thumbs">${imgs.map((src, i) => `<button type="button" class="${i ? "" : "is-active"}" data-thumb="${src}" aria-label="Фото ${i + 1}"><img src="${src}" alt="" loading="lazy"></button>`).join("")}</div><div class="gallery__main${isCard(imgs[0]) ? " is-card" : ""}"><img id="p-main" src="${imgs[0]}" alt="" width="900" height="${cover ? 1200 : 900}">${tags}</div></div>`;
-  function bindGallery() {
+  /* Галерея. ask — автомобиль для слайда «Запрос фото»: он идёт последним, той же формы, что фото (правка 04.11.2026).
+     Слайд и его миниатюру добавляет скрипт, серверный вывод (lib/pages.php) не меняется. Кнопка открывает стандартное окно заявки под названием «Запрос фото» */
+  const CAM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>';
+  function bindGallery(ask) {
     const main = document.getElementById("p-main"), thumbs = [...document.querySelectorAll("[data-thumb]")];
     if (!thumbs.length) return;
     const box = main.parentElement, row = thumbs[0].parentElement, src = i => thumbs[i].dataset.thumb, calm = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let card = null;
+    const tiles = thumbs.slice();
+    if (ask) {
+      const t = document.createElement("button");
+      t.type = "button"; t.className = "gallery__ask-thumb"; t.setAttribute("aria-label", "Запрос фото");
+      t.innerHTML = `${CAM}<span>Ещё фото</span>`;
+      row.appendChild(t); tiles.push(t);
+      card = document.createElement("div"); card.className = "gallery__ask"; card.hidden = true;
+      card.innerHTML = `<div class="gallery__ask-in"><i>${CAM}</i><p class="gallery__ask-h">Нужно больше фото?</p><p>Пришлём фото наших работ: другие ракурсы, цвета и детали пошива</p><button class="btn btn--primary btn--lg" type="button" data-ask-open="photo" data-ask-car="${e(ask)}">Запросить фото</button></div>`;
+      box.appendChild(card);
+    }
+    const n = tiles.length, isAsk = i => !!card && i === thumbs.length;
     let cur = 0, fade, drag = null, busy = false, dots = null;
-    /* отметить фото: миниатюра, точка, плашка; ряд миниатюр докручиваем сам, страницу не двигаем */
+    /* отметить слайд: миниатюра, точка, плашка; ряд миниатюр докручиваем сам, страницу не двигаем */
     const mark = i => {
       cur = i;
-      thumbs.forEach((x, n) => x.classList.toggle("is-active", n === i));
-      if (dots) [...dots.children].forEach((d, n) => d.classList.toggle("is-active", n === i));
-      box.classList.toggle("is-card", isCard(src(i)));
-      if (row.scrollWidth > row.clientWidth) { const r = row.getBoundingClientRect(), a = thumbs[i].getBoundingClientRect(); row.scrollBy({ left: a.left - r.left - (r.width - a.width) / 2, behavior: calm() ? "auto" : "smooth" }); }
+      tiles.forEach((x, k) => x.classList.toggle("is-active", k === i));
+      if (dots) [...dots.children].forEach((d, k) => d.classList.toggle("is-active", k === i));
+      box.classList.toggle("is-card", !isAsk(i) && isCard(src(i)));
+      box.classList.toggle("is-ask", isAsk(i));
+      const r = row.getBoundingClientRect(), a = tiles[i].getBoundingClientRect(), behavior = calm() ? "auto" : "smooth";
+      if (row.scrollWidth > row.clientWidth) row.scrollBy({ left: a.left - r.left - (r.width - a.width) / 2, behavior });
+      else if (row.scrollHeight > row.clientHeight) row.scrollBy({ top: a.top - r.top - (r.height - a.height) / 2, behavior });
     };
-    thumbs.forEach((t, i) => t.addEventListener("click", () => { if (busy) return; clearTimeout(fade); mark(i); main.style.opacity = 0; fade = setTimeout(() => { main.src = src(i); main.onload = () => main.style.opacity = 1; }, 100); }));
-    /* нажатие на фото открывает просмотр на весь экран (AS.viewer в app.js); после свайпа нажатие не считаем */
+    const settle = () => { if (card) card.hidden = !isAsk(cur); };
+    thumbs.forEach((t, i) => t.addEventListener("click", () => { if (busy) return; clearTimeout(fade); mark(i); settle(); main.style.opacity = 0; fade = setTimeout(() => { main.src = src(i); main.onload = () => main.style.opacity = 1; }, 100); }));
+    if (card) tiles[n - 1].addEventListener("click", () => { if (busy) return; clearTimeout(fade); main.style.opacity = 1; mark(n - 1); settle(); });
+    /* нажатие на фото открывает просмотр на весь экран (AS.viewer в app.js); после свайпа нажатие не считаем, на слайде «Запрос фото» — тоже */
     const zoomBtn = document.createElement("button");
     zoomBtn.type = "button"; zoomBtn.className = "gallery__zoom"; zoomBtn.setAttribute("aria-label", "Приблизить фото");
     zoomBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg>';
     box.appendChild(zoomBtn);
     let swiped = false;
-    box.addEventListener("click", () => { if (!swiped && !busy) A.viewer(thumbs.map(t => t.dataset.thumb), cur, i => { if (i !== cur) thumbs[i].click(); zoomBtn.focus({ preventScroll: true }); }); });
-    if (thumbs.length < 2) return;
+    box.addEventListener("click", () => { if (!swiped && !busy && !isAsk(cur)) A.viewer(thumbs.map(t => t.dataset.thumb), cur, i => { if (i !== cur) thumbs[i].click(); zoomBtn.focus({ preventScroll: true }); }); });
+    if (n < 2) return;
     dots = document.createElement("div"); dots.className = "gallery__dots"; dots.setAttribute("aria-hidden", "true");
-    dots.innerHTML = thumbs.map((_, i) => `<i${i ? "" : ' class="is-active"'}></i>`).join("");
+    dots.innerHTML = tiles.map((_, i) => `<i${i ? "" : ' class="is-active"'}></i>`).join("");
     box.after(dots);
-    /* Свайп: фото идёт за пальцем, соседнее едет рядом во временной картинке. Вертикальную прокрутку браузер забирает сам (touch-action в css) и присылает pointercancel */
+    /* Свайп: слайд идёт за пальцем, соседний едет рядом. Соседнее фото — во временной картинке, слайд «Запрос фото» едет сам,
+       а с него назад выезжает основное фото. Вертикальную прокрутку браузер забирает сам (touch-action в css) и присылает pointercancel */
     const ghost = new Image(); ghost.className = "gallery__ghost"; ghost.alt = "";
-    const place = (dx, gap) => { main.style.transform = `translate3d(${dx}px,0,0)`; ghost.style.transform = `translate3d(${dx + gap}px,0,0)`; };
+    const shift = (x, dx) => { if (x) x.style.transform = `translate3d(${dx}px,0,0)`; };
+    const place = (d, dx, gap) => { shift(d.a, dx); shift(d.b, dx + gap); };
+    const neighbour = to => (to < 0 || to >= n ? null : isAsk(to) ? card : isAsk(cur) ? main : ghost);
+    const drop = x => { if (!x) return; x.style.transform = ""; if (x === ghost) ghost.remove(); if (x === card && !isAsk(cur)) card.hidden = true; };
     const release = (ok, time) => {
       const d = drag; drag = null;
       if (!d || !d.on) return;
       swiped = true;
       const dir = d.dx < 0 ? 1 : -1, next = cur + dir, ms = calm() ? 0 : 240;
-      const go = ok && !!thumbs[next] && (Math.abs(d.dx) > d.w * 0.2 || Math.abs(d.dx) / Math.max(1, time - d.t) > 0.5);
+      const go = ok && !!d.b && (Math.abs(d.dx) > d.w * 0.2 || Math.abs(d.dx) / Math.max(1, time - d.t) > 0.5);
+      const els = [d.a, d.b].filter(Boolean);
       busy = true;
-      main.style.transition = ghost.style.transition = `transform ${ms}ms var(--ease)`;
-      place(go ? -dir * d.w : 0, dir * d.w);
+      els.forEach(x => { x.style.transition = `transform ${ms}ms var(--ease)`; });
+      place(d, go ? -dir * d.w : 0, dir * d.w);
       if (go) mark(next);
       setTimeout(() => {
-        const done = () => { ghost.remove(); busy = false; };
-        main.style.transition = ghost.style.transition = main.style.transform = "";
-        if (!go) return done();
+        const done = () => { ghost.remove(); settle(); busy = false; };
+        els.forEach(x => { x.style.transition = x.style.transform = ""; });
+        if (!go || d.b !== ghost) return done();
         main.src = src(next);
-        main.decode().then(done, done);   // пока новое фото не готово, его закрывает временная картинка
+        /* пока новое фото не готово, его закрывает временная картинка; decode() в фоновой вкладке может не ответить — через секунду открываем галерею сами */
+        Promise.race([main.decode(), new Promise(r => setTimeout(r, 1000))]).then(done, done);
       }, ms + 20);
     };
     box.addEventListener("pointerdown", ev => {
       if (ev.pointerType === "mouse" || busy) return;
       swiped = false;
       if (drag) return release(false);   // второй палец: это уже не свайп
-      drag = { id: ev.pointerId, x: ev.clientX, y: ev.clientY, t: ev.timeStamp, dx: 0, on: false, w: box.clientWidth, dir: 0 };
+      drag = { id: ev.pointerId, x: ev.clientX, y: ev.clientY, t: ev.timeStamp, dx: 0, on: false, w: box.clientWidth, dir: 0, a: null, b: null };
       [cur - 1, cur + 1].forEach(i => { if (thumbs[i]) new Image().src = src(i); });
     });
     box.addEventListener("pointermove", ev => {
@@ -81,13 +107,20 @@
         if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
         if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; }
         drag.on = true; clearTimeout(fade); main.onload = null; main.style.opacity = 1;
-        if (main.getAttribute("src") !== src(cur)) main.src = src(cur);
-        main.after(ghost);
+        if (!isAsk(cur) && main.getAttribute("src") !== src(cur)) main.src = src(cur);
+        drag.a = isAsk(cur) ? card : main;
       }
-      const dir = dx < 0 ? 1 : -1, has = !!thumbs[cur + dir];
-      if (has && drag.dir !== dir) { ghost.src = src(cur + dir); drag.dir = dir; }
-      ghost.hidden = !has; drag.dx = dx;
-      place(has ? dx : dx * 0.3, dir * drag.w);   // у крайнего фото соседа нет: тянется с сопротивлением и возвращается
+      const dir = dx < 0 ? 1 : -1;
+      if (drag.dir !== dir) {
+        const to = cur + dir, b = neighbour(to);
+        if (drag.b !== b) drop(drag.b);
+        drag.b = b; drag.dir = dir;
+        if (b === ghost) { ghost.src = src(to); main.after(ghost); }
+        else if (b === card) card.hidden = false;
+        else if (b === main && main.getAttribute("src") !== src(to)) main.src = src(to);
+      }
+      drag.dx = dx;
+      place(drag, drag.b ? dx : dx * 0.3, dir * drag.w);   // у крайнего слайда соседа нет: тянется с сопротивлением и возвращается
     });
     box.addEventListener("pointerup", ev => { if (drag && ev.pointerId === drag.id) release(true, ev.timeStamp); });
     box.addEventListener("pointercancel", ev => { if (drag && ev.pointerId === drag.id) release(false); });
@@ -252,5 +285,5 @@
   document.getElementById("p-more-link").href = A.URL.pos(m); document.getElementById("p-more-link").textContent = "Все варианты";
   document.getElementById("p-more").innerHTML = A.VARIANTS.filter(x => x.id !== v.id).slice(0, 5).map(x => A.coverCard(m, x)).join("");
   }
-  bindGallery(); bindTabs(); bindSticky(); A.badges();
+  bindGallery(A.carName(m)); bindTabs(); bindSticky(); A.badges();
 })();

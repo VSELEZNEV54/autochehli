@@ -1,65 +1,46 @@
-/* Конструктор индивидуального пошива: разделы идут подряд справа, в порядке заполнения заказа — автомобиль, салон, материал и цвет середины, боковины, рисунок, тыл, дополнительно.
-   Превью сиденья слева закреплено, полоса разделов сверху и цена с кнопками «В корзину» и «Заявка менеджеру» внизу всегда на экране.
-   Материалы, цвета, услуги и их цены — из справочников Битрикса, которые видят операторы в CRM (js/options.js), поля салона — из заказа в CRM, значения по модели — js/kit.js.
-   Цену комплекта в заказе сервер считает сам по тому же options.js (backend/app/catalog.py, custom_quote). */
+/* Конструктор индивидуального пошива, по образцу простого конструктора пользователя (правка 04.11.2026). Разделы идут подряд справа:
+   автомобиль → цвет основы (экокожа) → материал центральной вставки → цвет вставки → цвет отделочной нити (только у перфорированной кожи) → дополнительно.
+   Превью сиденья слева закреплено (60 % ширины), полоса разделов сверху и цена с кнопками «В корзину» и «Заявка менеджеру» внизу всегда на экране.
+   Материалы, цвета и доплаты — по «Дорожной карте продаж» (js/options.js, правится руками). Цену комплекта в заказе сервер считает сам
+   по тому же options.js (backend/app/catalog.py, custom_quote), письмо с эскизом собирает тоже сервер (custom_describe). */
 (function () {
   const A = window.AS, e = A.esc, root = document.querySelector("[data-builder]");
   if (!root) return;
   const $ = (s, r = root) => r.querySelector(s), $$ = (s, r = root) => [...r.querySelectorAll(s)];
-  const SW = n => "assets/swatches/" + n + ".jpg";
 
-  /* ---------- опции: материалы, цвета, услуги и цены — из Битрикса (js/options.js, собирает tools/build_options.py) ---------- */
+  /* ---------- опции: js/options.js ---------- */
   const O = window.AS_OPTIONS;
   const MATS = Object.fromEntries(O.materials.map(m => [m.id, m]));
-  const ECO = O.side;   /* цвета экокожи для боковин и тыла */
-  const THREAD = "#a3a5ab";
+  const BASE = O.base;   /* экокожа «Аригон»: боковины, тыл, подголовники */
+  const DESIGNS = Object.fromEntries(O.designs.map(d => [d.id, d]));
+  const THREADS = Object.fromEntries(O.threads);
+  const DEF_THREAD = "#a3a5ab";   /* обычная нить в тон — на превью */
+  let THREAD = DEF_THREAD;
   const ICO = {
-    plain: '<g fill="currentColor" stroke="none"><circle cx="10" cy="9" r="1.3"/><circle cx="17" cy="9" r="1.3"/><circle cx="24" cy="9" r="1.3"/><circle cx="31" cy="9" r="1.3"/><circle cx="13.5" cy="17" r="1.3"/><circle cx="20.5" cy="17" r="1.3"/><circle cx="27.5" cy="17" r="1.3"/></g>',
     classic: '<path d="M2 9h36M2 17h36"/>',
     romb: '<path d="M2 13 9 4l7 9 7-9 7 9 7-9M2 13l7 9 7-9 7 9 7-9 7 9"/>',
-    strelki: '<path d="m6 6 7 7-7 7M16 6l7 7-7 7M26 6l7 7-7 7"/>',
-    anakonda: '<path d="M2 13c4-8 8-8 12 0s8 8 12 0 8-8 12 0"/>'
+    plain: '<g fill="currentColor" stroke="none"><circle cx="10" cy="9" r="1.3"/><circle cx="17" cy="9" r="1.3"/><circle cx="24" cy="9" r="1.3"/><circle cx="31" cy="9" r="1.3"/><circle cx="13.5" cy="17" r="1.3"/><circle cx="20.5" cy="17" r="1.3"/><circle cx="27.5" cy="17" r="1.3"/></g>'
   };
-  const DESIGNS = Object.fromEntries(O.designs.map(d => [d.id, d]));
-  /* Боковины в CRM — только экокожа. Вторая строка — услуга «Бочка в цвет серединки»: весь перед сиденья из материала центра */
-  const SIDE_MATS = {
-    eco: { name: "Экокожа «Аригон»", note: `${Object.keys(ECO).length} ${A.plural(Object.keys(ECO).length, "цвет", "цвета", "цветов")}`, price: "входит", ok: () => true },
-    same: { name: "В цвет центральной части", note: "Весь перед из материала центра", price: "+" + A.fmt(O.barrel), ok: mat => !!MATS[mat].barrel }
-  };
-  /* Салон — поля заказа в CRM операторов; значения подставляются из карточки модели (js/kit.js), «Не знаю» — уточнит менеджер */
-  const UNK = ["", "Не знаю"];
-  const SPLITS = [["solid", "Цельная"], ["40/60", "40/60"], ["50/50", "50/50"], ["3", "3 части"], UNK];
-  const YESNO = [["yes", "Есть"], ["no", "Нет"], UNK];
-  const SALON = [
-    { id: "kit", name: "Комплект", opts: [["full", "Весь салон"], ["front", "Передний ряд"]], hint: "Передний ряд — половина комплекта, два передних сиденья. Его стоимость рассчитает менеджер." },
-    { id: "body", name: "Тип кузова", from: "k", opts: [["седан", "Седан"], ["хэтчбек", "Хэтчбек"], ["универсал", "Универсал"], ["пикап", "Пикап"], ["купе", "Купе"], UNK] },
-    { id: "wheel", name: "Руль", from: "r", opts: [["левый", "Левый"], ["правый", "Правый"], UNK] },
-    { id: "heads", name: "Подголовники, передние + задние", from: "h", rear: true, opts: [["2+0", "2+0"], ["2+2", "2+2"], ["2+3", "2+3"], ["2+3+2", "2+3+2"], UNK], hint: "Сколько подголовников в каждом ряду. 2+3+2 — семиместный салон." },
-    { id: "farm", name: "Передний подлокотник", from: "fa", opts: [["нет", "Нет"], ["центральный", "Центральный"], ["боковой", "Боковой"], ["два боковых", "Два боковых"], UNK] },
-    { id: "armrest", name: "Задний подлокотник", from: "ar", map: { "есть": "yes", "нет": "no" }, rear: true, opts: YESNO, hint: "Откидной подлокотник в середине заднего дивана. Лекало учитывает подлокотник, поэтому важно знать, есть ли он." },
-    { id: "backrest", name: "Задняя спинка", from: "sb", map: { "цельная": "solid", "из 3 частей": "3" }, rear: true, opts: SPLITS,
-      legend: [["solid", "Цельная", "спинка заднего дивана одной частью, складывается целиком"], ["40/60", "40/60", "две части разной ширины, узкая и широкая складываются по отдельности"], ["50/50", "50/50", "две одинаковые половины"], ["3", "3 части", "три секции, например 40/20/40: средняя складывается отдельно"]] },
-    { id: "seat", name: "Заднее сиденье", from: "ss", map: { "цельное": "solid", "из 3 частей": "3" }, rear: true, opts: SPLITS, hint: "Подушка заднего дивана: делится так же или цельная." },
-    { id: "airbag", name: "Подушки безопасности в сиденьях", from: "a", map: { "есть": "yes", "нет": "no" }, opts: YESNO, hint: "Боковые подушки в спинках передних сидений — на боковине обычно есть ярлык AIRBAG. Для них делаем разрывные швы." }
-  ];
-  const SPLIT = { solid: [], "40/60": [0.4], "50/50": [0.5], "3": [0.4, 0.6] };
-  const splitIco = v => `<svg class="cfg__split" viewBox="0 0 36 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="1" width="34" height="14" rx="3"/>${SPLIT[v].map(f => `<path d="M${1 + 34 * f} 1v14"/>`).join("")}</svg>`;
-  /* По запросу: цены нет в CRM, считает менеджер */
-  const OPTS = {
-    armrest: { name: "Чехол на подлокотник", note: "В цвет комплекта" },
-    install: { name: "Установка в вашем городе", note: "Найдём установщика" }
-  };
-  /* Доступность услуг — правила в options.js, сверены с заказами: needs — с какими рисунками, not — не на каких материалах */
-  const addonOk = a => !(a.not || []).includes(st.mat) && (!a.needs || a.needs.includes(st.design));
-  const paid = () => O.addons.filter(a => addonOk(a) && st.opts.has(a.id)).map(a => Object.assign({}, a, { n: a.qty ? st.qty[a.id] || 1 : 1 }));
+  /* По запросу: цены в дорожной карте нет, считает менеджер */
+  const OPTS = { install: { name: "Установка в вашем городе", note: "Найдём установщика" } };
   /* Автомобиль не выбран — «от» по всему каталогу: цены живые, чисел здесь быть не должно */
-  const DEF_P = A.minPrices(A.MODELS), DEF_PR = [0, 1].map(i => Math.min(...Object.values(window.AS_KIT || {}).map(k => (k.pr && k.pr[i]) || Infinity))).map(x => (isFinite(x) ? x : 0));
-  const DEF = { design: "classic", sideMat: "eco", side: "c79236", mat: "perf", ins: "c79243", back: "c79236", thread: "" };
-  const DEF_SALON = { kit: "full", body: "", wheel: "", heads: "", farm: "", armrest: "", backrest: "", seat: "", airbag: "" };
-  const st = Object.assign({ model: null, opts: new Set(), qty: {}, salon: Object.assign({}, DEF_SALON) }, DEF);
-  const STEPS = [["car", "Авто"], ["salon", "Салон"], ["ins", "Материал"], ["side", "Бок"], ["design", "Рисунок"], ["back", "Тыл"], ["extra", "Опции"]];
-  let cur = 0, kitFor = null;   /* cur — раздел на экране, kitFor — лекало, с которого подставлен салон */
+  const DEF_P = A.minPrices(A.MODELS);
+  /* Стандартный комплект по дорожной карте: чёрная экокожа «Аригон», серая вставка, горизонтальная настрочка */
+  const DEF = { base: "c79236", mat: "perf", ins: "c79243", design: "classic", same: false, thread: "" };
+  const st = Object.assign({ model: null, opts: new Set(), qty: {} }, DEF);
+  const STEPS = [["car", "Авто"], ["base", "Основа"], ["mat", "Материал"], ["ins", "Цвет"], ["thread", "Нить"], ["extra", "Опции"]];
+  const steps = () => STEPS.filter(([id]) => id !== "thread" || MATS[st.mat].thread);
+  let cur = 0;   /* раздел на экране */
 
+  /* Выбор сохраняется как есть, а в расчёт идёт то, что можно сшить из выбранного материала: на флоке и жаккарде настрочки нет,
+     «Лицевая часть единым цветом» — только экокожа и алькантара, цвет нити — только у перфорированной кожи. Вернулись к материалу — вернулся и выбор */
+  const M = () => MATS[st.mat];
+  const design = () => (M().design ? st.design : "plain");
+  const same = () => st.same && !!M().barrel;
+  const thread = () => (M().thread ? st.thread : "");
+  const threadPaid = () => !!thread() && design() !== "plain";
+  const addonOk = a => !(a.not || []).includes(st.mat) && (!a.needs || a.needs.includes(design())) && (!a.threaded || !!thread());
+  const paid = () => O.addons.filter(a => addonOk(a) && st.opts.has(a.id)).map(a => Object.assign({}, a, { n: a.qty ? st.qty[a.id] || 1 : 1 }));
   /* ---------- геометрия сиденья ---------- */
   const fx = n => Math.round(n * 10) / 10;
   const toward = (p, q, r) => { const dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy), k = Math.min(r, L / 2) / L; return [p[0] + dx * k, p[1] + dy * k]; };
@@ -104,7 +85,8 @@
 
   /* превью сиденья спереди (позже заменим на 3D-рендер сбоку) */
   function seatSVG() {
-    const ins = insColor()[1], side = st.sideMat === "same" ? ins : ECO[st.side][1], tex = MATS[st.mat].tex, pat = MATS[st.mat].pattern || { classic: "classic", romb: "rhomb" }[st.design], dbl = paid().some(a => a.id === "double");
+    const ins = insColor()[1], side = same() ? ins : BASE[st.base][1], tex = M().tex, pat = M().pattern || { classic: "classic", romb: "rhomb" }[design()], dbl = paid().some(a => a.id === "double");
+    THREAD = thread() ? THREADS[thread()] : DEF_THREAD;
     const P = k => rpath(G[k], RAD[k]);
     const texture = id => {
       if (tex === "perf") return `<rect x="0" y="0" width="420" height="600" fill="url(#perf)" clip-path="url(#${id})"/>`;
@@ -117,7 +99,7 @@
     const frame = (k, color, grad) => `<path d="${P(k)}" fill="${color}"/><path d="${P(k)}" fill="#000" opacity=".3" filter="url(#grain)"/><path d="${P(k)}" fill="url(#gH)"/><path d="${P(k)}" fill="url(#${grad || "gV"})"/><path d="${P(k)}" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="1"/>`;
     const insert = (k, clip) => `<path d="${P(k)}" fill="${ins}"/>${texture(clip)}${pat ? `<g clip-path="url(#${clip})">${quilt(pat, G[k], dbl)}</g>` : ""}<path d="${P(k)}" fill="url(#gIn)"/>`;
     const seam = (d, clip) => `<g clip-path="url(#${clip})"><path d="${d}" stroke="rgba(0,0,0,.5)" stroke-width="2" fill="none"/><path d="${d}" stroke="${THREAD}" stroke-width="1.1" stroke-dasharray="3.4 2.4" fill="none" transform="translate(0 -5)"/>${dbl ? `<path d="${d}" stroke="${THREAD}" stroke-width="1.1" stroke-dasharray="3.4 2.4" fill="none" transform="translate(0 5)"/>` : ""}</g>`;
-    const jl = insColor()[3] || "#ccc";
+    const jl = insColor()[2] || "#ccc";
     const posts = `<rect x="175" y="118" width="9" height="30" rx="3" fill="url(#chrome)"/><rect x="236" y="118" width="9" height="30" rx="3" fill="url(#chrome)"/>`;
     const shadow = `<ellipse cx="210" cy="568" rx="172" ry="13" fill="#000" opacity=".28" filter="url(#soft)"/>`;
     const body = `${shadow}
@@ -155,51 +137,41 @@ ${body}
 </svg>`;
   }
 
-  /* ---------- расчёт: базовая цена комплекта по материалу вставок + доплаты; остальное — по запросу ---------- */
-  const insColor = () => { const c = MATS[st.mat].colors; return c[st.ins] || Object.values(c)[0]; };
+  /* ---------- расчёт: цена модели за материал вставки + доплаты из дорожной карты; остальное — по запросу ---------- */
+  const insColor = () => { const c = M().colors; return c[st.ins] || Object.values(c)[0]; };
   const matName = id => (MATS[id].full || MATS[id].name);
-  /* цена комплекта за материал у этой модели: как в CRM (ajax_handler1.php) — своя цена у экокожи и перфорации, алькантары, ткани, ромба 35; null — по запросу */
-  function matPrice(m, id) {
-    const x = MATS[id];
-    if (x.pi != null) return (m ? m.p : DEF_P)[x.pi];
-    if (x.ki != null) { const pr = m ? ((window.AS_KIT || {})[m.s] || {}).pr : DEF_PR; return pr ? pr[x.ki] || null : null; }  /* 0 — свойство пусто */
-    return null;
-  }
+  const low = s => s.charAt(0).toLowerCase() + s.slice(1);
+  /* цена комплекта за материал у этой модели: m.p по материалу (0 жаккард и флок, 1 экокожа, 2 алькантара) + доплата (ромб 35 мм: +1 000 / +1 500) */
+  const matPrice = (m, id) => (m ? m.p : DEF_P)[MATS[id].pi] + (MATS[id].add || 0);
   function compute() {
-    const m = st.model, d = DESIGNS[st.design], base = matPrice(m, st.mat);
-    const lines = [base == null ? { n: `Комплект: ${matName(st.mat).toLowerCase()}`, kind: "ask" } : { n: `Комплект на весь салон${m ? ", " + A.genName(m) : ""}: ${matName(st.mat).toLowerCase()}`, v: base, kind: "paid" }];
-    if (d.price) lines.push({ n: `Рисунок «${d.name}»`, v: d.price, kind: "paid" });
-    if (st.sideMat === "same") lines.push({ n: "Боковины в цвет центра", v: O.barrel, kind: "paid" });
-    paid().forEach(a => lines.push({ n: a.name + (a.n > 1 ? ` × ${a.n}` : ""), v: a.price * a.n, kind: a.price ? "paid" : "incl" }));
-    if (st.back !== DEF.back) lines.push({ n: "Тыл другого цвета", kind: "ask" });
+    const m = st.model, d = DESIGNS[design()];
+    const lines = [{ n: `Комплект на весь салон${m ? ", " + A.genName(m) : ""}: ${low(matName(st.mat))}`, v: matPrice(m, st.mat), kind: "paid" }];
+    if (d.price) lines.push({ n: d.name, v: d.price, kind: "paid" });
+    if (same()) lines.push({ n: "Лицевая часть единым цветом", v: O.barrel, kind: "paid" });
+    if (threadPaid()) lines.push({ n: `Декоративная строчка: ${thread().toLowerCase()} нить`, v: O.thread, kind: "paid" });
+    paid().forEach(a => lines.push({ n: a.name + (a.n > 1 ? ` × ${a.n}` : ""), v: a.price * a.n, kind: "paid" }));
     st.opts.forEach(id => OPTS[id] && lines.push({ n: OPTS[id].name, kind: "ask" }));
     lines.push({ n: "Разрывные швы под Airbag", kind: "incl" }, { n: "Оплётка руля в цвет салона", kind: "gift" });
-    return { total: lines.reduce((s, l) => s + (l.kind === "paid" ? l.v : 0), 0), lines, front: st.salon.kit === "front", noBase: base == null };
+    return { total: lines.reduce((s, l) => s + (l.kind === "paid" ? l.v : 0), 0), lines };
   }
-  const sideText = () => st.sideMat === "same" ? `в цвет центра: ${matName(st.mat).toLowerCase()}, ${insColor()[0].toLowerCase()}` : "экокожа, " + ECO[st.side][0].toLowerCase();
-  const salonText = () => {
-    const qs = SALON.filter(q => q.id !== "kit" && !(q.rear && st.salon.kit === "front")), known = qs.filter(q => st.salon[q.id]);
-    return [(st.model && st.model.v ? st.model.v + ", " : "") + SALON[0].opts.find(o => o[0] === st.salon.kit)[1].toLowerCase()]
-      .concat(known.map(q => `${q.name.toLowerCase()}: ${q.opts.find(o => o[0] === st.salon[q.id])[1].toLowerCase()}`), known.length < qs.length ? ["комплектацию уточнит менеджер"] : []).join(", ");
+  const designText = () => (M().pattern ? "ромб 35 мм на материале" : low(DESIGNS[design()].name));
+  const extrasText = () => (same() ? ["лицевая часть единым цветом"] : []).concat(paid().map(a => low(a.name) + (a.n > 1 ? ` × ${a.n}` : "")), [...st.opts].filter(id => OPTS[id]).map(id => low(OPTS[id].name) + " (по запросу)")).join(", ") || "—";
+  const summary = () => [
+    ["Автомобиль", st.model ? A.carName(st.model) : "не выбран"],
+    ["Цвет основы", "экокожа, " + BASE[st.base][0].toLowerCase()],
+    ["Центральная вставка", `${matName(st.mat)}, ${insColor()[0].toLowerCase()}`],
+    ["Настрочка", designText()]
+  ].concat(M().thread ? [["Отделочная нить", thread() ? thread().toLowerCase() : "обычная, в тон"]] : [], [
+    ["Дополнительно", extrasText()],
+    ["Итого на сайте", "от " + A.fmt(compute().total)]
+  ]);
+  /* выбор для заказа, заявки и письма с эскизом: сервер считает цену по mat, design, side_mat, thread, opts и qty; bx — номера в Битриксе, для менеджера */
+  const buildConfig = () => {
+    const p = paid();
+    return { design: design(), side_mat: same() ? "same" : "eco", side: st.base, back: st.base, mat: st.mat, ins: st.ins, ins_name: `${matName(st.mat)}, ${insColor()[0].toLowerCase()}`,
+      thread: thread(), opts: p.map(a => a.id).concat([...st.opts].filter(id => OPTS[id])), qty: Object.fromEntries(p.filter(a => a.qty).map(a => [a.id, a.n])), total: compute().total,
+      bx: { center_material: M().bx, center_color: +st.ins.slice(1), side_color: +st.base.slice(1) } };
   };
-  const threadText = () => (st.thread && paid().some(a => a.threaded) ? `, цвет нити: ${st.thread.toLowerCase()}` : "");
-  const extrasText = () => paid().map(a => a.name + (a.n > 1 ? ` × ${a.n}` : "") + (a.price ? ` +${A.fmt(a.price * a.n)}` : "")).concat([...st.opts].filter(id => OPTS[id]).map(id => OPTS[id].name + " (по запросу)")).join(", ") + threadText() || "—";
-  const summary = () => {
-    const c = compute();
-    return [
-      ["Автомобиль", st.model ? A.carName(st.model) : "не выбран"],
-      ["Салон", salonText()],
-      ["Центральная часть", `${matName(st.mat)}, ${insColor()[0].toLowerCase()}`],
-      ["Боковины", sideText()],
-      ["Рисунок", DESIGNS[st.design].name],
-      ["Тыл", "экокожа, " + ECO[st.back][0].toLowerCase() + (st.back === DEF.back ? "" : " (по запросу)")],
-      ["Дополнительно", extrasText()],
-      ["Итого на сайте", c.front ? "передний ряд — по запросу" : c.noBase ? "по запросу" : "от " + A.fmt(c.total)]
-    ];
-  };
-  /* выбор для заказа и заявки: сервер считает цену по mat, design, side_mat, salon.kit, opts и qty; bx — номера в Битриксе, остальное — для менеджера */
-  const buildConfig = () => ({ design: st.design, side_mat: st.sideMat, side: st.side, mat: st.mat, ins: st.ins, ins_name: `${matName(st.mat)}, ${insColor()[0].toLowerCase()}`, back: st.back, salon: Object.assign({}, st.salon), opts: [...st.opts].filter(id => OPTS[id] || paid().some(a => a.id === id)), qty: Object.assign({}, st.qty), thread: st.thread, total: compute().total, bx: { center_material: MATS[st.mat].bx, center_color: +st.ins.slice(1), side_color: +st.side.slice(1) } });
-
   /* ---------- выбор автомобиля: поля с подсказками (можно печатать и по-русски) или VIN ---------- */
   const norm = s => String(s || "").toLowerCase().replace(/ё/g, "е").trim();
   const pick = { b: "", f: "", g: -1 };
@@ -288,75 +260,58 @@ ${body}
   }
 
   /* ---------- интерфейс ---------- */
-  const card = (attr, id, on, ico, name, note, tag, off) => `<button type="button" class="cfg__card${on ? " is-selected" : ""}" ${attr}="${id}"${off ? " disabled" : ""}>${ico}<b>${name}</b><span>${note}</span>${tag ? `<em>${tag}</em>` : ""}</button>`;
-  /* материал и цвет в одном окне: материалы — открытым списком строк (новый материал — новая строка), цвета — прямо под выбранной строкой (under), чтобы их не искать */
-  const swatch = c => (c[2] ? `background-image:url('${SW(c[2])}')` : `background-color:${c[1]}`);
-  const matRow = x => `${x.color ? `<i style="${swatch(x.color)}"></i>` : ""}<span><b>${e(x.name)}</b><small>${e(x.note)}</small></span><em>${x.price}</em>`;
-  const matList = list => `<div class="mlist">${list.map(x => (x.attr ? `<button type="button" class="mlist__opt${x.on ? " is-selected" : ""}" ${x.attr}="${x.id}" aria-pressed="${!!x.on}"${x.off ? " disabled" : ""}>${matRow(x)}</button>` : `<div class="mlist__opt is-selected">${matRow(x)}</div>`) + (x.on && x.under ? `<div class="mlist__under">${x.under}</div>` : "")).join("")}</div>`;
-  const part = (label, value, body) => `<div class="cfg__wpart"><div class="cfg__wlabel"><b>${label}</b>${value ? `<span>${e(value)}</span>` : ""}</div>${body}</div>`;
-  const tile = (attr, id, c, on, sub) => `<button type="button" class="cfg__color${on ? " is-selected" : ""}" ${attr}="${id}"><i style="${swatch(c)}"></i><span>${e(c[0])}${sub ? `<small>${sub}</small>` : ""}</span></button>`;
+  /* цвета — кружками без подписей (правка пользователя 04.11.2026): название — во всплывающей подсказке и для экранного диктора.
+     У ткани (третий элемент — светлый оттенок) кружок в мелкую крапинку */
+  const fill = c => (c[2] ? `background-color:${c[1]};background-image:radial-gradient(${c[2]} 1px, transparent 1.6px);background-size:6px 6px` : `background-color:${c[1]}`);
+  const dot = (attr, id, c, on) => `<button type="button" class="cfg__dot${on ? " is-selected" : ""}" ${attr}="${e(id)}" style="${fill(c)}" title="${e(c[0])}" aria-label="${e(c[0])}" aria-pressed="${on}"></button>`;
+  const card = (x, on) => `<button type="button" class="cfg__card${on ? " is-selected" : ""}" data-design="${x.id}" aria-pressed="${on}"><svg viewBox="0 0 40 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="1" width="38" height="24" rx="5"/>${ICO[x.id]}</svg><b>${e(x.name)}</b><span>${e(x.note)}</span><em>${x.price ? "+" + A.fmt(x.price) : "без доплаты"}</em></button>`;
   const optRow = (id, name, note, price, on, off) => `<label class="cfg__opt${off ? " is-off" : ""}"><span class="cfg__opt-t"><b>${e(name)}</b><small>${e(note)}</small></span><em>${price}</em><input type="checkbox" data-opt="${id}"${on ? " checked" : ""}${off ? " disabled" : ""}><i class="sw"></i></label>`;
-  /* подушки считаем штуками, как в CRM: вместо переключателя — счётчик в той же колонке */
+  /* подушки и экокожа отрезом — штуками: вместо переключателя счётчик в той же колонке */
   const qtyRow = a => { const n = st.opts.has(a.id) ? +st.qty[a.id] || 1 : 0; return `<div class="cfg__opt"><span class="cfg__opt-t"><b>${e(a.name)}</b><small>${e(a.note)}</small></span><em>+${A.fmt(a.price)}</em><span class="cfg__qty"><button type="button" data-qty="${a.id}" data-d="-1" aria-label="Меньше"${n ? "" : " disabled"}>−</button><b>${n}</b><button type="button" data-qty="${a.id}" data-d="1" aria-label="Больше"${n >= 9 ? " disabled" : ""}>+</button></span></div>`; };
   function renderControls() {
-    const base = st.model ? st.model.p : DEF_P, g = curGen();
+    const X = M();
     renderNav();
     cbxFields();
     $$("[data-pick-chip]").forEach(c => c.classList.toggle("is-selected", !!st.model && c.dataset.pickChip === st.model.s));
-    /* 2. салон */
-    $("[data-c-salon]").innerHTML = (!st.model
-      ? `<div class="cfg__empty"><p>Сначала выберите автомобиль — от него зависят лекало и цена.</p><button type="button" class="btn btn--ghost btn--sm" data-go="0">Выбрать автомобиль</button></div>`
-      : g && g.items.length > 1
-        ? `<div class="cfg__q"><span>Вариант салона — у каждого своё лекало</span><div class="chips">${g.items.map(m => `<button type="button" class="chip${st.model === m ? " is-selected" : ""}" data-variant="${m.s}">${e(A.cfgText(m) || "Стандартный")}</button>`).join("")}</div></div>`
-        : `<p class="cfg__note">Для ${e(A.carName(st.model))} в каталоге одно лекало салона.</p>`)
-      + SALON.filter(q => !(q.rear && st.salon.kit === "front")).map(q => `<div class="cfg__q"><span>${q.name}</span><div class="seg seg--auto">${q.opts.map(([v, n]) => `<button type="button" class="${st.salon[q.id] === v ? "is-selected" : ""}" data-salon="${q.id}" data-v="${v}">${SPLIT[v] && (q.id === "backrest" || q.id === "seat") ? splitIco(v) : ""}${n}</button>`).join("")}</div>${q.hint ? `<p class="cfg__hint">${q.hint}</p>` : ""}${q.legend ? `<dl class="cfg__terms">${q.legend.map(([v, n, d]) => `<div><dt>${splitIco(v)}${n}</dt><dd>${d}</dd></div>`).join("")}</dl>` : ""}</div>`).join("")
-      + `<p class="cfg__note">${st.model ? "Подставили, что знаем о вашей модели. Если в салоне иначе — поправьте. " : ""}Не уверены — оставьте «Не знаю», комплектацию уточнит менеджер.</p>`;
-    /* 3. материал и цвет середины */
-    const M = MATS[st.mat], ic = M.colors[st.ins] ? st.ins : Object.keys(M.colors)[0];
-    $("[data-b-inserts]").innerHTML = part("Выберите материал", M.name, matList(O.materials.map(m => { const n = Object.keys(m.colors).length, p = matPrice(st.model, m.id); return { attr: "data-mat", id: m.id, color: m.id === st.mat ? M.colors[ic] : Object.values(m.colors)[0], name: m.name, note: `${m.note} · ${n} ${A.plural(n, "цвет", "цвета", "цветов")}`, price: p == null ? "по запросу" : A.fmt(p), on: st.mat === m.id,
-      under: part("Выберите цвет", M.colors[ic][0], `<div class="cfg__colors">${Object.entries(M.colors).map(([id, c]) => tile("data-ins", id, c, ic === id)).join("")}</div>`) }; })));
-    /* 4. боковины: цвета — под выбранной строкой */
-    $("[data-b-sides]").innerHTML = part("Выберите материал", SIDE_MATS[st.sideMat].name, matList(Object.entries(SIDE_MATS).map(([id, s]) => { const ok = s.ok(st.mat); return { attr: "data-side-mat", id, color: id === "eco" ? ECO[st.side] : M.colors[ic], name: s.name, note: ok ? s.note : "Шьём только с экокожей и алькантарой в центре", price: s.price, on: st.sideMat === id, off: !ok,
-      under: id === "eco" ? part("Выберите цвет", ECO[st.side][0], `<div class="cfg__colors">${Object.entries(ECO).map(([k, c]) => tile("data-side", k, c, st.side === k)).join("")}</div>`) : `<p class="cfg__winnote">Весь перед сиденья — из того же материала и цвета, что середина. Цвет меняется в разделе «Материал», тыл остаётся из экокожи.</p>` }; })));
-    /* 5. рисунок */
-    $("[data-b-designs]").innerHTML = O.designs.map(d => card("data-design", d.id, st.design === d.id, `<svg viewBox="0 0 40 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="1" width="38" height="24" rx="5"/>${ICO[d.id]}</svg>`, d.name, d.note, d.price ? "+" + A.fmt(d.price) : "входит", d.id !== "plain" && !M.design)).join("");
-    $("[data-b-design-note]").textContent = M.pattern ? `В материале «${M.name}» рисунок уже есть, отдельный заказывать не нужно.` : !M.design ? `На материале «${M.name}» настрочек нет — только гладкая серединка.` : st.design === "strelki" || st.design === "anakonda" ? "Этот рисунок на превью пока не показан." : "Рисунки шьём на экокоже, перфорации и алькантаре.";
-    /* 6. тыл */
-    $("[data-b-backs]").innerHTML = part("Материал", "", matList([{ color: ECO[st.back], name: "Экокожа «Аригон»", note: "Чёрный входит в комплект, другой цвет — по запросу", price: "" }]))
-      + part("Выберите цвет", ECO[st.back][0], `<div class="cfg__colors">${Object.entries(ECO).map(([id, c]) => tile("data-back", id, c, st.back === id, id === DEF.back ? "входит" : "по запросу")).join("")}</div>`);
-    /* 7. дополнительно: переключатель, цена и подписи — ровными колонками */
-    const threaded = paid().some(a => a.threaded);
-    $("[data-b-opts]").innerHTML = `<h3 class="cfg__sub">Услуги</h3>` + O.addons.map(a => { const ok = addonOk(a); return a.qty ? qtyRow(a) : optRow(a.id, a.name, ok ? a.note : a.why, a.price ? "+" + A.fmt(a.price) : "входит", ok && st.opts.has(a.id), !ok); }).join("")
-      + (threaded ? `<div class="cfg__q"><span>Цвет нити${st.thread ? ": " + e(st.thread.toLowerCase()) : " — не выбран, уточнит менеджер"}</span><div class="cfg__threads">${O.threads.map(([n, h]) => `<button type="button" class="${st.thread === n ? "is-selected" : ""}" data-thread="${e(n)}" title="${e(n)}" aria-label="${e(n)}" style="background-color:${h}"></button>`).join("")}</div></div>` : "")
+    /* 2. цвет основы */
+    $("[data-b-base]").innerHTML = Object.entries(BASE).map(([id, c]) => dot("data-base", id, c, st.base === id)).join("");
+    /* 3. материал вставки — строками с ценой комплекта у выбранной модели */
+    $("[data-b-mats]").innerHTML = `<div class="mlist">${O.materials.map(m => { const n = Object.keys(m.colors).length, on = m.id === st.mat; return `<button type="button" class="mlist__opt${on ? " is-selected" : ""}" data-mat="${m.id}" aria-pressed="${on}"><i style="${fill(on ? insColor() : Object.values(m.colors)[0])}"></i><span><b>${e(m.name)}</b><small>${e(m.note)} · ${n} ${A.plural(n, "цвет", "цвета", "цветов")}</small></span><em>${A.fmt(matPrice(st.model, m.id))}</em></button>`; }).join("")}</div>`;
+    /* 4. цвет вставки */
+    $("[data-b-ins]").innerHTML = Object.entries(X.colors).map(([id, c]) => dot("data-ins", id, c, st.ins === id)).join("");
+    /* 5. цвет отделочной нити — только у перфорированной кожи (правка пользователя 04.11.2026); первый кружок — обычная нить в тон */
+    $('[data-step="thread"]').hidden = !X.thread;
+    if (X.thread) {
+      $("[data-b-threads]").innerHTML = `<button type="button" class="cfg__dot cfg__dot--none${thread() ? "" : " is-selected"}" data-thread="" title="Обычная нить в тон" aria-label="Обычная нить в тон, без доплаты" aria-pressed="${!thread()}"></button>`
+        + O.threads.map(([n, h]) => dot("data-thread", n, [n, h], st.thread === n)).join("");
+      $("[data-b-thread-note]").textContent = design() === "plain"
+        ? "Цветная нить ложится на настрочку и швы. Без настрочки она пойдёт только на вертикальные швы — их можно добавить в разделе «Дополнительно»."
+        : `Цветная нить — декоративная строчка по настрочке, +${A.fmt(O.thread)}. Первый кружок — обычная нить в тон, без доплаты.`;
+    }
+    /* 6. дополнительно: настрочка, услуги с ценой, по запросу. Переключатель, цена и подписи — ровными колонками */
+    const pattern = X.pattern ? `<p class="cfg__note">Стёжка ромбом 35 мм уже на материале — отдельная настрочка не нужна.</p>`
+      : !X.design ? `<p class="cfg__note">На флоке и жаккарде настрочек не делаем: у ткани свой узор, нить на нём теряется.</p>`
+      : `<div class="cfg__cards cfg__cards--3">${O.designs.map(x => card(x, design() === x.id)).join("")}</div>`;
+    $("[data-b-opts]").innerHTML = `<h3 class="cfg__sub">Настрочка на вставке</h3>${pattern}<h3 class="cfg__sub">Услуги</h3>`
+      + optRow("same", "Лицевая часть единым цветом", X.barrel ? "Боковины спереди — из материала вставки" : "Только с экокожей и алькантарой", "+" + A.fmt(O.barrel), same(), !X.barrel)
+      + O.addons.filter(a => !a.threaded || X.thread).map(a => { const ok = addonOk(a); return a.qty ? qtyRow(a) : optRow(a.id, a.name, ok ? a.note : a.why, "+" + A.fmt(a.price), ok && st.opts.has(a.id), !ok); }).join("")
       + `<h3 class="cfg__sub">По запросу — стоимость уточнит менеджер</h3>` + Object.entries(OPTS).map(([id, o]) => optRow(id, o.name, o.note, "по запросу", st.opts.has(id), false)).join("");
   }
-  /* салон из карточки модели: при смене лекала подставляем известные значения, «не указано» оставляем как есть */
-  function applyKit() {
-    if (kitFor === st.model) return;
-    kitFor = st.model;
-    if (!st.model) return;
-    const k = (window.AS_KIT || {})[st.model.s] || {};
-    SALON.forEach(q => { if (!q.from) return; const v = k[q.from], x = q.map && q.map[v] || v; st.salon[q.id] = v && q.opts.some(o => o[0] === x) ? x : ""; });
-  }
   function render() {
-    if (!MATS[st.mat].colors[st.ins]) st.ins = Object.keys(MATS[st.mat].colors)[0];
-    O.addons.forEach(a => { if (!addonOk(a)) st.opts.delete(a.id); });
-    applyKit();
+    if (!M().colors[st.ins]) st.ins = Object.keys(M().colors)[0];
     renderControls();
     const c = compute(), m = st.model;
     drawSeat();
     const set = (sel, v) => $$(sel, document).forEach(x => { x.innerHTML = v; });
-    set("[data-b-total-label]", c.front ? "Передний ряд" : 'Итого<span class="cfg__lbl"> за весь салон</span>');
-    set("[data-b-total]", c.front || c.noBase ? "по запросу" : A.fmt(c.total));
-    set("[data-b-lines]", (c.front ? `<div><span>Весь салон для сравнения</span><b>${A.fmt(c.total)}</b></div>` : "") + c.lines.map((l, i) => `<div><span>${e(l.n)}</span><b class="${l.kind === "incl" || l.kind === "gift" ? "free" : ""}">${l.kind === "gift" ? "в подарок" : l.kind === "incl" ? "включено" : l.kind === "ask" ? "по запросу" : (i ? "+" : "") + A.fmt(l.v)}</b></div>`).join(""));
+    set("[data-b-total]", A.fmt(c.total));
+    set("[data-b-lines]", c.lines.map((l, i) => `<div><span>${e(l.n)}</span><b class="${l.kind === "incl" || l.kind === "gift" ? "free" : ""}">${l.kind === "gift" ? "в подарок" : l.kind === "incl" ? "включено" : l.kind === "ask" ? "по запросу" : (i ? "+" : "") + A.fmt(l.v)}</b></div>`).join(""));
     set("[data-b-car]", m ? e(A.carName(m)) : "Автомобиль не выбран");
     set("[data-b-car-sub]", m ? e([A.cfgText(m), A.yearsText(m)].filter(Boolean).join(" · ")) : "Выберите автомобиль справа — цена зависит от лекала");
     set("[data-b-val=car]", m ? e(A.genName(m)) : "не выбран");
-    set("[data-b-val=salon]", c.front ? "передний ряд" : m && m.v ? e(A.cfgText(m)) : "весь салон");
-    set("[data-b-val=design]", DESIGNS[st.design].name);
-    set("[data-b-val=side]", st.sideMat === "same" ? "в цвет центра" : ECO[st.side][0]);
-    set("[data-b-val=ins]", `${MATS[st.mat].name}, ${insColor()[0].toLowerCase()}`);
-    set("[data-b-val=back]", ECO[st.back][0]);
+    set("[data-b-val=base]", BASE[st.base][0]);
+    set("[data-b-val=mat]", e(M().name));
+    set("[data-b-val=ins]", insColor()[0]);
+    set("[data-b-val=thread]", thread() || "обычная, в тон");
   }
   function drawSeat() {
     $("[data-b-canvas]").innerHTML = seatSVG();
@@ -367,26 +322,27 @@ ${body}
   const mobile = () => matchMedia("(max-width: 899px)").matches;
   const topGap = () => headerH() + (mobile() ? $(".cfg__stage").offsetHeight : $("[data-b-steps]").offsetHeight) + 12;
   function renderNav() {
-    const bar = $("[data-b-steps]");
-    bar.innerHTML = STEPS.map(([id, short], i) => `<button type="button" class="${i === cur ? "is-active" : ""}" data-go="${i}"${i === cur ? ' aria-current="true"' : ""}><span>${short}</span></button>`).join("");
+    const bar = $("[data-b-steps]"), list = steps();
+    cur = Math.min(cur, list.length - 1);
+    bar.innerHTML = list.map(([id, short], i) => `<button type="button" class="${i === cur ? "is-active" : ""}" data-go="${i}"${i === cur ? ' aria-current="true"' : ""}><span>${short}</span></button>`).join("");
     const a = $(".is-active", bar);
     if (a && bar.scrollWidth > bar.clientWidth) bar.scrollLeft = a.offsetLeft - (bar.clientWidth - a.offsetWidth) / 2;
   }
   function go(i) {
     openDrop("");
-    window.scrollTo({ top: $(`[data-step="${STEPS[i][0]}"]`).getBoundingClientRect().top + scrollY - topGap(), behavior: "smooth" });
+    window.scrollTo({ top: $(`[data-step="${steps()[i][0]}"]`).getBoundingClientRect().top + scrollY - topGap(), behavior: "smooth" });
   }
   function spy() {
     const y = topGap() + 80;
     let i = 0;
-    STEPS.forEach(([id], k) => { if ($(`[data-step="${id}"]`).getBoundingClientRect().top <= y) i = k; });
+    steps().forEach(([id], k) => { if ($(`[data-step="${id}"]`).getBoundingClientRect().top <= y) i = k; });
     if (i === cur) return;
     cur = i;
     renderNav();
   }
   addEventListener("scroll", spy, { passive: true });
 
-  /* ---------- события: материал выбирают раньше рисунка и боковин, поэтому материал сам не меняем: неподходящий рисунок и боковины снимаем и говорим об этом ---------- */
+  /* ---------- события ---------- */
   /* при смене материала цвет остаётся тем же, если он есть в новом материале: сначала полное совпадение, затем по основному цвету («Серый» → «Тёмно-серая» → «Рогожка серая»); иначе — первый в списке, самый ходовой */
   const colorStem = n => n.toLowerCase().replace(/ё/g, "е").replace(/(ый|ий|ой|ая|яя|ые|ие)$/, "");
   const colorBase = n => colorStem(n.split(/[\s,-]+/).pop());
@@ -394,12 +350,14 @@ ${body}
     const list = Object.entries(MATS[id].colors);
     return (list.find(([, c]) => colorStem(c[0]) === colorStem(name)) || list.find(([, c]) => colorBase(c[0]) === colorBase(name)) || list[0])[0];
   }
+  /* материал сам выбор не стирает: что к нему не подходит, не считается, и об этом говорим */
   function setMat(id) {
-    const msg = [], was = insColor()[0];
+    const was = insColor()[0], before = [design(), same(), thread()], msg = [];
     st.mat = id; st.ins = sameColor(id, was);
-    if (st.design !== "plain" && !MATS[id].design) { st.design = "plain"; msg.push(MATS[id].pattern ? "рисунок уже есть в материале" : "настрочек на этом материале нет"); }
-    if (st.sideMat === "same" && !SIDE_MATS.same.ok(id)) { st.sideMat = "eco"; msg.push("боковины из экокожи: в цвет центра шьём с экокожей и алькантарой"); }
-    if (msg.length) A.toast(`${MATS[id].name} — ${msg.join("; ")}`);
+    if (before[0] !== "plain" && design() === "plain") msg.push(M().pattern ? "ромб уже на материале" : "настрочек на ткани не делаем");
+    if (before[1] && !same()) msg.push("лицевую часть единым цветом шьём с экокожей и алькантарой");
+    if (before[2] && !thread()) msg.push("цвет нити выбирают только для перфорированной кожи");
+    if (msg.length) A.toast(`${M().name}: ${msg.join("; ")}`);
   }
   root.addEventListener("mousedown", ev => { if (ev.target.closest("[data-cbx-drop]")) ev.preventDefault(); });
   root.addEventListener("click", ev => {
@@ -410,26 +368,22 @@ ${body}
     if (d.mode) { setMode(d.mode); return; }
     if (b.matches("[data-b-cart]")) { addToCart(); return; }
     if (b.matches("[data-b-lines-toggle]")) { const l = $("[data-b-lines]"); l.hidden = !l.hidden; b.setAttribute("aria-expanded", String(!l.hidden)); return; }
-    /* строка материала раскрывает цвета, блок выше сворачивается: оставляем нажатую строку на том же месте экрана */
-    const anchor = d.mat ? `[data-mat="${d.mat}"]` : d.sideMat ? `[data-side-mat="${d.sideMat}"]` : "", y0 = anchor ? b.getBoundingClientRect().top : 0;
     if (d.design) st.design = d.design;
-    else if (d.sideMat) st.sideMat = d.sideMat;
-    else if (d.side) st.side = d.side;
+    else if (d.base) st.base = d.base;
     else if (d.mat) setMat(d.mat);
     else if (d.ins) st.ins = d.ins;
-    else if (d.back) st.back = d.back;
-    else if (d.salon) st.salon[d.salon] = d.v;
-    else if (d.thread) st.thread = st.thread === d.thread ? "" : d.thread;
+    else if (d.thread !== undefined) st.thread = d.thread;
     else if (d.qty) { const n = Math.max(0, Math.min(9, (st.opts.has(d.qty) ? st.qty[d.qty] || 1 : 0) + +d.d)); st.qty[d.qty] = n; n ? st.opts.add(d.qty) : st.opts.delete(d.qty); }
-    else if (d.variant) setModel(A.BY_SLUG[d.variant]);
     else if (d.pickChip) { setModel(A.BY_SLUG[d.pickChip]); if (mode === "vin") $("[data-c-vin-out]").innerHTML = `<div class="vin-msg vin-msg--ok">Выбрано: ${e(A.carName(st.model))}${st.model.y ? " · " + e(st.model.y) : ""}</div>`; }
     else return;
     render();
-    if (anchor) scrollBy({ top: $(anchor).getBoundingClientRect().top - y0, behavior: "instant" });
   });
   root.addEventListener("change", ev => {
-    const t = ev.target;
-    if (t.dataset.opt) { t.checked ? st.opts.add(t.dataset.opt) : st.opts.delete(t.dataset.opt); render(); }
+    const t = ev.target, id = t.dataset.opt;
+    if (!id) return;
+    if (id === "same") st.same = t.checked;
+    else t.checked ? st.opts.add(id) : st.opts.delete(id);
+    render();
   });
   /* поля автомобиля: фокус открывает список, ввод фильтрует, стрелки и Enter выбирают */
   root.addEventListener("focusin", ev => {
@@ -452,7 +406,7 @@ ${body}
   document.addEventListener("click", ev => {
     if (openKey && !ev.target.closest("[data-cbx]")) closeDrop();
   });
-  $$("[data-b-reset]", document).forEach(b => b.addEventListener("click", () => { Object.assign(st, DEF); st.salon = Object.assign({}, DEF_SALON); st.opts.clear(); render(); A.toast("Настройки сброшены"); }));
+  $$("[data-b-reset]", document).forEach(b => b.addEventListener("click", () => { Object.assign(st, DEF); st.opts.clear(); st.qty = {}; render(); A.toast("Настройки сброшены"); }));
   /* VIN или номер кузова: подсказки модели с сервера */
   window.AS_vin && window.AS_vin.suggest($("[data-c-vin]"), { onPick: slug => { setModel(A.BY_SLUG[slug]); render(); $("[data-c-vin-out]").innerHTML = `<div class="vin-msg vin-msg--ok">Выбрано: ${e(A.carName(st.model))}${st.model.y ? " · " + e(st.model.y) : ""}</div>`; } });
 
@@ -463,8 +417,13 @@ ${body}
     stage.addEventListener("pointerleave", () => { stage.style.setProperty("--ry", "0deg"); stage.style.setProperty("--rx", "0deg"); });
   }
 
-  /* ---------- эскиз в PNG ---------- */
+  /* ---------- окна: эскиз на почту и заявка менеджеру ---------- */
+  const openM = el => { el.classList.add("is-open"); document.body.style.overflow = "hidden"; setTimeout(() => { const i = $("input", el); i && i.focus(); }, 50); };
+  const closeM = el => { el.classList.remove("is-open"); document.body.style.overflow = ""; };
   const svgUrl = () => "data:image/svg+xml;charset=utf-8," + encodeURIComponent(seatSVG());
+  const listHtml = () => summary().slice(0, -1).map(([k, v]) => `<div><dt>${k}</dt><dd>${e(v)}</dd></div>`).join("") + `<div class="breq__total"><dt>Весь салон от</dt><dd>${A.fmt(compute().total)}</dd></div>`;
+
+  /* эскиз в PNG: превью, состав и цена */
   function download() {
     const img = new Image();
     img.onload = () => {
@@ -474,27 +433,50 @@ ${body}
       const sh = 1000, sw = sh * 420 / 600; g.drawImage(img, (W - sw) / 2, 40, sw, sh);
       g.fillStyle = "#231f20"; g.font = "800 44px Golos Text, Arial, sans-serif"; g.fillText("Эскиз чехлов" + (st.model ? " на " + A.carName(st.model) : ""), 70, 1120);
       g.font = "500 28px Golos Text, Arial, sans-serif"; let y = 1180;
-      summary().slice(1, -1).forEach(([k, v]) => { g.fillStyle = "#6b6e74"; g.fillText(k, 70, y); g.fillStyle = "#231f20"; g.fillText(v.length > 48 ? v.slice(0, 46) + "…" : v, 360, y); y += 44; });
-      const c = compute();
-      g.font = "800 40px Golos Text, Arial, sans-serif"; g.fillText(c.front ? "Передний ряд — по запросу" : c.noBase ? "Стоимость по запросу" : "от " + A.fmt(c.total).replace(/ /g, " "), 70, H - 60);
+      summary().slice(1, -1).forEach(([k, v]) => { g.fillStyle = "#6b6e74"; g.fillText(k, 70, y); g.fillStyle = "#231f20"; g.fillText(v.length > 44 ? v.slice(0, 42) + "…" : v, 400, y); y += 44; });
+      g.font = "800 40px Golos Text, Arial, sans-serif"; g.fillText("от " + A.fmt(compute().total).replace(/ /g, " "), 70, H - 60);
       g.font = "500 26px Golos Text, Arial, sans-serif"; g.fillStyle = "#6b6e74"; g.textAlign = "right"; g.fillText("Автостиль · 8 (800) 775-32-60", W - 70, H - 64);
       cv.toBlob(b => { const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "avtostil-eskiz.png"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 3000); });
     };
     img.src = svgUrl();
   }
-  $$("[data-b-download]", document).forEach(b => b.addEventListener("click", download));
+  /* «Скачать эскиз» — сначала форма с e-mail (правка пользователя 04.11.2026): эскиз уходит на почту, файл сохраняется на устройство.
+     Письмо собирает сервер из выбора (catalog.custom_describe), текст из браузера в него не попадает */
+  const sk = document.querySelector("[data-b-sketch]");
+  function openSketch() {
+    $("[data-sk-mini]", sk).innerHTML = `<img src="${svgUrl()}" alt="Ваш эскиз">`;
+    $("[data-sk-list]", sk).innerHTML = listHtml();
+    $("[data-sk-form]", sk).hidden = false; $("[data-sk-done]", sk).hidden = true;
+    openM(sk);
+  }
+  $$("[data-b-download]", document).forEach(b => b.addEventListener("click", openSketch));
+  $$("[data-sk-close]", sk).forEach(b => b.addEventListener("click", () => closeM(sk)));
+  A.guardForm($("[data-sk-form]", sk));
+  $("[data-sk-form]", sk).addEventListener("submit", async ev => {
+    ev.preventDefault();
+    const f = ev.target, btn = $("[type=submit]", f), fd = new FormData(f), get = k => String(fd.get(k) || "").trim();
+    btn.disabled = true; btn.textContent = "Отправляем…";
+    const res = await A.api("/requests", {
+      kind: "sketch", name: get("name"), email: get("email"), model: st.model ? st.model.s : "", car: st.model ? A.carName(st.model) : "", config: buildConfig(), summary: summary(),
+      consent: !!(f.querySelector("input[type=checkbox][required]") || {}).checked, marketing: !!(f.querySelector("[name=marketing]") || {}).checked, meta: A.formMeta(f)
+    });
+    btn.disabled = false; btn.textContent = "Отправить и скачать";
+    /* ошибка в полях — поправить; сервер недоступен — файл всё равно отдаём */
+    if (!res.ok && res.status && res.status < 500) { A.fieldErrors(f, res); A.toast(res.error); return; }
+    download();
+    $("[data-sk-done] p:not(.breq__title)", sk).textContent = res.ok ? `Отправили эскиз на ${get("email")} и сохранили файл на ваше устройство. Если письма нет, проверьте папку «Спам».`
+      : "Файл сохранён на ваше устройство, а письмо отправить не удалось. Попробуйте позже или позвоните 8 (800) 775-32-60.";
+    f.reset(); f.hidden = true; $("[data-sk-done]", sk).hidden = false;
+  });
 
   /* ---------- корзина: собранный комплект — отдельная позиция custom:<лекало>:<ключ выбора> ---------- */
   const hashStr = s => { let h = 5381; for (let i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) >>> 0; return h.toString(36); };
   function addToCart() {
     const m = st.model, c = compute();
     if (!m) { A.toast("Выберите автомобиль — без него не подобрать лекало"); go(0); return; }
-    if (c.front) { A.toast("Передний ряд оформим заявкой: стоимость рассчитает менеджер"); openModal(); return; }
-    if (c.noBase) { A.toast("Этот материал оформим заявкой: стоимость рассчитает менеджер"); openModal(); return; }
-    const low = s => s.charAt(0).toLowerCase() + s.slice(1);
-    const config = buildConfig(), ask = [...st.opts].filter(id => OPTS[id]).map(id => low(OPTS[id].name)).concat(st.back === DEF.back ? [] : ["тыл другого цвета"]);
-    const label = `${DESIGNS[st.design].name}, вставки: ${matName(st.mat).toLowerCase()} ${insColor()[0].toLowerCase()}, ${st.sideMat === "same" ? "боковины в цвет центра" : "боковины: экокожа " + ECO[st.side][0].toLowerCase()}, тыл: ${ECO[st.back][0].toLowerCase()}`
-      + (paid().length ? ", " + paid().map(a => low(a.name) + (a.n > 1 ? ` × ${a.n}` : "")).join(", ") : "") + threadText() + (ask.length ? "; по запросу: " + ask.join(", ") : "");
+    const config = buildConfig(), extra = extrasText();
+    const label = `Вставка: ${low(matName(st.mat))} ${insColor()[0].toLowerCase()}, основа: экокожа ${BASE[st.base][0].toLowerCase()}, настрочка: ${designText()}`
+      + (thread() ? `, нить: ${thread().toLowerCase()}` : "") + (extra !== "—" ? ", " + extra : "");
     A.Cart.add({ id: `custom:${m.s}:${hashStr(JSON.stringify(config))}`, title: `Индивидуальный пошив: чехлы на ${A.carName(m)}`, sub: label, label, price: c.total, img: svgUrl(),
       url: A.href("custom", { m: m.s, cfg: JSON.stringify(config) }), model: m.s, config, opts: { install: st.opts.has("install") } });
     A.toast("Комплект добавлен в корзину", ["Перейти", A.href("cart")]);
@@ -503,9 +485,8 @@ ${body}
   /* ---------- заявка менеджеру ---------- */
   const modal = document.querySelector("[data-b-modal]");
   const fillModal = () => {
-    const c = compute();
     $("[data-b-mini]", modal).innerHTML = `<img src="${svgUrl()}" alt="Ваш дизайн">`;
-    $("[data-b-summary]", modal).innerHTML = summary().slice(0, -1).map(([k, v]) => `<div><dt>${k}</dt><dd>${e(v)}</dd></div>`).join("") + `<div class="breq__total"><dt>${c.front ? "Передний ряд" : "Весь салон от"}</dt><dd>${c.front || c.noBase ? "по запросу" : A.fmt(c.total)}</dd></div>`;
+    $("[data-b-summary]", modal).innerHTML = listHtml();
   };
   /* подсказки в поле VIN заявки: выбрал автомобиль из списка — он подставляется в конструктор и в сводку */
   window.AS_vin && window.AS_vin.suggest($("[data-req-vin]", modal), { onPick: slug => { setModel(A.BY_SLUG[slug]); render(); fillModal(); A.toast("Автомобиль выбран: " + A.carName(A.BY_SLUG[slug])); } });
@@ -513,14 +494,12 @@ ${body}
     fillModal();
     $("[data-b-form]", modal).hidden = false; $("[data-b-done]", modal).hidden = true;
     const rv = $("[data-req-vin]", modal); if (rv && !rv.value) { try { rv.value = localStorage.getItem("as_vin") || ""; } catch (er) {} }
-    modal.classList.add("is-open"); document.body.style.overflow = "hidden";
-    setTimeout(() => { const i = $("input", modal); i && i.focus(); }, 50);
+    openM(modal);
   }
-  const closeModal = () => { modal.classList.remove("is-open"); document.body.style.overflow = ""; };
   $$("[data-b-open]", document).forEach(b => b.addEventListener("click", openModal));
-  $$("[data-b-close]", modal).forEach(b => b.addEventListener("click", closeModal));
-  document.addEventListener("keydown", ev => { if (ev.key === "Escape" && modal.classList.contains("is-open")) closeModal(); });
-  /* заявка → /api/requests: выбор в конструкторе, сводка для менеджера, контакты, VIN. Сервер берёт из config материал вставок (mat) и опции (opts) */
+  $$("[data-b-close]", modal).forEach(b => b.addEventListener("click", () => closeM(modal)));
+  document.addEventListener("keydown", ev => { if (ev.key === "Escape") [modal, sk].forEach(x => x.classList.contains("is-open") && closeM(x)); });
+  /* заявка → /api/requests: выбор в конструкторе, сводка для менеджера, контакты, VIN. Сервер берёт из config материал вставки (mat) и опции (opts) */
   A.guardForm($("[data-b-form]", modal));
   $("[data-b-form]", modal).addEventListener("submit", async ev => {
     ev.preventDefault();
@@ -535,31 +514,29 @@ ${body}
     if (!res.ok) { A.fieldErrors(f, res); A.toast(res.error); return; }
     if (get("vin")) { try { localStorage.setItem("as_vin", get("vin").toUpperCase()); } catch (er) {} }
     f.reset(); f.hidden = true; $("[data-b-done]", modal).hidden = false;
-    const done = $("[data-b-done] p", modal); if (done && res.data.number) done.textContent = `Номер заявки ${res.data.number}. В рабочее время вам перезвонит оператор, уточнит комплектацию салона и стоимость.`;
+    const done = $("[data-b-done] p:not(.breq__title)", modal); if (done && res.data.number) done.textContent = `Номер заявки ${res.data.number}. В рабочее время вам перезвонит оператор, уточнит комплектацию салона и стоимость.`;
   });
 
   /* превью высотой в первый экран: от верха конструктора до низа окна */
   const fit = () => root.style.setProperty("--cfg-h", Math.max(620, Math.round(innerHeight - (root.getBoundingClientRect().top + scrollY) - 16)) + "px");
   fit(); addEventListener("resize", fit);
 
-  /* ?m=лекало — автомобиль, ?cfg=… — выбор из корзины («изменить комплект») */
+  /* ?m=лекало — автомобиль, ?cfg=… — выбор из корзины («изменить комплект») или из письма с эскизом.
+     Ссылка приходит извне, а значения идут в разметку и подпись корзины: только известные материалы, цвета, услуги и числа 1–9 */
+  const has = (o, k) => typeof k === "string" && Object.prototype.hasOwnProperty.call(o, k);
   const preset = A.BY_SLUG[A.qs("m")];
   if (preset) setModel(preset);
   try {
     const c = JSON.parse(A.qs("cfg") || "null");
-    if (c) {
-      if (DESIGNS[c.design]) st.design = c.design;
-      if (MATS[c.mat]) st.mat = c.mat;
-      if (Object.keys(MATS[st.mat].colors).includes(c.ins)) st.ins = c.ins;
-      if (SIDE_MATS[c.side_mat]) st.sideMat = c.side_mat;
-      if (ECO[c.side]) st.side = c.side;
-      if (ECO[c.back]) st.back = c.back;
-      if (c.salon) SALON.forEach(q => { if (q.opts.some(o => o[0] === c.salon[q.id])) st.salon[q.id] = c.salon[q.id]; });
-      /* Ссылка приходит извне, а значения идут в разметку и подпись корзины: только известные услуги, цвета и числа 1–9 */
-      (c.opts || []).forEach(o => { if (O.addons.some(a => a.id === o) || Object.keys(OPTS).includes(o)) st.opts.add(o); });
+    if (c && typeof c === "object") {
+      if (has(MATS, c.mat)) st.mat = c.mat;
+      if (has(DESIGNS, c.design)) st.design = c.design;
+      if (has(M().colors, c.ins)) st.ins = c.ins;
+      if (has(BASE, c.side)) st.base = c.side;
+      st.same = c.side_mat === "same";
+      if (has(THREADS, c.thread)) st.thread = c.thread;
+      (Array.isArray(c.opts) ? c.opts : []).forEach(o => { if (O.addons.some(a => a.id === o) || has(OPTS, o)) st.opts.add(o); });
       O.addons.forEach(a => { const n = (c.qty || {})[a.id]; if (a.qty && Number.isInteger(n) && n >= 1 && n <= 9) st.qty[a.id] = n; });
-      if (O.threads.some(t => t[0] === c.thread)) st.thread = c.thread;
-      kitFor = st.model;   /* салон из ссылки не перезаписываем данными модели */
     }
   } catch (er) {}
   render(); spy();

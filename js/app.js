@@ -67,7 +67,7 @@
   const SW = n => ASSETS + "swatches/" + n + ".jpg";
   const MAT_NAME = ["Жаккард", "Экокожа", "Экокожа + алькантара"];
   /* Базовые карточки чехлов — таблица клиента от 23.10.2026 (n — номер строки).
-     Боковины и тыл — чёрная экокожа «Аригон», mat — материал серединки (0 жаккард, 1 экокожа/перфорация, 2 алькантара).
+     Боковины и тыл — чёрная экокожа «Аригон», mat — материал серединки (0 жаккард, 1 экокожа и перфорированная кожа, 2 алькантара).
      Цена = базовая цена модели за материал (m.p, как на старом сайте) + extra — доплаты из дорожной карты продаж:
      горизонтальная настрочка +600, мелкий ромб 35 мм +1 000 на экокоже и +1 500 на алькантаре, боковины в цвет серединки +700.
      stitch: "h" — горизонтальная настрочка, rhomb — серединка с заводской стёжкой ромбом 35 мм.
@@ -75,17 +75,17 @@
   const C_BLACK = "#231f20";
   const ALL_VARIANTS = [
     { n: 1, id: "jac-grey", mat: 0, name: "Чёрная экокожа + жаккард «рогожка серая»", label: "Жаккард «рогожка серая»", colors: [C_BLACK, "#7d7e7a"], extra: 0, photos: [], tag: "Выгодно" },
-    { n: 2, id: "perf-grey", mat: 1, name: "Чёрная экокожа + серая перфорация", label: "Серая перфорация", colors: [C_BLACK, "#8a8d90"], extra: 0, photos: [] },
-    { n: 3, id: "perf-black", mat: 1, name: "Чёрная экокожа + чёрная перфорация", label: "Чёрная перфорация", colors: [C_BLACK, C_BLACK], extra: 0, photos: [] },
-    { n: 4, id: "perf-grey-h", mat: 1, name: "Чёрная экокожа + серая перфорация, горизонтальная настрочка", label: "Серая перфорация + настрочка", colors: [C_BLACK, "#8a8d90"], extra: 600, stitch: "h", photos: ["seat10"] },
-    { n: 5, id: "perf-black-h", mat: 1, name: "Чёрная экокожа + чёрная перфорация, горизонтальная настрочка", label: "Чёрная перфорация + настрочка", colors: [C_BLACK, C_BLACK], extra: 600, stitch: "h", photos: [] },
+    { n: 2, id: "perf-grey", mat: 1, name: "Чёрная экокожа + серая перфорированная кожа", label: "Серая перфорированная кожа", colors: [C_BLACK, "#8a8d90"], extra: 0, photos: [] },
+    { n: 3, id: "perf-black", mat: 1, name: "Чёрная экокожа + чёрная перфорированная кожа", label: "Чёрная перфорированная кожа", colors: [C_BLACK, C_BLACK], extra: 0, photos: [] },
+    { n: 4, id: "perf-grey-h", mat: 1, name: "Чёрная экокожа + серая перфорированная кожа, горизонтальная настрочка", label: "Серая перфорированная кожа + настрочка", colors: [C_BLACK, "#8a8d90"], extra: 600, stitch: "h", photos: ["seat10"] },
+    { n: 5, id: "perf-black-h", mat: 1, name: "Чёрная экокожа + чёрная перфорированная кожа, горизонтальная настрочка", label: "Чёрная перфорированная кожа + настрочка", colors: [C_BLACK, C_BLACK], extra: 600, stitch: "h", photos: [] },
     { n: 6, id: "rhomb-grey", mat: 1, name: "Чёрная экокожа + серая экокожа, ромб 35 мм", label: "Серый ромб 35 мм", colors: [C_BLACK, "#6f7377"], extra: 1000, rhomb: true, photos: ["seat2", "seat6"] },
     { n: 7, id: "alc-rhomb-grey", mat: 2, name: "Чёрная экокожа + серая алькантара, ромб 35 мм", label: "Серая алькантара, ромб 35 мм", colors: [C_BLACK, "#5d6064"], extra: 1500, rhomb: true, photos: ["avtochehol1"] },
     { n: 8, id: "alc-rhomb-full", mat: 2, name: "Серая алькантара ромбом 35 мм на весь перед, боковины в цвет серединки", label: "Серая алькантара на весь перед", colors: ["#5d6064", "#5d6064"], extra: 2200, rhomb: true, full: true, photos: ["avtochehol2"], tag: "Премиум" },
-    { n: 9, id: "perf-orange-h", mat: 1, name: "Чёрная экокожа + оранжевая перфорация, горизонтальная настрочка", label: "Оранжевая перфорация + настрочка", colors: [C_BLACK, "#e0661b"], extra: 600, stitch: "h", photos: ["seat5", "seat4", "1p", "2p", "orange_zoom"] },
-    { n: 10, id: "perf-blue-h", mat: 1, name: "Чёрная экокожа + синяя перфорация, горизонтальная настрочка", label: "Синяя перфорация + настрочка", colors: [C_BLACK, "#2f55b5"], extra: 600, stitch: "h", photos: ["seat12", "seat1"] },
-    { n: 11, id: "perf-red-h", mat: 1, name: "Чёрная экокожа + красная перфорация, горизонтальная настрочка", label: "Красная перфорация + настрочка", colors: [C_BLACK, "#c4351f"], extra: 600, stitch: "h", photos: ["avtochehol3", "red_zoom"] },
-    { n: 12, id: "perf-paprika", mat: 1, name: "Чёрная экокожа + перфорация «паприка»", label: "Перфорация «паприка»", colors: [C_BLACK, "#a3441f"], extra: 0, photos: [] }
+    { n: 9, id: "perf-orange-h", mat: 1, name: "Чёрная экокожа + оранжевая перфорированная кожа, горизонтальная настрочка", label: "Оранжевая перфорированная кожа + настрочка", colors: [C_BLACK, "#e0661b"], extra: 600, stitch: "h", photos: ["seat5", "seat4", "1p", "2p", "orange_zoom"] },
+    { n: 10, id: "perf-blue-h", mat: 1, name: "Чёрная экокожа + синяя перфорированная кожа, горизонтальная настрочка", label: "Синяя перфорированная кожа + настрочка", colors: [C_BLACK, "#2f55b5"], extra: 600, stitch: "h", photos: ["seat12", "seat1"] },
+    { n: 11, id: "perf-red-h", mat: 1, name: "Чёрная экокожа + красная перфорированная кожа, горизонтальная настрочка", label: "Красная перфорированная кожа + настрочка", colors: [C_BLACK, "#c4351f"], extra: 600, stitch: "h", photos: ["avtochehol3", "red_zoom"] },
+    { n: 12, id: "perf-paprika", mat: 1, name: "Чёрная экокожа + перфорированная кожа «паприка»", label: "Перфорированная кожа «паприка»", colors: [C_BLACK, "#a95a3f"], extra: 0, photos: [] }
   ];
   ALL_VARIANTS.forEach(v => { v.photo = v.photos[0] || ""; });
   /* порядок — по приоритету размещения */
@@ -137,13 +137,9 @@
   /* Рендеры кузовов (assets/cars, белый фон, 16:10): лекало → файл, js/cars.js */
   const CAR_RENDERS = window.AS_CARS || {};
   const carRender = m => CAR_RENDERS[m.s] ? ASSETS + "cars/" + CAR_RENDERS[m.s] + ".webp" : "";
-  /* Карточки с ромбом — своя цена лекала из Битрикса (m.pr: PERF_ROMB_35_MM, ALCANTARA_35_MM_PRICE), её же считает CRM операторов;
-     свойство пусто — прежняя формула: цена материала + extra. То же в backend/app/catalog.py и local/routes/lib/catalog.php */
-  const ROMB_PR = { "rhomb-grey": [0, 0], "alc-rhomb-grey": [1, 0], "alc-rhomb-full": [1, 700] };
-  const priceOf = (m, v) => {
-    const r = m && m.pr && ROMB_PR[v.id];
-    return r && m.pr[r[0]] ? m.pr[r[0]] + r[1] : (m ? m.p : minPrices(MODELS))[v.mat] + (v.extra || 0);
-  };
+  /* Цена карточки — цена модели за материал + доплаты из дорожной карты (extra), ромб 35 мм тоже доплатой: +1 000 на экокоже, +1 500 на алькантаре.
+     Цены ромба из CRM (m.pr) не используем — решение пользователя 04.11.2026. То же в backend/app/catalog.py и local/routes/lib/catalog.php */
+  const priceOf = (m, v) => (m ? m.p : minPrices(MODELS))[v.mat] + (v.extra || 0);
   /* Старая цена комплекта — зачёркнутая цена модели из Битрикса (обычно 12 975 ₽, поле «o» в data.js), одна на все материалы: доплаты варианта к ней не прибавляем (правка 02.11.2026). То же в backend/app/catalog.py и lib/view.php */
   const oldPriceOf = (m, v) => { const o = m && m.o ? m.o : 0; return o > priceOf(m, v) ? o : 0; };
   const discountOf = (m, v) => { const o = oldPriceOf(m, v); return o ? Math.round((1 - priceOf(m, v) / o) * 100) : 0; };
@@ -410,7 +406,7 @@
         <span class="tag tag--yellow">Индивидуальный пошив</span>
         <h2>Не нашли свой вариант? Соберите чехлы в конструкторе</h2>
         <p>Соберите свой дизайн комплекта в удобном конструкторе: выберите цвет боковин, материал и цвет вставок, рисунок — и оставьте заявку. Менеджер уточнит комплектацию салона и рассчитает стоимость.</p>
-        <div class="studio__steps"><div><i>01</i><b>Цвет</b><span>боковины и вставки — 21 цвет</span></div><div><i>02</i><b>Материал</b><span>экокожа, перфорация, алькантара, жаккард</span></div><div><i>03</i><b>Рисунок</b><span>классические полосы или стёжка ромбом</span></div><div><i>04</i><b>Дополнительно</b><span>установка, оплётка руля в подарок</span></div></div>
+        <div class="studio__steps"><div><i>01</i><b>Цвет</b><span>боковины и вставки — 21 цвет</span></div><div><i>02</i><b>Материал</b><span>экокожа, перфорированная кожа, алькантара, жаккард</span></div><div><i>03</i><b>Рисунок</b><span>классические полосы или стёжка ромбом</span></div><div><i>04</i><b>Дополнительно</b><span>установка, оплётка руля в подарок</span></div></div>
         <div class="studio__actions"><a class="btn btn--primary btn--lg" href="${URL_.custom(m)}">Открыть конструктор</a>${m ? "" : '<a class="btn btn--glass btn--lg" href="#" data-mega-open>Чехлы на мою модель</a>'}</div>
       </div>
       <div class="studio__visual">
@@ -426,8 +422,8 @@
   const seoBlock = ({ h2, intro, parts, tags }) => `<h2>${h2}</h2>${intro}${parts.filter(Boolean).map(([h, body]) => `<h3>${h}</h3>${body}`).join("")}${tags && tags.length ? `<div class="seo__tags"><b>Популярные запросы</b><ul>${tags.map(([t, u]) => `<li><a href="${u}">${esc(t)}</a></li>`).join("")}</ul></div>` : ""}`;
   /* Общие разделы — только факты со старого сайта; name — «Lada Vesta», «Lada» или пусто */
   const SEO_PART = {
-    materials: name => ["Материалы: экокожа, алькантара, жаккард", `<p>Боковины чехлов${name ? " на " + esc(name) : ""} шьём из экокожи «Аригон» — полиуретановое покрытие на хлопковой основе толщиной 1,05–1,15 мм, цикл истирания не менее 40 000 раз. Для вставок выберите гладкую экокожу, экокожу с перфорацией, алькантару или жаккард. Все материалы гипоаллергенные, «дышащие» и выдерживают морозы до −30 °C. Экокожа легко чистится, алькантара приятна на ощупь, а жаккардовые вставки — самый доступный вариант комплекта.</p>`],
-    prices: (name, p) => [`Цены на чехлы${name ? " " + esc(name) : " для сидений"}`, `<ul><li>Чехлы из жаккарда — от ${fmt(p[0])}</li><li>Чехлы из экокожи и экокожи с перфорацией — от ${fmt(p[1])}</li><li>Чехлы из алькантары — от ${fmt(p[2])}</li></ul><p>Цена указана за комплект на весь салон${name ? "" : " и зависит от модели автомобиля"}. Работаем по предоплате от 1 000 ₽, остаток можно оплатить при получении.</p>`],
+    materials: name => ["Материалы: экокожа, алькантара, жаккард", `<p>Боковины чехлов${name ? " на " + esc(name) : ""} шьём из экокожи «Аригон» — полиуретановое покрытие на хлопковой основе толщиной 1,05–1,15 мм, цикл истирания не менее 40 000 раз. Для вставок выберите гладкую экокожу, перфорированную кожу, алькантару или жаккард. Все материалы гипоаллергенные, «дышащие» и выдерживают морозы до −30 °C. Экокожа легко чистится, алькантара приятна на ощупь, а жаккардовые вставки — самый доступный вариант комплекта.</p>`],
+    prices: (name, p) => [`Цены на чехлы${name ? " " + esc(name) : " для сидений"}`, `<ul><li>Чехлы из жаккарда — от ${fmt(p[0])}</li><li>Чехлы из экокожи и перфорированной кожи — от ${fmt(p[1])}</li><li>Чехлы из алькантары — от ${fmt(p[2])}</li></ul><p>Цена указана за комплект на весь салон${name ? "" : " и зависит от модели автомобиля"}. Работаем по предоплате от 1 000 ₽, остаток можно оплатить при получении.</p>`],
     custom: name => ["Пошив авточехлов на заказ", `<p>Не нашли готовое сочетание${name ? " для " + esc(name) : ""}? Соберите свои чехлы в <a href="${href("custom")}">конструкторе</a>: выберите цвет боковин, материал и цвет вставок, рисунок — классические полосы или стёжку ромбом. Оплётку руля в цвет салона дарим к каждому комплекту. Менеджер уточнит комплектацию салона и рассчитает стоимость пошива.</p>`],
     /* install: false — на страницах городов, где установку клиент не подтверждал (правила, раздел 10) */
     service: ({ install = true } = {}) => ["Безопасность, гарантия и доставка", `<p>Для сидений с боковыми подушками безопасности делаем разрывные швы с ярлыками AIRBAG — чехлы не мешают их срабатыванию. Гарантия на качество пошива — 1 год. Перед отправкой присылаем фотоотчёт. Доставляем DPD и EMS Почтой России в 6 000 населённых пунктов России и СНГ, в Новосибирске — самовывоз и курьер. Представительства «Автостиля» работают в городах России и Казахстана${install ? ", установку в вашем городе организуем по запросу" : ""}.</p>`]
@@ -937,11 +933,23 @@
     if (!asked) open(true);
   }
 
-  /* ---------- «Получить консультацию»: окно из подвала. Его открывают все кнопки [data-ask-open], в том числе «Задать вопрос» в блоках помощи. Заявка contact с темой «Консультация» ---------- */
+  /* ---------- «Получить консультацию»: окно из подвала. Его открывают все кнопки [data-ask-open], в том числе «Задать вопрос» в блоках помощи. Заявка contact с темой «Консультация».
+     [data-ask-open="photo"] — то же окно под названием «Запрос фото» и с темой «Запрос фото» (последний слайд галереи товара, правка 04.11.2026), data-ask-car — автомобиль в заявку ---------- */
   const askModal = $("[data-ask-modal]");
   if (askModal) {
+    const form = $("form", askModal), el = form.elements, title = $(".modal__title", askModal), lead = $("[data-ask-lead]", askModal), sbtn = $("[type=submit]", form);
+    const base = { title: title.textContent, lead: lead ? lead.textContent : "", topic: el.topic.value, btn: sbtn.dataset.label, ph: el.message.placeholder, done: form.dataset.formMessage };
+    const MODES = { photo: { title: "Запрос фото", lead: "Оставьте телефон — в рабочее время менеджер свяжется с вами и пришлёт фото наших работ.", topic: "Запрос фото", btn: "Запросить фото",
+      ph: "Какие фото нужны: цвет, материал, ракурс", done: "Запрос фото отправлен. В рабочее время менеджер свяжется с вами" } };
     const close = () => { askModal.classList.remove("is-open"); document.body.style.overflow = ""; };
-    document.addEventListener("click", e => { if (!e.target.closest("[data-ask-open]")) return; e.preventDefault(); askModal.classList.add("is-open"); document.body.style.overflow = "hidden"; setTimeout(() => $("input[name=name]", askModal).focus(), 50); });
+    document.addEventListener("click", e => {
+      const b = e.target.closest("[data-ask-open]"); if (!b) return;
+      e.preventDefault();
+      const o = MODES[b.dataset.askOpen] || base;
+      title.textContent = o.title; askModal.setAttribute("aria-label", o.title); if (lead) lead.textContent = o.lead;
+      el.topic.value = o.topic; if (el.car) el.car.value = b.dataset.askCar || ""; el.message.placeholder = o.ph; sbtn.dataset.label = sbtn.textContent = o.btn; form.dataset.formMessage = o.done;
+      askModal.classList.add("is-open"); document.body.style.overflow = "hidden"; setTimeout(() => $("input[name=name]", askModal).focus(), 50);
+    });
     $$("[data-ask-close]", askModal).forEach(b => b.addEventListener("click", close));
     $("form", askModal).addEventListener("form:sent", close);
     document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
