@@ -2461,10 +2461,12 @@ body.cta-away { --fabs-lift: 73px; }   /* .sticky-cta на странице то
 }
 .toggle span a { text-decoration: underline; }
 
-/* ---------- всплывающее окно связи «Есть вопросы? Мы на связи!» (js/contact.js). На телефоне — на весь экран и без QR: свой экран не отсканировать ---------- */
-.cpop__panel { width: min(640px, calc(100vw - 32px)); padding: 28px; animation: cpop-in var(--d-base) var(--ease); }
-.cpop .modal__bg { animation: cpop-fade var(--d-base) var(--ease); }
-@keyframes cpop-in { from { opacity: 0; scale: 0.97; } }
+/* ---------- всплывающее окно связи «Есть вопросы? Мы на связи!» (js/contact.js). На телефоне — карточкой снизу, а не на весь экран, и без QR: свой экран не отсканировать.
+   Появляется мягко (правка пользователя 04.11.2026): сначала плавно темнеет фон, потом окно неспешно поднимается и проявляется ---------- */
+.cpop__panel { width: min(640px, calc(100vw - 32px)); padding: 28px; animation: cpop-in 700ms var(--ease) 150ms both; }
+.cpop .modal__bg { animation: cpop-fade 600ms ease-out both; }
+@keyframes cpop-in { from { opacity: 0; translate: 0 24px; scale: 0.98; } }
+@keyframes cpop-up { from { opacity: 0; translate: 0 48px; } }
 @keyframes cpop-fade { from { opacity: 0; } }
 .cpop__close { position: absolute; top: 12px; right: 12px; }
 .cpop__title { padding: 0 44px; text-align: center; font-size: 1.5rem; }
@@ -2491,13 +2493,14 @@ body.cta-away { --fabs-lift: 73px; }   /* .sticky-cta на странице то
 .cpop__ask { flex: none; }
 @media (prefers-reduced-motion: reduce) { .cpop__panel, .cpop .modal__bg { animation: none; } }
 @media (max-width: 767px) {
-  .cpop__panel { inset: 0; transform: none; width: 100%; height: 100%; max-height: none; border-radius: 0; padding: calc(24px + env(safe-area-inset-top, 0px)) 16px calc(24px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; justify-content: center; }
-  .cpop__close { top: calc(8px + env(safe-area-inset-top, 0px)); right: 8px; }
-  .cpop__title { font-size: 1.375rem; }
-  .cpop__grid { display: block; }
+  .cpop__panel { top: auto; left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom, 0px)); transform: none; width: auto; max-height: calc(100vh - 16px); max-height: calc(100dvh - 16px - env(safe-area-inset-bottom, 0px)); padding: 20px 16px 16px; animation-name: cpop-up; }
+  .cpop__close { top: 8px; right: 8px; }
+  .cpop__title { font-size: 1.25rem; padding: 0 40px; }
+  .cpop__grid { display: block; margin-top: 16px; }
   .cpop__qr { display: none; }
-  .cpop__box { padding: 12px; }
-  .cpop__foot { flex-direction: column; align-items: stretch; gap: 12px; }
+  .cpop__box { padding: 10px; }
+  .cpop__btn { min-height: 48px; }
+  .cpop__foot { flex-direction: column; align-items: stretch; gap: 10px; margin-top: 10px; }
   .cpop__tel { align-items: center; }
   .cpop__ask { width: 100%; }
 }

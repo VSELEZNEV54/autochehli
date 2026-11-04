@@ -175,7 +175,6 @@
   const known = !!(A.BY_SLUG[A.qs("m")] && A.VAR[A.qs("v")]);  // неизвестный адрес: на сайте — 404, здесь — noindex
   let m = A.BY_SLUG[A.qs("m")] || A.BY_SLUG["toyota_camry-xv70"], v = A.VAR[A.qs("v")] || A.VARIANTS[0];
   const f = A.FAMILIES[m.f], b = A.BRAND[m.b];
-  const opt = { install: false };
   const title = () => `Чехлы на сиденья ${A.carName(m)}, ${v.name.toLowerCase()}`;
   const total = () => A.priceOf(m, v);
   const cartId = () => `cover:${m.s}:${v.id}`;
@@ -210,9 +209,6 @@
     <div class="opt-block"><p class="opt-block__h">Цвет: <b>${e(v.label)}</b></p><div class="colors">${matVariants(v.mat).map(x => `<a class="color-chip${x.id === v.id ? " is-active" : ""}" href="${A.URL.product(m, x)}" aria-label="${e(x.label)}" title="${e(x.label)}"${x.id === v.id ? ' aria-current="true"' : ""}><i style="${window.AS_colorDot(x.colors)}"></i></a>`).join("")}</div></div>
     <div class="opt-block"><p class="opt-block__h">Материал</p><div class="seg${mats.length === 2 ? " seg--2" : ""}">${mats.map(mt => `<a href="${A.URL.product(m, matVariants(mt)[0])}" class="${v.mat === mt ? "is-selected" : ""}">${A.MAT_NAME[mt].replace("Экокожа + алькантара", "Алькантара")}<small>от ${A.fmt(Math.min(...matVariants(mt).map(x => A.priceOf(m, x))))}</small></a>`).join("")}</div></div>
     <div class="buybox__custom"><div><b>Не нашли свой материал или цвет?</b><p>Соберите чехлы в конструкторе</p></div><a class="btn btn--primary" href="${A.URL.custom(m)}">Открыть конструктор</a></div>
-    <div class="opt-block"><p class="opt-block__h">Дополнительно к заказу</p><div class="addons">
-      <label class="toggle"><div><b>Установка в вашем городе</b><span>Найдём установщика в вашем городе, стоимость уточнит менеджер. <a href="${A.href("ustanovka")}">Подробнее</a></span></div><span class="tp">по запросу</span><input type="checkbox" data-opt="install"><i class="sw"></i></label>
-    </div></div>
     <ul class="buybox__facts">
       <li>${IC.clock}<span>Экспресс-пошив за 3 дня — уточните у менеджера</span></li>
       <li>${IC.truck}<span>Бесплатная доставка на заказы от 20 000 ₽</span></li>
@@ -221,7 +217,8 @@
     </ul>
   </div>`;
   const upd =() => { const pt = document.getElementById("p-total"); pt.querySelector(".price__now").textContent = A.fmt(total()); document.getElementById("p-sticky-price").innerHTML = A.priceHtml(m, v); };
-  const itemId = () => cartId() + (opt.install ? ":install" : "");
+  /* установку в вашем городе выбирают в корзине (правка пользователя 04.11.2026), у карточки допов нет */
+  const itemId = cartId;
   const inCart = () => A.Cart.items.find(i => i.id === itemId() && !i.gone);
   /* «В корзину» в колонке и в нижней панели: после добавления вместо кнопки счётчик этой позиции. Разметку счётчика добавляет скрипт, серверный вывод не меняется */
   const MAX_QTY = A.MAX_QTY;
@@ -246,14 +243,11 @@
       if (!q && s.box.contains(was)) s.btn.focus({ preventScroll: true });
     });
   };
-  const readOpts = () => document.querySelectorAll("[data-opt]").forEach(i => { opt[i.dataset.opt] = i.checked; });
-  document.querySelectorAll("[data-opt]").forEach(i => i.addEventListener("change", () => { readOpts(); showQty(); }));
   document.addEventListener("cart:change", showQty);
-  addEventListener("pageshow", () => { readOpts(); showQty(); });   // браузер мог вернуть отметки допов, а корзина могла поменяться на другой странице
+  addEventListener("pageshow", showQty);   // корзина могла поменяться на другой странице
   const add = go => {
     if (go && inCart()) { location.href = A.href("cart"); return; }   // уже лежит: счётчик показал количество, лишнюю штуку не добавляем
-    const extra = opt.install ? ["+ установка в вашем городе (по запросу)"] : [];
-    A.Cart.add({ id: itemId(), title: `Чехлы на ${A.carName(m)}`, sub: `${v.name} · ${m.y || "все годы"}${extra.length ? " · " + extra.join(", ") : ""}`, price: total(), img: A.varPhoto(m, v), url: A.URL.product(m, v), model: m.s, opts: { ...opt } });
+    A.Cart.add({ id: itemId(), title: `Чехлы на ${A.carName(m)}`, sub: `${v.name} · ${m.y || "все годы"}`, price: total(), img: A.varPhoto(m, v), url: A.URL.product(m, v), model: m.s });
     if (go) location.href = A.href("cart"); else A.toast("Добавлено в корзину", ["Перейти", A.href("cart")]);
   };
   document.getElementById("p-add").addEventListener("click", () => add(false));
@@ -263,7 +257,7 @@
   document.getElementById("p-sticky-title").textContent = "Чехлы на " + A.carName(m);
   document.getElementById("p-sticky-img").src = A.varPhoto(m, v);
   document.getElementById("p-sticky-buy").addEventListener("click", () => add(true));
-  upd(); readOpts(); showQty();
+  upd(); showQty();
   if (!SSR) tabsBox.innerHTML = `<div class="tabs"><button class="is-active" data-tab="d">Описание</button><button data-tab="s">Характеристики</button><button data-tab="k">Комплект</button><button data-tab="i">Установка</button><button data-tab="r">Отзывы</button></div>
     <div class="tab-pane is-active" data-pane="d"><div class="prose"><p>Комплект чехлов на ${e(A.carName(m))}: ${e(v.name.toLowerCase())}. Шьётся под заказ по заводскому лекалу этой модели, поэтому повторяет контуры и линии сидений, не пузырится и не собирается гармошкой.</p><h2>Что важно знать</h2><ul><li>Лекало под конкретную марку, модель и кузов — комплектацию салона уточнит менеджер</li><li>Специальные разрывные швы не мешают срабатыванию подушек безопасности</li><li>Экокожа «Аригон» 1,05–1,15 мм, цикл истирания — не менее 40 000 раз</li><li>Качественные лекала — близко к перетяжке салона</li><li>Защита от пыли и грязи 90 % салона</li><li>Свой дизайн на выбор, без наценки — соберите его <a class="link" href="${A.URL.custom(m)}">в конструкторе</a></li><li>На некоторых моделях отверстия под подголовники и мелкие кнопки не прорезаны — их прорезают при установке</li></ul>
       <h2>Доставка, оплата и гарантия</h2><div class="buybox__info">
