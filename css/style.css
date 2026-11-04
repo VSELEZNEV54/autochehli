@@ -1528,7 +1528,7 @@ body.cta-away .toast { bottom: calc(85px + env(safe-area-inset-bottom, 0px)); } 
   .reviews, .posts, .guides { grid-template-columns: 1fr; }
   .post--wide { grid-column: span 1; flex-direction: column; }
   .post--wide .post__img { flex: none; aspect-ratio: 16 / 9; }
-  .fams { grid-template-columns: 1fr; }
+  .fams { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .ready-strip { grid-template-columns: 1fr 1fr; gap: 8px; }
   .ready-strip > div { padding: 12px; gap: 10px; }
   .gallery { grid-template-columns: 1fr; }
@@ -1641,7 +1641,7 @@ body.cta-away .toast { bottom: calc(85px + env(safe-area-inset-bottom, 0px)); } 
   .brand--all b { line-height: 40px; font-size: 1.5rem; }
   #home-brands .brand:nth-child(n+12):not(.brand--all) { display: none; }
   .studio h2 { font-size: clamp(1.75rem, 6.4vw + 0.4rem, 2.375rem); }
-  .fams, .materials, .reviews, .posts, .guides, .promos, .benefits { grid-template-columns: 1fr; gap: 12px; }
+  .materials, .reviews, .posts, .guides, .promos, .benefits { grid-template-columns: 1fr; gap: 12px; }
   /* карточки товаров компактно, в две колонки */
   .grid, .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .card__body { padding: 10px; gap: 4px; }
@@ -1656,6 +1656,18 @@ body.cta-away .toast { bottom: calc(85px + env(safe-area-inset-bottom, 0px)); } 
   .card__foot .price__was s { font-size: 0.75rem; }
   .card__foot .price__off { height: 18px; padding: 0 4px; font-size: 0.6875rem; }
   .card__foot .price__now, .card__foot > .price { font-size: 1.0625rem; }
+  /* карточки моделей и поколений — тоже в две колонки, как товары (правка пользователя 04.11.2026) */
+  .fams { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .fam__media .tag { left: 8px; top: 8px; }
+  .fam__body { padding: 10px; gap: 6px; }
+  .fam__title { font-size: 0.875rem; line-height: 1.3; }
+  .fam__years { font-size: 0.75rem; margin-top: -3px; }
+  .fam__stats { gap: 4px; }
+  .fam__stats span { font-size: 0.6875rem; padding: 3px 6px; border-radius: 6px; }
+  .fam__foot { flex-direction: column; align-items: stretch; gap: 8px; padding-top: 4px; }
+  .fam__foot .price { font-size: 0.9375rem; white-space: normal; }
+  .fam__foot .btn { width: 100%; }
+  .fams--pop > :last-child:nth-child(odd) { display: none; }   /* подборка популярных — без одинокой карточки в последнем ряду */
   .ready-strip, .stat-row, .studio__steps, .gallery-grid, .includes, .pricing, .sales-list, .spec { grid-template-columns: 1fr; }
   .seg button, .seg a { font-size: var(--t-xs); }
   .picker .btn { width: 100%; }
