@@ -14,19 +14,17 @@
   const BASE = O.base;   /* экокожа «Аригон»: боковины, тыл, подголовники */
   const DESIGNS = Object.fromEntries(O.designs.map(d => [d.id, d]));
   const THREADS = Object.fromEntries(O.threads);
-  const DEF_THREAD = "#a3a5ab";   /* обычная нить в тон — на превью */
-  let THREAD = DEF_THREAD;
   const ICO = {
     classic: '<path d="M2 9h36M2 17h36"/>',
     romb: '<path d="M2 13 9 4l7 9 7-9 7 9 7-9M2 13l7 9 7-9 7 9 7-9 7 9"/>',
-    plain: '<g fill="currentColor" stroke="none"><circle cx="10" cy="9" r="1.3"/><circle cx="17" cy="9" r="1.3"/><circle cx="24" cy="9" r="1.3"/><circle cx="31" cy="9" r="1.3"/><circle cx="13.5" cy="17" r="1.3"/><circle cx="20.5" cy="17" r="1.3"/><circle cx="27.5" cy="17" r="1.3"/></g>'
+    plain: ""
   };
   /* По запросу: цены в дорожной карте нет, считает менеджер */
   const OPTS = { install: { name: "Установка в вашем городе", note: "Найдём установщика" } };
   /* Автомобиль не выбран — «от» по всему каталогу: цены живые, чисел здесь быть не должно */
   const DEF_P = A.minPrices(A.MODELS);
-  /* Стандартный комплект по дорожной карте: чёрная экокожа «Аригон», серая вставка, горизонтальная настрочка */
-  const DEF = { base: "c79236", mat: "perf", ins: "c79243", design: "classic", same: false, thread: "" };
+  /* Начальный вариант: чёрная основа и серая перфорированная вставка без настрочки. */
+  const DEF = { base: "c79236", mat: "perf", ins: "c79243", design: "plain", same: false, thread: "" };
   const st = Object.assign({ model: null, opts: new Set(), qty: {} }, DEF);
   const STEPS = [["car", "Авто"], ["base", "Основа"], ["mat", "Материал"], ["ins", "Цвет"], ["thread", "Нить"], ["extra", "Опции"]];
   const steps = () => STEPS.filter(([id]) => id !== "thread" || MATS[st.mat].thread);
@@ -41,101 +39,49 @@
   const threadPaid = () => !!thread() && design() !== "plain";
   const addonOk = a => !(a.not || []).includes(st.mat) && (!a.needs || a.needs.includes(design())) && (!a.threaded || !!thread());
   const paid = () => O.addons.filter(a => addonOk(a) && st.opts.has(a.id)).map(a => Object.assign({}, a, { n: a.qty ? st.qty[a.id] || 1 : 1 }));
-  /* ---------- геометрия сиденья ---------- */
+  /* ---------- превью: рендер кресла слоями (tools/seat_palette.py → assets/builder, 06.11.2026) ----------
+     Кадры совпадают пиксель в пиксель: снизу кресло в цвете основы (фон вырезан), сверху вставка выбранного материала,
+     цвета и рисунка (на «единым цветом» — вся лицевая часть), поверх — цветная нить у перфорированной кожи.
+     Нить видна на настрочке любого рисунка (горизонтальная и ромб, одинарная и двойная — кадры «…-thread») и на вертикальных швах.
+     Подушки (опции «Подушка под голову», «Подушка квадратная») — сверху: вся подушка в цвете основы с тенью, её синие части — в цвете вставки */
   const fx = n => Math.round(n * 10) / 10;
-  const toward = (p, q, r) => { const dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy), k = Math.min(r, L / 2) / L; return [p[0] + dx * k, p[1] + dy * k]; };
-  const rpath = (pts, r) => pts.map((p1, i) => { const n = pts.length, a = toward(p1, pts[(i - 1 + n) % n], r), b = toward(p1, pts[(i + 1) % n], r); return `${i ? "L" : "M"}${fx(a[0])} ${fx(a[1])}Q${fx(p1[0])} ${fx(p1[1])} ${fx(b[0])} ${fx(b[1])}`; }).join("") + "Z";
-  const isect = ([[x1, y1], [x2, y2]], [[x3, y3], [x4, y4]]) => { const d = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4); if (Math.abs(d) < 1e-6) return [x2, y2]; const t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / d; return [x1 + t * (x2 - x1), y1 + t * (y2 - y1)]; };
-  function inset(pts, d) {
-    const n = pts.length; let area = 0;
-    pts.forEach((p, i) => { const q = pts[(i + 1) % n]; area += p[0] * q[1] - q[0] * p[1]; });
-    const sg = area > 0 ? 1 : -1;
-    const L = pts.map((p, i) => { const q = pts[(i + 1) % n], dx = q[0] - p[0], dy = q[1] - p[1], l = Math.hypot(dx, dy), nx = -dy / l * sg * d, ny = dx / l * sg * d; return [[p[0] + nx, p[1] + ny], [q[0] + nx, q[1] + ny]]; });
-    return L.map((l, i) => isect(L[(i - 1 + n) % n], l));
+  /* RV — ревизия слоёв: имена файлов не меняются, а цвет может (06.11.2026 красный подогнан к карточке) — меняем r, иначе браузер покажет старый */
+  const R = "assets/builder/", RV = ".webp?r=2", RW = 848, RH = 1264;
+  function layers() {
+    const X = M(), d = design(), p = paid(), th = thread();
+    const dbl = p.some(a => a.id === "double"), vs = p.some(a => a.id === "vseams");
+    let form = st.mat + (same() ? "-barrel" : "");                       /* флок, жаккард, ромб 35 мм: рисунок у самого материала */
+    const tk = th && X.design && d !== "plain" ? d + (dbl ? "-double" : "") : "";   /* настрочка цветной нитью: classic, classic-double, romb, romb-double */
+    if (X.design) {
+      if (tk) form = st.mat + "-" + tk + "-thread";
+      else if (vs && d === "plain") form = "perf-vseams";
+      else form += (d === "plain" ? "" : "-" + d) + (dbl ? "-double" : "");
+    }
+    const hx = th ? THREADS[th].slice(1).toLowerCase() : "";
+    return [R + "base/" + st.base + RV, R + "ins/" + form + "/" + st.ins + RV]
+      .concat(tk ? [R + "thread/" + tk + "/" + hx + RV] : [], hx && vs ? [R + "thread/vseams/" + hx + RV] : [],
+        ...PILLOWS.filter(id => p.some(a => a.id === id)).map(id => [R + "pillow/" + id + "/base/" + st.base + RV, R + "pillow/" + id + "/" + st.mat + "/" + st.ins + RV]));
   }
-  const bbox = pts => { const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]); return [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)]; };
-  const G = {
-    head: [[138, 22], [282, 22], [276, 126], [144, 126]],
-    back: [[124, 142], [296, 142], [330, 180], [338, 352], [316, 378], [104, 378], [82, 352], [90, 180]],
-    backIn: [[150, 174], [270, 174], [276, 358], [144, 358]],
-    cush: [[102, 374], [318, 374], [346, 402], [364, 524], [340, 552], [80, 552], [56, 524], [74, 402]],
-    cushIn: [[148, 394], [272, 394], [290, 502], [130, 502]]
-  };
-  G.headIn = inset(G.head, 15);
-  const RAD = { head: 40, back: 24, cush: 24, headIn: 26, backIn: 14, cushIn: 12 };
-
-  /* стёжка на вставках: канавка, «подушки» между ними и строчка по обе стороны */
-  function quilt(type, pts, dbl) {
-    const [x0, y0, x1, y1] = bbox(pts), cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, D = Math.hypot(x1 - x0, y1 - y0) / 2 + 12;
-    const groove = 'stroke="rgba(0,0,0,.42)" stroke-width="1.6" fill="none"', dash = `stroke="${THREAD}" stroke-width="1.05" stroke-dasharray="3.2 2.4" fill="none" stroke-linecap="round"`;
-    let out = "";
-    const family = (deg, s) => {
-      const a = deg * Math.PI / 180, dx = Math.cos(a), dy = Math.sin(a), nx = -dy, ny = dx, N = Math.ceil(D / s);
-      for (let k = -N; k <= N; k++) {
-        const px = cx + nx * k * s, py = cy + ny * k * s;
-        const seg = o => `M${fx(px - dx * D + nx * o)} ${fx(py - dy * D + ny * o)}L${fx(px + dx * D + nx * o)} ${fx(py + dy * D + ny * o)}`;
-        out += `<path d="${seg(4.5)}" stroke="rgba(255,255,255,.09)" stroke-width="6" fill="none"/><path d="${seg(-4.5)}" stroke="rgba(0,0,0,.12)" stroke-width="6" fill="none"/>`;
-        out += `<path d="${seg(0)}" ${groove}/><path d="${seg(3)}" ${dash}/>` + (dbl ? `<path d="${seg(-3)}" ${dash}/>` : "");
-      }
-    };
-    if (type === "classic") family(0, 24);
-    if (type === "rhomb") { family(58, 24); family(-58, 24); }
-    return out;
+  const PILLOWS = ["pillow-head", "pillow-sq"], SLOTS = 8;   /* основа, вставка, две нити, по два слоя на подушку */
+  /* картинка грузится и декодируется заранее: превью меняется целиком, без мигания по слоям.
+     decode() ждём не дольше 120 мс: в невидимой вкладке он может не завершиться до первой отрисовки */
+  const loaded = {};
+  const loadImg = src => loaded[src] || (loaded[src] = new Promise(res => {
+    const i = new Image();
+    i.onload = () => Promise.race([i.decode ? i.decode().catch(() => {}) : 0, new Promise(r => setTimeout(r, 120))]).then(() => res(i));
+    i.onerror = () => { delete loaded[src]; res(null); };
+    i.src = src;
+  }));
+  /* снимок для эскиза, заявки и корзины: те же слои на холсте */
+  async function seatCanvas(w, bg) {
+    const imgs = await Promise.all(layers().map(loadImg)), cv = document.createElement("canvas");
+    cv.width = w; cv.height = Math.round(w * RH / RW);
+    const g = cv.getContext("2d");
+    if (bg) { g.fillStyle = bg; g.fillRect(0, 0, cv.width, cv.height); }
+    imgs.forEach(i => i && g.drawImage(i, 0, 0, cv.width, cv.height));
+    return cv;
   }
-
-  /* превью сиденья спереди (позже заменим на 3D-рендер сбоку) */
-  function seatSVG() {
-    const ins = insColor()[1], side = same() ? ins : BASE[st.base][1], tex = M().tex, pat = M().pattern || { classic: "classic", romb: "rhomb" }[design()], dbl = paid().some(a => a.id === "double");
-    THREAD = thread() ? THREADS[thread()] : DEF_THREAD;
-    const P = k => rpath(G[k], RAD[k]);
-    const texture = id => {
-      if (tex === "perf") return `<rect x="0" y="0" width="420" height="600" fill="url(#perf)" clip-path="url(#${id})"/>`;
-      if (tex === "alc") return `<rect x="0" y="0" width="420" height="600" fill="#000" opacity=".5" filter="url(#suedeD)" clip-path="url(#${id})"/><rect x="0" y="0" width="420" height="600" fill="#fff" opacity=".22" filter="url(#suedeL)" clip-path="url(#${id})"/>`;
-      if (tex === "jac") return `<rect x="0" y="0" width="420" height="600" fill="url(#jac)" clip-path="url(#${id})"/>`;
-      return `<rect x="0" y="0" width="420" height="600" fill="#000" opacity=".35" filter="url(#grain)" clip-path="url(#${id})"/>`;
-    };
-    const stitch = k => `<path d="${rpath(inset(G[k], -5.5), RAD[k] + 5)}" fill="none" stroke="${THREAD}" stroke-width="1.1" stroke-dasharray="3.4 2.4" stroke-linecap="round"/>` + (dbl ? `<path d="${rpath(inset(G[k], -9.5), RAD[k] + 9)}" fill="none" stroke="${THREAD}" stroke-width="1.1" stroke-dasharray="3.4 2.4" stroke-linecap="round"/>` : "");
-    const edge = k => `<path d="${P(k)}" fill="none" stroke="rgba(0,0,0,.5)" stroke-width="2.2"/>` + stitch(k);
-    const frame = (k, color, grad) => `<path d="${P(k)}" fill="${color}"/><path d="${P(k)}" fill="#000" opacity=".3" filter="url(#grain)"/><path d="${P(k)}" fill="url(#gH)"/><path d="${P(k)}" fill="url(#${grad || "gV"})"/><path d="${P(k)}" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="1"/>`;
-    const insert = (k, clip) => `<path d="${P(k)}" fill="${ins}"/>${texture(clip)}${pat ? `<g clip-path="url(#${clip})">${quilt(pat, G[k], dbl)}</g>` : ""}<path d="${P(k)}" fill="url(#gIn)"/>`;
-    const seam = (d, clip) => `<g clip-path="url(#${clip})"><path d="${d}" stroke="rgba(0,0,0,.5)" stroke-width="2" fill="none"/><path d="${d}" stroke="${THREAD}" stroke-width="1.1" stroke-dasharray="3.4 2.4" fill="none" transform="translate(0 -5)"/>${dbl ? `<path d="${d}" stroke="${THREAD}" stroke-width="1.1" stroke-dasharray="3.4 2.4" fill="none" transform="translate(0 5)"/>` : ""}</g>`;
-    const jl = insColor()[2] || "#ccc";
-    const posts = `<rect x="175" y="118" width="9" height="30" rx="3" fill="url(#chrome)"/><rect x="236" y="118" width="9" height="30" rx="3" fill="url(#chrome)"/>`;
-    const shadow = `<ellipse cx="210" cy="568" rx="172" ry="13" fill="#000" opacity=".28" filter="url(#soft)"/>`;
-    const body = `${shadow}
-${posts}
-${frame("head", side, "gR")}
-${insert("headIn", "cHead")}${edge("headIn")}
-${frame("back", side)}
-<path d="M106 196 L99 344" stroke="#fff" stroke-opacity=".14" stroke-width="12" stroke-linecap="round" filter="url(#hl)"/><path d="M314 196 L321 344" stroke="#fff" stroke-opacity=".1" stroke-width="12" stroke-linecap="round" filter="url(#hl)"/>
-${insert("backIn", "cBack")}
-${seam("M130 300 L290 300", "cBack")}
-${edge("backIn")}
-${frame("cush", side, "gC")}
-<path d="M94 414 L80 512" stroke="#fff" stroke-opacity=".12" stroke-width="12" stroke-linecap="round" filter="url(#hl)"/><path d="M326 414 L340 512" stroke="#fff" stroke-opacity=".09" stroke-width="12" stroke-linecap="round" filter="url(#hl)"/>
-${insert("cushIn", "cCush")}
-${edge("cushIn")}
-${seam("M50 520 Q210 528 370 520", "cCushF")}`;
-    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Превью чехла">
-<defs>
-  <linearGradient id="gV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/><stop offset=".72" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".34"/></linearGradient>
-  <linearGradient id="gC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".45"/><stop offset=".12" stop-color="#000" stop-opacity="0"/><stop offset=".6" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#000" stop-opacity=".38"/></linearGradient>
-  <linearGradient id="gH" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset=".1" stop-color="#000" stop-opacity=".06"/><stop offset=".17" stop-color="#fff" stop-opacity=".13"/><stop offset=".3" stop-color="#000" stop-opacity=".1"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset=".7" stop-color="#000" stop-opacity=".1"/><stop offset=".83" stop-color="#fff" stop-opacity=".13"/><stop offset=".9" stop-color="#000" stop-opacity=".06"/><stop offset="1" stop-color="#000" stop-opacity=".5"/></linearGradient>
-  <radialGradient id="gR" cx=".45" cy=".28" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></radialGradient>
-  <linearGradient id="gIn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="${tex === "alc" ? ".06" : ".14"}"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".26"/></linearGradient>
-  <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7d8187"/><stop offset=".45" stop-color="#e6e8eb"/><stop offset="1" stop-color="#6f7378"/></linearGradient>
-  <pattern id="perf" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1.05" fill="rgba(0,0,0,.6)"/><circle cx="5.3" cy="5.3" r="1.05" fill="rgba(0,0,0,.6)"/><circle cx="1.6" cy="1.5" r=".5" fill="rgba(255,255,255,.12)"/><circle cx="5.1" cy="5" r=".5" fill="rgba(255,255,255,.12)"/></pattern>
-  <pattern id="jac" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="4" height="4" fill="${jl}" opacity=".5"/><rect x="4" y="4" width="4" height="4" fill="${jl}" opacity=".3"/><path d="M0 4h8M4 0v8" stroke="rgba(0,0,0,.25)" stroke-width=".6"/></pattern>
-  <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.15" numOctaves="2" seed="4" result="n"/><feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.3 -.5"/><feComposite in2="SourceGraphic" operator="in"/></filter>
-  <filter id="suedeD" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="2.3" numOctaves="2" seed="8"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.5 -.55"/><feComposite in2="SourceGraphic" operator="in"/></filter>
-  <filter id="suedeL" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.4 -.6"/><feComposite in2="SourceGraphic" operator="in"/></filter>
-  <filter id="soft" x="-30%" y="-300%" width="160%" height="700%"><feGaussianBlur stdDeviation="9"/></filter>
-  <filter id="hl" x="-50%" y="-10%" width="200%" height="120%"><feGaussianBlur stdDeviation="4"/></filter>
-  <clipPath id="cHead"><path d="${P("headIn")}"/></clipPath><clipPath id="cBack"><path d="${P("backIn")}"/></clipPath><clipPath id="cCush"><path d="${P("cushIn")}"/></clipPath><clipPath id="cCushF"><path d="${P("cush")}"/></clipPath>
-</defs>
-${body}
-</svg>`;
-  }
+  const seatUrl = async (w, jpeg) => (await seatCanvas(w, jpeg ? "#fff" : "")).toDataURL(jpeg ? "image/jpeg" : "image/png", 0.86);
 
   /* ---------- расчёт: цена модели за материал вставки + доплаты из дорожной карты; остальное — по запросу ---------- */
   const insColor = () => { const c = M().colors; return c[st.ins] || Object.values(c)[0]; };
@@ -291,7 +237,7 @@ ${body}
     /* 6. дополнительно: настрочка, услуги с ценой, по запросу. Переключатель, цена и подписи — ровными колонками */
     const pattern = X.pattern ? `<p class="cfg__note">Стёжка ромбом 35 мм уже на материале — отдельная настрочка не нужна.</p>`
       : !X.design ? `<p class="cfg__note">На флоке и жаккарде настрочек не делаем: у ткани свой узор, нить на нём теряется.</p>`
-      : `<div class="cfg__cards cfg__cards--3">${O.designs.map(x => card(x, design() === x.id)).join("")}</div>`;
+      : `<div class="cfg__cards">${O.designs.map(x => card(x, design() === x.id)).join("")}</div>`;
     $("[data-b-opts]").innerHTML = `<h3 class="cfg__sub">Настрочка на вставке</h3>${pattern}<h3 class="cfg__sub">Услуги</h3>`
       + optRow("same", "Лицевая часть единым цветом", X.barrel ? "Боковины спереди — из материала вставки" : "Только с экокожей и алькантарой", "+" + A.fmt(O.barrel), same(), !X.barrel)
       + O.addons.filter(a => !a.threaded || X.thread).map(a => { const ok = addonOk(a); return a.qty ? qtyRow(a) : optRow(a.id, a.name, ok ? a.note : a.why, "+" + A.fmt(a.price), ok && st.opts.has(a.id), !ok); }).join("")
@@ -313,8 +259,20 @@ ${body}
     set("[data-b-val=ins]", insColor()[0]);
     set("[data-b-val=thread]", thread() || "обычная, в тон");
   }
+  /* превью: картинки-слои (SLOTS) создаются один раз; новые слои сначала грузятся, потом ставятся разом. Быстрые клики не путают кадры: показываем последний выбор */
+  let seatKey = "", seatTok = 0;
   function drawSeat() {
-    $("[data-b-canvas]").innerHTML = seatSVG();
+    const box = $("[data-b-canvas]");
+    let wrap = $(".cfg__render", box);
+    if (!wrap) { box.innerHTML = '<div class="cfg__render" role="img">' + '<img alt="" decoding="async">'.repeat(SLOTS) + "</div>"; wrap = $(".cfg__render", box); }
+    wrap.setAttribute("aria-label", `Превью чехла. Основа: экокожа, ${BASE[st.base][0].toLowerCase()}. Вставка: ${low(matName(st.mat))}, ${insColor()[0].toLowerCase()}`);
+    const L = layers(), key = L.join("|");
+    if (key === seatKey) return;
+    seatKey = key; const tok = ++seatTok;
+    Promise.all(L.map(loadImg)).then(() => {
+      if (tok !== seatTok) return;
+      $$("img", wrap).forEach((im, i) => { im.hidden = !L[i]; if (L[i] && im.getAttribute("src") !== L[i]) im.src = L[i]; });
+    });
   }
   /* полоса разделов: клик прокручивает к разделу, при прокрутке подсвечен раздел на экране.
      На десктопе полоса прилипает под шапкой, на телефоне сверху закреплено превью */
@@ -420,31 +378,29 @@ ${body}
   /* ---------- окна: эскиз на почту и заявка менеджеру ---------- */
   const openM = el => { el.classList.add("is-open"); document.body.style.overflow = "hidden"; setTimeout(() => { const i = $("input", el); i && i.focus(); }, 50); };
   const closeM = el => { el.classList.remove("is-open"); document.body.style.overflow = ""; };
-  const svgUrl = () => "data:image/svg+xml;charset=utf-8," + encodeURIComponent(seatSVG());
   const listHtml = () => summary().slice(0, -1).map(([k, v]) => `<div><dt>${k}</dt><dd>${e(v)}</dd></div>`).join("") + `<div class="breq__total"><dt>Весь салон от</dt><dd>${A.fmt(compute().total)}</dd></div>`;
 
   /* эскиз в PNG: превью, состав и цена */
-  function download() {
-    const img = new Image();
-    img.onload = () => {
-      const W = 1200, H = 1560, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
-      const g = cv.getContext("2d"), grd = g.createRadialGradient(W / 2, 380, 80, W / 2, 560, 900);
-      grd.addColorStop(0, "#ffffff"); grd.addColorStop(1, "#e6e6e1"); g.fillStyle = grd; g.fillRect(0, 0, W, H);
-      const sh = 1000, sw = sh * 420 / 600; g.drawImage(img, (W - sw) / 2, 40, sw, sh);
-      g.fillStyle = "#231f20"; g.font = "800 44px Golos Text, Arial, sans-serif"; g.fillText("Эскиз чехлов" + (st.model ? " на " + A.carName(st.model) : ""), 70, 1120);
-      g.font = "500 28px Golos Text, Arial, sans-serif"; let y = 1180;
-      summary().slice(1, -1).forEach(([k, v]) => { g.fillStyle = "#6b6e74"; g.fillText(k, 70, y); g.fillStyle = "#231f20"; g.fillText(v.length > 44 ? v.slice(0, 42) + "…" : v, 400, y); y += 44; });
-      g.font = "800 40px Golos Text, Arial, sans-serif"; g.fillText("от " + A.fmt(compute().total).replace(/ /g, " "), 70, H - 60);
-      g.font = "500 26px Golos Text, Arial, sans-serif"; g.fillStyle = "#6b6e74"; g.textAlign = "right"; g.fillText("Автостиль · 8 (800) 775-32-60", W - 70, H - 64);
-      cv.toBlob(b => { const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "avtostil-eskiz.png"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 3000); });
-    };
-    img.src = svgUrl();
+  async function download() {
+    const seat = await seatCanvas(720);
+    const W = 1200, H = 1560, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+    const g = cv.getContext("2d"), grd = g.createRadialGradient(W / 2, 380, 80, W / 2, 560, 900);
+    grd.addColorStop(0, "#ffffff"); grd.addColorStop(1, "#e6e6e1"); g.fillStyle = grd; g.fillRect(0, 0, W, H);
+    const sh = 1000, sw = sh * RW / RH; g.drawImage(seat, (W - sw) / 2, 40, sw, sh);
+    g.fillStyle = "#231f20"; g.font = "800 44px Golos Text, Arial, sans-serif"; g.fillText("Эскиз чехлов" + (st.model ? " на " + A.carName(st.model) : ""), 70, 1120);
+    g.font = "500 28px Golos Text, Arial, sans-serif"; let y = 1180;
+    summary().slice(1, -1).forEach(([k, v]) => { g.fillStyle = "#6b6e74"; g.fillText(k, 70, y); g.fillStyle = "#231f20"; g.fillText(v.length > 44 ? v.slice(0, 42) + "…" : v, 400, y); y += 44; });
+    g.font = "800 40px Golos Text, Arial, sans-serif"; g.fillText("от " + A.fmt(compute().total).replace(/ /g, " "), 70, H - 60);
+    g.font = "500 26px Golos Text, Arial, sans-serif"; g.fillStyle = "#6b6e74"; g.textAlign = "right"; g.fillText("Автостиль · 8 (800) 775-32-60", W - 70, H - 64);
+    cv.toBlob(b => { const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "avtostil-eskiz.png"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 3000); });
   }
+  /* миниатюра в окне: снимок слоёв; окно открылось раньше, чем снимок готов, — подставится сразу после */
+  const miniTo = (el, alt) => { el.innerHTML = ""; seatUrl(480).then(u => { el.innerHTML = `<img src="${u}" alt="${alt}">`; }); };
   /* «Скачать эскиз» — сначала форма с e-mail (правка пользователя 04.11.2026): эскиз уходит на почту, файл сохраняется на устройство.
      Письмо собирает сервер из выбора (catalog.custom_describe), текст из браузера в него не попадает */
   const sk = document.querySelector("[data-b-sketch]");
   function openSketch() {
-    $("[data-sk-mini]", sk).innerHTML = `<img src="${svgUrl()}" alt="Ваш эскиз">`;
+    miniTo($("[data-sk-mini]", sk), "Ваш эскиз");
     $("[data-sk-list]", sk).innerHTML = listHtml();
     $("[data-sk-form]", sk).hidden = false; $("[data-sk-done]", sk).hidden = true;
     openM(sk);
@@ -471,13 +427,14 @@ ${body}
 
   /* ---------- корзина: собранный комплект — отдельная позиция custom:<лекало>:<ключ выбора> ---------- */
   const hashStr = s => { let h = 5381; for (let i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) >>> 0; return h.toString(36); };
-  function addToCart() {
+  /* в корзину кладём JPEG 320 px на белом: он хранится в браузере, на сервер не уходит */
+  async function addToCart() {
     const m = st.model, c = compute();
     if (!m) { A.toast("Выберите автомобиль — без него не подобрать лекало"); go(0); return; }
     const config = buildConfig(), extra = extrasText();
     const label = `Вставка: ${low(matName(st.mat))} ${insColor()[0].toLowerCase()}, основа: экокожа ${BASE[st.base][0].toLowerCase()}, настрочка: ${designText()}`
       + (thread() ? `, нить: ${thread().toLowerCase()}` : "") + (extra !== "—" ? ", " + extra : "");
-    A.Cart.add({ id: `custom:${m.s}:${hashStr(JSON.stringify(config))}`, title: `Индивидуальный пошив: чехлы на ${A.carName(m)}`, sub: label, label, price: c.total, img: svgUrl(),
+    A.Cart.add({ id: `custom:${m.s}:${hashStr(JSON.stringify(config))}`, title: `Индивидуальный пошив: чехлы на ${A.carName(m)}`, sub: label, label, price: c.total, img: await seatUrl(320, true),
       url: A.href("custom", { m: m.s, cfg: JSON.stringify(config) }), model: m.s, config, opts: { install: st.opts.has("install") } });
     A.toast("Комплект добавлен в корзину", ["Перейти", A.href("cart")]);
   }
@@ -485,7 +442,7 @@ ${body}
   /* ---------- заявка менеджеру ---------- */
   const modal = document.querySelector("[data-b-modal]");
   const fillModal = () => {
-    $("[data-b-mini]", modal).innerHTML = `<img src="${svgUrl()}" alt="Ваш дизайн">`;
+    miniTo($("[data-b-mini]", modal), "Ваш дизайн");
     $("[data-b-summary]", modal).innerHTML = listHtml();
   };
   /* подсказки в поле VIN заявки: выбрал автомобиль из списка — он подставляется в конструктор и в сводку */
